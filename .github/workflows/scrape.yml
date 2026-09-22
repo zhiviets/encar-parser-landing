@@ -28,7 +28,7 @@ jobs:
       - name: Install Playwright browser
         working-directory: scraper
         run: |
-          python -m playwright install --with-deps firefox
+          python -m playwright install --with-deps chromium
 
       - name: Run scraper and push to bn-auto
         working-directory: scraper

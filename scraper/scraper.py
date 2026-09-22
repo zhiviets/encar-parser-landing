@@ -181,7 +181,10 @@ def scrape_list(page, url: str) -> list[dict]:
 
 def main():
     with sync_playwright() as p:
-        browser = p.firefox.launch(headless=True, slow_mo=80)
+        # Firefox не умеет авторизацию (логин/пароль) в SOCKS5-прокси —
+        # Playwright падает с "Browser does not support socks5 proxy
+        # authentication". Chromium это поддерживает.
+        browser = p.chromium.launch(headless=True, slow_mo=80)
 
         proxy = None
         if PROXY_SERVER:
