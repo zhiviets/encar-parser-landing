@@ -1,16 +1,15 @@
-﻿name: Daily ENCAR scrape
+name: Weekly ENCAR scrape
 
 on:
   schedule:
-    
-    - cron: "0 3 * * *"
-  workflow_dispatch: {}  
+    - cron: "0 3 * * 1"
+  workflow_dispatch: {}
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -31,10 +30,12 @@ jobs:
         run: |
           python -m playwright install --with-deps firefox
 
-      - name: Run scraper
+      - name: Run scraper and push to bn-auto
         working-directory: scraper
         env:
           PYTHONIOENCODING: utf-8
+          BN_AUTO_URL: ${{ secrets.BN_AUTO_URL }}
+          BN_AUTO_IMPORT_TOKEN: ${{ secrets.BN_AUTO_IMPORT_TOKEN }}
         run: |
           python scraper.py
 
@@ -43,5 +44,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add site/data/cars.json
-          git commit -m "chore: daily data update [skip ci]" || echo "No changes"
+          git commit -m "chore: weekly data update [skip ci]" || echo "No changes"
           git push

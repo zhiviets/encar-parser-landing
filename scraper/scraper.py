@@ -1,9 +1,12 @@
 ﻿
 import json
+import os
 import re
 import time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+
+from brand_map import extract_brand_model
 
 
 
@@ -15,7 +18,14 @@ START_URL = (
 )
 
 
-MAX_PAGES = 1
+# Раз в неделю можно забирать больше, чем одну страницу — регулируется без
+# правки кода переменной окружения ENCAR_MAX_PAGES (по умолчанию 3 страницы).
+MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES", "3"))
+
+# Куда пушим данные в bn-auto. Без этих переменных скрипт просто
+# сохранит cars.json локально, как раньше — пуш не обязателен.
+BN_AUTO_URL = os.environ.get("BN_AUTO_URL", "").rstrip("/")
+BN_AUTO_IMPORT_TOKEN = os.environ.get("BN_AUTO_IMPORT_TOKEN", "")
 
 
 OUT_PATH = Path(__file__).resolve().parents[1] / "site" / "data" / "cars.json"
@@ -43,6 +53,11 @@ def _year_from_korean(s: str) -> int | None:
         return None
     y = int(m.group(1))
     return 2000 + y if y < 100 else y
+
+def _external_id(link: str) -> str | None:
+    m = re.search(r"/detail/(\d+)", link or "")
+    return m.group(1) if m else None
+
 
 def _norm_url(u: str) -> str:
     if not u:
@@ -169,9 +184,15 @@ def main():
         cleaned = []
         for c in all_cars:
             if c.get("image") and c.get("link"):
+                raw_title = c.get("brand") or ""
+                brand_en, model_guess, _ = extract_brand_model(raw_title)
                 cleaned.append({
+                    "external_id": _external_id(c.get("link")),
                     "brand": c.get("brand"),
                     "model": c.get("model"),
+                    "brand_en": brand_en,
+                    "model_guess": model_guess,
+                    "title": raw_title,
                     "year": c.get("year"),
                     "mileage_km": c.get("mileage_km"),
                     "price_krw": c.get("price_krw"),
@@ -185,6 +206,51 @@ def main():
 
         print(f"Saved {len(cleaned)} cars -> {OUT_PATH}")
         browser.close()
+
+    push_to_bn_auto(cleaned)
+
+
+def push_to_bn_auto(cars: list[dict]):
+    """Отправить объявления в bn-auto. Без настроенных переменных — просто пропустить."""
+    if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
+        print("BN_AUTO_URL / BN_AUTO_IMPORT_TOKEN не заданы — пуш в bn-auto пропущен.")
+        return
+
+    import requests
+
+    listings = [
+        {
+            "external_id": c["external_id"],
+            "make": c.get("brand_en"),
+            "model": c.get("model_guess"),
+            "title": c.get("title"),
+            "year": c.get("year"),
+            "mileage_km": c.get("mileage_km"),
+            "price_value": c.get("price_krw"),
+            "photo_url": c.get("image"),
+            "source_url": c.get("link"),
+        }
+        for c in cars
+        if c.get("external_id")
+    ]
+    if not listings:
+        print("Нет объявлений с external_id — нечего пушить в bn-auto.")
+        return
+
+    resp = requests.post(
+        f"{BN_AUTO_URL}/api/live-listings/import",
+        json={"source": "encar", "listings": listings},
+        headers={"Authorization": f"Bearer {BN_AUTO_IMPORT_TOKEN}"},
+        timeout=30,
+    )
+    try:
+        data = resp.json()
+    except ValueError:
+        data = {}
+    if resp.status_code >= 400:
+        print(f"Пуш в bn-auto не удался: HTTP {resp.status_code} {data}")
+        resp.raise_for_status()
+    print(f"Пуш в bn-auto: {data.get('stats')}, пропущено {data.get('skipped', 0)}")
 
 
 if __name__ == "__main__":
