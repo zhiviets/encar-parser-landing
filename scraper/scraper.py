@@ -27,6 +27,13 @@ MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES", "3"))
 BN_AUTO_URL = os.environ.get("BN_AUTO_URL", "").rstrip("/")
 BN_AUTO_IMPORT_TOKEN = os.environ.get("BN_AUTO_IMPORT_TOKEN", "")
 
+# Опциональный прокси — GitHub Actions запускается из дата-центра, и Encar
+# может блокировать такие IP («подозрительный трафик» + капча). Без этих
+# переменных браузер просто ходит напрямую, как раньше.
+PROXY_SERVER = os.environ.get("PROXY_SERVER") or None  # например "socks5://109.237.105.248:8000"
+PROXY_USERNAME = os.environ.get("PROXY_USERNAME") or None
+PROXY_PASSWORD = os.environ.get("PROXY_PASSWORD") or None
+
 
 OUT_PATH = Path(__file__).resolve().parents[1] / "site" / "data" / "cars.json"
 OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -175,6 +182,16 @@ def scrape_list(page, url: str) -> list[dict]:
 def main():
     with sync_playwright() as p:
         browser = p.firefox.launch(headless=True, slow_mo=80)
+
+        proxy = None
+        if PROXY_SERVER:
+            proxy = {"server": PROXY_SERVER}
+            if PROXY_USERNAME:
+                proxy["username"] = PROXY_USERNAME
+            if PROXY_PASSWORD:
+                proxy["password"] = PROXY_PASSWORD
+            print(f"Используем прокси: {PROXY_SERVER}")
+
         context = browser.new_context(
             user_agent=(
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -183,6 +200,7 @@ def main():
             ),
             viewport={"width": 1366, "height": 900},
             locale="ko-KR",
+            proxy=proxy,
         )
         page = context.new_page()
 

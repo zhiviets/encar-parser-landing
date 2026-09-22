@@ -36,6 +36,9 @@ jobs:
           PYTHONIOENCODING: utf-8
           BN_AUTO_URL: ${{ secrets.BN_AUTO_URL }}
           BN_AUTO_IMPORT_TOKEN: ${{ secrets.BN_AUTO_IMPORT_TOKEN }}
+          PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
+          PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
+          PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
         run: |
           python scraper.py
 
