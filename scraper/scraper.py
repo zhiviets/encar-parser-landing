@@ -75,8 +75,20 @@ def scrape_list(page, url: str) -> list[dict]:
     page.goto(url, wait_until="networkidle")
     slow_human_pause(1.2)
 
-  
-    page.wait_for_selector('div[class^="ItemBigImage_item__"]', timeout=15000)
+    try:
+        page.wait_for_selector('div[class^="ItemBigImage_item__"]', timeout=15000)
+    except Exception:
+        # Селектор не появился — сохраняем скриншот и HTML, чтобы понять,
+        # что реально вернул сайт серверу GitHub Actions (блокировка по
+        # региону/IP, капча, изменившаяся вёрстка — по картинке видно сразу,
+        # а из песочницы, где писался этот код, зайти на encar.com нельзя).
+        debug_dir = Path(__file__).resolve().parent / "debug"
+        debug_dir.mkdir(exist_ok=True)
+        page.screenshot(path=str(debug_dir / "list_page.png"), full_page=True)
+        (debug_dir / "list_page.html").write_text(page.content(), encoding="utf-8")
+        print(f"Селектор карточек не найден. Заголовок страницы: {page.title()!r}")
+        print(f"Диагностика сохранена в {debug_dir}")
+        raise
 
     items = page.locator('div[class^="ItemBigImage_item__"]')
     n = min(items.count(), 30)  
