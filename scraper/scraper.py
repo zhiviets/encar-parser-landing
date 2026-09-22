@@ -30,7 +30,14 @@ BN_AUTO_IMPORT_TOKEN = os.environ.get("BN_AUTO_IMPORT_TOKEN", "")
 # Опциональный прокси — GitHub Actions запускается из дата-центра, и Encar
 # может блокировать такие IP («подозрительный трафик» + капча). Без этих
 # переменных браузер просто ходит напрямую, как раньше.
-PROXY_SERVER = os.environ.get("PROXY_SERVER") or None  # например "socks5://109.237.105.248:8000"
+#
+# ВАЖНО: если у прокси есть логин/пароль — используйте схему "http://",
+# не "socks5://". Авторизация в SOCKS5-прокси не поддерживается ни в
+# Chromium, ни в Firefox (ограничение самих браузеров, не Playwright) —
+# падает с "Browser does not support socks5 proxy authentication".
+# Прокси без пароля (IP уже привязан на стороне провайдера) может
+# использовать socks5:// как обычно.
+PROXY_SERVER = os.environ.get("PROXY_SERVER") or None  # например "http://109.237.105.248:8000"
 PROXY_USERNAME = os.environ.get("PROXY_USERNAME") or None
 PROXY_PASSWORD = os.environ.get("PROXY_PASSWORD") or None
 
