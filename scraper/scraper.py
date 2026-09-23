@@ -3,6 +3,7 @@ import base64
 import io
 import json
 import os
+import random
 import re
 import time
 from pathlib import Path
@@ -10,6 +11,7 @@ from playwright.sync_api import sync_playwright
 
 from brand_map import extract_brand_model
 import encar_ru
+import selection
 
 # Чуть меньше лимита bn-auto (900 КБ, см. server/photo.js в bn-auto) —
 # запас на накладные расходы base64.
@@ -18,16 +20,21 @@ MAX_PHOTO_BYTES = 850 * 1024
 
 
 
-START_URL = (
-    "https://car.encar.com/list/car?page=1"
-    "&search=%7B%22type%22%3A%22car%22%2C%22action%22%3A%22(And.Hidden.N._.MultiViewHidden.N.)%22,"
-    "%22toggle%22%3A%7B%7D,%22layer%22%3A%22%22,%22sort%22%3A%22MobileModifiedDate%22%7D"
-)
+def list_url(action: str, page_no: int) -> str:
+    """Страница списка encar с заданным условием поиска (как в адресной строке сайта)."""
+    from urllib.parse import quote
+    search = {"type": "car", "action": action, "toggle": {}, "layer": "", "sort": "MobileModifiedDate"}
+    return f"https://car.encar.com/list/car?page={page_no}&search=" + quote(
+        json.dumps(search, ensure_ascii=False, separators=(",", ":")), safe="(),."
+    )
 
 
-# Раз в неделю можно забирать больше, чем одну страницу — регулируется без
-# правки кода переменной окружения ENCAR_MAX_PAGES (по умолчанию 3 страницы).
-MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES", "3"))
+# Сколько машин собирать — квоты по категориям в selection.QUOTAS (по
+# умолчанию 180 массовых до 160 л.с. + 120 премиум = 300). Страницы
+# листаются, пока квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск.
+MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "15")
+# Массовых собираем с запасом: часть отсеется после уточнения мощности по API
+MASS_OVERSCAN = 1.15
 
 # Куда пушим данные в bn-auto. Без этих переменных скрипт просто
 # сохранит cars.json локально, как раньше — пуш не обязателен.
@@ -57,6 +64,7 @@ UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 )
+ACCEPT_LANGUAGE = "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7"
 ENCAR_VEHICLE_API = "https://api.encar.com/v1/readside/vehicle/{id}"
 ENCAR_VEHICLE_INCLUDE = "ADVERTISEMENT,CATEGORY,CONDITION,CONTACT,MANAGE,OPTIONS,PHOTOS,SPEC,PARTNERSHIP,CENTER,VIEW"
 OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -66,6 +74,15 @@ OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 def slow_human_pause(sec: float = 1.0):
     time.sleep(sec)
+
+
+def human_pause(low: float, high: float):
+    """Случайная пауза: ровный ритм запросов — первый признак бота."""
+    time.sleep(random.uniform(low, high))
+
+
+class Blocked(Exception):
+    """Сайт начал отвечать капчей / 403 / 429 — дальше не долбим."""
 
 def _to_int(s: str) -> int | None:
     if not s:
@@ -125,8 +142,13 @@ def scrape_list(page, url: str) -> list[dict]:
         print(f"Диагностика сохранена в {debug_dir}")
         raise
 
+    # Листаем страницу постепенно, как человек, — заодно догружаются карточки
+    for _ in range(random.randint(4, 7)):
+        page.mouse.wheel(0, random.randint(500, 1100))
+        page.wait_for_timeout(random.randint(350, 900))
+
     items = page.locator('div[class^="ItemBigImage_item__"]')
-    n = min(items.count(), 30)  
+    n = min(items.count(), 100)
 
     cars: list[dict] = []
 
@@ -218,7 +240,12 @@ def main():
         # Firefox не умеет авторизацию (логин/пароль) в SOCKS5-прокси —
         # Playwright падает с "Browser does not support socks5 proxy
         # authentication". Chromium это поддерживает.
-        browser = p.chromium.launch(headless=True, slow_mo=80)
+        browser = p.chromium.launch(
+            headless=True,
+            slow_mo=80,
+            # Без этого флага Chromium сам сообщает сайту, что им управляет программа
+            args=["--disable-blink-features=AutomationControlled"],
+        )
 
         proxy = None
         if PROXY_SERVER:
@@ -233,35 +260,14 @@ def main():
             user_agent=UA,
             viewport={"width": 1366, "height": 900},
             locale="ko-KR",
+            timezone_id="Asia/Seoul",
+            extra_http_headers={"Accept-Language": ACCEPT_LANGUAGE},
             proxy=proxy,
         )
+        context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
         page = context.new_page()
 
-        all_cars: list[dict] = []
-        for page_no in range(1, MAX_PAGES + 1):
-            url = re.sub(r"page=\d+", f"page={page_no}", START_URL)
-            all_cars.extend(scrape_list(page, url))
-            slow_human_pause(1.0)
-
-        
-        cleaned = []
-        for c in all_cars:
-            if c.get("image") and c.get("link"):
-                raw_title = c.get("brand") or ""
-                brand_en, model_guess, _ = extract_brand_model(raw_title)
-                cleaned.append({
-                    "external_id": _external_id(c.get("link")),
-                    "brand": c.get("brand"),
-                    "model": c.get("model"),
-                    "brand_en": brand_en,
-                    "model_guess": model_guess,
-                    "title": raw_title,
-                    "year": c.get("year"),
-                    "mileage_km": c.get("mileage_km"),
-                    "price_krw": c.get("price_krw"),
-                    "image": c.get("image"),
-                    "link": c.get("link"),
-                })
+        cleaned = collect_cars(page)
 
         OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
         with open(OUT_PATH, "w", encoding="utf-8") as f:
@@ -274,8 +280,98 @@ def main():
         browser.close()
 
     session = http_session()
-    enrich_with_details(session, cleaned)
-    push_to_bn_auto(session, cleaned)
+    known = fetch_known_ids()
+    enrich_with_details(session, cleaned, known)
+    push_to_bn_auto(session, final_selection(cleaned, known), known)
+
+
+def _card_to_car(c: dict) -> dict | None:
+    """Карточка списка → машина с категорией, либо None, если не подходит."""
+    if not (c.get("image") and c.get("link")):
+        return None
+    raw_title = c.get("brand") or ""
+    brand_en, model_guess, _ = extract_brand_model(raw_title)
+    bucket = selection.bucket_for(brand_en, c.get("year"), selection.power_class(raw_title), final=False)
+    if not bucket:
+        return None
+    return {
+        "external_id": _external_id(c.get("link")),
+        "bucket": bucket,
+        "brand": c.get("brand"),
+        "model": c.get("model"),
+        "brand_en": brand_en,
+        "model_guess": model_guess,
+        "title": raw_title,
+        "year": c.get("year"),
+        "mileage_km": c.get("mileage_km"),
+        "price_krw": c.get("price_krw"),
+        "image": c.get("image"),
+        "link": c.get("link"),
+    }
+
+
+def collect_cars(page) -> list[dict]:
+    """Листать поиск encar по каждому профилю, пока не наберутся квоты категорий."""
+    cars: list[dict] = []
+    seen = set()
+    count = {"mass": 0, "premium": 0}
+    targets = {"mass": int(selection.QUOTAS["mass"] * MASS_OVERSCAN), "premium": selection.QUOTAS["premium"]}
+
+    def run(action: str, bucket: str, label: str) -> int:
+        added_total = 0
+        for page_no in range(1, MAX_PAGES + 1):
+            if count[bucket] >= targets[bucket]:
+                break
+            try:
+                found = scrape_list(page, list_url(action, page_no))
+            except Exception as error:
+                print(f"[{label}] страница {page_no} не загрузилась ({error})")
+                break
+            if not found:
+                break
+            for card in found:
+                car = _card_to_car(card)
+                if not car or car["external_id"] in seen or count[car["bucket"]] >= targets[car["bucket"]]:
+                    continue
+                seen.add(car["external_id"])
+                count[car["bucket"]] += 1
+                cars.append(car)
+                added_total += 1
+            print(f"[{label}] страница {page_no}: подходит {count['mass']} массовых, {count['premium']} премиум")
+            human_pause(4, 9)
+        return added_total
+
+    for profile in selection.PROFILES:
+        added = run(profile["action"], profile["bucket"], profile["name"])
+        if added == 0 and count[profile["bucket"]] < targets[profile["bucket"]]:
+            print(f"[{profile['name']}] фильтр поиска ничего не дал — берём общий список и фильтруем сами")
+            run(selection.BASE_ACTION, profile["bucket"], f"{profile['name']}, общий список")
+
+    print(f"Собрано: {count['mass']} массовых (до 160 л.с., с запасом), {count['premium']} премиум")
+    return cars
+
+
+def final_selection(cars: list[dict], known: set) -> list[dict]:
+    """Окончательный отбор после API encar: у массовых нужна подтверждённая мощность до 160 л.с."""
+    kept = []
+    dropped = 0
+    for c in cars:
+        d = c.get("detail")
+        if c["bucket"] == "mass" and d:
+            power = selection.power_class(d.get("power_text") or c.get("title"), d.get("displacement"))
+            if selection.bucket_for(d.get("make") or c.get("brand_en"), d.get("year") or c.get("year"), power, final=True) != "mass":
+                dropped += 1
+                continue
+        elif c["bucket"] == "mass" and c["external_id"] not in known:
+            # Деталей нет (не ответил API) — мощность подтвердить нечем
+            if selection.power_class(c.get("title")) != "le160":
+                dropped += 1
+                continue
+        kept.append(c)
+    mass = [c for c in kept if c["bucket"] == "mass"][: selection.QUOTAS["mass"]]
+    premium = [c for c in kept if c["bucket"] == "premium"][: selection.QUOTAS["premium"]]
+    print(f"После уточнения мощности: {len(mass)} массовых, {len(premium)} премиум (отсеяно {dropped})")
+    return mass + premium
 
 
 def http_session():
@@ -284,7 +380,7 @@ def http_session():
     from urllib.parse import quote, urlsplit
 
     s = requests.Session()
-    s.headers.update({"User-Agent": UA})
+    s.headers.update({"User-Agent": UA, "Accept-Language": ACCEPT_LANGUAGE})
     if PROXY_SERVER:
         parts = urlsplit(PROXY_SERVER)
         auth = ""
@@ -342,11 +438,18 @@ def fetch_encar_detail(session, vehicle_id: str):
     for params in ({"include": ENCAR_VEHICLE_INCLUDE}, None):
         try:
             resp = session.get(url, params=params, headers=headers, timeout=20)
-            if resp.status_code == 200:
-                return resp.json()
-            print(f"API encar {vehicle_id}: HTTP {resp.status_code}")
         except Exception as error:
             print(f"API encar {vehicle_id}: {error}")
+            continue
+        if resp.status_code in (403, 429):
+            raise Blocked(f"HTTP {resp.status_code}")
+        if resp.status_code == 200:
+            try:
+                return resp.json()
+            except ValueError:
+                # Вместо JSON пришла HTML-страница — это капча/блокировка
+                raise Blocked("вместо JSON пришла страница (капча?)")
+        print(f"API encar {vehicle_id}: HTTP {resp.status_code}")
     return None
 
 
@@ -393,6 +496,12 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     }
     out["spec"] = {k: v for k, v in ru_spec.items() if v}
 
+    out["displacement"] = _to_int(str(spec.get("displacement") or "")) or None
+    out["power_text"] = " ".join(str(x) for x in (
+        category.get("modelName"), category.get("gradeName"), category.get("gradeDetailName"),
+        category.get("gradeEnglishName"), spec.get("fuelName"),
+    ) if x)
+
     options = detail.get("options")
     if isinstance(options, dict):
         out["options"] = {k: v for k, v in options.items() if isinstance(v, list)}
@@ -405,26 +514,67 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     return out
 
 
-def enrich_with_details(session, cars: list[dict]):
-    """Дополнить каждую машину данными из API encar (характеристики, опции, фото)."""
-    ok = 0
-    saved = 0
-    for i, c in enumerate(cars, start=1):
-        if not c.get("external_id"):
-            continue
-        detail = fetch_encar_detail(session, c["external_id"])
-        if not detail:
-            continue
-        if saved < 3:
-            _save_debug(f"vehicle_{c['external_id']}.json", detail)
-            saved += 1
+def fetch_known_ids() -> set:
+    """Лоты, которые уже есть в bn-auto с фото и характеристиками."""
+    if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
+        return set()
+    import requests
+    try:
+        resp = requests.get(
+            f"{BN_AUTO_URL}/api/live-listings/known",
+            params={"source": "encar"},
+            headers={"Authorization": f"Bearer {BN_AUTO_IMPORT_TOKEN}"},
+            timeout=30,
+        )
+        resp.raise_for_status()
+        ids = set(resp.json().get("ids") or [])
+        print(f"Уже есть в bn-auto с фото и характеристиками: {len(ids)} — у encar их не запрашиваем")
+        return ids
+    except Exception as error:
+        print(f"Список известных лотов не получен ({error}) — запрашиваем всё")
+        return set()
+
+
+def enrich_with_details(session, cars: list[dict], known: set):
+    """Дополнить новые машины данными из API encar (характеристики, опции, фото).
+
+    Бережно к сайту: случайные паузы, длинный перерыв каждые ~25 запросов,
+    а при блокировке (403/429/капча) — пауза и одна попытка, потом стоп:
+    лучше отправить то, что собрано, чем спалить IP прокси.
+    """
+    todo = [c for c in cars if c.get("external_id") and c["external_id"] not in known]
+    print(f"Нужны детали для {len(todo)} новых машин из {len(cars)}")
+    ok = saved = 0
+    next_break = random.randint(20, 30)
+    for i, c in enumerate(todo, start=1):
         try:
-            c["detail"] = parse_encar_detail(detail, c["external_id"])
-            ok += 1
-        except Exception as error:
-            print(f"Не разобраны детали {c['external_id']}: {error}")
-        time.sleep(0.3)
-    print(f"Детали из API encar: {ok} из {len(cars)}")
+            detail = fetch_encar_detail(session, c["external_id"])
+        except Blocked as reason:
+            print(f"encar притормозил нас ({reason}) — пауза 90–150 с и одна попытка")
+            human_pause(90, 150)
+            try:
+                detail = fetch_encar_detail(session, c["external_id"])
+            except Blocked as again:
+                print(f"Снова блок ({again}) — останавливаем запросы к encar, отправляем собранное")
+                c["blocked"] = True
+                for rest in todo[i:]:
+                    rest["blocked"] = True
+                break
+        if detail:
+            if saved < 3:
+                _save_debug(f"vehicle_{c['external_id']}.json", detail)
+                saved += 1
+            try:
+                c["detail"] = parse_encar_detail(detail, c["external_id"])
+                ok += 1
+            except Exception as error:
+                print(f"Не разобраны детали {c['external_id']}: {error}")
+        if i >= next_break:
+            human_pause(25, 45)
+            next_break = i + random.randint(20, 30)
+        else:
+            human_pause(1.5, 4.0)
+    print(f"Детали из API encar: {ok} из {len(todo)}")
 
 
 def _compress_to_data_url(image_bytes: bytes) -> str | None:
@@ -477,7 +627,7 @@ def fetch_photo_data_url(session, image_url: str | None) -> str | None:
         return None
 
 
-def push_to_bn_auto(session, cars: list[dict]):
+def push_to_bn_auto(session, cars: list[dict], known: set):
     """Отправить объявления в bn-auto. Без настроенных переменных — просто пропустить."""
     if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
         print("BN_AUTO_URL / BN_AUTO_IMPORT_TOKEN не заданы — пуш в bn-auto пропущен.")
@@ -489,8 +639,21 @@ def push_to_bn_auto(session, cars: list[dict]):
     for c in cars:
         if not c.get("external_id"):
             continue
+        if c["external_id"] in known:
+            # Уже есть с фото и характеристиками — обновляем только цену,
+            # пробег и отметку «ещё в продаже», сайт лишний раз не трогаем.
+            listings.append({
+                "external_id": c["external_id"],
+                "price_value": c.get("price_krw"),
+                "mileage_km": c.get("mileage_km"),
+                "source_url": c.get("link"),
+            })
+            continue
         d = c.get("detail") or {}
-        photo = fetch_photo_data_url(session, d.get("photo")) or fetch_photo_data_url(session, c.get("image"))
+        photo = None
+        if not c.get("blocked"):
+            photo = fetch_photo_data_url(session, d.get("photo")) or fetch_photo_data_url(session, c.get("image"))
+            human_pause(0.6, 1.8)
         listings.append({
             "external_id": c["external_id"],
             "make": d.get("make") or c.get("brand_en"),

@@ -8,6 +8,8 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    # 300 машин с паузами «как человек» — порядка 30–60 минут
+    timeout-minutes: 150
     permissions:
       contents: write
     steps:
