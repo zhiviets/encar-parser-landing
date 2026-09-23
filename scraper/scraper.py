@@ -11,6 +11,7 @@ from playwright.sync_api import sync_playwright
 
 from brand_map import extract_brand_model
 import encar_ru
+import coverage
 import selection
 
 # Чуть меньше лимита bn-auto (900 КБ, см. server/photo.js в bn-auto) —
@@ -32,7 +33,8 @@ def list_url(action: str, page_no: int) -> str:
 # Сколько машин собирать — квоты в selection.QUOTAS (по расписанию 750 до
 # 160 л.с. + 250 любой мощности = 1000). Страницы листаются, пока квота не
 # наберётся, но не больше ENCAR_MAX_PAGES на поиск (машин до 160 л.с. среди
-# 2020+ меньшинство — страниц нужно много).
+# новых машин меньшинство — страниц нужно много). Это запасной путь, если поиск
+# API encar (coverage.py — все модели) не ответил.
 MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
 
 
@@ -270,11 +272,21 @@ def main():
         session = http_session()
         known = fetch_known()
         pacer = Pacer()
-        le160, other, first_link = collect_cars(page, session, known, pacer)
+        cars = None
+        if os.environ.get("ENCAR_ALL_MODELS", "1") == "1":
+            # Все модели — через поиск API encar; не вышло — общий список на сайте, как раньше
+            try:
+                cars = coverage.collect_all_models(session, known, pacer, parse_encar_detail, power_of, _save_debug)
+            except Exception as error:
+                print(f"Перебор моделей через поиск encar не удался ({error}) — берём общий список")
+        if cars:
+            first_link = cars[0]["link"]
+        else:
+            le160, other, first_link = collect_cars(page, session, known, pacer)
+            cars = le160 + other
         option_codes = capture_network_sample(page, first_link) if first_link else {}
         browser.close()
 
-    cars = le160 + other
     enrich_with_details(session, cars, known, pacer)
     backfill_known(session, cars, known, pacer)
     cars = [c for c in cars if still_ok(c)]

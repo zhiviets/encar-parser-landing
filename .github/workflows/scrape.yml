@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       total:
-        description: "Сколько машин собрать (60 % популярные марки, 40 % премиум)"
+        description: "Сколько машин собрать (все модели с 2017 г., 75 % до 160 л.с.)"
         default: "1000"
 
 jobs:

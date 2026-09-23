@@ -62,19 +62,22 @@ This repo includes a GitHub Actions workflow (`.github/workflows/scrape.yml`):
 
 ### What gets scraped
 
-`scraper/selection.py` decides which cars go to bn-auto: cars from 2020 on, of popular brands
-(Hyundai, Kia, Chevrolet, Renault, KGM, Toyota…) and premium ones (BMW, Mercedes-Benz, Audi,
-Porsche, Lexus, Genesis, Land Rover, Volvo, Tesla…), in two groups:
+`scraper/coverage.py` and `scraper/selection.py` decide which cars go to bn-auto: cars from 2017
+on, of any brand, **every model at least once**. Makes and models come from the facets of the
+encar search API (the same counters the site's "manufacturer → model" filters use); for every
+model the freshest `ENCAR_PER_MODEL` listings are fetched in one request. Then:
 
-- **up to 160 hp** — 75 % of each run (the preferential Russian recycling fee). Encar doesn't
-  expose horsepower, so it's estimated from the engine via the encar API: naturally aspirated
-  petrol/LPG up to 2.0 L, turbo petrol up to 1.4 L, diesel and non-turbo hybrids up to 1.6 L;
-  EVs and larger hybrids go to the "any power" group; cars with no engine size to estimate
-  from are skipped.
-- **any power** — the remaining 25 %.
+1. one car per model — up to 160 hp if the model has one;
+2. more cars round-robin across models until `ENCAR_TOTAL`, with at least 75 % up to 160 hp
+   (the preferential Russian recycling fee). If too many models only exist above 160 hp, more
+   "up to 160" cars are added beyond `ENCAR_TOTAL` — the share wins over the total.
 
-Imports make up 30 % of the first group and 70 % of the second; Korean brands fill the rest.
-Scheduled runs collect 1000 cars (750 up to 160 hp + 250 any power).
+Cars already on the site are preferred within a model, so the catalogue doesn't grow run after
+run. Encar doesn't expose horsepower, so it's estimated from the engine: naturally aspirated
+petrol/LPG up to 2.0 L, turbo petrol up to 1.4 L, diesel and non-turbo hybrids up to 1.6 L.
+EVs and larger hybrids count as "any power"; cars with no engine size to estimate from are
+skipped. If the search API doesn't answer, the scraper falls back to paging through the
+listing on the site.
 
 ### Being gentle with encar (avoiding IP bans)
 
@@ -90,6 +93,8 @@ Scheduled runs collect 1000 cars (750 up to 160 hp + 250 any power).
 - `ENCAR_TOTAL` (default `300`) — cars per run. The workflow runs on Mondays and Thursdays with
   `1000`; a manual run takes the "total" input (default `1000`).
 - `ENCAR_SHARE_160` (default `0.75`) — share of cars up to 160 hp.
-- `ENCAR_MIN_YEAR` (default `2020`) — oldest model year.
+- `ENCAR_PER_MODEL` (default `20`) — listings fetched per model to choose from.
+- `ENCAR_ALL_MODELS=0` — skip the per-model search, page through the listing instead.
+- `ENCAR_MIN_YEAR` (default `2017`) — oldest model year.
 - `ENCAR_MAX_PAGES` (default `80`) — max listing pages per search.
 - `BN_AUTO_URL` / `BN_AUTO_IMPORT_TOKEN` — same as above, for a local test push.

@@ -1,8 +1,9 @@
 """
 Какие машины с encar берём в bn-auto.
 
-Все — с 2020 года выпуска, популярных и премиальных марок. Из них 75% —
-до 160 л.с. (проходные по утильсбору), остальные 25% — любой мощности.
+Все — с 2017 года выпуска, любых марок, по возможности все модели (см.
+coverage.py). Из них 75% — до 160 л.с. (проходные по утильсбору),
+остальные 25% — любой мощности.
 
 Мощность encar в списке не показывает и в поиске не фильтрует, поэтому она
 оценивается по двигателю из названия и точному объёму из API encar:
@@ -15,7 +16,7 @@
 import os
 import re
 
-MIN_YEAR = int(os.environ.get("ENCAR_MIN_YEAR") or "2020")
+MIN_YEAR = int(os.environ.get("ENCAR_MIN_YEAR") or "2017")
 
 MASS_BRANDS = {
     "Hyundai", "Kia", "Chevrolet", "Renault", "KGM",
@@ -42,9 +43,9 @@ IMPORT_SHARE = {"le160": 0.3, "other": 0.7}
 BASE_ACTION = "(And.Hidden.N._.MultiViewHidden.N.)"
 _YEAR = f"Year.range({MIN_YEAR}00..)"
 PROFILES = [
-    {"name": "импорт с 2020 г.", "import": True,
+    {"name": f"импорт с {MIN_YEAR} г.", "import": True,
      "action": f"(And.Hidden.N._.MultiViewHidden.N._.CarType.N._.{_YEAR}.)"},
-    {"name": "корейские марки с 2020 г.", "import": False,
+    {"name": f"корейские марки с {MIN_YEAR} г.", "import": False,
      "action": f"(And.Hidden.N._.MultiViewHidden.N._.CarType.Y._.{_YEAR}.)"},
 ]
 
@@ -95,8 +96,9 @@ def power_class(text: str, displacement: int | None = None) -> str | None:
 
 
 def eligible(brand: str | None, year: int | None) -> bool:
-    """Подходит ли машина по году и марке (мощность — отдельно)."""
-    return bool(year and year >= MIN_YEAR and brand in MASS_BRANDS | PREMIUM_BRANDS)
+    """Подходит ли машина по году (мощность — отдельно). Марка — любая, лишь бы
+    распознана (иначе на сайте вместо марки будет «?»)."""
+    return bool(year and year >= MIN_YEAR and brand)
 
 
 def classify(power: str | None, model: str | None = None, title: str | None = None) -> str | None:
