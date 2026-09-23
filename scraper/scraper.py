@@ -609,6 +609,9 @@ def _translate_generation(category: dict) -> str | None:
     return encar_ru.clean_latin(name)
 
 
+ENCAR_PHOTO_BASE = "https://ci.encar.com/carpicture"
+
+
 def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     """Всё, что удалось достать из API encar; каждое поле необязательно."""
     category = detail.get("category") or {}
@@ -661,12 +664,25 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     if isinstance(options, dict):
         out["options"] = {k: v for k, v in options.items() if isinstance(v, list)}
 
-    photos = detail.get("photos") or []
-    outer = [ph for ph in photos if isinstance(ph, dict) and ph.get("path")]
-    outer.sort(key=lambda ph: (ph.get("type") != "OUTER", str(ph.get("code") or "")))
-    if outer:
-        out["photo"] = "https://ci.encar.com/carpicture" + outer[0]["path"]
+    # Главное фото объявления — файл «_001»: его encar ставит на обложку и в
+    # поиск. Если его нет — первое наружное по порядку.
+    photos = [ph for ph in (detail.get("photos") or []) if isinstance(ph, dict) and ph.get("path")]
+    photos.sort(key=lambda ph: (not str(ph["path"]).endswith("_001.jpg"), ph.get("type") != "OUTER",
+                                str(ph.get("code") or "")))
+    out["photo_paths"] = [ph["path"] for ph in photos]
+    if photos:
+        out["photo"] = ENCAR_PHOTO_BASE + photos[0]["path"]
     return out
+
+
+def main_photo_url(car: dict, d: dict) -> str | None:
+    """То же фото, что encar показывает на карточке в поиске, но в полном размере."""
+    m = re.search(r"(\d+_\d{3})\.jpg", car.get("image") or "")
+    if m:
+        for path in d.get("photo_paths") or []:
+            if path.endswith(m.group(1) + ".jpg"):
+                return ENCAR_PHOTO_BASE + path
+    return d.get("photo")
 
 
 def fetch_known() -> dict:
@@ -714,7 +730,8 @@ def enrich_with_details(session, cars: list[dict], known: dict, pacer: Pacer):
 
 
 def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer):
-    """Машины, сохранённые до появления VIN и привода, дополняем по API — без фото.
+    """Машины, сохранённые до появления VIN и привода, дополняем по API и
+    заменяем фото на главное (раньше бралось первое попавшееся — бывало сзади).
 
     Не больше ENCAR_BACKFILL за прогон, чтобы не нагружать encar: остальные
     дополнятся в следующие прогоны.
@@ -818,8 +835,8 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             # Названия опций по-корейски — bn-auto сопоставит их с русским списком
             opts["names"] = [option_codes[code] for code in opts["standard"] if code in option_codes]
         photo = None
-        if not c.get("blocked") and not c.get("backfill"):
-            photo = fetch_photo_data_url(session, d.get("photo")) or fetch_photo_data_url(session, c.get("image"))
+        if not c.get("blocked"):
+            photo = fetch_photo_data_url(session, main_photo_url(c, d)) or fetch_photo_data_url(session, c.get("image"))
             human_pause(0.6, 1.8)
         listings.append({
             "external_id": c["external_id"],
