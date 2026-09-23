@@ -276,6 +276,7 @@ def main():
 
     cars = mass + premium
     enrich_with_details(session, cars, known, pacer)
+    backfill_known(session, cars, known, pacer)
     cars = [c for c in cars if still_ok(c)]
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -626,8 +627,13 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
         out["mileage_km"] = _to_int(str(spec.get("mileage")))
 
     mileage = out.get("mileage_km")
+    grade_text = " ".join(str(x) for x in (
+        category.get("gradeEnglishName"), category.get("gradeName"),
+        category.get("gradeDetailEnglishName"), category.get("gradeDetailName"),
+    ) if x)
     ru_spec = {
         "Лот": f"№{vehicle_id}",
+        "VIN": encar_ru.vin(detail.get("vin")),
         "Локация продавца": encar_ru.region(contact.get("address")),
         "Выпуск": encar_ru.release(category.get("yearMonth")),
         "Класс": encar_ru.lookup(encar_ru.BODY, spec.get("bodyName")),
@@ -635,6 +641,7 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
         "Модификация": category.get("gradeEnglishName") or encar_ru.clean_latin(category.get("gradeName")),
         "Комплектация": category.get("gradeDetailEnglishName") or encar_ru.clean_latin(category.get("gradeDetailName")),
         "Трансмиссия": encar_ru.lookup(encar_ru.TRANSMISSION, spec.get("transmissionName")),
+        "Привод": encar_ru.drive(grade_text, out["make"], out["model"]),
         # У электромобилей в displacement лежит не объём двигателя
         "Объём, см³": str(spec["displacement"]) if spec.get("displacement") and not electric else None,
         "Пробег": f"{mileage:,}".replace(",", " ") + " км" if mileage else None,
@@ -706,6 +713,33 @@ def enrich_with_details(session, cars: list[dict], known: dict, pacer: Pacer):
     print(f"Детали из API encar: {ok} из {len(todo)}")
 
 
+def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer):
+    """Машины, сохранённые до появления VIN и привода, дополняем по API — без фото.
+
+    Не больше ENCAR_BACKFILL за прогон, чтобы не нагружать encar: остальные
+    дополнятся в следующие прогоны.
+    """
+    limit = int(os.environ.get("ENCAR_BACKFILL") or "150")
+    todo = [c for c in cars if c["external_id"] in known and not known[c["external_id"]].get("has_vin")
+            and not c.get("detail")][:limit]
+    if not todo:
+        return
+    ok = 0
+    for c in todo:
+        if pacer.blocked:
+            break
+        detail = pacer.detail(session, c["external_id"])
+        if not detail:
+            continue
+        try:
+            c["detail"] = parse_encar_detail(detail, c["external_id"])
+            c["backfill"] = True
+            ok += 1
+        except Exception as error:
+            print(f"Не разобраны детали {c['external_id']}: {error}")
+    print(f"Дополнено VIN и приводом у машин с сайта: {ok} из {len(todo)}")
+
+
 def _compress_to_data_url(image_bytes: bytes) -> str | None:
     from PIL import Image
 
@@ -768,7 +802,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
     for c in cars:
         if not c.get("external_id"):
             continue
-        if c["external_id"] in known:
+        if c["external_id"] in known and not c.get("backfill"):
             # Уже есть с фото и характеристиками — обновляем только цену,
             # пробег и отметку «ещё в продаже», сайт лишний раз не трогаем.
             listings.append({
@@ -784,7 +818,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             # Названия опций по-корейски — bn-auto сопоставит их с русским списком
             opts["names"] = [option_codes[code] for code in opts["standard"] if code in option_codes]
         photo = None
-        if not c.get("blocked"):
+        if not c.get("blocked") and not c.get("backfill"):
             photo = fetch_photo_data_url(session, d.get("photo")) or fetch_photo_data_url(session, c.get("image"))
             human_pause(0.6, 1.8)
         listings.append({

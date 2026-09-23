@@ -130,3 +130,35 @@ def release(year_month):
     if not 1 <= month <= 12:
         return ym[:4]
     return f"{MONTHS[month - 1]} {ym[:4]}"
+
+
+# Привод отдельным полем encar не отдаёт — он бывает в названии модификации:
+# «Long Range AWD», «2WD Premier», «xDrive30i», «E 300 4MATIC».
+_DRIVE_FULL = re.compile(r"\b(AWD|4WD|4X4|xDrive\w*|4MATIC\+?|quattro|HTRAC|E-Four|All ?Grip)\b|4륜|사륜", re.I)
+_DRIVE_REAR = re.compile(r"\b(RWD|sDrive\w*)\b|후륜", re.I)
+_DRIVE_FRONT = re.compile(r"\bFWD\b|전륜", re.I)
+_DRIVE_2WD = re.compile(r"\b2WD\b|2륜", re.I)
+# «2WD» у этих машин — задний привод, у остальных — передний
+RWD_MAKES = {"Genesis", "BMW", "Mercedes-Benz", "Porsche", "Tesla", "Jaguar"}
+RWD_MODELS = re.compile(r"stinger|mohave|g70|g80|g90|gv80|rexton", re.I)
+
+
+def drive(text, make=None, model=None):
+    text = text or ""
+    if _DRIVE_FULL.search(text):
+        return "полный"
+    if _DRIVE_REAR.search(text):
+        return "задний"
+    if _DRIVE_FRONT.search(text):
+        return "передний"
+    if _DRIVE_2WD.search(text):
+        return "задний" if make in RWD_MAKES or RWD_MODELS.search(model or "") else "передний"
+    return None
+
+
+_VIN = re.compile(r"^[A-HJ-NPR-Z0-9]{17}$")
+
+
+def vin(value):
+    value = re.sub(r"\s", "", str(value or "")).upper()
+    return value if _VIN.match(value) else None
