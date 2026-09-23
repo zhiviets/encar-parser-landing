@@ -275,13 +275,12 @@ def main():
 
         print(f"Saved {len(cleaned)} cars -> {OUT_PATH}")
 
-        if cleaned:
-            capture_network_sample(page, cleaned[0]["link"])
+        option_codes = capture_network_sample(page, cleaned[0]["link"]) if cleaned else {}
         browser.close()
 
     session = http_session()
     known = fetch_known_ids()
-    enrich_with_details(session, cleaned, known)
+    enrich_with_details(session, cleaned, known, option_codes)
     push_to_bn_auto(session, final_selection(cleaned, known), known)
 
 
@@ -359,7 +358,8 @@ def final_selection(cars: list[dict], known: set) -> list[dict]:
         d = c.get("detail")
         if c["bucket"] == "mass" and d:
             power = selection.power_class(d.get("power_text") or c.get("title"), d.get("displacement"))
-            if selection.bucket_for(d.get("make") or c.get("brand_en"), d.get("year") or c.get("year"), power, final=True) != "mass":
+            if selection.bucket_for(d.get("make") or c.get("brand_en"), d.get("year") or c.get("year"), power,
+                                    final=True, model=d.get("model")) != "mass":
                 dropped += 1
                 continue
         elif c["bucket"] == "mass" and c["external_id"] not in known:
@@ -397,35 +397,93 @@ def _save_debug(name: str, data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def capture_network_sample(page, url: str):
-    """Сохранить все JSON-ответы encar при открытии одной карточки.
+OPTION_MARKERS = ("선루프", "썬루프", "\\uc120\\ub8e8\\ud504", "\\uc36c\\ub8e8\\ud504")
+_OPTION_PATTERNS = [
+    re.compile(r'optionCd["\']?\s*:\s*["\'](\d{3})["\']\s*,\s*["\']?optionName["\']?\s*:\s*["\']([^"\']+)["\']'),
+    re.compile(r'["\']?(?:code|cd)["\']?\s*:\s*["\'](\d{3})["\']\s*,\s*["\']?(?:name|nm|text|label)["\']?\s*:\s*["\']([^"\']+)["\']'),
+    re.compile(r'["\']?(?:name|nm|text|label)["\']?\s*:\s*["\']([^"\']+)["\']\s*,\s*["\']?(?:code|cd)["\']?\s*:\s*["\'](\d{3})["\']'),
+    re.compile(r'["\'](\d{3})["\']\s*:\s*["\']([^"\']*[가-힣][^"\']*)["\']'),
+]
+_UNICODE_ESCAPE = re.compile(r"\\u([0-9a-fA-F]{4})")
 
-    Нужно, чтобы увидеть реальную структуру API (в том числе справочник
-    опций комплектации) — из песочницы, где писался код, encar недоступен.
+
+def extract_option_codes(text: str) -> dict:
+    """Найти в JS/HTML сайта таблицу «код опции → название». Пусто, если не нашлась."""
+    if "\\u" in text:
+        text = _UNICODE_ESCAPE.sub(lambda m: chr(int(m.group(1), 16)), text)
+    best = {}
+    for i, pattern in enumerate(_OPTION_PATTERNS):
+        found = {}
+        for m in pattern.finditer(text):
+            code, name = (m.group(2), m.group(1)) if i == 2 else (m.group(1), m.group(2))
+            if encar_ru.HANGUL.search(name) and len(name) <= 40:
+                found.setdefault(code, name)
+        if len(found) > len(best) and any("루프" in n for n in found.values()):
+            best = found
+    return best if len(best) >= 20 else {}
+
+
+def capture_network_sample(page, url: str) -> dict:
+    """Открыть одну карточку как посетитель и сохранить всё полезное для диагностики.
+
+    Возвращает справочник «код опции → название», если нашёлся в JS/HTML
+    сайта (в API encar опции идут только кодами).
     """
+    DEBUG_DIR.mkdir(exist_ok=True)
     responses = []
     handler = lambda r: responses.append(r)
     page.on("response", handler)
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=45_000)
-        page.wait_for_timeout(8000)
-        page.mouse.wheel(0, 4000)
-        page.wait_for_timeout(3000)
+        page.wait_for_timeout(6000)
+        for _ in range(10):
+            page.mouse.wheel(0, random.randint(700, 1200))
+            page.wait_for_timeout(random.randint(500, 1000))
+        page.wait_for_timeout(2000)
+        (DEBUG_DIR / "detail_page.html").write_text(page.content(), encoding="utf-8")
     except Exception as error:
         print(f"Сетевой лог карточки не собран: {error}")
     finally:
         page.remove_listener("response", handler)
 
     sample = []
+    option_codes = {}
+    n_sources = 0
+    sources = []
     for r in responses:
+        if "encar" not in r.url:
+            continue
+        ctype = r.headers.get("content-type") or ""
         try:
-            if "encar.com" not in r.url or "json" not in (r.headers.get("content-type") or ""):
+            if "json" in ctype:
+                body = r.text()
+                sample.append({"url": r.url, "status": r.status, "body": body[:400_000]})
+            elif "javascript" in ctype or "html" in ctype or "text/plain" in ctype:
+                body = r.text()
+            else:
                 continue
-            sample.append({"url": r.url, "status": r.status, "body": r.text()[:400_000]})
         except Exception:
             continue
+        if any(m in body for m in OPTION_MARKERS):
+            n_sources += 1
+            sources.append(r.url)
+            (DEBUG_DIR / f"options_source_{n_sources}.txt").write_text(r.url + "\n\n" + body[:5_000_000], encoding="utf-8")
+            codes = extract_option_codes(body)
+            if len(codes) > len(option_codes):
+                option_codes = codes
+    try:
+        html = (DEBUG_DIR / "detail_page.html").read_text(encoding="utf-8")
+        codes = extract_option_codes(html)
+        if len(codes) > len(option_codes):
+            option_codes = codes
+    except OSError:
+        pass
+
     _save_debug("network_sample.json", sample)
-    print(f"Сетевой лог карточки: {len(sample)} JSON-ответов -> {DEBUG_DIR / 'network_sample.json'}")
+    _save_debug("option_codes.json", {"sources": sources, "codes": option_codes})
+    print(f"Сетевой лог карточки: {len(sample)} JSON-ответов, источников с опциями: {n_sources}, "
+          f"справочник опций: {len(option_codes)} кодов")
+    return option_codes
 
 
 def fetch_encar_detail(session, vehicle_id: str):
@@ -458,7 +516,7 @@ def _translate_generation(category: dict) -> str | None:
     group_ko = category.get("modelGroupName")
     group_en = category.get("modelGroupEnglishName")
     if group_ko and group_en:
-        name = name.replace(group_ko, group_en)
+        name = name.replace(group_ko, encar_ru.model_name(group_en))
     return encar_ru.clean_latin(name)
 
 
@@ -469,8 +527,9 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     contact = detail.get("contact") or {}
 
     out = {}
-    out["make"] = category.get("manufacturerEnglishName") or None
-    out["model"] = category.get("modelGroupEnglishName") or None
+    out["make"] = encar_ru.make_name(category.get("manufacturerEnglishName"))
+    out["model"] = encar_ru.model_name(category.get("modelGroupEnglishName"))
+    electric = spec.get("fuelName") == "전기"
 
     ym = re.sub(r"\D", "", str(category.get("yearMonth") or ""))
     if len(ym) >= 4:
@@ -488,7 +547,8 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
         "Модификация": category.get("gradeEnglishName") or encar_ru.clean_latin(category.get("gradeName")),
         "Комплектация": category.get("gradeDetailEnglishName") or encar_ru.clean_latin(category.get("gradeDetailName")),
         "Трансмиссия": encar_ru.lookup(encar_ru.TRANSMISSION, spec.get("transmissionName")),
-        "Объём, см³": str(spec["displacement"]) if spec.get("displacement") else None,
+        # У электромобилей в displacement лежит не объём двигателя
+        "Объём, см³": str(spec["displacement"]) if spec.get("displacement") and not electric else None,
         "Пробег": f"{mileage:,}".replace(",", " ") + " км" if mileage else None,
         "Топливо": encar_ru.lookup(encar_ru.FUEL, spec.get("fuelName")),
         "Цвет": encar_ru.lookup(encar_ru.COLOR, spec.get("colorName")),
@@ -496,7 +556,7 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     }
     out["spec"] = {k: v for k, v in ru_spec.items() if v}
 
-    out["displacement"] = _to_int(str(spec.get("displacement") or "")) or None
+    out["displacement"] = None if electric else (_to_int(str(spec.get("displacement") or "")) or None)
     out["power_text"] = " ".join(str(x) for x in (
         category.get("modelName"), category.get("gradeName"), category.get("gradeDetailName"),
         category.get("gradeEnglishName"), spec.get("fuelName"),
@@ -535,7 +595,7 @@ def fetch_known_ids() -> set:
         return set()
 
 
-def enrich_with_details(session, cars: list[dict], known: set):
+def enrich_with_details(session, cars: list[dict], known: set, option_codes: dict | None = None):
     """Дополнить новые машины данными из API encar (характеристики, опции, фото).
 
     Бережно к сайту: случайные паузы, длинный перерыв каждые ~25 запросов,
@@ -566,6 +626,10 @@ def enrich_with_details(session, cars: list[dict], known: set):
                 saved += 1
             try:
                 c["detail"] = parse_encar_detail(detail, c["external_id"])
+                opts = c["detail"].get("options")
+                if option_codes and opts and isinstance(opts.get("standard"), list):
+                    # Названия опций по-корейски — bn-auto сопоставит их с русским списком
+                    opts["names"] = [option_codes[code] for code in opts["standard"] if code in option_codes]
                 ok += 1
             except Exception as error:
                 print(f"Не разобраны детали {c['external_id']}: {error}")

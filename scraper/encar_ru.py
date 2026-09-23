@@ -49,7 +49,8 @@ REGION = {
 
 # Частые слова в названиях поколений и комплектаций
 WORDS = [
-    ("디 올 뉴", "The All New"), ("올 뉴", "All New"), ("더 뉴", "The New"), ("신형", "New"), ("뉴", "New"),
+    ("디 올 뉴", "The All New"), ("올 뉴", "All New"), ("더 뉴", "The New"), ("더 넥스트", "The Next"),
+    ("디 올뉴", "The All New"), ("올뉴", "All New"), ("더뉴", "The New"), ("신형", "New"), ("뉴", "New"),
     ("인스퍼레이션", "Inspiration"), ("익스클루시브", "Exclusive"), ("프리미엄", "Premium"),
     ("프레스티지", "Prestige"), ("노블레스", "Noblesse"), ("시그니처", "Signature"), ("캘리그래피", "Calligraphy"),
     ("럭셔리", "Luxury"), ("모던", "Modern"), ("스마트", "Smart"), ("트렌디", "Trendy"), ("스페셜", "Special"),
@@ -59,6 +60,34 @@ WORDS = [
     ("롱레인지", "Long Range"), ("스탠다드레인지", "Standard Range"), ("인승", " seats"),
 ]
 
+# Как encar пишет марку по-английски → как её называем мы (и selection.py)
+MAKE = {
+    "ChevroletGMDaewoo": "Chevrolet", "GMDaewoo": "Chevrolet", "Chevrolet": "Chevrolet",
+    "RenaultKorea": "Renault", "RenaultSamsung": "Renault", "RenaultKoreaSamsung": "Renault", "Renault": "Renault",
+    "KGMobility": "KGM", "KGMobilitySsangyong": "KGM", "SsangYong": "KGM", "Ssangyong": "KGM",
+    "Benz": "Mercedes-Benz", "MercedesBenz": "Mercedes-Benz", "Mercedes": "Mercedes-Benz",
+    "LandRover": "Land Rover", "Mini": "MINI", "RollsRoyce": "Rolls-Royce", "AstonMartin": "Aston Martin",
+}
+
+# Опечатки и слитные названия в modelGroupEnglishName у encar
+MODEL_FIX = {"Canival": "Carnival"}
+
+
+def make_name(value):
+    if not value:
+        return None
+    value = str(value).strip()
+    return MAKE.get(value, MAKE.get(value.replace(" ", ""), value))
+
+
+def model_name(value):
+    if not value:
+        return None
+    value = MODEL_FIX.get(str(value).strip(), str(value).strip())
+    # "Ioniq6" → "Ioniq 6", но "K5", "GV70", "X3" не трогаем
+    return re.sub(r"^([A-Za-z]{4,})(\d)$", r"\1 \2", value)
+
+
 MONTHS = ["янв", "февр", "март", "апр", "май", "июнь", "июль", "авг", "сент", "окт", "нояб", "дек"]
 
 
@@ -66,7 +95,7 @@ def clean_latin(text):
     """Перевести частые слова и выбросить то, что осталось по-корейски."""
     if not text:
         return None
-    text = str(text)
+    text = re.sub(r"(\d+)\s*세대", r"\1th Gen", str(text))
     for ko, en in WORDS:
         text = text.replace(ko, en)
     words = [w for w in text.split() if not HANGUL.search(w)]

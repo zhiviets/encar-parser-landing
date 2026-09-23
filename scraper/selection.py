@@ -45,6 +45,15 @@ PROFILES = [
      "action": f"(And.Hidden.N._.MultiViewHidden.N._.CarType.N._.{_YEAR}.)"},
 ]
 
+# Модели массовых марок, где распространённые версии мощнее 160 л.с., а слова
+# «турбо» в названии на encar часто нет (Equinox 1.5T — 170 л.с., Tivoli
+# 1.5T — 163 л.с.). Сверяется по английскому названию модели из API encar.
+GT160_MODELS = {
+    "Carnival", "Palisade", "Staria", "Sorento", "Santa Fe", "Santafe", "Grandeur", "K8", "K9",
+    "Mohave", "Stinger", "Rexton", "Torres", "Tivoli", "Korando", "Actyon",
+    "Equinox", "Traverse", "Tahoe", "Colorado", "Camaro", "Impala",
+}
+
 _TURBO = re.compile(r"터보|T-?GDi|\d\.\dT\b|TSI|TFSI|turbo", re.I)
 _DIESEL = re.compile(r"디젤|diesel|CRDi|VGT|dCi", re.I)
 _HYBRID = re.compile(r"하이브리드|hybrid|HEV", re.I)
@@ -73,7 +82,8 @@ def power_class(text: str, displacement: int | None = None) -> str | None:
     return "le160" if cc <= 2000 else "gt160"
 
 
-def bucket_for(brand: str | None, year: int | None, power: str | None, final: bool) -> str | None:
+def bucket_for(brand: str | None, year: int | None, power: str | None, final: bool,
+               model: str | None = None) -> str | None:
     """Категория машины или None, если не берём.
 
     final=False — предварительная проверка по карточке списка: машину с
@@ -85,6 +95,8 @@ def bucket_for(brand: str | None, year: int | None, power: str | None, final: bo
     if brand in PREMIUM_BRANDS:
         return "premium"
     if brand in MASS_BRANDS:
+        if model and model in GT160_MODELS:
+            return None
         if power == "le160" or (power is None and not final):
             return "mass"
     return None
