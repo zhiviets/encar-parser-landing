@@ -30,10 +30,10 @@ def list_url(action: str, page_no: int) -> str:
 
 
 # Сколько машин собирать — квоты по категориям в selection.QUOTAS (по
-# умолчанию 180 массовых + 120 премиум = 300). Страницы листаются, пока
+# расписанию 600 массовых + 400 премиум = 1000). Страницы листаются, пока
 # квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск (с ENCAR_LIMIT_160=1
 # машин до 160 л.с. среди корейских 2020+ меньшинство — страниц нужно много).
-MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "40")
+MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
 
 
 # Куда пушим данные в bn-auto. Без этих переменных скрипт просто
@@ -804,10 +804,14 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
         print("Нет объявлений с external_id — нечего пушить в bn-auto.")
         return
 
-    # С фото внутри пачка из сотни машин весит десятки МБ — шлём по 10.
-    batch_size = 10
-    for start in range(0, len(listings), batch_size):
-        batch = listings[start:start + batch_size]
+    # С фото внутри пачка из сотни машин весит десятки МБ — такие шлём по 10.
+    # Уже известные машины (только цена и пробег) — по 200 за раз.
+    light = [x for x in listings if "make" not in x]
+    full = [x for x in listings if "make" in x]
+    batches = [light[i:i + 200] for i in range(0, len(light), 200)]
+    batches += [full[i:i + 10] for i in range(0, len(full), 10)]
+    start = 0
+    for batch in batches:
         resp = requests.post(
             f"{BN_AUTO_URL}/api/live-listings/import",
             json={"source": "encar", "listings": batch},
@@ -822,6 +826,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             print(f"Пуш в bn-auto не удался: HTTP {resp.status_code} {data}")
             resp.raise_for_status()
         print(f"Пуш в bn-auto [{start + 1}–{start + len(batch)}]: {data.get('stats')}, пропущено {data.get('skipped', 0)}")
+        start += len(batch)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,8 @@ name: Weekly ENCAR scrape
 
 on:
   schedule:
-    - cron: "0 3 * * 1"
+    # Понедельник и четверг, 03:00 UTC (13:00 по Владивостоку)
+    - cron: "0 3 * * 1,4"
   workflow_dispatch:
     inputs:
       total:
@@ -12,8 +13,9 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # 300 машин с паузами «как человек» — порядка 30–60 минут
-    timeout-minutes: 150
+    # 1000 машин с паузами «как человек»: первый прогон 2–3 часа, дальше
+    # быстрее — машины, которые уже есть на сайте, у encar не запрашиваются
+    timeout-minutes: 330
     permissions:
       contents: write
     steps:
@@ -45,8 +47,8 @@ jobs:
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
-          # Пока отлаживаем — 30 машин и в ручном, и в еженедельном запуске; потом поднять до 300
-          ENCAR_TOTAL: ${{ inputs.total || '30' }}
+          # По расписанию — 1000 машин; при ручном запуске — число из поля (по умолчанию 30, для проверки)
+          ENCAR_TOTAL: ${{ inputs.total || '1000' }}
         run: |
           python scraper.py
 

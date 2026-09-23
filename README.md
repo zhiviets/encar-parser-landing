@@ -72,7 +72,7 @@ This repo includes a GitHub Actions workflow (`.github/workflows/scrape.yml`):
 - **premium** — BMW, Mercedes-Benz, Audi, Porsche, Lexus, Genesis, Land Rover, Volvo, Tesla…,
   any power.
 
-Default quotas are 180 mass + 120 premium = 300 per run.
+Scheduled runs collect 1000 cars (600 mass + 400 premium).
 
 ### Being gentle with encar (avoiding IP bans)
 
@@ -86,8 +86,8 @@ Default quotas are 180 mass + 120 premium = 300 per run.
 ### Local tuning
 
 - `ENCAR_TOTAL` (default `300`) — cars per run, split 60 % mass / 40 % premium. The workflow
-  sets it from the "total" input of a manual run (currently `30` by default while debugging).
+  runs on Mondays and Thursdays with `1000`; a manual run takes the "total" input (default `30`).
 - `ENCAR_QUOTA_MASS` / `ENCAR_QUOTA_PREMIUM` — override the per-group numbers explicitly.
 - `ENCAR_MIN_YEAR` (default `2020`) — oldest model year.
-- `ENCAR_MAX_PAGES` (default `15`) — max listing pages per search.
+- `ENCAR_MAX_PAGES` (default `80`) — max listing pages per search.
 - `BN_AUTO_URL` / `BN_AUTO_IMPORT_TOKEN` — same as above, for a local test push.
