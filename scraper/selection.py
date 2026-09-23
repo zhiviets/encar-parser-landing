@@ -29,10 +29,12 @@ PREMIUM_BRANDS = {
     "Land Rover", "Volvo", "Tesla", "Jaguar", "Cadillac", "Lincoln", "Maserati", "Bentley",
 }
 
-# Сколько машин каждой категории собирать за прогон (всего по умолчанию 300)
+# Сколько машин каждой категории собирать за прогон (всего по умолчанию 300).
+# ENCAR_TOTAL делит общее число 60/40; ENCAR_QUOTA_* задают категории явно.
+_TOTAL = int(os.environ.get("ENCAR_TOTAL") or "300")
 QUOTAS = {
-    "mass": int(os.environ.get("ENCAR_QUOTA_MASS") or "180"),
-    "premium": int(os.environ.get("ENCAR_QUOTA_PREMIUM") or "120"),
+    "mass": int(os.environ.get("ENCAR_QUOTA_MASS") or round(_TOTAL * 0.6)),
+    "premium": int(os.environ.get("ENCAR_QUOTA_PREMIUM") or _TOTAL - round(_TOTAL * 0.6)),
 }
 
 # Поиск encar: базовые условия списка + год выпуска от MIN_YEAR.

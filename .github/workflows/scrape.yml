@@ -3,7 +3,11 @@ name: Weekly ENCAR scrape
 on:
   schedule:
     - cron: "0 3 * * 1"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      total:
+        description: "Сколько машин собрать (60 % популярные марки, 40 % премиум)"
+        default: "30"
 
 jobs:
   scrape:
@@ -41,6 +45,8 @@ jobs:
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
+          # Пока отлаживаем — 30 машин и в ручном, и в еженедельном запуске; потом поднять до 300
+          ENCAR_TOTAL: ${{ inputs.total || '30' }}
         run: |
           python scraper.py
 

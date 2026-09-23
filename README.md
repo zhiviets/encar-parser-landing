@@ -85,7 +85,9 @@ Default quotas are 180 mass + 120 premium = 300 per run.
 
 ### Local tuning
 
-- `ENCAR_QUOTA_MASS` / `ENCAR_QUOTA_PREMIUM` (default `180` / `120`) — cars per group per run.
+- `ENCAR_TOTAL` (default `300`) — cars per run, split 60 % mass / 40 % premium. The workflow
+  sets it from the "total" input of a manual run (currently `30` by default while debugging).
+- `ENCAR_QUOTA_MASS` / `ENCAR_QUOTA_PREMIUM` — override the per-group numbers explicitly.
 - `ENCAR_MIN_YEAR` (default `2020`) — oldest model year.
 - `ENCAR_MAX_PAGES` (default `15`) — max listing pages per search.
 - `BN_AUTO_URL` / `BN_AUTO_IMPORT_TOKEN` — same as above, for a local test push.
