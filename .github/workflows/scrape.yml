@@ -8,7 +8,7 @@ on:
     inputs:
       total:
         description: "Сколько машин собрать (60 % популярные марки, 40 % премиум)"
-        default: "30"
+        default: "1000"
 
 jobs:
   scrape:
@@ -47,7 +47,7 @@ jobs:
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
-          # По расписанию — 1000 машин; при ручном запуске — число из поля (по умолчанию 30, для проверки)
+          # 1000 машин: по расписанию и по умолчанию при ручном запуске (в поле можно указать меньше)
           ENCAR_TOTAL: ${{ inputs.total || '1000' }}
         run: |
           python scraper.py

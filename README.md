@@ -86,7 +86,7 @@ Scheduled runs collect 1000 cars (600 mass + 400 premium).
 ### Local tuning
 
 - `ENCAR_TOTAL` (default `300`) — cars per run, split 60 % mass / 40 % premium. The workflow
-  runs on Mondays and Thursdays with `1000`; a manual run takes the "total" input (default `30`).
+  runs on Mondays and Thursdays with `1000`; a manual run takes the "total" input (default `1000`).
 - `ENCAR_QUOTA_MASS` / `ENCAR_QUOTA_PREMIUM` — override the per-group numbers explicitly.
 - `ENCAR_MIN_YEAR` (default `2020`) — oldest model year.
 - `ENCAR_MAX_PAGES` (default `80`) — max listing pages per search.
