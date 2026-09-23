@@ -29,10 +29,10 @@ def list_url(action: str, page_no: int) -> str:
     )
 
 
-# Сколько машин собирать — квоты по категориям в selection.QUOTAS (по
-# расписанию 600 массовых + 400 премиум = 1000). Страницы листаются, пока
-# квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск (с ENCAR_LIMIT_160=1
-# машин до 160 л.с. среди корейских 2020+ меньшинство — страниц нужно много).
+# Сколько машин собирать — квоты в selection.QUOTAS (по расписанию 750 до
+# 160 л.с. + 250 любой мощности = 1000). Страницы листаются, пока квота не
+# наберётся, но не больше ENCAR_MAX_PAGES на поиск (машин до 160 л.с. среди
+# 2020+ меньшинство — страниц нужно много).
 MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
 
 
@@ -270,11 +270,11 @@ def main():
         session = http_session()
         known = fetch_known()
         pacer = Pacer()
-        mass, premium, first_link = collect_cars(page, session, known, pacer)
+        le160, other, first_link = collect_cars(page, session, known, pacer)
         option_codes = capture_network_sample(page, first_link) if first_link else {}
         browser.close()
 
-    cars = mass + premium
+    cars = le160 + other
     enrich_with_details(session, cars, known, pacer)
     backfill_known(session, cars, known, pacer)
     cars = [c for c in cars if still_ok(c)]
@@ -340,13 +340,12 @@ def _card_to_car(c: dict) -> dict | None:
         return None
     raw_title = c.get("brand") or ""
     brand_en, model_guess, _ = extract_brand_model(raw_title)
-    bucket = selection.bucket_for(brand_en, c.get("year"), selection.power_class(raw_title), final=False,
-                                  title=raw_title)
-    if not bucket:
+    if not selection.eligible(brand_en, c.get("year")):
         return None
     return {
         "external_id": _external_id(c.get("link")),
-        "bucket": bucket,
+        # Оценка мощности по названию: «gt160» — сразу ясно, что мощнее
+        "power": selection.power_class(raw_title),
         "brand": c.get("brand"),
         "model": c.get("model"),
         "brand_en": brand_en,
@@ -387,70 +386,70 @@ def iter_candidates(page, profile: dict, seen: set):
             human_pause(4, 9)
 
 
-def verify_mass(make, model, year, text, cc) -> bool:
+def verify_le160(model, text, cc) -> bool:
     try:
         cc = int(float(cc)) if cc else None
     except (TypeError, ValueError):
         cc = None
-    power = selection.power_class(text, cc)
-    return selection.bucket_for(make, year, power, final=True, model=model) == "mass"
+    return selection.is_le160(selection.power_class(text, cc), model=model, title=text)
 
 
 def collect_cars(page, session, known: dict, pacer: Pacer):
-    """Набрать квоты по списку поиска.
+    """Набрать квоты по списку поиска: 75% до 160 л.с., остальное — любой мощности.
 
-    С ENCAR_LIMIT_160=1 массовую машину проверяем по API, как только она встретилась в списке, и
-    листаем дальше, пока не наберётся квота подтверждённых «до 160 л.с.».
-    Уже известные bn-auto машины проверяем по их сохранённым данным —
-    у encar ничего не запрашиваем.
+    Мощность машины, которая может оказаться «до 160», проверяем по API
+    encar, как только она встретилась в списке (эти данные потом идут в
+    объявление — второй раз не запрашиваем). Уже известные bn-auto машины
+    проверяем по их сохранённым данным — у encar ничего не запрашиваем.
+    Из импорта берём только долю selection.IMPORT_SHARE каждой группы.
     """
     seen = set()
-    mass, premium = [], []
+    picked = {"le160": [], "other": []}
     quota = selection.QUOTAS
     checked = dropped = 0
     first_link = None
 
-    def need(bucket):
-        return len(mass) < quota["mass"] if bucket == "mass" else len(premium) < quota["premium"]
-
     for profile in selection.PROFILES:
-        if not need(profile["bucket"]):
+        cap = {b: round(quota[b] * selection.IMPORT_SHARE[b]) if profile["import"] else quota[b] for b in quota}
+        taken = {b: 0 for b in quota}
+
+        def need(bucket):
+            return len(picked[bucket]) < quota[bucket] and taken[bucket] < cap[bucket]
+
+        if not (need("le160") or need("other")):
             continue
         for car in iter_candidates(page, profile, seen):
             first_link = first_link or car["link"]
-            if car["bucket"] == "premium":
-                if need("premium"):
-                    premium.append(car)
-            elif need("mass") and not selection.LIMIT_160:
-                mass.append(car)
-            elif need("mass"):
+            bucket = "other"
+            if car["power"] != "gt160" and need("le160"):
+                ok = None
                 info = known.get(car["external_id"])
                 if info:
-                    if verify_mass(info.get("make") or car["brand_en"], info.get("model"), car.get("year"),
-                                   f"{info.get('text') or ''} {car['title']}", info.get("cc")):
-                        mass.append(car)
+                    ok = verify_le160(info.get("model"), f"{info.get('text') or ''} {car['title']}", info.get("cc"))
                 elif not pacer.blocked:
                     detail = pacer.detail(session, car["external_id"])
                     if detail:
                         checked += 1
                         d = parse_encar_detail(detail, car["external_id"])
-                        if verify_mass(d.get("make") or car["brand_en"], d.get("model"),
-                                       d.get("year") or car.get("year"), d.get("power_text") or car["title"],
-                                       d.get("displacement")):
-                            car["detail"] = d
-                            mass.append(car)
-                        else:
-                            dropped += 1
-            if not need(profile["bucket"]) or (profile["bucket"] == "mass" and pacer.blocked):
+                        car["detail"] = d
+                        ok = verify_le160(d.get("model"), f"{d.get('power_text') or ''} {car['title']}",
+                                          d.get("displacement"))
+                        dropped += not ok
+                if ok:
+                    bucket = "le160"
+                elif ok is None:
+                    bucket = None   # проверить нечем (encar притормозил) — не берём
+            if bucket and need(bucket):
+                car["bucket"] = bucket
+                picked[bucket].append(car)
+                taken[bucket] += 1
+            if not (need("le160") or need("other")) or (pacer.blocked and not need("other")):
                 break
-        print(f"[{profile['name']}] итого: {len(mass)} массовых, {len(premium)} премиум")
+        print(f"[{profile['name']}] итого: {len(picked['le160'])} до 160 л.с., {len(picked['other'])} любой мощности")
 
-    if selection.LIMIT_160:
-        print(f"Собрано: {len(mass)} массовых до 160 л.с. (проверено по API {checked}, отсеяно по мощности {dropped}), "
-              f"{len(premium)} премиум")
-    else:
-        print(f"Собрано: {len(mass)} массовых, {len(premium)} премиум (мощность не ограничиваем)")
-    return mass, premium, first_link
+    print(f"Собрано: {len(picked['le160'])} до 160 л.с. (проверено по API {checked}, мощнее {dropped}), "
+          f"{len(picked['other'])} любой мощности")
+    return picked["le160"], picked["other"], first_link
 
 
 def still_ok(car: dict) -> bool:
@@ -458,9 +457,7 @@ def still_ok(car: dict) -> bool:
     d = car.get("detail")
     if not d:
         return True
-    year = d.get("year") or car.get("year")
-    power = "le160" if car["bucket"] == "mass" else None
-    return selection.bucket_for(d.get("make") or car.get("brand_en"), year, power, final=True) == car["bucket"]
+    return selection.eligible(d.get("make") or car.get("brand_en"), d.get("year") or car.get("year"))
 
 
 def http_session():

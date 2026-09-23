@@ -1,24 +1,20 @@
 """
 Какие машины с encar берём в bn-auto.
 
-Две категории, обе — с 2020 года выпуска и любой мощности:
-  * «массовые» — популярные марки (Hyundai, Kia, Toyota…);
-  * «премиум» — BMW, Mercedes, Audi и т.п.
+Все — с 2020 года выпуска, популярных и премиальных марок. Из них 75% —
+до 160 л.с. (проходные по утильсбору), остальные 25% — любой мощности.
 
-Ограничение «массовые только до 160 л.с.» можно включить переменной
-ENCAR_LIMIT_160=1. Мощность encar в списке не показывает и в поиске не
-фильтрует, поэтому тогда она оценивается по двигателю из названия и точному
-объёму из API encar: атмосферный бензин/газ до 2.0 л, турбобензин до 1.4 л,
-дизель и гибрид без турбины до 1.6 л — это до 160 л.с. Электромобили при
-этом не берём. Правила — оценка, а не паспорт машины.
+Мощность encar в списке не показывает и в поиске не фильтрует, поэтому она
+оценивается по двигателю из названия и точному объёму из API encar:
+атмосферный бензин/газ до 2.0 л, турбобензин до 1.4 л, дизель и гибрид без
+турбины до 1.6 л — это до 160 л.с. Электромобили в группу «до 160» не идут.
+Правила — оценка, а не паспорт машины.
 """
 
 import os
 import re
 
 MIN_YEAR = int(os.environ.get("ENCAR_MIN_YEAR") or "2020")
-# Массовые марки только до 160 л.с. — по умолчанию выключено: берём любую мощность
-LIMIT_160 = os.environ.get("ENCAR_LIMIT_160") == "1"
 
 MASS_BRANDS = {
     "Hyundai", "Kia", "Chevrolet", "Renault", "KGM",
@@ -29,13 +25,14 @@ PREMIUM_BRANDS = {
     "Land Rover", "Volvo", "Tesla", "Jaguar", "Cadillac", "Lincoln", "Maserati", "Bentley",
 }
 
-# Сколько машин каждой категории собирать за прогон (всего по умолчанию 300).
-# ENCAR_TOTAL делит общее число 60/40; ENCAR_QUOTA_* задают категории явно.
+# Сколько машин собирать за прогон (по умолчанию 300): доля ENCAR_SHARE_160
+# (0.75) — до 160 л.с., остальное — любой мощности.
 _TOTAL = int(os.environ.get("ENCAR_TOTAL") or "300")
-QUOTAS = {
-    "mass": int(os.environ.get("ENCAR_QUOTA_MASS") or round(_TOTAL * 0.6)),
-    "premium": int(os.environ.get("ENCAR_QUOTA_PREMIUM") or _TOTAL - round(_TOTAL * 0.6)),
-}
+_LE160 = round(_TOTAL * float(os.environ.get("ENCAR_SHARE_160") or "0.75"))
+QUOTAS = {"le160": _LE160, "other": _TOTAL - _LE160}
+# Какую часть каждой группы берём из импорта (остальное добирают корейские
+# марки): импорт до 160 л.с. встречается реже, поэтому его доля там меньше.
+IMPORT_SHARE = {"le160": 0.3, "other": 0.7}
 
 # Поиск encar: базовые условия списка + год выпуска от MIN_YEAR.
 # CarType.Y — корейские марки, CarType.N — импорт. Если такой фильтр вернёт
@@ -44,13 +41,13 @@ QUOTAS = {
 BASE_ACTION = "(And.Hidden.N._.MultiViewHidden.N.)"
 _YEAR = f"Year.range({MIN_YEAR}00..)"
 PROFILES = [
-    {"name": "корейские марки с 2020 г.", "bucket": "mass",
-     "action": f"(And.Hidden.N._.MultiViewHidden.N._.CarType.Y._.{_YEAR}.)"},
-    {"name": "импорт с 2020 г.", "bucket": "premium",
+    {"name": "импорт с 2020 г.", "import": True,
      "action": f"(And.Hidden.N._.MultiViewHidden.N._.CarType.N._.{_YEAR}.)"},
+    {"name": "корейские марки с 2020 г.", "import": False,
+     "action": f"(And.Hidden.N._.MultiViewHidden.N._.CarType.Y._.{_YEAR}.)"},
 ]
 
-# Модели массовых марок, где распространённые версии мощнее 160 л.с., а слова
+# Модели, где распространённые версии мощнее 160 л.с., а слова
 # «турбо» в названии на encar часто нет (Equinox 1.5T — 170 л.с., Tivoli
 # 1.5T — 163 л.с.). Сверяется по английскому названию модели из API encar.
 GT160_MODELS = {
@@ -65,7 +62,7 @@ _DIESEL = re.compile(r"디젤|diesel|CRDi|VGT|dCi|дизель", re.I)
 _HYBRID = re.compile(r"하이브리드|hybrid|HEV|\+\s*전기|гибрид", re.I)
 _ELECTRIC = re.compile(r"전기|일렉트릭|\bEV\d*\b|electric|электро", re.I)
 
-# Модели массовых марок, которые не проверяем даже по API: почти все версии
+# Модели, которые не считаем «до 160» даже по API: почти все версии
 # мощнее 160 л.с. или электромобили (по корейскому названию в списке encar)
 _KO_EXCLUDE = re.compile(
     r"카니발|팰리세이드|스타리아|쏘렌토|싼타페|그랜저|모하비|스팅어|렉스턴|토레스|티볼리|코란도|액티언|"
@@ -95,25 +92,15 @@ def power_class(text: str, displacement: int | None = None) -> str | None:
     return "le160" if cc <= 2000 else "gt160"
 
 
-def bucket_for(brand: str | None, year: int | None, power: str | None, final: bool,
-               model: str | None = None, title: str | None = None) -> str | None:
-    """Категория машины или None, если не берём.
+def eligible(brand: str | None, year: int | None) -> bool:
+    """Подходит ли машина по году и марке (мощность — отдельно)."""
+    return bool(year and year >= MIN_YEAR and brand in MASS_BRANDS | PREMIUM_BRANDS)
 
-    final=False — предварительная проверка по карточке списка: машину с
-    неизвестной мощностью оставляем до уточнения по API. final=True —
-    окончательная: массовой машине нужна подтверждённая оценка «до 160».
-    """
-    if not year or year < MIN_YEAR:
-        return None
-    if brand in PREMIUM_BRANDS:
-        return "premium"
-    if brand in MASS_BRANDS:
-        if not LIMIT_160:
-            return "mass"
-        if model and model in GT160_MODELS:
-            return None
-        if title and _KO_EXCLUDE.search(title):
-            return None
-        if power == "le160" or (power is None and not final):
-            return "mass"
-    return None
+
+def is_le160(power: str | None, model: str | None = None, title: str | None = None) -> bool:
+    """Подтверждённая оценка «до 160 л.с.» (модели, где обычно мощнее, — нет)."""
+    if model and model in GT160_MODELS:
+        return False
+    if title and _KO_EXCLUDE.search(title):
+        return False
+    return power == "le160"

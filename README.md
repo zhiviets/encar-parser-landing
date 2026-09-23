@@ -62,17 +62,18 @@ This repo includes a GitHub Actions workflow (`.github/workflows/scrape.yml`):
 
 ### What gets scraped
 
-`scraper/selection.py` decides which cars go to bn-auto — cars from 2020 on, in two groups:
+`scraper/selection.py` decides which cars go to bn-auto: cars from 2020 on, of popular brands
+(Hyundai, Kia, Chevrolet, Renault, KGM, Toyota…) and premium ones (BMW, Mercedes-Benz, Audi,
+Porsche, Lexus, Genesis, Land Rover, Volvo, Tesla…), in two groups:
 
-- **mass** — popular brands (Hyundai, Kia, Chevrolet, Renault, KGM, Toyota…), any power.
-  Setting `ENCAR_LIMIT_160=1` limits them to an estimated power up to 160 hp (the preferential
-  Russian recycling fee). Encar doesn't expose horsepower, so it's then estimated from the engine:
-  naturally aspirated petrol/LPG up to 2.0 L, turbo petrol up to 1.4 L, diesel and non-turbo
-  hybrids up to 1.6 L; EVs are excluded.
-- **premium** — BMW, Mercedes-Benz, Audi, Porsche, Lexus, Genesis, Land Rover, Volvo, Tesla…,
-  any power.
+- **up to 160 hp** — 75 % of each run (the preferential Russian recycling fee). Encar doesn't
+  expose horsepower, so it's estimated from the engine via the encar API: naturally aspirated
+  petrol/LPG up to 2.0 L, turbo petrol up to 1.4 L, diesel and non-turbo hybrids up to 1.6 L;
+  EVs never count as "up to 160".
+- **any power** — the remaining 25 %.
 
-Scheduled runs collect 1000 cars (600 mass + 400 premium).
+Imports make up 30 % of the first group and 70 % of the second; Korean brands fill the rest.
+Scheduled runs collect 1000 cars (750 up to 160 hp + 250 any power).
 
 ### Being gentle with encar (avoiding IP bans)
 
@@ -85,9 +86,9 @@ Scheduled runs collect 1000 cars (600 mass + 400 premium).
 
 ### Local tuning
 
-- `ENCAR_TOTAL` (default `300`) — cars per run, split 60 % mass / 40 % premium. The workflow
-  runs on Mondays and Thursdays with `1000`; a manual run takes the "total" input (default `1000`).
-- `ENCAR_QUOTA_MASS` / `ENCAR_QUOTA_PREMIUM` — override the per-group numbers explicitly.
+- `ENCAR_TOTAL` (default `300`) — cars per run. The workflow runs on Mondays and Thursdays with
+  `1000`; a manual run takes the "total" input (default `1000`).
+- `ENCAR_SHARE_160` (default `0.75`) — share of cars up to 160 hp.
 - `ENCAR_MIN_YEAR` (default `2020`) — oldest model year.
 - `ENCAR_MAX_PAGES` (default `80`) — max listing pages per search.
 - `BN_AUTO_URL` / `BN_AUTO_IMPORT_TOKEN` — same as above, for a local test push.
