@@ -422,7 +422,7 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
         for car in iter_candidates(page, profile, seen):
             first_link = first_link or car["link"]
             # Мощнее 160 по названию — сразу «любой мощности»; остальных уточняем по данным
-            # encar. Машину, мощность которой не оценить (электро), не берём — см. still_ok()
+            # encar. Машину, мощность которой не оценить (нет объёма), не берём — см. still_ok()
             bucket = "other"
             if car["power"] != "gt160" and need("le160"):
                 power = None
@@ -442,7 +442,7 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
             elif car["external_id"] in known:
                 info = known[car["external_id"]]
                 if not power_of(info.get("model"), f"{info.get('text') or ''} {car['title']}", info.get("cc")):
-                    bucket = None   # уже на сайте, но мощность не оценить (электро) — больше не обновляем
+                    bucket = None   # уже на сайте, но мощность не оценить (нет объёма) — больше не обновляем
             if bucket and need(bucket):
                 car["bucket"] = bucket
                 picked[bucket].append(car)
@@ -458,7 +458,7 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
 
 def still_ok(car: dict) -> bool:
     """После API перепроверяем год выпуска, марку и что мощность вообще можно оценить
-    (электромобили и машины без объёма двигателя не берём)."""
+    (машины без объёма двигателя не берём; электромобили — в группе «любой мощности»)."""
     d = car.get("detail")
     if not d:
         return True
