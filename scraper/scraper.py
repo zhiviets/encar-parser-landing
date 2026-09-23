@@ -129,11 +129,17 @@ def scrape_list(page, url: str) -> list[dict]:
             if img_loc.count() == 0:
                 img_loc = card.locator("img")
             if img_loc.count():
-                img = _norm_url(
-                    img_loc.first.get_attribute("src")
-                    or img_loc.first.get_attribute("data-src")
-                    or ""
-                )
+                # Картинки на encar лениво подгружаются: пока фото не попало
+                # в видимую область, в src стоит служебная заглушка
+                # (прозрачный trans.gif), а настоящая ссылка — в data-src.
+                # Поэтому сначала смотрим data-src и только потом src, а не
+                # наоборот — иначе почти всегда достаётся пустышка.
+                data_src = img_loc.first.get_attribute("data-src") or ""
+                src = img_loc.first.get_attribute("src") or ""
+                candidate = data_src if data_src and "trans.gif" not in data_src else src
+                if "trans.gif" in candidate:
+                    candidate = ""
+                img = _norm_url(candidate)
 
            
             brand, model = None, None
