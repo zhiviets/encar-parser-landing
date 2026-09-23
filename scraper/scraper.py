@@ -86,11 +86,16 @@ def _norm_url(u: str) -> str:
 
 
 def scrape_list(page, url: str) -> list[dict]:
-    page.goto(url, wait_until="networkidle")
+    # "networkidle" ждёт полной тишины в сети полсекунды — на сайтах с
+    # постоянными фоновыми запросами (аналитика, чаты) это условие может
+    # вообще не наступить, особенно через прокси. Дальше всё равно идёт
+    # wait_for_selector на реальный контент — он и есть настоящий сигнал
+    # готовности, "domcontentloaded" тут просто быстрее и надёжнее.
+    page.goto(url, wait_until="domcontentloaded", timeout=45_000)
     slow_human_pause(1.2)
 
     try:
-        page.wait_for_selector('div[class^="ItemBigImage_item__"]', timeout=15000)
+        page.wait_for_selector('div[class^="ItemBigImage_item__"]', timeout=25000)
     except Exception:
         # Селектор не появился — сохраняем скриншот и HTML, чтобы понять,
         # что реально вернул сайт серверу GitHub Actions (блокировка по
