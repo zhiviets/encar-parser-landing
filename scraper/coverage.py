@@ -5,7 +5,8 @@
 которых сайт строит фильтры «제조사 → 모델». По каждой модели запрашиваем
 ENCAR_PER_MODEL свежих объявлений (одним запросом) и выбираем:
   1) по машине на модель — до 160 л.с., если такая есть;
-  2) добор до ENCAR_TOTAL так, чтобы машин до 160 л.с. было не меньше 75%.
+  2) добор до ENCAR_TOTAL так, чтобы машин до 160 л.с. было не меньше 75%,
+     а по годам — 70% 2022–2024, 15% 2025–2026, 15% 2017–2021.
 Если моделей мощнее 160 л.с. слишком много, «до 160» добираются сверх
 ENCAR_TOTAL — доля важнее общего числа.
 """
@@ -20,7 +21,7 @@ import selection
 from brand_map import extract_brand_model
 
 SEARCH_API = "https://api.encar.com/search/car/list/general"
-PER_MODEL = int(os.environ.get("ENCAR_PER_MODEL") or "20")
+PER_MODEL = int(os.environ.get("ENCAR_PER_MODEL") or "30")
 # Сколько машин модели без объёма в названии уточнять по API при выборе «до 160»
 RESOLVE_PER_MODEL = 6
 HEADERS = {
@@ -186,14 +187,20 @@ def _resolver(session, known: dict, pacer, parse_encar_detail, power_of):
 
 
 def pick(groups: dict, total: int, share: float, resolve) -> list[dict]:
-    """По машине на модель, затем добор «до 160» и «любой мощности» по кругу по моделям."""
+    """По машине на модель, затем добор по кругу по моделям: «до 160» — пока их не
+    станет share, мощных — пока их не больше остального; внутри каждой группы —
+    по долям лет выпуска selection.YEAR_BANDS (70% 2022–2024 и т.д.)."""
     picked, used = [], set()
-    count = {"le160": 0, "gt160": 0}
+    count = {}
     resolved = {"n": 0}
+    per_group = {}
+    rank = {name: i for i, (name, *_) in enumerate(selection.YEAR_BANDS)}
 
-    def power(car):
-        if car.get("power") is None and not car.get("_resolved"):
+    def power(car, key):
+        """Мощность; машины без объёма в названии уточняем по API (не больше RESOLVE_PER_MODEL на модель)."""
+        if car.get("power") is None and not car.get("_resolved") and per_group.get(key, 0) < RESOLVE_PER_MODEL:
             car["_resolved"] = True
+            per_group[key] = per_group.get(key, 0) + 1
             resolved["n"] += 1
             car["power"] = resolve(car)
         return car.get("power")
@@ -202,43 +209,55 @@ def pick(groups: dict, total: int, share: float, resolve) -> list[dict]:
         car["bucket"] = "le160" if car["power"] == "le160" else "other"
         picked.append(car)
         used.add(id(car))
-        count[car["power"]] += 1
+        k = (car["power"], selection.year_band(car["year"]))
+        count[k] = count.get(k, 0) + 1
 
-    for cars in groups.values():
+    def total_of(kind):
+        return sum(v for (k, _), v in count.items() if k == kind)
+
+    for key, cars in groups.items():
+        # Порядок внутри модели: сначала 2022–2024, потом 2025–2026, потом старше; уже на сайте — первыми
+        cars.sort(key=lambda c: rank.get(selection.year_band(c["year"]), 9))
         best = (next((c for c in cars if c.get("power") == "le160"), None)
-                or next((c for c in cars[:RESOLVE_PER_MODEL] if power(c) == "le160"), None)
+                or next((c for c in cars if power(c, key) == "le160"), None)
                 or next((c for c in cars if c.get("power") == "gt160"), None))
         if best:
             take(best)
     covered = len(picked)
 
-    def fill(kind, need):
-        idx = {k: 0 for k in groups}
+    def fill(kind, want_band, need):
+        pos = {k: 0 for k in groups}
         progress = True
         while need() and progress:
             progress = False
             for key, cars in groups.items():
                 if not need():
                     break
-                i = idx[key]
+                i = pos[key]
                 while i < len(cars):
                     c = cars[i]
                     i += 1
-                    if id(c) in used:
+                    if id(c) in used or (want_band and selection.year_band(c["year"]) != want_band):
                         continue
-                    p = c.get("power") if c.get("power") or i > RESOLVE_PER_MODEL * 2 else power(c)
-                    if p == kind:
+                    if power(c, key) == kind:
                         take(c)
                         progress = True
                         break
-                idx[key] = i
+                pos[key] = i
+
+    def fill_kind(kind, target):
+        for name, _, _, w in selection.YEAR_BANDS:
+            want = round(target * w)
+            fill(kind, name, lambda: count.get((kind, name), 0) < want and total_of(kind) < target)
+        fill(kind, None, lambda: total_of(kind) < target)   # в какой-то группе лет машин не хватило
 
     ratio = (1 - share) / share if share else 0
-    want_le = lambda: max(round(total * share), math.ceil(count["gt160"] / ratio) if ratio else 0)
-    fill("le160", lambda: count["le160"] < want_le())
-    fill("gt160", lambda: count["gt160"] < min(total - count["le160"], math.floor(count["le160"] * ratio)))
+    fill_kind("le160", max(round(total * share), math.ceil(total_of("gt160") / ratio) if ratio else 0))
+    fill_kind("gt160", min(total - total_of("le160"), math.floor(total_of("le160") * ratio)))
+    years = {name: sum(v for (_, b), v in count.items() if b == name) for name, *_ in selection.YEAR_BANDS}
     print(f"Выбрано: моделей с машиной {covered} из {len(groups)}, всего {len(picked)} — до 160 л.с. "
-          f"{count['le160']}, мощнее {count['gt160']} (уточнено по API encar {resolved['n']})")
+          f"{total_of('le160')}, мощнее {total_of('gt160')} (уточнено по API encar {resolved['n']}); по годам: "
+          + ", ".join(f"{k} — {v}" for k, v in years.items()))
     return picked
 
 
@@ -264,8 +283,8 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
             seen.add(car["external_id"])
             cars.append(car)
         if cars:
-            # Машины, которые уже на сайте, — первыми: иначе каждый прогон брал бы
-            # новые свежие объявления и сайт разрастался бы от прогона к прогону
+            # Машины, которые уже на сайте, — первыми (в своей группе лет, см. pick):
+            # иначе каждый прогон брал бы новые объявления и сайт разрастался бы
             cars.sort(key=lambda c: c["external_id"] not in known)
             groups[(maker, group)] = cars
         if n % 50 == 0:

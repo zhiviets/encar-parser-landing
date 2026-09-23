@@ -69,7 +69,8 @@ model the freshest `ENCAR_PER_MODEL` listings are fetched in one request. Then:
 
 1. one car per model — up to 160 hp if the model has one;
 2. more cars round-robin across models until `ENCAR_TOTAL`, with at least 75 % up to 160 hp
-   (the preferential Russian recycling fee). If too many models only exist above 160 hp, more
+   (the preferential Russian recycling fee) and by model year 70 % 2022–2024, 15 % 2025–2026,
+   15 % 2017–2021 (`selection.YEAR_BANDS`). If too many models only exist above 160 hp, more
    "up to 160" cars are added beyond `ENCAR_TOTAL` — the share wins over the total.
 
 Cars already on the site are preferred within a model, so the catalogue doesn't grow run after
@@ -93,7 +94,7 @@ listing on the site.
 - `ENCAR_TOTAL` (default `300`) — cars per run. The workflow runs on Mondays and Thursdays with
   `1000`; a manual run takes the "total" input (default `1000`).
 - `ENCAR_SHARE_160` (default `0.75`) — share of cars up to 160 hp.
-- `ENCAR_PER_MODEL` (default `20`) — listings fetched per model to choose from.
+- `ENCAR_PER_MODEL` (default `30`) — listings fetched per model to choose from.
 - `ENCAR_ALL_MODELS=0` — skip the per-model search, page through the listing instead.
 - `ENCAR_MIN_YEAR` (default `2017`) — oldest model year.
 - `ENCAR_MAX_PAGES` (default `80`) — max listing pages per search.
