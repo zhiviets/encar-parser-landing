@@ -31,10 +31,10 @@ def list_url(action: str, page_no: int) -> str:
 
 # Сколько машин собирать — квоты по категориям в selection.QUOTAS (по
 # умолчанию 180 массовых до 160 л.с. + 120 премиум = 300). Страницы
-# листаются, пока квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск.
-MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "15")
-# Массовых собираем с запасом: часть отсеется после уточнения мощности по API
-MASS_OVERSCAN = 1.15
+# листаются, пока квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск:
+# среди корейских машин 2020+ до 160 л.с. — меньшинство, страниц нужно много.
+MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "40")
+
 
 # Куда пушим данные в bn-auto. Без этих переменных скрипт просто
 # сохранит cars.json локально, как раньше — пуш не обязателен.
@@ -267,21 +267,70 @@ def main():
         context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
         page = context.new_page()
 
-        cleaned = collect_cars(page)
-
-        OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-        with open(OUT_PATH, "w", encoding="utf-8") as f:
-            json.dump({"updated_at": int(time.time()), "cars": cleaned}, f, ensure_ascii=False, indent=2)
-
-        print(f"Saved {len(cleaned)} cars -> {OUT_PATH}")
-
-        option_codes = capture_network_sample(page, cleaned[0]["link"]) if cleaned else {}
+        session = http_session()
+        known = fetch_known()
+        pacer = Pacer()
+        mass, premium, first_link = collect_cars(page, session, known, pacer)
+        option_codes = capture_network_sample(page, first_link) if first_link else {}
         browser.close()
 
-    session = http_session()
-    known = fetch_known_ids()
-    enrich_with_details(session, cleaned, known, option_codes)
-    push_to_bn_auto(session, final_selection(cleaned, known), known)
+    enrich_with_details(session, premium, known, pacer)
+    premium = [c for c in premium if premium_still_ok(c)]
+    cars = mass + premium
+
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        landing = [{k: v for k, v in c.items() if k != "detail"} for c in cars]
+        json.dump({"updated_at": int(time.time()), "cars": landing}, f, ensure_ascii=False, indent=2)
+    print(f"Saved {len(cars)} cars -> {OUT_PATH}")
+
+    push_to_bn_auto(session, cars, known, option_codes)
+
+
+class Pacer:
+    """Темп запросов к API encar и предохранитель от блокировки.
+
+    Случайная пауза после каждого запроса и длинный перерыв каждые ~25.
+    На 403/429/капчу — пауза 90–150 с и одна повторная попытка, потом
+    blocked=True и запросы к API больше не идут: лучше отправить в bn-auto
+    то, что собрано, чем спалить IP прокси.
+    """
+
+    def __init__(self):
+        self.count = 0
+        self.next_break = random.randint(20, 30)
+        self.blocked = False
+        self.saved = 0
+
+    def _tick(self):
+        self.count += 1
+        if self.count >= self.next_break:
+            human_pause(25, 45)
+            self.next_break = self.count + random.randint(20, 30)
+        else:
+            human_pause(1.5, 4.0)
+
+    def detail(self, session, vehicle_id: str):
+        if self.blocked:
+            return None
+        try:
+            try:
+                data = fetch_encar_detail(session, vehicle_id)
+            except Blocked as reason:
+                print(f"encar притормозил нас ({reason}) — пауза 90–150 с и одна попытка")
+                human_pause(90, 150)
+                try:
+                    data = fetch_encar_detail(session, vehicle_id)
+                except Blocked as again:
+                    print(f"Снова блок ({again}) — останавливаем запросы к encar, отправляем собранное")
+                    self.blocked = True
+                    return None
+        finally:
+            self._tick()
+        if data and self.saved < 3:
+            _save_debug(f"vehicle_{vehicle_id}.json", data)
+            self.saved += 1
+        return data
 
 
 def _card_to_car(c: dict) -> dict | None:
@@ -290,7 +339,8 @@ def _card_to_car(c: dict) -> dict | None:
         return None
     raw_title = c.get("brand") or ""
     brand_en, model_guess, _ = extract_brand_model(raw_title)
-    bucket = selection.bucket_for(brand_en, c.get("year"), selection.power_class(raw_title), final=False)
+    bucket = selection.bucket_for(brand_en, c.get("year"), selection.power_class(raw_title), final=False,
+                                  title=raw_title)
     if not bucket:
         return None
     return {
@@ -309,18 +359,17 @@ def _card_to_car(c: dict) -> dict | None:
     }
 
 
-def collect_cars(page) -> list[dict]:
-    """Листать поиск encar по каждому профилю, пока не наберутся квоты категорий."""
-    cars: list[dict] = []
-    seen = set()
-    count = {"mass": 0, "premium": 0}
-    targets = {"mass": int(selection.QUOTAS["mass"] * MASS_OVERSCAN), "premium": selection.QUOTAS["premium"]}
-
-    def run(action: str, bucket: str, label: str) -> int:
-        added_total = 0
+def iter_candidates(page, profile: dict, seen: set):
+    """Кандидаты со страниц поиска профиля; если фильтр поиска пуст — из общего списка."""
+    yielded = 0
+    attempts = [(profile["action"], profile["name"]),
+                (selection.BASE_ACTION, profile["name"] + ", общий список")]
+    for n, (action, label) in enumerate(attempts):
+        if n == 1:
+            if yielded:
+                return
+            print(f"[{profile['name']}] фильтр поиска ничего не дал — берём общий список и фильтруем сами")
         for page_no in range(1, MAX_PAGES + 1):
-            if count[bucket] >= targets[bucket]:
-                break
             try:
                 found = scrape_list(page, list_url(action, page_no))
             except Exception as error:
@@ -328,50 +377,81 @@ def collect_cars(page) -> list[dict]:
                 break
             if not found:
                 break
-            for card in found:
-                car = _card_to_car(card)
-                if not car or car["external_id"] in seen or count[car["bucket"]] >= targets[car["bucket"]]:
-                    continue
+            fresh = [car for car in map(_card_to_car, found) if car and car["external_id"] not in seen]
+            print(f"[{label}] страница {page_no}: подходящих по году и марке {len(fresh)}")
+            for car in fresh:
                 seen.add(car["external_id"])
-                count[car["bucket"]] += 1
-                cars.append(car)
-                added_total += 1
-            print(f"[{label}] страница {page_no}: подходит {count['mass']} массовых, {count['premium']} премиум")
+                yielded += 1
+                yield car
             human_pause(4, 9)
-        return added_total
+
+
+def verify_mass(make, model, year, text, cc) -> bool:
+    try:
+        cc = int(float(cc)) if cc else None
+    except (TypeError, ValueError):
+        cc = None
+    power = selection.power_class(text, cc)
+    return selection.bucket_for(make, year, power, final=True, model=model) == "mass"
+
+
+def collect_cars(page, session, known: dict, pacer: Pacer):
+    """Набрать квоты: премиум — по списку, массовые — с проверкой мощности сразу по API.
+
+    Массовую машину проверяем, как только она встретилась в списке, и
+    листаем дальше, пока не наберётся квота подтверждённых «до 160 л.с.».
+    Уже известные bn-auto машины проверяем по их сохранённым данным —
+    у encar ничего не запрашиваем.
+    """
+    seen = set()
+    mass, premium = [], []
+    quota = selection.QUOTAS
+    checked = dropped = 0
+    first_link = None
+
+    def need(bucket):
+        return len(mass) < quota["mass"] if bucket == "mass" else len(premium) < quota["premium"]
 
     for profile in selection.PROFILES:
-        added = run(profile["action"], profile["bucket"], profile["name"])
-        if added == 0 and count[profile["bucket"]] < targets[profile["bucket"]]:
-            print(f"[{profile['name']}] фильтр поиска ничего не дал — берём общий список и фильтруем сами")
-            run(selection.BASE_ACTION, profile["bucket"], f"{profile['name']}, общий список")
+        if not need(profile["bucket"]):
+            continue
+        for car in iter_candidates(page, profile, seen):
+            first_link = first_link or car["link"]
+            if car["bucket"] == "premium":
+                if need("premium"):
+                    premium.append(car)
+            elif need("mass"):
+                info = known.get(car["external_id"])
+                if info:
+                    if verify_mass(info.get("make") or car["brand_en"], info.get("model"), car.get("year"),
+                                   f"{info.get('text') or ''} {car['title']}", info.get("cc")):
+                        mass.append(car)
+                elif not pacer.blocked:
+                    detail = pacer.detail(session, car["external_id"])
+                    if detail:
+                        checked += 1
+                        d = parse_encar_detail(detail, car["external_id"])
+                        if verify_mass(d.get("make") or car["brand_en"], d.get("model"),
+                                       d.get("year") or car.get("year"), d.get("power_text") or car["title"],
+                                       d.get("displacement")):
+                            car["detail"] = d
+                            mass.append(car)
+                        else:
+                            dropped += 1
+            if not need(profile["bucket"]) or (profile["bucket"] == "mass" and pacer.blocked):
+                break
+        print(f"[{profile['name']}] итого: {len(mass)} массовых, {len(premium)} премиум")
 
-    print(f"Собрано: {count['mass']} массовых (до 160 л.с., с запасом), {count['premium']} премиум")
-    return cars
+    print(f"Собрано: {len(mass)} массовых до 160 л.с. (проверено по API {checked}, отсеяно по мощности {dropped}), "
+          f"{len(premium)} премиум")
+    return mass, premium, first_link
 
 
-def final_selection(cars: list[dict], known: set) -> list[dict]:
-    """Окончательный отбор после API encar: у массовых нужна подтверждённая мощность до 160 л.с."""
-    kept = []
-    dropped = 0
-    for c in cars:
-        d = c.get("detail")
-        if c["bucket"] == "mass" and d:
-            power = selection.power_class(d.get("power_text") or c.get("title"), d.get("displacement"))
-            if selection.bucket_for(d.get("make") or c.get("brand_en"), d.get("year") or c.get("year"), power,
-                                    final=True, model=d.get("model")) != "mass":
-                dropped += 1
-                continue
-        elif c["bucket"] == "mass" and c["external_id"] not in known:
-            # Деталей нет (не ответил API) — мощность подтвердить нечем
-            if selection.power_class(c.get("title")) != "le160":
-                dropped += 1
-                continue
-        kept.append(c)
-    mass = [c for c in kept if c["bucket"] == "mass"][: selection.QUOTAS["mass"]]
-    premium = [c for c in kept if c["bucket"] == "premium"][: selection.QUOTAS["premium"]]
-    print(f"После уточнения мощности: {len(mass)} массовых, {len(premium)} премиум (отсеяно {dropped})")
-    return mass + premium
+def premium_still_ok(car: dict) -> bool:
+    """Премиум после API: перепроверяем только год выпуска (мощность не важна)."""
+    d = car.get("detail") or {}
+    year = d.get("year") or car.get("year")
+    return selection.bucket_for(d.get("make") or car.get("brand_en"), year, None, final=True) == "premium"
 
 
 def http_session():
@@ -574,10 +654,10 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     return out
 
 
-def fetch_known_ids() -> set:
-    """Лоты, которые уже есть в bn-auto с фото и характеристиками."""
+def fetch_known() -> dict:
+    """Лоты, которые уже есть в bn-auto с фото и характеристиками: id → марка, модель, объём, описание."""
     if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
-        return set()
+        return {}
     import requests
     try:
         resp = requests.get(
@@ -587,57 +667,34 @@ def fetch_known_ids() -> set:
             timeout=30,
         )
         resp.raise_for_status()
-        ids = set(resp.json().get("ids") or [])
-        print(f"Уже есть в bn-auto с фото и характеристиками: {len(ids)} — у encar их не запрашиваем")
-        return ids
+        data = resp.json()
+        items = {str(i["id"]): i for i in data.get("items") or []}
+        for vid in data.get("ids") or []:
+            items.setdefault(str(vid), {})
+        print(f"Уже есть в bn-auto с фото и характеристиками: {len(items)} — у encar их не запрашиваем")
+        return items
     except Exception as error:
         print(f"Список известных лотов не получен ({error}) — запрашиваем всё")
-        return set()
+        return {}
 
 
-def enrich_with_details(session, cars: list[dict], known: set, option_codes: dict | None = None):
-    """Дополнить новые машины данными из API encar (характеристики, опции, фото).
-
-    Бережно к сайту: случайные паузы, длинный перерыв каждые ~25 запросов,
-    а при блокировке (403/429/капча) — пауза и одна попытка, потом стоп:
-    лучше отправить то, что собрано, чем спалить IP прокси.
-    """
-    todo = [c for c in cars if c.get("external_id") and c["external_id"] not in known]
-    print(f"Нужны детали для {len(todo)} новых машин из {len(cars)}")
-    ok = saved = 0
-    next_break = random.randint(20, 30)
-    for i, c in enumerate(todo, start=1):
+def enrich_with_details(session, cars: list[dict], known: dict, pacer: Pacer):
+    """Дополнить машины без данных характеристиками, опциями и фото из API encar."""
+    todo = [c for c in cars if not c.get("detail") and c["external_id"] not in known]
+    print(f"Нужны детали для {len(todo)} машин из {len(cars)}")
+    ok = 0
+    for c in todo:
+        if pacer.blocked:
+            c["blocked"] = True
+            continue
+        detail = pacer.detail(session, c["external_id"])
+        if not detail:
+            continue
         try:
-            detail = fetch_encar_detail(session, c["external_id"])
-        except Blocked as reason:
-            print(f"encar притормозил нас ({reason}) — пауза 90–150 с и одна попытка")
-            human_pause(90, 150)
-            try:
-                detail = fetch_encar_detail(session, c["external_id"])
-            except Blocked as again:
-                print(f"Снова блок ({again}) — останавливаем запросы к encar, отправляем собранное")
-                c["blocked"] = True
-                for rest in todo[i:]:
-                    rest["blocked"] = True
-                break
-        if detail:
-            if saved < 3:
-                _save_debug(f"vehicle_{c['external_id']}.json", detail)
-                saved += 1
-            try:
-                c["detail"] = parse_encar_detail(detail, c["external_id"])
-                opts = c["detail"].get("options")
-                if option_codes and opts and isinstance(opts.get("standard"), list):
-                    # Названия опций по-корейски — bn-auto сопоставит их с русским списком
-                    opts["names"] = [option_codes[code] for code in opts["standard"] if code in option_codes]
-                ok += 1
-            except Exception as error:
-                print(f"Не разобраны детали {c['external_id']}: {error}")
-        if i >= next_break:
-            human_pause(25, 45)
-            next_break = i + random.randint(20, 30)
-        else:
-            human_pause(1.5, 4.0)
+            c["detail"] = parse_encar_detail(detail, c["external_id"])
+            ok += 1
+        except Exception as error:
+            print(f"Не разобраны детали {c['external_id']}: {error}")
     print(f"Детали из API encar: {ok} из {len(todo)}")
 
 
@@ -691,7 +748,7 @@ def fetch_photo_data_url(session, image_url: str | None) -> str | None:
         return None
 
 
-def push_to_bn_auto(session, cars: list[dict], known: set):
+def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict | None = None):
     """Отправить объявления в bn-auto. Без настроенных переменных — просто пропустить."""
     if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
         print("BN_AUTO_URL / BN_AUTO_IMPORT_TOKEN не заданы — пуш в bn-auto пропущен.")
@@ -714,6 +771,10 @@ def push_to_bn_auto(session, cars: list[dict], known: set):
             })
             continue
         d = c.get("detail") or {}
+        opts = d.get("options")
+        if option_codes and opts and isinstance(opts.get("standard"), list):
+            # Названия опций по-корейски — bn-auto сопоставит их с русским списком
+            opts["names"] = [option_codes[code] for code in opts["standard"] if code in option_codes]
         photo = None
         if not c.get("blocked"):
             photo = fetch_photo_data_url(session, d.get("photo")) or fetch_photo_data_url(session, c.get("image"))

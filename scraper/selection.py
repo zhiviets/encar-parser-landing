@@ -54,17 +54,25 @@ GT160_MODELS = {
     "Equinox", "Traverse", "Tahoe", "Colorado", "Camaro", "Impala",
 }
 
-_TURBO = re.compile(r"터보|T-?GDi|\d\.\dT\b|TSI|TFSI|turbo", re.I)
-_DIESEL = re.compile(r"디젤|diesel|CRDi|VGT|dCi", re.I)
-_HYBRID = re.compile(r"하이브리드|hybrid|HEV", re.I)
-_ELECTRIC = re.compile(r"전기|일렉트릭|\bEV\d*\b|electric", re.I)
+_TURBO = re.compile(r"터보|T-?GDi|\d\.\dT\b|TSI|TFSI|turbo|турбо", re.I)
+_DIESEL = re.compile(r"디젤|diesel|CRDi|VGT|dCi|дизель", re.I)
+# «가솔린+전기» — так encar пишет топливо гибрида: это гибрид, а не электромобиль
+_HYBRID = re.compile(r"하이브리드|hybrid|HEV|\+\s*전기|гибрид", re.I)
+_ELECTRIC = re.compile(r"전기|일렉트릭|\bEV\d*\b|electric|электро", re.I)
+
+# Модели массовых марок, которые не проверяем даже по API: почти все версии
+# мощнее 160 л.с. или электромобили (по корейскому названию в списке encar)
+_KO_EXCLUDE = re.compile(
+    r"카니발|팰리세이드|스타리아|쏘렌토|싼타페|그랜저|모하비|스팅어|렉스턴|토레스|티볼리|코란도|액티언|"
+    r"이쿼녹스|트래버스|타호|콜로라도|\bK[89]\b|아이오닉\s?[5-9]|일렉트릭|\bEV\d"
+)
 _LITERS = re.compile(r"(?<![\d.])(\d\.\d)(?![\d])")
 
 
 def power_class(text: str, displacement: int | None = None) -> str | None:
     """'le160' / 'gt160' / None (не хватает данных, чтобы судить)."""
     text = text or ""
-    if _ELECTRIC.search(text):
+    if _ELECTRIC.search(text) and not _HYBRID.search(text):
         return "gt160"
     cc = displacement
     if not cc:
@@ -83,7 +91,7 @@ def power_class(text: str, displacement: int | None = None) -> str | None:
 
 
 def bucket_for(brand: str | None, year: int | None, power: str | None, final: bool,
-               model: str | None = None) -> str | None:
+               model: str | None = None, title: str | None = None) -> str | None:
     """Категория машины или None, если не берём.
 
     final=False — предварительная проверка по карточке списка: машину с
@@ -96,6 +104,8 @@ def bucket_for(brand: str | None, year: int | None, power: str | None, final: bo
         return "premium"
     if brand in MASS_BRANDS:
         if model and model in GT160_MODELS:
+            return None
+        if title and _KO_EXCLUDE.search(title):
             return None
         if power == "le160" or (power is None and not final):
             return "mass"
