@@ -64,10 +64,11 @@ This repo includes a GitHub Actions workflow (`.github/workflows/scrape.yml`):
 
 `scraper/selection.py` decides which cars go to bn-auto — cars from 2020 on, in two groups:
 
-- **mass** — popular brands (Hyundai, Kia, Chevrolet, Renault, KGM, Toyota…) with an estimated
-  power up to 160 hp (the preferential Russian recycling fee). Encar doesn't expose horsepower,
-  so it's estimated from the engine: naturally aspirated petrol/LPG up to 2.0 L, turbo petrol up
-  to 1.4 L, diesel and non-turbo hybrids up to 1.6 L; EVs are excluded.
+- **mass** — popular brands (Hyundai, Kia, Chevrolet, Renault, KGM, Toyota…), any power.
+  Setting `ENCAR_LIMIT_160=1` limits them to an estimated power up to 160 hp (the preferential
+  Russian recycling fee). Encar doesn't expose horsepower, so it's then estimated from the engine:
+  naturally aspirated petrol/LPG up to 2.0 L, turbo petrol up to 1.4 L, diesel and non-turbo
+  hybrids up to 1.6 L; EVs are excluded.
 - **premium** — BMW, Mercedes-Benz, Audi, Porsche, Lexus, Genesis, Land Rover, Volvo, Tesla…,
   any power.
 

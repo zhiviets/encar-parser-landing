@@ -30,9 +30,9 @@ def list_url(action: str, page_no: int) -> str:
 
 
 # Сколько машин собирать — квоты по категориям в selection.QUOTAS (по
-# умолчанию 180 массовых до 160 л.с. + 120 премиум = 300). Страницы
-# листаются, пока квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск:
-# среди корейских машин 2020+ до 160 л.с. — меньшинство, страниц нужно много.
+# умолчанию 180 массовых + 120 премиум = 300). Страницы листаются, пока
+# квота не наберётся, но не больше ENCAR_MAX_PAGES на поиск (с ENCAR_LIMIT_160=1
+# машин до 160 л.с. среди корейских 2020+ меньшинство — страниц нужно много).
 MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "40")
 
 
@@ -274,9 +274,9 @@ def main():
         option_codes = capture_network_sample(page, first_link) if first_link else {}
         browser.close()
 
-    enrich_with_details(session, premium, known, pacer)
-    premium = [c for c in premium if premium_still_ok(c)]
     cars = mass + premium
+    enrich_with_details(session, cars, known, pacer)
+    cars = [c for c in cars if still_ok(c)]
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
@@ -396,9 +396,9 @@ def verify_mass(make, model, year, text, cc) -> bool:
 
 
 def collect_cars(page, session, known: dict, pacer: Pacer):
-    """Набрать квоты: премиум — по списку, массовые — с проверкой мощности сразу по API.
+    """Набрать квоты по списку поиска.
 
-    Массовую машину проверяем, как только она встретилась в списке, и
+    С ENCAR_LIMIT_160=1 массовую машину проверяем по API, как только она встретилась в списке, и
     листаем дальше, пока не наберётся квота подтверждённых «до 160 л.с.».
     Уже известные bn-auto машины проверяем по их сохранённым данным —
     у encar ничего не запрашиваем.
@@ -420,6 +420,8 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
             if car["bucket"] == "premium":
                 if need("premium"):
                     premium.append(car)
+            elif need("mass") and not selection.LIMIT_160:
+                mass.append(car)
             elif need("mass"):
                 info = known.get(car["external_id"])
                 if info:
@@ -442,16 +444,22 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
                 break
         print(f"[{profile['name']}] итого: {len(mass)} массовых, {len(premium)} премиум")
 
-    print(f"Собрано: {len(mass)} массовых до 160 л.с. (проверено по API {checked}, отсеяно по мощности {dropped}), "
-          f"{len(premium)} премиум")
+    if selection.LIMIT_160:
+        print(f"Собрано: {len(mass)} массовых до 160 л.с. (проверено по API {checked}, отсеяно по мощности {dropped}), "
+              f"{len(premium)} премиум")
+    else:
+        print(f"Собрано: {len(mass)} массовых, {len(premium)} премиум (мощность не ограничиваем)")
     return mass, premium, first_link
 
 
-def premium_still_ok(car: dict) -> bool:
-    """Премиум после API: перепроверяем только год выпуска (мощность не важна)."""
-    d = car.get("detail") or {}
+def still_ok(car: dict) -> bool:
+    """После API перепроверяем год выпуска и марку (мощность уже проверена при отборе)."""
+    d = car.get("detail")
+    if not d:
+        return True
     year = d.get("year") or car.get("year")
-    return selection.bucket_for(d.get("make") or car.get("brand_en"), year, None, final=True) == "premium"
+    power = "le160" if car["bucket"] == "mass" else None
+    return selection.bucket_for(d.get("make") or car.get("brand_en"), year, power, final=True) == car["bucket"]
 
 
 def http_session():
