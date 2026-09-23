@@ -1,4 +1,6 @@
 ﻿
+import base64
+import io
 import json
 import os
 import re
@@ -7,6 +9,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 from brand_map import extract_brand_model
+
+# Чуть меньше лимита bn-auto (900 КБ, см. server/photo.js в bn-auto) —
+# запас на накладные расходы base64.
+MAX_PHOTO_BYTES = 850 * 1024
 
 
 
@@ -261,6 +267,58 @@ def main():
     push_to_bn_auto(cleaned)
 
 
+def _compress_to_data_url(image_bytes: bytes) -> str | None:
+    from PIL import Image
+
+    try:
+        img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+    except Exception:
+        return None
+
+    quality = 82
+    max_width = 1000
+    while True:
+        resized = img
+        if resized.width > max_width:
+            ratio = max_width / resized.width
+            resized = resized.resize((max_width, max(1, int(resized.height * ratio))))
+        buf = io.BytesIO()
+        resized.save(buf, format="JPEG", quality=quality)
+        data = buf.getvalue()
+        if len(data) <= MAX_PHOTO_BYTES or (quality <= 40 and max_width <= 480):
+            return "data:image/jpeg;base64," + base64.b64encode(data).decode("ascii")
+        if quality > 40:
+            quality -= 12
+        else:
+            max_width = int(max_width * 0.8)
+
+
+def fetch_photo_data_url(image_url: str | None) -> str | None:
+    """Скачать фото и вернуть его как сжатый data-URL.
+
+    Прямая ссылка на CDN encar не отдаёт картинку при запросе с чужого
+    сайта (защита от хотлинков по Referer) — в браузере bn-auto она
+    показывается сломанной. Скрипт сам скачивает фото с правильным
+    Referer и кладёт в bn-auto уже готовым изображением, а не ссылкой.
+    """
+    if not image_url:
+        return None
+    import requests
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "Referer": "https://www.encar.com/",
+        "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
+    }
+    try:
+        resp = requests.get(image_url, headers=headers, timeout=15)
+        resp.raise_for_status()
+        return _compress_to_data_url(resp.content)
+    except Exception as error:
+        print(f"Не удалось скачать фото {image_url}: {error}")
+        return None
+
+
 def push_to_bn_auto(cars: list[dict]):
     """Отправить объявления в bn-auto. Без настроенных переменных — просто пропустить."""
     if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
@@ -269,8 +327,11 @@ def push_to_bn_auto(cars: list[dict]):
 
     import requests
 
-    listings = [
-        {
+    listings = []
+    for c in cars:
+        if not c.get("external_id"):
+            continue
+        listings.append({
             "external_id": c["external_id"],
             "make": c.get("brand_en"),
             "model": c.get("model_guess"),
@@ -278,12 +339,9 @@ def push_to_bn_auto(cars: list[dict]):
             "year": c.get("year"),
             "mileage_km": c.get("mileage_km"),
             "price_value": c.get("price_krw"),
-            "photo_url": c.get("image"),
+            "photo_url": fetch_photo_data_url(c.get("image")),
             "source_url": c.get("link"),
-        }
-        for c in cars
-        if c.get("external_id")
-    ]
+        })
     if not listings:
         print("Нет объявлений с external_id — нечего пушить в bn-auto.")
         return
