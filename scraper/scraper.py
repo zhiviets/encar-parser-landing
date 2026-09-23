@@ -346,20 +346,24 @@ def push_to_bn_auto(cars: list[dict]):
         print("Нет объявлений с external_id — нечего пушить в bn-auto.")
         return
 
-    resp = requests.post(
-        f"{BN_AUTO_URL}/api/live-listings/import",
-        json={"source": "encar", "listings": listings},
-        headers={"Authorization": f"Bearer {BN_AUTO_IMPORT_TOKEN}"},
-        timeout=30,
-    )
-    try:
-        data = resp.json()
-    except ValueError:
-        data = {}
-    if resp.status_code >= 400:
-        print(f"Пуш в bn-auto не удался: HTTP {resp.status_code} {data}")
-        resp.raise_for_status()
-    print(f"Пуш в bn-auto: {data.get('stats')}, пропущено {data.get('skipped', 0)}")
+    # С фото внутри пачка из сотни машин весит десятки МБ — шлём по 10.
+    batch_size = 10
+    for start in range(0, len(listings), batch_size):
+        batch = listings[start:start + batch_size]
+        resp = requests.post(
+            f"{BN_AUTO_URL}/api/live-listings/import",
+            json={"source": "encar", "listings": batch},
+            headers={"Authorization": f"Bearer {BN_AUTO_IMPORT_TOKEN}"},
+            timeout=60,
+        )
+        try:
+            data = resp.json()
+        except ValueError:
+            data = {}
+        if resp.status_code >= 400:
+            print(f"Пуш в bn-auto не удался: HTTP {resp.status_code} {data}")
+            resp.raise_for_status()
+        print(f"Пуш в bn-auto [{start + 1}–{start + len(batch)}]: {data.get('stats')}, пропущено {data.get('skipped', 0)}")
 
 
 if __name__ == "__main__":
