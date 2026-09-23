@@ -1,4 +1,4 @@
-﻿
+
 import base64
 import io
 import json
@@ -9,6 +9,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 from brand_map import extract_brand_model
+import encar_ru
 
 # Чуть меньше лимита bn-auto (900 КБ, см. server/photo.js в bn-auto) —
 # запас на накладные расходы base64.
@@ -49,6 +50,15 @@ PROXY_PASSWORD = os.environ.get("PROXY_PASSWORD") or None
 
 
 OUT_PATH = Path(__file__).resolve().parents[1] / "site" / "data" / "cars.json"
+# Диагностика (сырые ответы API, сетевой лог одной страницы) — выгружается
+# артефактом GitHub Actions, в репозиторий не попадает (.gitignore).
+DEBUG_DIR = Path(__file__).resolve().parent / "debug"
+UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+)
+ENCAR_VEHICLE_API = "https://api.encar.com/v1/readside/vehicle/{id}"
+ENCAR_VEHICLE_INCLUDE = "ADVERTISEMENT,CATEGORY,CONDITION,CONTACT,MANAGE,OPTIONS,PHOTOS,SPEC,PARTNERSHIP,CENTER,VIEW"
 OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -220,11 +230,7 @@ def main():
             print(f"Используем прокси: {PROXY_SERVER}")
 
         context = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/120.0 Safari/537.36"
-            ),
+            user_agent=UA,
             viewport={"width": 1366, "height": 900},
             locale="ko-KR",
             proxy=proxy,
@@ -262,9 +268,163 @@ def main():
             json.dump({"updated_at": int(time.time()), "cars": cleaned}, f, ensure_ascii=False, indent=2)
 
         print(f"Saved {len(cleaned)} cars -> {OUT_PATH}")
+
+        if cleaned:
+            capture_network_sample(page, cleaned[0]["link"])
         browser.close()
 
-    push_to_bn_auto(cleaned)
+    session = http_session()
+    enrich_with_details(session, cleaned)
+    push_to_bn_auto(session, cleaned)
+
+
+def http_session():
+    """requests-сессия с теми же заголовками и прокси, что и у браузера."""
+    import requests
+    from urllib.parse import quote, urlsplit
+
+    s = requests.Session()
+    s.headers.update({"User-Agent": UA})
+    if PROXY_SERVER:
+        parts = urlsplit(PROXY_SERVER)
+        auth = ""
+        if PROXY_USERNAME:
+            auth = f"{quote(PROXY_USERNAME, safe='')}:{quote(PROXY_PASSWORD or '', safe='')}@"
+        proxy_url = f"{parts.scheme}://{auth}{parts.netloc}"
+        s.proxies = {"http": proxy_url, "https": proxy_url}
+    return s
+
+
+def _save_debug(name: str, data):
+    DEBUG_DIR.mkdir(exist_ok=True)
+    with open(DEBUG_DIR / name, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def capture_network_sample(page, url: str):
+    """Сохранить все JSON-ответы encar при открытии одной карточки.
+
+    Нужно, чтобы увидеть реальную структуру API (в том числе справочник
+    опций комплектации) — из песочницы, где писался код, encar недоступен.
+    """
+    responses = []
+    handler = lambda r: responses.append(r)
+    page.on("response", handler)
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=45_000)
+        page.wait_for_timeout(8000)
+        page.mouse.wheel(0, 4000)
+        page.wait_for_timeout(3000)
+    except Exception as error:
+        print(f"Сетевой лог карточки не собран: {error}")
+    finally:
+        page.remove_listener("response", handler)
+
+    sample = []
+    for r in responses:
+        try:
+            if "encar.com" not in r.url or "json" not in (r.headers.get("content-type") or ""):
+                continue
+            sample.append({"url": r.url, "status": r.status, "body": r.text()[:400_000]})
+        except Exception:
+            continue
+    _save_debug("network_sample.json", sample)
+    print(f"Сетевой лог карточки: {len(sample)} JSON-ответов -> {DEBUG_DIR / 'network_sample.json'}")
+
+
+def fetch_encar_detail(session, vehicle_id: str):
+    headers = {
+        "Referer": "https://fem.encar.com/",
+        "Origin": "https://fem.encar.com",
+        "Accept": "application/json, text/plain, */*",
+    }
+    url = ENCAR_VEHICLE_API.format(id=vehicle_id)
+    for params in ({"include": ENCAR_VEHICLE_INCLUDE}, None):
+        try:
+            resp = session.get(url, params=params, headers=headers, timeout=20)
+            if resp.status_code == 200:
+                return resp.json()
+            print(f"API encar {vehicle_id}: HTTP {resp.status_code}")
+        except Exception as error:
+            print(f"API encar {vehicle_id}: {error}")
+    return None
+
+
+def _translate_generation(category: dict) -> str | None:
+    name = category.get("modelName") or ""
+    group_ko = category.get("modelGroupName")
+    group_en = category.get("modelGroupEnglishName")
+    if group_ko and group_en:
+        name = name.replace(group_ko, group_en)
+    return encar_ru.clean_latin(name)
+
+
+def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
+    """Всё, что удалось достать из API encar; каждое поле необязательно."""
+    category = detail.get("category") or {}
+    spec = detail.get("spec") or {}
+    contact = detail.get("contact") or {}
+
+    out = {}
+    out["make"] = category.get("manufacturerEnglishName") or None
+    out["model"] = category.get("modelGroupEnglishName") or None
+
+    ym = re.sub(r"\D", "", str(category.get("yearMonth") or ""))
+    if len(ym) >= 4:
+        out["year"] = int(ym[:4])
+    if spec.get("mileage") is not None:
+        out["mileage_km"] = _to_int(str(spec.get("mileage")))
+
+    mileage = out.get("mileage_km")
+    ru_spec = {
+        "Лот": f"№{vehicle_id}",
+        "Локация продавца": encar_ru.region(contact.get("address")),
+        "Выпуск": encar_ru.release(category.get("yearMonth")),
+        "Класс": encar_ru.lookup(encar_ru.BODY, spec.get("bodyName")),
+        "Поколение": _translate_generation(category),
+        "Модификация": category.get("gradeEnglishName") or encar_ru.clean_latin(category.get("gradeName")),
+        "Комплектация": category.get("gradeDetailEnglishName") or encar_ru.clean_latin(category.get("gradeDetailName")),
+        "Трансмиссия": encar_ru.lookup(encar_ru.TRANSMISSION, spec.get("transmissionName")),
+        "Объём, см³": str(spec["displacement"]) if spec.get("displacement") else None,
+        "Пробег": f"{mileage:,}".replace(",", " ") + " км" if mileage else None,
+        "Топливо": encar_ru.lookup(encar_ru.FUEL, spec.get("fuelName")),
+        "Цвет": encar_ru.lookup(encar_ru.COLOR, spec.get("colorName")),
+        "Мест": str(spec["seatCount"]) if spec.get("seatCount") else None,
+    }
+    out["spec"] = {k: v for k, v in ru_spec.items() if v}
+
+    options = detail.get("options")
+    if isinstance(options, dict):
+        out["options"] = {k: v for k, v in options.items() if isinstance(v, list)}
+
+    photos = detail.get("photos") or []
+    outer = [ph for ph in photos if isinstance(ph, dict) and ph.get("path")]
+    outer.sort(key=lambda ph: (ph.get("type") != "OUTER", str(ph.get("code") or "")))
+    if outer:
+        out["photo"] = "https://ci.encar.com/carpicture" + outer[0]["path"]
+    return out
+
+
+def enrich_with_details(session, cars: list[dict]):
+    """Дополнить каждую машину данными из API encar (характеристики, опции, фото)."""
+    ok = 0
+    saved = 0
+    for i, c in enumerate(cars, start=1):
+        if not c.get("external_id"):
+            continue
+        detail = fetch_encar_detail(session, c["external_id"])
+        if not detail:
+            continue
+        if saved < 3:
+            _save_debug(f"vehicle_{c['external_id']}.json", detail)
+            saved += 1
+        try:
+            c["detail"] = parse_encar_detail(detail, c["external_id"])
+            ok += 1
+        except Exception as error:
+            print(f"Не разобраны детали {c['external_id']}: {error}")
+        time.sleep(0.3)
+    print(f"Детали из API encar: {ok} из {len(cars)}")
 
 
 def _compress_to_data_url(image_bytes: bytes) -> str | None:
@@ -293,7 +453,7 @@ def _compress_to_data_url(image_bytes: bytes) -> str | None:
             max_width = int(max_width * 0.8)
 
 
-def fetch_photo_data_url(image_url: str | None) -> str | None:
+def fetch_photo_data_url(session, image_url: str | None) -> str | None:
     """Скачать фото и вернуть его как сжатый data-URL.
 
     Прямая ссылка на CDN encar не отдаёт картинку при запросе с чужого
@@ -303,15 +463,13 @@ def fetch_photo_data_url(image_url: str | None) -> str | None:
     """
     if not image_url:
         return None
-    import requests
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        "Referer": "https://www.encar.com/",
+        "Referer": "https://fem.encar.com/",
         "Accept": "image/webp,image/apng,image/*,*/*;q=0.8",
     }
     try:
-        resp = requests.get(image_url, headers=headers, timeout=15)
+        resp = session.get(image_url, headers=headers, timeout=20)
         resp.raise_for_status()
         return _compress_to_data_url(resp.content)
     except Exception as error:
@@ -319,7 +477,7 @@ def fetch_photo_data_url(image_url: str | None) -> str | None:
         return None
 
 
-def push_to_bn_auto(cars: list[dict]):
+def push_to_bn_auto(session, cars: list[dict]):
     """Отправить объявления в bn-auto. Без настроенных переменных — просто пропустить."""
     if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
         print("BN_AUTO_URL / BN_AUTO_IMPORT_TOKEN не заданы — пуш в bn-auto пропущен.")
@@ -331,15 +489,19 @@ def push_to_bn_auto(cars: list[dict]):
     for c in cars:
         if not c.get("external_id"):
             continue
+        d = c.get("detail") or {}
+        photo = fetch_photo_data_url(session, d.get("photo")) or fetch_photo_data_url(session, c.get("image"))
         listings.append({
             "external_id": c["external_id"],
-            "make": c.get("brand_en"),
-            "model": c.get("model_guess"),
+            "make": d.get("make") or c.get("brand_en"),
+            "model": d.get("model") or c.get("model_guess"),
             "title": c.get("title"),
-            "year": c.get("year"),
-            "mileage_km": c.get("mileage_km"),
+            "year": d.get("year") or c.get("year"),
+            "mileage_km": d.get("mileage_km") or c.get("mileage_km"),
             "price_value": c.get("price_krw"),
-            "photo_url": fetch_photo_data_url(c.get("image")),
+            "photo_url": photo,
+            "spec": d.get("spec"),
+            "options": d.get("options"),
             "source_url": c.get("link"),
         })
     if not listings:
