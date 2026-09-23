@@ -7,7 +7,7 @@
 Мощность encar в списке не показывает и в поиске не фильтрует, поэтому она
 оценивается по двигателю из названия и точному объёму из API encar:
 атмосферный бензин/газ до 2.0 л, турбобензин до 1.4 л, дизель и гибрид без
-турбины до 1.6 л — это до 160 л.с. Электромобили в группу «до 160» не идут.
+турбины до 1.6 л — это до 160 л.с. Электромобили и машины, мощность которых не оценить, не берём.
 Правила — оценка, а не паспорт машины.
 """
 
@@ -72,10 +72,10 @@ _LITERS = re.compile(r"(?<![\d.])(\d\.\d)(?![\d])")
 
 
 def power_class(text: str, displacement: int | None = None) -> str | None:
-    """'le160' / 'gt160' / None (не хватает данных, чтобы судить)."""
+    """'le160' / 'gt160' / None (не хватает данных, чтобы судить; электромобиль)."""
     text = text or ""
     if _ELECTRIC.search(text) and not _HYBRID.search(text):
-        return "gt160"
+        return None
     cc = displacement
     if not cc:
         m = _LITERS.search(text)
@@ -97,10 +97,9 @@ def eligible(brand: str | None, year: int | None) -> bool:
     return bool(year and year >= MIN_YEAR and brand in MASS_BRANDS | PREMIUM_BRANDS)
 
 
-def is_le160(power: str | None, model: str | None = None, title: str | None = None) -> bool:
-    """Подтверждённая оценка «до 160 л.с.» (модели, где обычно мощнее, — нет)."""
-    if model and model in GT160_MODELS:
-        return False
-    if title and _KO_EXCLUDE.search(title):
-        return False
-    return power == "le160"
+def classify(power: str | None, model: str | None = None, title: str | None = None) -> str | None:
+    """Группа машины: 'le160', 'gt160' или None — мощность не оценить (такие не берём).
+    Модели, где обычно мощнее 160 л.с., в «до 160» не попадают."""
+    if power == "le160" and ((model and model in GT160_MODELS) or (title and _KO_EXCLUDE.search(title))):
+        return "gt160"
+    return power

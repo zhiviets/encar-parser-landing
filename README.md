@@ -69,7 +69,7 @@ Porsche, Lexus, Genesis, Land Rover, Volvo, Tesla…), in two groups:
 - **up to 160 hp** — 75 % of each run (the preferential Russian recycling fee). Encar doesn't
   expose horsepower, so it's estimated from the engine via the encar API: naturally aspirated
   petrol/LPG up to 2.0 L, turbo petrol up to 1.4 L, diesel and non-turbo hybrids up to 1.6 L;
-  EVs never count as "up to 160".
+  EVs and cars whose power can't be estimated are skipped entirely.
 - **any power** — the remaining 25 %.
 
 Imports make up 30 % of the first group and 70 % of the second; Korean brands fill the rest.

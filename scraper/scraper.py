@@ -386,12 +386,13 @@ def iter_candidates(page, profile: dict, seen: set):
             human_pause(4, 9)
 
 
-def verify_le160(model, text, cc) -> bool:
+def power_of(model, text, cc) -> str | None:
+    """'le160' / 'gt160' / None — мощность не оценить."""
     try:
         cc = int(float(cc)) if cc else None
     except (TypeError, ValueError):
         cc = None
-    return selection.is_le160(selection.power_class(text, cc), model=model, title=text)
+    return selection.classify(selection.power_class(text, cc), model=model, title=text)
 
 
 def collect_cars(page, session, known: dict, pacer: Pacer):
@@ -420,25 +421,28 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
             continue
         for car in iter_candidates(page, profile, seen):
             first_link = first_link or car["link"]
+            # Мощнее 160 по названию — сразу «любой мощности»; остальных уточняем по данным
+            # encar. Машину, мощность которой не оценить (электро), не берём — см. still_ok()
             bucket = "other"
             if car["power"] != "gt160" and need("le160"):
-                ok = None
+                power = None
                 info = known.get(car["external_id"])
                 if info:
-                    ok = verify_le160(info.get("model"), f"{info.get('text') or ''} {car['title']}", info.get("cc"))
+                    power = power_of(info.get("model"), f"{info.get('text') or ''} {car['title']}", info.get("cc"))
                 elif not pacer.blocked:
                     detail = pacer.detail(session, car["external_id"])
                     if detail:
                         checked += 1
                         d = parse_encar_detail(detail, car["external_id"])
                         car["detail"] = d
-                        ok = verify_le160(d.get("model"), f"{d.get('power_text') or ''} {car['title']}",
-                                          d.get("displacement"))
-                        dropped += not ok
-                if ok:
-                    bucket = "le160"
-                elif ok is None:
-                    bucket = None   # проверить нечем (encar притормозил) — не берём
+                        power = power_of(d.get("model"), f"{d.get('power_text') or ''} {car['title']}",
+                                         d.get("displacement"))
+                        dropped += power != "le160"
+                bucket = {"le160": "le160", "gt160": "other"}.get(power)
+            elif car["external_id"] in known:
+                info = known[car["external_id"]]
+                if not power_of(info.get("model"), f"{info.get('text') or ''} {car['title']}", info.get("cc")):
+                    bucket = None   # уже на сайте, но мощность не оценить (электро) — больше не обновляем
             if bucket and need(bucket):
                 car["bucket"] = bucket
                 picked[bucket].append(car)
@@ -447,16 +451,19 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
                 break
         print(f"[{profile['name']}] итого: {len(picked['le160'])} до 160 л.с., {len(picked['other'])} любой мощности")
 
-    print(f"Собрано: {len(picked['le160'])} до 160 л.с. (проверено по API {checked}, мощнее {dropped}), "
+    print(f"Собрано: {len(picked['le160'])} до 160 л.с. (проверено по API {checked}, мощнее или без оценки {dropped}), "
           f"{len(picked['other'])} любой мощности")
     return picked["le160"], picked["other"], first_link
 
 
 def still_ok(car: dict) -> bool:
-    """После API перепроверяем год выпуска и марку (мощность уже проверена при отборе)."""
+    """После API перепроверяем год выпуска, марку и что мощность вообще можно оценить
+    (электромобили и машины без объёма двигателя не берём)."""
     d = car.get("detail")
     if not d:
         return True
+    if not power_of(d.get("model"), f"{d.get('power_text') or ''} {car['title']}", d.get("displacement")):
+        return False
     return selection.eligible(d.get("make") or car.get("brand_en"), d.get("year") or car.get("year"))
 
 
