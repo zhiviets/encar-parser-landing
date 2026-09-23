@@ -42,6 +42,8 @@ jobs:
         working-directory: scraper
         env:
           PYTHONIOENCODING: utf-8
+          # Лог виден сразу, а не только после завершения
+          PYTHONUNBUFFERED: "1"
           BN_AUTO_URL: ${{ secrets.BN_AUTO_URL }}
           BN_AUTO_IMPORT_TOKEN: ${{ secrets.BN_AUTO_IMPORT_TOKEN }}
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
