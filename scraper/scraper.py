@@ -393,10 +393,12 @@ def verify_known(session, known_all: dict, seen: set, pacer) -> list[dict]:
 
 
 def complete_listing(x: dict) -> bool:
-    """Полная информация: фото, цена, год, марка, модель и объём (у электромобилей — без объёма)."""
+    """Полная информация: фото, цена, год, марка, модель и то, по чему считается таможня —
+    объём (мощность сайт оценит по нему), у электромобилей — мощность с drom.ru."""
     spec = x.get("spec") or {}
+    engine = spec.get("Мощность, л.с.") if spec.get("Топливо") == "электро" else spec.get("Объём, см³")
     return bool(x.get("photo_url") and x.get("price_value") and x.get("year") and x.get("make") and x.get("model")
-                and (spec.get("Объём, см³") or spec.get("Топливо") == "электро"))
+                and engine)
 
 
 class Pacer:
