@@ -94,6 +94,9 @@ listing on the site.
 - `ENCAR_TOTAL` (default `300`) — cars per run. The workflow runs on Mondays and Thursdays with
   `1000`; a manual run takes the "total" input (default `1000`).
 - `ENCAR_SHARE_160` (default `0.75`) — share of cars up to 160 hp.
+- `ENCAR_BATCH` (default `100`) / `ENCAR_BATCH_PAUSE` (default `10`, minutes) — cars are detailed,
+  photographed and pushed in batches with a pause between them; the model search takes a
+  `ENCAR_SEARCH_BREAK`-minute break (default `3`) every 100 requests.
 - `ENCAR_PER_MODEL` (default `30`) — listings fetched per model to choose from.
 - `ENCAR_ALL_MODELS=0` — skip the per-model search, page through the listing instead.
 - `ENCAR_MIN_YEAR` (default `2017`) — oldest model year.

@@ -36,6 +36,9 @@ def list_url(action: str, page_no: int) -> str:
 # новых машин меньшинство — страниц нужно много). Это запасной путь, если поиск
 # API encar (coverage.py — все модели) не ответил.
 MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
+# Порция машин между паузами и длина паузы в минутах
+BATCH = int(os.environ.get("ENCAR_BATCH") or "100")
+BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "10")
 
 
 # Куда пушим данные в bn-auto. Без этих переменных скрипт просто
@@ -287,17 +290,29 @@ def main():
         option_codes = capture_network_sample(page, first_link) if first_link else {}
         browser.close()
 
-    enrich_with_details(session, cars, known, pacer)
-    backfill_known(session, cars, known, pacer)
-    cars = [c for c in cars if still_ok(c)]
+    # Порциями: BATCH машин — детали, фото, отправка на сайт — и пауза BATCH_PAUSE минут,
+    # чтобы encar не видел сотни запросов подряд с одного IP. Машины появляются на сайте
+    # по ходу прогона, а если прогон оборвётся — уже отправленное останется.
+    kept = []
+    backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "150")
+    chunks = [cars[i:i + BATCH] for i in range(0, len(cars), BATCH)]
+    for n, chunk in enumerate(chunks, 1):
+        print(f"=== Порция {n}/{len(chunks)}: машины {(n - 1) * BATCH + 1}–{(n - 1) * BATCH + len(chunk)} ===")
+        enrich_with_details(session, chunk, known, pacer)
+        backfill_left -= backfill_known(session, chunk, known, pacer, limit=backfill_left)
+        chunk = [c for c in chunk if still_ok(c)]
+        push_to_bn_auto(session, chunk, known, option_codes)
+        kept += chunk
+        if n < len(chunks):
+            print(f"Пауза {BATCH_PAUSE:g} мин, чтобы не нагружать encar")
+            time.sleep(BATCH_PAUSE * 60)
+            pacer.blocked = False   # после паузы даём encar ещё шанс
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
-        landing = [{k: v for k, v in c.items() if k != "detail"} for c in cars]
+        landing = [{k: v for k, v in c.items() if k != "detail"} for c in kept]
         json.dump({"updated_at": int(time.time()), "cars": landing}, f, ensure_ascii=False, indent=2)
-    print(f"Saved {len(cars)} cars -> {OUT_PATH}")
-
-    push_to_bn_auto(session, cars, known, option_codes)
+    print(f"Saved {len(kept)} cars -> {OUT_PATH}")
 
 
 class Pacer:
@@ -745,18 +760,19 @@ def enrich_with_details(session, cars: list[dict], known: dict, pacer: Pacer):
     print(f"Детали из API encar: {ok} из {len(todo)}")
 
 
-def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer):
+def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer, limit: int | None = None) -> int:
     """Машины, сохранённые до появления VIN и привода, дополняем по API и
     заменяем фото на главное (раньше бралось первое попавшееся — бывало сзади).
 
     Не больше ENCAR_BACKFILL за прогон, чтобы не нагружать encar: остальные
     дополнятся в следующие прогоны.
     """
-    limit = int(os.environ.get("ENCAR_BACKFILL") or "150")
+    if limit is None:
+        limit = int(os.environ.get("ENCAR_BACKFILL") or "150")
     todo = [c for c in cars if c["external_id"] in known and not known[c["external_id"]].get("has_vin")
-            and not c.get("detail")][:limit]
+            and not c.get("detail")][:max(limit, 0)]
     if not todo:
-        return
+        return 0
     ok = 0
     for c in todo:
         if pacer.blocked:
@@ -771,6 +787,7 @@ def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer):
         except Exception as error:
             print(f"Не разобраны детали {c['external_id']}: {error}")
     print(f"Дополнено VIN и приводом у машин с сайта: {ok} из {len(todo)}")
+    return len(todo)
 
 
 def _compress_to_data_url(image_bytes: bytes) -> str | None:

@@ -77,7 +77,17 @@ def _search(session, q: str, count: int = 0, inav: bool = False) -> dict:
     return {}
 
 
+# Каждые SEARCH_BREAK_EVERY запросов к поиску — перерыв SEARCH_BREAK_MIN минут
+SEARCH_BREAK_EVERY = 100
+SEARCH_BREAK_MIN = float(os.environ.get("ENCAR_SEARCH_BREAK") or "3")
+_searches = {"n": 0}
+
+
 def _pause():
+    _searches["n"] += 1
+    if _searches["n"] % SEARCH_BREAK_EVERY == 0:
+        print(f"  запросов к поиску {_searches['n']} — перерыв {SEARCH_BREAK_MIN:g} мин")
+        time.sleep(SEARCH_BREAK_MIN * 60)
     time.sleep(random.uniform(1.0, 2.5))
 
 
