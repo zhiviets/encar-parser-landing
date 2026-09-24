@@ -24,8 +24,10 @@ SEARCH_API = "https://api.encar.com/search/car/list/general"
 # Сколько свежих объявлений модели смотреть (страницами по PAGE): при заполнении каталога
 # новые машины модели ищутся глубже первых десятков
 PER_MODEL = int(os.environ.get("ENCAR_PER_MODEL") or "100")
-# Разнообразие: не больше стольких машин одной модели за прогон
-PER_MODEL_RUN = int(os.environ.get("ENCAR_PER_MODEL_RUN") or "4")
+# Разнообразие: не больше стольких машин одной модели за прогон — отдельно до 160 л.с. и мощнее,
+# чтобы доля 75/25 сохранялась
+PER_MODEL_RUN = {"le160": int(os.environ.get("ENCAR_PER_MODEL_LE160") or "3"),
+                 "gt160": int(os.environ.get("ENCAR_PER_MODEL_OTHER") or "2")}
 PAGE = 50
 # Сколько машин модели без объёма в названии уточнять по API при выборе «до 160»
 RESOLVE_PER_MODEL = 6
@@ -230,7 +232,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
     taken = {}
 
     def take(car, key):
-        taken[key] = taken.get(key, 0) + 1
+        taken[(key, car["power"])] = taken.get((key, car["power"]), 0) + 1
         car["bucket"] = "le160" if car["power"] == "le160" else "other"
         picked.append(car)
         used.add(id(car))
@@ -264,7 +266,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
             for key, cars in groups.items():
                 if not need():
                     break
-                if taken.get(key, 0) >= PER_MODEL_RUN:
+                if taken.get((key, kind), 0) >= PER_MODEL_RUN[kind]:
                     continue
                 i = pos[key]
                 while i < len(cars):
@@ -279,6 +281,11 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
                 pos[key] = i
 
     def fill_kind(kind, target):
+        # С лимитом на модель больше не взять: доли лет считаем от реально доступного
+        room = sum(min(PER_MODEL_RUN[kind] - taken.get((k, kind), 0),
+                       sum(1 for c in cars if c.get("power") in (kind, None) and id(c) not in used))
+                   for k, cars in groups.items())
+        target = min(target, total_of(kind) + max(room, 0))
         for name, _, _, w in selection.YEAR_BANDS:
             want = round(target * w)
             fill(kind, name, lambda: count.get((kind, name), 0) < want and total_of(kind) < target)
