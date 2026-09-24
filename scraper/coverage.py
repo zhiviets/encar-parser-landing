@@ -335,6 +335,12 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
                 print(f"Поиск encar закрылся ({error}) на модели {n}/{len(groups_list)} — выбираем из собранного")
                 stop = True
                 break
+            except Exception as error:
+                # Одна модель не ищется (HTTP 400 на особом названии, сбой сети) — пропускаем её,
+                # а не бросаем весь перебор: раньше из-за одной модели Volkswagen прогон уходил
+                # в медленный запасной путь (листать страницы сайта)
+                print(f"  модель {group} ({maker}) не ищется: {str(error)[:120]} — пропускаем")
+                break
             results = data.get("SearchResults") or []
             for r in results:
                 car = _to_car(r)
