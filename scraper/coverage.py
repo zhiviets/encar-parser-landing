@@ -24,6 +24,8 @@ SEARCH_API = "https://api.encar.com/search/car/list/general"
 # Сколько свежих объявлений модели смотреть (страницами по PAGE): при заполнении каталога
 # новые машины модели ищутся глубже первых десятков
 PER_MODEL = int(os.environ.get("ENCAR_PER_MODEL") or "100")
+# Разнообразие: не больше стольких машин одной модели за прогон
+PER_MODEL_RUN = int(os.environ.get("ENCAR_PER_MODEL_RUN") or "4")
 PAGE = 50
 # Сколько машин модели без объёма в названии уточнять по API при выборе «до 160»
 RESOLVE_PER_MODEL = 6
@@ -225,7 +227,10 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
             car["power"] = resolve(car)
         return car.get("power")
 
-    def take(car):
+    taken = {}
+
+    def take(car, key):
+        taken[key] = taken.get(key, 0) + 1
         car["bucket"] = "le160" if car["power"] == "le160" else "other"
         picked.append(car)
         used.add(id(car))
@@ -248,7 +253,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
         if not best and total_of("gt160") < quota["gt160"]:
             best = next((c for c in cars if c.get("power") == "gt160"), None)
         if best:
-            take(best)
+            take(best, key)
     covered = len(picked)
 
     def fill(kind, want_band, need):
@@ -259,6 +264,8 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
             for key, cars in groups.items():
                 if not need():
                     break
+                if taken.get(key, 0) >= PER_MODEL_RUN:
+                    continue
                 i = pos[key]
                 while i < len(cars):
                     c = cars[i]
@@ -266,7 +273,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
                     if id(c) in used or (want_band and selection.year_band(c["year"]) != want_band):
                         continue
                     if power(c, key) == kind:
-                        take(c)
+                        take(c, key)
                         progress = True
                         break
                 pos[key] = i

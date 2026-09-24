@@ -40,14 +40,18 @@ def list_url(action: str, page_no: int) -> str:
 MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
 # Порция машин между паузами и длина паузы в минутах
 BATCH = int(os.environ.get("ENCAR_BATCH") or "100")
-BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "10")
-# Заполнение каталога: пока машин с полной информацией на сайте меньше FILL_TARGET —
-# каждый прогон добавляет до FILL_PER_RUN новых; дальше раз в неделю (WEEKLY_DAY,
-# 0 — понедельник) — WEEKLY_NEW. ENCAR_TOTAL > 0 (ручной запуск) — ровно столько новых.
-FILL_TARGET = int(os.environ.get("ENCAR_FILL_TARGET") or "5500")
+BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "1.5")
+# Заполнение каталога: пока машин с полной информацией на сайте меньше FILL_TARGET — каждый
+# прогон добавляет до FILL_PER_RUN новых порциями по BATCH с паузой BATCH_PAUSE (1–2 мин) и в
+# конце запускает следующий. Потом — обновление два раза в неделю (UPDATE_DAYS, 0 — понедельник,
+# первый прогон дня): до UPDATE_NEW новых порциями по UPDATE_BATCH с паузой UPDATE_PAUSE минут.
+# ENCAR_TOTAL > 0 (ручной запуск) — ровно столько новых.
+FILL_TARGET = int(os.environ.get("ENCAR_FILL_TARGET") or "6000")
 FILL_PER_RUN = int(os.environ.get("ENCAR_FILL_PER_RUN") or "1000")
-WEEKLY_NEW = int(os.environ.get("ENCAR_WEEKLY_NEW") or "1000")
-WEEKLY_DAY = int(os.environ.get("ENCAR_WEEKLY_DAY") or "0")
+UPDATE_DAYS = {int(d) for d in (os.environ.get("ENCAR_UPDATE_DAYS") or "0,3").split(",") if d.strip()}
+UPDATE_NEW = int(os.environ.get("ENCAR_UPDATE_NEW") or "600")
+UPDATE_BATCH = int(os.environ.get("ENCAR_UPDATE_BATCH") or "150")
+UPDATE_PAUSE = float(os.environ.get("ENCAR_UPDATE_PAUSE") or "30")
 # Сколько машин с сайта, не встреченных в поиске, проверить по API (продаётся ли ещё)
 VERIFY_LIMIT = int(os.environ.get("ENCAR_VERIFY") or "300")
 
@@ -252,6 +256,10 @@ def scrape_list(page, url: str) -> list[dict]:
 
 
 def main():
+    known_all = fetch_known()
+    total = run_size(known_all)
+    if not total:
+        return
     with sync_playwright() as p:
         # Firefox не умеет авторизацию (логин/пароль) в SOCKS5-прокси —
         # Playwright падает с "Browser does not support socks5 proxy
@@ -284,10 +292,8 @@ def main():
         page = context.new_page()
 
         session = http_session()
-        known_all = fetch_known()
         # Машины с полной информацией заново не собираем; неполные — как новые (обновятся)
         known = {k: v for k, v in known_all.items() if v.get("complete", True)}
-        total = run_size(known_all)
         le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
         selection.QUOTAS.update(le160=round(total * le160_share), other=total - round(total * le160_share))
         pacer = Pacer()
@@ -340,8 +346,9 @@ def main():
             push_to_bn_auto(session, chunk, known, option_codes)
             kept += chunk
             if n < len(chunks):
-                print(f"Пауза {BATCH_PAUSE:g} мин, чтобы не нагружать encar")
-                time.sleep(BATCH_PAUSE * 60)
+                pause = BATCH_PAUSE * random.uniform(0.7, 1.3)
+                print(f"Пауза {pause:.1f} мин, чтобы не нагружать encar")
+                time.sleep(pause * 60)
                 pacer.blocked = False   # после паузы даём encar ещё шанс
         drom_browser.close()
     print(f"Мощность с drom.ru: найдена у {power_counts['found']}, не найдена у {power_counts['none']} "
@@ -357,8 +364,10 @@ def main():
 
 
 def run_size(known_all: dict) -> int:
-    """Сколько новых машин добавить: вручную (ENCAR_TOTAL), до заполнения каталога
-    (FILL_TARGET) — по FILL_PER_RUN за прогон, потом раз в неделю WEEKLY_NEW; 0 — сегодня не нужно."""
+    """Сколько новых машин добавить: вручную (ENCAR_TOTAL); до заполнения каталога (FILL_TARGET) —
+    по FILL_PER_RUN за прогон; потом в дни обновления (первый прогон дня) — UPDATE_NEW порциями
+    по UPDATE_BATCH с паузой UPDATE_PAUSE; 0 — сейчас ничего не нужно."""
+    global BATCH, BATCH_PAUSE
     manual = int(os.environ.get("ENCAR_TOTAL") or "0")
     if manual:
         return manual
@@ -366,11 +375,15 @@ def run_size(known_all: dict) -> int:
     if good < FILL_TARGET:
         n = min(FILL_PER_RUN, FILL_TARGET - good)
         print(f"Заполнение каталога: на сайте {good} из {FILL_TARGET} — добавим {n}")
+        # Каталог ещё не заполнен — workflow сразу запустит следующий прогон (без остановки)
+        open(Path(__file__).resolve().parent / "continue_fill", "w").close()
         return n
-    if time.gmtime().tm_wday == WEEKLY_DAY:
-        print(f"Каталог заполнен ({good}) — еженедельное обновление: до {WEEKLY_NEW} новых")
-        return WEEKLY_NEW
-    print(f"Каталог заполнен ({good}), сегодня не день обновления — только отметки и проверка")
+    now = time.gmtime()
+    if now.tm_wday in UPDATE_DAYS and now.tm_hour < 8:
+        BATCH, BATCH_PAUSE = UPDATE_BATCH, UPDATE_PAUSE
+        print(f"Каталог заполнен ({good}) — обновление: до {UPDATE_NEW} новых, порции по {BATCH} с паузой {BATCH_PAUSE:g} мин")
+        return UPDATE_NEW
+    print(f"Каталог заполнен ({good}), сейчас не время обновления — прогон окончен")
     return 0
 
 
@@ -412,17 +425,18 @@ class Pacer:
 
     def __init__(self):
         self.count = 0
-        self.next_break = random.randint(20, 30)
+        self.next_break = random.randint(25, 40)
         self.blocked = False
         self.saved = 0
 
     def _tick(self):
         self.count += 1
         if self.count >= self.next_break:
-            human_pause(25, 45)
-            self.next_break = self.count + random.randint(20, 30)
+            # Темп человека: перерыв 1–2,5 мин каждые 25–40 объявлений, между ними 2–5 с
+            human_pause(60, 150)
+            self.next_break = self.count + random.randint(25, 40)
         else:
-            human_pause(1.5, 4.0)
+            human_pause(2.0, 5.0)
 
     def detail(self, session, vehicle_id: str):
         if self.blocked:

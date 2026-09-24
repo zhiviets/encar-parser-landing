@@ -2,14 +2,15 @@ name: Weekly ENCAR scrape
 
 on:
   schedule:
-    # Каждый день в 01:00 UTC (11:00 по Владивостоку). Пока каталог не заполнен (5500 машин) —
-    # до 1000 новых за прогон; потом новые — раз в неделю (понедельник), в остальные дни только
-    # отметки «ещё в продаже» и проверка давно не встречавшихся
-    - cron: "0 1 * * *"
+    # Пока каталог не заполнен (6000 машин), прогоны идут друг за другом без остановки: каждый
+    # в конце запускает следующий (шаг «Next fill run»); расписание — страховка, если цепочка
+    # оборвётся. После заполнения — обновление по понедельникам и четвергам (первый прогон дня,
+    # порции по 150 с паузой 30 минут), в остальное время прогон сразу заканчивается.
+    - cron: "0 1,9,17 * * *"
   workflow_dispatch:
     inputs:
       total:
-        description: "Сколько новых машин добавить (0 — само: заполнение до 5500, потом раз в неделю)"
+        description: "Сколько новых машин добавить (0 — само: заполнение до 6000, потом 2 раза в неделю)"
         default: "0"
 
 # Один прогон за раз: запуск по расписанию ждёт, пока закончится предыдущий
@@ -21,11 +22,13 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    # 1000 машин порциями по 100 с паузой 10 минут между ними (≈1,5 часа пауз) плюс
+    # До 1000 машин порциями по 100 с паузой 1–2 минуты между ними плюс
     # поиск по всем моделям — до 6 часов, это предел GitHub
     timeout-minutes: 355
+    # contents: write — сохранить cars.json и кэш drom; actions: write — запустить следующий прогон
     permissions:
       contents: write
+      actions: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -57,7 +60,7 @@ jobs:
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
-          # 0 — само: до заполнения каталога по 1000 за прогон, потом раз в неделю
+          # 0 — само: до заполнения каталога по 1000 за прогон без остановки, потом 2 раза в неделю
           ENCAR_TOTAL: ${{ inputs.total || '0' }}
         run: |
           python scraper.py
@@ -87,3 +90,9 @@ jobs:
             sleep $((i * 10))
           done
           exit 1
+
+      - name: Next fill run
+        if: success() && hashFiles('scraper/continue_fill') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run scrape.yml --ref main -R ${{ github.repository }}
