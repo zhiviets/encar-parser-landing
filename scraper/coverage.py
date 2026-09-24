@@ -31,6 +31,9 @@ PER_MODEL_RUN = {"le160": int(os.environ.get("ENCAR_PER_MODEL_LE160") or "3"),
 PAGE = 50
 # Сколько машин модели без объёма в названии уточнять по API при выборе «до 160»
 RESOLVE_PER_MODEL = 6
+# Через столько минут после старта отбор больше не уточняет мощность (лимит GitHub — 6 ч)
+RUN_MINUTES = float(os.environ.get("ENCAR_RUN_MINUTES") or "300")
+STARTED = time.time()
 HEADERS = {
     "Referer": "https://www.encar.com/",
     "Origin": "https://www.encar.com",
@@ -203,13 +206,17 @@ def _resolver(session, known: dict, pacer, parse_encar_detail, power_of):
     return resolve
 
 
-def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None = None) -> list[dict]:
+def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None = None, on_take=None) -> list[dict]:
     """По машине на модель, затем добор по кругу по моделям: «до 160» — пока их не
     станет share, мощных — пока их не больше остального; внутри каждой группы —
     по долям лет выпуска selection.YEAR_BANDS (70% 2022–2024 и т.д.).
 
     Модели, которых на сайте меньше (on_site), идут первыми; по машине без очереди
-    получают только модели, которых на сайте ещё нет."""
+    получают только модели, которых на сайте ещё нет.
+
+    on_take(car) — сразу для каждой выбранной машины (отправка на сайт порциями по ходу
+    отбора: отбор уточняет мощность по API в темпе человека и идёт долго). Через
+    RUN_MINUTES от старта мощность больше не уточняется — отбор заканчивается."""
     on_site = on_site or {}
     order = sorted(groups, key=lambda k: (on_site.get(k, 0), random.random()))
     groups = {k: groups[k] for k in order}
@@ -222,6 +229,8 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
 
     def power(car, key):
         """Мощность; машины без объёма в названии уточняем по API (не больше RESOLVE_PER_MODEL на модель)."""
+        if time.time() - STARTED > RUN_MINUTES * 60:
+            return car.get("power")
         if car.get("power") is None and not car.get("_resolved") and per_group.get(key, 0) < RESOLVE_PER_MODEL:
             car["_resolved"] = True
             per_group[key] = per_group.get(key, 0) + 1
@@ -238,6 +247,8 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
         used.add(id(car))
         k = (car["power"], selection.year_band(car["year"]))
         count[k] = count.get(k, 0) + 1
+        if on_take:
+            on_take(car)
 
     def total_of(kind):
         return sum(v for (k, _), v in count.items() if k == kind)
@@ -302,7 +313,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
 
 
 def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of, save_debug,
-                       total: int | None = None) -> tuple[list[dict], list[dict]]:
+                       total: int | None = None, on_take=None, touched_out: list | None = None) -> tuple[list[dict], list[dict]]:
     """(новые машины, машины с сайта, встреченные в поиске).
 
     known — машины с сайта с полной информацией: их заново не выбираем, только отмечаем
@@ -349,4 +360,7 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
     total = sum(selection.QUOTAS.values()) if total is None else total
     if not total:
         return [], touched
-    return pick(groups, total, share, _resolver(session, known, pacer, parse_encar_detail, power_of), on_site), touched
+    if touched_out is not None:
+        touched_out.extend(touched)   # машины с сайта известны до отбора — если отбор оборвётся
+    return pick(groups, total, share, _resolver(session, known, pacer, parse_encar_detail, power_of), on_site,
+                on_take), touched

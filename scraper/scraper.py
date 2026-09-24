@@ -301,63 +301,85 @@ def main():
         le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
         selection.QUOTAS.update(le160=round(total * le160_share), other=total - round(total * le160_share))
         pacer = Pacer()
-        cars, touched = None, []
-        if os.environ.get("ENCAR_ALL_MODELS", "1") == "1":
-            # Все модели — через поиск API encar; не вышло — общий список на сайте, как раньше
-            try:
-                cars, touched = coverage.collect_all_models(session, known, pacer, parse_encar_detail, power_of,
-                                                            _save_debug, total=total)
-            except Exception as error:
-                print(f"Перебор моделей через поиск encar не удался ({error}) — берём общий список")
-        if cars is None and total:
-            le160, other, first_link = collect_cars(page, session, known, pacer)
-            cars = le160 + other
-        cars = cars or []
-        first_link = cars[0]["link"] if cars else None
-        option_codes = capture_network_sample(page, first_link) if first_link else {}
-        browser.close()
 
-    # Порциями: BATCH машин — детали, фото, отправка на сайт — и пауза BATCH_PAUSE минут,
-    # чтобы encar не видел сотни запросов подряд с одного IP. Машины появляются на сайте
-    # по ходу прогона, а если прогон оборвётся — уже отправленное останется.
-    kept = []
-    backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "150")
-    chunks = [cars[i:i + BATCH] for i in range(0, len(cars), BATCH)]
-    # Точная мощность — каталог drom.ru; его таблицы дорисовываются скриптом, поэтому браузер
-    import drom_specs
-    power_counts = {"found": 0, "none": 0}
-    with sync_playwright() as p:
+        # Точная мощность — каталог drom.ru; его таблицы дорисовываются скриптом, поэтому браузер
+        import drom_specs
+        power_counts = {"found": 0, "none": 0}
         drom_browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
         drom = drom_specs.DromCatalog(
             str(Path(__file__).resolve().parent / "drom_cache.json"),
             drom_specs.playwright_fetcher(drom_browser.new_context(user_agent=UA, locale="ru-RU")),
             max_requests=int(os.environ.get("DROM_MAX_PAGES") or "300"))
-        # Машины с сайта, встреченные в поиске: отметка «ещё в продаже» (старым — VIN и привод),
-        # затем давно не встречавшиеся — проверка по API
-        if touched:
-            print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
-            backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left)
-            add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts)
-            push_to_bn_auto(session, touched, known, option_codes)
-        seen = {c["external_id"] for c in touched} | {c["external_id"] for c in cars}
-        push_to_bn_auto(session, verify_known(session, known_all, seen, pacer), known_all)
-        for n, chunk in enumerate(chunks, 1):
-            if time.time() - STARTED > RUN_MINUTES * 60:
-                print(f"Прошло {RUN_MINUTES:g} мин — остальные {len(cars) - (n - 1) * BATCH} машин в следующий прогон")
-                break
-            print(f"=== Порция {n}/{len(chunks)}: машины {(n - 1) * BATCH + 1}–{(n - 1) * BATCH + len(chunk)} ===")
+
+        # Порциями по ходу отбора: набралось BATCH выбранных машин — детали, фото, отправка на
+        # сайт — пауза BATCH_PAUSE минут, отбор продолжается. Машины появляются на сайте сразу,
+        # а не после отбора всей тысячи (он уточняет мощность по API и идёт долго).
+        kept, buf = [], []
+        state = {"batches": 0, "option_codes": None, "late": 0}
+
+        def process(chunk, last=False):
+            if not chunk:
+                return
+            if state["option_codes"] is None:
+                state["option_codes"] = capture_network_sample(page, chunk[0].get("link")) if chunk[0].get("link") else {}
+            state["batches"] += 1
+            print(f"=== Порция {state['batches']}: {len(chunk)} машин, {(time.time() - STARTED) / 60:.0f} мин от старта ===")
             enrich_with_details(session, chunk, known, pacer)
             chunk = [c for c in chunk if still_ok(c)]
             add_drom_power(chunk, drom, power_counts)
             drom.save()
-            push_to_bn_auto(session, chunk, known, option_codes)
-            kept += chunk
-            if n < len(chunks):
+            push_to_bn_auto(session, chunk, known, state["option_codes"])
+            kept.extend(chunk)
+            if not last:
                 pause = BATCH_PAUSE * random.uniform(0.7, 1.3)
                 print(f"Пауза {pause:.1f} мин, чтобы не нагружать encar")
                 time.sleep(pause * 60)
                 pacer.blocked = False   # после паузы даём encar ещё шанс
+
+        def on_take(car):
+            if time.time() - STARTED > RUN_MINUTES * 60:
+                state["late"] += 1      # время прогона вышло — машина уйдёт в следующий прогон
+                return
+            buf.append(car)
+            if len(buf) >= BATCH:
+                chunk = buf[:]
+                buf.clear()
+                process(chunk)
+
+        cars, touched = None, []
+        if os.environ.get("ENCAR_ALL_MODELS", "1") == "1":
+            # Все модели — через поиск API encar; не вышло — общий список на сайте, как раньше
+            try:
+                cars, touched = coverage.collect_all_models(session, known, pacer, parse_encar_detail, power_of,
+                                                            _save_debug, total=total, on_take=on_take,
+                                                            touched_out=touched)
+            except Exception as error:
+                print(f"Перебор моделей через поиск encar не удался ({error}) — берём общий список")
+                if state["batches"] or buf:
+                    cars = []           # часть уже отправлена — общий список не нужен
+        if cars is None and total:
+            le160, other, _ = collect_cars(page, session, known, pacer)
+            cars = le160 + other
+            for car in cars:
+                on_take(car)
+        process(buf[:], last=True)
+        buf.clear()
+        if state["late"]:
+            print(f"Прошло {RUN_MINUTES:g} мин — {state['late']} выбранных машин в следующий прогон")
+
+        # Машины с сайта, встреченные в поиске: отметка «ещё в продаже» (старым — VIN и привод),
+        # затем давно не встречавшиеся — проверка по API. После новых: при заполнении важнее новые.
+        backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "150")
+        if touched:
+            print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
+            backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left)
+            add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts)
+            push_to_bn_auto(session, touched, known, state["option_codes"] or {})
+        seen = {c["external_id"] for c in touched} | {c["external_id"] for c in (cars or [])}
+        push_to_bn_auto(session, verify_known(session, known_all, seen, pacer), known_all)
+        drom.save()
         drom_browser.close()
+        browser.close()
     print(f"Мощность с drom.ru: найдена у {power_counts['found']}, не найдена у {power_counts['none']} "
           f"(совпадения: {drom.stats}, страниц drom.ru {drom.requests})")
 
