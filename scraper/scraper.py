@@ -54,6 +54,10 @@ UPDATE_BATCH = int(os.environ.get("ENCAR_UPDATE_BATCH") or "150")
 UPDATE_PAUSE = float(os.environ.get("ENCAR_UPDATE_PAUSE") or "30")
 # Сколько машин с сайта, не встреченных в поиске, проверить по API (продаётся ли ещё)
 VERIFY_LIMIT = int(os.environ.get("ENCAR_VERIFY") or "300")
+# Через столько минут после старта новые порции не начинаем: GitHub обрывает прогон через
+# 6 ч (timeout 355 мин), а оборванный прогон не запускает следующий. Порция — до ~30 мин.
+RUN_MINUTES = float(os.environ.get("ENCAR_RUN_MINUTES") or "300")
+STARTED = time.time()
 
 
 # Куда пушим данные в bn-auto. Без этих переменных скрипт просто
@@ -338,6 +342,9 @@ def main():
         seen = {c["external_id"] for c in touched} | {c["external_id"] for c in cars}
         push_to_bn_auto(session, verify_known(session, known_all, seen, pacer), known_all)
         for n, chunk in enumerate(chunks, 1):
+            if time.time() - STARTED > RUN_MINUTES * 60:
+                print(f"Прошло {RUN_MINUTES:g} мин — остальные {len(cars) - (n - 1) * BATCH} машин в следующий прогон")
+                break
             print(f"=== Порция {n}/{len(chunks)}: машины {(n - 1) * BATCH + 1}–{(n - 1) * BATCH + len(chunk)} ===")
             enrich_with_details(session, chunk, known, pacer)
             chunk = [c for c in chunk if still_ok(c)]

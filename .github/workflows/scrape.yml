@@ -30,6 +30,9 @@ jobs:
       contents: write
       actions: write
     steps:
+      # Время старта — шаг «Next fill run» по нему отличает падение сразу при старте
+      - name: Remember start time
+        run: echo "RUN_STARTED=$(date +%s)" >> "$GITHUB_ENV"
       - name: Checkout repo
         uses: actions/checkout@v4
 
@@ -92,7 +95,17 @@ jobs:
           exit 1
 
       - name: Next fill run
-        if: success() && hashFiles('scraper/continue_fill') != ''
+        # Следующий прогон — и после ошибки (сайт не ответил, сбой), иначе цепочка стоит до
+        # расписания. Но если прогон упал раньше 20 минут — ошибка при старте, её перезапуск
+        # ничего не даст: ждём расписания, чтобы не крутить падения по кругу.
+        if: ${{ !cancelled() && hashFiles('scraper/continue_fill') != '' }}
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run scrape.yml --ref main -R ${{ github.repository }}
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          elapsed=$(( $(date +%s) - ${RUN_STARTED:-0} ))
+          if [ "$JOB_STATUS" != "success" ] && [ "$elapsed" -lt 1200 ]; then
+            echo "Прогон упал через $((elapsed / 60)) мин — следующий не запускаем, ждём расписания"
+            exit 0
+          fi
+          gh workflow run scrape.yml --ref main -R ${{ github.repository }}
