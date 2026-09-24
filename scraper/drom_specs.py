@@ -230,7 +230,9 @@ class DromCatalog:
         slug = self.cache["models"][brand].get(_norm(model))
         return f"{brand}/{slug}" if slug else None
 
-    def generations(self, path: str, market: str) -> list[dict]:
+    def generations(self, path: str, market: str, year: int | None = None) -> list[dict]:
+        """Поколения модели на рынке; с year — только начавшиеся в [year-12, year+1]
+        (год начала — в адресе g_2020_16433), чтобы не открывать страницы старых поколений."""
         key = f"{path}/{market}"
         entry = self.cache["gen_lists"].get(key)
         today = date.today().toordinal()
@@ -247,6 +249,9 @@ class DromCatalog:
             self.cache["gen_lists"][key] = entry
         gens = []
         for g in entry["gens"]:
+            start = int(g.split("_")[1][:4])
+            if year and not (year - 12 <= start <= year + 1):
+                continue
             gkey = f"{path}/{g}"
             if gkey not in self.cache["gens"]:
                 got = self._get(f"{BASE}{gkey}/")
@@ -268,7 +273,7 @@ class DromCatalog:
         cands = []
         # Рынки по очереди (импорт в Корее — «south-korea», потом «europe»): берём первый, где нашлось
         for market in car.get("markets") or [car["market"]]:
-            for gen in self.generations(path, market):
+            for gen in self.generations(path, market, car["year"]):
                 for g in gen["groups"]:
                     trims = [t for t in g["trims"] if t["from"] - 100 <= ym <= (t["to"] or 999999) + 100] or (
                         [] if g["trims"] else [None])
