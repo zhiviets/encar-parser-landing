@@ -270,17 +270,26 @@ class DromCatalog:
             self.stats["no_model"] += 1
             return None
         ym = car["year"] * 100 + (car.get("month") or 6)
+        # Без месяца (только год) период комплектации сверяем по году
+        lo_hi = (lambda t: (t["from"] // 100 * 100 + 1, (t["to"] or 999999) // 100 * 100 + 12)) if not car.get("month") \
+            else (lambda t: (t["from"], t["to"] or 999999))
         cands = []
-        # Рынки по очереди (импорт в Корее — «south-korea», потом «europe»): берём первый, где нашлось
+        # Рынки по очереди (импорт в Корее — «south-korea», потом «europe»): берём первый, где нашлось.
+        # Сначала комплектации, чей период выпуска точно включает дату машины; нет таких — ±1 год
         for market in car.get("markets") or [car["market"]]:
-            for gen in self.generations(path, market, car["year"]):
-                for g in gen["groups"]:
-                    trims = [t for t in g["trims"] if t["from"] - 100 <= ym <= (t["to"] or 999999) + 100] or (
-                        [] if g["trims"] else [None])
-                    if trims and _fits(g, car):
-                        cands.append((g, [t for t in trims if t]))
+            gens = self.generations(path, market, car["year"])
+            for tol in (0, 100):
+                for gen in gens:
+                    for g in gen["groups"]:
+                        trims = [t for t in g["trims"] if lo_hi(t)[0] - tol <= ym <= lo_hi(t)[1] + tol] or (
+                            [] if g["trims"] else [None])
+                        if trims and _fits(g, car):
+                            cands.append((g, [t for t in trims if t]))
+                if cands:
+                    break
             if cands:
                 break
+        self.last_candidates = [(g["text"], [t["name"] for t in trims][:3]) for g, trims in cands]
         hps = {(g["hp"], g.get("hp_total")) for g, _ in cands}
         if len(hps) == 1:
             self.stats["exact"] += 1
