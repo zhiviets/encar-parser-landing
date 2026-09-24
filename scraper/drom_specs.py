@@ -86,7 +86,9 @@ def parse_header(text: str) -> dict | None:
         elif HP_RE.match(low):
             hp = int(HP_RE.match(low).group(1))
             if after_hybrid and g["hp"] is not None:
-                g["hp_total"] = hp
+                # После «гибрид» бывает и суммарная мощность (Honda Fit: 106, суммарная 122),
+                # и мощность одного электромотора (Tucson: 180 и 60) — суммарная больше ДВС
+                g["hp_total"] = hp if hp > g["hp"] else None
             elif g["hp"] is None:
                 g["hp"] = hp
         elif "гибрид" in low:
@@ -294,7 +296,7 @@ class DromCatalog:
         if len(hps) == 1:
             self.stats["exact"] += 1
             hp, total = hps.pop()
-            return {"hp": hp, "hp_total": total, "source": "drom"}
+            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom"}
         if not cands:
             self.stats["no_match"] += 1
             return None
@@ -311,7 +313,7 @@ class DromCatalog:
         if top > 0 and len(hps) == 1:
             self.stats["by_trim"] += 1
             hp, total = hps.pop()
-            return {"hp": hp, "hp_total": total, "source": "drom"}
+            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom"}
         self.stats["ambiguous"] += 1
         return None
 
@@ -363,7 +365,7 @@ def _fits(g: dict, car: dict) -> bool:
             return False
         if fuel == "lpg" and "газ" not in (g["fuel"] or ""):
             return False
-        if fuel == "petrol" and (g["fuel"] == "дизель" or g["hybrid"]):
+        if fuel == "petrol" and (g["fuel"] in ("дизель", "газ") or g["hybrid"]):
             return False
         if fuel in ("hybrid", "phev") and not g["hybrid"]:
             return False
