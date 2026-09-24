@@ -498,6 +498,17 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
 
 
 KOREAN_MAKES = {"Hyundai", "Kia", "Genesis", "Chevrolet", "Renault", "KGM"}
+JAPANESE_MAKES = {"Toyota", "Lexus", "Honda", "Nissan", "Infiniti", "Mazda", "Subaru", "Mitsubishi", "Suzuki", "Acura"}
+
+
+def drom_markets(make: str) -> list[str]:
+    """Рынки drom.ru по очереди: корейские марки — Корея; импорт — Корея, потом рынок
+    страны марки (японские — Япония), потом Европа и США."""
+    if make in KOREAN_MAKES:
+        return ["south-korea"]
+    if make in JAPANESE_MAKES:
+        return ["south-korea", "japan", "usa", "europe"]
+    return ["south-korea", "europe", "usa"]
 
 
 def add_drom_power(cars: list[dict], drom, counts: dict):
@@ -510,7 +521,7 @@ def add_drom_power(cars: list[dict], drom, counts: dict):
             continue
         found = drom.power({
             "make": d["make"], "model": d["model"],
-            "markets": ["south-korea"] if d["make"] in KOREAN_MAKES else ["south-korea", "europe"],
+            "markets": drom_markets(d["make"]),
             "year": d["year"], "month": d.get("month"), "cc": d.get("displacement"),
             "fuel": drom_specs.norm_fuel(spec.get("Топливо")), "drive": drom_specs.norm_drive(spec.get("Привод")),
             "trans": drom_specs.norm_trans(spec.get("Трансмиссия")),
