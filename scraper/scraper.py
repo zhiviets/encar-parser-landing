@@ -296,17 +296,31 @@ def main():
     kept = []
     backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "150")
     chunks = [cars[i:i + BATCH] for i in range(0, len(cars), BATCH)]
-    for n, chunk in enumerate(chunks, 1):
-        print(f"=== Порция {n}/{len(chunks)}: машины {(n - 1) * BATCH + 1}–{(n - 1) * BATCH + len(chunk)} ===")
-        enrich_with_details(session, chunk, known, pacer)
-        backfill_left -= backfill_known(session, chunk, known, pacer, limit=backfill_left)
-        chunk = [c for c in chunk if still_ok(c)]
-        push_to_bn_auto(session, chunk, known, option_codes)
-        kept += chunk
-        if n < len(chunks):
-            print(f"Пауза {BATCH_PAUSE:g} мин, чтобы не нагружать encar")
-            time.sleep(BATCH_PAUSE * 60)
-            pacer.blocked = False   # после паузы даём encar ещё шанс
+    # Точная мощность — каталог drom.ru; его таблицы дорисовываются скриптом, поэтому браузер
+    import drom_specs
+    power_counts = {"found": 0, "none": 0}
+    with sync_playwright() as p:
+        drom_browser = p.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled"])
+        drom = drom_specs.DromCatalog(
+            str(Path(__file__).resolve().parent / "drom_cache.json"),
+            drom_specs.playwright_fetcher(drom_browser.new_context(user_agent=UA, locale="ru-RU")),
+            max_requests=int(os.environ.get("DROM_MAX_PAGES") or "300"))
+        for n, chunk in enumerate(chunks, 1):
+            print(f"=== Порция {n}/{len(chunks)}: машины {(n - 1) * BATCH + 1}–{(n - 1) * BATCH + len(chunk)} ===")
+            enrich_with_details(session, chunk, known, pacer)
+            backfill_left -= backfill_known(session, chunk, known, pacer, limit=backfill_left)
+            chunk = [c for c in chunk if still_ok(c)]
+            add_drom_power(chunk, drom, power_counts)
+            drom.save()
+            push_to_bn_auto(session, chunk, known, option_codes)
+            kept += chunk
+            if n < len(chunks):
+                print(f"Пауза {BATCH_PAUSE:g} мин, чтобы не нагружать encar")
+                time.sleep(BATCH_PAUSE * 60)
+                pacer.blocked = False   # после паузы даём encar ещё шанс
+        drom_browser.close()
+    print(f"Мощность с drom.ru: найдена у {power_counts['found']}, не найдена у {power_counts['none']} "
+          f"(совпадения: {drom.stats}, страниц drom.ru {drom.requests})")
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
@@ -483,6 +497,34 @@ def collect_cars(page, session, known: dict, pacer: Pacer):
     return picked["le160"], picked["other"], first_link
 
 
+KOREAN_MAKES = {"Hyundai", "Kia", "Genesis", "Chevrolet", "Renault", "KGM"}
+
+
+def add_drom_power(cars: list[dict], drom, counts: dict):
+    """Точная мощность комплектации с drom.ru — в характеристики новых машин («Мощность, л.с.»)."""
+    import drom_specs
+    for c in cars:
+        d = c.get("detail") or {}
+        spec = d.get("spec")
+        if not spec or spec.get("Мощность, л.с.") or not d.get("make") or not d.get("model") or not d.get("year"):
+            continue
+        found = drom.power({
+            "make": d["make"], "model": d["model"],
+            "markets": ["south-korea"] if d["make"] in KOREAN_MAKES else ["south-korea", "europe"],
+            "year": d["year"], "month": d.get("month"), "cc": d.get("displacement"),
+            "fuel": drom_specs.norm_fuel(spec.get("Топливо")), "drive": drom_specs.norm_drive(spec.get("Привод")),
+            "trans": drom_specs.norm_trans(spec.get("Трансмиссия")),
+            "trim": f"{spec.get('Модификация') or ''} {spec.get('Комплектация') or ''}",
+        })
+        if found:
+            spec["Мощность, л.с."] = str(found["hp"])
+            if found.get("hp_total"):
+                spec["Суммарная мощность гибрида, л.с."] = str(found["hp_total"])
+            counts["found"] += 1
+        else:
+            counts["none"] += 1
+
+
 def still_ok(car: dict) -> bool:
     """После API перепроверяем год выпуска, марку и что мощность вообще можно оценить
     (машины без объёма двигателя не берём; электромобили — в группе «любой мощности»)."""
@@ -657,6 +699,8 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     ym = re.sub(r"\D", "", str(category.get("yearMonth") or ""))
     if len(ym) >= 4:
         out["year"] = int(ym[:4])
+    if len(ym) >= 6 and 1 <= int(ym[4:6]) <= 12:
+        out["month"] = int(ym[4:6])
     if spec.get("mileage") is not None:
         out["mileage_km"] = _to_int(str(spec.get("mileage")))
 

@@ -1,0 +1,364 @@
+"""
+Точная мощность из каталога drom.ru.
+
+Машина (марка, модель, рынок, год, объём, топливо, привод, КПП, название
+комплектации) сопоставляется с группой комплектаций на странице поколения
+drom.ru: «1.5 л, бензин, 106 л.с., параллельный гибрид, 122 л.с., вариатор
+(CVT), полный привод (4WD)». Мощность берётся, только если совпадение
+однозначное: все подходящие группы дают одну мощность — или их различило
+название комплектации. Иначе — None (сайт оставит оценку со знаком «≈»).
+
+Страницы открываются в браузере (таблицы комплектаций drom.ru дорисовывает
+скриптом) и запоминаются в кэше (drom_cache.json в репозитории): страница
+поколения не меняется, список поколений модели перечитывается раз в месяц.
+Этот файл одинаковый в dongchedi_parser и encar-parser-landing.
+"""
+
+import json
+import os
+import random
+import re
+import time
+from datetime import date
+
+BASE = "https://www.drom.ru/catalog/"
+MARKETS = {"china": "Китай", "south-korea": "Южная Корея", "japan": "Япония", "europe": "Европа", "usa": "США"}
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
+GEN_LIST_TTL_DAYS = 30
+
+# Марки, которые на drom.ru называются иначе, чем у нас (остальные ищутся по названию
+# на странице каталога drom.ru)
+BRAND_ALIASES = {
+    "mercedes-benz": "mercedes-benz", "land rover": "land_rover", "li auto": "lixiang", "lynk & co": "lynk_co",
+    "baic bj": "baic", "great wall": "great_wall", "rolls-royce": "rolls-royce", "aston martin": "aston_martin",
+    "alfa romeo": "alfa_romeo", "chery fengyun": "chery", "fangchengbao": "fangchengbao", "trumpchi": "gac",
+}
+# Модели, которые на drom.ru называются иначе: (марка, модель) → адрес модели на drom.ru
+MODEL_ALIASES = {
+    ("geely", "xingyue l"): "geely/monjaro",
+    ("geely", "monjaro"): "geely/monjaro",
+    ("mercedes-benz", "c-class"): "mercedes-benz/c-class",
+    ("mercedes-benz", "e-class"): "mercedes-benz/e-class",
+    ("mercedes-benz", "s-class"): "mercedes-benz/s-class",
+    ("mercedes-benz", "g-class"): "mercedes-benz/g-class",
+    ("bmw", "3 series"): "bmw/3-series",
+    ("bmw", "5 series"): "bmw/5-series",
+    ("bmw", "7 series"): "bmw/7-series",
+    ("toyota", "land cruiser prado"): "toyota/land_cruiser_prado",
+    ("hyundai", "santa fe"): "hyundai/santa_fe",
+    ("hyundai", "santafe"): "hyundai/santa_fe",
+    ("tesla", "model 3"): "tesla/model_3",
+    ("tesla", "model y"): "tesla/model_y",
+}
+
+LEVELS = {"Базовая", "Предмаксимальная", "Максимальная", "Средняя", "Спортивная", "Оптимальная", "Комфорт"}
+PERIOD_RE = re.compile(r"^(\d{2})\.(\d{4})\s*-\s*(?:(\d{2})\.(\d{4})|н\.в\.)$")
+HP_RE = re.compile(r"^(\d{2,4})\s*л\.с\.$")
+
+
+def _norm(text: str) -> str:
+    return re.sub(r"[\s_\-·.()（）]", "", (text or "").lower())
+
+
+# ---------- разбор страниц drom.ru ----------
+
+def text_lines(text: str) -> list[str]:
+    """Текст страницы из браузера (page.inner_text) → строки; ячейки таблицы — отдельными строками."""
+    return [cell.strip() for line in (text or "").splitlines() for cell in line.split("\t") if cell.strip()]
+
+
+HEADER_START = re.compile(r"^(\d+(?:\.\d)?\s*л,|электро)", re.I)
+
+
+def parse_header(text: str) -> dict | None:
+    """«1.5 л, бензин, 106 л.с., параллельный гибрид, 122 л.с., вариатор (CVT), полный привод (4WD)»."""
+    if "л.с." not in text or "привод" not in text or not HEADER_START.match(text) or len(text) > 200:
+        return None
+    g = {"text": text, "liters": None, "fuel": None, "hp": None, "hybrid": None, "hp_total": None,
+         "trans": None, "drive": None}
+    after_hybrid = False
+    for tok in (t.strip() for t in text.split(",")):
+        low = tok.lower()
+        m = re.match(r"^(\d+(?:\.\d)?)\s*л$", low)
+        if m:
+            g["liters"] = float(m.group(1))
+        elif HP_RE.match(low):
+            hp = int(HP_RE.match(low).group(1))
+            if after_hybrid and g["hp"] is not None:
+                g["hp_total"] = hp
+            elif g["hp"] is None:
+                g["hp"] = hp
+        elif "гибрид" in low:
+            g["hybrid"] = low
+            after_hybrid = True
+        elif "привод" in low:
+            g["drive"] = "4wd" if ("полный" in low or "4wd" in low) else "rwd" if "задний" in low else "fwd"
+        elif low in ("бензин", "дизель", "электро", "газ", "газ/бензин") or "электр" in low:
+            g["fuel"] = "electric" if "электр" in low else low
+        elif any(k in low for k in ("акпп", "мкпп", "вариатор", "робот", "редуктор", "cvt", "dct")):
+            g["trans"] = ("cvt" if ("вариатор" in low or "cvt" in low) else "manual" if "мкпп" in low
+                          else "robot" if ("робот" in low or "dct" in low) else "reducer" if "редуктор" in low
+                          else "auto")
+    return g if g["hp"] else None
+
+
+def _ym(month: str, year: str):
+    return int(year) * 100 + int(month)
+
+
+def parse_generation(page_text: str) -> dict:
+    """Поколение (текст страницы из браузера): рынок, период выпуска и группы комплектаций с мощностью.
+    Таблицу комплектаций drom.ru дорисовывает скриптом — в HTML простого запроса её нет."""
+    lines = text_lines(page_text)
+    text = "\n".join(lines)
+    market = re.search(r"Рынок сбыта:\s*([^.\n]+)", text)
+    period = re.search(r"\((\d{2})\.(\d{4})\s*-\s*(?:(\d{2})\.(\d{4})|н\.в\.)\)", text)
+    gen = {"market": market.group(1).strip() if market else None,
+           "from": _ym(period.group(1), period.group(2)) if period else None,
+           "to": _ym(period.group(3), period.group(4)) if period and period.group(3) else None,
+           "groups": []}
+    group = None
+    for i, ln in enumerate(lines):
+        header = parse_header(ln)
+        if header:
+            group = {**header, "engine": None, "body": [], "trims": []}
+            gen["groups"].append(group)
+            continue
+        if group is None:
+            continue
+        if ln.startswith("Сравнение ") or ln.startswith("Отзывы "):
+            group = None
+            continue
+        if ln == "Двигатель:" and i + 1 < len(lines):
+            group["engine"] = lines[i + 1]
+        elif ln == "Кузов:":
+            j = i + 1
+            while j < len(lines):
+                parts = [x.strip() for x in lines[j].split(",") if x.strip()]
+                if not parts or not all(re.match(r"^[A-Z0-9][A-Z0-9\-]{1,14}$", x) for x in parts):
+                    break
+                group["body"] += parts
+                j += 1
+        m = PERIOD_RE.match(ln)
+        if m:
+            name = lines[i - 1] if lines[i - 1] not in LEVELS else lines[i - 2]
+            group["trims"].append({"name": name, "from": _ym(m.group(1), m.group(2)),
+                                   "to": _ym(m.group(3), m.group(4)) if m.group(3) else None})
+    return gen
+
+
+# ---------- каталог с кэшем ----------
+
+def playwright_fetcher(browser_context):
+    """fetch(url) → (html, текст страницы) через браузер: drom.ru дорисовывает таблицы скриптом."""
+    page = browser_context.new_page()
+
+    def fetch(url):
+        resp = page.goto(url, wait_until="domcontentloaded", timeout=60_000)
+        if resp is not None and resp.status != 200:
+            raise RuntimeError(f"HTTP {resp.status}")
+        page.wait_for_timeout(2500)
+        return page.content(), page.inner_text("body")
+
+    return fetch
+
+
+class DromCatalog:
+    def __init__(self, cache_path: str, fetch, max_requests: int = 300, log=print):
+        """fetch(url) → (html, текст страницы) — см. playwright_fetcher()."""
+        self.path = cache_path
+        self.fetch = fetch
+        self.log = log
+        self.max_requests = max_requests
+        self.requests = 0
+        try:
+            with open(cache_path, encoding="utf-8") as f:
+                self.cache = json.load(f)
+        except (OSError, ValueError):
+            self.cache = {}
+        for key in ("brands", "models", "gen_lists", "gens"):
+            self.cache.setdefault(key, {})
+        self.stats = {"exact": 0, "by_trim": 0, "ambiguous": 0, "no_model": 0, "no_match": 0}
+
+    def save(self):
+        with open(self.path, "w", encoding="utf-8") as f:
+            json.dump(self.cache, f, ensure_ascii=False, indent=0, sort_keys=True)
+
+    def _get(self, url: str):
+        """(html, текст) или None; не больше max_requests страниц за прогон."""
+        if self.requests >= self.max_requests:
+            return None
+        self.requests += 1
+        time.sleep(random.uniform(2.0, 4.0))
+        try:
+            return self.fetch(url)
+        except Exception as error:
+            self.log(f"  drom.ru: {url} — {str(error).splitlines()[0][:120]}")
+            return None
+
+    def _links(self, html: str, prefix: str) -> dict:
+        """Ссылки вида prefix<slug>/ с текстом: нормализованное название → slug."""
+        out = {}
+        for slug, name in re.findall(rf'href="(?:https://www\.drom\.ru)?/catalog/{re.escape(prefix)}([a-z0-9_\-~]+)/"[^>]*>([^<]{{1,60}})</a>', html):
+            out.setdefault(_norm(name), slug)
+            out.setdefault(_norm(slug), slug)
+        return out
+
+    def brand_slug(self, make: str) -> str | None:
+        key = _norm(make)
+        if make.lower() in BRAND_ALIASES:
+            return BRAND_ALIASES[make.lower()]
+        if not self.cache["brands"]:
+            got = self._get(BASE)
+            if got:
+                self.cache["brands"] = self._links(got[0], "")
+        return self.cache["brands"].get(key)
+
+    def model_path(self, make: str, model: str) -> str | None:
+        alias = MODEL_ALIASES.get((make.lower(), model.lower()))
+        if alias:
+            return alias
+        brand = self.brand_slug(make)
+        if not brand:
+            return None
+        if brand not in self.cache["models"]:
+            got = self._get(f"{BASE}{brand}/")
+            if got is None:
+                return None
+            self.cache["models"][brand] = self._links(got[0], f"{brand}/")
+        slug = self.cache["models"][brand].get(_norm(model))
+        return f"{brand}/{slug}" if slug else None
+
+    def generations(self, path: str, market: str) -> list[dict]:
+        key = f"{path}/{market}"
+        entry = self.cache["gen_lists"].get(key)
+        today = date.today().toordinal()
+        if not entry or today - entry.get("day", 0) > GEN_LIST_TTL_DAYS:
+            got = self._get(f"{BASE}{path}/{market}/")
+            if got is None:
+                return []
+            urls = sorted(set(re.findall(rf'/catalog/{re.escape(path)}/(g_\d+_\d+)/', got[0])))
+            # g_2025_23434 и g_202509_23434 — одно поколение (номер тот же)
+            by_id = {}
+            for u in urls:
+                by_id.setdefault(u.rsplit("_", 1)[1], u)
+            entry = {"day": today, "gens": sorted(by_id.values())}
+            self.cache["gen_lists"][key] = entry
+        gens = []
+        for g in entry["gens"]:
+            gkey = f"{path}/{g}"
+            if gkey not in self.cache["gens"]:
+                got = self._get(f"{BASE}{gkey}/")
+                if got is None:
+                    continue
+                self.cache["gens"][gkey] = parse_generation(got[1])
+            gens.append(self.cache["gens"][gkey])
+        return [g for g in gens if g.get("market") == MARKETS.get(market, market)]
+
+    def power(self, car: dict) -> dict | None:
+        """car: make, model, market (china/south-korea/japan) или markets [по очереди], year, month?, cc, fuel (petrol/diesel/
+        hybrid/electric/phev), drive (fwd/rwd/4wd)?, trans (auto/manual/cvt/robot)?, trim?, body?.
+        → {"hp", "hp_total", "source"} или None."""
+        path = self.model_path(car["make"], car["model"]) if car.get("make") and car.get("model") else None
+        if not path:
+            self.stats["no_model"] += 1
+            return None
+        ym = car["year"] * 100 + (car.get("month") or 6)
+        cands = []
+        # Рынки по очереди (импорт в Корее — «south-korea», потом «europe»): берём первый, где нашлось
+        for market in car.get("markets") or [car["market"]]:
+            for gen in self.generations(path, market):
+                for g in gen["groups"]:
+                    trims = [t for t in g["trims"] if t["from"] - 100 <= ym <= (t["to"] or 999999) + 100] or (
+                        [] if g["trims"] else [None])
+                    if trims and _fits(g, car):
+                        cands.append((g, [t for t in trims if t]))
+            if cands:
+                break
+        hps = {(g["hp"], g.get("hp_total")) for g, _ in cands}
+        if len(hps) == 1:
+            self.stats["exact"] += 1
+            hp, total = hps.pop()
+            return {"hp": hp, "hp_total": total, "source": "drom"}
+        if not cands:
+            self.stats["no_match"] += 1
+            return None
+        # Одинаковый объём, разная мощность — различаем по названию комплектации
+        words = set(re.findall(r"[a-z0-9]+", (car.get("trim") or "").lower())) - {"l", "t", "at", "mt"}
+        scored = []
+        for g, trims in cands:
+            best = max((len(words & set(re.findall(r"[a-z0-9]+", t["name"].lower()))) for t in trims), default=0)
+            if car.get("body") and car["body"] in g["body"]:
+                best += 10
+            scored.append((best, g))
+        top = max(s for s, _ in scored)
+        hps = {(g["hp"], g.get("hp_total")) for s, g in scored if s == top}
+        if top > 0 and len(hps) == 1:
+            self.stats["by_trim"] += 1
+            hp, total = hps.pop()
+            return {"hp": hp, "hp_total": total, "source": "drom"}
+        self.stats["ambiguous"] += 1
+        return None
+
+
+def norm_fuel(text: str | None) -> str | None:
+    """«бензин», «гибрид (бензин + электро)», «Бензин», «Гибрид», «Электро», «Последовательный гибрид…» → код."""
+    low = (text or "").lower()
+    if not low:
+        return None
+    if any(k in low for k in ("подключ", "plug", "phev", "dm-i", "dm-p")):
+        return "phev"
+    if "гибрид" in low or "hybrid" in low:
+        return "hybrid"
+    if "электр" in low:
+        return "electric"
+    if "дизел" in low:
+        return "diesel"
+    if "газ" in low or "lpg" in low:
+        return "lpg"
+    if "бензин" in low:
+        return "petrol"
+    return None
+
+
+def norm_trans(text: str | None) -> str | None:
+    low = (text or "").lower()
+    return ("manual" if ("механ" in low or "мкпп" in low or "手动" in low) else "cvt" if ("вариатор" in low or "cvt" in low)
+            else "robot" if ("робот" in low or "dct" in low) else "auto" if ("автомат" in low or "акпп" in low or "自动" in low)
+            else None)
+
+
+def norm_drive(text: str | None) -> str | None:
+    low = (text or "").lower()
+    return ("4wd" if ("полный" in low or "4wd" in low or "awd" in low or "四驱" in low) else "rwd" if ("задний" in low or "后驱" in low)
+            else "fwd" if ("передний" in low or "前驱" in low) else None)
+
+
+def _fits(g: dict, car: dict) -> bool:
+    fuel = car.get("fuel")
+    if fuel == "electric":
+        if g["fuel"] != "electric":
+            return False
+    else:
+        if g["fuel"] == "electric":
+            return False
+        if car.get("cc") and g["liters"] is not None and abs(g["liters"] - round(car["cc"] / 1000, 1)) > 0.05:
+            return False
+        if fuel == "diesel" and g["fuel"] != "дизель":
+            return False
+        if fuel == "lpg" and "газ" not in (g["fuel"] or ""):
+            return False
+        if fuel == "petrol" and (g["fuel"] == "дизель" or g["hybrid"]):
+            return False
+        if fuel in ("hybrid", "phev") and not g["hybrid"]:
+            return False
+        if fuel == "phev" and g["hybrid"] and "подключ" not in g["hybrid"] and "plug" not in g["hybrid"]:
+            return False
+    if car.get("drive") and g["drive"] and car["drive"] != g["drive"]:
+        return False
+    if car.get("trans") and g["trans"]:
+        # «автомат» у продавца бывает и вариатором, и роботом — отсекаем только механику
+        if (car["trans"] == "manual") != (g["trans"] == "manual"):
+            return False
+    return True
