@@ -46,7 +46,7 @@ BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "1.5")
 # конце запускает следующий. Потом — обновление два раза в неделю (UPDATE_DAYS, 0 — понедельник,
 # первый прогон дня): до UPDATE_NEW новых порциями по UPDATE_BATCH с паузой UPDATE_PAUSE минут.
 # ENCAR_TOTAL > 0 (ручной запуск) — ровно столько новых.
-FILL_TARGET = int(os.environ.get("ENCAR_FILL_TARGET") or "6000")
+FILL_TARGET = int(os.environ.get("ENCAR_FILL_TARGET") or "5500")
 FILL_PER_RUN = int(os.environ.get("ENCAR_FILL_PER_RUN") or "1000")
 UPDATE_DAYS = {int(d) for d in (os.environ.get("ENCAR_UPDATE_DAYS") or "0,3").split(",") if d.strip()}
 UPDATE_NEW = int(os.environ.get("ENCAR_UPDATE_NEW") or "600")
