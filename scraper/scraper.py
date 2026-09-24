@@ -14,9 +14,11 @@ import encar_ru
 import coverage
 import selection
 
-# Чуть меньше лимита bn-auto (900 КБ, см. server/photo.js в bn-auto) —
-# запас на накладные расходы base64.
-MAX_PHOTO_BYTES = 850 * 1024
+# Фото храним в базе bn-auto (диск ограничен): WebP до 960 px и до 150 КБ —
+# карточка ~70–120 КБ вместо ~300–800 КБ JPEG.
+MAX_PHOTO_BYTES = 150 * 1024
+PHOTO_MAX_WIDTH = 960
+PHOTO_QUALITY = 72
 
 
 
@@ -39,6 +41,15 @@ MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
 # Порция машин между паузами и длина паузы в минутах
 BATCH = int(os.environ.get("ENCAR_BATCH") or "100")
 BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "10")
+# Заполнение каталога: пока машин с полной информацией на сайте меньше FILL_TARGET —
+# каждый прогон добавляет до FILL_PER_RUN новых; дальше раз в неделю (WEEKLY_DAY,
+# 0 — понедельник) — WEEKLY_NEW. ENCAR_TOTAL > 0 (ручной запуск) — ровно столько новых.
+FILL_TARGET = int(os.environ.get("ENCAR_FILL_TARGET") or "5500")
+FILL_PER_RUN = int(os.environ.get("ENCAR_FILL_PER_RUN") or "1000")
+WEEKLY_NEW = int(os.environ.get("ENCAR_WEEKLY_NEW") or "1000")
+WEEKLY_DAY = int(os.environ.get("ENCAR_WEEKLY_DAY") or "0")
+# Сколько машин с сайта, не встреченных в поиске, проверить по API (продаётся ли ещё)
+VERIFY_LIMIT = int(os.environ.get("ENCAR_VERIFY") or "300")
 
 
 # Куда пушим данные в bn-auto. Без этих переменных скрипт просто
@@ -273,20 +284,26 @@ def main():
         page = context.new_page()
 
         session = http_session()
-        known = fetch_known()
+        known_all = fetch_known()
+        # Машины с полной информацией заново не собираем; неполные — как новые (обновятся)
+        known = {k: v for k, v in known_all.items() if v.get("complete", True)}
+        total = run_size(known_all)
+        le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
+        selection.QUOTAS.update(le160=round(total * le160_share), other=total - round(total * le160_share))
         pacer = Pacer()
-        cars = None
+        cars, touched = None, []
         if os.environ.get("ENCAR_ALL_MODELS", "1") == "1":
             # Все модели — через поиск API encar; не вышло — общий список на сайте, как раньше
             try:
-                cars = coverage.collect_all_models(session, known, pacer, parse_encar_detail, power_of, _save_debug)
+                cars, touched = coverage.collect_all_models(session, known, pacer, parse_encar_detail, power_of,
+                                                            _save_debug, total=total)
             except Exception as error:
                 print(f"Перебор моделей через поиск encar не удался ({error}) — берём общий список")
-        if cars:
-            first_link = cars[0]["link"]
-        else:
+        if cars is None and total:
             le160, other, first_link = collect_cars(page, session, known, pacer)
             cars = le160 + other
+        cars = cars or []
+        first_link = cars[0]["link"] if cars else None
         option_codes = capture_network_sample(page, first_link) if first_link else {}
         browser.close()
 
@@ -305,10 +322,18 @@ def main():
             str(Path(__file__).resolve().parent / "drom_cache.json"),
             drom_specs.playwright_fetcher(drom_browser.new_context(user_agent=UA, locale="ru-RU")),
             max_requests=int(os.environ.get("DROM_MAX_PAGES") or "300"))
+        # Машины с сайта, встреченные в поиске: отметка «ещё в продаже» (старым — VIN и привод),
+        # затем давно не встречавшиеся — проверка по API
+        if touched:
+            print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
+            backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left)
+            add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts)
+            push_to_bn_auto(session, touched, known, option_codes)
+        seen = {c["external_id"] for c in touched} | {c["external_id"] for c in cars}
+        push_to_bn_auto(session, verify_known(session, known_all, seen, pacer), known_all)
         for n, chunk in enumerate(chunks, 1):
             print(f"=== Порция {n}/{len(chunks)}: машины {(n - 1) * BATCH + 1}–{(n - 1) * BATCH + len(chunk)} ===")
             enrich_with_details(session, chunk, known, pacer)
-            backfill_left -= backfill_known(session, chunk, known, pacer, limit=backfill_left)
             chunk = [c for c in chunk if still_ok(c)]
             add_drom_power(chunk, drom, power_counts)
             drom.save()
@@ -322,11 +347,56 @@ def main():
     print(f"Мощность с drom.ru: найдена у {power_counts['found']}, не найдена у {power_counts['none']} "
           f"(совпадения: {drom.stats}, страниц drom.ru {drom.requests})")
 
+    if not kept:
+        return
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         landing = [{k: v for k, v in c.items() if k != "detail"} for c in kept]
         json.dump({"updated_at": int(time.time()), "cars": landing}, f, ensure_ascii=False, indent=2)
     print(f"Saved {len(kept)} cars -> {OUT_PATH}")
+
+
+def run_size(known_all: dict) -> int:
+    """Сколько новых машин добавить: вручную (ENCAR_TOTAL), до заполнения каталога
+    (FILL_TARGET) — по FILL_PER_RUN за прогон, потом раз в неделю WEEKLY_NEW; 0 — сегодня не нужно."""
+    manual = int(os.environ.get("ENCAR_TOTAL") or "0")
+    if manual:
+        return manual
+    good = sum(1 for i in known_all.values() if i.get("complete") and i.get("published"))
+    if good < FILL_TARGET:
+        n = min(FILL_PER_RUN, FILL_TARGET - good)
+        print(f"Заполнение каталога: на сайте {good} из {FILL_TARGET} — добавим {n}")
+        return n
+    if time.gmtime().tm_wday == WEEKLY_DAY:
+        print(f"Каталог заполнен ({good}) — еженедельное обновление: до {WEEKLY_NEW} новых")
+        return WEEKLY_NEW
+    print(f"Каталог заполнен ({good}), сегодня не день обновления — только отметки и проверка")
+    return 0
+
+
+def verify_known(session, known_all: dict, seen: set, pacer) -> list[dict]:
+    """Машины с сайта, не встреченные в поиске и не обновлявшиеся неделю: спрашиваем API encar.
+    В продаже — отметка «ещё в продаже»; снята — не трогаем, через 30 дней сайт её скроет."""
+    todo = [(k, i) for k, i in known_all.items() if k not in seen and (i.get("seen_days") or 0) >= 7]
+    todo.sort(key=lambda x: -(x[1].get("seen_days") or 0))
+    out = []
+    for key, info in todo[:VERIFY_LIMIT]:
+        if pacer.blocked:
+            break
+        detail = pacer.detail(session, key)
+        status = ((detail or {}).get("advertisement") or {}).get("status")
+        if detail and status in (None, "ADVERTISE"):
+            out.append({"external_id": key, "link": info.get("url") or f"https://fem.encar.com/cars/detail/{key}"})
+    print(f"Проверено по API машин с сайта, не встреченных в поиске: {min(len(todo), VERIFY_LIMIT)} из {len(todo)}, "
+          f"в продаже {len(out)}")
+    return out
+
+
+def complete_listing(x: dict) -> bool:
+    """Полная информация: фото, цена, год, марка, модель и объём (у электромобилей — без объёма)."""
+    spec = x.get("spec") or {}
+    return bool(x.get("photo_url") and x.get("price_value") and x.get("year") and x.get("make") and x.get("model")
+                and (spec.get("Объём, см³") or spec.get("Топливо") == "электро"))
 
 
 class Pacer:
@@ -779,16 +849,18 @@ def fetch_known() -> dict:
     try:
         resp = requests.get(
             f"{BN_AUTO_URL}/api/live-listings/known",
-            params={"source": "encar"},
+            params={"source": "encar", "all": "1"},
             headers={"Authorization": f"Bearer {BN_AUTO_IMPORT_TOKEN}"},
-            timeout=30,
+            timeout=60,
         )
         resp.raise_for_status()
         data = resp.json()
         items = {str(i["id"]): i for i in data.get("items") or []}
         for vid in data.get("ids") or []:
             items.setdefault(str(vid), {})
-        print(f"Уже есть в bn-auto с фото и характеристиками: {len(items)} — у encar их не запрашиваем")
+        good = sum(1 for i in items.values() if i.get("complete", True))
+        print(f"На сайте: {len(items)}, с полной информацией {good} — у encar их заново не запрашиваем, "
+              f"неполные ({len(items) - good}) обновим, если встретятся")
         return items
     except Exception as error:
         print(f"Список известных лотов не получен ({error}) — запрашиваем всё")
@@ -853,22 +925,22 @@ def _compress_to_data_url(image_bytes: bytes) -> str | None:
     except Exception:
         return None
 
-    quality = 82
-    max_width = 1000
+    # WebP: при том же качестве на ~40 % легче JPEG. 960 px по ширине хватает
+    # для страницы объявления; тяжёлые снимки сжимаем сильнее, затем уменьшаем.
+    quality, max_width = PHOTO_QUALITY, PHOTO_MAX_WIDTH
     while True:
         resized = img
         if resized.width > max_width:
-            ratio = max_width / resized.width
-            resized = resized.resize((max_width, max(1, int(resized.height * ratio))))
+            resized = resized.resize((max_width, max(1, round(resized.height * max_width / resized.width))), Image.LANCZOS)
         buf = io.BytesIO()
-        resized.save(buf, format="JPEG", quality=quality)
+        resized.save(buf, format="WEBP", quality=quality, method=6)
         data = buf.getvalue()
-        if len(data) <= MAX_PHOTO_BYTES or (quality <= 40 and max_width <= 480):
-            return "data:image/jpeg;base64," + base64.b64encode(data).decode("ascii")
-        if quality > 40:
-            quality -= 12
+        if len(data) <= MAX_PHOTO_BYTES or max_width <= 640:
+            return "data:image/webp;base64," + base64.b64encode(data).decode("ascii")
+        if quality > 55:
+            quality -= 8
         else:
-            max_width = int(max_width * 0.8)
+            max_width = int(max_width * 0.85)
 
 
 def fetch_photo_data_url(session, image_url: str | None) -> str | None:
@@ -939,8 +1011,11 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             "options": d.get("options"),
             "source_url": c.get("link"),
         })
+    full_count = sum(1 for x in listings if "make" in x)
+    listings = [x for x in listings if "make" not in x or complete_listing(x)]
+    if full_count > sum(1 for x in listings if "make" in x):
+        print(f"Не отправлены без фото, цены или объёма: {full_count - sum(1 for x in listings if 'make' in x)}")
     if not listings:
-        print("Нет объявлений с external_id — нечего пушить в bn-auto.")
         return
 
     # С фото внутри пачка из сотни машин весит десятки МБ — такие шлём по 10.

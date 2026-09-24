@@ -2,13 +2,15 @@ name: Weekly ENCAR scrape
 
 on:
   schedule:
-    # Понедельник и четверг, 03:00 UTC (13:00 по Владивостоку)
-    - cron: "0 3 * * 1,4"
+    # Каждый день в 01:00 UTC (11:00 по Владивостоку). Пока каталог не заполнен (5500 машин) —
+    # до 1000 новых за прогон; потом новые — раз в неделю (понедельник), в остальные дни только
+    # отметки «ещё в продаже» и проверка давно не встречавшихся
+    - cron: "0 1 * * *"
   workflow_dispatch:
     inputs:
       total:
-        description: "Сколько машин собрать (все модели с 2017 г., 75 % до 160 л.с.)"
-        default: "1000"
+        description: "Сколько новых машин добавить (0 — само: заполнение до 5500, потом раз в неделю)"
+        default: "0"
 
 jobs:
   scrape:
@@ -49,8 +51,8 @@ jobs:
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
-          # 1000 машин: по расписанию и по умолчанию при ручном запуске (в поле можно указать меньше)
-          ENCAR_TOTAL: ${{ inputs.total || '1000' }}
+          # 0 — само: до заполнения каталога по 1000 за прогон, потом раз в неделю
+          ENCAR_TOTAL: ${{ inputs.total || '0' }}
         run: |
           python scraper.py
 

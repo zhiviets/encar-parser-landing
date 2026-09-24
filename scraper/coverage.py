@@ -21,7 +21,10 @@ import selection
 from brand_map import extract_brand_model
 
 SEARCH_API = "https://api.encar.com/search/car/list/general"
-PER_MODEL = int(os.environ.get("ENCAR_PER_MODEL") or "30")
+# Сколько свежих объявлений модели смотреть (страницами по PAGE): при заполнении каталога
+# новые машины модели ищутся глубже первых десятков
+PER_MODEL = int(os.environ.get("ENCAR_PER_MODEL") or "100")
+PAGE = 50
 # Сколько машин модели без объёма в названии уточнять по API при выборе «до 160»
 RESOLVE_PER_MODEL = 6
 HEADERS = {
@@ -49,9 +52,9 @@ def _query(cartype: str, maker: str | None = None, group: str | None = None, wit
     return "(And." + "_.".join(parts) + ")"
 
 
-def _search(session, q: str, count: int = 0, inav: bool = False) -> dict:
+def _search(session, q: str, count: int = 0, inav: bool = False, offset: int = 0) -> dict:
     url = (f"{SEARCH_API}?count=true&q={quote(q, safe='(),._')}"
-           f"&sr={quote(f'|ModifiedDate|0|{count}', safe='|')}")
+           f"&sr={quote(f'|ModifiedDate|{offset}|{count}', safe='|')}")
     if inav:
         url += "&inav=" + quote("|Metadata|Sort", safe="|")
     for attempt in (1, 2):
@@ -196,10 +199,17 @@ def _resolver(session, known: dict, pacer, parse_encar_detail, power_of):
     return resolve
 
 
-def pick(groups: dict, total: int, share: float, resolve) -> list[dict]:
+def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None = None) -> list[dict]:
     """По машине на модель, затем добор по кругу по моделям: «до 160» — пока их не
     станет share, мощных — пока их не больше остального; внутри каждой группы —
-    по долям лет выпуска selection.YEAR_BANDS (70% 2022–2024 и т.д.)."""
+    по долям лет выпуска selection.YEAR_BANDS (70% 2022–2024 и т.д.).
+
+    Модели, которых на сайте меньше (on_site), идут первыми; по машине без очереди
+    получают только модели, которых на сайте ещё нет."""
+    on_site = on_site or {}
+    order = sorted(groups, key=lambda k: (on_site.get(k, 0), random.random()))
+    groups = {k: groups[k] for k in order}
+    quota = {"le160": round(total * share), "gt160": total - round(total * share)}
     picked, used = [], set()
     count = {}
     resolved = {"n": 0}
@@ -226,11 +236,17 @@ def pick(groups: dict, total: int, share: float, resolve) -> list[dict]:
         return sum(v for (k, _), v in count.items() if k == kind)
 
     for key, cars in groups.items():
-        # Порядок внутри модели: сначала 2022–2024, потом 2025–2026, потом старше; уже на сайте — первыми
+        # Порядок внутри модели: сначала 2022–2024, потом 2025–2026, потом старше
         cars.sort(key=lambda c: rank.get(selection.year_band(c["year"]), 9))
-        best = (next((c for c in cars if c.get("power") == "le160"), None)
-                or next((c for c in cars if power(c, key) == "le160"), None)
-                or next((c for c in cars if c.get("power") == "gt160"), None))
+    for key, cars in groups.items():
+        if on_site.get(key) or len(picked) >= total:
+            continue
+        best = None
+        if total_of("le160") < quota["le160"]:
+            best = (next((c for c in cars if c.get("power") == "le160"), None)
+                    or next((c for c in cars if power(c, key) == "le160"), None))
+        if not best and total_of("gt160") < quota["gt160"]:
+            best = next((c for c in cars if c.get("power") == "gt160"), None)
         if best:
             take(best)
     covered = len(picked)
@@ -265,40 +281,58 @@ def pick(groups: dict, total: int, share: float, resolve) -> list[dict]:
     fill_kind("le160", max(round(total * share), math.ceil(total_of("gt160") / ratio) if ratio else 0))
     fill_kind("gt160", min(total - total_of("le160"), math.floor(total_of("le160") * ratio)))
     years = {name: sum(v for (_, b), v in count.items() if b == name) for name, *_ in selection.YEAR_BANDS}
-    print(f"Выбрано: моделей с машиной {covered} из {len(groups)}, всего {len(picked)} — до 160 л.с. "
+    print(f"Выбрано: новых моделей {covered} (на сайте нет {sum(1 for k in groups if not on_site.get(k))} из {len(groups)}), всего {len(picked)} — до 160 л.с. "
           f"{total_of('le160')}, мощнее {total_of('gt160')} (уточнено по API encar {resolved['n']}); по годам: "
           + ", ".join(f"{k} — {v}" for k, v in years.items()))
     return picked
 
 
-def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of, save_debug) -> list[dict]:
-    """parse_encar_detail, power_of, save_debug — из scraper.py (он запускается как __main__)."""
+def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of, save_debug,
+                       total: int | None = None) -> tuple[list[dict], list[dict]]:
+    """(новые машины, машины с сайта, встреченные в поиске).
+
+    known — машины с сайта с полной информацией: их заново не выбираем, только отмечаем
+    «ещё в продаже». parse_encar_detail, power_of, save_debug — из scraper.py."""
     groups_list = model_groups(session, save_debug)
     if not groups_list:
         raise SearchBlocked("поиск encar не отдал список моделей")
     print(f"Моделей всего: {len(groups_list)} — по каждой смотрим до {PER_MODEL} объявлений")
-    groups, seen = {}, set()
+    groups, seen, touched, on_site = {}, set(), [], {}
+    stop = False
     for n, (cartype, maker, group, with_year) in enumerate(groups_list, 1):
-        _pause()
-        try:
-            data = _search(session, _query(cartype, maker, group, with_year), count=PER_MODEL)
-        except SearchBlocked as error:
-            print(f"Поиск encar закрылся ({error}) на модели {n}/{len(groups_list)} — выбираем из собранного")
-            break
-        cars = []
-        for r in data.get("SearchResults") or []:
-            car = _to_car(r)
-            if not car or car["external_id"] in seen or not selection.eligible(car["brand_en"], car["year"]):
-                continue
-            seen.add(car["external_id"])
-            cars.append(car)
+        cars, on = [], 0
+        for offset in range(0, PER_MODEL, PAGE):
+            _pause()
+            try:
+                data = _search(session, _query(cartype, maker, group, with_year),
+                               count=min(PAGE, PER_MODEL - offset), offset=offset)
+            except SearchBlocked as error:
+                print(f"Поиск encar закрылся ({error}) на модели {n}/{len(groups_list)} — выбираем из собранного")
+                stop = True
+                break
+            results = data.get("SearchResults") or []
+            for r in results:
+                car = _to_car(r)
+                if not car or car["external_id"] in seen or not selection.eligible(car["brand_en"], car["year"]):
+                    continue
+                seen.add(car["external_id"])
+                if car["external_id"] in known:
+                    touched.append(car)
+                    on += 1
+                else:
+                    cars.append(car)
+            if len(results) < min(PAGE, PER_MODEL - offset):
+                break
         if cars:
-            # Машины, которые уже на сайте, — первыми (в своей группе лет, см. pick):
-            # иначе каждый прогон брал бы новые объявления и сайт разрастался бы
-            cars.sort(key=lambda c: c["external_id"] not in known)
             groups[(maker, group)] = cars
+            on_site[(maker, group)] = on
+        if stop:
+            break
         if n % 50 == 0:
-            print(f"  просмотрено моделей {n}/{len(groups_list)}, с подходящими машинами {len(groups)}")
+            print(f"  просмотрено моделей {n}/{len(groups_list)}, с новыми машинами {len(groups)}, "
+                  f"машин с сайта встречено {len(touched)}")
     share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
-    total = sum(selection.QUOTAS.values())
-    return pick(groups, total, share, _resolver(session, known, pacer, parse_encar_detail, power_of))
+    total = sum(selection.QUOTAS.values()) if total is None else total
+    if not total:
+        return [], touched
+    return pick(groups, total, share, _resolver(session, known, pacer, parse_encar_detail, power_of), on_site), touched
