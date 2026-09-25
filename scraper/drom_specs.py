@@ -309,7 +309,12 @@ class DromCatalog:
         try:
             return self.fetch(url)
         except Exception as error:
-            self.log(f"  drom.ru: {url} — {str(error).splitlines()[0][:120]}")
+            message = str(error).splitlines()[0][:120]
+            if "HTTP 404" in message:
+                # Страницы нет (например, рынка «Южная Корея» у импортной модели) — запоминаем
+                # пустой: в кэше она больше не открывается
+                return "", ""
+            self.log(f"  drom.ru: {url} — {message}")
             return None
 
     def _links(self, html: str, prefix: str) -> dict:
