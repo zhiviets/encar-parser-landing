@@ -118,6 +118,14 @@ _KO_EXCLUDE = re.compile(
     r"이쿼녹스|트래버스|타호|콜로라도|\bK[89]\b|아이오닉\s?[5-9]|일렉트릭|\bEV\d"
 )
 _LITERS = re.compile(r"(?<![\d.])(\d\.\d)(?![\d])")
+# Спортивные марки — любые их машины мощнее 160 л.с. (Porsche 718 2.0 — 300 л.с.)
+_SPORT_MAKES = re.compile(r"포르쉐|페라리|람보르기니|맥라렌|애스턴|벤틀리|롤스로이스|마세라티|로터스|"
+                          r"porsche|ferrari|lamborghini|mclaren|aston|bentley|rolls|maserati|lotus", re.I)
+# Спортивные версии: AMG, BMW M2–M8 и X3 M…, Audi RS/S, GTI, JCW («M 스포츠» — пакет, не версия)
+_PERFORMANCE = re.compile(r"\bAMG\b|\bM[2-8]\b|\bX[3-7]\s?M\b|\bRS\s?\d|\bS[3-8]\b|\bSQ\d|\bGTI\b|\bJCW\b|존쿠퍼웍스", re.I)
+# Марки, у которых моторы больше 1,6 л — турбо мощнее 160 л.с. (BMW 420i 2.0 — 184 л.с.)
+_TURBO_MAKES = re.compile(r"BMW|벤츠|아우디|폭스바겐|볼보|미니|랜드로버|재규어|캐딜락|링컨|제네시스|"
+                          r"mercedes|benz|audi|volkswagen|volvo|\bmini\b|land rover|jaguar|cadillac|lincoln|genesis", re.I)
 
 
 def power_class(text: str, displacement: int | None = None) -> str | None:
@@ -132,6 +140,10 @@ def power_class(text: str, displacement: int | None = None) -> str | None:
         cc = round(float(m.group(1)) * 1000) if m else None
     if not cc:
         return None
+    if _SPORT_MAKES.search(text) or _PERFORMANCE.search(text):
+        return "gt160"
+    if cc > 1600 and _TURBO_MAKES.search(text):
+        return "gt160"
     turbo, diesel, hybrid = bool(_TURBO.search(text)), bool(_DIESEL.search(text)), bool(_HYBRID.search(text))
     if hybrid and turbo:
         return "gt160"

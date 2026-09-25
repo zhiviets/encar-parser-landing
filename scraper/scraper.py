@@ -373,7 +373,7 @@ def main():
 
         # Машины с сайта, встреченные в поиске: отметка «ещё в продаже» (старым — VIN и привод),
         # затем давно не встречавшиеся — проверка по API. После новых: при заполнении важнее новые.
-        backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "150")
+        backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "250")
         if touched:
             print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
             tried = drom.cache.setdefault("power_tried", {})
@@ -957,7 +957,7 @@ def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer, limit: 
     дополнятся в следующие прогоны.
     """
     if limit is None:
-        limit = int(os.environ.get("ENCAR_BACKFILL") or "150")
+        limit = int(os.environ.get("ENCAR_BACKFILL") or "250")
     tried = tried if tried is not None else {}
     today = date.today().toordinal()
 
