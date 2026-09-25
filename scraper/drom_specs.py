@@ -27,7 +27,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
 GEN_LIST_TTL_DAYS = 30
 # Версия разбора: при повышении страницы, разобранные старым разбором впустую (поколения без групп,
 # списки моделей марок), перечитываются
-CACHE_VERSION = 2
+CACHE_VERSION = 3
 
 # Марки, которые на drom.ru называются иначе, чем у нас (остальные ищутся по названию
 # на странице каталога drom.ru)
@@ -84,8 +84,8 @@ def text_lines(text: str) -> list[str]:
     return [cell.strip() for line in (text or "").splitlines() for cell in line.split("\t") if cell.strip()]
 
 
-# Электромобили — без объёма: «электричество, 229 л.с., редуктор, задний привод»
-HEADER_START = re.compile(r"^(\d+(?:\.\d)?\s*л,|электр)", re.I)
+# Электромобили — без объёма, мощность первой: «170 л.с., электричество, редуктор, задний привод»
+HEADER_START = re.compile(r"^(\d+(?:\.\d)?\s*л,|\d{2,4}\s*л\.с\.,\s*электр|электр)", re.I)
 
 
 def parse_header(text: str) -> dict | None:
@@ -198,11 +198,13 @@ class DromCatalog:
             self.cache = {}
         for key in ("brands", "models", "gen_lists", "gens"):
             self.cache.setdefault(key, {})
-        if self.cache.get("version", 1) < CACHE_VERSION:
-            # Старый разбор терял группы электромобилей («электричество») и часть ссылок на модели
+        version = self.cache.get("version", 1)
+        if version < 2:
+            self.cache["models"] = {}       # старый разбор терял ссылки на модели с разметкой внутри
+        if version < 3:
+            # и группы электромобилей («170 л.с., электричество, …») — такие поколения были пустыми
             self.cache["gens"] = {k: g for k, g in self.cache["gens"].items() if g.get("groups")}
-            self.cache["models"] = {}
-            self.cache["version"] = CACHE_VERSION
+        self.cache["version"] = CACHE_VERSION
         self.stats = {"exact": 0, "by_trim": 0, "ambiguous": 0, "no_model": 0, "no_match": 0}
 
     def save(self):
