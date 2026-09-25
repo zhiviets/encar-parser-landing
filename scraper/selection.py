@@ -49,6 +49,40 @@ def year_band(year: int | None) -> str | None:
     return None
 
 
+def catalog_have(items, kinds=("le160", "gt160")) -> dict:
+    """Состав каталога: {(класс мощности, годы): машин} — по опубликованным полным машинам с
+    сайта (мощность и «электро» — как их считает сайт; электромобили — в «любой мощности»)."""
+    have = {}
+    for i in items:
+        if not (i.get("complete", True) and i.get("published")):
+            continue
+        power = i.get("power") or 0
+        if not power and not i.get("electric"):
+            continue
+        kind = kinds[1] if power > 160 or i.get("electric") else kinds[0]
+        band = year_band(int(i["year"]) if i.get("year") else None)
+        if band:
+            have[(kind, band)] = have.get((kind, band), 0) + 1
+    return have
+
+
+def run_wants(total: int, have: dict, share: float, kinds=("le160", "gt160")) -> dict:
+    """Сколько машин каждой клетки (класс мощности, годы) взять за прогон, чтобы доли (share до
+    160 л.с., YEAR_BANDS) держались для каталога целиком: прошлый перекос выправляется,
+    переполненные клетки в этот прогон не берём."""
+    final = sum(have.values()) + total
+    need = {(k, name): max(0, round(final * (share if k == kinds[0] else 1 - share) * w) - have.get((k, name), 0))
+            for k in kinds for name, _, _, w in YEAR_BANDS}
+    s = sum(need.values())
+    if s > total:
+        exact = {c: v * total / s for c, v in need.items()}
+        # Округление с сохранением суммы: целые части, остаток — самым большим дробным
+        need = {c: int(v) for c, v in exact.items()}
+        for c in sorted(exact, key=lambda c: exact[c] - need[c], reverse=True)[:total - sum(need.values())]:
+            need[c] += 1
+    return need
+
+
 # Поиск encar: базовые условия списка + год выпуска от MIN_YEAR.
 # CarType.Y — корейские марки, CarType.N — импорт. Если такой фильтр вернёт
 # пустую страницу (синтаксис поиска encar не документирован), парсер
