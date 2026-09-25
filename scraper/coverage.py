@@ -309,14 +309,17 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
             del open_cells[cell]
             continue
         take(*nxt)
-    # Каких-то лет не хватило — добираем машинами тех же классов любых лет (новые первыми)
+    # Каких-то лет не хватило — добираем машинами тех же классов других лет, которых каталогу
+    # ещё не хватает (переполненные годы — нет: иначе, когда время прогона вышло, сюда уходили
+    # все машины с известной мощностью — 76 машин 2017–2021 при нужных 0)
     for kind in KINDS:
         more = candidates(kind, None)
         while len(picked) < total and total_of(kind) < kind_want(kind):
             nxt = next(more, None)
             if nxt is None:
                 break
-            take(*nxt)
+            if want.get((kind, selection.year_band(nxt[0]["year"]))):
+                take(*nxt)
     years = {name: sum(v for (_, b), v in count.items() if b == name) for name, *_ in selection.YEAR_BANDS}
     print(f"Выбрано: новых моделей {covered} (на сайте нет {sum(1 for k in groups if not on_site.get(k))} из {len(groups)}), всего {len(picked)} — до 160 л.с. "
           f"{total_of('le160')}, мощнее {total_of('gt160')} (уточнено по API encar {resolved['n']}); по годам: "
