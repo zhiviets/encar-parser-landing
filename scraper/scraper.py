@@ -300,8 +300,10 @@ def main():
         page = context.new_page()
 
         session = http_session()
-        # Машины с полной информацией заново не собираем; неполные — как новые (обновятся)
-        known = {k: v for k, v in known_all.items() if v.get("complete", True)}
+        # Машины с полной информацией заново не собираем; неполные — как новые (обновятся). Машины,
+        # у которых только мощность оценена (rough_power), тоже не выбираем заново: им точную мощность
+        # с drom.ru ищет дополнение (backfill_known), не больше ENCAR_BACKFILL за прогон
+        known = {k: v for k, v in known_all.items() if v.get("complete", True) or v.get("rough_power")}
         le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
         selection.QUOTAS.update(le160=round(total * le160_share), other=total - round(total * le160_share))
         pacer = Pacer()
@@ -313,7 +315,7 @@ def main():
         drom = drom_specs.DromCatalog(
             str(Path(__file__).resolve().parent / "drom_cache.json"),
             drom_specs.playwright_fetcher(drom_browser.new_context(user_agent=UA, locale="ru-RU")),
-            max_requests=int(os.environ.get("DROM_MAX_PAGES") or "300"))
+            max_requests=int(os.environ.get("DROM_MAX_PAGES") or "400"))
 
         # Порциями по ходу отбора: набралось BATCH выбранных машин — детали, фото, отправка на
         # сайт — пауза BATCH_PAUSE минут, отбор продолжается. Машины появляются на сайте сразу,
@@ -385,7 +387,8 @@ def main():
         drom.save()
         drom_browser.close()
         browser.close()
-    print(f"Мощность с drom.ru: найдена у {power_counts['found']}, не найдена у {power_counts['none']} "
+    print(f"Мощность с drom.ru: найдена у {power_counts['found']}, не найдена у {power_counts['none']}, "
+          f"технические характеристики у {power_counts.get('tech', 0)} "
           f"(совпадения: {drom.stats}, страниц drom.ru {drom.requests})")
 
     if not kept:
@@ -655,6 +658,11 @@ def add_drom_power(cars: list[dict], drom, counts: dict, tried: dict | None = No
             spec["Мощность, л.с."] = str(found["hp"])
             if found.get("hp_total"):
                 spec["Суммарная мощность гибрида, л.с."] = str(found["hp_total"])
+            # Технические характеристики комплектации (разгон, расход, размеры, масса…)
+            tech = drom.tech(found.get("trim"))
+            if tech:
+                d["tech"] = tech
+                counts["tech"] = counts.get("tech", 0) + 1
             counts["found"] += 1
             if tried is not None:
                 tried.pop(c["external_id"], None)
@@ -1082,6 +1090,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             "photo_url": photo,
             "spec": d.get("spec"),
             "options": d.get("options"),
+            **({"tech": d["tech"]} if d.get("tech") else {}),
             "source_url": c.get("link"),
         })
     full_count = sum(1 for x in listings if "make" in x)

@@ -126,7 +126,18 @@ def _ym(month: str, year: str):
     return int(year) * 100 + int(month)
 
 
-def parse_generation(page_text: str) -> dict:
+def trim_links(html: str) -> dict:
+    """Ссылки на страницы комплектаций на странице поколения: название комплектации → номер (441739)."""
+    out = {}
+    for num, inner in re.findall(r'href="(?:https://www\.drom\.ru)?/catalog/[a-z0-9_\-~]+/[a-z0-9_\-~]+/(\d{4,})/"[^>]*>(.*?)</a>',
+                                 html or "", re.S):
+        name = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", inner)).strip()
+        if name:
+            out.setdefault(name, num)
+    return out
+
+
+def parse_generation(page_text: str, html: str | None = None) -> dict:
     """Поколение (текст страницы из браузера): рынок, период выпуска и группы комплектаций с мощностью.
     Таблицу комплектаций drom.ru дорисовывает скриптом — в HTML простого запроса её нет."""
     lines = text_lines(page_text)
@@ -164,7 +175,85 @@ def parse_generation(page_text: str) -> dict:
             name = lines[i - 1] if lines[i - 1] not in LEVELS else lines[i - 2]
             group["trims"].append({"name": name, "from": _ym(m.group(1), m.group(2)),
                                    "to": _ym(m.group(3), m.group(4)) if m.group(3) else None})
+    if html is not None:
+        ids = trim_links(html)
+        for g in gen["groups"]:
+            for t in g["trims"]:
+                if ids.get(t["name"]):
+                    t["id"] = ids[t["name"]]
+        gen["ids"] = True
     return gen
+
+
+# Строки страницы комплектации drom.ru → (раздел, название на сайте, единица)
+TECH_FIELDS = [
+    ("Динамика", "Время разгона 0-100 км/ч, с", "Разгон 0–100 км/ч", "с"),
+    ("Динамика", "Максимальная скорость, км/ч", "Максимальная скорость", "км/ч"),
+    ("Двигатель", "Максимальная мощность, л.с. (кВт) при об./мин.", "Мощность", "power"),
+    ("Двигатель", "Максимальный крутящий момент, Н*м (кг*м) при об./мин.", "Крутящий момент", "torque"),
+    ("Двигатель", "Марка двигателя", "Модель двигателя", ""),
+    ("Двигатель", "Тип двигателя", "Тип двигателя", ""),
+    ("Двигатель", "Нагнетатель", "Наддув", ""),
+    ("Двигатель", "Используемое топливо", "Топливо", ""),
+    ("Двигатель", "Экологический тип двигателя", "Экокласс", ""),
+    ("Электро", "Емкость батареи, кВт*ч", "Ёмкость батареи", "кВт·ч"),
+    ("Электро", "Запас хода на электротяге, км", "Запас хода", "км"),
+    ("Электро", "Запас хода, км", "Запас хода", "км"),
+    ("Расход топлива", "Расход топлива в смешанном цикле, л/100 км", "Смешанный цикл", "л/100 км"),
+    ("Расход топлива", "Расход топлива в городском цикле, л/100 км", "Город", "л/100 км"),
+    ("Расход топлива", "Расход топлива за городом, л/100 км", "Трасса", "л/100 км"),
+    ("Размеры и масса", "Габариты кузова (Д x Ш x В), мм", "Габариты (Д × Ш × В)", "мм"),
+    ("Размеры и масса", "Колесная база, мм", "Колёсная база", "мм"),
+    ("Размеры и масса", "Клиренс (высота дорожного просвета), мм", "Клиренс", "мм"),
+    ("Размеры и масса", "Масса, кг", "Масса", "кг"),
+    ("Размеры и масса", "Объем топливного бака, л", "Топливный бак", "л"),
+    ("Размеры и масса", "Объем багажника, л", "Багажник", "л"),
+    ("Размеры и масса", "Число мест", "Мест", ""),
+    ("Ходовая часть", "Передняя подвеска", "Передняя подвеска", ""),
+    ("Ходовая часть", "Задняя подвеска", "Задняя подвеска", ""),
+    ("Ходовая часть", "Передние тормоза", "Передние тормоза", ""),
+    ("Ходовая часть", "Задние тормоза", "Задние тормоза", ""),
+    ("Ходовая часть", "Передние колеса", "Шины", ""),
+    ("Ходовая часть", "Минимальный радиус разворота, м", "Радиус разворота", "м"),
+]
+_TECH_LABELS = {src: (group, name, unit) for group, src, name, unit in TECH_FIELDS}
+
+
+def parse_trim(page_text: str) -> dict | None:
+    """Страница комплектации: {"name": «1.6 G CVT Smart», "groups": [[раздел, [[название, значение], …]], …]}."""
+    lines = text_lines(page_text)
+    name = next((lines[i + 1] for i, ln in enumerate(lines[:-1]) if ln == "Название комплектации"), None)
+    got = {}
+    for i, ln in enumerate(lines[:-1]):
+        if ln not in _TECH_LABELS or ln in got:
+            continue
+        value = lines[i + 1].strip()
+        if not value or value == "—" or value in _TECH_LABELS or len(value) > 120:
+            continue
+        group, label, unit = _TECH_LABELS[ln]
+        m = re.fullmatch(r"([\d.,]+)\s*\(([\d.,]+)\)\s*(?:/\s*([\d\s–-]+))?", value)
+        if unit in ("power", "torque"):
+            if m:
+                a, b, rpm = m.group(1), m.group(2), (m.group(3) or "").strip()
+                value = (f"{a} л.с. ({b} кВт)" if unit == "power" else f"{a} Н·м") + (f" при {rpm} об/мин" if rpm else "")
+            got[ln] = (group, label, value)
+            continue
+        if " x " in value:
+            value = value.replace(" x ", " × ")
+        if unit and not value.endswith(unit):
+            value = f"{value.replace('.', ',')} {unit}" if re.fullmatch(r"[\d.,]+", value) else f"{value} {unit}"
+        got[ln] = (group, label, value)
+    if len(got) < 3:
+        return None
+    groups = []
+    for group, src, _, _ in TECH_FIELDS:
+        if src in got:
+            g, label, value = got[src]
+            if not groups or groups[-1][0] != g:
+                groups.append([g, []])
+            if label not in [r[0] for r in groups[-1][1]]:
+                groups[-1][1].append([label, value])
+    return {"name": name, "groups": groups}
 
 
 # ---------- каталог с кэшем ----------
@@ -196,7 +285,7 @@ class DromCatalog:
                 self.cache = json.load(f)
         except (OSError, ValueError):
             self.cache = {}
-        for key in ("brands", "models", "gen_lists", "gens"):
+        for key in ("brands", "models", "gen_lists", "gens", "trims"):
             self.cache.setdefault(key, {})
         version = self.cache.get("version", 1)
         if version < 2:
@@ -291,7 +380,8 @@ class DromCatalog:
                 got = self._get(f"{BASE}{gkey}/")
                 if got is None:
                     continue
-                self.cache["gens"][gkey] = parse_generation(got[1])
+                self.cache["gens"][gkey] = parse_generation(got[1], got[0])
+            self.cache["gens"][gkey]["key"] = gkey
             gens.append(self.cache["gens"][gkey])
         return [g for g in gens if g.get("market") == MARKETS.get(market, market)]
 
@@ -318,22 +408,36 @@ class DromCatalog:
                         trims = [t for t in g["trims"] if lo_hi(t)[0] - tol <= ym <= lo_hi(t)[1] + tol] or (
                             [] if g["trims"] else [None])
                         if trims and _fits(g, car):
+                            g["gen_key"] = gen.get("key")
                             cands.append((g, [t for t in trims if t]))
                 if cands:
                     break
             if cands:
                 break
         self.last_candidates = [(g["text"], [t["name"] for t in trims][:3]) for g, trims in cands]
+        words = set(re.findall(r"[a-z0-9]+", (car.get("trim") or "").lower())) - {"l", "t", "at", "mt"}
+
+        def result(hp, total):
+            # Комплектация для технических характеристик: из групп с этой мощностью — та, чьё
+            # название больше всего совпадает с комплектацией машины
+            best, ref = -1, None
+            for g, trims in cands:
+                if (g["hp"], g.get("hp_total")) != (hp, total):
+                    continue
+                for t in trims:
+                    score = len(words & set(re.findall(r"[a-z0-9]+", t["name"].lower())))
+                    if score > best:
+                        best, ref = score, {"gen": g.get("gen_key"), "name": t["name"], "id": t.get("id")}
+            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref}
+
         hps = {(g["hp"], g.get("hp_total")) for g, _ in cands}
         if len(hps) == 1:
             self.stats["exact"] += 1
-            hp, total = hps.pop()
-            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom"}
+            return result(*hps.pop())
         if not cands:
             self.stats["no_match"] += 1
             return None
         # Одинаковый объём, разная мощность — различаем по названию комплектации
-        words = set(re.findall(r"[a-z0-9]+", (car.get("trim") or "").lower())) - {"l", "t", "at", "mt"}
         scored = []
         for g, trims in cands:
             best = max((len(words & set(re.findall(r"[a-z0-9]+", t["name"].lower()))) for t in trims), default=0)
@@ -344,10 +448,37 @@ class DromCatalog:
         hps = {(g["hp"], g.get("hp_total")) for s, g in scored if s == top}
         if top > 0 and len(hps) == 1:
             self.stats["by_trim"] += 1
-            hp, total = hps.pop()
-            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom"}
+            return result(*hps.pop())
         self.stats["ambiguous"] += 1
         return None
+
+    def tech(self, trim: dict | None) -> dict | None:
+        """Технические характеристики комплектации (trim — из результата power()) со страницы
+        комплектации drom.ru: {"name", "groups", "url"} или None. Страница комплектации не меняется —
+        кэш навсегда; номер комплектации в старом кэше поколения — перечитываем страницу поколения."""
+        if not trim or not trim.get("gen"):
+            return None
+        gkey, tid = trim["gen"], trim.get("id")
+        gen = self.cache["gens"].get(gkey)
+        if not tid and gen and not gen.get("ids"):
+            got = self._get(f"{BASE}{gkey}/")
+            if got is None:
+                return None
+            fresh = parse_generation(got[1], got[0])
+            fresh["key"] = gkey
+            self.cache["gens"][gkey] = fresh
+            tid = next((t.get("id") for g in fresh["groups"] for t in g["trims"] if t["name"] == trim["name"]), None)
+        if not tid:
+            return None
+        if tid not in self.cache["trims"]:
+            got = self._get(f"{BASE}{gkey.rsplit('/', 1)[0]}/{tid}/")
+            if got is None:
+                return None
+            self.cache["trims"][tid] = parse_trim(got[1]) or {}
+        data = self.cache["trims"][tid]
+        if not data.get("groups"):
+            return None
+        return {**data, "url": f"{BASE}{gkey.rsplit('/', 1)[0]}/{tid}/"}
 
 
 def norm_fuel(text: str | None) -> str | None:
