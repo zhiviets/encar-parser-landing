@@ -15,7 +15,6 @@ drom.ru: «1.5 л, бензин, 106 л.с., параллельный гибри
 """
 
 import json
-import os
 import random
 import re
 import time
@@ -26,6 +25,9 @@ MARKETS = {"china": "Китай", "south-korea": "Южная Корея", "japan
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36")
 GEN_LIST_TTL_DAYS = 30
+# Версия разбора: при повышении страницы, разобранные старым разбором впустую (поколения без групп,
+# списки моделей марок), перечитываются
+CACHE_VERSION = 2
 
 # Марки, которые на drom.ru называются иначе, чем у нас (остальные ищутся по названию
 # на странице каталога drom.ru)
@@ -33,7 +35,14 @@ BRAND_ALIASES = {
     "mercedes-benz": "mercedes-benz", "land rover": "land_rover", "li auto": "lixiang", "lynk & co": "lynk_co",
     "baic bj": "baic", "great wall": "great_wall", "rolls-royce": "rolls-royce", "aston martin": "aston_martin",
     "alfa romeo": "alfa_romeo", "chery fengyun": "chery", "fangchengbao": "fangchengbao", "trumpchi": "gac",
+    # Названия encar
+    "renault-koreasamsung": "renault_samsung", "renault samsung": "renault_samsung",
+    "kg_mobility_ssangyong": "ssang_yong", "kg mobility": "ssang_yong", "kgm": "ssang_yong", "ssangyong": "ssang_yong",
+    "citroen-ds": "citroen",
 }
+# Модели марки бывают и под другим названием марки на drom.ru: Renault Samsung — и Renault
+# (Arkana, Grand Koleos), SsangYong — и KG Mobility (Torres), Citroen — и DS
+BRAND_FALLBACK = {"renault_samsung": ["renault"], "ssang_yong": ["kg_mobility"], "citroen": ["ds"]}
 # Модели, которые на drom.ru называются иначе: (марка, модель) → адрес модели на drom.ru
 MODEL_ALIASES = {
     ("geely", "xingyue l"): "geely/monjaro",
@@ -50,6 +59,13 @@ MODEL_ALIASES = {
     ("hyundai", "santafe"): "hyundai/santa_fe",
     ("tesla", "model 3"): "tesla/model_3",
     ("tesla", "model y"): "tesla/model_y",
+    ("kg_mobility_ssangyong", "tiboli"): "ssang_yong/tivoli",
+    ("volkswagen", "beatle"): "volkswagen/beetle",
+    ("hyundai", "maxcruz"): "hyundai/maxcruze",
+    ("chevrolet", "surburban"): "chevrolet/suburban",
+    ("mini", "cooper"): "mini/hatch",
+    ("mini", "cooper convertible"): "mini/cabrio",
+    ("mini", "coupe"): "mini/coupe-model",
 }
 
 LEVELS = {"Базовая", "Предмаксимальная", "Максимальная", "Средняя", "Спортивная", "Оптимальная", "Комфорт"}
@@ -68,7 +84,8 @@ def text_lines(text: str) -> list[str]:
     return [cell.strip() for line in (text or "").splitlines() for cell in line.split("\t") if cell.strip()]
 
 
-HEADER_START = re.compile(r"^(\d+(?:\.\d)?\s*л,|электро)", re.I)
+# Электромобили — без объёма: «электричество, 229 л.с., редуктор, задний привод»
+HEADER_START = re.compile(r"^(\d+(?:\.\d)?\s*л,|электр)", re.I)
 
 
 def parse_header(text: str) -> dict | None:
@@ -181,6 +198,11 @@ class DromCatalog:
             self.cache = {}
         for key in ("brands", "models", "gen_lists", "gens"):
             self.cache.setdefault(key, {})
+        if self.cache.get("version", 1) < CACHE_VERSION:
+            # Старый разбор терял группы электромобилей («электричество») и часть ссылок на модели
+            self.cache["gens"] = {k: g for k, g in self.cache["gens"].items() if g.get("groups")}
+            self.cache["models"] = {}
+            self.cache["version"] = CACHE_VERSION
         self.stats = {"exact": 0, "by_trim": 0, "ambiguous": 0, "no_model": 0, "no_match": 0}
 
     def save(self):
@@ -205,6 +227,9 @@ class DromCatalog:
         for slug, name in re.findall(rf'href="(?:https://www\.drom\.ru)?/catalog/{re.escape(prefix)}([a-z0-9_\-~]+)/"[^>]*>([^<]{{1,60}})</a>', html):
             out.setdefault(_norm(name), slug)
             out.setdefault(_norm(slug), slug)
+        # Ссылки, у которых внутри разметка (картинка, <span>), — хотя бы по адресу
+        for slug in re.findall(rf'href="(?:https://www\.drom\.ru)?/catalog/{re.escape(prefix)}([a-z0-9_\-~]+)/"', html):
+            out.setdefault(_norm(slug), slug)
         return out
 
     def brand_slug(self, make: str) -> str | None:
@@ -224,13 +249,18 @@ class DromCatalog:
         brand = self.brand_slug(make)
         if not brand:
             return None
-        if brand not in self.cache["models"]:
-            got = self._get(f"{BASE}{brand}/")
-            if got is None:
-                return None
-            self.cache["models"][brand] = self._links(got[0], f"{brand}/")
-        slug = self.cache["models"][brand].get(_norm(model))
-        return f"{brand}/{slug}" if slug else None
+        # «X2 (F39)» → «X2»; «4-Series» и «4 Series» — одно
+        name = _norm(re.sub(r"\s*\(.*?\)", "", model))
+        for b in [brand] + BRAND_FALLBACK.get(brand, []):
+            if b not in self.cache["models"]:
+                got = self._get(f"{BASE}{b}/")
+                if got is None:
+                    continue
+                self.cache["models"][b] = self._links(got[0], f"{b}/")
+            slug = self.cache["models"][b].get(name)
+            if slug:
+                return f"{b}/{slug}"
+        return None
 
     def generations(self, path: str, market: str, year: int | None = None) -> list[dict]:
         """Поколения модели на рынке; с year — только начавшиеся в [year-12, year+1]

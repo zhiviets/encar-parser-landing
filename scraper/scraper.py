@@ -3,6 +3,7 @@ import base64
 import io
 import json
 import os
+from datetime import date
 import random
 import re
 import time
@@ -57,6 +58,9 @@ VERIFY_LIMIT = int(os.environ.get("ENCAR_VERIFY") or "300")
 # Через столько минут после старта новые порции не начинаем: GitHub обрывает прогон через
 # 6 ч (timeout 355 мин), а оборванный прогон не запускает следующий. Порция — до ~30 мин.
 RUN_MINUTES = float(os.environ.get("ENCAR_RUN_MINUTES") or "300")
+# Машину с сайта, которой не нашлась точная мощность на drom.ru, открываем снова не раньше чем через
+# столько дней (каталог drom.ru дополняется, разбор улучшается)
+DROM_RETRY_DAYS = 14
 STARTED = time.time()
 
 
@@ -372,8 +376,9 @@ def main():
         backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "150")
         if touched:
             print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
-            backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left)
-            add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts)
+            tried = drom.cache.setdefault("power_tried", {})
+            backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left, tried=tried)
+            add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts, tried)
             push_to_bn_auto(session, touched, known, state["option_codes"] or {})
         seen = {c["external_id"] for c in touched} | {c["external_id"] for c in (cars or [])}
         push_to_bn_auto(session, verify_known(session, known_all, seen, pacer), known_all)
@@ -626,13 +631,17 @@ def drom_markets(make: str) -> list[str]:
     return ["south-korea", "europe", "usa"]
 
 
-def add_drom_power(cars: list[dict], drom, counts: dict):
-    """Точная мощность комплектации с drom.ru — в характеристики новых машин («Мощность, л.с.»)."""
+def add_drom_power(cars: list[dict], drom, counts: dict, tried: dict | None = None):
+    """Точная мощность комплектации с drom.ru — в характеристики новых машин («Мощность, л.с.»).
+    tried — день последней неудачной попытки по машине (см. backfill_known)."""
     import drom_specs
+    today = date.today().toordinal()
     for c in cars:
         d = c.get("detail") or {}
         spec = d.get("spec")
         if not spec or spec.get("Мощность, л.с.") or not d.get("make") or not d.get("model") or not d.get("year"):
+            if tried is not None and not (spec or {}).get("Мощность, л.с."):
+                tried[c["external_id"]] = today      # искать нечем — не открывать её снова каждый прогон
             continue
         found = drom.power({
             "make": d["make"], "model": d["model"],
@@ -647,8 +656,12 @@ def add_drom_power(cars: list[dict], drom, counts: dict):
             if found.get("hp_total"):
                 spec["Суммарная мощность гибрида, л.с."] = str(found["hp_total"])
             counts["found"] += 1
+            if tried is not None:
+                tried.pop(c["external_id"], None)
         else:
             counts["none"] += 1
+            if tried is not None:
+                tried[c["external_id"]] = today
 
 
 def still_ok(car: dict) -> bool:
@@ -932,17 +945,32 @@ def enrich_with_details(session, cars: list[dict], known: dict, pacer: Pacer):
     print(f"Детали из API encar: {ok} из {len(todo)}")
 
 
-def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer, limit: int | None = None) -> int:
+def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer, limit: int | None = None,
+                   tried: dict | None = None) -> int:
     """Машины, сохранённые до появления VIN и привода, дополняем по API и
     заменяем фото на главное (раньше бралось первое попавшееся — бывало сзади).
+    Так же — машины, у которых мощность только оценена: после API им ищется точная
+    мощность на drom.ru (add_drom_power). Не нашлась — такую машину снова не открываем
+    DROM_RETRY_DAYS дней (tried: id → день попытки).
 
     Не больше ENCAR_BACKFILL за прогон, чтобы не нагружать encar: остальные
     дополнятся в следующие прогоны.
     """
     if limit is None:
         limit = int(os.environ.get("ENCAR_BACKFILL") or "150")
-    todo = [c for c in cars if c["external_id"] in known and not known[c["external_id"]].get("has_vin")
-            and not c.get("detail")][:max(limit, 0)]
+    tried = tried if tried is not None else {}
+    today = date.today().toordinal()
+
+    def wanted(c):
+        info = known.get(c["external_id"])
+        if not info or c.get("detail"):
+            return False
+        return not info.get("has_vin") or (
+            info.get("exact_power") is False and today - tried.get(c["external_id"], 0) > DROM_RETRY_DAYS)
+
+    # Без VIN — первыми
+    todo = sorted((c for c in cars if wanted(c)), key=lambda c: bool(known[c["external_id"]].get("has_vin")))
+    todo = todo[:max(limit, 0)]
     if not todo:
         return 0
     ok = 0
@@ -958,7 +986,7 @@ def backfill_known(session, cars: list[dict], known: dict, pacer: Pacer, limit: 
             ok += 1
         except Exception as error:
             print(f"Не разобраны детали {c['external_id']}: {error}")
-    print(f"Дополнено VIN и приводом у машин с сайта: {ok} из {len(todo)}")
+    print(f"Дополнено по API у машин с сайта (VIN, привод, точная мощность): {ok} из {len(todo)}")
     return len(todo)
 
 
