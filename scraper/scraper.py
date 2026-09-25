@@ -316,6 +316,14 @@ def main():
             str(Path(__file__).resolve().parent / "drom_cache.json"),
             drom_specs.playwright_fetcher(drom_browser.new_context(user_agent=UA, locale="ru-RU")),
             max_requests=int(os.environ.get("DROM_MAX_PAGES") or "400"))
+        # Машины, которым недавно не нашлась точная мощность на drom.ru, сайт не примет — не выбираем
+        # их снова (как «уже известные»), пока не пройдёт DROM_RETRY_DAYS
+        tried = drom.cache.setdefault("power_tried", {})
+        today = date.today().toordinal()
+        skipped = [k for k, day in tried.items() if today - day <= DROM_RETRY_DAYS and k not in known]
+        known.update({k: {} for k in skipped})
+        if skipped:
+            print(f"Без точной мощности на drom.ru (повтор через {DROM_RETRY_DAYS} дн.): {len(skipped)} машин не выбираем")
 
         # Порциями по ходу отбора: набралось BATCH выбранных машин — детали, фото, отправка на
         # сайт — пауза BATCH_PAUSE минут, отбор продолжается. Машины появляются на сайте сразу,
@@ -332,7 +340,7 @@ def main():
             print(f"=== Порция {state['batches']}: {len(chunk)} машин, {(time.time() - STARTED) / 60:.0f} мин от старта ===")
             enrich_with_details(session, chunk, known, pacer)
             chunk = [c for c in chunk if still_ok(c)]
-            add_drom_power(chunk, drom, power_counts)
+            add_drom_power(chunk, drom, power_counts, tried)
             drom.save()
             push_to_bn_auto(session, chunk, known, state["option_codes"])
             kept.extend(chunk)
@@ -378,7 +386,6 @@ def main():
         backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "250")
         if touched:
             print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
-            tried = drom.cache.setdefault("power_tried", {})
             backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left, tried=tried)
             add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts, tried)
             push_to_bn_auto(session, touched, known, state["option_codes"] or {})
@@ -444,11 +451,11 @@ def verify_known(session, known_all: dict, seen: set, pacer) -> list[dict]:
 
 def complete_listing(x: dict) -> bool:
     """Полная информация: фото, цена, год, марка, модель и то, по чему считается таможня —
-    объём (мощность сайт оценит по нему), у электромобилей — мощность с drom.ru."""
+    точная мощность (с drom.ru; оценку по объёму сайт не принимает) и объём (у электромобилей не нужен)."""
     spec = x.get("spec") or {}
-    engine = spec.get("Мощность, л.с.") if spec.get("Топливо") == "электро" else spec.get("Объём, см³")
+    engine = spec.get("Топливо") == "электро" or spec.get("Объём, см³")
     return bool(x.get("photo_url") and x.get("price_value") and x.get("year") and x.get("make") and x.get("model")
-                and engine)
+                and spec.get("Мощность, л.с.") and engine)
 
 
 class Pacer:
@@ -1096,7 +1103,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
     full_count = sum(1 for x in listings if "make" in x)
     listings = [x for x in listings if "make" not in x or complete_listing(x)]
     if full_count > sum(1 for x in listings if "make" in x):
-        print(f"Не отправлены без фото, цены или объёма: {full_count - sum(1 for x in listings if 'make' in x)}")
+        print(f"Не отправлены без фото, цены, объёма или точной мощности: {full_count - sum(1 for x in listings if 'make' in x)}")
     if not listings:
         return
 
