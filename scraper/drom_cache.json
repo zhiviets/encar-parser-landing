@@ -418,6 +418,62 @@
 "g_2019_21016"
 ]
 },
+"audi/a5/europe": {
+"day": 739885,
+"gens": [
+"g_200703_1314",
+"g_2007_15699",
+"g_2009_15704",
+"g_2009_15709",
+"g_201107_21644",
+"g_2011_15710",
+"g_2011_15729",
+"g_2011_15741",
+"g_201606_6759",
+"g_2016_15760",
+"g_2016_15761",
+"g_2016_15767",
+"g_201810_15790",
+"g_2018_15795",
+"g_2018_15804",
+"g_202407_21383",
+"g_2024_21384"
+]
+},
+"audi/a5/south-korea": {
+"day": 739885,
+"gens": [
+"g_200703_1314",
+"g_201107_21644",
+"g_201606_6759",
+"g_201810_15790",
+"g_2018_23847",
+"g_2018_23855",
+"g_2018_23856",
+"g_202407_21383",
+"g_2024_23532"
+]
+},
+"audi/a5/usa": {
+"day": 739885,
+"gens": [
+"g_200703_1314",
+"g_2007_21726",
+"g_2009_21725",
+"g_201107_21644",
+"g_2011_21645",
+"g_201606_6759",
+"g_2016_21545",
+"g_2016_21641",
+"g_2016_21642",
+"g_201810_15790",
+"g_2018_21541",
+"g_2018_21543",
+"g_2018_21544",
+"g_202407_21383",
+"g_2024_23129"
+]
+},
 "audi/a6/europe": {
 "day": 739884,
 "gens": [
@@ -1503,6 +1559,27 @@
 "g_202303_21062",
 "g_2023_23372"
 ]
+},
+"bmw/x7/europe": {
+"day": 739885,
+"gens": [
+"g_2018_21890",
+"g_201901_9048",
+"g_202205_15407"
+]
+},
+"bmw/x7/south-korea": {
+"day": 739885,
+"gens": [
+"g_2018_23377",
+"g_201901_9048",
+"g_202205_15407",
+"g_2022_23378"
+]
+},
+"bmw/x7/usa": {
+"day": 739885,
+"gens": []
 },
 "bmw/xm/south-korea": {
 "day": 739885,
@@ -3083,6 +3160,10 @@
 "g_2025_22127",
 "g_2025_23210"
 ]
+},
+"kia/ev5/south-korea": {
+"day": 739885,
+"gens": []
 },
 "kia/ev6/south-korea": {
 "day": 739883,
@@ -4951,6 +5032,14 @@
 "gens": [
 "g_202206_16641"
 ]
+},
+"tesla/cybertruck/europe": {
+"day": 739885,
+"gens": []
+},
+"tesla/cybertruck/south-korea": {
+"day": 739885,
+"gens": []
 },
 "tesla/cybertruck/usa": {
 "day": 739884,
@@ -21810,6 +21899,6883 @@
 "market": "США",
 "to": null
 },
+"audi/a5/g_201107_21644": {
+"from": 201111,
+"groups": [
+{
+"body": [
+"8T7"
+],
+"drive": "4wd",
+"engine": "CAEB, CDNC",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201111,
+"id": "519330",
+"name": "2.0 TFSI quattro Tiptronic Premium",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519342",
+"name": "2.0 TFSI quattro Tiptronic Premium Plus",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519345",
+"name": "2.0 TFSI quattro Tiptronic Prestige",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T7"
+],
+"drive": "fwd",
+"engine": "CAEB, CDNC",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201111,
+"id": "519332",
+"name": "2.0 TFSI Multitronic Premium",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519341",
+"name": "2.0 TFSI Multitronic Premium Plus",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519346",
+"name": "2.0 TFSI Multitronic Prestige",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T7"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 220,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 220 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201304,
+"id": "519330",
+"name": "2.0 TFSI quattro Tiptronic Premium",
+"to": 201607
+},
+{
+"from": 201304,
+"id": "519342",
+"name": "2.0 TFSI quattro Tiptronic Premium Plus",
+"to": 201607
+},
+{
+"from": 201304,
+"id": "519345",
+"name": "2.0 TFSI quattro Tiptronic Prestige",
+"to": 201607
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_201107_21644",
+"market": "США",
+"to": 201606
+},
+"audi/a5/g_2011_15710": {
+"from": 201107,
+"groups": [
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CJEB",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 170 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432346",
+"name": "1.8 TFSI MT",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CJEB",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 170 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "432347",
+"name": "1.8 TFSI Multitronic",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CJEE",
+"fuel": "бензин",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 177 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201504,
+"id": "432346",
+"name": "1.8 TFSI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CJEE",
+"fuel": "бензин",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 177 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201504,
+"id": "432347",
+"name": "1.8 TFSI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CAHB",
+"fuel": "дизель",
+"hp": 167,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 167 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201402,
+"id": "432398",
+"name": "2.0 TDI ultra MT",
+"to": 201608
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432394",
+"name": "2.0 TDI MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432396",
+"name": "2.0 TDI quattro MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "432395",
+"name": "2.0 TDI Multitronic",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "432397",
+"name": "2.0 TDI quattro S Tronic",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "432394",
+"name": "2.0 TDI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "432396",
+"name": "2.0 TDI quattro MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201403,
+"id": "432395",
+"name": "2.0 TDI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201403,
+"id": "432397",
+"name": "2.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432349",
+"name": "2.0 TFSI MT",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432351",
+"name": "2.0 TFSI quattro MT",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "432350",
+"name": "2.0 TFSI Multitronic",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "432352",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "432349",
+"name": "2.0 TFSI MT",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "432351",
+"name": "2.0 TFSI quattro MT",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201304,
+"id": "432350",
+"name": "2.0 TFSI Multitronic",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201304,
+"id": "432352",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201508,
+"id": "432349",
+"name": "2.0 TFSI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201508,
+"id": "432351",
+"name": "2.0 TFSI quattro MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201508,
+"id": "432350",
+"name": "2.0 TFSI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201508,
+"id": "432352",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CLAB",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 204 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432388",
+"name": "3.0 TDI MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "fwd",
+"engine": "CLAB",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 204 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "432387",
+"name": "3.0 TDI Multitronic",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CKVD",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201504,
+"id": "432386",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CDUC",
+"fuel": "дизель",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 245 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432385",
+"name": "3.0 TDI quattro MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CDUC, CKVB, CKVC",
+"fuel": "дизель",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 245 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "432386",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201503
+},
+{
+"from": 201107,
+"id": "432386",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CMUA",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201111,
+"id": "432355",
+"name": "3.0 TFSI quattro S Tronic",
+"to": 201611
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2011_15710",
+"market": "Европа",
+"to": 201610
+},
+"audi/a5/g_2011_15729": {
+"from": 201107,
+"groups": [
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CJED",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 144 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201407,
+"id": "433151",
+"name": "1.8 TFSI MT",
+"to": 201608
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CJED",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 144 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201407,
+"id": "433152",
+"name": "1.8 TFSI Multitronic",
+"to": 201608
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CJEB",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 170 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433151",
+"name": "1.8 TFSI MT",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CJEB",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 170 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433152",
+"name": "1.8 TFSI Multitronic",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CJEE",
+"fuel": "бензин",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 177 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201504,
+"id": "433151",
+"name": "1.8 TFSI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CJEE",
+"fuel": "бензин",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 177 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201504,
+"id": "433152",
+"name": "1.8 TFSI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CAGB, CJCB",
+"fuel": "дизель",
+"hp": 136,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 136 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201311,
+"id": "433161",
+"name": "2.0 TDI MT",
+"to": 201503
+},
+{
+"from": 201402,
+"id": "433163",
+"name": "2.0 TDI ultra MT",
+"to": 201608
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CAGB",
+"fuel": "дизель",
+"hp": 136,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 136 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201311,
+"id": "433162",
+"name": "2.0 TDI Multitronic",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CAGA, CMEA",
+"fuel": "дизель",
+"hp": 143,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 143 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433161",
+"name": "2.0 TDI MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CAGA, CMEA",
+"fuel": "дизель",
+"hp": 143,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 143 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433162",
+"name": "2.0 TDI Multitronic",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CSUA, CJCD",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433161",
+"name": "2.0 TDI MT",
+"to": 201611
+},
+{
+"from": 201304,
+"id": "433161",
+"name": "2.0 TDI MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CSUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433155",
+"name": "2.0 TDI quattro MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CSUA, CJCD",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201403,
+"id": "433162",
+"name": "2.0 TDI Multitronic",
+"to": 201611
+},
+{
+"from": 201304,
+"id": "433162",
+"name": "2.0 TDI Multitronic",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CSUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201403,
+"id": "433156",
+"name": "2.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CAHB",
+"fuel": "дизель",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 163 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201402,
+"id": "433163",
+"name": "2.0 TDI ultra MT",
+"to": 201608
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433161",
+"name": "2.0 TDI MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433155",
+"name": "2.0 TDI quattro MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433162",
+"name": "2.0 TDI Multitronic",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "433156",
+"name": "2.0 TDI quattro S Tronic",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433161",
+"name": "2.0 TDI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433155",
+"name": "2.0 TDI quattro MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201403,
+"id": "433162",
+"name": "2.0 TDI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201403,
+"id": "433156",
+"name": "2.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432736",
+"name": "2.0 TFSI MT",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432738",
+"name": "2.0 TFSI quattro MT",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "432737",
+"name": "2.0 TFSI Multitronic",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "432739",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "432736",
+"name": "2.0 TFSI MT",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "432738",
+"name": "2.0 TFSI quattro MT",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201304,
+"id": "432737",
+"name": "2.0 TFSI Multitronic",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201304,
+"id": "432739",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201508,
+"id": "432736",
+"name": "2.0 TFSI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201508,
+"id": "432738",
+"name": "2.0 TFSI quattro MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201508,
+"id": "432737",
+"name": "2.0 TFSI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201508,
+"id": "432739",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CLAB",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 204 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432756",
+"name": "3.0 TDI MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "fwd",
+"engine": "CLAB",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 204 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "432755",
+"name": "3.0 TDI Multitronic",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CKVD",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201504,
+"id": "432754",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CDUC",
+"fuel": "дизель",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 245 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "432753",
+"name": "3.0 TDI quattro MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CDUC, CKVB, CKVC",
+"fuel": "дизель",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 245 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "432754",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201503
+},
+{
+"from": 201107,
+"id": "432754",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8TA"
+],
+"drive": "4wd",
+"engine": "CMUA",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201111,
+"id": "432740",
+"name": "3.0 TFSI quattro S Tronic",
+"to": 201611
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2011_15729",
+"market": "Европа",
+"to": 201610
+},
+"audi/a5/g_2011_15741": {
+"from": 201107,
+"groups": [
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CJEB",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 170 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433164",
+"name": "1.8 TFSI MT",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CJEB",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 170 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433165",
+"name": "1.8 TFSI Multitronic",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CJEE",
+"fuel": "бензин",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 177 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201504,
+"id": "433164",
+"name": "1.8 TFSI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CJEE",
+"fuel": "бензин",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.8,
+"text": "1.8 л, 177 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201504,
+"id": "433165",
+"name": "1.8 TFSI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CAGA, CMEA",
+"fuel": "дизель",
+"hp": 143,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 143 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433205",
+"name": "2.0 TDI MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CSUA, CJCD",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433205",
+"name": "2.0 TDI MT",
+"to": 201611
+},
+{
+"from": 201304,
+"id": "433205",
+"name": "2.0 TDI MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433205",
+"name": "2.0 TDI MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433193",
+"name": "2.0 TDI quattro MT",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CGLC",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433192",
+"name": "2.0 TDI Multitronic",
+"to": 201403
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433205",
+"name": "2.0 TDI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201403,
+"id": "433193",
+"name": "2.0 TDI quattro MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CNHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201403,
+"id": "433192",
+"name": "2.0 TDI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433166",
+"name": "2.0 TFSI MT",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433167",
+"name": "2.0 TFSI Multitronic",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CDNC, CAEB",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "433169",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "433166",
+"name": "2.0 TFSI MT",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201304,
+"id": "433167",
+"name": "2.0 TFSI Multitronic",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 225,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 225 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201304,
+"id": "433169",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201508
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201508,
+"id": "433166",
+"name": "2.0 TFSI MT",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201508,
+"id": "433167",
+"name": "2.0 TFSI Multitronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CNCE",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201508,
+"id": "433169",
+"name": "2.0 TFSI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "fwd",
+"engine": "CLAB",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 204 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201107,
+"id": "433185",
+"name": "3.0 TDI Multitronic",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CKVD",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201504,
+"id": "433184",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CDUC",
+"fuel": "дизель",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 245 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201107,
+"id": "433183",
+"name": "3.0 TDI quattro MT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CDUC, CKVB, CKVC",
+"fuel": "дизель",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 245 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201107,
+"id": "433184",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201503
+},
+{
+"from": 201107,
+"id": "433184",
+"name": "3.0 TDI quattro S Tronic",
+"to": 201611
+}
+]
+},
+{
+"body": [
+"8F7"
+],
+"drive": "4wd",
+"engine": "CMUA",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201111,
+"id": "433170",
+"name": "3.0 TFSI quattro S Tronic",
+"to": 201611
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2011_15741",
+"market": "Европа",
+"to": 201610
+},
+"audi/a5/g_2011_21645": {
+"from": 201111,
+"groups": [
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CAEB, CDNC",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201111,
+"id": "519334",
+"name": "2.0 TFSI quattro MT Premium",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519343",
+"name": "2.0 TFSI quattro MT Premium Plus",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519348",
+"name": "2.0 TFSI quattro MT Prestige",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CAEB, CDNC",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201111,
+"id": "519331",
+"name": "2.0 TFSI quattro Tiptronic Premium",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519344",
+"name": "2.0 TFSI quattro Tiptronic Premium Plus",
+"to": 201304
+},
+{
+"from": 201111,
+"id": "519347",
+"name": "2.0 TFSI quattro Tiptronic Prestige",
+"to": 201304
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 220,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 220 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "519334",
+"name": "2.0 TFSI quattro MT Premium",
+"to": 201607
+},
+{
+"from": 201304,
+"id": "519343",
+"name": "2.0 TFSI quattro MT Premium Plus",
+"to": 201607
+},
+{
+"from": 201304,
+"id": "519348",
+"name": "2.0 TFSI quattro MT Prestige",
+"to": 201607
+}
+]
+},
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CNCD",
+"fuel": "бензин",
+"hp": 220,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 220 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201304,
+"id": "519331",
+"name": "2.0 TFSI quattro Tiptronic Premium",
+"to": 201607
+},
+{
+"from": 201304,
+"id": "519344",
+"name": "2.0 TFSI quattro Tiptronic Premium Plus",
+"to": 201607
+},
+{
+"from": 201304,
+"id": "519347",
+"name": "2.0 TFSI quattro Tiptronic Prestige",
+"to": 201607
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2011_21645",
+"market": "США",
+"to": 201606
+},
+"audi/a5/g_201606_6759": {
+"from": 201610,
+"groups": [
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DESA, DETA, DFVA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201610,
+"id": "168908",
+"name": "2.0 TDI quattro S tronic Comfort",
+"to": 201610
+},
+{
+"from": 201610,
+"id": "171851",
+"name": "2.0 40 TDI quattro S tronic Design",
+"to": 202007
+},
+{
+"from": 201610,
+"id": "171852",
+"name": "2.0 40 TDI quattro S tronic Sport",
+"to": 202007
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 249,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 249 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201610,
+"id": "168760",
+"name": "2.0 TFSI quattro S tronic Comfort",
+"to": 201610
+},
+{
+"from": 201610,
+"id": "171837",
+"name": "2.0 45 TFSI quattro S tronic Design",
+"to": 202007
+},
+{
+"from": 201610,
+"id": "171842",
+"name": "2.0 45 TFSI quattro S tronic Sport",
+"to": 202007
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_201606_6759",
+"market": "Россия",
+"to": 202007
+},
+"audi/a5/g_2016_15760": {
+"from": 201606,
+"groups": [
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CZDA, CVNA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201701,
+"id": "433581",
+"name": "1.4 TFSI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201701,
+"id": "433528",
+"name": "1.4 TFSI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201701,
+"id": "433564",
+"name": "1.4 TFSI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201704,
+"id": "433534",
+"name": "2.0 TDI MT",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "433579",
+"name": "2.0 TDI MT Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "433562",
+"name": "2.0 TDI MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201704,
+"id": "433533",
+"name": "2.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "433580",
+"name": "2.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "433563",
+"name": "2.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CVKB",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201609,
+"id": "433527",
+"name": "2.0 TFSI ultra MT",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433582",
+"name": "2.0 TFSI ultra MT Design",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433565",
+"name": "2.0 TFSI ultra MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CVKB",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201609,
+"id": "433526",
+"name": "2.0 TFSI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433583",
+"name": "2.0 TFSI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433566",
+"name": "2.0 TFSI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201607,
+"id": "433534",
+"name": "2.0 TDI MT",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433531",
+"name": "2.0 TDI ultra MT",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433579",
+"name": "2.0 TDI MT Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433585",
+"name": "2.0 TDI ultra MT Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433562",
+"name": "2.0 TDI MT Sport",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433568",
+"name": "2.0 TDI ultra MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433533",
+"name": "2.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433532",
+"name": "2.0 TDI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433580",
+"name": "2.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433588",
+"name": "2.0 TDI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433563",
+"name": "2.0 TDI S tronic Sport",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433571",
+"name": "2.0 TDI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DESA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433423",
+"name": "2.0 TDI quattro S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433577",
+"name": "2.0 TDI quattro S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433560",
+"name": "2.0 TDI quattro S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201607,
+"id": "433524",
+"name": "2.0 TFSI quattro MT",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433575",
+"name": "2.0 TFSI quattro MT Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433558",
+"name": "2.0 TFSI quattro MT Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433586",
+"name": "2.0 TFSI S tronic Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433525",
+"name": "2.0 TFSI S tronic",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433569",
+"name": "2.0 TFSI S tronic Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433422",
+"name": "2.0 TFSI quattro S tronic",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433576",
+"name": "2.0 TFSI quattro S tronic Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433559",
+"name": "2.0 TFSI quattro S tronic Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CSWB",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433536",
+"name": "3.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433589",
+"name": "3.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433572",
+"name": "3.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CSWB",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433578",
+"name": "3.0 TDI quattro S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433535",
+"name": "3.0 TDI quattro S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433561",
+"name": "3.0 TDI quattro S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CRTC",
+"fuel": "дизель",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201701,
+"id": "433537",
+"name": "3.0 TDI quattro Tiptronic",
+"to": 201709
+},
+{
+"from": 201701,
+"id": "433574",
+"name": "3.0 TDI quattro Tiptronic Design",
+"to": 201709
+},
+{
+"from": 201701,
+"id": "433557",
+"name": "3.0 TDI quattro Tiptronic Sport",
+"to": 201709
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DCPC",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201710,
+"id": "433537",
+"name": "3.0 TDI quattro Tiptronic",
+"to": 201808
+},
+{
+"from": 201710,
+"id": "433574",
+"name": "3.0 TDI quattro Tiptronic Design",
+"to": 201808
+},
+{
+"from": 201710,
+"id": "433557",
+"name": "3.0 TDI quattro Tiptronic Sport",
+"to": 201808
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2016_15760",
+"market": "Европа",
+"to": 201810
+},
+"audi/a5/g_2016_15761": {
+"from": 201606,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CZDA, CVNA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201701,
+"id": "433545",
+"name": "1.4 TFSI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201701,
+"id": "433983",
+"name": "1.4 TFSI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201701,
+"id": "433999",
+"name": "1.4 TFSI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201704,
+"id": "433551",
+"name": "2.0 TDI MT",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "433985",
+"name": "2.0 TDI MT Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434001",
+"name": "2.0 TDI MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201704,
+"id": "434056",
+"name": "2.0 TDI quattro MT Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434058",
+"name": "2.0 TDI quattro MT",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434057",
+"name": "2.0 TDI quattro MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201704,
+"id": "433550",
+"name": "2.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "433978",
+"name": "2.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434000",
+"name": "2.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "газ/бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 170 л.с., газ/бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201708,
+"id": "433960",
+"name": "2.0 TFSI g-tron MT",
+"to": 201803
+},
+{
+"from": 201708,
+"id": "433981",
+"name": "2.0 TFSI g-tron MT Design",
+"to": 201803
+},
+{
+"from": 201708,
+"id": "434003",
+"name": "2.0 TFSI g-tron MT Sport",
+"to": 201803
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "газ/бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 170 л.с., газ/бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201708,
+"id": "433959",
+"name": "2.0 TFSI g-tron S tronic",
+"to": 201803
+},
+{
+"from": 201708,
+"id": "433980",
+"name": "2.0 TFSI g-tron S tronic Design",
+"to": 201803
+},
+{
+"from": 201708,
+"id": "434002",
+"name": "2.0 TFSI g-tron S tronic Sport",
+"to": 201803
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CVKB",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201609,
+"id": "433544",
+"name": "2.0 TFSI ultra MT",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433975",
+"name": "2.0 TFSI ultra MT Design",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433997",
+"name": "2.0 TFSI ultra MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CVKB",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201609,
+"id": "433543",
+"name": "2.0 TFSI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433974",
+"name": "2.0 TFSI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "433996",
+"name": "2.0 TFSI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201607,
+"id": "433551",
+"name": "2.0 TDI MT",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433548",
+"name": "2.0 TDI ultra MT",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433985",
+"name": "2.0 TDI MT Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433976",
+"name": "2.0 TDI ultra MT Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433994",
+"name": "2.0 TDI ultra MT Sport",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434001",
+"name": "2.0 TDI MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433550",
+"name": "2.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433549",
+"name": "2.0 TDI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433970",
+"name": "2.0 TDI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433978",
+"name": "2.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433991",
+"name": "2.0 TDI ultra S tronic Sport",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434000",
+"name": "2.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DESA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433540",
+"name": "2.0 TDI quattro S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433969",
+"name": "2.0 TDI quattro S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433987",
+"name": "2.0 TDI quattro S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201607,
+"id": "433541",
+"name": "2.0 TFSI quattro MT",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433982",
+"name": "2.0 TFSI quattro MT Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433989",
+"name": "2.0 TFSI quattro MT Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433542",
+"name": "2.0 TFSI S tronic",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433972",
+"name": "2.0 TFSI S tronic Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433993",
+"name": "2.0 TFSI S tronic Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433539",
+"name": "2.0 TFSI quattro S tronic",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433968",
+"name": "2.0 TFSI quattro S tronic Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "433988",
+"name": "2.0 TFSI quattro S tronic Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CSWB",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433553",
+"name": "3.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433979",
+"name": "3.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433990",
+"name": "3.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "CSWB",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "433552",
+"name": "3.0 TDI quattro S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433967",
+"name": "3.0 TDI quattro S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "433986",
+"name": "3.0 TDI quattro S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "CRTC",
+"fuel": "дизель",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201701,
+"id": "433554",
+"name": "3.0 TDI quattro Tiptronic",
+"to": 201709
+},
+{
+"from": 201701,
+"id": "433977",
+"name": "3.0 TDI quattro Tiptronic Design",
+"to": 201709
+},
+{
+"from": 201701,
+"id": "433998",
+"name": "3.0 TDI quattro Tiptronic Sport",
+"to": 201709
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DCPC",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201710,
+"id": "433554",
+"name": "3.0 TDI quattro Tiptronic",
+"to": 201808
+},
+{
+"from": 201710,
+"id": "433977",
+"name": "3.0 TDI quattro Tiptronic Design",
+"to": 201808
+},
+{
+"from": 201710,
+"id": "433998",
+"name": "3.0 TDI quattro Tiptronic Sport",
+"to": 201808
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2016_15761",
+"market": "Европа",
+"to": 201810
+},
+"audi/a5/g_2016_15767": {
+"from": 201606,
+"groups": [
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CZDA, CVNA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201701,
+"id": "434011",
+"name": "1.4 TFSI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201701,
+"id": "434148",
+"name": "1.4 TFSI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201701,
+"id": "434167",
+"name": "1.4 TFSI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201704,
+"id": "434017",
+"name": "2.0 TDI MT",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434146",
+"name": "2.0 TDI MT Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434169",
+"name": "2.0 TDI MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201704,
+"id": "434016",
+"name": "2.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434147",
+"name": "2.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201704,
+"id": "434168",
+"name": "2.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CVKB",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201609,
+"id": "434010",
+"name": "2.0 TFSI ultra MT",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "434149",
+"name": "2.0 TFSI ultra MT Design",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "434166",
+"name": "2.0 TFSI ultra MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CVKB",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201609,
+"id": "434009",
+"name": "2.0 TFSI ultra S tronic",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "434150",
+"name": "2.0 TFSI ultra S tronic Design",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "434165",
+"name": "2.0 TFSI ultra S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DESA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201607,
+"id": "434017",
+"name": "2.0 TDI MT",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434146",
+"name": "2.0 TDI MT Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434169",
+"name": "2.0 TDI MT Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DESA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "434016",
+"name": "2.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434147",
+"name": "2.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434168",
+"name": "2.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DESA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "434006",
+"name": "2.0 TDI quattro S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434156",
+"name": "2.0 TDI quattro S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434159",
+"name": "2.0 TDI quattro S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "434008",
+"name": "2.0 TFSI S tronic",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "434152",
+"name": "2.0 TFSI S tronic Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "434163",
+"name": "2.0 TFSI S tronic Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "434005",
+"name": "2.0 TFSI quattro S tronic",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "434155",
+"name": "2.0 TFSI quattro S tronic Design",
+"to": 201807
+},
+{
+"from": 201607,
+"id": "434160",
+"name": "2.0 TFSI quattro S tronic Sport",
+"to": 201807
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "CSWB",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "434019",
+"name": "3.0 TDI S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434154",
+"name": "3.0 TDI S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434161",
+"name": "3.0 TDI S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "CSWB",
+"fuel": "дизель",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 218 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201607,
+"id": "434018",
+"name": "3.0 TDI quattro S tronic",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434157",
+"name": "3.0 TDI quattro S tronic Design",
+"to": 201808
+},
+{
+"from": 201607,
+"id": "434158",
+"name": "3.0 TDI quattro S tronic Sport",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DCPC",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201710,
+"id": "434021",
+"name": "3.0 TDI quattro Tiptronic",
+"to": 201808
+},
+{
+"from": 201710,
+"id": "434145",
+"name": "3.0 TDI quattro Tiptronic Design",
+"to": 201808
+},
+{
+"from": 201710,
+"id": "434170",
+"name": "3.0 TDI quattro Tiptronic Sport",
+"to": 201808
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2016_15767",
+"market": "Европа",
+"to": 201810
+},
+"audi/a5/g_2016_21545": {
+"from": 201606,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201606,
+"id": "517636",
+"name": "2.0 TFSI quattro S tronic Premium",
+"to": 201810
+},
+{
+"from": 201606,
+"id": "517652",
+"name": "2.0 TFSI quattro S tronic Premium Plus",
+"to": 201810
+},
+{
+"from": 201606,
+"id": "517653",
+"name": "2.0 TFSI quattro S tronic Prestige",
+"to": 201810
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2016_21545",
+"market": "США",
+"to": 201810
+},
+"audi/a5/g_2016_21641": {
+"from": 201606,
+"groups": [
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201606,
+"id": "518215",
+"name": "2.0 TFSI quattro MT Premium",
+"to": 201810
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201606,
+"id": "518212",
+"name": "2.0 TFSI quattro S tronic Premium",
+"to": 201810
+},
+{
+"from": 201606,
+"id": "518211",
+"name": "2.0 TFSI quattro S tronic Premium Plus",
+"to": 201810
+},
+{
+"from": 201606,
+"id": "518210",
+"name": "2.0 TFSI quattro S tronic Prestige",
+"to": 201810
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2016_21641",
+"market": "США",
+"to": 201810
+},
+"audi/a5/g_2016_21642": {
+"from": 201606,
+"groups": [
+{
+"body": [
+"F5"
+],
+"drive": "4wd",
+"engine": "CYRB",
+"fuel": "бензин",
+"hp": 252,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 252 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201606,
+"id": "518218",
+"name": "2.0 TFSI quattro S tronic Premium",
+"to": 201810
+},
+{
+"from": 201606,
+"id": "518216",
+"name": "2.0 TFSI quattro S tronic Premium Plus",
+"to": 201810
+},
+{
+"from": 201606,
+"id": "518217",
+"name": "2.0 TFSI quattro S tronic Prestige",
+"to": 201810
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2016_21642",
+"market": "США",
+"to": 201810
+},
+"audi/a5/g_201810_15790": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DLVB, DMSB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 150 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 202007,
+"id": "434352",
+"name": "2.0 35 TFSI MT",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434486",
+"name": "2.0 35 TFSI MT Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434509",
+"name": "2.0 35 TFSI MT S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DLVB, DMSB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 150 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201811,
+"id": "434351",
+"name": "2.0 35 TFSI S tronic",
+"to": 202407
+},
+{
+"from": 201811,
+"id": "434479",
+"name": "2.0 35 TFSI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 201811,
+"id": "434503",
+"name": "2.0 35 TFSI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434429",
+"name": "2.0 35 TDI S tronic",
+"to": 201905
+},
+{
+"from": 201810,
+"id": "434476",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 201905
+},
+{
+"from": 201810,
+"id": "434511",
+"name": "2.0 35 TDI S tronic S line",
+"to": 201905
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DEZE, DTNA, DEZB",
+"fuel": "дизель",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 163 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202009,
+"id": "434429",
+"name": "2.0 35 TDI S tronic",
+"to": 202407
+},
+{
+"from": 202009,
+"id": "434476",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202009,
+"id": "434511",
+"name": "2.0 35 TDI S tronic S line",
+"to": 202407
+},
+{
+"from": 201908,
+"id": "434429",
+"name": "2.0 35 TDI S tronic",
+"to": 202009
+},
+{
+"from": 201908,
+"id": "434476",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 202009
+},
+{
+"from": 201908,
+"id": "434511",
+"name": "2.0 35 TDI S tronic S line",
+"to": 202009
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DNNA, DRFA",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 190 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201810,
+"id": "434356",
+"name": "2.0 40 TFSI MT",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434478",
+"name": "2.0 40 TFSI MT Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434501",
+"name": "2.0 40 TFSI MT S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DNNA, DRFA",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 190 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434349",
+"name": "2.0 40 TFSI S tronic",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434477",
+"name": "2.0 40 TFSI S tronic Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434500",
+"name": "2.0 40 TFSI S tronic S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434431",
+"name": "2.0 40 TDI S tronic",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434475",
+"name": "2.0 40 TDI S tronic Advanced",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434499",
+"name": "2.0 40 TDI S tronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DESA, DETA, DFVA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434433",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434473",
+"name": "2.0 40 TDI quattro S tronic Advanced",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434497",
+"name": "2.0 40 TDI quattro S tronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434349",
+"name": "2.0 40 TFSI S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434477",
+"name": "2.0 40 TFSI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434500",
+"name": "2.0 40 TFSI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434354",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434484",
+"name": "2.0 40 TFSI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434507",
+"name": "2.0 40 TFSI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "fwd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "434431",
+"name": "2.0 40 TDI S tronic",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434475",
+"name": "2.0 40 TDI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434499",
+"name": "2.0 40 TDI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "434433",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434473",
+"name": "2.0 40 TDI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434497",
+"name": "2.0 40 TDI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DNPA",
+"fuel": "бензин",
+"hp": 245,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 245 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434350",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434474",
+"name": "2.0 45 TFSI quattro S tronic Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434498",
+"name": "2.0 45 TFSI quattro S tronic S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 265,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 265 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434350",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434474",
+"name": "2.0 45 TFSI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434498",
+"name": "2.0 45 TFSI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DDVE",
+"fuel": "дизель",
+"hp": 231,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 231 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201902,
+"id": "434480",
+"name": "3.0 45 TDI quattro Tiptronic Advanced",
+"to": 202008
+},
+{
+"from": 201902,
+"id": "434502",
+"name": "3.0 45 TDI quattro Tiptronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DDVE",
+"fuel": "дизель",
+"hp": 231,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 231 л.с., мягкий гибрид, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201902,
+"id": "434436",
+"name": "3.0 45 TDI quattro Tiptronic",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DCPC",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202010,
+"id": "434434",
+"name": "3.0 50 TDI quattro Tiptronic",
+"to": 202407
+},
+{
+"from": 202010,
+"id": "434490",
+"name": "3.0 50 TDI quattro Tiptronic Advanced",
+"to": 202407
+},
+{
+"from": 202010,
+"id": "434514",
+"name": "3.0 50 TDI quattro Tiptronic S line",
+"to": 202407
+},
+{
+"from": 201902,
+"id": "434434",
+"name": "3.0 50 TDI quattro Tiptronic",
+"to": 202006
+},
+{
+"from": 201902,
+"id": "434490",
+"name": "3.0 50 TDI quattro Tiptronic Advanced",
+"to": 202006
+},
+{
+"from": 201902,
+"id": "434514",
+"name": "3.0 50 TDI quattro Tiptronic S line",
+"to": 202006
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_201810_15790",
+"market": "Европа",
+"to": 202407
+},
+"audi/a5/g_2018_15795": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DLVB, DMSB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 150 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 202007,
+"id": "434458",
+"name": "2.0 35 TFSI MT",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434660",
+"name": "2.0 35 TFSI MT Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434694",
+"name": "2.0 35 TFSI MT S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DLVB, DMSB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 150 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201811,
+"id": "434457",
+"name": "2.0 35 TFSI S tronic",
+"to": 202407
+},
+{
+"from": 201811,
+"id": "434653",
+"name": "2.0 35 TFSI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 201811,
+"id": "434702",
+"name": "2.0 35 TFSI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CZHA, DEUA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434465",
+"name": "2.0 35 TDI S tronic",
+"to": 201905
+},
+{
+"from": 201810,
+"id": "434650",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 201905
+},
+{
+"from": 201810,
+"id": "434706",
+"name": "2.0 35 TDI S tronic S line",
+"to": 201905
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DEZE, DTNA, DEZB",
+"fuel": "дизель",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 163 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202009,
+"id": "434465",
+"name": "2.0 35 TDI S tronic",
+"to": 202407
+},
+{
+"from": 202009,
+"id": "434650",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202009,
+"id": "434706",
+"name": "2.0 35 TDI S tronic S line",
+"to": 202407
+},
+{
+"from": 201908,
+"id": "434465",
+"name": "2.0 35 TDI S tronic",
+"to": 202009
+},
+{
+"from": 201908,
+"id": "434650",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 202009
+},
+{
+"from": 201908,
+"id": "434706",
+"name": "2.0 35 TDI S tronic S line",
+"to": 202009
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "CVLA",
+"fuel": "газ/бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 170 л.с., газ/бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201903,
+"id": "434526",
+"name": "2.0 40 g-tron S tronic",
+"to": 202407
+},
+{
+"from": 201903,
+"id": "434646",
+"name": "2.0 40 g-tron S tronic Advanced",
+"to": 202407
+},
+{
+"from": 201903,
+"id": "434699",
+"name": "2.0 40 g-tron S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DNNA, DRFA",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 190 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201810,
+"id": "434462",
+"name": "2.0 40 TFSI MT",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434652",
+"name": "2.0 40 TFSI MT Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434703",
+"name": "2.0 40 TFSI MT S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DNNA, DRFA",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 190 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434455",
+"name": "2.0 40 TFSI S tronic",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434651",
+"name": "2.0 40 TFSI S tronic Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434704",
+"name": "2.0 40 TFSI S tronic S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434467",
+"name": "2.0 40 TDI S tronic",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434649",
+"name": "2.0 40 TDI S tronic Advanced",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434705",
+"name": "2.0 40 TDI S tronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DESA, DETA, DFVA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434469",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434647",
+"name": "2.0 40 TDI quattro S tronic Advanced",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434708",
+"name": "2.0 40 TDI quattro S tronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434455",
+"name": "2.0 40 TFSI S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434651",
+"name": "2.0 40 TFSI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434704",
+"name": "2.0 40 TFSI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434460",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434658",
+"name": "2.0 40 TFSI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434697",
+"name": "2.0 40 TFSI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "fwd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "434467",
+"name": "2.0 40 TDI S tronic",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434649",
+"name": "2.0 40 TDI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434705",
+"name": "2.0 40 TDI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "434469",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434647",
+"name": "2.0 40 TDI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434708",
+"name": "2.0 40 TDI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DNPA",
+"fuel": "бензин",
+"hp": 245,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 245 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434456",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434648",
+"name": "2.0 45 TFSI quattro S tronic Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434707",
+"name": "2.0 45 TFSI quattro S tronic S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 265,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 265 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434456",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434648",
+"name": "2.0 45 TFSI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434707",
+"name": "2.0 45 TFSI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DDVE",
+"fuel": "дизель",
+"hp": 231,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 231 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201902,
+"id": "434472",
+"name": "3.0 45 TDI quattro Tiptronic",
+"to": 202008
+},
+{
+"from": 201902,
+"id": "434654",
+"name": "3.0 45 TDI quattro Tiptronic Advanced",
+"to": 202008
+},
+{
+"from": 201902,
+"id": "434700",
+"name": "3.0 45 TDI quattro Tiptronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DCPC",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202010,
+"id": "434470",
+"name": "3.0 50 TDI quattro Tiptronic",
+"to": 202407
+},
+{
+"from": 202010,
+"id": "434664",
+"name": "3.0 50 TDI quattro Tiptronic Advanced",
+"to": 202407
+},
+{
+"from": 202010,
+"id": "434690",
+"name": "3.0 50 TDI quattro Tiptronic S line",
+"to": 202407
+},
+{
+"from": 201902,
+"id": "434470",
+"name": "3.0 50 TDI quattro Tiptronic",
+"to": 202006
+},
+{
+"from": 201902,
+"id": "434664",
+"name": "3.0 50 TDI quattro Tiptronic Advanced",
+"to": 202006
+},
+{
+"from": 201902,
+"id": "434690",
+"name": "3.0 50 TDI quattro Tiptronic S line",
+"to": 202006
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_15795",
+"market": "Европа",
+"to": 202407
+},
+"audi/a5/g_2018_15804": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DLVB, DMSB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 150 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201811,
+"id": "434749",
+"name": "2.0 35 TFSI S tronic",
+"to": 202407
+},
+{
+"from": 201811,
+"id": "434753",
+"name": "2.0 35 TFSI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 201811,
+"id": "434778",
+"name": "2.0 35 TFSI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DEZE, DTNA, DEZB",
+"fuel": "дизель",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 163 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202009,
+"id": "434635",
+"name": "2.0 35 TDI S tronic",
+"to": 202407
+},
+{
+"from": 202009,
+"id": "434754",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202009,
+"id": "434777",
+"name": "2.0 35 TDI S tronic S line",
+"to": 202407
+},
+{
+"from": 201908,
+"id": "434635",
+"name": "2.0 35 TDI S tronic",
+"to": 202009
+},
+{
+"from": 201908,
+"id": "434754",
+"name": "2.0 35 TDI S tronic Advanced",
+"to": 202009
+},
+{
+"from": 201908,
+"id": "434777",
+"name": "2.0 35 TDI S tronic S line",
+"to": 202009
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DNNA, DRFA",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 190 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201810,
+"id": "434634",
+"name": "2.0 40 TFSI MT",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434756",
+"name": "2.0 40 TFSI MT Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434775",
+"name": "2.0 40 TFSI MT S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DNNA, DRFA",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 190 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434627",
+"name": "2.0 40 TFSI S tronic",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434757",
+"name": "2.0 40 TFSI S tronic Advanced",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "434774",
+"name": "2.0 40 TFSI S tronic S line",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DESA, DETA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434639",
+"name": "2.0 40 TDI S tronic",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434758",
+"name": "2.0 40 TDI S tronic Advanced",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434773",
+"name": "2.0 40 TDI S tronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DESA, DETA, DFVA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "434641",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434759",
+"name": "2.0 40 TDI quattro S tronic Advanced",
+"to": 202008
+},
+{
+"from": 201810,
+"id": "434772",
+"name": "2.0 40 TDI quattro S tronic S line",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434627",
+"name": "2.0 40 TFSI S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434757",
+"name": "2.0 40 TFSI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434774",
+"name": "2.0 40 TFSI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434632",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434763",
+"name": "2.0 40 TFSI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434768",
+"name": "2.0 40 TFSI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "fwd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "434639",
+"name": "2.0 40 TDI S tronic",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434758",
+"name": "2.0 40 TDI S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434773",
+"name": "2.0 40 TDI S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "434641",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434759",
+"name": "2.0 40 TDI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202008,
+"id": "434772",
+"name": "2.0 40 TDI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 265,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 265 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "434633",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434764",
+"name": "2.0 45 TFSI quattro S tronic Advanced",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "434767",
+"name": "2.0 45 TFSI quattro S tronic S line",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DCPC",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201902,
+"id": "434643",
+"name": "3.0 50 TDI quattro Tiptronic",
+"to": 202006
+},
+{
+"from": 201902,
+"id": "434765",
+"name": "3.0 50 TDI quattro Tiptronic Advanced",
+"to": 202006
+},
+{
+"from": 201902,
+"id": "434766",
+"name": "3.0 50 TDI quattro Tiptronic S line",
+"to": 202006
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_15804",
+"market": "Европа",
+"to": 202407
+},
+"audi/a5/g_2018_21541": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "517200",
+"name": "2.0 40 TFSI quattro S tronic Premium",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517202",
+"name": "2.0 40 TFSI quattro S tronic Premium Plus",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517205",
+"name": "2.0 40 TFSI quattro S tronic Prestige",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DNPA",
+"fuel": "бензин",
+"hp": 248,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 248 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "517199",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "517203",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "517204",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 261,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 261 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "517199",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517203",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517204",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": 202407
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_21541",
+"market": "США",
+"to": 202407
+},
+"audi/a5/g_2018_21543": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DNPA",
+"fuel": "бензин",
+"hp": 245,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 245 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "517208",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "517209",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "517211",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F53"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 261,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 261 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "517208",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517209",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517211",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": 202407
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_21543",
+"market": "США",
+"to": 202407
+},
+"audi/a5/g_2018_21544": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DNPA",
+"fuel": "бензин",
+"hp": 248,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 248 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "517216",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "517217",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": 202006
+},
+{
+"from": 201810,
+"id": "517218",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": 202006
+}
+]
+},
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 261,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 261 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "517216",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517217",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "517218",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": 202407
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_21544",
+"market": "США",
+"to": 202407
+},
+"audi/a5/g_2018_23847": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMSA",
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "545673",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": 202407
+},
+{
+"from": 202007,
+"id": "545674",
+"name": "2.0 40 TFSI quattro S tronic Premium",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMZA",
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, дизель, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "545690",
+"name": "2.0 40 TDI quattro S tronic Premium",
+"to": 202407
+}
+]
+},
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 265,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 265 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "545675",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202407
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_23847",
+"market": "Южная Корея",
+"to": 202407
+},
+"audi/a5/g_2018_23855": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 265,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 265 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "545691",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202407
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_23855",
+"market": "Южная Корея",
+"to": 202407
+},
+"audi/a5/g_2018_23856": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"F57"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 265,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 265 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202007,
+"id": "545696",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": 202407
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2018_23856",
+"market": "Южная Корея",
+"to": 202407
+},
+"audi/a5/g_202407_21383": {
+"from": 202407,
+"groups": [
+{
+"body": [
+"FU"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515771",
+"name": "2.0 35 TFSI S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515785",
+"name": "2.0 35 TFSI S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515772",
+"name": "2.0 40 TFSI S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515781",
+"name": "2.0 40 TFSI S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515773",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515786",
+"name": "2.0 40 TFSI quattro S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, дизель, 204 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515774",
+"name": "2.0 40 TDI S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515784",
+"name": "2.0 40 TDI S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, дизель, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515775",
+"name": "2.0 40 TDI quattro S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515782",
+"name": "2.0 40 TDI quattro S tronic Edition One",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_202407_21383",
+"market": "Европа",
+"to": null
+},
+"audi/a5/g_2024_21384": {
+"from": 202407,
+"groups": [
+{
+"body": [
+"FU"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515735",
+"name": "2.0 35 TFSI S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515777",
+"name": "2.0 35 TFSI S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515736",
+"name": "2.0 40 TFSI S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515778",
+"name": "2.0 40 TFSI S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515737",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515779",
+"name": "2.0 40 TFSI quattro S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, дизель, 204 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515742",
+"name": "2.0 40 TDI S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515783",
+"name": "2.0 40 TDI S tronic Edition One",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, дизель, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "515752",
+"name": "2.0 40 TDI quattro S tronic",
+"to": null
+},
+{
+"from": 202407,
+"id": "515780",
+"name": "2.0 40 TDI quattro S tronic Edition One",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2024_21384",
+"market": "Европа",
+"to": null
+},
+"audi/a5/g_2024_23129": {
+"from": 202407,
+"groups": [
+{
+"body": [
+"F5A"
+],
+"drive": "4wd",
+"engine": "DMTA",
+"fuel": "бензин",
+"hp": 268,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 268 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "537994",
+"name": "2.0 45 TFSI quattro S tronic Premium",
+"to": null
+},
+{
+"from": 202407,
+"id": "538026",
+"name": "2.0 45 TFSI quattro S tronic Premium Plus",
+"to": null
+},
+{
+"from": 202407,
+"id": "538027",
+"name": "2.0 45 TFSI quattro S tronic Prestige",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2024_23129",
+"market": "США",
+"to": null
+},
+"audi/a5/g_2024_23532": {
+"from": 202407,
+"groups": [
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "бензин",
+"hp": 204,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 204 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "542328",
+"name": "2.0 40 TFSI quattro S tronic Advanced",
+"to": null
+},
+{
+"from": 202407,
+"id": "542332",
+"name": "2.0 40 TFSI quattro S tronic S line",
+"to": null
+},
+{
+"from": 202407,
+"id": "542336",
+"name": "2.0 40 TFSI quattro S tronic Black Edition",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "дизель",
+"hp": 204,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, дизель, 204 л.с., мягкий гибрид, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "542329",
+"name": "MHEV 2.0 40 TDI quattro S tronic Advanced",
+"to": null
+},
+{
+"from": 202407,
+"id": "542333",
+"name": "MHEV 2.0 40 TDI quattro S tronic S line",
+"to": null
+}
+]
+},
+{
+"body": [
+"FU"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 272 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202407,
+"id": "542337",
+"name": "2.0 45 TFSI quattro S tronic S line",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/a5/g_2024_23532",
+"market": "Южная Корея",
+"to": null
+},
 "audi/a6/g_200404_1267": {
 "from": 200402,
 "groups": [
@@ -33329,6 +40295,68 @@
 "key": "audi/rs3/g_2024_23528",
 "market": "Южная Корея",
 "to": null
+},
+"audi/rs5/g_201003_7146": {
+"from": 201003,
+"groups": [
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CFSA",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.2,
+"text": "4.2 л, 450 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201003,
+"id": "171752",
+"name": "4.2 FSI quattro S tronic",
+"to": 201202
+}
+]
+}
+],
+"ids": true,
+"key": "audi/rs5/g_201003_7146",
+"market": "Россия",
+"to": 201202
+},
+"audi/rs5/g_2010_15905": {
+"from": 201003,
+"groups": [
+{
+"body": [
+"8T3"
+],
+"drive": "4wd",
+"engine": "CFSA",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.2,
+"text": "4.2 л, 450 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201003,
+"id": "435683",
+"name": "4.2 FSI quattro S tronic",
+"to": 201202
+}
+]
+}
+],
+"ids": true,
+"key": "audi/rs5/g_2010_15905",
+"market": "Европа",
+"to": 201203
 },
 "audi/rs5/g_201203_1331": {
 "from": 201203,
@@ -56703,11 +63731,13 @@
 "trims": [
 {
 "from": 201902,
+"id": "543447",
 "name": "730d AT xDrive",
 "to": 202006
 },
 {
 "from": 201902,
+"id": "543448",
 "name": "730Ld AT xDrive",
 "to": 202006
 }
@@ -56727,11 +63757,13 @@
 "trims": [
 {
 "from": 201902,
+"id": "543445",
 "name": "745e AT",
 "to": 202210
 },
 {
 "from": 201902,
+"id": "543446",
 "name": "745Le AT",
 "to": 202210
 }
@@ -56751,11 +63783,13 @@
 "trims": [
 {
 "from": 202006,
+"id": "543447",
 "name": "730d AT xDrive",
 "to": 202210
 },
 {
 "from": 202006,
+"id": "543448",
 "name": "730Ld AT xDrive",
 "to": 202210
 }
@@ -56778,11 +63812,13 @@
 "trims": [
 {
 "from": 201902,
+"id": "543451",
 "name": "740d AT xDrive",
 "to": 202006
 },
 {
 "from": 201902,
+"id": "543452",
 "name": "740Ld AT xDrive",
 "to": 202006
 }
@@ -56802,6 +63838,7 @@
 "trims": [
 {
 "from": 201902,
+"id": "543454",
 "name": "740Li AT xDrive",
 "to": 202210
 }
@@ -56821,6 +63858,7 @@
 "trims": [
 {
 "from": 201902,
+"id": "543456",
 "name": "740i AT",
 "to": 202210
 }
@@ -56840,6 +63878,7 @@
 "trims": [
 {
 "from": 202006,
+"id": "543451",
 "name": "740d AT xDrive",
 "to": 202210
 }
@@ -56859,6 +63898,7 @@
 "trims": [
 {
 "from": 201902,
+"id": "543443",
 "name": "750Li AT xDrive",
 "to": 202210
 }
@@ -56878,12 +63918,14 @@
 "trims": [
 {
 "from": 201902,
+"id": "543444",
 "name": "M760Li AT xDrive",
 "to": 202009
 }
 ]
 }
 ],
+"ids": true,
 "key": "bmw/7-series/g_2019_23636",
 "market": "Южная Корея",
 "to": 202210
@@ -67657,6 +74699,697 @@
 ],
 "ids": true,
 "key": "bmw/x6/g_2023_23372",
+"market": "Южная Корея",
+"to": null
+},
+"bmw/x7/g_2018_21890": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30O0",
+"fuel": "дизель",
+"hp": 265,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 265 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201903,
+"id": "522393",
+"name": "xDrive30d AT",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B58B30M1",
+"fuel": "бензин",
+"hp": 333,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 333 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202011,
+"id": "522397",
+"name": "xDrive40i AT",
+"to": 202207
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B58B30M0",
+"fuel": "бензин",
+"hp": 340,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 340 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201903,
+"id": "522397",
+"name": "xDrive40i AT",
+"to": 202011
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30T0",
+"fuel": "дизель",
+"hp": 340,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 340 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202008,
+"id": "522394",
+"name": "xDrive40d AT",
+"to": 202207
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30S0",
+"fuel": "дизель",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 400 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201903,
+"id": "522396",
+"name": "M50d AT",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "N63B44T3",
+"fuel": "бензин",
+"hp": 530,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 530 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201911,
+"id": "522395",
+"name": "M50i AT",
+"to": 202207
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/x7/g_2018_21890",
+"market": "Европа",
+"to": 202205
+},
+"bmw/x7/g_2018_23377": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30O0",
+"fuel": "дизель",
+"hp": 265,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 265 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201903,
+"id": "541012",
+"name": "xDrive30d AT",
+"to": 202009
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B58B30M0",
+"fuel": "бензин",
+"hp": 340,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 340 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201903,
+"id": "541011",
+"name": "xDrive40i AT",
+"to": 202207
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30T0",
+"fuel": "дизель",
+"hp": 340,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 340 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202008,
+"id": "541015",
+"name": "xDrive40d AT",
+"to": 202207
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30S0",
+"fuel": "дизель",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 400 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201903,
+"id": "541013",
+"name": "M50d AT",
+"to": 202009
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "N63B44T3",
+"fuel": "бензин",
+"hp": 530,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 530 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201911,
+"id": "541014",
+"name": "M50i AT",
+"to": 202009
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/x7/g_2018_23377",
+"market": "Южная Корея",
+"to": 202207
+},
+"bmw/x7/g_201901_9048": {
+"from": 201810,
+"groups": [
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30",
+"fuel": "дизель",
+"hp": 249,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 249 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201901,
+"id": "228937",
+"name": "xDrive30d AT Base",
+"to": 202205
+},
+{
+"from": 201908,
+"id": "264919",
+"name": "xDrive30d AT Business Plus",
+"to": 202205
+},
+{
+"from": 201908,
+"id": "264920",
+"name": "xDrive30d AT M Sport Plus",
+"to": 202205
+},
+{
+"from": 201908,
+"id": "264921",
+"name": "xDrive30d AT M Sport Pro",
+"to": 202205
+},
+{
+"from": 201908,
+"id": "264922",
+"name": "xDrive30d AT Exclusive",
+"to": 202108
+},
+{
+"from": 202108,
+"id": "386147",
+"name": "xDrive30d AT Pure Excellence",
+"to": 202203
+},
+{
+"from": 202111,
+"id": "396841",
+"name": "xDrive30d AT M Sport Edition 21",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B58B30M0",
+"fuel": "бензин",
+"hp": 340,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 340 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201901,
+"id": "228938",
+"name": "xDrive40i AT Base",
+"to": 202205
+},
+{
+"from": 201908,
+"id": "264917",
+"name": "xDrive40i AT M Sport Pure",
+"to": 202001
+},
+{
+"from": 201908,
+"id": "264918",
+"name": "xDrive40i AT Pure Excellence",
+"to": 202001
+},
+{
+"from": 202002,
+"id": "276024",
+"name": "xDrive40i AT M Sport Plus",
+"to": 202205
+},
+{
+"from": 202002,
+"id": "276019",
+"name": "xDrive40i AT Exclusive",
+"to": 202205
+},
+{
+"from": 202002,
+"id": "276025",
+"name": "xDrive40i AT M Sport Pro",
+"to": 202108
+},
+{
+"from": 202108,
+"id": "386148",
+"name": "xDrive40i AT M Sport Edition 21",
+"to": 202203
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30",
+"fuel": "дизель",
+"hp": 340,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 340 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202011,
+"id": "311566",
+"name": "xDrive40d AT Base",
+"to": 202205
+},
+{
+"from": 202011,
+"id": "311565",
+"name": "xDrive40d AT M Sport Pro",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30S0",
+"fuel": "дизель",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 400 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201901,
+"id": "228939",
+"name": "M50d AT Base",
+"to": 202205
+},
+{
+"from": 202002,
+"id": "276027",
+"name": "M50d AT Special",
+"to": 202205
+},
+{
+"from": 202002,
+"id": "276030",
+"name": "M50d AT Special by Individual",
+"to": 202108
+},
+{
+"from": 202007,
+"id": "298462",
+"name": "M50d AT Dark Shadow Edition",
+"to": 202108
+},
+{
+"from": 202203,
+"id": "425551",
+"name": "M50d AT 50 Years Special Edition",
+"to": 202205
+},
+{
+"from": 201908,
+"id": "444146",
+"name": "M50d AT M Special",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "N63B44T3",
+"fuel": "бензин",
+"hp": 530,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 530 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202004,
+"id": "291900",
+"name": "M50i AT Base",
+"to": 202205
+},
+{
+"from": 202004,
+"id": "291902",
+"name": "M50i AT M Special",
+"to": 202205
+},
+{
+"from": 202004,
+"id": "291903",
+"name": "M50i AT M Special by Individual",
+"to": 202108
+},
+{
+"from": 202007,
+"id": "298463",
+"name": "M50i AT Dark Shadow Edition",
+"to": 202108
+},
+{
+"from": 202203,
+"id": "425550",
+"name": "M50i AT M 50 Years Special Edition",
+"to": 202205
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/x7/g_201901_9048",
+"market": "Россия",
+"to": 202205
+},
+"bmw/x7/g_202205_15407": {
+"from": 202204,
+"groups": [
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30",
+"fuel": "дизель",
+"hp": 352,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 352 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202205,
+"id": "430611",
+"name": "xDrive40d AT",
+"to": null
+},
+{
+"from": 202205,
+"id": "536419",
+"name": "xDrive40d AT M Sport",
+"to": null
+},
+{
+"from": 202205,
+"id": "536422",
+"name": "xDrive40d AT M Sport Pro",
+"to": null
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B58B30M2",
+"fuel": "бензин",
+"hp": 381,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 381 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202205,
+"id": "430610",
+"name": "xDrive40i AT",
+"to": null
+},
+{
+"from": 202205,
+"id": "536418",
+"name": "xDrive40i AT M Sport",
+"to": null
+},
+{
+"from": 202205,
+"id": "536421",
+"name": "xDrive40i AT M Sport Pro",
+"to": null
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "S68B44T",
+"fuel": "бензин",
+"hp": 530,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 4.4,
+"text": "4.4 л, бензин, 530 л.с., мягкий гибрид, 12 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202205,
+"id": "430612",
+"name": "M60i AT M Sport",
+"to": null
+},
+{
+"from": 202205,
+"id": "536423",
+"name": "M60i AT M Sport Pro",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/x7/g_202205_15407",
+"market": "Европа",
+"to": null
+},
+"bmw/x7/g_2022_23378": {
+"from": 202204,
+"groups": [
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B57D30",
+"fuel": "дизель",
+"hp": 352,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, дизель, 352 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202207,
+"id": "541020",
+"name": "xDrive40d AT M Sport",
+"to": null
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "B58B30M2",
+"fuel": "бензин",
+"hp": 381,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 381 л.с., мягкий гибрид, 11 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202207,
+"id": "541019",
+"name": "xDrive40i AT M Sport",
+"to": null
+}
+]
+},
+{
+"body": [
+"G07"
+],
+"drive": "4wd",
+"engine": "S68B44T",
+"fuel": "бензин",
+"hp": 530,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 4.4,
+"text": "4.4 л, бензин, 530 л.с., мягкий гибрид, 12 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202303,
+"id": "541021",
+"name": "M60i AT M Sport",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/x7/g_2022_23378",
 "market": "Южная Корея",
 "to": null
 },
@@ -98997,6 +106730,7 @@
 "drive": "fwd",
 "engine": "R18A1",
 "fuel": "бензин",
+"gen_key": "honda/civic/g_2014_3909",
 "hp": 143,
 "hp_total": null,
 "hybrid": null,
@@ -99128,6 +106862,7 @@
 "drive": "fwd",
 "engine": "R18A1, R18Z4",
 "fuel": "бензин",
+"gen_key": "honda/civic/g_2014_8665",
 "hp": 143,
 "hp_total": null,
 "hybrid": null,
@@ -108510,6 +116245,7 @@
 "drive": "fwd",
 "engine": "G4FA",
 "fuel": "бензин",
+"gen_key": "hyundai/accent/g_2010_18914",
 "hp": 108,
 "hp_total": null,
 "hybrid": null,
@@ -109015,6 +116751,7 @@
 "drive": "fwd",
 "engine": "G4FA",
 "fuel": "бензин",
+"gen_key": "hyundai/accent/g_2010_18936",
 "hp": 108,
 "hp_total": null,
 "hybrid": null,
@@ -110404,6 +118141,7 @@
 "drive": "fwd",
 "engine": "G4KH",
 "fuel": "бензин",
+"gen_key": "hyundai/avante/g_202303_20241",
 "hp": 280,
 "hp_total": null,
 "hybrid": null,
@@ -131242,6 +138980,7 @@
 "drive": "4wd",
 "engine": "ED6",
 "fuel": "бензин",
+"gen_key": "jeep/cherokee/g_2018_17037",
 "hp": 180,
 "hp_total": null,
 "hybrid": null,
@@ -138075,6 +145814,7 @@
 "drive": "fwd",
 "engine": "L4NB",
 "fuel": "газ",
+"gen_key": "kia/k5/g_2019_16896",
 "hp": 146,
 "hp_total": null,
 "hybrid": null,
@@ -143200,11 +150940,13 @@
 "trims": [
 {
 "from": 200907,
+"id": "528521",
 "name": "1.4 MT 2WD L",
 "to": 201109
 },
 {
 "from": 200907,
+"id": "528524",
 "name": "1.4 MT 2WD LX",
 "to": 201109
 }
@@ -143226,11 +150968,13 @@
 "trims": [
 {
 "from": 200907,
+"id": "528522",
 "name": "1.4 AT 2WD L",
 "to": 201109
 },
 {
 "from": 200907,
+"id": "528526",
 "name": "1.4 AT 2WD LX",
 "to": 201109
 }
@@ -143252,11 +150996,13 @@
 "trims": [
 {
 "from": 200907,
+"id": "528525",
 "name": "1.5 CRDi VGT MT 2WD LX",
 "to": 201109
 },
 {
 "from": 200907,
+"id": "528542",
 "name": "1.5 CRDi VGT MT 2WD SLX",
 "to": 201109
 }
@@ -143278,11 +151024,13 @@
 "trims": [
 {
 "from": 200907,
+"id": "528527",
 "name": "1.5 CRDi VGT AT 2WD LX",
 "to": 201109
 },
 {
 "from": 200907,
+"id": "528545",
 "name": "1.5 CRDi VGT AT 2WD SLX",
 "to": 201109
 }
@@ -143304,6 +151052,7 @@
 "trims": [
 {
 "from": 200907,
+"id": "528541",
 "name": "1.6 CVVT MT 2WD SLX",
 "to": 201109
 }
@@ -143325,17 +151074,20 @@
 "trims": [
 {
 "from": 200907,
+"id": "528543",
 "name": "1.6 CVVT AT 2WD SLX",
 "to": 201109
 },
 {
 "from": 200907,
+"id": "528553",
 "name": "1.6 CVVT AT 2WD Gold Premium",
 "to": 201109
 }
 ]
 }
 ],
+"ids": true,
 "key": "kia/pride/g_200907_12363",
 "market": "Южная Корея",
 "to": 201109
@@ -143465,6 +151217,7 @@
 "drive": "fwd",
 "engine": "G4ED",
 "fuel": "бензин",
+"gen_key": "kia/pride/g_2009_13120",
 "hp": 112,
 "hp_total": null,
 "hybrid": null,
@@ -151853,6 +159606,7 @@
 "drive": "4wd",
 "engine": "G4FT",
 "fuel": "бензин",
+"gen_key": "kia/sportage/g_2021_15780",
 "hp": 180,
 "hp_total": null,
 "hybrid": "параллельный гибрид",
@@ -157941,6 +165695,7 @@
 "drive": "4wd",
 "engine": "204PT",
 "fuel": "бензин",
+"gen_key": "land_rover/discovery_sport/g_202306_18625",
 "hp": 200,
 "hp_total": null,
 "hybrid": null,
@@ -157991,6 +165746,7 @@
 "drive": "4wd",
 "engine": "204PT",
 "fuel": "бензин",
+"gen_key": "land_rover/discovery_sport/g_202306_18625",
 "hp": 249,
 "hp_total": null,
 "hybrid": null,
@@ -175274,6 +183030,7 @@
 "drive": "rwd",
 "engine": "M 254 E20 DEH LA",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/c-class/g_202103_23743",
 "hp": 258,
 "hp_total": null,
 "hybrid": null,
@@ -218032,101 +225789,121 @@
 "trims": [
 {
 "from": 201407,
+"id": "93648",
 "name": "1.5 15RS",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93653",
 "name": "1.5 15RX 80th Anniversary Special Color Limited",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93649",
 "name": "1.5 15RX",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93651",
 "name": "1.5 15RX Personalization",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93650",
 "name": "1.5 15RX Urban Selection",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93652",
 "name": "1.5 15RX Urban Selection Personalization",
 "to": 201510
 },
 {
 "from": 201511,
+"id": "93661",
 "name": "1.5 15RX Simple Package",
 "to": 201912
 },
 {
 "from": 201511,
+"id": "93649",
 "name": "1.5 15RX",
 "to": 201912
 },
 {
 "from": 201511,
+"id": "181840",
 "name": "1.5 15RX V Selection",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181842",
 "name": "1.5 15RX V Selection Dress-Up",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181841",
 "name": "1.5 15RX V Selection Personalization",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181843",
 "name": "1.5 15RX V Urban Selection",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181844",
 "name": "1.5 15RX V Urban Selection Personalization",
 "to": 201804
 },
 {
 "from": 201601,
+"id": "181853",
 "name": "1.5 15RX AAA Edition",
 "to": 201606
 },
 {
 "from": 201805,
+"id": "181840",
 "name": "1.5 15RX V Selection",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "181842",
 "name": "1.5 15RX V Selection Dress-Up",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "181841",
 "name": "1.5 15RX V Selection Personalization",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "181843",
 "name": "1.5 15RX V Urban Selection",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "181844",
 "name": "1.5 15RX V Urban Selection Personalization",
 "to": 201912
 },
 {
 "from": 201808,
+"id": "221674",
 "name": "1.5 15RX V Selection Style NISMO",
 "to": 201912
 }
@@ -218139,7 +225916,6 @@
 "drive": "fwd",
 "engine": "MR16DDT",
 "fuel": "бензин",
-"gen_key": "nissan/juke/g_2014_4098",
 "hp": 190,
 "hp_total": null,
 "hybrid": null,
@@ -218149,41 +225925,49 @@
 "trims": [
 {
 "from": 201407,
+"id": "93644",
 "name": "1.6 16GT",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93646",
 "name": "1.6 16GT Personalization",
 "to": 201510
 },
 {
 "from": 201511,
+"id": "93644",
 "name": "1.6 16GT",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181847",
 "name": "1.6 16GT Dress-Up",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "93646",
 "name": "1.6 16GT Personalization",
 "to": 201804
 },
 {
 "from": 201805,
+"id": "93644",
 "name": "1.6 16GT",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "181847",
 "name": "1.6 16GT Dress-Up",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "93646",
 "name": "1.6 16GT Personalization",
 "to": 201912
 }
@@ -218196,7 +225980,6 @@
 "drive": "4wd",
 "engine": "MR16DDT",
 "fuel": "бензин",
-"gen_key": "nissan/juke/g_2014_4098",
 "hp": 190,
 "hp_total": null,
 "hybrid": null,
@@ -218206,46 +225989,55 @@
 "trims": [
 {
 "from": 201407,
+"id": "93645",
 "name": "1.6 16GT FOUR 4WD",
 "to": 201510
 },
 {
 "from": 201407,
+"id": "93647",
 "name": "1.6 16GT FOUR Personalization 4WD",
 "to": 201510
 },
 {
 "from": 201511,
+"id": "93645",
 "name": "1.6 16GT FOUR 4WD",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181850",
 "name": "1.6 16GT FOUR Dress-Up 4WD",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "93647",
 "name": "1.6 16GT FOUR Personalization 4WD",
 "to": 201804
 },
 {
 "from": 201511,
+"id": "181851",
 "name": "1.6 NISMO 4WD",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "93645",
 "name": "1.6 16GT FOUR 4WD",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "181850",
 "name": "1.6 16GT FOUR Dress-Up 4WD",
 "to": 201912
 },
 {
 "from": 201805,
+"id": "93647",
 "name": "1.6 16GT FOUR Personalization 4WD",
 "to": 201912
 }
@@ -218258,7 +226050,6 @@
 "drive": "4wd",
 "engine": "MR16DDT",
 "fuel": "бензин",
-"gen_key": "nissan/juke/g_2014_4098",
 "hp": 214,
 "hp_total": null,
 "hybrid": null,
@@ -218268,17 +226059,20 @@
 "trims": [
 {
 "from": 201411,
+"id": "93654",
 "name": "1.6 NISMO RS 4WD",
 "to": 201510
 },
 {
 "from": 201511,
+"id": "93654",
 "name": "1.6 NISMO RS 4WD",
 "to": 201912
 }
 ]
 }
 ],
+"ids": true,
 "key": "nissan/juke/g_2014_4098",
 "market": "Япония",
 "to": 201912
@@ -246140,6 +253934,7 @@
 "drive": "fwd",
 "engine": "MR16DDT, MR190DDT, M5MT",
 "fuel": "бензин",
+"gen_key": "renault_samsung/sm5/g_2015_15758",
 "hp": 190,
 "hp_total": null,
 "hybrid": null,
@@ -248171,6 +255966,7 @@
 "drive": "fwd",
 "engine": "D16DTF",
 "fuel": "дизель",
+"gen_key": "ssang_yong/korando/g_2019_21785",
 "hp": 136,
 "hp_total": null,
 "hybrid": null,
@@ -250001,6 +257797,7 @@
 "drive": "4wd",
 "engine": null,
 "fuel": "electric",
+"gen_key": "tesla/cybertruck/g_2019_10580",
 "hp": 600,
 "hp_total": null,
 "hybrid": null,
@@ -250025,6 +257822,7 @@
 "drive": "4wd",
 "engine": null,
 "fuel": "electric",
+"gen_key": "tesla/cybertruck/g_2019_10580",
 "hp": 845,
 "hp_total": null,
 "hybrid": null,
@@ -250045,6 +257843,7 @@
 ]
 }
 ],
+"key": "tesla/cybertruck/g_2019_10580",
 "market": "США",
 "to": null
 },
@@ -259240,6 +267039,7 @@
 "drive": "fwd",
 "engine": "CRKB",
 "fuel": "дизель",
+"gen_key": "volkswagen/golf/g_2012_9517",
 "hp": 110,
 "hp_total": null,
 "hybrid": null,
@@ -292581,6 +300381,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_201603_5072",
 "market": "Россия",
 "to": 202008
 },
@@ -292708,6 +300509,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_2016_24056",
 "market": "Южная Корея",
 "to": 202007
 },
@@ -293117,6 +300919,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_2016_9592",
 "market": "Европа",
 "to": 202008
 },
@@ -293240,6 +301043,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_2016_9597",
 "market": "США",
 "to": 202008
 },
@@ -293344,6 +301148,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_202008_12118",
 "market": "Россия",
 "to": 202204
 },
@@ -293513,6 +301318,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_202008_23017",
 "market": "Китай",
 "to": 202505
 },
@@ -293705,6 +301511,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_2020_24054",
 "market": "Европа",
 "to": 202504
 },
@@ -293808,6 +301615,7 @@
 ]
 }
 ],
+"key": "volvo/s90/g_2020_24057",
 "market": "Южная Корея",
 "to": 202507
 },
@@ -306049,6 +313857,7 @@
 "36275782": 739884,
 "38841559": 739884,
 "39100131": 739884,
+"39131099": 739885,
 "39302103": 739884,
 "39442697": 739884,
 "39578422": 739885,
@@ -306058,6 +313867,7 @@
 "39908028": 739884,
 "39994837": 739884,
 "39996826": 739884,
+"40028832": 739885,
 "40154600": 739884,
 "40183034": 739885,
 "40193879": 739885,
@@ -306066,7 +313876,9 @@
 "40264377": 739884,
 "40370810": 739884,
 "40420591": 739885,
+"40553516": 739885,
 "40559703": 739885,
+"40564066": 739885,
 "40565833": 739885,
 "40644998": 739885,
 "40714026": 739885,
@@ -306093,6 +313905,7 @@
 "41068921": 739884,
 "41077709": 739884,
 "41080346": 739884,
+"41120793": 739885,
 "41122992": 739884,
 "41124242": 739884,
 "41126544": 739885,
@@ -306162,6 +313975,7 @@
 "41754197": 739885,
 "41759933": 739885,
 "41769003": 739884,
+"41770924": 739885,
 "41801034": 739885,
 "41811062": 739884,
 "41811100": 739885,
@@ -306177,6 +313991,7 @@
 "41860824": 739885,
 "41861670": 739885,
 "41863585": 739885,
+"41866730": 739885,
 "41870504": 739884,
 "41870994": 739885,
 "41883054": 739885,
@@ -306188,8 +314003,10 @@
 "41937150": 739885,
 "41939200": 739884,
 "41942107": 739885,
+"41944867": 739885,
 "41948013": 739885,
 "41950277": 739884,
+"41971829": 739885,
 "41979363": 739885,
 "41988276": 739884,
 "41992072": 739885,
@@ -306245,6 +314062,7 @@
 "42163930": 739885,
 "42164238": 739885,
 "42165142": 739884,
+"42168551": 739885,
 "42171839": 739884,
 "42172743": 739885,
 "42175015": 739885,
@@ -306257,12 +314075,14 @@
 "42189878": 739885,
 "42191218": 739884,
 "42192609": 739884,
+"42194675": 739885,
 "42201822": 739884,
 "42202293": 739884,
 "42204681": 739884,
 "42204826": 739884,
 "42205632": 739884,
 "42209883": 739885,
+"42210415": 739885,
 "42212106": 739884,
 "42220695": 739885,
 "42222697": 739884,
@@ -306308,26 +314128,31 @@
 "42339653": 739884,
 "42341516": 739885,
 "42344633": 739884,
+"42348356": 739885,
 "42350134": 739884,
 "42350820": 739884,
 "42351570": 739884,
 "42355777": 739884,
 "42357637": 739884,
 "42357739": 739885,
+"42359130": 739885,
 "42360854": 739885,
 "42361039": 739884,
 "42361321": 739884,
+"42361895": 739885,
 "42362266": 739885,
 "42362495": 739884,
 "42362751": 739884,
 "42365151": 739884,
 "42366003": 739884,
 "42366759": 739884,
+"42366940": 739885,
 "42368832": 739884,
 "42370606": 739885,
 "42370931": 739885,
 "42377053": 739885,
 "42382147": 739885,
+"42382346": 739885,
 "42382838": 739884,
 "42386850": 739884,
 "42388286": 739884,
@@ -306358,9 +314183,11 @@
 "42445138": 739885,
 "42445696": 739885,
 "42450230": 739885,
+"42450322": 739885,
 "42450400": 739885,
 "42450800": 739884,
 "42452832": 739884,
+"42453570": 739885,
 "42453758": 739885,
 "42454339": 739884,
 "42457708": 739884,
@@ -306368,6 +314195,7 @@
 "42459847": 739884,
 "42459882": 739884,
 "42461287": 739885,
+"42461723": 739885,
 "42465716": 739885,
 "42466039": 739885,
 "42467480": 739885,
@@ -306490,8 +314318,10 @@
 "42611221": 739884,
 "42611438": 739885,
 "42611519": 739885,
+"42612578": 739885,
 "42613666": 739885,
 "42613746": 739885,
+"42613918": 739885,
 "42614361": 739885,
 "42614871": 739884,
 "42615679": 739884,
@@ -306510,6 +314340,7 @@
 "42629097": 739885,
 "42631299": 739885,
 "42631594": 739884,
+"42631667": 739885,
 "42632137": 739884,
 "42633036": 739885,
 "42635060": 739884,
@@ -306520,6 +314351,7 @@
 "42638959": 739885,
 "42640446": 739884,
 "42640578": 739885,
+"42640598": 739885,
 "42640874": 739884,
 "42644140": 739885,
 "42645236": 739885,
@@ -306534,6 +314366,7 @@
 "42658661": 739884,
 "42659560": 739885,
 "42659596": 739884,
+"42659880": 739885,
 "42661352": 739885,
 "42661470": 739885,
 "42663463": 739885,
@@ -306576,6 +314409,7 @@
 "42686377": 739885,
 "42686861": 739884,
 "42687464": 739884,
+"42689618": 739885,
 "42689641": 739884,
 "42691527": 739884,
 "42692356": 739884,
@@ -306587,7 +314421,9 @@
 "42695374": 739885,
 "42696799": 739885,
 "42696888": 739884,
+"42696921": 739885,
 "42697188": 739884,
+"42697304": 739885,
 "42698212": 739884,
 "42699942": 739885,
 "42699969": 739885,
@@ -306619,6 +314455,8 @@
 "42719698": 739884,
 "42720486": 739885,
 "42720594": 739884,
+"42721400": 739885,
+"42721566": 739885,
 "42722498": 739884,
 "42724344": 739884,
 "42724983": 739885,
@@ -306652,6 +314490,7 @@
 "42741274": 739884,
 "42741460": 739885,
 "42742412": 739884,
+"42743650": 739885,
 "42744001": 739884,
 "42745435": 739884,
 "42745811": 739884,
@@ -306666,6 +314505,7 @@
 "42752069": 739884,
 "42753154": 739885,
 "42754197": 739885,
+"42754446": 739885,
 "42754832": 739885,
 "42755793": 739884,
 "42756425": 739884,
@@ -306684,10 +314524,14 @@
 "42759837": 739885,
 "42760481": 739884,
 "42762123": 739884,
+"42762152": 739885,
 "42762259": 739885,
 "42762735": 739885,
+"42762984": 739885,
 "42763029": 739884,
 "42763931": 739885,
+"42764000": 739885,
+"42764909": 739885,
 "42765066": 739885,
 "42765221": 739885,
 "42765488": 739885,
@@ -306700,10 +314544,12 @@
 "42769679": 739885,
 "42770034": 739885,
 "42770517": 739884,
+"42770628": 739885,
 "42770645": 739885,
 "42770663": 739884,
 "42771741": 739885,
 "42772846": 739885,
+"42772875": 739885,
 "42772896": 739885,
 "42773269": 739884,
 "42773299": 739885,
@@ -306714,16 +314560,20 @@
 "42775869": 739885,
 "42776004": 739885,
 "42776063": 739885,
+"42776207": 739885,
 "42776211": 739884,
 "42776437": 739885,
 "42777244": 739885,
 "42777693": 739885,
 "42777869": 739885,
+"42777987": 739885,
 "42777992": 739885,
+"42778356": 739885,
 "42778879": 739885,
 "42779144": 739884,
 "42779379": 739884,
 "42779585": 739884,
+"42779649": 739885,
 "42779728": 739884,
 "42780288": 739884,
 "42781709": 739885,
@@ -306734,16 +314584,19 @@
 "42783297": 739884,
 "42784520": 739884,
 "42784649": 739884,
+"42785152": 739885,
 "42785734": 739884,
 "42785926": 739885,
 "42786086": 739884,
 "42787506": 739884,
 "42787604": 739885,
 "42791092": 739885,
+"42791199": 739885,
 "42791579": 739885,
 "42791862": 739885,
 "42791864": 739885,
 "42793025": 739885,
+"42793069": 739885,
 "42793093": 739885,
 "42793518": 739885,
 "42794248": 739884,
@@ -308627,6 +316480,128 @@
 ]
 ],
 "name": "1.6 dCi CVT Acenta"
+},
+"217051": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"10,7 с"
+],
+[
+"Максимальная скорость",
+"206 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"143 л.с. (105 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"175 Н·м при 4300 об/мин"
+],
+[
+"Модель двигателя",
+"R18A1"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,1 л/100 км"
+],
+[
+"Город",
+"8,1 л/100 км"
+],
+[
+"Трасса",
+"6,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4519 × 1753 × 1397 мм"
+],
+[
+"Колёсная база",
+"2621 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1299 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"331 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/55 R16"
+],
+[
+"Радиус разворота",
+"5,4 м"
+]
+]
+]
+],
+"name": "1.8 CVT EX"
 },
 "217086": {
 "groups": [
@@ -312565,6 +320540,128 @@
 ],
 "name": "1.4 MPI AT Deluxe"
 },
+"416197": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"11,5 с"
+],
+[
+"Максимальная скорость",
+"190 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"108 л.с. (79 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"135 Н·м при 5000 об/мин"
+],
+[
+"Модель двигателя",
+"G4FA"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-4"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,4 л/100 км"
+],
+[
+"Город",
+"8,5 л/100 км"
+],
+[
+"Трасса",
+"5,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4365 × 1720 × 1455 мм"
+],
+[
+"Колёсная база",
+"2570 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1082 кг"
+],
+[
+"Топливный бак",
+"43 л"
+],
+[
+"Багажник",
+"500 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"185/65 R15"
+]
+]
+]
+],
+"name": "1.4 MPI AT Trendy"
+},
 "416198": {
 "groups": [
 [
@@ -314520,6 +322617,111 @@
 ]
 ],
 "name": "1.6 T-GDI AT 4WD Hybrid Prestige"
+},
+"434295": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"180 л.с. (132 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"265 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4FT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,6 л/100 км"
+],
+[
+"Город",
+"6,7 л/100 км"
+],
+[
+"Трасса",
+"6,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4660 × 1865 × 1660 мм"
+],
+[
+"Колёсная база",
+"2755 мм"
+],
+[
+"Масса",
+"1694 кг"
+],
+[
+"Топливный бак",
+"52 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/60 R18"
+]
+]
+]
+],
+"name": "1.6 T-GDI AT 4WD Hybrid Signature"
 },
 "435587": {
 "groups": [
@@ -318282,6 +326484,115 @@
 ],
 "name": "2.0 CVVL AT 2WD Signature"
 },
+"448426": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"146 л.с. (107 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"191 Н·м при 4200 об/мин"
+],
+[
+"Модель двигателя",
+"L4NB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,0 л/100 км"
+],
+[
+"Город",
+"11,3 л/100 км"
+],
+[
+"Трасса",
+"8,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4905 × 1860 × 1445 мм"
+],
+[
+"Колёсная база",
+"2850 мм"
+],
+[
+"Клиренс",
+"155 мм"
+],
+[
+"Масса",
+"1425 кг"
+],
+[
+"Топливный бак",
+"85 л"
+],
+[
+"Багажник",
+"510 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/55 R17"
+]
+]
+]
+],
+"name": "2.0 LPI AT 2WD Prestige"
+},
 "448813": {
 "groups": [
 [
@@ -318822,6 +327133,128 @@
 ]
 ],
 "name": "1.0 CVT Premier"
+},
+"450803": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"10,1 с"
+],
+[
+"Максимальная скорость",
+"194 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"180 л.с. (132 кВт) при 6400 об/мин"
+],
+[
+"Крутящий момент",
+"232 Н·м при 4600 об/мин"
+],
+[
+"Модель двигателя",
+"ED6"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,8 л/100 км"
+],
+[
+"Город",
+"11,2 л/100 км"
+],
+[
+"Трасса",
+"8,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4650 × 1859 × 1683 мм"
+],
+[
+"Колёсная база",
+"2707 мм"
+],
+[
+"Клиренс",
+"187 мм"
+],
+[
+"Масса",
+"1760 кг"
+],
+[
+"Топливный бак",
+"60 л"
+],
+[
+"Багажник",
+"697 (1549) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Зависимая, на продольных рычагах"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/60 R17"
+],
+[
+"Радиус разворота",
+"5,7 м"
+]
+]
+]
+],
+"name": "2.4 AT AWD Latitude"
 },
 "451268": {
 "groups": [
@@ -326520,6 +334953,115 @@
 ],
 "name": "2.0 MPi CVT 2WD Modern"
 },
+"483899": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"149 л.с. (110 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"179 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4NS"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,8 л/100 км"
+],
+[
+"Город",
+"8,4 л/100 км"
+],
+[
+"Трасса",
+"7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4205 × 1800 × 1565 мм"
+],
+[
+"Колёсная база",
+"2600 мм"
+],
+[
+"Клиренс",
+"170 мм"
+],
+[
+"Масса",
+"1335 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"544 (1297) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/45 R18"
+]
+]
+]
+],
+"name": "2.0 MPi CVT 2WD Inspiration"
+},
 "483974": {
 "groups": [
 [
@@ -326624,6 +335166,111 @@
 ]
 ],
 "name": "1.6 GDi AT 2WD Luxury"
+},
+"483976": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"167 Н·м при 4850 об/мин"
+],
+[
+"Модель двигателя",
+"G4FG"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4120 × 1785 × 1610 мм"
+],
+[
+"Колёсная база",
+"2550 мм"
+],
+[
+"Клиренс",
+"164 мм"
+],
+[
+"Масса",
+"1190 кг"
+],
+[
+"Топливный бак",
+"48 л"
+],
+[
+"Багажник",
+"340 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/55 R16"
+],
+[
+"Радиус разворота",
+"5,25 м"
+]
+]
+]
+],
+"name": "1.6 GDi AT 2WD Luxury Style Pack"
 },
 "484076": {
 "groups": [
@@ -330296,6 +338943,119 @@
 ]
 ],
 "name": "G-Hybrid 1.6 DCT Inspiration"
+},
+"494599": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"280 л.с. (206 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"392 Н·м при 4700 об/мин"
+],
+[
+"Модель двигателя",
+"G4KH"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,4 л/100 км"
+],
+[
+"Город",
+"10,6 л/100 км"
+],
+[
+"Трасса",
+"8 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4710 × 1825 × 1415 мм"
+],
+[
+"Колёсная база",
+"2720 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1480 кг"
+],
+[
+"Топливный бак",
+"47 л"
+],
+[
+"Багажник",
+"474 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/35 R19"
+]
+]
+]
+],
+"name": "N 2.0 T-GDi MT"
 },
 "494621": {
 "groups": [
@@ -335935,6 +344695,128 @@
 ],
 "name": "2.0 GDe DCT 2WD LE"
 },
+"512992": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,8 с"
+],
+[
+"Максимальная скорость",
+"215 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"150 л.с. (110 кВт) при 5800 об/мин"
+],
+[
+"Крутящий момент",
+"202 Н·м при 4400 об/мин"
+],
+[
+"Модель двигателя",
+"M5R"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,3 л/100 км"
+],
+[
+"Город",
+"9,5 л/100 км"
+],
+[
+"Трасса",
+"6,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4850 × 1870 × 1460 мм"
+],
+[
+"Колёсная база",
+"2810 мм"
+],
+[
+"Клиренс",
+"145 мм"
+],
+[
+"Масса",
+"1420 кг"
+],
+[
+"Топливный бак",
+"51 л"
+],
+[
+"Багажник",
+"608 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"245/45 R18"
+]
+]
+]
+],
+"name": "2.0 GDe DCT 2WD RE"
+},
 "512997": {
 "groups": [
 [
@@ -338227,6 +347109,119 @@
 ],
 "name": "2.0 CVT 2WD LE S/S Collection"
 },
+"518257": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"190 л.с. (140 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"240 Н·м при 2000 об/мин"
+],
+[
+"Модель двигателя",
+"MR16DDT, MR190DDT, M5MT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,6 л/100 км"
+],
+[
+"Город",
+"8,8 л/100 км"
+],
+[
+"Трасса",
+"6,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4885 × 1860 × 1485 мм"
+],
+[
+"Колёсная база",
+"2760 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1525 кг"
+],
+[
+"Топливный бак",
+"65 л"
+],
+[
+"Багажник",
+"450 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/50 R17"
+]
+]
+]
+],
+"name": "1.6 T-GDi DCT 2WD TCE"
+},
 "518409": {
 "groups": [
 [
@@ -339516,6 +348511,111 @@
 ],
 "name": "1.0 AT 2WD Prestige VAN 1 seat"
 },
+"519029": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"76 л.с. (56 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"95 Н·м при 3750 об/мин"
+],
+[
+"Модель двигателя",
+"G3LD"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,7 л/100 км"
+],
+[
+"Город",
+"8,2 л/100 км"
+],
+[
+"Трасса",
+"7,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"3595 × 1595 × 1700 мм"
+],
+[
+"Колёсная база",
+"2520 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1030 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Мест",
+"1"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"165/60 R14"
+]
+]
+]
+],
+"name": "1.0 AT 2WD Prestige VAN Special 1 seat"
+},
 "519031": {
 "groups": [
 [
@@ -340040,6 +349140,216 @@
 ]
 ],
 "name": "1.5 e-XGDi AT 4WD C5 Plus"
+},
+"521205": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"170 л.с. (125 кВт) при 5000 об/мин"
+],
+[
+"Крутящий момент",
+"280 Н·м при 1500 об/мин"
+],
+[
+"Модель двигателя",
+"G15DTF"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,9 л/100 км"
+],
+[
+"Город",
+"11 л/100 км"
+],
+[
+"Трасса",
+"8,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4450 × 1870 × 1620 мм"
+],
+[
+"Колёсная база",
+"2675 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1535 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R18"
+]
+]
+]
+],
+"name": "1.5 e-XGDi AT 4WD C7"
+},
+"521212": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"136 л.с. (100 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"324 Н·м при 1500 об/мин"
+],
+[
+"Модель двигателя",
+"D16DTF"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,1 л/100 км"
+],
+[
+"Город",
+"7,6 л/100 км"
+],
+[
+"Трасса",
+"6,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4450 × 1870 × 1620 мм"
+],
+[
+"Колёсная база",
+"2675 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1535 кг"
+],
+[
+"Топливный бак",
+"47 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R18"
+]
+]
+]
+],
+"name": "1.6 e-XDi AT 2WD C5"
 },
 "521223": {
 "groups": [
@@ -342599,6 +351909,120 @@
 ]
 ],
 "name": "2.0 T AT 4WD Espirit Alpine"
+},
+"528553": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"11,2 с"
+],
+[
+"Максимальная скорость",
+"175 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"112 л.с. (82 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"145 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4ED"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-4"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4250 × 1695 × 1470 мм"
+],
+[
+"Колёсная база",
+"2500 мм"
+],
+[
+"Клиренс",
+"155 мм"
+],
+[
+"Масса",
+"1101 кг"
+],
+[
+"Топливный бак",
+"45 л"
+],
+[
+"Багажник",
+"447 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"195/55 R15"
+]
+]
+]
+],
+"name": "1.6 CVVT AT 2WD Gold Premium"
 },
 "528787": {
 "groups": [
@@ -346096,6 +355520,136 @@
 ]
 ],
 "name": "320i AT M Sport"
+},
+"543447": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,8 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"265 л.с. (195 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"620 Н·м при 2000 об/мин"
+],
+[
+"Модель двигателя",
+"B57D30O0"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,5 л/100 км"
+],
+[
+"Город",
+"6,3 л/100 км"
+],
+[
+"Трасса",
+"5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5120 × 1902 × 1467 мм"
+],
+[
+"Колёсная база",
+"3070 мм"
+],
+[
+"Клиренс",
+"135 мм"
+],
+[
+"Масса",
+"1955 кг"
+],
+[
+"Топливный бак",
+"78 л"
+],
+[
+"Багажник",
+"515 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/60 R17"
+],
+[
+"Радиус разворота",
+"6,15 м"
+]
+]
+]
+],
+"name": "730d AT xDrive"
 },
 "543642": {
 "groups": [
@@ -349931,6 +359485,107 @@
 ],
 "name": "78 kWh AWD Recharge Pure Electric Ultimate"
 },
+"546837": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"105 л.с. (77 кВт) при 5700 об/мин"
+],
+[
+"Крутящий момент",
+"144 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4LL"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-98"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"4,8 л/100 км"
+],
+[
+"Город",
+"4,6 л/100 км"
+],
+[
+"Трасса",
+"5,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4420 × 1825 × 1545 мм"
+],
+[
+"Колёсная база",
+"2720 мм"
+],
+[
+"Масса",
+"1405 кг"
+],
+[
+"Топливный бак",
+"42 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/60 R16"
+]
+]
+]
+],
+"name": "1.6 Hybrid DCT 2WD Trendy"
+},
 "546838": {
 "groups": [
 [
@@ -350493,6 +360148,115 @@
 ]
 ],
 "name": "1.6 D2 Powershift Momentum"
+},
+"547565": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"11,6 с"
+],
+[
+"Максимальная скорость",
+"185 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"134 л.с. (99 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"326 Н·м при 2250 об/мин"
+],
+[
+"Модель двигателя",
+"B16DTH"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4665 × 1836 × 1635 мм"
+],
+[
+"Колёсная база",
+"2760 мм"
+],
+[
+"Клиренс",
+"186 мм"
+],
+[
+"Масса",
+"1645 кг"
+],
+[
+"Топливный бак",
+"64 л"
+],
+[
+"Мест",
+"7"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/50 R17"
+],
+[
+"Радиус разворота",
+"5,65 м"
+]
+]
+]
+],
+"name": "1.6TD AT LT Convenience Package"
 },
 "547567": {
 "groups": [
@@ -354426,6 +364190,111 @@
 ]
 ],
 "name": "1.6 TDI DSG Trendline"
+},
+"93644": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"190 л.с. (140 кВт) при 5600 об/мин"
+],
+[
+"Крутящий момент",
+"240 Н·м при 5200 об/мин"
+],
+[
+"Модель двигателя",
+"MR16DDT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин Premium (АИ-98)"
+],
+[
+"Экокласс",
+"снижение токсичных выбросов на 50% по нормативу 2005 года"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,0 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4135 × 1765 × 1565 мм"
+],
+[
+"Колёсная база",
+"2530 мм"
+],
+[
+"Клиренс",
+"170 мм"
+],
+[
+"Масса",
+"1300 кг"
+],
+[
+"Топливный бак",
+"52 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/55R17"
+],
+[
+"Радиус разворота",
+"5,3 м"
+]
+]
+]
+],
+"name": "1.6 16GT"
 }
 },
 "version": 3
