@@ -531,6 +531,28 @@
 "g_2020_18400"
 ]
 },
+"audi/q3/europe": {
+"day": 739885,
+"gens": [
+"g_201106_1617",
+"g_201411_4238",
+"g_201703_7091",
+"g_201808_16367",
+"g_2018_21670",
+"g_202506_22991"
+]
+},
+"audi/q3/south-korea": {
+"day": 739885,
+"gens": [
+"g_201106_1617",
+"g_201411_4238",
+"g_201703_7091",
+"g_201808_16367",
+"g_2018_23796",
+"g_202506_22991"
+]
+},
 "audi/q4_e-tron/europe": {
 "day": 739884,
 "gens": [
@@ -3907,6 +3929,17 @@
 "g_202605_24602"
 ]
 },
+"mercedes-benz/gls-class/europe": {
+"day": 739885,
+"gens": [
+"g_2015_20242",
+"g_201601_3885",
+"g_201904_9737",
+"g_2019_20243",
+"g_202304_20244",
+"g_2026_24606"
+]
+},
 "mercedes-benz/gls-class/south-korea": {
 "day": 739884,
 "gens": [
@@ -3916,6 +3949,16 @@
 "g_2019_23863",
 "g_202304_20244",
 "g_2023_21031"
+]
+},
+"mercedes-benz/gls-class/usa": {
+"day": 739885,
+"gens": [
+"g_2015_12924",
+"g_201601_3885",
+"g_201904_9737",
+"g_2019_12925",
+"g_202304_20244"
 ]
 },
 "mercedes-benz/m-class/south-korea": {
@@ -4547,6 +4590,10 @@
 "g_2024_19961"
 ]
 },
+"porsche/macan/south-korea": {
+"day": 739885,
+"gens": []
+},
 "porsche/panamera/europe": {
 "day": 739885,
 "gens": [
@@ -4651,6 +4698,10 @@
 "g_201404_15748"
 ]
 },
+"renault_samsung/sm5/europe": {
+"day": 739885,
+"gens": []
+},
 "renault_samsung/sm5/south-korea": {
 "day": 739884,
 "gens": [
@@ -4662,6 +4713,10 @@
 "g_2012_15757",
 "g_2015_15758"
 ]
+},
+"renault_samsung/sm5/usa": {
+"day": 739885,
+"gens": []
 },
 "renault_samsung/sm6/south-korea": {
 "day": 739884,
@@ -4773,6 +4828,10 @@
 "g_202011_14320"
 ]
 },
+"ssang_yong/tivoli/europe": {
+"day": 739885,
+"gens": []
+},
 "ssang_yong/tivoli/south-korea": {
 "day": 739885,
 "gens": [
@@ -4781,6 +4840,10 @@
 "g_201707_22325",
 "g_201906_20820"
 ]
+},
+"ssang_yong/tivoli/usa": {
+"day": 739885,
+"gens": []
 },
 "ssang_yong/torres/south-korea": {
 "day": 739884,
@@ -4861,6 +4924,10 @@
 "g_2019_15352",
 "g_2025_22379"
 ]
+},
+"tesla/model_y/south-korea": {
+"day": 739885,
+"gens": []
 },
 "tesla/model_y/usa": {
 "day": 739883,
@@ -16879,6 +16946,7 @@
 "drive": "4wd",
 "engine": "DFBA",
 "fuel": "дизель",
+"gen_key": "audi/a6/g_2018_23827",
 "hp": 204,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -19895,6 +19963,1078 @@
 "market": "Южная Корея",
 "to": 202407
 },
+"audi/q3/g_201106_1617": {
+"from": 201106,
+"groups": [
+{
+"body": [
+"8UB"
+],
+"drive": "fwd",
+"engine": "CHPB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201311,
+"id": "74057",
+"name": "1.4 TFSI MT",
+"to": 201410
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "fwd",
+"engine": "CHPB",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201311,
+"id": "74058",
+"name": "1.4 TFSI S tronic",
+"to": 201410
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CCZC",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 170 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201106,
+"id": "66323",
+"name": "2.0 TFSI quattro MT",
+"to": 201410
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CCZC",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 170 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201201,
+"id": "66324",
+"name": "2.0 TFSI quattro S tronic",
+"to": 201410
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CLLB",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201201,
+"id": "66326",
+"name": "2.0 TDI quattro S tronic",
+"to": 201410
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CPSA",
+"fuel": "бензин",
+"hp": 211,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 211 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201106,
+"id": "66324",
+"name": "2.0 TFSI quattro S tronic",
+"to": 201410
+}
+]
+}
+],
+"ids": true,
+"key": "audi/q3/g_201106_1617",
+"market": "Россия",
+"to": 201410
+},
+"audi/q3/g_201411_4238": {
+"from": 201411,
+"groups": [
+{
+"body": [
+"8UB"
+],
+"drive": "fwd",
+"engine": "CZEA, CZDA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201411,
+"id": "100444",
+"name": "1.4 TFSI MT",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100450",
+"name": "1.4 TFSI MT Design",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100449",
+"name": "1.4 TFSI MT Sport",
+"to": 201712
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "fwd",
+"engine": "CZEA, CZDA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201411,
+"id": "100445",
+"name": "1.4 TFSI S tronic",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100452",
+"name": "1.4 TFSI S tronic Design",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100451",
+"name": "1.4 TFSI S tronic Sport",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100458",
+"name": "1.4 TFSI S tronic Comfort",
+"to": 201507
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CULB",
+"fuel": "бензин",
+"hp": 180,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 180 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201411,
+"id": "100446",
+"name": "2.0 TFSI quattro S tronic",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100454",
+"name": "2.0 TFSI quattro S tronic Design",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100453",
+"name": "2.0 TFSI quattro S tronic Sport",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100459",
+"name": "2.0 TFSI quattro S tronic Comfort",
+"to": 201507
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CUWA",
+"fuel": "дизель",
+"hp": 184,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 184 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201411,
+"id": "100448",
+"name": "2.0 TDI quattro S tronic",
+"to": 201507
+},
+{
+"from": 201411,
+"id": "100457",
+"name": "2.0 TDI quattro S tronic Design",
+"to": 201507
+},
+{
+"from": 201411,
+"id": "100456",
+"name": "2.0 TDI quattro S tronic Sport",
+"to": 201507
+},
+{
+"from": 201602,
+"id": "100448",
+"name": "2.0 TDI quattro S tronic",
+"to": 201712
+},
+{
+"from": 201602,
+"id": "100457",
+"name": "2.0 TDI quattro S tronic Design",
+"to": 201712
+},
+{
+"from": 201602,
+"id": "100456",
+"name": "2.0 TDI quattro S tronic Sport",
+"to": 201712
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CULC",
+"fuel": "бензин",
+"hp": 220,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 220 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201411,
+"id": "100454",
+"name": "2.0 TFSI quattro S tronic Design",
+"to": 201712
+},
+{
+"from": 201411,
+"id": "100453",
+"name": "2.0 TFSI quattro S tronic Sport",
+"to": 201712
+}
+]
+}
+],
+"ids": true,
+"key": "audi/q3/g_201411_4238",
+"market": "Россия",
+"to": 201712
+},
+"audi/q3/g_201703_7091": {
+"from": 201609,
+"groups": [
+{
+"body": [
+"8UB"
+],
+"drive": "fwd",
+"engine": "CZEA, CZDA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201711,
+"id": "192960",
+"name": "1.4 35 TFSI MT",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "195583",
+"name": "1.4 35 TFSI MT Design",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193770",
+"name": "1.4 35 TFSI MT Sport",
+"to": 201903
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "fwd",
+"engine": "CZEA, CZDA",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.4,
+"text": "1.4 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201711,
+"id": "192961",
+"name": "1.4 35 TFSI S tronic",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193769",
+"name": "1.4 35 TFSI S tronic Design",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193771",
+"name": "1.4 35 TFSI S tronic Sport",
+"to": 201903
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CULB",
+"fuel": "бензин",
+"hp": 180,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 180 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201711,
+"id": "192962",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193777",
+"name": "2.0 40 TFSI quattro S tronic Sport",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193773",
+"name": "2.0 40 TFSI quattro S tronic Design",
+"to": 201903
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CUWA",
+"fuel": "дизель",
+"hp": 184,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 184 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201711,
+"id": "192964",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193775",
+"name": "2.0 40 TDI quattro S tronic Design",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "193779",
+"name": "2.0 40 TDI quattro S tronic Sport",
+"to": 201903
+}
+]
+},
+{
+"body": [
+"8UB"
+],
+"drive": "4wd",
+"engine": "CULC",
+"fuel": "бензин",
+"hp": 220,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 220 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201711,
+"id": "193778",
+"name": "2.0 45 TFSI quattro S tronic Sport",
+"to": 201903
+},
+{
+"from": 201711,
+"id": "192963",
+"name": "2.0 45 TFSI quattro S tronic Design",
+"to": 201903
+}
+]
+}
+],
+"ids": true,
+"key": "audi/q3/g_201703_7091",
+"market": "Россия",
+"to": 201903
+},
+"audi/q3/g_201808_16367": {
+"from": 202008,
+"groups": [
+{
+"body": [
+"3BA-F3DPC",
+"3BA-F3DXD"
+],
+"drive": "fwd",
+"engine": "DPC, DXD",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.5,
+"text": "1.5 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202110,
+"id": "441005",
+"name": "1.5 35 TFSI",
+"to": 202203
+},
+{
+"from": 202110,
+"id": "441006",
+"name": "1.5 35 TFSI advanced",
+"to": 202203
+},
+{
+"from": 202110,
+"id": "441007",
+"name": "1.5 35 TFSI S line",
+"to": 202203
+},
+{
+"from": 202008,
+"id": "441005",
+"name": "1.5 35 TFSI",
+"to": 202109
+},
+{
+"from": 202008,
+"id": "441006",
+"name": "1.5 35 TFSI advanced",
+"to": 202109
+},
+{
+"from": 202008,
+"id": "441007",
+"name": "1.5 35 TFSI S line",
+"to": 202109
+},
+{
+"from": 202412,
+"id": "540901",
+"name": "1.5 35 TFSI Advanced",
+"to": null
+},
+{
+"from": 202412,
+"id": "441007",
+"name": "1.5 35 TFSI S line",
+"to": null
+}
+]
+},
+{
+"body": [
+"3AA-F3DFY"
+],
+"drive": "fwd",
+"engine": "DFY",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 1.5,
+"text": "1.5 л, бензин, 150 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202204,
+"id": "441005",
+"name": "1.5 35 TFSI",
+"to": 202411
+},
+{
+"from": 202204,
+"id": "441007",
+"name": "1.5 35 TFSI S line",
+"to": 202411
+},
+{
+"from": 202204,
+"id": "441006",
+"name": "1.5 35 TFSI advanced",
+"to": 202411
+}
+]
+},
+{
+"body": [
+"3DA-F3DFGF"
+],
+"drive": "4wd",
+"engine": "DFG",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202110,
+"id": "441000",
+"name": "2.0 35 TDI quattro advanced",
+"to": 202411
+},
+{
+"from": 202110,
+"id": "441001",
+"name": "2.0 35 TDI quattro S line",
+"to": 202411
+},
+{
+"from": 202008,
+"id": "441000",
+"name": "2.0 35 TDI quattro advanced",
+"to": 202109
+},
+{
+"from": 202008,
+"id": "441001",
+"name": "2.0 35 TDI quattro S line",
+"to": 202109
+}
+]
+},
+{
+"body": [
+"3DA-F3DFGF"
+],
+"drive": "4wd",
+"engine": "DXN",
+"fuel": "дизель",
+"hp": 193,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 193 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202412,
+"id": "540903",
+"name": "2.0 40 TDI quattro Advanced",
+"to": null
+},
+{
+"from": 202412,
+"id": "540904",
+"name": "2.0 40 TDI quattro S line",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/q3/g_201808_16367",
+"market": "Япония",
+"to": null
+},
+"audi/q3/g_2018_21670": {
+"from": 201807,
+"groups": [
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "бензин",
+"hp": 245,
+"hp_total": null,
+"hybrid": "параллельный подзаряжаемый (phev) гибрид",
+"liters": 1.4,
+"text": "1.4 л, бензин, 245 л.с., параллельный подзаряжаемый (PHEV) гибрид, 116 л.с., робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202101,
+"id": "518687",
+"name": "PHEV 1.4 45 TFSIe quattro S tronic",
+"to": null
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 1.5,
+"text": "1.5 л, бензин, 150 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 202008,
+"id": "518673",
+"name": "1.5 35 TFSI MT",
+"to": null
+},
+{
+"from": 201910,
+"id": "518673",
+"name": "1.5 35 TFSI MT",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "fwd",
+"engine": "DPC",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.5,
+"text": "1.5 л, 150 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201811,
+"id": "518554",
+"name": "1.5 35 TFSI S tronic",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "fwd",
+"engine": "Кузов:",
+"fuel": "бензин",
+"hp": 150,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 1.5,
+"text": "1.5 л, бензин, 150 л.с., мягкий гибрид, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "518554",
+"name": "1.5 35 TFSI S tronic",
+"to": null
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "fwd",
+"engine": "DFGA, DTS",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201910,
+"id": "518696",
+"name": "2.0 35 TDI MT",
+"to": 202008
+},
+{
+"from": 201910,
+"id": "518696",
+"name": "2.0 35 TDI MT",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "fwd",
+"engine": "DFGA, DTS",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201910,
+"id": "518699",
+"name": "2.0 35 TDI S tronic",
+"to": 202008
+},
+{
+"from": 202008,
+"id": "518699",
+"name": "2.0 35 TDI S tronic",
+"to": null
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": "DFGA",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201910,
+"id": "518701",
+"name": "2.0 35 TDI quattro S tronic",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": "DKTC",
+"fuel": "бензин",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201808,
+"id": "518565",
+"name": "2.0 40 TFSI quattro S tronic",
+"to": null
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": "DFHA",
+"fuel": "дизель",
+"hp": 190,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 190 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201910,
+"id": "518705",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "дизель",
+"hp": 193,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 193 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202402,
+"id": "518705",
+"name": "2.0 40 TDI quattro S tronic",
+"to": null
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": "Кузов:",
+"fuel": "дизель",
+"gen_key": "audi/q3/g_2018_21670",
+"hp": 200,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 200 л.с., дизель, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202008,
+"id": "518705",
+"name": "2.0 40 TDI quattro S tronic",
+"to": 202402
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": "DKTA",
+"fuel": "бензин",
+"hp": 230,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 230 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201811,
+"id": "518684",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": 202008
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "бензин",
+"hp": 245,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 245 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202101,
+"id": "518684",
+"name": "2.0 45 TFSI quattro S tronic",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/q3/g_2018_21670",
+"market": "Европа",
+"to": null
+},
+"audi/q3/g_2018_23796": {
+"from": 201807,
+"groups": [
+{
+"body": [
+"F3"
+],
+"drive": "fwd",
+"engine": null,
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201808,
+"id": "545129",
+"name": "2.0 35 TDI S tronic",
+"to": null
+},
+{
+"from": 201808,
+"id": "545132",
+"name": "2.0 35 TDI S tronic Premium",
+"to": null
+}
+]
+},
+{
+"body": [
+"F3"
+],
+"drive": "4wd",
+"engine": "Кузов:",
+"fuel": "бензин",
+"hp": 186,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 186 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201808,
+"id": "545119",
+"name": "2.0 40 TFSI quattro Tiptronic",
+"to": null
+},
+{
+"from": 201808,
+"id": "545128",
+"name": "2.0 40 TFSI quattro Tiptronic Premium",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "audi/q3/g_2018_23796",
+"market": "Южная Корея",
+"to": null
+},
 "audi/q4_e-tron/g_202104_13195": {
 "from": 202104,
 "groups": [
@@ -22191,6 +23331,7 @@
 "drive": "4wd",
 "engine": "DHXC, DPXB",
 "fuel": "дизель",
+"gen_key": "audi/q7/g_2019_23903",
 "hp": 231,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -22219,6 +23360,7 @@
 "drive": "4wd",
 "engine": "DHXA, DPXA",
 "fuel": "дизель",
+"gen_key": "audi/q7/g_2019_23903",
 "hp": 286,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -25949,6 +27091,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_201104_1590",
 "market": "Россия",
 "to": 201310
 },
@@ -26206,6 +27349,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_201109_1588",
 "market": "Россия",
 "to": 201502
 },
@@ -26275,6 +27419,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_2011_23511",
 "market": "Южная Корея",
 "to": 201506
 },
@@ -26344,6 +27489,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_2012_23512",
 "market": "Южная Корея",
 "to": 201506
 },
@@ -27155,6 +28301,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_201503_19929",
 "market": "Европа",
 "to": 201907
 },
@@ -27193,6 +28340,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_2015_23514",
 "market": "Южная Корея",
 "to": 201911
 },
@@ -27231,6 +28379,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_2015_23515",
 "market": "Южная Корея",
 "to": 201911
 },
@@ -27414,6 +28563,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_201706_7644",
 "market": "Россия",
 "to": 202001
 },
@@ -28041,6 +29191,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_201907_9902",
 "market": "Европа",
 "to": 202407
 },
@@ -28063,16 +29214,19 @@
 "trims": [
 {
 "from": 201907,
+"id": "542277",
 "name": "118d AT Joy",
 "to": 202107
 },
 {
 "from": 201907,
+"id": "542278",
 "name": "118d AT Sport Line",
 "to": 202107
 },
 {
 "from": 201907,
+"id": "542279",
 "name": "118d AT M Sport",
 "to": 202107
 }
@@ -28094,16 +29248,19 @@
 "trims": [
 {
 "from": 202011,
+"id": "542280",
 "name": "120i SAT Joy",
 "to": 202409
 },
 {
 "from": 202011,
+"id": "542281",
 "name": "120i SAT Sport Line",
 "to": 202409
 },
 {
 "from": 202011,
+"id": "542282",
 "name": "120i SAT M Sport",
 "to": 202409
 }
@@ -28125,12 +29282,15 @@
 "trims": [
 {
 "from": 202305,
+"id": "542283",
 "name": "M135i AT xDrive",
 "to": 202409
 }
 ]
 }
 ],
+"ids": true,
+"key": "bmw/1-series/g_2019_23516",
 "market": "Южная Корея",
 "to": 202409
 },
@@ -28212,6 +29372,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_202407_23280",
 "market": "Япония",
 "to": null
 },
@@ -28266,6 +29427,7 @@
 ]
 }
 ],
+"key": "bmw/1-series/g_2024_23517",
 "market": "Южная Корея",
 "to": null
 },
@@ -53600,6 +54762,7 @@
 ]
 }
 ],
+"key": "bmw/x4/g_201406_2233",
 "market": "Россия",
 "to": 201809
 },
@@ -53762,6 +54925,7 @@
 ]
 }
 ],
+"key": "bmw/x4/g_2014_23414",
 "market": "Южная Корея",
 "to": 201810
 },
@@ -54008,6 +55172,7 @@
 ]
 }
 ],
+"key": "bmw/x4/g_201803_8166",
 "market": "Россия",
 "to": 202106
 },
@@ -54105,6 +55270,7 @@
 ]
 }
 ],
+"key": "bmw/x4/g_2018_23415",
 "market": "Южная Корея",
 "to": 202107
 },
@@ -54247,6 +55413,7 @@
 ]
 }
 ],
+"key": "bmw/x4/g_202106_13529",
 "market": "Россия",
 "to": 202303
 },
@@ -54270,6 +55437,7 @@
 "trims": [
 {
 "from": 202107,
+"id": "541288",
 "name": "xDrive 20i AT M Sport",
 "to": null
 }
@@ -54289,6 +55457,7 @@
 "trims": [
 {
 "from": 202107,
+"id": "541289",
 "name": "xDrive 20d AT M Sport",
 "to": null
 }
@@ -54308,6 +55477,7 @@
 "trims": [
 {
 "from": 202206,
+"id": "541290",
 "name": "M40i",
 "to": null
 }
@@ -54327,12 +55497,15 @@
 "trims": [
 {
 "from": 202309,
+"id": "541287",
 "name": "M Competition",
 "to": null
 }
 ]
 }
 ],
+"ids": true,
+"key": "bmw/x4/g_2021_23416",
 "market": "Южная Корея",
 "to": null
 },
@@ -56284,6 +57457,7 @@
 "drive": "4wd",
 "engine": "B57D30",
 "fuel": "дизель",
+"gen_key": "bmw/x6/g_2017_23371",
 "hp": 286,
 "hp_total": null,
 "hybrid": null,
@@ -56328,6 +57502,7 @@
 "drive": "4wd",
 "engine": "B57D30",
 "fuel": "дизель",
+"gen_key": "bmw/x6/g_2017_23371",
 "hp": 340,
 "hp_total": null,
 "hybrid": null,
@@ -68504,6 +69679,900 @@
 "market": "США",
 "to": null
 },
+"ford/explorer/g_200101_8147": {
+"from": 200101,
+"groups": [
+{
+"body": [
+"U152"
+],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "196376",
+"name": "4.0 AT XLT",
+"to": 200505
+}
+]
+},
+{
+"body": [
+"U152"
+],
+"drive": "4wd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 239,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 239 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "196377",
+"name": "4.6 AT LTD",
+"to": 200505
+}
+]
+}
+],
+"ids": true,
+"key": "ford/explorer/g_200101_8147",
+"market": "Россия",
+"to": 200506
+},
+"ford/explorer/g_2001_6221": {
+"from": 200101,
+"groups": [
+{
+"body": [
+"UN105"
+],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200101,
+"id": "203981",
+"name": "4.0 МT 4WD Sport",
+"to": 200304
+}
+]
+},
+{
+"body": [
+"UN105"
+],
+"drive": "rwd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 200101,
+"id": "203977",
+"name": "4.0 МT RWD Sport",
+"to": 200304
+}
+]
+},
+{
+"body": [
+"UN105"
+],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "203982",
+"name": "4.0 АT 4WD Sport",
+"to": 200304
+}
+]
+},
+{
+"body": [
+"UN105"
+],
+"drive": "rwd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "203979",
+"name": "4.0 АT RWD Sport",
+"to": 200304
+}
+]
+}
+],
+"ids": true,
+"key": "ford/explorer/g_2001_6221",
+"market": "США",
+"to": 200304
+},
+"ford/explorer/g_2001_6222": {
+"from": 200101,
+"groups": [
+{
+"body": [
+"UN152"
+],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200101,
+"id": "204099",
+"name": "4.0 MT 4WD XLS 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204100",
+"name": "4.0 MT 4WD XLT 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204105",
+"name": "4.0 MT 4WD XLT 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204101",
+"name": "4.0 MT 4WD Eddie Bauer 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204102",
+"name": "4.0 MT 4WD Limited 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204103",
+"name": "4.0 MT 4WD Limited 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204104",
+"name": "4.0 MT 4WD Eddie Bauer 7-passenger",
+"to": 200506
+}
+]
+},
+{
+"body": [
+"UN152"
+],
+"drive": "rwd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 200101,
+"id": "204091",
+"name": "4.0 MT RWD XLS 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204092",
+"name": "4.0 MT RWD XLT 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204097",
+"name": "4.0 MT RWD XLT 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204093",
+"name": "4.0 MT RWD Eddie Bauer 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204094",
+"name": "4.0 MT RWD Limited 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204095",
+"name": "4.0 MT RWD Limited 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204096",
+"name": "4.0 MT RWD Eddie Bauer 7-passenger",
+"to": 200506
+}
+]
+},
+{
+"body": [
+"UN152"
+],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "204107",
+"name": "4.0 AT 4WD XLS 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204108",
+"name": "4.0 AT 4WD XLT 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204113",
+"name": "4.0 AT 4WD XLT 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204109",
+"name": "4.0 AT 4WD Eddie Bauer 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204110",
+"name": "4.0 AT 4WD Limited 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204111",
+"name": "4.0 AT 4WD Limited 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204112",
+"name": "4.0 AT 4WD Eddie Bauer 7-passenger",
+"to": 200506
+}
+]
+},
+{
+"body": [
+"UN152"
+],
+"drive": "rwd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "204084",
+"name": "4.0 AT RWD XLS 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204085",
+"name": "4.0 AT RWD XLT 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204090",
+"name": "4.0 AT RWD XLT 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204086",
+"name": "4.0 AT RWD Eddie Bauer 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204087",
+"name": "4.0 AT RWD Limited 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204088",
+"name": "4.0 AT RWD Limited 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204089",
+"name": "4.0 AT RWD Eddie Bauer 7-passenger",
+"to": 200506
+}
+]
+},
+{
+"body": [
+"UN152"
+],
+"drive": "4wd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 239,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 239 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "204129",
+"name": "4.6 AT 4WD XLT 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204124",
+"name": "4.6 AT 4WD XLT 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204127",
+"name": "4.6 AT 4WD Limited 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204128",
+"name": "4.6 AT 4WD Eddie Bauer 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204125",
+"name": "4.6 AT 4WD Eddie Bauer 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204126",
+"name": "4.6 AT 4WD Limited 7-passenger",
+"to": 200506
+}
+]
+},
+{
+"body": [
+"UN152"
+],
+"drive": "rwd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 239,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 239 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200101,
+"id": "204117",
+"name": "4.6 AT RWD XLT 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204122",
+"name": "4.6 AT RWD XLT 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204118",
+"name": "4.6 AT RWD Eddie Bauer 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204119",
+"name": "4.6 AT RWD Limited 5-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204120",
+"name": "4.6 AT RWD Limited 7-passenger",
+"to": 200506
+},
+{
+"from": 200101,
+"id": "204121",
+"name": "4.6 AT RWD Eddie Bauer 7-passenger",
+"to": 200506
+}
+]
+}
+],
+"ids": true,
+"key": "ford/explorer/g_2001_6222",
+"market": "США",
+"to": 200506
+},
+"ford/explorer/g_200507_6608": {
+"from": 200507,
+"groups": [
+{
+"body": [
+"U251"
+],
+"drive": "4wd",
+"engine": "Cologne V6 OHV EFI",
+"fuel": "бензин",
+"hp": 213,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 213 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200507,
+"id": "156684",
+"name": "4.0 AT XLT",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "156840",
+"name": "4.0 AT Limited",
+"to": 201105
+}
+]
+},
+{
+"body": [
+"U251"
+],
+"drive": "4wd",
+"engine": "Triton V8",
+"fuel": "бензин",
+"hp": 296,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 296 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200507,
+"id": "156842",
+"name": "4.6 AT Eddie Bauer",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "156841",
+"name": "4.6 AT Limited",
+"to": 201105
+}
+]
+}
+],
+"ids": true,
+"key": "ford/explorer/g_200507_6608",
+"market": "Россия",
+"to": 201105
+},
+"ford/explorer/g_2005_8806": {
+"from": 200507,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200507,
+"id": "228643",
+"name": "4.0 AT 4WD XLS 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228645",
+"name": "4.0 AT 4WD XLT 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228656",
+"name": "4.0 AT 4WD XLT 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228646",
+"name": "4.0 AT 4WD EDDIE BAUER 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228647",
+"name": "4.0 AT 4WD LIMITED 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228657",
+"name": "4.0 AT 4WD EDDIE BAUER 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228658",
+"name": "4.0 AT 4WD LIMITED 7-passenger",
+"to": 201105
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200507,
+"id": "228659",
+"name": "4.0 AT 2WD XLS 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228660",
+"name": "4.0 AT 2WD XLT 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228663",
+"name": "4.0 AT 2WD XLT 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228661",
+"name": "4.0 AT 2WD EDDIE BAUER 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228662",
+"name": "4.0 AT 2WD LIMITED 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228664",
+"name": "4.0 AT 2WD EDDIE BAUER 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228665",
+"name": "4.0 AT 2WD LIMITED 7-passenger",
+"to": 201105
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 292,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 292 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200507,
+"id": "228668",
+"name": "4.6 AT 4WD XLT 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228669",
+"name": "4.6 AT 4WD XLT 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228667",
+"name": "4.6 AT 4WD EDDIE BAUER 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228666",
+"name": "4.6 AT 4WD LIMITED 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228670",
+"name": "4.6 AT 4WD EDDIE BAUER 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228671",
+"name": "4.6 AT 4WD LIMITED 7-passenger",
+"to": 201105
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 292,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 292 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200507,
+"id": "228672",
+"name": "4.6 AT 2WD XLT 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228675",
+"name": "4.6 AT 2WD XLT 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228673",
+"name": "4.6 AT 2WD EDDIE BAUER 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228674",
+"name": "4.6 AT 2WD LIMITED 5-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228676",
+"name": "4.6 AT 2WD EDDIE BAUER 7-passenger",
+"to": 201105
+},
+{
+"from": 200507,
+"id": "228677",
+"name": "4.6 AT 2WD LIMITED 7-passenger",
+"to": 201105
+}
+]
+}
+],
+"ids": true,
+"key": "ford/explorer/g_2005_8806",
+"market": "США",
+"to": 201112
+},
+"ford/explorer/g_2006_2477": {
+"from": 200603,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200606,
+"id": "203681",
+"name": "4.0 AT 4WD XLT",
+"to": 201010
+},
+{
+"from": 200606,
+"id": "203687",
+"name": "4.0 AT 4WD LIMITED",
+"to": 201010
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "99X; 99EA",
+"fuel": "бензин",
+"hp": 210,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 210 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200606,
+"id": "203678",
+"name": "4.0 AT RWD XLT",
+"to": 201010
+},
+{
+"from": 200606,
+"id": "203689",
+"name": "4.0 AT RWD LIMITED",
+"to": 201010
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 292,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 292 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200606,
+"id": "203685",
+"name": "4.6 AT 4WD XLT",
+"to": 201010
+},
+{
+"from": 200606,
+"id": "203688",
+"name": "4.6 AT 4WD LIMITED",
+"to": 201010
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Modular V8",
+"fuel": "бензин",
+"hp": 292,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.6,
+"text": "4.6 л, 292 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200606,
+"id": "203686",
+"name": "4.6 AT RWD XLT",
+"to": 201010
+},
+{
+"from": 200606,
+"id": "203690",
+"name": "4.6 AT RWD LIMITED",
+"to": 201010
+}
+]
+}
+],
+"ids": true,
+"key": "ford/explorer/g_2006_2477",
+"market": "США",
+"to": 201010
+},
 "ford/explorer/g_201012_1476": {
 "from": 201012,
 "groups": [
@@ -68635,6 +70704,7 @@
 "drive": "fwd",
 "engine": "TPBA",
 "fuel": "бензин",
+"gen_key": "ford/explorer/g_2010_9711",
 "hp": 240,
 "hp_total": null,
 "hybrid": null,
@@ -79295,12 +81365,35 @@
 ]
 }
 ],
+"key": "genesis/gv70/g_202012_13899",
 "market": "Россия",
 "to": 202212
 },
 "genesis/gv70/g_2020_18373": {
 "from": 202012,
 "groups": [
+{
+"body": [
+"JK1"
+],
+"drive": "4wd",
+"engine": "Кузов:",
+"fuel": "electric",
+"hp": 435,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "435 л.с., электричество, редуктор, полный привод (4WD)",
+"trans": "reducer",
+"trims": [
+{
+"from": 202012,
+"id": "461625",
+"name": "Electrified 77.4 kWh 4WD",
+"to": 202501
+}
+]
+},
 {
 "body": [
 "JK1"
@@ -79317,11 +81410,13 @@
 "trims": [
 {
 "from": 202204,
+"id": "554921",
 "name": "2.2 CRDi AT 4WD Standard",
 "to": 202405
 },
 {
 "from": 202204,
+"id": "554922",
 "name": "2.2 CRDi AT 4WD Sport",
 "to": 202405
 }
@@ -79343,11 +81438,13 @@
 "trims": [
 {
 "from": 202204,
+"id": "554923",
 "name": "2.2 CRDi AT 2WD Standard",
 "to": 202405
 },
 {
 "from": 202204,
+"id": "554924",
 "name": "2.2 CRDi AT 2WD Sport",
 "to": 202405
 }
@@ -79369,11 +81466,13 @@
 "trims": [
 {
 "from": 202012,
+"id": "554921",
 "name": "2.2 CRDi AT 4WD Standard",
 "to": 202204
 },
 {
 "from": 202012,
+"id": "554922",
 "name": "2.2 CRDi AT 4WD Sport",
 "to": 202204
 }
@@ -79395,11 +81494,13 @@
 "trims": [
 {
 "from": 202012,
+"id": "554923",
 "name": "2.2 CRDi AT 2WD Standard",
 "to": 202204
 },
 {
 "from": 202012,
+"id": "554924",
 "name": "2.2 CRDi AT 2WD Sport",
 "to": 202204
 }
@@ -79421,11 +81522,13 @@
 "trims": [
 {
 "from": 202012,
+"id": "461600",
 "name": "2.5 AT 4WD Standard",
 "to": 202405
 },
 {
 "from": 202012,
+"id": "461602",
 "name": "2.5 AT 4WD Sport",
 "to": 202405
 }
@@ -79447,11 +81550,13 @@
 "trims": [
 {
 "from": 202012,
+"id": "461599",
 "name": "2.5 AT 2WD Standard",
 "to": 202405
 },
 {
 "from": 202012,
+"id": "461601",
 "name": "2.5 AT 2WD Sport",
 "to": 202405
 }
@@ -79473,17 +81578,21 @@
 "trims": [
 {
 "from": 202012,
+"id": "461604",
 "name": "3.5 AT 4WD Standard",
 "to": 202405
 },
 {
 "from": 202012,
+"id": "461609",
 "name": "3.5 AT 4WD Sport",
 "to": 202405
 }
 ]
 }
 ],
+"ids": true,
+"key": "genesis/gv70/g_2020_18373",
 "market": "Южная Корея",
 "to": 202501
 },
@@ -97088,6 +99197,7 @@
 "drive": "fwd",
 "engine": "G4FD",
 "fuel": "бензин",
+"gen_key": "hyundai/accent/g_2010_18914",
 "hp": 140,
 "hp_total": null,
 "hybrid": null,
@@ -97149,7 +99259,6 @@
 "drive": "fwd",
 "engine": "G4LC",
 "fuel": "бензин",
-"gen_key": "hyundai/accent/g_2010_18936",
 "hp": 100,
 "hp_total": null,
 "hybrid": null,
@@ -97159,61 +99268,73 @@
 "trims": [
 {
 "from": 201310,
+"id": "467635",
 "name": "1.4 VVT CVT 2WD Modern",
 "to": 201510
 },
 {
 "from": 201310,
+"id": "467636",
 "name": "1.4 VVT CVT 2WD Premium",
 "to": 201510
 },
 {
 "from": 201510,
+"id": "467666",
 "name": "1.4 VVT CVT 2WD Smart",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467635",
 "name": "1.4 VVT CVT 2WD Modern",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467668",
 "name": "1.4 VVT CVT 2WD Modern Special",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467669",
 "name": "1.4 VVT CVT 2WD Modern Special Tuix Crayon",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467671",
 "name": "1.4 VVT CVT 2WD Premium Tuix Crayon",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467636",
 "name": "1.4 VVT CVT 2WD Premium",
 "to": 201705
 },
 {
 "from": 201705,
+"id": "467666",
 "name": "1.4 VVT CVT 2WD Smart",
 "to": 201912
 },
 {
 "from": 201705,
+"id": "467635",
 "name": "1.4 VVT CVT 2WD Modern",
 "to": 201912
 },
 {
 "from": 201705,
+"id": "467636",
 "name": "1.4 VVT CVT 2WD Premium",
 "to": 201912
 },
 {
 "from": 201705,
+"id": "467668",
 "name": "1.4 VVT CVT 2WD Modern Special",
 "to": 201805
 }
@@ -97235,6 +99356,7 @@
 "trims": [
 {
 "from": 201103,
+"id": "467598",
 "name": "1.4 VVT MT 2WD Premier",
 "to": 201303
 }
@@ -97247,7 +99369,6 @@
 "drive": "fwd",
 "engine": "G4FA",
 "fuel": "бензин",
-"gen_key": "hyundai/accent/g_2010_18936",
 "hp": 108,
 "hp_total": null,
 "hybrid": null,
@@ -97257,16 +99378,19 @@
 "trims": [
 {
 "from": 201201,
+"id": "467601",
 "name": "1.4 VVT AT 2WD Premier",
 "to": 201303
 },
 {
 "from": 201303,
+"id": "467613",
 "name": "1.4 VVT AT 2WD Modern",
 "to": 201310
 },
 {
 "from": 201303,
+"id": "467614",
 "name": "1.4 VVT AT 2WD Premium",
 "to": 201310
 }
@@ -97288,16 +99412,19 @@
 "trims": [
 {
 "from": 201103,
+"id": "467607",
 "name": "1.6 VGT MT 2WD Premier",
 "to": 201303
 },
 {
 "from": 201303,
+"id": "467620",
 "name": "1.6 VGT MT 2WD Smart",
 "to": 201501
 },
 {
 "from": 201303,
+"id": "467622",
 "name": "1.6 VGT MT 2WD Modern",
 "to": 201501
 }
@@ -97310,7 +99437,6 @@
 "drive": "fwd",
 "engine": "D4FB",
 "fuel": "дизель",
-"gen_key": "hyundai/accent/g_2010_18936",
 "hp": 128,
 "hp_total": null,
 "hybrid": null,
@@ -97320,21 +99446,25 @@
 "trims": [
 {
 "from": 201201,
+"id": "467608",
 "name": "1.6 VGT AT 2WD Premier",
 "to": 201303
 },
 {
 "from": 201303,
+"id": "467621",
 "name": "1.6 VGT AT 2WD Smart",
 "to": 201501
 },
 {
 "from": 201303,
+"id": "467623",
 "name": "1.6 VGT AT 2WD Modern",
 "to": 201501
 },
 {
 "from": 201303,
+"id": "467624",
 "name": "1.6 VGT AT 2WD Premium",
 "to": 201501
 }
@@ -97356,11 +99486,13 @@
 "trims": [
 {
 "from": 201501,
+"id": "467620",
 "name": "1.6 VGT MT 2WD Smart",
 "to": 201510
 },
 {
 "from": 201510,
+"id": "467620",
 "name": "1.6 VGT MT 2WD Smart",
 "to": 201705
 }
@@ -97383,66 +99515,79 @@
 "trims": [
 {
 "from": 201501,
+"id": "467629",
 "name": "1.6 VGT DCT 2WD Smart",
 "to": 201510
 },
 {
 "from": 201501,
+"id": "467631",
 "name": "1.6 VGT DCT 2WD Modern",
 "to": 201510
 },
 {
 "from": 201501,
+"id": "467632",
 "name": "1.6 VGT DCT 2WD Premium",
 "to": 201510
 },
 {
 "from": 201510,
+"id": "467629",
 "name": "1.6 VGT DCT 2WD Smart",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467631",
 "name": "1.6 VGT DCT 2WD Modern",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467699",
 "name": "1.6 VGT DCT 2WD Modern Special",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467706",
 "name": "1.6 VGT DCT 2WD Modern Tuix Crayon",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467714",
 "name": "1.6 VGT DCT 2WD Premium Tuix Crayon",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467632",
 "name": "1.6 VGT DCT 2WD Premium",
 "to": 201705
 },
 {
 "from": 201705,
+"id": "467629",
 "name": "1.6 VGT DCT 2WD Smart",
 "to": 201912
 },
 {
 "from": 201705,
+"id": "467631",
 "name": "1.6 VGT DCT 2WD Modern",
 "to": 201912
 },
 {
 "from": 201705,
+"id": "467632",
 "name": "1.6 VGT DCT 2WD Premium",
 "to": 201912
 },
 {
 "from": 201705,
+"id": "467699",
 "name": "1.6 VGT DCT 2WD Modern Special",
 "to": 201805
 }
@@ -97455,6 +99600,7 @@
 "drive": "fwd",
 "engine": "G4FD",
 "fuel": "бензин",
+"gen_key": "hyundai/accent/g_2010_18936",
 "hp": 140,
 "hp_total": null,
 "hybrid": null,
@@ -97464,42 +99610,50 @@
 "trims": [
 {
 "from": 201103,
+"id": "467603",
 "name": "1.6 GDI AT 2WD Top",
 "to": 201303
 },
 {
 "from": 201103,
+"id": "467604",
 "name": "1.6 GDI AT 2WD BlueSaver",
 "to": 201303
 },
 {
 "from": 201303,
+"id": "467616",
 "name": "1.6 GDI AT 2WD Premium",
 "to": 201510
 },
 {
 "from": 201303,
+"id": "467604",
 "name": "1.6 GDI AT 2WD BlueSaver",
 "to": 201510
 },
 {
 "from": 201510,
+"id": "467616",
 "name": "1.6 GDI AT 2WD Premium",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467681",
 "name": "1.6 GDI AT 2WD Premium Tuix Crayon",
 "to": 201705
 },
 {
 "from": 201510,
+"id": "467604",
 "name": "1.6 GDI AT 2WD BlueSaver",
 "to": 201705
 }
 ]
 }
 ],
+"ids": true,
 "key": "hyundai/accent/g_2010_18936",
 "market": "Южная Корея",
 "to": 201912
@@ -98477,6 +100631,7 @@
 "drive": "fwd",
 "engine": "G4LE",
 "fuel": "бензин",
+"gen_key": "hyundai/avante/g_202303_20241",
 "hp": 105,
 "hp_total": null,
 "hybrid": "параллельный гибрид",
@@ -109410,6 +111565,7 @@
 ]
 }
 ],
+"key": "hyundai/sonata/g_200909_1350",
 "market": "Россия",
 "to": 201302
 },
@@ -109642,6 +111798,7 @@
 ]
 }
 ],
+"key": "hyundai/sonata/g_2009_5632",
 "market": "Южная Корея",
 "to": 201206
 },
@@ -112466,6 +114623,7 @@
 "drive": "4wd",
 "engine": "D4HB",
 "fuel": "дизель",
+"gen_key": "hyundai/staria/g_2021_13834",
 "hp": 177,
 "hp_total": null,
 "hybrid": null,
@@ -115558,6 +117716,7 @@
 "drive": "fwd",
 "engine": "G4FJ",
 "fuel": "бензин",
+"gen_key": "hyundai/veloster/g_2011_8349",
 "hp": 204,
 "hp_total": null,
 "hybrid": null,
@@ -127310,6 +129469,7 @@
 "drive": "fwd",
 "engine": "G4FT",
 "fuel": "бензин",
+"gen_key": "kia/k8/g_2021_20060",
 "hp": 180,
 "hp_total": null,
 "hybrid": "параллельный гибрид",
@@ -127784,6 +129944,7 @@
 "drive": "4wd",
 "engine": "G6DH",
 "fuel": "бензин",
+"gen_key": "kia/k9/g_201804_17343",
 "hp": 370,
 "hp_total": null,
 "hybrid": null,
@@ -128020,6 +130181,7 @@
 "drive": "4wd",
 "engine": "G6DH",
 "fuel": "бензин",
+"gen_key": "kia/k9/g_2021_24641",
 "hp": 370,
 "hp_total": null,
 "hybrid": null,
@@ -133127,6 +135289,7 @@
 "drive": "fwd",
 "engine": "G4LE",
 "fuel": "бензин",
+"gen_key": "kia/seltos/g_2025_23776",
 "hp": 105,
 "hp_total": null,
 "hybrid": "параллельный гибрид",
@@ -136182,6 +138345,7 @@
 "drive": "fwd",
 "engine": "G4FG",
 "fuel": "бензин",
+"gen_key": "kia/soul/g_2011_19852",
 "hp": 140,
 "hp_total": null,
 "hybrid": null,
@@ -136467,6 +138631,7 @@
 "drive": "fwd",
 "engine": "D4FB",
 "fuel": "дизель",
+"gen_key": "kia/soul/g_2013_19866",
 "hp": 128,
 "hp_total": null,
 "hybrid": null,
@@ -139203,6 +141368,7 @@
 "drive": "fwd",
 "engine": "D4FE",
 "fuel": "дизель",
+"gen_key": "kia/sportage/g_2018_15903",
 "hp": 136,
 "hp_total": null,
 "hybrid": null,
@@ -142291,6 +144457,7 @@
 "drive": "4wd",
 "engine": "PT204",
 "fuel": "бензин",
+"gen_key": "land_rover/defender/g_2019_17140",
 "hp": 300,
 "hp_total": null,
 "hybrid": null,
@@ -160942,6 +163109,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/amg_gt/g_201412_2419",
 "market": "Россия",
 "to": 201811
 },
@@ -160991,6 +163159,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/amg_gt/g_2014_23932",
 "market": "Южная Корея",
 "to": 201904
 },
@@ -161040,6 +163209,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/amg_gt/g_2017_23933",
 "market": "Южная Корея",
 "to": 202202
 },
@@ -161068,8 +163238,331 @@
 ]
 }
 ],
+"key": "mercedes-benz/amg_gt/g_2017_23937",
 "market": "Южная Корея",
 "to": 202202
+},
+"mercedes-benz/amg_gt/g_2018_23934": {
+"from": 201803,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 256 E30 DEH LA GR",
+"fuel": "бензин",
+"gen_key": "mercedes-benz/amg_gt/g_2018_23934",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 367 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201812,
+"id": "546132",
+"name": "3.0 AT GT 43 4MATIC+",
+"to": 202205
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 639,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 639 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 201810,
+"id": "546133",
+"name": "3.0 DCT GT 63 S 4MATIC+",
+"to": 202205
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/amg_gt/g_2018_23934",
+"market": "Южная Корея",
+"to": 202205
+},
+"mercedes-benz/amg_gt/g_201902_21745": {
+"from": 201902,
+"groups": [
+{
+"body": [
+"4AA-290659C"
+],
+"drive": "4wd",
+"engine": "M 256 E30 DEH LA GR",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 367 л.с., мягкий гибрид, 22 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201902,
+"id": "519719",
+"name": "3.0 AT GT 43 4MATIC+",
+"to": 202112
+},
+{
+"from": 202201,
+"id": "519719",
+"name": "3.0 AT GT 43 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [
+"4AA-290661"
+],
+"drive": "4wd",
+"engine": "M 256 E30 DEH LA GR",
+"fuel": "бензин",
+"hp": 435,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 435 л.с., мягкий гибрид, 22 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201902,
+"id": "519721",
+"name": "3.0 AT GT 53 4MATIC+",
+"to": 202112
+},
+{
+"from": 202201,
+"id": "519721",
+"name": "3.0 AT GT 53 4MATIC+",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/amg_gt/g_201902_21745",
+"market": "Япония",
+"to": null
+},
+"mercedes-benz/amg_gt/g_2022_23935": {
+"from": 202203,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 256 E30 DEH LA GR",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 367 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202205,
+"id": "546134",
+"name": "3.0 AT GT 43 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 639,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 639 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202205,
+"id": "546135",
+"name": "3.0 DCT GT 63 S 4MATIC+",
+"to": 202311
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/amg_gt/g_2022_23935",
+"market": "Южная Корея",
+"to": null
+},
+"mercedes-benz/amg_gt/g_202310_19481": {
+"from": 202308,
+"groups": [
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 139 DE 20 AL",
+"fuel": "бензин",
+"hp": 421,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 421 л.с., мягкий гибрид, 19 л.с., робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202405,
+"id": "539614",
+"name": "AMG GT 43",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 476,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 476 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202404,
+"id": "539606",
+"name": "AMG GT 55 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 585,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 585 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202310,
+"id": "474870",
+"name": "AMG GT 63 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 612,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 612 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202409,
+"id": "539613",
+"name": "AMG GT 63 Pro 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 612,
+"hp_total": null,
+"hybrid": "параллельный гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 612 л.с., параллельный гибрид, 204 л.с., робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202405,
+"id": "539612",
+"name": "AMG GT 63 S 4MATIC+ E Performance",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/amg_gt/g_202310_19481",
+"market": "Европа",
+"to": null
+},
+"mercedes-benz/amg_gt/g_2023_23936": {
+"from": 202308,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 476,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 476 л.с., бензин, робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202404,
+"id": "546141",
+"name": "AMG GT 55 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 612,
+"hp_total": null,
+"hybrid": "параллельный гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 612 л.с., параллельный гибрид, 204 л.с., робот, полный привод (4WD)",
+"trans": "robot",
+"trims": [
+{
+"from": 202405,
+"id": "546142",
+"name": "AMG GT 63 S 4MATIC+ E Performance",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/amg_gt/g_2023_23936",
+"market": "Южная Корея",
+"to": null
 },
 "mercedes-benz/c-class/g_201103_1562": {
 "from": 201103,
@@ -177842,6 +180335,7 @@
 "drive": "rwd",
 "engine": "M 274 DE 20 LA",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/e-class/g_2020_21337",
 "hp": 211,
 "hp_total": null,
 "hybrid": null,
@@ -177871,6 +180365,7 @@
 "drive": "4wd",
 "engine": "M 264 DE 20 LA",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/e-class/g_2020_21337",
 "hp": 299,
 "hp_total": null,
 "hybrid": null,
@@ -184742,6 +187237,7 @@
 "trims": [
 {
 "from": 201905,
+"id": "545493",
 "name": "GLC 220d AT 4MATIC",
 "to": 202210
 }
@@ -184761,6 +187257,7 @@
 "trims": [
 {
 "from": 202002,
+"id": "545495",
 "name": "GLC 300 e 4MATIC",
 "to": 202210
 }
@@ -184780,6 +187277,7 @@
 "trims": [
 {
 "from": 201905,
+"id": "545494",
 "name": "GLC 300 AT 4MATIC",
 "to": 202210
 }
@@ -184799,12 +187297,14 @@
 "trims": [
 {
 "from": 201905,
+"id": "545496",
 "name": "AMG GLC 43 MTC 4MATIC",
 "to": 202210
 }
 ]
 }
 ],
+"ids": true,
 "key": "mercedes-benz/glc-class/g_2019_23834",
 "market": "Южная Корея",
 "to": 202210
@@ -186415,6 +188915,7 @@
 "drive": "4wd",
 "engine": "OM 656 D 29 R SCR",
 "fuel": "дизель",
+"gen_key": "mercedes-benz/gle-class/g_2018_17312",
 "hp": 330,
 "hp_total": null,
 "hybrid": null,
@@ -187240,6 +189741,202 @@
 "market": "Южная Корея",
 "to": null
 },
+"mercedes-benz/gls-class/g_2015_12924": {
+"from": 201511,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "OM 642 LS DE 30 LA",
+"fuel": "дизель",
+"hp": 255,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 255 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "317498",
+"name": "GLS 350 d 4MATIC",
+"to": 201707
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 276 DE 30 AL",
+"fuel": "бензин",
+"hp": 362,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 362 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "317499",
+"name": "GLS 450 4MATIC",
+"to": 201904
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 278 DE 46 AL",
+"fuel": "бензин",
+"hp": 449,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.7,
+"text": "4.7 л, 449 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "317539",
+"name": "GLS 550 4MATIC",
+"to": 201904
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 577,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 577 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "317540",
+"name": "AMG GLS 63 4MATIC",
+"to": 201904
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/gls-class/g_2015_12924",
+"market": "США",
+"to": 201904
+},
+"mercedes-benz/gls-class/g_2015_20242": {
+"from": 201511,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "OM 642 LS DE 30 LA",
+"fuel": "дизель",
+"hp": 255,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 255 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "494114",
+"name": "GLS 350 d 4MATIC",
+"to": 201707
+},
+{
+"from": 201601,
+"id": "494118",
+"name": "GLS 350 d 4MATIC AMG Line",
+"to": 201707
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 276 DE 30 AL",
+"fuel": "бензин",
+"hp": 362,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 362 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "494115",
+"name": "GLS 450 4MATIC",
+"to": 201904
+},
+{
+"from": 201601,
+"id": "494119",
+"name": "GLS 450 4MATIC AMG Line",
+"to": 201904
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 278 DE 46 AL",
+"fuel": "бензин",
+"hp": 449,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.7,
+"text": "4.7 л, 449 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "494116",
+"name": "GLS 550 4MATIC",
+"to": 201904
+},
+{
+"from": 201601,
+"id": "494120",
+"name": "GLS 550 4MATIC AMG Line",
+"to": 201904
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 577,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 577 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201601,
+"id": "494117",
+"name": "AMG GLS 63 4MATIC",
+"to": 201904
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/gls-class/g_2015_20242",
+"market": "Европа",
+"to": 201904
+},
 "mercedes-benz/gls-class/g_2015_23862": {
 "from": 201511,
 "groups": [
@@ -187524,6 +190221,234 @@
 "key": "mercedes-benz/gls-class/g_201904_9737",
 "market": "Россия",
 "to": 202203
+},
+"mercedes-benz/gls-class/g_2019_12925": {
+"from": 201904,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 256 E30 DEH LA G R",
+"fuel": "бензин",
+"hp": 362,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 362 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201910,
+"id": "317548",
+"name": "GLS 450 4MATIC",
+"to": 202304
+}
+]
+},
+{
+"body": [
+"X167"
+],
+"drive": "4wd",
+"engine": "M 176",
+"fuel": "бензин",
+"gen_key": "mercedes-benz/gls-class/g_2019_12925",
+"hp": 483,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 483 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201910,
+"id": "317588",
+"name": "GLS 580 4MATIC",
+"to": 202304
+}
+]
+},
+{
+"body": [
+"X167"
+],
+"drive": "4wd",
+"engine": "M 177 DE40 AL",
+"fuel": "бензин",
+"gen_key": "mercedes-benz/gls-class/g_2019_12925",
+"hp": 550,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 550 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202011,
+"id": "317589",
+"name": "Maybach GLS 600 4MATIC",
+"to": 202304
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/gls-class/g_2019_12925",
+"market": "США",
+"to": 202304
+},
+"mercedes-benz/gls-class/g_2019_20243": {
+"from": 201904,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "OM 656 D 29 R SCR",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.9,
+"text": "2.9 л, 286 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "494224",
+"name": "GLS 350 d 4MATIC",
+"to": 202304
+},
+{
+"from": 201904,
+"id": "494248",
+"name": "GLS 350 d 4MATIC AMG Line",
+"to": 202304
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "OM 656 D 29 R SCR",
+"fuel": "дизель",
+"hp": 330,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.9,
+"text": "2.9 л, 330 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "494225",
+"name": "GLS 400 d 4MATIC",
+"to": 202304
+},
+{
+"from": 201904,
+"id": "494249",
+"name": "GLS 400 d 4MATIC AMG Line",
+"to": 202304
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 256 DEH LA G R",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 3.0,
+"text": "3.0 л, бензин, 367 л.с., мягкий гибрид, 22 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202006,
+"id": "494229",
+"name": "GLS 450 4MATIC",
+"to": 202304
+},
+{
+"from": 202006,
+"id": "494246",
+"name": "GLS 450 4MATIC AMG Line",
+"to": 202304
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 176 DE 40 AL",
+"fuel": "бензин",
+"hp": 489,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 489 л.с., мягкий гибрид, 22 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201911,
+"id": "494234",
+"name": "GLS 580 4MATIC",
+"to": 202304
+},
+{
+"from": 201911,
+"id": "494247",
+"name": "GLS 580 4MATIC AMG Line",
+"to": 202304
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 557,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 557 л.с., мягкий гибрид, 22 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202007,
+"id": "494245",
+"name": "Mercedes-Maybach GLS 600 4MATIC",
+"to": 202304
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 612,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 612 л.с., мягкий гибрид, 22 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202003,
+"id": "494241",
+"name": "AMG GLS 63 4MATIC+",
+"to": 202304
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/gls-class/g_2019_20243",
+"market": "Европа",
+"to": 202304
 },
 "mercedes-benz/gls-class/g_2019_23863": {
 "from": 201904,
@@ -193259,6 +196184,7 @@
 "drive": "4wd",
 "engine": "OM 656 D 29 R SCR",
 "fuel": "дизель",
+"gen_key": "mercedes-benz/s-class/g_2020_23877",
 "hp": 330,
 "hp_total": null,
 "hybrid": null,
@@ -229703,6 +232629,7 @@
 "drive": "4wd",
 "engine": "JLH-4G20TDB",
 "fuel": "бензин",
+"gen_key": "renault/grand_koleos/g_202406_22477",
 "hp": 211,
 "hp_total": null,
 "hybrid": null,
@@ -232426,6 +235353,7 @@
 "drive": "fwd",
 "engine": "MR16DDT, MR190DDT, M5MT",
 "fuel": "бензин",
+"gen_key": "renault_samsung/sm5/g_2012_15757",
 "hp": 190,
 "hp_total": null,
 "hybrid": null,
@@ -234499,6 +237427,7 @@
 "drive": "fwd",
 "engine": "G15DTF",
 "fuel": "бензин",
+"gen_key": "ssang_yong/korando/g_2019_21785",
 "hp": 170,
 "hp_total": null,
 "hybrid": null,
@@ -237364,6 +240293,7 @@
 "drive": "4wd",
 "engine": "3D3, 3D5",
 "fuel": "electric",
+"gen_key": "tesla/model_y/g_2019_15352",
 "hp": 484,
 "hp_total": null,
 "hybrid": null,
@@ -237386,6 +240316,7 @@
 "drive": "4wd",
 "engine": "3D3, 3D7",
 "fuel": "electric",
+"gen_key": "tesla/model_y/g_2019_15352",
 "hp": 513,
 "hp_total": null,
 "hybrid": null,
@@ -237408,6 +240339,7 @@
 "drive": "4wd",
 "engine": "3D3, 3D6",
 "fuel": "electric",
+"gen_key": "tesla/model_y/g_2019_15352",
 "hp": 534,
 "hp_total": null,
 "hybrid": null,
@@ -245386,6 +248318,7 @@
 "drive": "fwd",
 "engine": "CZCA",
 "fuel": "бензин",
+"gen_key": "volkswagen/golf/g_2012_9517",
 "hp": 125,
 "hp_total": null,
 "hybrid": null,
@@ -245534,6 +248467,7 @@
 "drive": "fwd",
 "engine": "CZDA, CZEA",
 "fuel": "бензин",
+"gen_key": "volkswagen/golf/g_2012_9517",
 "hp": 150,
 "hp_total": null,
 "hybrid": null,
@@ -271544,11 +274478,13 @@
 "trims": [
 {
 "from": 202009,
+"id": "538716",
 "name": "2.0 TDI DSG Premium",
 "to": 202503
 },
 {
 "from": 202009,
+"id": "538718",
 "name": "2.0 TDI DSG Prestige",
 "to": 202503
 }
@@ -271570,12 +274506,14 @@
 "trims": [
 {
 "from": 202009,
+"id": "541350",
 "name": "2.0 TDI DSG 4Motion Premium",
 "to": 202503
 }
 ]
 }
 ],
+"ids": true,
 "key": "volkswagen/tiguan/g_2020_23204",
 "market": "Южная Корея",
 "to": 202503
@@ -281631,6 +284569,7 @@
 ]
 }
 ],
+"key": "volvo/v60/g_201005_1553",
 "market": "Россия",
 "to": 201307
 },
@@ -281976,6 +284915,7 @@
 ]
 }
 ],
+"key": "volvo/v60/g_2010_24113",
 "market": "Южная Корея",
 "to": 201309
 },
@@ -292499,6 +295439,7 @@
 "39442697": 739884,
 "39578422": 739885,
 "39676826": 739884,
+"39796388": 739885,
 "39901179": 739884,
 "39908028": 739884,
 "39994837": 739884,
@@ -292525,6 +295466,7 @@
 "40974189": 739884,
 "40982417": 739884,
 "40988778": 739884,
+"41018100": 739885,
 "41023829": 739884,
 "41030781": 739884,
 "41046969": 739884,
@@ -292542,12 +295484,16 @@
 "41275416": 739884,
 "41285444": 739884,
 "41300058": 739885,
+"41308240": 739885,
+"41317874": 739885,
+"41333987": 739885,
 "41336576": 739884,
 "41341955": 739884,
 "41345262": 739884,
 "41372777": 739884,
 "41388407": 739884,
 "41388435": 739884,
+"41395301": 739885,
 "41409467": 739885,
 "41460465": 739884,
 "41467074": 739884,
@@ -292562,6 +295508,7 @@
 "41556978": 739884,
 "41560417": 739884,
 "41567945": 739884,
+"41586611": 739885,
 "41590732": 739884,
 "41591731": 739884,
 "41609075": 739884,
@@ -292569,8 +295516,12 @@
 "41623577": 739885,
 "41623744": 739884,
 "41635019": 739885,
+"41660990": 739885,
+"41662027": 739885,
 "41675586": 739884,
 "41686345": 739884,
+"41691036": 739885,
+"41696595": 739885,
 "41717829": 739884,
 "41719129": 739884,
 "41720995": 739884,
@@ -292588,6 +295539,7 @@
 "41801034": 739885,
 "41811062": 739884,
 "41817449": 739884,
+"41818141": 739885,
 "41826953": 739884,
 "41832164": 739885,
 "41832394": 739884,
@@ -292603,9 +295555,11 @@
 "41924540": 739884,
 "41925213": 739885,
 "41933511": 739884,
+"41937150": 739885,
 "41939200": 739884,
 "41942107": 739885,
 "41950277": 739884,
+"41979363": 739885,
 "41988276": 739884,
 "41992072": 739885,
 "41993207": 739884,
@@ -292636,19 +295590,24 @@
 "42126509": 739884,
 "42129266": 739884,
 "42132709": 739885,
+"42135854": 739885,
 "42141853": 739884,
 "42142804": 739885,
 "42147714": 739885,
 "42148239": 739884,
 "42152224": 739885,
 "42154639": 739885,
+"42156311": 739885,
 "42158418": 739884,
 "42163823": 739884,
+"42163930": 739885,
 "42165142": 739884,
 "42171839": 739884,
 "42172743": 739885,
+"42175019": 739885,
 "42177432": 739885,
 "42182268": 739884,
+"42183809": 739885,
 "42186455": 739884,
 "42189878": 739885,
 "42191218": 739884,
@@ -292707,6 +295666,7 @@
 "42360854": 739885,
 "42361039": 739884,
 "42361321": 739884,
+"42362266": 739885,
 "42362495": 739884,
 "42362751": 739884,
 "42365151": 739884,
@@ -292724,12 +295684,15 @@
 "42396450": 739885,
 "42398265": 739885,
 "42400720": 739884,
+"42401503": 739885,
+"42409306": 739885,
 "42409378": 739885,
 "42413207": 739885,
 "42414002": 739884,
 "42416815": 739884,
 "42421092": 739885,
 "42421838": 739885,
+"42426524": 739885,
 "42430102": 739885,
 "42430314": 739884,
 "42431380": 739884,
@@ -292742,6 +295705,7 @@
 "42450400": 739885,
 "42450800": 739884,
 "42452832": 739884,
+"42453758": 739885,
 "42454339": 739884,
 "42457708": 739884,
 "42458171": 739884,
@@ -292761,8 +295725,11 @@
 "42481417": 739884,
 "42483019": 739884,
 "42484810": 739884,
+"42486129": 739885,
 "42488133": 739884,
 "42491009": 739884,
+"42491361": 739885,
+"42494470": 739885,
 "42494823": 739885,
 "42497240": 739884,
 "42497367": 739885,
@@ -292779,6 +295746,7 @@
 "42518843": 739884,
 "42522564": 739884,
 "42528229": 739884,
+"42530222": 739885,
 "42531714": 739884,
 "42533940": 739884,
 "42535458": 739884,
@@ -292787,9 +295755,12 @@
 "42545128": 739885,
 "42548131": 739884,
 "42548634": 739885,
+"42550856": 739885,
 "42551143": 739884,
 "42551612": 739884,
+"42551851": 739885,
 "42553069": 739884,
+"42553620": 739885,
 "42554463": 739884,
 "42555388": 739884,
 "42556410": 739884,
@@ -292809,12 +295780,14 @@
 "42567823": 739884,
 "42568465": 739885,
 "42568834": 739884,
+"42569881": 739885,
 "42570710": 739884,
 "42572699": 739885,
 "42573233": 739885,
 "42573906": 739884,
 "42574064": 739884,
 "42576971": 739884,
+"42578048": 739885,
 "42578672": 739884,
 "42581639": 739884,
 "42583034": 739884,
@@ -292854,13 +295827,17 @@
 "42624118": 739884,
 "42624121": 739884,
 "42625319": 739884,
+"42627572": 739885,
 "42628992": 739884,
 "42629097": 739885,
 "42631299": 739885,
 "42631594": 739884,
 "42632137": 739884,
+"42633036": 739885,
 "42635060": 739884,
+"42636840": 739885,
 "42637215": 739884,
+"42637510": 739885,
 "42638054": 739884,
 "42638959": 739885,
 "42640446": 739884,
@@ -292913,6 +295890,7 @@
 "42691527": 739884,
 "42692356": 739884,
 "42692706": 739885,
+"42692911": 739885,
 "42693066": 739885,
 "42693133": 739885,
 "42695374": 739885,
@@ -292934,12 +295912,14 @@
 "42708297": 739884,
 "42708568": 739884,
 "42710096": 739884,
+"42714186": 739885,
 "42715439": 739885,
 "42715915": 739884,
 "42716531": 739884,
 "42717340": 739885,
 "42717717": 739884,
 "42719698": 739884,
+"42720486": 739885,
 "42720594": 739884,
 "42722498": 739884,
 "42724344": 739884,
@@ -292952,12 +295932,15 @@
 "42728969": 739884,
 "42729533": 739884,
 "42730059": 739885,
+"42730539": 739885,
 "42732279": 739884,
 "42733372": 739884,
 "42733374": 739884,
 "42734862": 739884,
 "42735229": 739884,
+"42735545": 739885,
 "42737574": 739885,
+"42737631": 739885,
 "42738131": 739884,
 "42738162": 739884,
 "42738841": 739884,
@@ -292965,17 +295948,20 @@
 "42740620": 739884,
 "42740848": 739884,
 "42741274": 739884,
+"42741460": 739885,
 "42742412": 739884,
 "42744001": 739884,
 "42745435": 739884,
 "42745811": 739884,
 "42747222": 739884,
 "42748194": 739884,
+"42748205": 739885,
 "42749404": 739884,
 "42749562": 739884,
 "42751582": 739884,
 "42751690": 739884,
 "42752069": 739884,
+"42753154": 739885,
 "42754197": 739885,
 "42754832": 739885,
 "42755793": 739884,
@@ -292997,23 +295983,32 @@
 "42762123": 739884,
 "42762735": 739885,
 "42763029": 739884,
+"42765221": 739885,
 "42765496": 739884,
 "42765832": 739884,
 "42766741": 739884,
 "42768471": 739885,
 "42769318": 739885,
+"42769441": 739885,
 "42770034": 739885,
 "42770517": 739884,
 "42770663": 739884,
 "42771741": 739885,
+"42772846": 739885,
 "42773269": 739884,
+"42773299": 739885,
 "42773603": 739885,
 "42773685": 739884,
 "42775134": 739884,
+"42775449": 739885,
 "42775869": 739885,
 "42776004": 739885,
 "42776063": 739885,
 "42776211": 739884,
+"42777244": 739885,
+"42777693": 739885,
+"42777869": 739885,
+"42777992": 739885,
 "42778879": 739885,
 "42779144": 739884,
 "42779379": 739884,
@@ -293021,6 +296016,7 @@
 "42779728": 739884,
 "42780288": 739884,
 "42781709": 739885,
+"42782231": 739885,
 "42782638": 739885,
 "42783297": 739884,
 "42784520": 739884,
@@ -294028,6 +297024,115 @@
 ],
 "name": "1.6 AT Gamma GDi Base"
 },
+"204466": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"167 Н·м при 4850 об/мин"
+],
+[
+"Модель двигателя",
+"G4FD"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,3 л/100 км"
+],
+[
+"Город",
+"8,1 л/100 км"
+],
+[
+"Трасса",
+"6,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4220 × 1790 × 1400 мм"
+],
+[
+"Колёсная база",
+"2650 мм"
+],
+[
+"Клиренс",
+"143 мм"
+],
+[
+"Масса",
+"1260 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"320 (1015) л"
+],
+[
+"Мест",
+"4"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/45 R17"
+],
+[
+"Радиус разворота",
+"5,2 м"
+]
+]
+]
+],
+"name": "1.6 DCT Gamma GDi Base"
+},
 "204575": {
 "groups": [
 [
@@ -294800,6 +297905,128 @@
 ],
 "name": "1.5 CVT Hybrid"
 },
+"217093": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,9 с"
+],
+[
+"Максимальная скорость",
+"206 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"174 Н·м при 4300 об/мин"
+],
+[
+"Модель двигателя",
+"R18A1"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,3 л/100 км"
+],
+[
+"Город",
+"8,4 л/100 км"
+],
+[
+"Трасса",
+"6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4458 × 1753 × 1397 мм"
+],
+[
+"Колёсная база",
+"2621 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1206 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"331 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Барабанные"
+],
+[
+"Шины",
+"205/55 R16"
+],
+[
+"Радиус разворота",
+"5,4 м"
+]
+]
+]
+],
+"name": "1.8 AT DX"
+},
 "217094": {
 "groups": [
 [
@@ -294921,6 +298148,128 @@
 ]
 ],
 "name": "1.8 AT LX"
+},
+"217095": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,9 с"
+],
+[
+"Максимальная скорость",
+"206 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"174 Н·м при 4300 об/мин"
+],
+[
+"Модель двигателя",
+"R18A1"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,3 л/100 км"
+],
+[
+"Город",
+"8,4 л/100 км"
+],
+[
+"Трасса",
+"6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4458 × 1753 × 1397 мм"
+],
+[
+"Колёсная база",
+"2621 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1245 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"331 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/55 R16"
+],
+[
+"Радиус разворота",
+"5,4 м"
+]
+]
+]
+],
+"name": "1.8 AT EX"
 },
 "221716": {
 "groups": [
@@ -295488,6 +298837,132 @@
 ]
 ],
 "name": "GL 500 4MATIC"
+},
+"249057": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8,6 с"
+],
+[
+"Максимальная скорость",
+"208 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"240 л.с. (177 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"366 Н·м при 3000 об/мин"
+],
+[
+"Модель двигателя",
+"TPBA"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-91"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,2 л/100 км"
+],
+[
+"Город",
+"11,8 л/100 км"
+],
+[
+"Трасса",
+"8,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5006 × 2004 × 1788 мм"
+],
+[
+"Колёсная база",
+"2860 мм"
+],
+[
+"Клиренс",
+"211 мм"
+],
+[
+"Масса",
+"2043 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"595 (со сложенным 3-м рядом сидений 1240 л., со сложенными 2-м и 3-м рядами сидений 2285 л.) л"
+],
+[
+"Мест",
+"7"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"245/60 R18"
+],
+[
+"Радиус разворота",
+"5,9 м"
+]
+]
+]
+],
+"name": "2.0 AT FWD Explorer"
 },
 "264025": {
 "groups": [
@@ -296357,6 +299832,132 @@
 ],
 "name": "1.6 e-HDi AMT"
 },
+"305090": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,8 с"
+],
+[
+"Максимальная скорость",
+"236 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"240 л.с. (177 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"365 Н·м при 3000 об/мин"
+],
+[
+"Модель двигателя",
+"Ford EcoBoost 2.0"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,2 л/100 км"
+],
+[
+"Город",
+"11,8 л/100 км"
+],
+[
+"Трасса",
+"8,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5154 × 1935 × 1542 мм"
+],
+[
+"Колёсная база",
+"2868 мм"
+],
+[
+"Клиренс",
+"130 мм"
+],
+[
+"Масса",
+"1795 кг"
+],
+[
+"Топливный бак",
+"72 л"
+],
+[
+"Багажник",
+"569 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R18"
+],
+[
+"Радиус разворота",
+"6,05 м"
+]
+]
+]
+],
+"name": "2.0 AT Taurus SEL"
+},
 "305091": {
 "groups": [
 [
@@ -296482,6 +300083,136 @@
 ]
 ],
 "name": "2.0 AT Taurus Limited"
+},
+"317589": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"4,9 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"550 л.с. (405 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"730 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"M 177 DE40 AL"
+],
+[
+"Тип двигателя",
+"V-образный, 8-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"12,0 л/100 км"
+],
+[
+"Город",
+"16 л/100 км"
+],
+[
+"Трасса",
+"9,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5205 × 2030 × 1838 мм"
+],
+[
+"Колёсная база",
+"3135 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"2710 кг"
+],
+[
+"Топливный бак",
+"90 л"
+],
+[
+"Багажник",
+"520 л"
+],
+[
+"Мест",
+"4"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"275/45 R21"
+],
+[
+"Радиус разворота",
+"6,25 м"
+]
+]
+]
+],
+"name": "Maybach GLS 600 4MATIC"
 },
 "318059": {
 "groups": [
@@ -296697,6 +300428,111 @@
 ]
 ],
 "name": "2.0 MPI AT Prestige Brown"
+},
+"374967": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"177 л.с. (130 кВт) при 3800 об/мин"
+],
+[
+"Крутящий момент",
+"431 Н·м при 2500 об/мин"
+],
+[
+"Модель двигателя",
+"D4HB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,3 л/100 км"
+],
+[
+"Город",
+"11,6 л/100 км"
+],
+[
+"Трасса",
+"9,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5255 × 1995 × 1990 мм"
+],
+[
+"Колёсная база",
+"3275 мм"
+],
+[
+"Клиренс",
+"186 мм"
+],
+[
+"Масса",
+"2380 кг"
+],
+[
+"Топливный бак",
+"75 л"
+],
+[
+"Мест",
+"11"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/65 R17"
+]
+]
+]
+],
+"name": "2.2D VGT AT 4WD Tourer Modern 11-местный"
 },
 "375230": {
 "groups": [
@@ -297883,6 +301719,128 @@
 ]
 ],
 "name": "1.6 GDI AT Luxury"
+},
+"416202": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"11,2 с"
+],
+[
+"Максимальная скорость",
+"180 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"167 Н·м при 4850 об/мин"
+],
+[
+"Модель двигателя",
+"G4FD"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-4"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,1 л/100 км"
+],
+[
+"Город",
+"8,3 л/100 км"
+],
+[
+"Трасса",
+"6,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4365 × 1720 × 1455 мм"
+],
+[
+"Колёсная база",
+"2570 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1109 кг"
+],
+[
+"Топливный бак",
+"43 л"
+],
+[
+"Багажник",
+"500 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/45 R17"
+]
+]
+]
+],
+"name": "1.6 GDI AT Prestige"
 },
 "417251": {
 "groups": [
@@ -299725,6 +303683,111 @@
 ]
 ],
 "name": "2.9 TFSI quattro tiptronic"
+},
+"435889": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"136 л.с. (100 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"320 Н·м при 2250 об/мин"
+],
+[
+"Модель двигателя",
+"D4FE"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,3 л/100 км"
+],
+[
+"Город",
+"6,7 л/100 км"
+],
+[
+"Трасса",
+"6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4485 × 1855 × 1645 мм"
+],
+[
+"Колёсная база",
+"2670 мм"
+],
+[
+"Масса",
+"1590 кг"
+],
+[
+"Топливный бак",
+"62 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/55 R18"
+]
+]
+]
+],
+"name": "1.6 CRDI DCT 2WD Prestige"
 },
 "435904": {
 "groups": [
@@ -302602,6 +306665,115 @@
 ],
 "name": "2.0 CVVL AT 2WD Noblesse"
 },
+"448421": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"160 л.с. (118 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"196 Н·м при 4800 об/мин"
+],
+[
+"Модель двигателя",
+"G4NM"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,8 л/100 км"
+],
+[
+"Город",
+"8,8 л/100 км"
+],
+[
+"Трасса",
+"6,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4905 × 1860 × 1445 мм"
+],
+[
+"Колёсная база",
+"2850 мм"
+],
+[
+"Клиренс",
+"155 мм"
+],
+[
+"Масса",
+"1435 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"510 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/45 R18"
+]
+]
+]
+],
+"name": "2.0 CVVL AT 2WD Signature"
+},
 "448813": {
 "groups": [
 [
@@ -303966,6 +308138,258 @@
 ],
 "name": "2.9 PDK 4 Platinum Edition Sport Turismo"
 },
+"454941": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,7 с"
+],
+[
+"Максимальная скорость",
+"245 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"330 л.с. (243 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"700 Н·м при 3000 об/мин"
+],
+[
+"Модель двигателя",
+"OM 656 D 29 R SCR"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,8 л/100 км"
+],
+[
+"Город",
+"8,5 л/100 км"
+],
+[
+"Трасса",
+"5,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4924 × 1947 × 1797 мм"
+],
+[
+"Колёсная база",
+"2995 мм"
+],
+[
+"Клиренс",
+"202 мм"
+],
+[
+"Масса",
+"2265 кг"
+],
+[
+"Топливный бак",
+"65 л"
+],
+[
+"Багажник",
+"630 (2055) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"255/50 R19"
+],
+[
+"Радиус разворота",
+"6 м"
+]
+]
+]
+],
+"name": "GLE 400d 4MATIC"
+},
+"454958": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8 с"
+],
+[
+"Максимальная скорость",
+"240 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"370 л.с. (272 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"510 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G6DH"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"12,3 л/100 км"
+],
+[
+"Город",
+"14,2 л/100 км"
+],
+[
+"Трасса",
+"9,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5120 × 1915 × 1490 мм"
+],
+[
+"Колёсная база",
+"3105 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"2085 кг"
+],
+[
+"Топливный бак",
+"77 л"
+],
+[
+"Багажник",
+"470 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/45 R19"
+]
+]
+]
+],
+"name": "3.3 GDI AT 4WD Best Selection II"
+},
 "454961": {
 "groups": [
 [
@@ -304682,6 +309106,119 @@
 ]
 ],
 "name": "3.0 Tiptronic"
+},
+"461600": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"304 л.с. (224 кВт) при 5800 об/мин"
+],
+[
+"Крутящий момент",
+"422 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4KR"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,2 л/100 км"
+],
+[
+"Город",
+"11,5 л/100 км"
+],
+[
+"Трасса",
+"8,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4715 × 1910 × 1630 мм"
+],
+[
+"Колёсная база",
+"2875 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1885 кг"
+],
+[
+"Топливный бак",
+"66 л"
+],
+[
+"Багажник",
+"542 (1678) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/60 R18"
+]
+]
+]
+],
+"name": "2.5 AT 4WD Standard"
 },
 "462903": {
 "groups": [
@@ -305553,6 +310090,128 @@
 ],
 "name": "1.6 GDi HEV DCT 2WD Premium"
 },
+"464974": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"10,9 с"
+],
+[
+"Максимальная скорость",
+"165 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"105 л.с. (77 кВт) при 5700 об/мин"
+],
+[
+"Крутящий момент",
+"144 Н·м при 4700 об/мин"
+],
+[
+"Модель двигателя",
+"G4LL"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,5 л/100 км"
+],
+[
+"Город",
+"5,7 л/100 км"
+],
+[
+"Трасса",
+"5,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4350 × 1825 × 1585 мм"
+],
+[
+"Колёсная база",
+"2660 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1375 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Багажник",
+"466 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/45 R18"
+]
+]
+]
+],
+"name": "1.6 GDi HEV DCT 2WD Inspiration"
+},
 "466822": {
 "groups": [
 [
@@ -305787,6 +310446,111 @@
 ]
 ],
 "name": "1.4 VVT AT 2WD Premier"
+},
+"467248": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"167 Н·м при 4850 об/мин"
+],
+[
+"Модель двигателя",
+"G4FD"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4370 × 1705 × 1455 мм"
+],
+[
+"Колёсная база",
+"2570 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1085 кг"
+],
+[
+"Топливный бак",
+"43 л"
+],
+[
+"Багажник",
+"465 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"195/50 R16"
+],
+[
+"Радиус разворота",
+"5,2 м"
+]
+]
+]
+],
+"name": "1.6 GDI AT 2WD Top"
 },
 "467258": {
 "groups": [
@@ -306356,6 +311120,119 @@
 ]
 ],
 "name": "1.4 VVT CVT 2WD Value Plus"
+},
+"467616": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"167 Н·м при 4850 об/мин"
+],
+[
+"Модель двигателя",
+"G4FD"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,1 л/100 км"
+],
+[
+"Город",
+"7,9 л/100 км"
+],
+[
+"Трасса",
+"6,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4115 × 1705 × 1455 мм"
+],
+[
+"Колёсная база",
+"2570 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1090 кг"
+],
+[
+"Топливный бак",
+"43 л"
+],
+[
+"Багажник",
+"465 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"195/50 R16"
+],
+[
+"Радиус разворота",
+"5,2 м"
+]
+]
+]
+],
+"name": "1.6 GDI AT 2WD Premium"
 },
 "468217": {
 "groups": [
@@ -308861,6 +313738,115 @@
 ],
 "name": "2.4 AT AWD Sport"
 },
+"483897": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"149 л.с. (110 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"179 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4NS"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,3 л/100 км"
+],
+[
+"Город",
+"7,9 л/100 км"
+],
+[
+"Трасса",
+"6,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4205 × 1800 × 1550 мм"
+],
+[
+"Колёсная база",
+"2600 мм"
+],
+[
+"Клиренс",
+"170 мм"
+],
+[
+"Масса",
+"1300 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"544 (1297) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/60 R16"
+]
+]
+]
+],
+"name": "2.0 MPi CVT 2WD Smart"
+},
 "483898": {
 "groups": [
 [
@@ -309284,6 +314270,228 @@
 ]
 ],
 "name": "1.6 GDI AT 2WD Prestige"
+},
+"484243": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"128 л.с. (94 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"260 Н·м при 2750 об/мин"
+],
+[
+"Модель двигателя",
+"D4FB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-4"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,0 л/100 км"
+],
+[
+"Город",
+"7,7 л/100 км"
+],
+[
+"Трасса",
+"6,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4140 × 1800 × 1600 мм"
+],
+[
+"Колёсная база",
+"2570 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1408 кг"
+],
+[
+"Топливный бак",
+"48 л"
+],
+[
+"Багажник",
+"238 (878) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/60 R16"
+]
+]
+]
+],
+"name": "1.6 CRDi AT 2WD Prestige"
+},
+"484249": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"132 л.с. (97 кВт) при 6300 об/мин"
+],
+[
+"Крутящий момент",
+"161 Н·м при 4850 об/мин"
+],
+[
+"Модель двигателя",
+"G4FD"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,7 л/100 км"
+],
+[
+"Город",
+"9,6 л/100 км"
+],
+[
+"Трасса",
+"7,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4140 × 1800 × 1600 мм"
+],
+[
+"Колёсная база",
+"2570 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1298 кг"
+],
+[
+"Топливный бак",
+"54 л"
+],
+[
+"Багажник",
+"238 (878) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/55 R17"
+]
+]
+]
+],
+"name": "1.6 GDI AT 2WD Trendy"
 },
 "484289": {
 "groups": [
@@ -310556,6 +315764,119 @@
 ],
 "name": "2.5 GDI AT 2WD Nobless Light"
 },
+"489242": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"180 л.с. (132 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"265 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4FT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,5 л/100 км"
+],
+[
+"Город",
+"5,6 л/100 км"
+],
+[
+"Трасса",
+"5,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5015 × 1875 × 1455 мм"
+],
+[
+"Колёсная база",
+"2895 мм"
+],
+[
+"Клиренс",
+"155 мм"
+],
+[
+"Масса",
+"1630 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"510 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/55 R17"
+]
+]
+]
+],
+"name": "HEV 1.6 T AT 2WD Nobless Light"
+},
 "489994": {
 "groups": [
 [
@@ -311748,6 +317069,115 @@
 ]
 ],
 "name": "1.6 CVT 2WD Modern"
+},
+"494555": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"105 л.с. (77 кВт) при 5700 об/мин"
+],
+[
+"Крутящий момент",
+"147 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4LE"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"4,7 л/100 км"
+],
+[
+"Город",
+"4,8 л/100 км"
+],
+[
+"Трасса",
+"4,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4710 × 1825 × 1420 мм"
+],
+[
+"Колёсная база",
+"2720 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1355 кг"
+],
+[
+"Топливный бак",
+"42 л"
+],
+[
+"Багажник",
+"474 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205//55 R16"
+]
+]
+]
+],
+"name": "G-Hybrid 1.6 DCT Inspiration"
 },
 "494621": {
 "groups": [
@@ -315402,6 +320832,115 @@
 ],
 "name": "Quest 2.0 LPG CVT 2WD LE"
 },
+"510314": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"193 Н·м при 3700 об/мин"
+],
+[
+"Модель двигателя",
+"M4RV"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"11,5 л/100 км"
+],
+[
+"Город",
+"12,6 л/100 км"
+],
+[
+"Трасса",
+"10,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4675 × 1845 × 1680 мм"
+],
+[
+"Колёсная база",
+"2705 мм"
+],
+[
+"Клиренс",
+"210 мм"
+],
+[
+"Масса",
+"1550 кг"
+],
+[
+"Топливный бак",
+"60 л"
+],
+[
+"Багажник",
+"1413 л"
+],
+[
+"Мест",
+"2"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/65 R17"
+]
+]
+]
+],
+"name": "Quest 2.0 LPG CVT 2WD Business"
+},
 "510484": {
 "groups": [
 [
@@ -315745,6 +321284,115 @@
 ]
 ],
 "name": "1.3 TCe260 DCT 2WD RE Signature"
+},
+"512902": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"123 л.с. (90 кВт) при 6400 об/мин"
+],
+[
+"Крутящий момент",
+"155 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"H4M"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,4 л/100 км"
+],
+[
+"Город",
+"8,2 л/100 км"
+],
+[
+"Трасса",
+"6,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4570 × 1820 × 1570 мм"
+],
+[
+"Колёсная база",
+"2720 мм"
+],
+[
+"Клиренс",
+"186 мм"
+],
+[
+"Масса",
+"1300 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"513 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/65 R16"
+]
+]
+]
+],
+"name": "1.6 GTe CVT 2WD LE"
 },
 "512930": {
 "groups": [
@@ -316316,6 +321964,216 @@
 ]
 ],
 "name": "1.8 TCe DCT 2WD Premier"
+},
+"513031": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"193 Н·м при 3700 об/мин"
+],
+[
+"Модель двигателя",
+"M4RV"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,5 л/100 км"
+],
+[
+"Город",
+"11,7 л/100 км"
+],
+[
+"Трасса",
+"9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4855 × 1870 × 1460 мм"
+],
+[
+"Колёсная база",
+"2810 мм"
+],
+[
+"Клиренс",
+"145 мм"
+],
+[
+"Масса",
+"1475 кг"
+],
+[
+"Топливный бак",
+"75 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/65 R16"
+]
+]
+]
+],
+"name": "2.0 LPG CVT 2WD SE"
+},
+"513033": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"140 л.с. (103 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"193 Н·м при 3700 об/мин"
+],
+[
+"Модель двигателя",
+"M4RV"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,6 л/100 км"
+],
+[
+"Город",
+"11,9 л/100 км"
+],
+[
+"Трасса",
+"9,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4855 × 1870 × 1460 мм"
+],
+[
+"Колёсная база",
+"2810 мм"
+],
+[
+"Клиренс",
+"145 мм"
+],
+[
+"Масса",
+"1510 кг"
+],
+[
+"Топливный бак",
+"75 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"245/45 R18"
+]
+]
+]
+],
+"name": "2.0 LPG CVT 2WD LE"
 },
 "513035": {
 "groups": [
@@ -317413,6 +323271,107 @@
 ],
 "name": "2.0 CVT 2WD LE"
 },
+"518205": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"141 л.с. (104 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"194 Н·м при 4800 об/мин"
+],
+[
+"Модель двигателя",
+"MR20DE"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,0 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4885 × 1830 × 1490 мм"
+],
+[
+"Колёсная база",
+"2760 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1470 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"450 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/50 R17"
+]
+]
+]
+],
+"name": "2.0 CVT 2WD LE Exclusive"
+},
 "518230": {
 "groups": [
 [
@@ -317634,6 +323593,119 @@
 ]
 ],
 "name": "1.6 T-GDi DCT 2WD TCE"
+},
+"518245": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"190 л.с. (140 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"240 Н·м при 2000 об/мин"
+],
+[
+"Модель двигателя",
+"MR16DDT, MR190DDT, M5MT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,6 л/100 км"
+],
+[
+"Город",
+"8,8 л/100 км"
+],
+[
+"Трасса",
+"6,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4885 × 1860 × 1495 мм"
+],
+[
+"Колёсная база",
+"2760 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1525 кг"
+],
+[
+"Топливный бак",
+"65 л"
+],
+[
+"Багажник",
+"450 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/45 R18"
+]
+]
+]
+],
+"name": "1.6 T-GDi DCT 2WD TCE Spring/Summer Collection"
 },
 "518255": {
 "groups": [
@@ -318172,6 +324244,136 @@
 ],
 "name": "1.0 AT 2WD Best Choice"
 },
+"518705": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,3 с"
+],
+[
+"Максимальная скорость",
+"225 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"190 л.с. (140 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"400 Н·м при 1750 об/мин"
+],
+[
+"Модель двигателя",
+"DFHA"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,1 л/100 км"
+],
+[
+"Город",
+"6,2 л/100 км"
+],
+[
+"Трасса",
+"4,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4484 × 1849 × 1616 мм"
+],
+[
+"Колёсная база",
+"2680 мм"
+],
+[
+"Клиренс",
+"170 мм"
+],
+[
+"Масса",
+"1735 кг"
+],
+[
+"Топливный бак",
+"58 л"
+],
+[
+"Багажник",
+"530 (1525) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/65 R17"
+],
+[
+"Радиус разворота",
+"5,9 м"
+]
+]
+]
+],
+"name": "2.0 40 TDI quattro S tronic"
+},
 "518998": {
 "groups": [
 [
@@ -318377,6 +324579,111 @@
 ]
 ],
 "name": "1.0 AT 2WD Signature"
+},
+"519025": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"76 л.с. (56 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"95 Н·м при 3750 об/мин"
+],
+[
+"Модель двигателя",
+"G3LD"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,8 л/100 км"
+],
+[
+"Город",
+"8,4 л/100 км"
+],
+[
+"Трасса",
+"7,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"3595 × 1595 × 1700 мм"
+],
+[
+"Колёсная база",
+"2520 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1045 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"175/50 R15"
+]
+]
+]
+],
+"name": "1.0 AT 2WD Gravity"
 },
 "519027": {
 "groups": [
@@ -318587,6 +324894,111 @@
 ]
 ],
 "name": "1.0 AT 2WD Prestige VAN Special 2 seats"
+},
+"519037": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"76 л.с. (56 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"95 Н·м при 3750 об/мин"
+],
+[
+"Модель двигателя",
+"G3LD"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,7 л/100 км"
+],
+[
+"Город",
+"8,2 л/100 км"
+],
+[
+"Трасса",
+"7,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"3595 × 1595 × 1700 мм"
+],
+[
+"Колёсная база",
+"2520 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1030 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Мест",
+"1"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"165/60 R14"
+]
+]
+]
+],
+"name": "1.0 AT 2WD Trendy VAN 1 seat"
 },
 "519616": {
 "groups": [
@@ -318903,6 +325315,111 @@
 ],
 "name": "1.5 e-XGDi AT 4WD C5 Plus"
 },
+"521223": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"170 л.с. (125 кВт) при 5000 об/мин"
+],
+[
+"Крутящий момент",
+"280 Н·м при 1500 об/мин"
+],
+[
+"Модель двигателя",
+"G15DTF"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,8 л/100 км"
+],
+[
+"Город",
+"9,6 л/100 км"
+],
+[
+"Трасса",
+"8 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4450 × 1870 × 1620 мм"
+],
+[
+"Колёсная база",
+"2675 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1470 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R18"
+]
+]
+]
+],
+"name": "1.5 e-XGDi AT 2WD R-Plus"
+},
 "521569": {
 "groups": [
 [
@@ -319150,6 +325667,136 @@
 ]
 ],
 "name": "1.2 PureTech AT Active Pack"
+},
+"523478": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,7 с"
+],
+[
+"Максимальная скорость",
+"188 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"131 л.с. (96 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"230 Н·м при 1750 об/мин"
+],
+[
+"Модель двигателя",
+"EB2DTS"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,1 л/100 км"
+],
+[
+"Город",
+"6,1 л/100 км"
+],
+[
+"Трасса",
+"4,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4447 × 1906 × 1624 мм"
+],
+[
+"Колёсная база",
+"2675 мм"
+],
+[
+"Клиренс",
+"219 мм"
+],
+[
+"Масса",
+"1395 кг"
+],
+[
+"Топливный бак",
+"53 л"
+],
+[
+"Багажник",
+"520 (1482) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/55 R18"
+],
+[
+"Радиус разворота",
+"5,35 м"
+]
+]
+]
+],
+"name": "1.2 PureTech AT Allure Pack"
 },
 "523491": {
 "groups": [
@@ -321105,6 +327752,128 @@
 ],
 "name": "2.0 T DCT 2WD Espirit Alpine"
 },
+"528110": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Максимальная скорость",
+"215 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"211 л.с. (155 кВт) при 5000 об/мин"
+],
+[
+"Крутящий момент",
+"325 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"JLH-4G20TDB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,2 л/100 км"
+],
+[
+"Город",
+"11,7 л/100 км"
+],
+[
+"Трасса",
+"8,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4780 × 1880 × 1705 мм"
+],
+[
+"Колёсная база",
+"2820 мм"
+],
+[
+"Клиренс",
+"211 мм"
+],
+[
+"Масса",
+"1765 кг"
+],
+[
+"Топливный бак",
+"62 л"
+],
+[
+"Багажник",
+"633 (2034) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"245/45 R20"
+]
+]
+]
+],
+"name": "2.0 T AT 4WD Espirit Alpine"
+},
 "528787": {
 "groups": [
 [
@@ -321483,6 +328252,136 @@
 ],
 "name": "1.4 16V DCT Lounge"
 },
+"538716": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,4 с"
+],
+[
+"Максимальная скорость",
+"200 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"150 л.с. (110 кВт) при 4200 об/мин"
+],
+[
+"Крутящий момент",
+"360 Н·м при 1600 об/мин"
+],
+[
+"Модель двигателя",
+"DTSA, DTSB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,4 л/100 км"
+],
+[
+"Город",
+"7 л/100 км"
+],
+[
+"Трасса",
+"5,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4509 × 1839 × 1675 мм"
+],
+[
+"Колёсная база",
+"2677 мм"
+],
+[
+"Клиренс",
+"190 мм"
+],
+[
+"Масса",
+"1640 кг"
+],
+[
+"Топливный бак",
+"58 л"
+],
+[
+"Багажник",
+"615 (1655) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R18"
+],
+[
+"Радиус разворота",
+"5,75 м"
+]
+]
+]
+],
+"name": "2.0 TDI DSG Premium"
+},
 "540774": {
 "groups": [
 [
@@ -321612,6 +328511,136 @@
 ]
 ],
 "name": "2.0 TDI DSG Prestige"
+},
+"540969": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"6,1 с"
+],
+[
+"Максимальная скорость",
+"235 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"286 л.с. (210 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"650 Н·м при 2500 об/мин"
+],
+[
+"Модель двигателя",
+"B57D30"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,2 л/100 км"
+],
+[
+"Город",
+"7,2 л/100 км"
+],
+[
+"Трасса",
+"5,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4935 × 2004 × 1696 мм"
+],
+[
+"Колёсная база",
+"2975 мм"
+],
+[
+"Клиренс",
+"216 мм"
+],
+[
+"Масса",
+"2260 кг"
+],
+[
+"Топливный бак",
+"80 л"
+],
+[
+"Багажник",
+"580 (1530) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"275/45 R20"
+],
+[
+"Радиус разворота",
+"6,3 м"
+]
+]
+]
+],
+"name": "xDrive30d M Sport"
 },
 "540971": {
 "groups": [
@@ -322510,6 +329539,128 @@
 ],
 "name": "1.5D AT Selection"
 },
+"541290": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"4,9 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"387 л.с. (285 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"510 Н·м при 5000 об/мин"
+],
+[
+"Модель двигателя",
+"B58B30B"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4754 × 1927 × 1620 мм"
+],
+[
+"Колёсная база",
+"2864 мм"
+],
+[
+"Клиренс",
+"204 мм"
+],
+[
+"Масса",
+"1995 кг"
+],
+[
+"Топливный бак",
+"65 л"
+],
+[
+"Багажник",
+"525 (1430) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/45 R20"
+],
+[
+"Радиус разворота",
+"6,3 м"
+]
+]
+]
+],
+"name": "M40i"
+},
 "541757": {
 "groups": [
 [
@@ -323338,6 +330489,132 @@
 ],
 "name": "420i M Sport"
 },
+"542282": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7 с"
+],
+[
+"Максимальная скорость",
+"235 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"178 л.с. (131 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"280 Н·м при 4200 об/мин"
+],
+[
+"Модель двигателя",
+"B48A20U1"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,8 л/100 км"
+],
+[
+"Город",
+"7 л/100 км"
+],
+[
+"Трасса",
+"5,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4319 × 1799 × 1434 мм"
+],
+[
+"Колёсная база",
+"2670 мм"
+],
+[
+"Клиренс",
+"153 мм"
+],
+[
+"Масса",
+"1465 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"380 (1200) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/45 R17"
+]
+]
+]
+],
+"name": "120i SAT M Sport"
+},
 "542289": {
 "groups": [
 [
@@ -323850,6 +331127,132 @@
 ],
 "name": "1.3 AT AWD RS"
 },
+"543646": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,5 с"
+],
+[
+"Максимальная скорость",
+"190 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"156 л.с. (115 кВт) при 5600 об/мин"
+],
+[
+"Крутящий момент",
+"236 Н·м при 1600 об/мин"
+],
+[
+"Модель двигателя",
+"GM E-Turbo L3T"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,6 л/100 км"
+],
+[
+"Город",
+"8,1 л/100 км"
+],
+[
+"Трасса",
+"7,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4407 × 1808 × 1656 мм"
+],
+[
+"Колёсная база",
+"2640 мм"
+],
+[
+"Клиренс",
+"194 мм"
+],
+[
+"Масса",
+"1390 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"716 (1540) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/60 R17"
+],
+[
+"Радиус разворота",
+"5,7 м"
+]
+]
+]
+],
+"name": "1.3 CVT Premier"
+},
 "543676": {
 "groups": [
 [
@@ -324340,6 +331743,136 @@
 ]
 ],
 "name": "C 300 AMG Line"
+},
+"545042": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"10,2 с"
+],
+[
+"Максимальная скорость",
+"188 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"130 л.с. (96 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"230 Н·м при 1750 об/мин"
+],
+[
+"Модель двигателя",
+"EB2DTS"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,2 л/100 км"
+],
+[
+"Город",
+"6,1 л/100 км"
+],
+[
+"Трасса",
+"4,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4641 × 1844 × 1646 мм"
+],
+[
+"Колёсная база",
+"2840 мм"
+],
+[
+"Клиренс",
+"236 мм"
+],
+[
+"Масса",
+"1651 кг"
+],
+[
+"Топливный бак",
+"56 л"
+],
+[
+"Багажник",
+"780 (1940) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/55 R18"
+],
+[
+"Радиус разворота",
+"5,6 м"
+]
+]
+]
+],
+"name": "1.2 PureTech AT Allure"
 },
 "545058": {
 "groups": [
@@ -324861,6 +332394,266 @@
 ],
 "name": "2.0 45 TFSI quattro S tronic"
 },
+"545349": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8,1 с"
+],
+[
+"Максимальная скорость",
+"246 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"204 л.с. (150 кВт) при 4200 об/мин"
+],
+[
+"Крутящий момент",
+"400 Н·м при 2000 об/мин"
+],
+[
+"Модель двигателя",
+"DFBA"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"4,6 л/100 км"
+],
+[
+"Город",
+"5 л/100 км"
+],
+[
+"Трасса",
+"4,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4939 × 1886 × 1457 мм"
+],
+[
+"Колёсная база",
+"2924 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1780 кг"
+],
+[
+"Топливный бак",
+"63 л"
+],
+[
+"Багажник",
+"530 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/60 R17"
+],
+[
+"Радиус разворота",
+"5,55 м"
+]
+]
+]
+],
+"name": "2.0 40 TDI quattro S tronic"
+},
+"545496": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"4,9 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"390 л.с. (287 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"520 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"M 276 DE 30 AL"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин Premium (АИ-98)"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,6 л/100 км"
+],
+[
+"Город",
+"14,5 л/100 км"
+],
+[
+"Трасса",
+"8,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4682 × 1890 × 1644 мм"
+],
+[
+"Колёсная база",
+"2873 мм"
+],
+[
+"Клиренс",
+"181 мм"
+],
+[
+"Масса",
+"1870 кг"
+],
+[
+"Топливный бак",
+"66 л"
+],
+[
+"Багажник",
+"550 (1600) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/55 R19"
+],
+[
+"Радиус разворота",
+"6,05 м"
+]
+]
+]
+],
+"name": "AMG GLC 43 MTC 4MATIC"
+},
 "545554": {
 "groups": [
 [
@@ -325240,6 +333033,258 @@
 ],
 "name": "93 kWh e-tron GT quattro"
 },
+"545956": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,1 с"
+],
+[
+"Максимальная скорость",
+"226 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"231 л.с. (170 кВт) при 5000 об/мин"
+],
+[
+"Крутящий момент",
+"500 Н·м при 1500 об/мин"
+],
+[
+"Модель двигателя",
+"DHXC, DPXB"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5065 × 1970 × 1745 мм"
+],
+[
+"Колёсная база",
+"2996 мм"
+],
+[
+"Клиренс",
+"235 мм"
+],
+[
+"Масса",
+"2320 кг"
+],
+[
+"Топливный бак",
+"85 л"
+],
+[
+"Багажник",
+"740 (от 275 (с третьим рядом) до 1925 (со сложенным вторым рядом сидений)) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"285/40 R21"
+],
+[
+"Радиус разворота",
+"6,2 м"
+]
+]
+]
+],
+"name": "3.0 45 TDI quattro tiptronic Premium"
+},
+"545966": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,4 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"330 л.с. (243 кВт) при 4200 об/мин"
+],
+[
+"Крутящий момент",
+"700 Н·м при 3200 об/мин"
+],
+[
+"Модель двигателя",
+"OM 656 D 29 R SCR"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,4 л/100 км"
+],
+[
+"Город",
+"8,6 л/100 км"
+],
+[
+"Трасса",
+"5,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5179 × 1954 × 1503 мм"
+],
+[
+"Колёсная база",
+"3106 мм"
+],
+[
+"Клиренс",
+"130 мм"
+],
+[
+"Масса",
+"2070 кг"
+],
+[
+"Топливный бак",
+"65 л"
+],
+[
+"Багажник",
+"540 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"255/45 R19"
+],
+[
+"Радиус разворота",
+"6,25 м"
+]
+]
+]
+],
+"name": "S400 d 4MATIC"
+},
 "545990": {
 "groups": [
 [
@@ -325499,6 +333544,128 @@
 ]
 ],
 "name": "3.0 50 TDI quattro tiptronic Premium"
+},
+"546132": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"4,9 с"
+],
+[
+"Максимальная скорость",
+"270 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"367 л.с. (270 кВт) при 6100 об/мин"
+],
+[
+"Крутящий момент",
+"500 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"M 256 E30 DEH LA GR"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин Premium (АИ-98)"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5054 × 1953 × 1455 мм"
+],
+[
+"Колёсная база",
+"2951 мм"
+],
+[
+"Клиренс",
+"116 мм"
+],
+[
+"Масса",
+"2040 кг"
+],
+[
+"Топливный бак",
+"66 л"
+],
+[
+"Багажник",
+"456 л"
+],
+[
+"Мест",
+"4"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"255/45 R19"
+],
+[
+"Радиус разворота",
+"6,3 м"
+]
+]
+]
+],
+"name": "3.0 AT GT 43 4MATIC+"
 },
 "546398": {
 "groups": [
@@ -326735,6 +334902,115 @@
 ],
 "name": "1.6TD AT LT Safety Package"
 },
+"547568": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"11,6 с"
+],
+[
+"Максимальная скорость",
+"185 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"134 л.с. (99 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"326 Н·м при 2250 об/мин"
+],
+[
+"Модель двигателя",
+"B16DTH"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4665 × 1836 × 1635 мм"
+],
+[
+"Колёсная база",
+"2760 мм"
+],
+[
+"Клиренс",
+"186 мм"
+],
+[
+"Масса",
+"1645 кг"
+],
+[
+"Топливный бак",
+"64 л"
+],
+[
+"Мест",
+"7"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/50 R17"
+],
+[
+"Радиус разворота",
+"5,65 м"
+]
+]
+]
+],
+"name": "1.6TD AT LTZ Premium"
+},
 "547569": {
 "groups": [
 [
@@ -327213,6 +335489,136 @@
 ],
 "name": "1.6 D2 Powershift Kinetic"
 },
+"548325": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"6,8 с"
+],
+[
+"Максимальная скорость",
+"180 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"250 л.с. (184 кВт) при 5700 об/мин"
+],
+[
+"Крутящий момент",
+"350 Н·м при 4800 об/мин"
+],
+[
+"Модель двигателя",
+"B420T2"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,8 л/100 км"
+],
+[
+"Город",
+"8,9 л/100 км"
+],
+[
+"Трасса",
+"5,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4784 × 1850 × 1499 мм"
+],
+[
+"Колёсная база",
+"2874 мм"
+],
+[
+"Клиренс",
+"210 мм"
+],
+[
+"Масса",
+"1885 кг"
+],
+[
+"Топливный бак",
+"71 л"
+],
+[
+"Багажник",
+"495 (1407) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/40 R19"
+],
+[
+"Радиус разворота",
+"5,7 м"
+]
+]
+]
+],
+"name": "2.0 B5 Geartronic AWD Cross Country Pro"
+},
 "548328": {
 "groups": [
 [
@@ -327585,6 +335991,115 @@
 ]
 ],
 "name": "1.6 T-GDI AT 2WD X-Line"
+},
+"549144": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"105 л.с. (77 кВт) при 5700 об/мин"
+],
+[
+"Крутящий момент",
+"144 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4LE"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,3 л/100 км"
+],
+[
+"Город",
+"5 л/100 км"
+],
+[
+"Трасса",
+"5,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4430 × 1830 × 1615 мм"
+],
+[
+"Колёсная база",
+"2690 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1515 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Багажник",
+"536 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/55 R18"
+]
+]
+]
+],
+"name": "HEV 1.6 GDI DCT 2WD Signature"
 },
 "549347": {
 "groups": [
