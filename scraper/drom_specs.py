@@ -68,6 +68,10 @@ MODEL_ALIASES = {
     ("mini", "coupe"): "mini/coupe-model",
 }
 
+# Хвосты названия модели, без которых модель ищется на drom.ru («Crown Hybrid» → «Crown»)
+_MODEL_TAILS = {"hybrid", "custom", "phv", "phev", "plugin", "epower", "ev", "gr", "sport", "sports", "turbo", "diesel",
+                "wagon", "van", "touring", "cross", "hv"}
+
 LEVELS = {"Базовая", "Предмаксимальная", "Максимальная", "Средняя", "Спортивная", "Оптимальная", "Комфорт"}
 PERIOD_RE = re.compile(r"^(\d{2})\.(\d{4})\s*-\s*(?:(\d{2})\.(\d{4})|н\.в\.)$")
 HP_RE = re.compile(r"^(\d{2,4})\s*л\.с\.$")
@@ -295,6 +299,7 @@ class DromCatalog:
             self.cache["gens"] = {k: g for k, g in self.cache["gens"].items() if g.get("groups")}
         self.cache["version"] = CACHE_VERSION
         self.stats = {"exact": 0, "by_trim": 0, "ambiguous": 0, "no_model": 0, "no_match": 0}
+        self.missing = {}   # модели, которых не нашлось на drom.ru: «марка модель» → сколько раз
 
     def save(self):
         with open(self.path, "w", encoding="utf-8") as f:
@@ -345,15 +350,20 @@ class DromCatalog:
         brand = self.brand_slug(make)
         if not brand:
             return None
-        # «X2 (F39)» → «X2»; «4-Series» и «4 Series» — одно
-        name = _norm(re.sub(r"\s*\(.*?\)", "", model))
+        # «X2 (F39)» → «X2»; «4-Series» и «4 Series» — одно. Нет такой модели — без хвоста версии:
+        # «Crown Hybrid» → «Crown», «N-BOX Custom» → «N-BOX» (goo-net пишет версию в названии модели)
+        words = re.sub(r"\s*\(.*?\)", "", model).split()
+        names = [_norm(" ".join(words))]
+        while len(words) > 1 and _norm(words[-1]) in _MODEL_TAILS:
+            words = words[:-1]
+            names.append(_norm(" ".join(words)))
         for b in [brand] + BRAND_FALLBACK.get(brand, []):
             if b not in self.cache["models"]:
                 got = self._get(f"{BASE}{b}/")
                 if got is None:
                     continue
                 self.cache["models"][b] = self._links(got[0], f"{b}/")
-            slug = self.cache["models"][b].get(name)
+            slug = next((self.cache["models"][b][n] for n in names if n in self.cache["models"][b]), None)
             if slug:
                 return f"{b}/{slug}"
         return None
@@ -397,6 +407,8 @@ class DromCatalog:
         path = self.model_path(car["make"], car["model"]) if car.get("make") and car.get("model") else None
         if not path:
             self.stats["no_model"] += 1
+            key = f"{car.get('make')} {car.get('model')}"
+            self.missing[key] = self.missing.get(key, 0) + 1
             return None
         ym = car["year"] * 100 + (car.get("month") or 6)
         # Без месяца (только год) период комплектации сверяем по году
