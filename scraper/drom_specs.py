@@ -14,6 +14,7 @@ drom.ru: «1.5 л, бензин, 106 л.с., параллельный гибри
 Этот файл одинаковый в dongchedi_parser и encar-parser-landing.
 """
 
+from contextlib import contextmanager
 import json
 import random
 import re
@@ -403,7 +404,9 @@ class DromCatalog:
     def power(self, car: dict) -> dict | None:
         """car: make, model, market (china/south-korea/japan) или markets [по очереди], year, month?, cc, fuel (petrol/diesel/
         hybrid/electric/phev), drive (fwd/rwd/4wd)?, trans (auto/manual/cvt/robot)?, trim?, body?.
-        → {"hp", "hp_total", "source"} или None."""
+        Без cc комплектацию ищем по дате, топливу, приводу и названию — объём тогда берём
+        из найденной группы («liters», если он у всех подходящих групп один).
+        → {"hp", "hp_total", "liters", "source", "trim"} или None."""
         path = self.model_path(car["make"], car["model"]) if car.get("make") and car.get("model") else None
         if not path:
             self.stats["no_model"] += 1
@@ -437,15 +440,17 @@ class DromCatalog:
         def result(hp, total):
             # Комплектация для технических характеристик: из групп с этой мощностью — та, чьё
             # название больше всего совпадает с комплектацией машины
-            best, ref = -1, None
+            best, ref, liters = -1, None, set()
             for g, trims in cands:
                 if (g["hp"], g.get("hp_total")) != (hp, total):
                     continue
+                liters.add(g["liters"])
                 for t in trims:
                     score = len(words & set(re.findall(r"[a-z0-9]+", t["name"].lower())))
                     if score > best:
                         best, ref = score, {"gen": g.get("gen_key"), "name": t["name"], "id": t.get("id")}
-            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref}
+            return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref,
+                    "liters": liters.pop() if len(liters) == 1 else None}
 
         hps = {(g["hp"], g.get("hp_total")) for g, _ in cands}
         if len(hps) == 1:
@@ -468,6 +473,15 @@ class DromCatalog:
             return result(*hps.pop())
         self.stats["ambiguous"] += 1
         return None
+
+    @contextmanager
+    def cached_only(self):
+        """Внутри — только то, что уже в кэше, без новых страниц drom.ru."""
+        limit, self.max_requests = self.max_requests, self.requests
+        try:
+            yield self
+        finally:
+            self.max_requests = limit
 
     def tech(self, trim: dict | None) -> dict | None:
         """Технические характеристики комплектации (trim — из результата power()) со страницы
