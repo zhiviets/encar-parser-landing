@@ -886,6 +886,14 @@
 "g_2019_16006"
 ]
 },
+"audi/s4/south-korea": {
+"day": 739886,
+"gens": []
+},
+"audi/s4/usa": {
+"day": 739886,
+"gens": []
+},
 "audi/s5/europe": {
 "day": 739883,
 "gens": [
@@ -1404,6 +1412,18 @@
 "g_2021_23399"
 ]
 },
+"bmw/m2/europe": {
+"day": 739886,
+"gens": [
+"g_201601_4006",
+"g_201706_7616",
+"g_202211_16661"
+]
+},
+"bmw/m2/south-korea": {
+"day": 739886,
+"gens": []
+},
 "bmw/m3/europe": {
 "day": 739884,
 "gens": [
@@ -1688,6 +1708,10 @@
 "day": 739885,
 "gens": []
 },
+"chevrolet/corvette/south-korea": {
+"day": 739886,
+"gens": []
+},
 "chevrolet/cruze/south-korea": {
 "day": 739885,
 "gens": []
@@ -1761,6 +1785,10 @@
 "g_202403_23646",
 "g_2024_23645"
 ]
+},
+"chevrolet/traverse/south-korea": {
+"day": 739886,
+"gens": []
 },
 "chevrolet/trax/south-korea": {
 "day": 739883,
@@ -2657,6 +2685,10 @@
 "g_2023_17964"
 ]
 },
+"honda/odyssey/south-korea": {
+"day": 739886,
+"gens": []
+},
 "honda/odyssey/usa": {
 "day": 739883,
 "gens": [
@@ -3402,6 +3434,13 @@
 "g_201707_24005",
 "g_2017_16187",
 "g_202008_24006"
+]
+},
+"kia/tasman/south-korea": {
+"day": 739886,
+"gens": [
+"g_202412_21487",
+"g_2024_23593"
 ]
 },
 "lamborghini/huracan/europe": {
@@ -4228,6 +4267,26 @@
 "g_202601_24083"
 ]
 },
+"mercedes-benz/sl-class/south-korea": {
+"day": 739886,
+"gens": [
+"g_196712_9426",
+"g_197103_9427",
+"g_198909_9434",
+"g_199804_9150",
+"g_200107_9171",
+"g_200603_9170",
+"g_2006_23883",
+"g_200803_9172",
+"g_2008_23884",
+"g_201203_1837",
+"g_2012_23885",
+"g_201604_4110",
+"g_2016_23886",
+"g_202111_14338",
+"g_2021_23887"
+]
+},
 "mercedes-benz/slc-class/south-korea": {
 "day": 739883,
 "gens": [
@@ -4260,6 +4319,10 @@
 "gens": [
 "g_2024_20459"
 ]
+},
+"mini/aceman/south-korea": {
+"day": 739886,
+"gens": []
 },
 "mini/cabrio/europe": {
 "day": 739884,
@@ -4843,6 +4906,40 @@
 "day": 739884,
 "gens": [
 "g_202406_22477"
+]
+},
+"renault/scenic/europe": {
+"day": 739886,
+"gens": [
+"g_199611_10229",
+"g_199903_3954",
+"g_1999_9128",
+"g_200303_3953",
+"g_2003_9131",
+"g_200609_4503",
+"g_2006_10221",
+"g_200904_1239",
+"g_2009_10226",
+"g_201201_4504",
+"g_2012_10230",
+"g_201304_4505",
+"g_2013_10236",
+"g_201612_13404",
+"g_2022_24447"
+]
+},
+"renault/scenic/south-korea": {
+"day": 739886,
+"gens": [
+"g_199611_10229",
+"g_199903_3954",
+"g_200303_3953",
+"g_200609_4503",
+"g_200904_1239",
+"g_201201_4504",
+"g_201304_4505",
+"g_201612_13404",
+"g_2022_24446"
 ]
 },
 "renault_samsung/qm3/south-korea": {
@@ -54981,6 +55078,7 @@
 ]
 }
 ],
+"key": "bmw/5-series/g_201001_4652",
 "market": "Россия",
 "to": 201308
 },
@@ -55387,6 +55485,7 @@
 ]
 }
 ],
+"key": "bmw/5-series/g_2010_23539",
 "market": "Южная Корея",
 "to": 201310
 },
@@ -60564,6 +60663,7 @@
 "drive": "rwd",
 "engine": "B48B20",
 "fuel": "бензин",
+"gen_key": "bmw/5-series/g_2020_23544",
 "hp": 184,
 "hp_total": null,
 "hybrid": "параллельный подзаряжаемый (phev) гибрид",
@@ -60648,6 +60748,7 @@
 "drive": "4wd",
 "engine": "B48B20",
 "fuel": "бензин",
+"gen_key": "bmw/5-series/g_2020_23544",
 "hp": 252,
 "hp_total": null,
 "hybrid": null,
@@ -63774,6 +63875,7 @@
 "drive": "4wd",
 "engine": "B57D30O2",
 "fuel": "дизель",
+"gen_key": "bmw/7-series/g_2019_23636",
 "hp": 286,
 "hp_total": null,
 "hybrid": null,
@@ -63869,6 +63971,7 @@
 "drive": "4wd",
 "engine": "B57D30T2",
 "fuel": "дизель",
+"gen_key": "bmw/7-series/g_2019_23636",
 "hp": 340,
 "hp_total": null,
 "hybrid": null,
@@ -65279,6 +65382,254 @@
 }
 ],
 "market": "Южная Корея",
+"to": null
+},
+"bmw/m2/g_201601_4006": {
+"from": 201510,
+"groups": [
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "N55B30T0",
+"fuel": "бензин",
+"hp": 370,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 370 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201601,
+"id": "91683",
+"name": "M2 MT",
+"to": 201705
+}
+]
+},
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "N55B30T0",
+"fuel": "бензин",
+"hp": 370,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 370 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201601,
+"id": "91684",
+"name": "M2 AMT",
+"to": 201705
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/m2/g_201601_4006",
+"market": "Россия",
+"to": 201705
+},
+"bmw/m2/g_201706_7616": {
+"from": 201705,
+"groups": [
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "N55B30T0",
+"fuel": "бензин",
+"hp": 370,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 370 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201706,
+"id": "185092",
+"name": "M2 MT",
+"to": 201902
+}
+]
+},
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "N55B30T0",
+"fuel": "бензин",
+"hp": 370,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 370 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201706,
+"id": "185093",
+"name": "M2 AMT",
+"to": 201902
+}
+]
+},
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "S55B30T0",
+"fuel": "бензин",
+"hp": 410,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 410 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201807,
+"id": "204505",
+"name": "M2 MT Competition",
+"to": 202110
+}
+]
+},
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "S55B30T0",
+"fuel": "бензин",
+"hp": 410,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 410 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201807,
+"id": "204502",
+"name": "M2 AMT Competition",
+"to": 202110
+}
+]
+},
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "S55B30T0",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 450 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201911,
+"id": "267120",
+"name": "M2 MT CS",
+"to": 202110
+}
+]
+},
+{
+"body": [
+"F87"
+],
+"drive": "rwd",
+"engine": "S55B30T0",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 450 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201911,
+"id": "267121",
+"name": "M2 AMT CS",
+"to": 202110
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/m2/g_201706_7616",
+"market": "Россия",
+"to": 202110
+},
+"bmw/m2/g_202211_16661": {
+"from": 202210,
+"groups": [
+{
+"body": [
+"G87"
+],
+"drive": "rwd",
+"engine": "S58B30T0",
+"fuel": "бензин",
+"hp": 460,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 460 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 202211,
+"id": "449007",
+"name": "3.0 MT M2",
+"to": null
+}
+]
+},
+{
+"body": [
+"G87"
+],
+"drive": "rwd",
+"engine": "S58B30T0",
+"fuel": "бензин",
+"gen_key": "bmw/m2/g_202211_16661",
+"hp": 460,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 460 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202211,
+"id": "449008",
+"name": "3.0 AT M2",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/m2/g_202211_16661",
+"market": "Европа",
 "to": null
 },
 "bmw/m3/g_201312_16607": {
@@ -113979,6 +114330,7 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_201108_8680",
 "market": "США",
 "to": 201707
 },
@@ -114120,6 +114472,7 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_2011_4971",
 "market": "Япония",
 "to": 201310
 },
@@ -114193,6 +114546,7 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_201311_9460",
 "market": "США",
 "to": 202005
 },
@@ -114645,6 +114999,7 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_2013_2070",
 "market": "Япония",
 "to": 201710
 },
@@ -114667,32 +115022,39 @@
 "trims": [
 {
 "from": 202006,
+"id": "396367",
 "name": "3.5 AT LX",
 "to": 202407
 },
 {
 "from": 202006,
+"id": "396368",
 "name": "3.5 AT EX",
 "to": 202407
 },
 {
 "from": 202006,
+"id": "396369",
 "name": "3.5 AT EX-L",
 "to": 202407
 },
 {
 "from": 202006,
+"id": "396370",
 "name": "3.5 AT Touring",
 "to": 202407
 },
 {
 "from": 202006,
+"id": "396371",
 "name": "3.5 AT Elite",
 "to": 202407
 }
 ]
 }
 ],
+"ids": true,
+"key": "honda/odyssey/g_201711_14313",
 "market": "США",
 "to": 202407
 },
@@ -114924,6 +115286,7 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_2017_7876",
 "market": "Япония",
 "to": 202010
 },
@@ -115034,6 +115397,7 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_2020_12459",
 "market": "Япония",
 "to": 202112
 },
@@ -115072,7 +115436,57 @@
 ]
 }
 ],
+"key": "honda/odyssey/g_2023_17964",
 "market": "Япония",
+"to": null
+},
+"honda/odyssey/g_2024_23304": {
+"from": 202407,
+"groups": [
+{
+"body": [
+"RL6"
+],
+"drive": "fwd",
+"engine": "J35Y6",
+"fuel": "бензин",
+"hp": 280,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.5,
+"text": "3.5 л, 280 л.с., бензин, АКПП, передний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202407,
+"id": "540576",
+"name": "3.5 AT EX-L",
+"to": null
+},
+{
+"from": 202407,
+"id": "540578",
+"name": "3.5 AT Sport-L",
+"to": null
+},
+{
+"from": 202407,
+"id": "540581",
+"name": "3.5 AT Touring",
+"to": null
+},
+{
+"from": 202407,
+"id": "540582",
+"name": "3.5 AT Elite",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "honda/odyssey/g_2024_23304",
+"market": "США",
 "to": null
 },
 "honda/pilot/g_201506_4745": {
@@ -161591,6 +162005,175 @@
 "market": "Южная Корея",
 "to": 202009
 },
+"kia/tasman/g_202412_21487": {
+"from": 202410,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "D4HF",
+"fuel": "дизель",
+"hp": 207,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.2,
+"text": "2.2 л, 207 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 202412,
+"id": "516278",
+"name": "2.2d T-GDi MT Crew Cab",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "D4HF",
+"fuel": "дизель",
+"hp": 207,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.2,
+"text": "2.2 л, 207 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202412,
+"id": "516279",
+"name": "2.2d T-GDi AT Crew Cab",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "G4KR",
+"fuel": "бензин",
+"hp": 277,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 277 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 202412,
+"id": "516276",
+"name": "2.5 T-GDi MT Crew Cab",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "G4KR",
+"fuel": "бензин",
+"hp": 277,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 277 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202412,
+"id": "516277",
+"name": "2.5 T-GDi AT Crew Cab",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "kia/tasman/g_202412_21487",
+"market": "ОАЭ",
+"to": null
+},
+"kia/tasman/g_2024_23593": {
+"from": 202406,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "G4KR",
+"fuel": "бензин",
+"gen_key": "kia/tasman/g_2024_23593",
+"hp": 281,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 281 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202502,
+"id": "542870",
+"name": "2.5 T-GDI AT 4WD Dynamic",
+"to": null
+},
+{
+"from": 202502,
+"id": "542872",
+"name": "2.5 T-GDI AT 4WD Adventure",
+"to": null
+},
+{
+"from": 202502,
+"id": "542874",
+"name": "2.5 T-GDI AT 4WD Extreme",
+"to": null
+},
+{
+"from": 202502,
+"id": "542875",
+"name": "2.5 T-GDI AT 4WD X-Pro",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "G4KR",
+"fuel": "бензин",
+"hp": 281,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 281 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202502,
+"id": "542867",
+"name": "2.5 T-GDI AT 2WD Dynamic",
+"to": null
+},
+{
+"from": 202502,
+"id": "542871",
+"name": "2.5 T-GDI AT 2WD Adventure",
+"to": null
+},
+{
+"from": 202502,
+"id": "542873",
+"name": "2.5 T-GDI AT 2WD Extreme",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "kia/tasman/g_2024_23593",
+"market": "Южная Корея",
+"to": null
+},
 "lamborghini/huracan/g_201404_2216": {
 "from": 201404,
 "groups": [
@@ -199776,6 +200359,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/eqa/g_202102_13969",
 "market": "Европа",
 "to": 202401
 },
@@ -199798,17 +200382,21 @@
 "trims": [
 {
 "from": 202203,
+"id": "543761",
 "name": "EQA 250",
 "to": 202402
 },
 {
 "from": 202203,
+"id": "543763",
 "name": "EQA 250 AMG Line",
 "to": 202402
 }
 ]
 }
 ],
+"ids": true,
+"key": "mercedes-benz/eqa/g_2021_23651",
 "market": "Южная Корея",
 "to": 202402
 },
@@ -199847,6 +200435,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/eqa/g_2023_23652",
 "market": "Южная Корея",
 "to": null
 },
@@ -214581,6 +215170,639 @@
 "market": "Южная Корея",
 "to": null
 },
+"mercedes-benz/sl-class/g_201203_1837": {
+"from": 201203,
+"groups": [
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 276 DE 30 AL",
+"fuel": "бензин",
+"hp": 333,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 333 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201407,
+"id": "76604",
+"name": "SL 400 AT",
+"to": 201601
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 276 DE 35",
+"fuel": "бензин",
+"hp": 306,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.5,
+"text": "3.5 л, 306 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "70041",
+"name": "SL 350 AT",
+"to": 201408
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 278 DE 46 AL",
+"fuel": "бензин",
+"hp": 435,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.7,
+"text": "4.7 л, 435 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "70040",
+"name": "SL 500 AT",
+"to": 201601
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 537,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 537 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201207,
+"id": "70043",
+"name": "SL 63 AMG DSG",
+"to": 201601
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 279 E 60 AL",
+"fuel": "бензин",
+"hp": 630,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.0,
+"text": "6.0 л, 630 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "70042",
+"name": "SL 65 AMG AT",
+"to": 201601
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/sl-class/g_201203_1837",
+"market": "Россия",
+"to": 201603
+},
+"mercedes-benz/sl-class/g_2012_23885": {
+"from": 201203,
+"groups": [
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 276 DE 30 AL",
+"fuel": "бензин",
+"hp": 333,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 333 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201406,
+"id": "545982",
+"name": "SL 400 AT",
+"to": 201704
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 276 DE 35",
+"fuel": "бензин",
+"hp": 306,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.5,
+"text": "3.5 л, 306 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201205,
+"id": "545977",
+"name": "SL 350 AT",
+"to": 201405
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 278 DE 46 AL",
+"fuel": "бензин",
+"hp": 435,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.7,
+"text": "4.7 л, 435 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201205,
+"id": "545978",
+"name": "SL 500 AT",
+"to": 201505
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 537,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 537 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201205,
+"id": "545979",
+"name": "SL 63 AMG DSG",
+"to": 201407
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 564,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 564 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201205,
+"id": "545980",
+"name": "SL 63 AMG Performance DSG",
+"to": 201407
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 585,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 585 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201406,
+"id": "545979",
+"name": "SL 63 AMG DSG",
+"to": 201704
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 279 E 60 AL",
+"fuel": "бензин",
+"hp": 630,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.0,
+"text": "6.0 л, 630 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201209,
+"id": "545981",
+"name": "SL 65 AMG AT",
+"to": 201309
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/sl-class/g_2012_23885",
+"market": "Южная Корея",
+"to": 201704
+},
+"mercedes-benz/sl-class/g_201604_4110": {
+"from": 201604,
+"groups": [
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 276 DE 30 AL",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 367 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201604,
+"id": "94126",
+"name": "SL 400 AT",
+"to": 201906
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 278 DE 46 AL",
+"fuel": "бензин",
+"hp": 455,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.7,
+"text": "4.7 л, 455 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201604,
+"id": "94213",
+"name": "SL 500 AT",
+"to": 201906
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 571,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 571 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201903,
+"id": "242834",
+"name": "SL 63 AMG DSG",
+"to": 201906
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 157 DE 55 AL",
+"fuel": "бензин",
+"hp": 585,
+"hp_total": null,
+"hybrid": null,
+"liters": 5.5,
+"text": "5.5 л, 585 л.с., бензин, робот, задний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201604,
+"id": "242834",
+"name": "SL 63 AMG DSG",
+"to": 201902
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 279 E 60 AL",
+"fuel": "бензин",
+"hp": 630,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.0,
+"text": "6.0 л, 630 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201604,
+"id": "94215",
+"name": "SL 65 AMG AT",
+"to": 201808
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/sl-class/g_201604_4110",
+"market": "Россия",
+"to": 201906
+},
+"mercedes-benz/sl-class/g_2016_23886": {
+"from": 201604,
+"groups": [
+{
+"body": [],
+"drive": "rwd",
+"engine": "M 276 DE 30 AL",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 367 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201704,
+"id": "545984",
+"name": "SL 400 AT",
+"to": 201807
+},
+{
+"from": 201808,
+"id": "545984",
+"name": "SL 400 AT",
+"to": 202007
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/sl-class/g_2016_23886",
+"market": "Южная Корея",
+"to": 202007
+},
+"mercedes-benz/sl-class/g_202111_14338": {
+"from": 202110,
+"groups": [
+{
+"body": [
+"R232"
+],
+"drive": "rwd",
+"engine": "M 139 DE 20 AL",
+"fuel": "бензин",
+"hp": 381,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 381 л.с., мягкий гибрид, 14 л.с., АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202205,
+"id": "444928",
+"name": "AMG SL 43 MCT Entry",
+"to": 202405
+},
+{
+"from": 202205,
+"id": "444931",
+"name": "AMG SL 43 MCT Premium",
+"to": 202405
+},
+{
+"from": 202205,
+"id": "444932",
+"name": "AMG SL 43 MCT Premium Plus",
+"to": 202405
+}
+]
+},
+{
+"body": [
+"R232"
+],
+"drive": "rwd",
+"engine": "M 139 DE 20 AL",
+"fuel": "бензин",
+"hp": 421,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 421 л.с., мягкий гибрид, 14 л.с., АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202405,
+"id": "444932",
+"name": "AMG SL 43 MCT Premium Plus",
+"to": null
+}
+]
+},
+{
+"body": [
+"R232"
+],
+"drive": "4wd",
+"engine": "M 177 DE 40 LA",
+"fuel": "бензин",
+"hp": 476,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 476 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202111,
+"id": "444930",
+"name": "AMG SL 55 MCT 4MATIC+ Premium",
+"to": 202207
+},
+{
+"from": 202111,
+"id": "444934",
+"name": "AMG SL 55 MCT 4MATIC+ Premium Plus",
+"to": null
+}
+]
+},
+{
+"body": [
+"R232"
+],
+"drive": "4wd",
+"engine": "M 177 DE 40 LA",
+"fuel": "бензин",
+"hp": 585,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 585 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202111,
+"id": "444929",
+"name": "AMG SL 63 MCT 4MATIC+ Premium",
+"to": 202207
+},
+{
+"from": 202111,
+"id": "444933",
+"name": "AMG SL 63 MCT 4MATIC+ Premium Plus",
+"to": null
+},
+{
+"from": 202412,
+"id": "527215",
+"name": "Mercedes-Maybach SL 680 Monogram Series Red Ambience",
+"to": null
+},
+{
+"from": 202412,
+"id": "558560",
+"name": "Mercedes-Maybach SL 680 Monogram Series White Ambience",
+"to": null
+}
+]
+},
+{
+"body": [
+"R232"
+],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 612,
+"hp_total": null,
+"hybrid": "параллельный подзаряжаемый (phev) гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 612 л.с., параллельный подзаряжаемый (PHEV) гибрид, 204 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202403,
+"id": "527214",
+"name": "AMG SL 63 S E Performance",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/sl-class/g_202111_14338",
+"market": "Европа",
+"to": null
+},
+"mercedes-benz/sl-class/g_2021_23887": {
+"from": 202110,
+"groups": [
+{
+"body": [
+"R232"
+],
+"drive": "rwd",
+"engine": "M 139 DE 20 AL",
+"fuel": "бензин",
+"hp": 421,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 421 л.с., мягкий гибрид, 14 л.с., АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202405,
+"id": "545986",
+"name": "AMG SL 43 MCT",
+"to": null
+}
+]
+},
+{
+"body": [
+"R232"
+],
+"drive": "4wd",
+"engine": "M 177 DE 40 LA",
+"fuel": "бензин",
+"gen_key": "mercedes-benz/sl-class/g_2021_23887",
+"hp": 585,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.0,
+"text": "4.0 л, 585 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202111,
+"id": "545987",
+"name": "AMG SL 63 MCT 4MATIC+",
+"to": null
+}
+]
+},
+{
+"body": [
+"R232"
+],
+"drive": "4wd",
+"engine": "M 177 DE 40 AL",
+"fuel": "бензин",
+"hp": 585,
+"hp_total": null,
+"hybrid": "параллельный подзаряжаемый (phev) гибрид",
+"liters": 4.0,
+"text": "4.0 л, бензин, 585 л.с., параллельный подзаряжаемый (PHEV) гибрид, 204 л.с., АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202403,
+"id": "545988",
+"name": "AMG SL 63 S E Performance",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/sl-class/g_2021_23887",
+"market": "Южная Корея",
+"to": null
+},
 "mercedes-benz/slc-class/g_201602_4121": {
 "from": 201601,
 "groups": [
@@ -215579,6 +216801,57 @@
 ],
 "market": "Южная Корея",
 "to": 201408
+},
+"mini/aceman/g_2024_20459": {
+"from": 202404,
+"groups": [
+{
+"body": [],
+"drive": "fwd",
+"engine": null,
+"fuel": "electric",
+"gen_key": "mini/aceman/g_2024_20459",
+"hp": 181,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "181 л.с., электричество, редуктор, передний привод",
+"trans": "reducer",
+"trims": [
+{
+"from": 202404,
+"id": "498005",
+"name": "40.7 kWh Aceman E",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "fwd",
+"engine": null,
+"fuel": "electric",
+"gen_key": "mini/aceman/g_2024_20459",
+"hp": 215,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "215 л.с., электричество, редуктор, передний привод",
+"trans": "reducer",
+"trims": [
+{
+"from": 202404,
+"id": "498006",
+"name": "54.2 kWh Aceman SE",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mini/aceman/g_2024_20459",
+"market": "Европа",
+"to": null
 },
 "mini/cabrio/g_201003_2257": {
 "from": 201003,
@@ -251090,6 +252363,1329 @@
 "ids": true,
 "key": "renault/grand_koleos/g_202406_22477",
 "market": "Южная Корея",
+"to": null
+},
+"renault/scenic/g_201304_4505": {
+"from": 201306,
+"groups": [
+{
+"body": [
+"JZ1B"
+],
+"drive": "fwd",
+"engine": "K4M",
+"fuel": "бензин",
+"hp": 110,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 110 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201306,
+"id": "115126",
+"name": "1.6 MT Authentique",
+"to": 201507
+},
+{
+"from": 201306,
+"id": "115125",
+"name": "1.6 MT Expression",
+"to": 201507
+}
+]
+},
+{
+"body": [
+"JZ1P"
+],
+"drive": "fwd",
+"engine": "M4R",
+"fuel": "бензин",
+"hp": 138,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 138 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201306,
+"id": "115124",
+"name": "2.0 CVT Expression",
+"to": 201507
+}
+]
+}
+],
+"ids": true,
+"key": "renault/scenic/g_201304_4505",
+"market": "Россия",
+"to": 201507
+},
+"renault/scenic/g_2013_10236": {
+"from": 201304,
+"groups": [
+{
+"body": [
+"JZ"
+],
+"drive": "fwd",
+"engine": "H5F 400",
+"fuel": "бензин",
+"hp": 115,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.2,
+"text": "1.2 л, 115 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "261779",
+"name": "1.2 TCe ENERGY 115 MT Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261780",
+"name": "1.2 TCe ENERGY 115 MT Xmod Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261775",
+"name": "1.2 TCe ENERGY 115 MT Dynamique",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261776",
+"name": "1.2 TCe ENERGY 115 MT Bose Edition",
+"to": 201504
+},
+{
+"from": 201505,
+"id": "261823",
+"name": "1.2 TCe ENERGY 115 MT Authentique",
+"to": 201610
+},
+{
+"from": 201505,
+"id": "261824",
+"name": "1.2 TCe ENERGY 115 MT Limited",
+"to": 201610
+},
+{
+"from": 201505,
+"id": "261776",
+"name": "1.2 TCe ENERGY 115 MT Bose Edition",
+"to": 201610
+}
+]
+},
+{
+"body": [
+"JZ16"
+],
+"drive": "fwd",
+"engine": "H5F 404",
+"fuel": "бензин",
+"hp": 132,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.2,
+"text": "1.2 л, 132 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "261784",
+"name": "1.2 TCe ENERGY 130 MT Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261785",
+"name": "1.2 TCe ENERGY 130 MT Bose Edition",
+"to": 201504
+},
+{
+"from": 201505,
+"id": "261826",
+"name": "1.2 TCe ENERGY 130 MT Limited",
+"to": 201610
+},
+{
+"from": 201505,
+"id": "261785",
+"name": "1.2 TCe ENERGY 130 MT Bose Edition",
+"to": 201610
+}
+]
+},
+{
+"body": [
+"JZ0D",
+"JZ1G"
+],
+"drive": "fwd",
+"engine": "K9K 636; K9K 837; K9K 656; K9K 836; K9K 657",
+"fuel": "дизель",
+"hp": 110,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.5,
+"text": "1.5 л, 110 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "261793",
+"name": "1.5 dCi 110 MT Expression",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261788",
+"name": "1.5 dCi ENERGY 110 MT Expression",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261794",
+"name": "1.5 dCi 110 MT Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261795",
+"name": "1.5 dCi 110 MT Xmod Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261790",
+"name": "1.5 dCi ENERGY 110 MT Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261792",
+"name": "1.5 dCi ENERGY 110 MT Xmod Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261789",
+"name": "1.5 dCi ENERGY 110 MT Dynamique",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261791",
+"name": "1.5 dCi ENERGY 110 MT Bose Edition",
+"to": 201504
+},
+{
+"from": 201505,
+"id": "261830",
+"name": "1.5 dCi ENERGY 110 ECO2 MT Limited",
+"to": 201610
+},
+{
+"from": 201505,
+"id": "261831",
+"name": "1.5 dCi ENERGY 110 ECO2 MT Bose Edition",
+"to": 201610
+}
+]
+},
+{
+"body": [
+"JZ0D",
+"JZ1G"
+],
+"drive": "fwd",
+"engine": "K9K 636; K9K 837; K9K 656; K9K 836; K9K 657",
+"fuel": "дизель",
+"hp": 110,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.5,
+"text": "1.5 л, 110 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201304,
+"id": "261797",
+"name": "1.5 dCi 110 EDC Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261798",
+"name": "1.5 dCi 110 EDC Bose Edition",
+"to": 201504
+},
+{
+"from": 201505,
+"id": "261832",
+"name": "1.5 dCi 110 EDC Limited",
+"to": 201610
+},
+{
+"from": 201505,
+"id": "261798",
+"name": "1.5 dCi 110 EDC Bose Edition",
+"to": 201610
+}
+]
+},
+{
+"body": [
+"JZ0U"
+],
+"drive": "fwd",
+"engine": "K4M 858",
+"fuel": "бензин",
+"hp": 110,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 110 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "261772",
+"name": "1.6 16V 110 MT Authentique",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261773",
+"name": "1.6 16V 110 MT Expression",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261774",
+"name": "1.6 16V 110 MT Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261777",
+"name": "1.6 16V 110 MT Xmod Paris",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"JZ00",
+"JZ12"
+],
+"drive": "fwd",
+"engine": "R9M 402; R9M 404",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "261807",
+"name": "1.6 dCi ENERGY 130 EURO 5 MT Xmod Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261808",
+"name": "1.6 dCi ENERGY 130 EURO 6 MT Xmod Paris",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261805",
+"name": "1.6 dCi ENERGY 130 EURO 5 MT Bose Edition",
+"to": 201504
+},
+{
+"from": 201304,
+"id": "261806",
+"name": "1.6 dCi ENERGY 130 EURO 6 MT Bose Edition",
+"to": 201504
+},
+{
+"from": 201505,
+"id": "261834",
+"name": "1.6 dCi ENERGY 130 ECO2 MT Bose Edition",
+"to": 201610
+}
+]
+},
+{
+"body": [
+"JZ0G"
+],
+"drive": "fwd",
+"engine": "M4R 710; M4R 711",
+"fuel": "бензин",
+"hp": 140,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 140 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201304,
+"id": "261786",
+"name": "2.0 16V 140 CVT Bose Edition",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"JZ0Y"
+],
+"drive": "fwd",
+"engine": "M9R 615",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, АКПП, передний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201304,
+"id": "261809",
+"name": "2.0 dCi 150 AT Bose Edition",
+"to": 201504
+}
+]
+},
+{
+"body": [
+"JZ0L"
+],
+"drive": "fwd",
+"engine": "M9R 610",
+"fuel": "дизель",
+"hp": 160,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 160 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201304,
+"id": "261810",
+"name": "2.0 dCi 160 MT Bose Edition",
+"to": 201504
+}
+]
+}
+],
+"ids": true,
+"key": "renault/scenic/g_2013_10236",
+"market": "Европа",
+"to": 201610
+},
+"renault/scenic/g_201612_13404": {
+"from": 201609,
+"groups": [
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ft",
+"fuel": "бензин",
+"hp": 115,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.2,
+"text": "1.2 л, 115 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201612,
+"id": "439053",
+"name": "1.2 TCe MT Life",
+"to": 201711
+},
+{
+"from": 201612,
+"id": "439074",
+"name": "1.2 TCe MT Experience",
+"to": 201711
+},
+{
+"from": 201612,
+"id": "439419",
+"name": "1.2 TCe MT Intens",
+"to": 201711
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ft",
+"fuel": "бензин",
+"hp": 132,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.2,
+"text": "1.2 л, 132 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201612,
+"id": "439419",
+"name": "1.2 TCe MT Intens",
+"to": 201711
+},
+{
+"from": 201612,
+"id": "439471",
+"name": "1.2 TCe MT Bose Edition",
+"to": 201711
+},
+{
+"from": 201706,
+"id": "439534",
+"name": "1.2 TCe MT Initiale Paris",
+"to": 201711
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 115,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 115 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201712,
+"id": "439573",
+"name": "1.3 TCe MT Experience",
+"to": 201803
+},
+{
+"from": 201712,
+"id": "439574",
+"name": "1.3 TCe MT Intens",
+"to": 201803
+},
+{
+"from": 201804,
+"id": "441374",
+"name": "1.3 TCe MT Limited",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "439574",
+"name": "1.3 TCe MT Intens",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "441617",
+"name": "1.3 TCe MT ZEN",
+"to": 202205
+},
+{
+"from": 202010,
+"id": "441640",
+"name": "1.3 TCe MT Business Edition",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 140,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 140 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201712,
+"id": "439568",
+"name": "1.3 TCe MT Bose Edition",
+"to": 202010
+},
+{
+"from": 201712,
+"id": "439573",
+"name": "1.3 TCe MT Experience",
+"to": 201803
+},
+{
+"from": 201712,
+"id": "439574",
+"name": "1.3 TCe MT Intens",
+"to": 201803
+},
+{
+"from": 201712,
+"id": "441640",
+"name": "1.3 TCe MT Business Edition",
+"to": 202205
+},
+{
+"from": 201804,
+"id": "441374",
+"name": "1.3 TCe MT Limited",
+"to": 202010
+},
+{
+"from": 202010,
+"id": "441617",
+"name": "1.3 TCe MT ZEN",
+"to": 202205
+},
+{
+"from": 202010,
+"id": "439574",
+"name": "1.3 TCe MT Intens",
+"to": 202205
+},
+{
+"from": 202010,
+"id": "441639",
+"name": "1.3 TCe MT Black Edition",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 140,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 140 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201712,
+"id": "439576",
+"name": "1.3 TCe DCT Experience",
+"to": 201803
+},
+{
+"from": 201712,
+"id": "439575",
+"name": "1.3 TCe DCT Intens",
+"to": 201803
+},
+{
+"from": 201712,
+"id": "439577",
+"name": "1.3 TCe DCT Bose Edition",
+"to": 202010
+},
+{
+"from": 201712,
+"id": "439588",
+"name": "1.3 TCe DCT Business Edition",
+"to": 202205
+},
+{
+"from": 201804,
+"id": "441375",
+"name": "1.3 TCe DCT Limited",
+"to": 201912
+},
+{
+"from": 202010,
+"id": "439575",
+"name": "1.3 TCe DCT Intens",
+"to": 202205
+},
+{
+"from": 202010,
+"id": "441642",
+"name": "1.3 TCe DCT Black Edition",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 159,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 159 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201903,
+"id": "441374",
+"name": "1.3 TCe MT Limited",
+"to": 201912
+},
+{
+"from": 201903,
+"id": "439568",
+"name": "1.3 TCe MT Bose Edition",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "441639",
+"name": "1.3 TCe MT Black Edition",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 159,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 159 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201903,
+"id": "441375",
+"name": "1.3 TCe DCT Limited",
+"to": 201912
+},
+{
+"from": 201903,
+"id": "439588",
+"name": "1.3 TCe DCT Business Edition",
+"to": 202010
+},
+{
+"from": 201903,
+"id": "439577",
+"name": "1.3 TCe DCT Bose Edition",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "441642",
+"name": "1.3 TCe DCT Black Edition",
+"to": 202205
+},
+{
+"from": 202001,
+"id": "441621",
+"name": "1.3 TCe DCT Initiale Paris",
+"to": 202010
+},
+{
+"from": 202010,
+"id": "439575",
+"name": "1.3 TCe DCT Intens",
+"to": 202205
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 160,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 160 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201809,
+"id": "441374",
+"name": "1.3 TCe MT Limited",
+"to": 201902
+},
+{
+"from": 201809,
+"id": "439568",
+"name": "1.3 TCe MT Bose Edition",
+"to": 201902
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 160,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 160 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201809,
+"id": "441375",
+"name": "1.3 TCe DCT Limited",
+"to": 201902
+},
+{
+"from": 201809,
+"id": "439588",
+"name": "1.3 TCe DCT Business Edition",
+"to": 201902
+},
+{
+"from": 201809,
+"id": "439577",
+"name": "1.3 TCe DCT Bose Edition",
+"to": 201902
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 163 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201712,
+"id": "439568",
+"name": "1.3 TCe MT Bose Edition",
+"to": 201808
+},
+{
+"from": 201712,
+"id": "439570",
+"name": "1.3 TCe MT Initiale Paris",
+"to": 201803
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "H5Ht",
+"fuel": "бензин",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 163 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201712,
+"id": "439577",
+"name": "1.3 TCe DCT Bose Edition",
+"to": 201808
+},
+{
+"from": 201712,
+"id": "441621",
+"name": "1.3 TCe DCT Initiale Paris",
+"to": 201803
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "K9K846 / OM607DE15LA",
+"fuel": "дизель",
+"hp": 110,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.5,
+"text": "1.5 л, 110 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201612,
+"id": "439481",
+"name": "1.5 dCi MT Experience",
+"to": 201803
+},
+{
+"from": 201612,
+"id": "439495",
+"name": "1.5 dCi MT Intens",
+"to": 201705
+},
+{
+"from": 201712,
+"id": "439596",
+"name": "1.5 dCi MT Business Edition",
+"to": 201808
+},
+{
+"from": 201804,
+"id": "441376",
+"name": "1.5 dCi MT Limited",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "K9K846 / OM607DE15LA",
+"fuel": "дизель",
+"hp": 110,
+"hp_total": null,
+"hybrid": "мягкий гибрид",
+"liters": 1.5,
+"text": "1.5 л, дизель, 110 л.с., мягкий гибрид, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201703,
+"id": "439519",
+"name": "1.5 dCi Mild Hybrid MT Experience",
+"to": 201708
+},
+{
+"from": 201703,
+"id": "439520",
+"name": "1.5 dCi Mild Hybrid MT Intens",
+"to": 201803
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "K9K846 / OM607DE15LA",
+"fuel": "дизель",
+"hp": 110,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.5,
+"text": "1.5 л, 110 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201612,
+"id": "439482",
+"name": "1.5 dCi DCT Experience",
+"to": 201803
+},
+{
+"from": 201612,
+"id": "439496",
+"name": "1.5 dCi DCT Intens",
+"to": 201803
+},
+{
+"from": 201612,
+"id": "439498",
+"name": "1.5 dCi DCT Bose Edition",
+"to": 201808
+},
+{
+"from": 201712,
+"id": "439597",
+"name": "1.5 dCi DCT Business Edition",
+"to": 201808
+},
+{
+"from": 201804,
+"id": "441377",
+"name": "1.5 dCi DCT Limited",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201612,
+"id": "439497",
+"name": "1.6 dCi MT Intens",
+"to": 201803
+},
+{
+"from": 201612,
+"id": "439499",
+"name": "1.6 dCi MT Bose Edition",
+"to": 201808
+},
+{
+"from": 201706,
+"id": "439534",
+"name": "1.2 TCe MT Initiale Paris",
+"to": 201803
+},
+{
+"from": 201712,
+"id": "439604",
+"name": "1.6 dCi MT Business Edition",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 160,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 160 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201612,
+"id": "439500",
+"name": "1.6 dCi DCT Bose Edition",
+"to": 201808
+},
+{
+"from": 201706,
+"id": "439534",
+"name": "1.2 TCe MT Initiale Paris",
+"to": 201803
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 120,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 120 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201809,
+"id": "441448",
+"name": "1.7 DCi MT Limited",
+"to": 202010
+},
+{
+"from": 201809,
+"id": "441471",
+"name": "1.7 DCi MT Business Edition",
+"to": 202010
+},
+{
+"from": 201809,
+"id": "441458",
+"name": "1.7 DCi MT Bose Edition",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "441610",
+"name": "1.7 DCi MT Intens",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 120,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 120 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201903,
+"id": "441490",
+"name": "1.7 DCi DCT Limited",
+"to": 202010
+},
+{
+"from": 201903,
+"id": "441494",
+"name": "1.7 DCi DCT Business Edition",
+"to": 202010
+},
+{
+"from": 201903,
+"id": "441493",
+"name": "1.7 DCi DCT Bose Edition",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "441609",
+"name": "1.7 DCi DCT Intens",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201809,
+"id": "441448",
+"name": "1.7 DCi MT Limited",
+"to": 202010
+},
+{
+"from": 201809,
+"id": "441458",
+"name": "1.7 DCi MT Bose Edition",
+"to": 202010
+},
+{
+"from": 201903,
+"id": "441471",
+"name": "1.7 DCi MT Business Edition",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "441600",
+"name": "1.7 DCi MT Black Edition",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "441619",
+"name": "1.7 DCi MT Initiale Paris",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"JFA"
+],
+"drive": "fwd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 150 л.с., дизель, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 201903,
+"id": "441490",
+"name": "1.7 DCi DCT Limited",
+"to": 201912
+},
+{
+"from": 201903,
+"id": "441494",
+"name": "1.7 DCi DCT Business Edition",
+"to": 202010
+},
+{
+"from": 201903,
+"id": "441493",
+"name": "1.7 DCi DCT Bose Edition",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "441601",
+"name": "1.7 DCi DCT Black Edition",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "441620",
+"name": "1.7 DCi DCT Initiale Paris",
+"to": 202010
+}
+]
+}
+],
+"ids": true,
+"key": "renault/scenic/g_201612_13404",
+"market": "Европа",
+"to": 202205
+},
+"renault/scenic/g_2022_24446": {
+"from": 202205,
+"groups": [],
+"ids": true,
+"key": "renault/scenic/g_2022_24446",
+"market": "Южная Корея",
+"to": null
+},
+"renault/scenic/g_2022_24447": {
+"from": 202205,
+"groups": [
+{
+"body": [],
+"drive": "fwd",
+"engine": null,
+"fuel": "electric",
+"gen_key": "renault/scenic/g_2022_24447",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "170 л.с., электричество, редуктор, передний привод",
+"trans": "reducer",
+"trims": [
+{
+"from": 202404,
+"id": "553055",
+"name": "60 kWh Evolution 170 Comfort Range",
+"to": null
+},
+{
+"from": 202404,
+"id": "553064",
+"name": "60 kWh Techno 170 Comfort Range",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "fwd",
+"engine": null,
+"fuel": "electric",
+"gen_key": "renault/scenic/g_2022_24447",
+"hp": 218,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "218 л.с., электричество, редуктор, передний привод",
+"trans": "reducer",
+"trims": [
+{
+"from": 202404,
+"id": "553065",
+"name": "87 kWh Techno 220 Long Range",
+"to": null
+},
+{
+"from": 202404,
+"id": "553069",
+"name": "87 kWh Espirit Alpine 220 Long Range",
+"to": null
+},
+{
+"from": 202404,
+"id": "553070",
+"name": "87 kWh Iconic 220 Long Range",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "renault/scenic/g_2022_24447",
+"market": "Европа",
 "to": null
 },
 "renault_samsung/qm3/g_2013_15736": {
@@ -313902,6 +316498,7 @@
 "41043280": 739885,
 "41046969": 739884,
 "41048607": 739885,
+"41064668": 739886,
 "41068921": 739884,
 "41077709": 739884,
 "41080346": 739884,
@@ -313914,6 +316511,7 @@
 "41237450": 739885,
 "41242780": 739884,
 "41243275": 739884,
+"41258669": 739886,
 "41261656": 739885,
 "41275416": 739884,
 "41285444": 739884,
@@ -313955,6 +316553,7 @@
 "41623744": 739884,
 "41635019": 739885,
 "41650504": 739885,
+"41656497": 739886,
 "41660990": 739885,
 "41662027": 739885,
 "41675586": 739884,
@@ -313976,6 +316575,7 @@
 "41759933": 739885,
 "41769003": 739884,
 "41770924": 739885,
+"41775613": 739886,
 "41801034": 739885,
 "41811062": 739884,
 "41811100": 739885,
@@ -314020,6 +316620,7 @@
 "42009162": 739884,
 "42019160": 739884,
 "42024790": 739884,
+"42032873": 739886,
 "42047021": 739885,
 "42049349": 739884,
 "42056071": 739884,
@@ -314028,6 +316629,7 @@
 "42056909": 739884,
 "42058731": 739885,
 "42062969": 739884,
+"42066928": 739886,
 "42079900": 739884,
 "42080788": 739885,
 "42083345": 739885,
@@ -314099,6 +316701,7 @@
 "42249013": 739884,
 "42249675": 739884,
 "42250069": 739884,
+"42253392": 739886,
 "42254639": 739884,
 "42261866": 739884,
 "42262378": 739884,
@@ -314210,6 +316813,7 @@
 "42479842": 739884,
 "42481019": 739884,
 "42481417": 739884,
+"42481914": 739886,
 "42483019": 739884,
 "42484810": 739884,
 "42486129": 739885,
@@ -314285,6 +316889,7 @@
 "42573906": 739884,
 "42574064": 739884,
 "42576971": 739884,
+"42578033": 739886,
 "42578048": 739885,
 "42578672": 739884,
 "42581639": 739884,
@@ -314314,6 +316919,7 @@
 "42606329": 739884,
 "42606966": 739884,
 "42608196": 739884,
+"42610064": 739886,
 "42611077": 739885,
 "42611221": 739884,
 "42611438": 739885,
@@ -314334,6 +316940,8 @@
 "42624118": 739884,
 "42624121": 739884,
 "42625319": 739884,
+"42627289": 739886,
+"42627290": 739886,
 "42627572": 739885,
 "42628984": 739885,
 "42628992": 739884,
@@ -314436,6 +317044,7 @@
 "42704511": 739884,
 "42704537": 739885,
 "42705996": 739884,
+"42707199": 739886,
 "42707650": 739884,
 "42708138": 739884,
 "42708297": 739884,
@@ -314447,12 +317056,14 @@
 "42715840": 739885,
 "42715915": 739884,
 "42716090": 739885,
+"42716253": 739886,
 "42716531": 739884,
 "42716801": 739885,
 "42716873": 739885,
 "42717340": 739885,
 "42717717": 739884,
 "42719698": 739884,
+"42720261": 739886,
 "42720486": 739885,
 "42720594": 739884,
 "42721400": 739885,
@@ -314465,11 +317076,13 @@
 "42726113": 739884,
 "42726713": 739884,
 "42726943": 739885,
+"42727882": 739886,
 "42728969": 739884,
 "42729533": 739884,
 "42730059": 739885,
 "42730539": 739885,
 "42731387": 739885,
+"42731500": 739886,
 "42732279": 739884,
 "42732725": 739885,
 "42733372": 739884,
@@ -314499,6 +317112,8 @@
 "42748205": 739885,
 "42749404": 739884,
 "42749562": 739884,
+"42750463": 739886,
+"42750725": 739886,
 "42751430": 739885,
 "42751582": 739884,
 "42751690": 739884,
@@ -319906,6 +322521,128 @@
 ],
 "name": "2.0 M-CVT LX"
 },
+"396367": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,4 с"
+],
+[
+"Максимальная скорость",
+"232 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"280 л.с. (206 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"355 Н·м при 4700 об/мин"
+],
+[
+"Модель двигателя",
+"J35Y6"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Топливо",
+"Бензин Regular (АИ-92, АИ-95)"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,7 л/100 км"
+],
+[
+"Город",
+"12,4 л/100 км"
+],
+[
+"Трасса",
+"8,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5212 × 1994 × 1735 мм"
+],
+[
+"Колёсная база",
+"3000 мм"
+],
+[
+"Клиренс",
+"155 мм"
+],
+[
+"Масса",
+"1995 кг"
+],
+[
+"Топливный бак",
+"74 л"
+],
+[
+"Багажник",
+"1093 (со сложенным 3-м рядом сидений 2605 л., со сложенными 2-м и 3-м рядами сидений 4474 л.) л"
+],
+[
+"Мест",
+"7"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/60 R18"
+],
+[
+"Радиус разворота",
+"6,05 м"
+]
+]
+]
+],
+"name": "3.5 AT LX"
+},
 "397050": {
 "groups": [
 [
@@ -322512,6 +325249,111 @@
 ]
 ],
 "name": "1.6 T-GDI AT Hybrid Signature"
+},
+"434290": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"180 л.с. (132 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"265 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4FT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,5 л/100 км"
+],
+[
+"Город",
+"5,6 л/100 км"
+],
+[
+"Трасса",
+"5,3 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4660 × 1865 × 1660 мм"
+],
+[
+"Колёсная база",
+"2755 мм"
+],
+[
+"Масса",
+"1604 кг"
+],
+[
+"Топливный бак",
+"52 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R19"
+]
+]
+]
+],
+"name": "1.6 T-GDI AT Hybrid Signature Gravity"
 },
 "434292": {
 "groups": [
@@ -326815,6 +329657,124 @@
 ],
 "name": "2.2 CRDI AT 4WD Calligraphy 8 seats"
 },
+"449008": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"4,3 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"460 л.с. (338 кВт) при 6250 об/мин"
+],
+[
+"Крутящий момент",
+"550 Н·м при 5870 об/мин"
+],
+[
+"Модель двигателя",
+"S58B30T0"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4580 × 1887 × 1403 мм"
+],
+[
+"Колёсная база",
+"2747 мм"
+],
+[
+"Клиренс",
+"123 мм"
+],
+[
+"Масса",
+"1800 кг"
+],
+[
+"Топливный бак",
+"52 л"
+],
+[
+"Багажник",
+"390 л"
+],
+[
+"Мест",
+"4"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"275/35 ZR19"
+],
+[
+"Радиус разворота",
+"5,95 м"
+]
+]
+]
+],
+"name": "3.0 AT M2"
+},
 "449136": {
 "groups": [
 [
@@ -329501,6 +332461,123 @@
 ],
 "name": "1.6 HEV GDI AT 2WD Inspiration"
 },
+"458385": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"180 л.с. (132 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"265 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4FT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,5 л/100 км"
+],
+[
+"Город",
+"6,8 л/100 км"
+],
+[
+"Трасса",
+"6,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4630 × 1865 × 1665 мм"
+],
+[
+"Колёсная база",
+"2755 мм"
+],
+[
+"Клиренс",
+"181 мм"
+],
+[
+"Масса",
+"1670 кг"
+],
+[
+"Топливный бак",
+"52 л"
+],
+[
+"Багажник",
+"539 (1903) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/65 R17"
+],
+[
+"Радиус разворота",
+"5,45 м"
+]
+]
+]
+],
+"name": "1.6 HEV GDI AT 4WD Premium"
+},
 "458386": {
 "groups": [
 [
@@ -329747,6 +332824,87 @@
 ]
 ],
 "name": "3.0 Tiptronic"
+},
+"461588": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,5 с"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Тип двигателя",
+"Электродвигатель"
+],
+[
+"Топливо",
+"Электричество"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4515 × 1890 × 1580 мм"
+],
+[
+"Колёсная база",
+"2900 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"2095 кг"
+],
+[
+"Багажник",
+"432 (1550) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R19"
+]
+]
+]
+],
+"name": "77.4 kWh 4WD Standard"
 },
 "461600": {
 "groups": [
@@ -339355,6 +342513,66 @@
 ]
 ],
 "name": "60 kWh"
+},
+"498006": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Тип двигателя",
+"Электродвигатель"
+],
+[
+"Топливо",
+"Электричество"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4075 × 1754 × 1495 мм"
+],
+[
+"Колёсная база",
+"2606 мм"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/55 R17"
+]
+]
+]
+],
+"name": "54.2 kWh Aceman SE"
 },
 "500051": {
 "groups": [
@@ -350094,6 +353312,132 @@
 ],
 "name": "1.5 BlueHDi AT Active Pack"
 },
+"524420": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8,8 с"
+],
+[
+"Максимальная скорость",
+"200 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"172 л.с. (127 кВт) при 5600 об/мин"
+],
+[
+"Крутящий момент",
+"275 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"LYX"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,4 л/100 км"
+],
+[
+"Город",
+"9 л/100 км"
+],
+[
+"Трасса",
+"7,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4652 × 1843 × 1661 мм"
+],
+[
+"Колёсная база",
+"2725 мм"
+],
+[
+"Клиренс",
+"193 мм"
+],
+[
+"Масса",
+"1520 кг"
+],
+[
+"Топливный бак",
+"56 л"
+],
+[
+"Багажник",
+"846 (1809) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/60 R18"
+],
+[
+"Радиус разворота",
+"5,85 м"
+]
+]
+]
+],
+"name": "1.5 AT Premier"
+},
 "524421": {
 "groups": [
 [
@@ -350941,6 +354285,128 @@
 ]
 ],
 "name": "2.0 MPI CVT 2WD Signature"
+},
+"524729": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,3 с"
+],
+[
+"Максимальная скорость",
+"190 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"149 л.с. (110 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"179 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4NH"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,1 л/100 км"
+],
+[
+"Город",
+"8,9 л/100 км"
+],
+[
+"Трасса",
+"7,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4390 × 1800 × 1620 мм"
+],
+[
+"Колёсная база",
+"2630 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1370 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"753 (1778) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/45 R18"
+]
+]
+]
+],
+"name": "2.0 MPI CVT 2WD Gravity"
 },
 "524853": {
 "groups": [
@@ -355391,6 +358857,233 @@
 ],
 "name": "530i AT xDrive M Sport"
 },
+"542513": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,9 с"
+],
+[
+"Максимальная скорость",
+"235 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"184 л.с. (135 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"300 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"B48B20"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"1,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4963 × 1868 × 1466 мм"
+],
+[
+"Колёсная база",
+"2975 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1910 кг"
+],
+[
+"Топливный бак",
+"46 л"
+],
+[
+"Багажник",
+"410 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/45 R18"
+],
+[
+"Радиус разворота",
+"6 м"
+]
+]
+]
+],
+"name": "530e AT M Sport"
+},
+"542874": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"281 л.с. (207 кВт) при 5800 об/мин"
+],
+[
+"Крутящий момент",
+"422 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4KR"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"12,3 л/100 км"
+],
+[
+"Город",
+"13,7 л/100 км"
+],
+[
+"Трасса",
+"10,8 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5410 × 1930 × 1870 мм"
+],
+[
+"Колёсная база",
+"3270 мм"
+],
+[
+"Масса",
+"2175 кг"
+],
+[
+"Топливный бак",
+"80 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, пружинная"
+],
+[
+"Задняя подвеска",
+"Зависимая, рессорная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"265/60 R18"
+]
+]
+]
+],
+"name": "2.5 T-GDI AT 4WD Extreme"
+},
 "543108": {
 "groups": [
 [
@@ -356406,6 +360099,91 @@
 ]
 ],
 "name": "1.3 AT AWD RS"
+},
+"543763": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"9,1 с"
+],
+[
+"Максимальная скорость",
+"160 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Тип двигателя",
+"Электродвигатель"
+],
+[
+"Топливо",
+"Электричество"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4463 × 1834 × 1620 мм"
+],
+[
+"Колёсная база",
+"2729 мм"
+],
+[
+"Клиренс",
+"154 мм"
+],
+[
+"Масса",
+"2055 кг"
+],
+[
+"Багажник",
+"340 (1320) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/45 R20"
+]
+]
+]
+],
+"name": "EQA 250 AMG Line"
 },
 "544216": {
 "groups": [
@@ -358438,6 +362216,128 @@
 ]
 ],
 "name": "S400 d 4MATIC"
+},
+"545987": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"3,6 с"
+],
+[
+"Максимальная скорость",
+"315 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"585 л.с. (430 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"800 Н·м при 5000 об/мин"
+],
+[
+"Модель двигателя",
+"M 177 DE 40 LA"
+],
+[
+"Тип двигателя",
+"V-образный, 8-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин Premium (АИ-98)"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"13,0 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4705 × 1915 × 1354 мм"
+],
+[
+"Колёсная база",
+"2700 мм"
+],
+[
+"Клиренс",
+"86 мм"
+],
+[
+"Масса",
+"1970 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"213 л"
+],
+[
+"Мест",
+"2"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"265/40 R20"
+],
+[
+"Радиус разворота",
+"5,55 м"
+]
+]
+]
+],
+"name": "AMG SL 63 MCT 4MATIC+"
 },
 "545990": {
 "groups": [
@@ -362829,6 +366729,95 @@
 ]
 ],
 "name": "2.0 TDI DSG Prestige"
+},
+"553070": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,9 с"
+],
+[
+"Максимальная скорость",
+"170 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Тип двигателя",
+"Электродвигатель"
+],
+[
+"Топливо",
+"Электричество"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4470 × 1864 × 1571 мм"
+],
+[
+"Колёсная база",
+"2785 мм"
+],
+[
+"Клиренс",
+"145 мм"
+],
+[
+"Масса",
+"1927 кг"
+],
+[
+"Багажник",
+"545 (1670) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/45 R20"
+],
+[
+"Радиус разворота",
+"5,46 м"
+]
+]
+]
+],
+"name": "87 kWh Iconic 220 Long Range"
 },
 "555237": {
 "groups": [
