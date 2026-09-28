@@ -67,11 +67,17 @@ MODEL_ALIASES = {
     ("mini", "cooper"): "mini/hatch",
     ("mini", "cooper convertible"): "mini/cabrio",
     ("mini", "coupe"): "mini/coupe-model",
+    # goo-net: фургон и универсал NV200 — «NV200VANETTE VAN/WAGON», на drom.ru — «NV200»
+    ("nissan", "nv200vanette"): "nissan/nv200",
+    ("nissan", "nv200vanette van"): "nissan/nv200",
+    ("nissan", "nv200vanette wagon"): "nissan/nv200",
 }
 
 # Хвосты названия модели, без которых модель ищется на drom.ru («Crown Hybrid» → «Crown»)
 _MODEL_TAILS = {"hybrid", "custom", "phv", "phev", "plugin", "epower", "ev", "gr", "sport", "sports", "turbo", "diesel",
-                "wagon", "van", "touring", "cross", "hv"}
+                "wagon", "van", "touring", "cross", "hv",
+                # goo-net пишет кузов в названии модели: «Hijet Truck», «Carry Track», «Hijet Cargo»
+                "truck", "track", "cargo", "bus"}
 
 LEVELS = {"Базовая", "Предмаксимальная", "Максимальная", "Средняя", "Спортивная", "Оптимальная", "Комфорт"}
 PERIOD_RE = re.compile(r"^(\d{2})\.(\d{4})\s*-\s*(?:(\d{2})\.(\d{4})|н\.в\.)$")
@@ -358,6 +364,9 @@ class DromCatalog:
         while len(words) > 1 and _norm(words[-1]) in _MODEL_TAILS:
             words = words[:-1]
             names.append(_norm(" ".join(words)))
+            alias = MODEL_ALIASES.get((make.lower(), " ".join(words).lower()))
+            if alias:
+                return alias
         for b in [brand] + BRAND_FALLBACK.get(brand, []):
             if b not in self.cache["models"]:
                 got = self._get(f"{BASE}{b}/")
@@ -368,6 +377,15 @@ class DromCatalog:
             if slug:
                 return f"{b}/{slug}"
         return None
+
+    def known_missing(self, make: str, model: str) -> bool:
+        """Модели точно нет на drom.ru (список моделей марки уже в кэше, а её там нет) —
+        например, грузовики и автобусы: их нет в каталоге легковых. Без запросов."""
+        with self.cached_only():
+            if self.model_path(make, model):
+                return False
+            brand = self.brand_slug(make)
+        return bool(brand) and all(b in self.cache["models"] for b in [brand] + BRAND_FALLBACK.get(brand, []))
 
     def generations(self, path: str, market: str, year: int | None = None) -> list[dict]:
         """Поколения модели на рынке; с year — только начавшиеся в [year-12, year+1]
@@ -459,6 +477,15 @@ class DromCatalog:
         if not cands:
             self.stats["no_match"] += 1
             return None
+        # Кей-кары (до 660 см³): турбо — всегда 64 л.с., атмосферные — меньше. Турбо известно
+        # из объявления — берём группы с такой мощностью (Tanto 0.66: 58 и 64 л.с.)
+        if car.get("turbo") is not None and car.get("cc") and car["cc"] <= 700:
+            kei = [(g, t) for g, t in cands if (g["hp"] >= 60) == bool(car["turbo"])]
+            hps_kei = {(g["hp"], g.get("hp_total")) for g, _ in kei}
+            if len(hps_kei) == 1:
+                cands = kei
+                self.stats["by_turbo"] = self.stats.get("by_turbo", 0) + 1
+                return result(*hps_kei.pop())
         # Одинаковый объём, разная мощность — различаем по названию комплектации
         scored = []
         for g, trims in cands:
