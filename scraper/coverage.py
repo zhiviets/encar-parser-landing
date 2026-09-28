@@ -11,6 +11,7 @@ ENCAR_PER_MODEL свежих объявлений (одним запросом) 
 ENCAR_TOTAL — доля важнее общего числа.
 """
 
+import re
 import os
 import random
 import time
@@ -161,6 +162,10 @@ def _to_car(r: dict) -> dict | None:
     }
 
 
+COMMERCIAL = re.compile(r"포터|봉고|마이티|카운티|쏠라티|트럭|버스|라보|파맥스|메가|엑시언트|트라고|노부스|프리마|"
+                        r"에어로|유니버스|그랜버드|porter|bongo|truck|bus", re.I)
+
+
 def model_groups(session, save_debug) -> list[tuple[str, str, str, bool]]:
     """(CarType, марка, модель, фильтр по году понят) — все модели с MIN_YEAR года."""
     out = []
@@ -181,7 +186,8 @@ def model_groups(session, save_debug) -> list[tuple[str, str, str, bool]]:
         for maker, _ in makers:
             _pause()
             data = _search(session, _query(cartype, maker, with_year=with_year), inav=True)
-            groups = _unique(_facets(data.get("iNav"), "ModelGroup"))
+            # Грузовики и автобусы не берём — только легковые, минивэны, пикапы
+            groups = [(g, n) for g, n in _unique(_facets(data.get("iNav"), "ModelGroup")) if not COMMERCIAL.search(g)]
             out += [(cartype, maker, g, with_year) for g, _ in groups]
             print(f"  {maker}: моделей {len(groups)}")
     return out

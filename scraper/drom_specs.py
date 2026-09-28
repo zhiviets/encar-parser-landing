@@ -79,6 +79,8 @@ _MODEL_TAILS = {"hybrid", "custom", "phv", "phev", "plugin", "epower", "ev", "gr
                 # goo-net пишет кузов в названии модели: «Hijet Truck», «Carry Track», «Hijet Cargo»
                 "truck", "track", "cargo", "bus"}
 
+AWD_WORDS = {"xdrive", "4matic", "quattro", "4motion"}
+
 LEVELS = {"Базовая", "Предмаксимальная", "Максимальная", "Средняя", "Спортивная", "Оптимальная", "Комфорт"}
 PERIOD_RE = re.compile(r"^(\d{2})\.(\d{4})\s*-\s*(?:(\d{2})\.(\d{4})|н\.в\.)$")
 HP_RE = re.compile(r"^(\d{2,4})\s*л\.с\.$")
@@ -464,7 +466,9 @@ class DromCatalog:
                     continue
                 liters.add(g["liters"])
                 for t in trims:
-                    score = len(words & set(re.findall(r"[a-z0-9]+", t["name"].lower())))
+                    tw = set(re.findall(r"[a-z0-9]+", t["name"].lower()))
+                    # «xDrive» в комплектации drom.ru, а у машины его нет — это другая машина
+                    score = len(words & tw) - len((tw & AWD_WORDS) - words)
                     if score > best:
                         best, ref = score, {"gen": g.get("gen_key"), "name": t["name"], "id": t.get("id")}
             return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref,
@@ -568,7 +572,8 @@ def norm_trans(text: str | None) -> str | None:
 
 def norm_drive(text: str | None) -> str | None:
     low = (text or "").lower()
-    return ("4wd" if ("полный" in low or "4wd" in low or "awd" in low or "四驱" in low) else "rwd" if ("задний" in low or "后驱" in low)
+    return ("4wd" if ("полный" in low or "4wd" in low or "awd" in low or "四驱" in low
+                     or re.search(r"xdrive|4matic|quattro|4motion", low)) else "rwd" if ("задний" in low or "后驱" in low)
             else "fwd" if ("передний" in low or "前驱" in low) else None)
 
 
