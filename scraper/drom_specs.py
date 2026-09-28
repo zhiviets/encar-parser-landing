@@ -67,6 +67,7 @@ MODEL_ALIASES = {
     ("mini", "cooper"): "mini/hatch",
     ("mini", "cooper convertible"): "mini/cabrio",
     ("mini", "coupe"): "mini/coupe-model",
+    ("mini", "mini"): "mini/hatch",
     # goo-net: фургон и универсал NV200 — «NV200VANETTE VAN/WAGON», на drom.ru — «NV200»
     ("nissan", "nv200vanette"): "nissan/nv200",
     ("nissan", "nv200vanette van"): "nissan/nv200",
@@ -428,6 +429,10 @@ class DromCatalog:
         из найденной группы («liters», если он у всех подходящих групп один).
         → {"hp", "hp_total", "liters", "source", "trim"} или None."""
         path = self.model_path(car["make"], car["model"]) if car.get("make") and car.get("model") else None
+        num = re.search(r"(\d{3}[a-z]*\+?)", car.get("trim") or "", re.I)
+        if not path and num and (car.get("make") or "").lower() == "lexus":
+            # На drom.ru модели Lexus — по мотору: «NX» + «300h» из комплектации → nx300h
+            path = self.model_path(car["make"], f"{car['model']}{num.group(1)}")
         if not path:
             self.stats["no_model"] += 1
             key = f"{car.get('make')} {car.get('model')}"
@@ -474,6 +479,14 @@ class DromCatalog:
             return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref,
                     "liters": liters.pop() if len(liters) == 1 else None}
 
+        # Кей-кары (до 660 см³): турбо — всегда 64 л.с., атмосферные — меньше. Турбо известно
+        # из объявления — оставляем только группы с такой мощностью (Tanto 0.66: 58 и 64 л.с.;
+        # Dayz Highway Star Turbo — не 49 л.с. атмосферной версии, даже если турбо на drom.ru нет)
+        if car.get("turbo") is not None and car.get("cc") and car["cc"] <= 700 and cands:
+            kei = [(g, t) for g, t in cands if (g["hp"] >= 60) == bool(car["turbo"])]
+            if len(kei) != len(cands):
+                self.stats["by_turbo"] = self.stats.get("by_turbo", 0) + 1
+            cands = kei
         hps = {(g["hp"], g.get("hp_total")) for g, _ in cands}
         if len(hps) == 1:
             self.stats["exact"] += 1
@@ -481,15 +494,25 @@ class DromCatalog:
         if not cands:
             self.stats["no_match"] += 1
             return None
-        # Кей-кары (до 660 см³): турбо — всегда 64 л.с., атмосферные — меньше. Турбо известно
-        # из объявления — берём группы с такой мощностью (Tanto 0.66: 58 и 64 л.с.)
-        if car.get("turbo") is not None and car.get("cc") and car["cc"] <= 700:
-            kei = [(g, t) for g, t in cands if (g["hp"] >= 60) == bool(car["turbo"])]
-            hps_kei = {(g["hp"], g.get("hp_total")) for g, _ in kei}
-            if len(hps_kei) == 1:
-                cands = kei
+        # Несколько мощностей — уточняем по коробке (вариатор / робот / автомат / механика:
+        # Fit 2020 — робот 110 л.с. и вариатор 98 л.с.) и по турбо (Harrier 2.0 и 2.0 Turbo)
+        def narrow(keep):
+            nonlocal cands
+            left = [(g, t) for g, t in cands if keep(g, t)]
+            if left and len(left) < len(cands):
+                cands = left
+            return {(g["hp"], g.get("hp_total")) for g, _ in cands}
+        if car.get("trans"):
+            hps = narrow(lambda g, t: not g["trans"] or g["trans"] == car["trans"])
+            if len(hps) == 1:
+                self.stats["by_trans"] = self.stats.get("by_trans", 0) + 1
+                return result(*hps.pop())
+        if car.get("turbo") is not None:
+            turbo_named = lambda t: any("turbo" in x["name"].lower() for x in t)
+            hps = narrow(lambda g, t: turbo_named(t) == bool(car["turbo"]))
+            if len(hps) == 1:
                 self.stats["by_turbo"] = self.stats.get("by_turbo", 0) + 1
-                return result(*hps_kei.pop())
+                return result(*hps.pop())
         # Одинаковый объём, разная мощность — различаем по названию комплектации
         scored = []
         for g, trims in cands:
@@ -595,7 +618,10 @@ def _fits(g: dict, car: dict) -> bool:
             return False
         if fuel in ("hybrid", "phev") and not g["hybrid"]:
             return False
-        if fuel == "phev" and g["hybrid"] and "подключ" not in g["hybrid"] and "plug" not in g["hybrid"]:
+        plug = bool(g["hybrid"]) and any(k in g["hybrid"] for k in ("подключ", "подзаряж", "plug", "phev"))
+        if fuel == "phev" and g["hybrid"] and not plug:
+            return False
+        if fuel == "hybrid" and plug:
             return False
     if car.get("drive") and g["drive"] and car["drive"] != g["drive"]:
         return False
