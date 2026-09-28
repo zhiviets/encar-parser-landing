@@ -80,6 +80,7 @@ _MODEL_TAILS = {"hybrid", "custom", "phv", "phev", "plugin", "epower", "ev", "gr
                 # goo-net пишет кузов в названии модели: «Hijet Truck», «Carry Track», «Hijet Cargo»
                 "truck", "track", "cargo", "bus"}
 
+JAPANESE_MAKES = {"toyota", "lexus", "nissan", "honda", "mazda", "subaru", "mitsubishi", "suzuki", "daihatsu"}
 AWD_WORDS = {"xdrive", "4matic", "quattro", "4motion"}
 
 LEVELS = {"Базовая", "Предмаксимальная", "Максимальная", "Средняя", "Спортивная", "Оптимальная", "Комфорт"}
@@ -443,6 +444,18 @@ class DromCatalog:
         lo_hi = (lambda t: (t["from"] // 100 * 100 + 1, (t["to"] or 999999) // 100 * 100 + 12)) if not car.get("month") \
             else (lambda t: (t["from"], t["to"] or 999999))
         cands = []
+        for relax in (False, True):
+            if cands:
+                break
+            car = {**car, "_relax": relax}
+            cands = self._candidates(path, car, ym, lo_hi)
+        self.last_candidates = [(g["text"], [t["name"] for t in trims][:3]) for g, trims in cands]
+        words = set(re.findall(r"[a-z0-9]+", (car.get("trim") or "").lower())) - {"l", "t", "at", "mt"}
+        return self._choose(car, cands, words)
+
+    def _candidates(self, path, car, ym, lo_hi):
+        """Группы комплектаций, подходящие машине по дате, объёму, топливу, приводу, коробке."""
+        cands = []
         # Рынки по очереди (импорт в Корее — «south-korea», потом «europe»): берём первый, где нашлось.
         # Сначала комплектации, чей период выпуска точно включает дату машины; нет таких — ±1 год
         for market in car.get("markets") or [car["market"]]:
@@ -459,8 +472,10 @@ class DromCatalog:
                     break
             if cands:
                 break
-        self.last_candidates = [(g["text"], [t["name"] for t in trims][:3]) for g, trims in cands]
-        words = set(re.findall(r"[a-z0-9]+", (car.get("trim") or "").lower())) - {"l", "t", "at", "mt"}
+        return cands
+
+    def _choose(self, car, cands, words):
+        """Мощность из подходящих групп: одна — берём; несколько — уточняем, иначе None."""
 
         def result(hp, total):
             # Комплектация для технических характеристик: из групп с этой мощностью — та, чьё
@@ -479,6 +494,14 @@ class DromCatalog:
             return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref,
                     "liters": liters.pop() if len(liters) == 1 else None}
 
+        # Код мотора Audi / VW в комплектации («35 TFSI», «40 TDI») должен совпасть с комплектацией
+        # drom.ru: A4 2020 «35 TFSI» — 150 л.с., а не 190 л.с. у «40 TFSI» того же объёма
+        code = re.search(r"\b(\d{2})\s*(TFSI|TDI|TSI)\b", car.get("trim") or "", re.I)
+        if code and cands:
+            key = f"{code.group(1)}{code.group(2).lower()}"
+            named = lambda t: {f"{a}{b.lower()}" for x in t for a, b in re.findall(r"\b(\d{2})\s*(TFSI|TDI|TSI)\b", x["name"], re.I)}
+            if any(named(t) for _, t in cands):
+                cands = [(g, t) for g, t in cands if key in named(t)]
         # Кей-кары (до 660 см³): турбо — всегда 64 л.с., атмосферные — меньше. Турбо известно
         # из объявления — оставляем только группы с такой мощностью (Tanto 0.66: 58 и 64 л.с.;
         # Dayz Highway Star Turbo — не 49 л.с. атмосферной версии, даже если турбо на drom.ru нет)
@@ -507,7 +530,9 @@ class DromCatalog:
             if len(hps) == 1:
                 self.stats["by_trans"] = self.stats.get("by_trans", 0) + 1
                 return result(*hps.pop())
-        if car.get("turbo") is not None:
+        # «Turbo» в названии комплектации — признак турбо только у японских марок (Harrier 2.0 Turbo);
+        # у Porsche, BMW и других турбо все версии, «Turbo» — отдельная модификация
+        if car.get("turbo") is not None and (car.get("make") or "").lower() in JAPANESE_MAKES:
             turbo_named = lambda t: any("turbo" in x["name"].lower() for x in t)
             hps = narrow(lambda g, t: turbo_named(t) == bool(car["turbo"]))
             if len(hps) == 1:
@@ -608,13 +633,16 @@ def _fits(g: dict, car: dict) -> bool:
     else:
         if g["fuel"] == "electric":
             return False
-        if car.get("cc") and g["liters"] is not None and abs(g["liters"] - round(car["cc"] / 1000, 1)) > 0.05:
+        # Запасной поиск (_relax): объём ±0,1 л — продавец пишет 2200 см³ вместо 2267 (на drom.ru 2.3 л)
+        if car.get("cc") and g["liters"] is not None and \
+                abs(g["liters"] - round(car["cc"] / 1000, 1)) > (0.15 if car.get("_relax") else 0.05):
             return False
         if fuel == "diesel" and g["fuel"] != "дизель":
             return False
         if fuel == "lpg" and "газ" not in (g["fuel"] or ""):
             return False
-        if fuel == "petrol" and (g["fuel"] in ("дизель", "газ") or g["hybrid"]):
+        # Бензин — без гибридов; в запасном поиске — и мягкий гибрид (eK X: у продавца «бензин»)
+        if fuel == "petrol" and (g["fuel"] in ("дизель", "газ") or (g["hybrid"] and not (car.get("_relax") and "подзаряж" not in g["hybrid"] and "подключ" not in g["hybrid"]))):
             return False
         if fuel in ("hybrid", "phev") and not g["hybrid"]:
             return False
