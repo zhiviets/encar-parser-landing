@@ -439,6 +439,10 @@ class DromCatalog:
             key = f"{car.get('make')} {car.get('model')}"
             self.missing[key] = self.missing.get(key, 0) + 1
             return None
+        if not car.get("year"):
+            # Без года поколение и комплектацию не выбрать
+            self.stats["no_match"] += 1
+            return None
         ym = car["year"] * 100 + (car.get("month") or 6)
         # Без месяца (только год) период комплектации сверяем по году
         lo_hi = (lambda t: (t["from"] // 100 * 100 + 1, (t["to"] or 999999) // 100 * 100 + 12)) if not car.get("month") \
