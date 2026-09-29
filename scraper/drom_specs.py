@@ -378,6 +378,12 @@ class DromCatalog:
                     continue
                 self.cache["models"][b] = self._links(got[0], f"{b}/")
             slug = next((self.cache["models"][b][n] for n in names if n in self.cache["models"][b]), None)
+            if not slug:
+                # Версия модели в названии без пробела или с лишним словом: «Crown Athlete», «Corollasport» —
+                # самая длинная модель drom.ru, с которой начинается название (не короче 4 букв)
+                full = names[0]
+                prefix = max((k for k in self.cache["models"][b] if len(k) >= 4 and full.startswith(k)), key=len, default=None)
+                slug = self.cache["models"][b][prefix] if prefix else None
             if slug:
                 return f"{b}/{slug}"
         return None
@@ -389,7 +395,12 @@ class DromCatalog:
             if self.model_path(make, model):
                 return False
             brand = self.brand_slug(make)
-        return bool(brand) and all(b in self.cache["models"] for b in [brand] + BRAND_FALLBACK.get(brand, []))
+        brands = [brand] + BRAND_FALLBACK.get(brand, []) if brand else []
+        if not brands or not all(b in self.cache["models"] for b in brands):
+            return False
+        # Lexus «RX» — на drom.ru rx350, rx450h…: модель, с которой начинается чьё-то название, есть
+        name = _norm(re.sub(r"\s*\(.*?\)", "", model))
+        return not any(k.startswith(name) for b in brands for k in self.cache["models"][b])
 
     def generations(self, path: str, market: str, year: int | None = None) -> list[dict]:
         """Поколения модели на рынке; с year — только начавшиеся в [year-12, year+1]
