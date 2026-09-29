@@ -1278,6 +1278,22 @@
 "g_2023_22340"
 ]
 },
+"bmw/6-series/south-korea": {
+"day": 739888,
+"gens": [
+"g_197510_9122",
+"g_200309_8456",
+"g_200709_8465",
+"g_2007_23570",
+"g_2007_23571",
+"g_201106_23572",
+"g_2011_23573",
+"g_2012_23574",
+"g_201502_23575",
+"g_2015_23576",
+"g_2015_23577"
+]
+},
 "bmw/7-series/europe": {
 "day": 739883,
 "gens": [
@@ -1681,6 +1697,33 @@
 "g_2022_23385"
 ]
 },
+"cadillac/escalade/europe": {
+"day": 739888,
+"gens": []
+},
+"cadillac/escalade/south-korea": {
+"day": 739888,
+"gens": []
+},
+"cadillac/escalade/usa": {
+"day": 739888,
+"gens": [
+"g_199901_5771",
+"g_200101_5772",
+"g_2001_5778",
+"g_2002_5785",
+"g_200609_1693",
+"g_2006_5773",
+"g_2006_5779",
+"g_2006_5787",
+"g_2013_5774",
+"g_2013_5789",
+"g_201401_3538",
+"g_202009_13533",
+"g_2020_10872",
+"g_202411_22152"
+]
+},
 "cadillac/lyriq/europe": {
 "day": 739885,
 "gens": []
@@ -1760,6 +1803,14 @@
 },
 "chevrolet/aveo/south-korea": {
 "day": 739885,
+"gens": []
+},
+"chevrolet/camaro/south-korea": {
+"day": 739888,
+"gens": []
+},
+"chevrolet/captiva/south-korea": {
+"day": 739888,
 "gens": []
 },
 "chevrolet/colorado/south-korea": {
@@ -47894,6 +47945,7 @@
 ]
 }
 ],
+"key": "bmw/2-series/g_2013_23452",
 "market": "Южная Корея",
 "to": 201707
 },
@@ -48185,6 +48237,7 @@
 ]
 }
 ],
+"key": "bmw/2-series/g_201402_2138",
 "market": "Россия",
 "to": 201705
 },
@@ -48389,6 +48442,7 @@
 ]
 }
 ],
+"key": "bmw/2-series/g_201705_7614",
 "market": "Россия",
 "to": 202010
 },
@@ -48411,11 +48465,13 @@
 "trims": [
 {
 "from": 202007,
+"id": "541856",
 "name": "218d AT Advantage",
 "to": 202205
 },
 {
 "from": 202007,
+"id": "541857",
 "name": "218d AT M Sport",
 "to": 202205
 }
@@ -48437,16 +48493,19 @@
 "trims": [
 {
 "from": 202003,
+"id": "541858",
 "name": "220d AT Advantage",
 "to": 202205
 },
 {
 "from": 202003,
+"id": "541860",
 "name": "220d AT M Sport",
 "to": 202205
 },
 {
 "from": 202003,
+"id": "541859",
 "name": "220d AT Luxury",
 "to": 202205
 }
@@ -48467,22 +48526,26 @@
 "trans": "auto",
 "trims": [
 {
-"from": 202102,
+"from": 202103,
+"id": "541861",
 "name": "220i AT Advantage",
 "to": 202504
 },
 {
-"from": 202102,
+"from": 202103,
+"id": "541862",
 "name": "220i AT Sport",
 "to": 202504
 },
 {
-"from": 202102,
+"from": 202103,
+"id": "541864",
 "name": "220i AT M Sport",
 "to": 202504
 },
 {
-"from": 202102,
+"from": 202103,
+"id": "541863",
 "name": "220i AT Luxury",
 "to": 202504
 }
@@ -48504,12 +48567,15 @@
 "trims": [
 {
 "from": 202308,
+"id": "541865",
 "name": "M235i AT xDrive M Sport",
 "to": 202504
 }
 ]
 }
 ],
+"ids": true,
+"key": "bmw/2-series/g_2019_23460",
 "market": "Южная Корея",
 "to": 202504
 },
@@ -48579,6 +48645,7 @@
 ]
 }
 ],
+"key": "bmw/2-series/g_202107_13766",
 "market": "Россия",
 "to": 202303
 },
@@ -48617,6 +48684,7 @@
 ]
 }
 ],
+"key": "bmw/2-series/g_2021_23453",
 "market": "Южная Корея",
 "to": null
 },
@@ -51937,16 +52005,19 @@
 "trims": [
 {
 "from": 202209,
+"id": "543176",
 "name": "320i AT Base",
 "to": null
 },
 {
 "from": 202209,
+"id": "543177",
 "name": "320i AT M Sport",
 "to": null
 },
 {
 "from": 202209,
+"id": "543178",
 "name": "320i AT M Sport Pro",
 "to": null
 }
@@ -51966,11 +52037,13 @@
 "trims": [
 {
 "from": 202209,
+"id": "543185",
 "name": "330e AT M Sport",
 "to": null
 },
 {
 "from": 202209,
+"id": "543186",
 "name": "330e AT M Sport Pro",
 "to": null
 }
@@ -51990,16 +52063,19 @@
 "trims": [
 {
 "from": 202209,
+"id": "543182",
 "name": "330d AT xDrive Base",
 "to": null
 },
 {
 "from": 202209,
+"id": "543183",
 "name": "330d AT xDrive M Sport",
 "to": null
 },
 {
 "from": 202209,
+"id": "543184",
 "name": "330d AT xDrive M Sport Pro",
 "to": null
 }
@@ -52019,16 +52095,19 @@
 "trims": [
 {
 "from": 202209,
+"id": "543179",
 "name": "330d AT Base",
 "to": null
 },
 {
 "from": 202209,
+"id": "543180",
 "name": "330d AT M Sport",
 "to": null
 },
 {
 "from": 202209,
+"id": "543181",
 "name": "330d AT M Sport Pro",
 "to": null
 }
@@ -52048,12 +52127,14 @@
 "trims": [
 {
 "from": 202209,
+"id": "543187",
 "name": "M340i AT xDrive",
 "to": null
 }
 ]
 }
 ],
+"ids": true,
 "key": "bmw/3-series/g_2022_23607",
 "market": "Южная Корея",
 "to": null
@@ -52115,6 +52196,7 @@
 "drive": "4wd",
 "engine": "B58B30TU1",
 "fuel": "бензин",
+"gen_key": "bmw/3-series/g_2022_23608",
 "hp": 374,
 "hp_total": null,
 "hybrid": null,
@@ -63057,6 +63139,901 @@
 "market": "Европа",
 "to": null
 },
+"bmw/6-series/g_200709_8465": {
+"from": 200709,
+"groups": [
+{
+"body": [
+"E63"
+],
+"drive": "rwd",
+"engine": "N53B30",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 200709,
+"id": "210639",
+"name": "630Ci MT",
+"to": 201007
+}
+]
+},
+{
+"body": [
+"E63"
+],
+"drive": "rwd",
+"engine": "N53B30",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200709,
+"id": "210640",
+"name": "630Ci AT",
+"to": 201007
+}
+]
+},
+{
+"body": [
+"E63"
+],
+"drive": "rwd",
+"engine": "N62B48",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.8,
+"text": "4.8 л, 367 л.с., бензин, МКПП, задний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 200709,
+"id": "210643",
+"name": "650Ci MT",
+"to": 201007
+}
+]
+},
+{
+"body": [
+"E63"
+],
+"drive": "rwd",
+"engine": "N62B48",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.8,
+"text": "4.8 л, 367 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200709,
+"id": "210644",
+"name": "650Ci AT",
+"to": 201007
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_200709_8465",
+"market": "Россия",
+"to": 201007
+},
+"bmw/6-series/g_2007_23570": {
+"from": 200709,
+"groups": [
+{
+"body": [
+"EA11",
+"EA12",
+"EA31",
+"EA32"
+],
+"drive": "rwd",
+"engine": "N53B30",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200809,
+"id": "542636",
+"name": "630i AT",
+"to": 201008
+}
+]
+},
+{
+"body": [
+"EA71",
+"EA72"
+],
+"drive": "rwd",
+"engine": "M57D30TU",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200809,
+"id": "542641",
+"name": "635d AT",
+"to": 201008
+}
+]
+},
+{
+"body": [
+"EA51",
+"EA52",
+"EA53"
+],
+"drive": "rwd",
+"engine": "N62B48TU",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.8,
+"text": "4.8 л, 367 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200809,
+"id": "542637",
+"name": "650i AT",
+"to": 201008
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_2007_23570",
+"market": "Южная Корея",
+"to": 201008
+},
+"bmw/6-series/g_2007_23571": {
+"from": 200709,
+"groups": [
+{
+"body": [
+"EB11",
+"EB12",
+"EB31",
+"EB32"
+],
+"drive": "rwd",
+"engine": "N53B30",
+"fuel": "бензин",
+"hp": 272,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 272 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200809,
+"id": "542643",
+"name": "630i AT",
+"to": 201008
+}
+]
+},
+{
+"body": [
+"EB71",
+"EB72"
+],
+"drive": "rwd",
+"engine": "M57D30TU",
+"fuel": "дизель",
+"hp": 286,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 286 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200809,
+"id": "542645",
+"name": "635d AT",
+"to": 201008
+}
+]
+},
+{
+"body": [
+"EB51",
+"EB52",
+"EB53"
+],
+"drive": "rwd",
+"engine": "N62B48TU",
+"fuel": "бензин",
+"hp": 367,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.8,
+"text": "4.8 л, 367 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 200709,
+"id": "542644",
+"name": "650i AT",
+"to": 201008
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_2007_23571",
+"market": "Южная Корея",
+"to": 201008
+},
+"bmw/6-series/g_201106_23572": {
+"from": 201106,
+"groups": [
+{
+"body": [
+"YM31"
+],
+"drive": "4wd",
+"engine": "N57D30",
+"fuel": "дизель",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201109,
+"id": "542669",
+"name": "640d AT xDrive",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"LX71",
+"LX72"
+],
+"drive": "rwd",
+"engine": "N57D30",
+"fuel": "дизель",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201109,
+"id": "542668",
+"name": "640d AT",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"LW31",
+"LW32",
+"LW33"
+],
+"drive": "rwd",
+"engine": "N55B30",
+"fuel": "бензин",
+"hp": 320,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 320 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201106,
+"id": "542662",
+"name": "640i AT",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"LX51",
+"LX53"
+],
+"drive": "4wd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 408,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 408 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201106,
+"id": "542665",
+"name": "650i AT xDrive",
+"to": 201207
+}
+]
+},
+{
+"body": [
+"LX31",
+"LX32",
+"LX33"
+],
+"drive": "rwd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 408,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 408 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201106,
+"id": "542664",
+"name": "650i AT",
+"to": 201207
+}
+]
+},
+{
+"body": [
+"LX51",
+"LX53"
+],
+"drive": "4wd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "542665",
+"name": "650i AT xDrive",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"LX31",
+"LX32",
+"LX33"
+],
+"drive": "rwd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "542664",
+"name": "650i AT",
+"to": 201407
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_201106_23572",
+"market": "Южная Корея",
+"to": 201407
+},
+"bmw/6-series/g_2011_23573": {
+"from": 201106,
+"groups": [
+{
+"body": [
+"YP31"
+],
+"drive": "4wd",
+"engine": "N57D30",
+"fuel": "дизель",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201109,
+"id": "542676",
+"name": "640d AT xDrive",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"LZ71",
+"LZ72"
+],
+"drive": "rwd",
+"engine": "N57D30",
+"fuel": "дизель",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201109,
+"id": "542675",
+"name": "640d AT",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"LW71",
+"LW72",
+"LW73"
+],
+"drive": "rwd",
+"engine": "N55B30",
+"fuel": "бензин",
+"hp": 320,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 320 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201106,
+"id": "542670",
+"name": "640i AT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"LZ51",
+"LZ53"
+],
+"drive": "4wd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 408,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 408 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201106,
+"id": "542672",
+"name": "650i AT xDrive",
+"to": 201207
+}
+]
+},
+{
+"body": [
+"LZ31",
+"LZ32",
+"LZ33"
+],
+"drive": "rwd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 408,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 408 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201106,
+"id": "542671",
+"name": "650i AT",
+"to": 201207
+}
+]
+},
+{
+"body": [
+"YP11",
+"YP13"
+],
+"drive": "4wd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "542672",
+"name": "650i AT xDrive",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"YP91",
+"YP92",
+"YP93"
+],
+"drive": "rwd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "542671",
+"name": "650i AT",
+"to": 201503
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_2011_23573",
+"market": "Южная Корея",
+"to": 201503
+},
+"bmw/6-series/g_2012_23574": {
+"from": 201206,
+"groups": [
+{
+"body": [
+"6A81"
+],
+"drive": "4wd",
+"engine": "N57D30",
+"fuel": "дизель",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201206,
+"id": "542681",
+"name": "640d AT xDrive",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"6A61",
+"6A62"
+],
+"drive": "rwd",
+"engine": "N57D30",
+"fuel": "дизель",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201206,
+"id": "542680",
+"name": "640d AT",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"6B81",
+"6B83"
+],
+"drive": "4wd",
+"engine": "N55B30",
+"fuel": "бензин",
+"hp": 320,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 320 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201303,
+"id": "542682",
+"name": "640i AT xDrive",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"6A01",
+"6A02",
+"6A03"
+],
+"drive": "rwd",
+"engine": "N55B30",
+"fuel": "бензин",
+"hp": 320,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 320 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201206,
+"id": "542677",
+"name": "640i AT",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"6B41",
+"6B43"
+],
+"drive": "4wd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "542679",
+"name": "650i AT xDrive",
+"to": 201407
+}
+]
+},
+{
+"body": [
+"6B21",
+"6B22",
+"6B23"
+],
+"drive": "rwd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201207,
+"id": "542678",
+"name": "650i AT",
+"to": 201407
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_2012_23574",
+"market": "Южная Корея",
+"to": 201503
+},
+"bmw/6-series/g_201502_23575": {
+"from": 201502,
+"groups": [
+{
+"body": [
+"6J31"
+],
+"drive": "4wd",
+"engine": "N57D30",
+"fuel": "дизель",
+"gen_key": "bmw/6-series/g_201502_23575",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201503,
+"id": "542724",
+"name": "640d AT xDrive",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"6H11",
+"6H12",
+"6H13"
+],
+"drive": "rwd",
+"engine": "N55B30",
+"fuel": "бензин",
+"hp": 320,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 320 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201503,
+"id": "542723",
+"name": "640i AT",
+"to": 201606
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_201502_23575",
+"market": "Южная Корея",
+"to": 201808
+},
+"bmw/6-series/g_2015_23576": {
+"from": 201503,
+"groups": [
+{
+"body": [
+"6F51",
+"6F52",
+"6F53"
+],
+"drive": "rwd",
+"engine": "N63B44",
+"fuel": "бензин",
+"hp": 450,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.4,
+"text": "4.4 л, 450 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201503,
+"id": "542725",
+"name": "650i AT",
+"to": 201611
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_2015_23576",
+"market": "Южная Корея",
+"to": 201611
+},
+"bmw/6-series/g_2015_23577": {
+"from": 201503,
+"groups": [
+{
+"body": [
+"6E41"
+],
+"drive": "4wd",
+"engine": "N57D30",
+"fuel": "дизель",
+"gen_key": "bmw/6-series/g_2015_23577",
+"hp": 313,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 313 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201706,
+"id": "542727",
+"name": "640d AT xDrive",
+"to": 201808
+}
+]
+},
+{
+"body": [
+"6D21",
+"6D23"
+],
+"drive": "4wd",
+"engine": "N55B30",
+"fuel": "бензин",
+"hp": 320,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 320 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201706,
+"id": "542726",
+"name": "640i AT xDrive",
+"to": 201808
+}
+]
+}
+],
+"ids": true,
+"key": "bmw/6-series/g_2015_23577",
+"market": "Южная Корея",
+"to": 201808
+},
 "bmw/7-series/g_201207_1603": {
 "from": 201207,
 "groups": [
@@ -71921,6 +72898,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_201011_4017",
 "market": "Россия",
 "to": 201405
 },
@@ -72019,6 +72997,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_2010_23408",
 "market": "Южная Корея",
 "to": 201406
 },
@@ -72244,6 +73223,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_201406_1609",
 "market": "Россия",
 "to": 201711
 },
@@ -72342,6 +73322,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_2014_23409",
 "market": "Южная Корея",
 "to": 201712
 },
@@ -72598,6 +73579,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_201710_7685",
 "market": "Россия",
 "to": 202106
 },
@@ -72686,6 +73668,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_2017_23410",
 "market": "Южная Корея",
 "to": 202108
 },
@@ -72819,6 +73802,7 @@
 ]
 }
 ],
+"key": "bmw/x3/g_202106_19867",
 "market": null,
 "to": 202503
 },
@@ -72842,6 +73826,7 @@
 "trims": [
 {
 "from": 202108,
+"id": "541205",
 "name": "xDrive 20i AT",
 "to": 202408
 }
@@ -72861,6 +73846,7 @@
 "trims": [
 {
 "from": 202108,
+"id": "541207",
 "name": "xDrive 30e AT",
 "to": 202408
 }
@@ -72882,6 +73868,7 @@
 "trims": [
 {
 "from": 202108,
+"id": "541206",
 "name": "xDrive 20d AT",
 "to": 202408
 }
@@ -72901,6 +73888,7 @@
 "trims": [
 {
 "from": 202303,
+"id": "541208",
 "name": "xDrive M40i AT",
 "to": 202408
 }
@@ -72920,12 +73908,15 @@
 "trims": [
 {
 "from": 202108,
+"id": "541209",
 "name": "M Competition",
 "to": null
 }
 ]
 }
 ],
+"ids": true,
+"key": "bmw/x3/g_2021_23411",
 "market": "Южная Корея",
 "to": null
 },
@@ -78356,6 +79347,768 @@
 "key": "bmw/z4/g_2022_23385",
 "market": "Южная Корея",
 "to": null
+},
+"cadillac/escalade/g_2013_5774": {
+"from": 201310,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "GM Ecotec 3 L86",
+"fuel": "бензин",
+"hp": 420,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 420 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201711,
+"id": "404544",
+"name": "6.2 AT 4WD Standard",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404545",
+"name": "6.2 AT 4WD Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404546",
+"name": "6.2 AT 4WD Premium Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404547",
+"name": "6.2 AT 4WD Platinum",
+"to": 202008
+},
+{
+"from": 201401,
+"id": "404544",
+"name": "6.2 AT 4WD Standard",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404545",
+"name": "6.2 AT 4WD Luxury",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404553",
+"name": "6.2 AT 4WD Premium",
+"to": 201508
+},
+{
+"from": 201509,
+"id": "404544",
+"name": "6.2 AT 4WD Standard",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404545",
+"name": "6.2 AT 4WD Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404546",
+"name": "6.2 AT 4WD Premium Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404547",
+"name": "6.2 AT 4WD Platinum",
+"to": 201710
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "GM Ecotec 3 L86",
+"fuel": "бензин",
+"hp": 420,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 420 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201711,
+"id": "404530",
+"name": "6.2 AT 2WD Standard",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404531",
+"name": "6.2 AT 2WD Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404532",
+"name": "6.2 AT 2WD Premium Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404533",
+"name": "6.2 AT 2WD Platinum",
+"to": 202008
+},
+{
+"from": 201401,
+"id": "404530",
+"name": "6.2 AT 2WD Standard",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404531",
+"name": "6.2 AT 2WD Luxury",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404550",
+"name": "6.2 AT 2WD Premium",
+"to": 201508
+},
+{
+"from": 201509,
+"id": "404530",
+"name": "6.2 AT 2WD Standard",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404531",
+"name": "6.2 AT 2WD Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404532",
+"name": "6.2 AT 2WD Premium Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404533",
+"name": "6.2 AT 2WD Platinum",
+"to": 201710
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/escalade/g_2013_5774",
+"market": "США",
+"to": 202008
+},
+"cadillac/escalade/g_2013_5789": {
+"from": 201310,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "GM Ecotec 3 L86",
+"fuel": "бензин",
+"hp": 420,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 420 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201401,
+"id": "404578",
+"name": "6.2 AT 4WD ESV Standard",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404579",
+"name": "6.2 AT 4WD ESV Luxury",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404580",
+"name": "6.2 AT 4WD ESV Premium",
+"to": 201508
+},
+{
+"from": 201509,
+"id": "404578",
+"name": "6.2 AT 4WD ESV Standard",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404579",
+"name": "6.2 AT 4WD ESV Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404583",
+"name": "6.2 AT 4WD ESV Premium Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404584",
+"name": "6.2 AT 4WD ESV Platinum",
+"to": 201710
+},
+{
+"from": 201711,
+"id": "404578",
+"name": "6.2 AT 4WD ESV Standard",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404579",
+"name": "6.2 AT 4WD ESV Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404583",
+"name": "6.2 AT 4WD ESV Premium Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404584",
+"name": "6.2 AT 4WD ESV Platinum",
+"to": 202008
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "GM Ecotec 3 L86",
+"fuel": "бензин",
+"hp": 420,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 420 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201401,
+"id": "404562",
+"name": "6.2 AT 2WD ESV Standard",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404567",
+"name": "6.2 AT 2WD ESV Luxury",
+"to": 201508
+},
+{
+"from": 201401,
+"id": "404568",
+"name": "6.2 AT 2WD ESV Premium",
+"to": 201508
+},
+{
+"from": 201509,
+"id": "404562",
+"name": "6.2 AT 2WD ESV Standard",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404567",
+"name": "6.2 AT 2WD ESV Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404571",
+"name": "6.2 AT 2WD ESV Premium Luxury",
+"to": 201710
+},
+{
+"from": 201509,
+"id": "404572",
+"name": "6.2 AT 2WD ESV Platinum",
+"to": 201710
+},
+{
+"from": 201711,
+"id": "404562",
+"name": "6.2 AT 2WD ESV Standard",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404567",
+"name": "6.2 AT 2WD ESV Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404571",
+"name": "6.2 AT 2WD ESV Premium Luxury",
+"to": 202008
+},
+{
+"from": 201711,
+"id": "404572",
+"name": "6.2 AT 2WD ESV Platinum",
+"to": 202008
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/escalade/g_2013_5789",
+"market": "США",
+"to": 202008
+},
+"cadillac/escalade/g_201401_3538": {
+"from": 201310,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "GM Ecotec 3 L86",
+"fuel": "бензин",
+"hp": 409,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 409 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201509,
+"id": "79225",
+"name": "6.2 AT Luxury",
+"to": 201712
+},
+{
+"from": 201509,
+"id": "183276",
+"name": "6.2 AT Luxury ESV",
+"to": 201712
+},
+{
+"from": 201509,
+"id": "79235",
+"name": "6.2 AT Platinum ESV",
+"to": 201712
+},
+{
+"from": 201509,
+"id": "79226",
+"name": "6.2 AT Premium",
+"to": 201712
+},
+{
+"from": 201509,
+"id": "79230",
+"name": "6.2 AT Platinum",
+"to": 201712
+},
+{
+"from": 201509,
+"id": "79234",
+"name": "6.2 AT Premium ESV",
+"to": 201712
+},
+{
+"from": 201503,
+"id": "183276",
+"name": "6.2 AT Luxury ESV",
+"to": 201508
+},
+{
+"from": 201503,
+"id": "79225",
+"name": "6.2 AT Luxury",
+"to": 201508
+},
+{
+"from": 201503,
+"id": "79235",
+"name": "6.2 AT Platinum ESV",
+"to": 201508
+},
+{
+"from": 201503,
+"id": "79226",
+"name": "6.2 AT Premium",
+"to": 201508
+},
+{
+"from": 201503,
+"id": "79230",
+"name": "6.2 AT Platinum",
+"to": 201508
+},
+{
+"from": 201503,
+"id": "79234",
+"name": "6.2 AT Premium ESV",
+"to": 201508
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "GM Ecotec 3 L86",
+"fuel": "бензин",
+"hp": 426,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 426 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201712,
+"id": "79225",
+"name": "6.2 AT Luxury",
+"to": 202111
+},
+{
+"from": 201712,
+"id": "183276",
+"name": "6.2 AT Luxury ESV",
+"to": 202111
+},
+{
+"from": 201712,
+"id": "79235",
+"name": "6.2 AT Platinum ESV",
+"to": 202111
+},
+{
+"from": 201712,
+"id": "79226",
+"name": "6.2 AT Premium",
+"to": 202111
+},
+{
+"from": 201712,
+"id": "79230",
+"name": "6.2 AT Platinum",
+"to": 202111
+},
+{
+"from": 201712,
+"id": "79234",
+"name": "6.2 AT Premium ESV",
+"to": 202111
+},
+{
+"from": 201812,
+"id": "235798",
+"name": "6.2 AT 20th Anniversary Edition",
+"to": 201903
+},
+{
+"from": 201906,
+"id": "254644",
+"name": "6.2 AT Sport Edition",
+"to": 201911
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/escalade/g_201401_3538",
+"market": "Россия",
+"to": 202111
+},
+"cadillac/escalade/g_202009_13533": {
+"from": 202002,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "L87",
+"fuel": "бензин",
+"hp": 416,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 416 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202106,
+"id": "356109",
+"name": "6.2 AT Luxury",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356119",
+"name": "6.2 AT ESV Luxury",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356110",
+"name": "6.2 AT Premium Luxury",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356112",
+"name": "6.2 AT Sport",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356120",
+"name": "6.2 AT ESV Premium Luxury",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356122",
+"name": "6.2 AT ESV Sport",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356113",
+"name": "6.2 AT Sport Platinum",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356121",
+"name": "6.2 AT ESV Premium Luxury Platinum",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356111",
+"name": "6.2 AT Premium Luxury Platinum",
+"to": 202204
+},
+{
+"from": 202106,
+"id": "356123",
+"name": "6.2 AT ESV Sport Platinum",
+"to": 202204
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/escalade/g_202009_13533",
+"market": "Россия",
+"to": 202204
+},
+"cadillac/escalade/g_2020_10872": {
+"from": 202002,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "LM2",
+"fuel": "дизель",
+"hp": 277,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 277 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202009,
+"id": "275383",
+"name": "3.0 TD AT Luxury",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275399",
+"name": "3.0 TD AT Luxury ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275384",
+"name": "3.0 TD AT Premium Luxury",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275386",
+"name": "3.0 TD AT Sport",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275400",
+"name": "3.0 TD AT Premium Luxury ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275402",
+"name": "3.0 TD AT Sport ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275385",
+"name": "3.0 TD AT Premium Luxury Platinum",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275387",
+"name": "3.0 TD AT Sport Platinum",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275401",
+"name": "3.0 TD AT Premium Luxury Platinum ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275403",
+"name": "3.0 TD AT Sport Platinum ESV",
+"to": 202411
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "L86",
+"fuel": "бензин",
+"gen_key": "cadillac/escalade/g_2020_10872",
+"hp": 420,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 420 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202009,
+"id": "275339",
+"name": "6.2 AT Luxury",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275392",
+"name": "6.2 AT Luxury ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275343",
+"name": "6.2 AT Premium Luxury",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275364",
+"name": "6.2 AT Sport",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275395",
+"name": "6.2 AT Premium Luxury ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275397",
+"name": "6.2 AT Sport ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275354",
+"name": "6.2 AT Premium Luxury Platinum",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275365",
+"name": "6.2 AT Sport Platinum",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275396",
+"name": "6.2 AT Premium Luxury Platinum ESV",
+"to": 202411
+},
+{
+"from": 202009,
+"id": "275398",
+"name": "6.2 AT Sport Platinum ESV",
+"to": 202411
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "GM LT4",
+"fuel": "бензин",
+"hp": 682,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 682 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202212,
+"id": "552991",
+"name": "6.2 AT Escalade-V",
+"to": 202411
+},
+{
+"from": 202212,
+"id": "552992",
+"name": "6.2 AT Escalade-V ESV",
+"to": 202411
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/escalade/g_2020_10872",
+"market": "США",
+"to": 202411
 },
 "cadillac/lyriq/g_2020_17206": {
 "from": 202008,
@@ -100953,6 +102706,149 @@
 "market": "Южная Корея",
 "to": 202501
 },
+"genesis/gv70/g_2025_24549": {
+"from": 202501,
+"groups": [
+{
+"body": [
+"JK1"
+],
+"drive": "4wd",
+"engine": null,
+"fuel": "electric",
+"hp": 435,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "435 л.с., электричество, редуктор, полный привод (4WD)",
+"trans": "reducer",
+"trims": [
+{
+"from": 202501,
+"id": "555162",
+"name": "Electrified 84 kWh e-AWD",
+"to": null
+}
+]
+},
+{
+"body": [
+"JK1"
+],
+"drive": "4wd",
+"engine": "G4KR",
+"fuel": "бензин",
+"hp": 304,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 304 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202405,
+"id": "555142",
+"name": "2.5 AT 4WD",
+"to": null
+},
+{
+"from": 202405,
+"id": "555145",
+"name": "2.5 AT 4WD Sport",
+"to": null
+}
+]
+},
+{
+"body": [
+"JK1"
+],
+"drive": "rwd",
+"engine": "G4KR",
+"fuel": "бензин",
+"hp": 304,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 304 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202405,
+"id": "555139",
+"name": "2.5 AT 2WD",
+"to": null
+},
+{
+"from": 202405,
+"id": "555143",
+"name": "2.5 AT 2WD Sport",
+"to": null
+}
+]
+},
+{
+"body": [
+"JK1"
+],
+"drive": "4wd",
+"engine": "G6DS",
+"fuel": "бензин",
+"hp": 380,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.5,
+"text": "3.5 л, 380 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 202405,
+"id": "555151",
+"name": "3.5 AT 4WD",
+"to": null
+},
+{
+"from": 202405,
+"id": "555153",
+"name": "3.5 AT 4WD Sport",
+"to": null
+}
+]
+},
+{
+"body": [
+"JK1"
+],
+"drive": "rwd",
+"engine": "G6DS",
+"fuel": "бензин",
+"hp": 380,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.5,
+"text": "3.5 л, 380 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 202405,
+"id": "555150",
+"name": "3.5 AT 2WD",
+"to": null
+},
+{
+"from": 202405,
+"id": "555152",
+"name": "3.5 AT 2WD Sport",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "genesis/gv70/g_2025_24549",
+"market": "Южная Корея",
+"to": null
+},
 "genesis/gv80/g_202001_10837": {
 "from": 202001,
 "groups": [
@@ -121679,31 +123575,37 @@
 "trims": [
 {
 "from": 202211,
+"id": "467998",
 "name": "HEV 1.6 AT 2WD Premium",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468036",
 "name": "HEV 1.6 AT 2WD Exclusive",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468037",
 "name": "HEV 1.6 AT 2WD Calligraphy",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559832",
 "name": "HEV 1.6 AT 2WD Calligraphy Black Exterior",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559841",
 "name": "HEV 1.6 AT 2WD Calligraphy Black Ink",
 "to": 202604
 },
 {
 "from": 202505,
+"id": "559844",
 "name": "HEV 1.6 AT 2WD Honors",
 "to": 202604
 }
@@ -121716,7 +123618,6 @@
 "drive": "fwd",
 "engine": "G4KN",
 "fuel": "бензин",
-"gen_key": "hyundai/grandeur/g_202211_16665",
 "hp": 198,
 "hp_total": null,
 "hybrid": null,
@@ -121726,31 +123627,37 @@
 "trims": [
 {
 "from": 202211,
+"id": "468038",
 "name": "2.5 AT 2WD Premium",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468039",
 "name": "2.5 AT 2WD Exclusive",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468040",
 "name": "2.5 AT 2WD Calligraphy",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559846",
 "name": "2.5 AT 2WD Calligraphy Black Exterior",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559847",
 "name": "2.5 AT 2WD Calligraphy Black Ink",
 "to": 202604
 },
 {
 "from": 202505,
+"id": "559848",
 "name": "2.5 AT 2WD Honors",
 "to": 202604
 }
@@ -121772,11 +123679,13 @@
 "trims": [
 {
 "from": 202211,
+"id": "468051",
 "name": "3.5 LPG AT 2WD Premium",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468052",
 "name": "3.5 LPG AT 2WD Exclusive",
 "to": 202604
 }
@@ -121798,31 +123707,37 @@
 "trims": [
 {
 "from": 202211,
+"id": "468041",
 "name": "3.5 AT 2WD Premium",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468042",
 "name": "3.5 AT 2WD Exclusive",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468043",
 "name": "3.5 AT 2WD Calligraphy",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559849",
 "name": "3.5 AT 2WD Calligraphy Black Exterior",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559851",
 "name": "3.5 AT 2WD Calligraphy Black Ink",
 "to": 202604
 },
 {
 "from": 202505,
+"id": "559854",
 "name": "3.5 AT 2WD Honors",
 "to": 202604
 }
@@ -121844,37 +123759,44 @@
 "trims": [
 {
 "from": 202211,
+"id": "468047",
 "name": "3.5 AT 4WD Premium",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468048",
 "name": "3.5 AT 4WD Exclusive",
 "to": 202604
 },
 {
 "from": 202211,
+"id": "468049",
 "name": "3.5 AT 4WD Calligraphy",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559850",
 "name": "3.5 AT 4WD Calligraphy Black Exterior",
 "to": 202604
 },
 {
 "from": 202406,
+"id": "559853",
 "name": "3.5 AT 4WD Calligraphy Black Ink",
 "to": 202604
 },
 {
 "from": 202505,
+"id": "559855",
 "name": "3.5 AT 4WD Honors",
 "to": 202604
 }
 ]
 }
 ],
+"ids": true,
 "key": "hyundai/grandeur/g_202211_16665",
 "market": "Южная Корея",
 "to": 202604
@@ -134615,6 +136537,7 @@
 ]
 }
 ],
+"key": "hyundai/starex/g_200705_2803",
 "market": "Южная Корея",
 "to": 201310
 },
@@ -135002,6 +136925,7 @@
 ]
 }
 ],
+"key": "hyundai/starex/g_201311_8906",
 "market": "Южная Корея",
 "to": 201712
 },
@@ -159340,6 +161264,7 @@
 "drive": "fwd",
 "engine": "G4KP",
 "fuel": "бензин",
+"gen_key": "kia/sorento/g_2023_19626",
 "hp": 281,
 "hp_total": null,
 "hybrid": null,
@@ -204404,6 +206329,81 @@
 "market": "Южная Корея",
 "to": null
 },
+"mercedes-benz/eqc/g_2018_23679": {
+"from": 201809,
+"groups": [
+{
+"body": [
+"N293"
+],
+"drive": "4wd",
+"engine": "EM0016, EM0021",
+"fuel": "electric",
+"gen_key": "mercedes-benz/eqc/g_2018_23679",
+"hp": 408,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "408 л.с., электричество, редуктор, полный привод (4WD)",
+"trans": "reducer",
+"trims": [
+{
+"from": 202006,
+"id": "544091",
+"name": "EQC 400 4MATIC",
+"to": 202209
+},
+{
+"from": 202006,
+"id": "544092",
+"name": "EQC 400 4MATIC Edition 1886",
+"to": 202103
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/eqc/g_2018_23679",
+"market": "Южная Корея",
+"to": 202209
+},
+"mercedes-benz/eqc/g_201907_10512": {
+"from": 201809,
+"groups": [
+{
+"body": [
+"N293"
+],
+"drive": "4wd",
+"engine": "EM0016, EM0021",
+"fuel": "electric",
+"hp": 408,
+"hp_total": null,
+"hybrid": null,
+"liters": null,
+"text": "408 л.с., электричество, редуктор, полный привод (4WD)",
+"trans": "reducer",
+"trims": [
+{
+"from": 202006,
+"id": "279784",
+"name": "EQC 400 4MATIC",
+"to": null
+},
+{
+"from": 202103,
+"id": "388663",
+"name": "EQC 400 4MATIC AMG Line",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "mercedes-benz/eqc/g_201907_10512",
+"market": "Европа",
+"to": null
+},
 "mercedes-benz/eqe/g_202109_13971": {
 "from": 202109,
 "groups": [
@@ -218702,6 +220702,7 @@
 "drive": "4wd",
 "engine": "M 256 E 30 DEH LA G R",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/s-class/g_2020_23877",
 "hp": 367,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -218762,6 +220763,7 @@
 "drive": "4wd",
 "engine": "M 256 E 30 DEH LA G R",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/s-class/g_2020_23877",
 "hp": 435,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -227310,6 +229312,7 @@
 "drive": "fwd",
 "engine": "B38A15",
 "fuel": "бензин",
+"gen_key": "mini/hatch/g_202310_19226",
 "hp": 156,
 "hp_total": null,
 "hybrid": null,
@@ -231069,6 +233072,7 @@
 "drive": "fwd",
 "engine": "HR15DE",
 "fuel": "бензин",
+"gen_key": "nissan/juke/g_2010_1276",
 "hp": 114,
 "hp_total": null,
 "hybrid": null,
@@ -324687,6 +326691,7 @@
 "42452963": 739887,
 "42453570": 739885,
 "42453758": 739885,
+"42454252": 739888,
 "42454339": 739884,
 "42455237": 739888,
 "42457708": 739884,
@@ -324694,6 +326699,7 @@
 "42459847": 739884,
 "42459882": 739884,
 "42461287": 739885,
+"42461491": 739888,
 "42461723": 739885,
 "42462507": 739887,
 "42465716": 739885,
@@ -324709,6 +326715,7 @@
 "42475867": 739888,
 "42476417": 739884,
 "42477448": 739885,
+"42478676": 739888,
 "42479842": 739884,
 "42480059": 739888,
 "42481019": 739884,
@@ -324795,6 +326802,7 @@
 "42559815": 739885,
 "42559957": 739884,
 "42560772": 739887,
+"42561068": 739888,
 "42562083": 739884,
 "42562183": 739884,
 "42563047": 739887,
@@ -324824,6 +326832,7 @@
 "42573292": 739885,
 "42573906": 739884,
 "42574064": 739884,
+"42575941": 739888,
 "42576971": 739884,
 "42578033": 739886,
 "42578048": 739885,
@@ -324989,6 +326998,7 @@
 "42682718": 739885,
 "42683780": 739885,
 "42684705": 739884,
+"42684838": 739888,
 "42686377": 739885,
 "42686753": 739887,
 "42686861": 739884,
@@ -325074,6 +327084,7 @@
 "42726113": 739884,
 "42726713": 739884,
 "42726943": 739885,
+"42727666": 739888,
 "42727882": 739886,
 "42728969": 739884,
 "42729533": 739884,
@@ -325099,6 +327110,7 @@
 "42738131": 739884,
 "42738162": 739884,
 "42738841": 739884,
+"42740036": 739888,
 "42740212": 739885,
 "42740371": 739885,
 "42740620": 739884,
@@ -325113,6 +327125,7 @@
 "42745811": 739884,
 "42746423": 739886,
 "42747222": 739884,
+"42747968": 739888,
 "42748194": 739884,
 "42748205": 739885,
 "42749051": 739887,
@@ -325138,6 +327151,7 @@
 "42756541": 739885,
 "42756658": 739884,
 "42756862": 739884,
+"42756880": 739888,
 "42757013": 739884,
 "42757209": 739884,
 "42757365": 739885,
@@ -325152,6 +327166,7 @@
 "42759837": 739885,
 "42760481": 739884,
 "42760524": 739886,
+"42760944": 739888,
 "42762123": 739884,
 "42762152": 739885,
 "42762259": 739885,
@@ -325182,6 +327197,7 @@
 "42770628": 739885,
 "42770645": 739885,
 "42770663": 739884,
+"42770853": 739888,
 "42771301": 739888,
 "42771741": 739885,
 "42772846": 739885,
@@ -328882,6 +330898,90 @@
 ]
 ],
 "name": "3.0 AT AWD Reserve"
+},
+"275354": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"420 л.с. (309 кВт) при 5600 об/мин"
+],
+[
+"Крутящий момент",
+"623 Н·м при 4100 об/мин"
+],
+[
+"Модель двигателя",
+"L86"
+],
+[
+"Тип двигателя",
+"V-образный, 8-цилиндровый"
+],
+[
+"Топливо",
+"Бензин Premium (АИ-98)"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5382 × 2059 × 1948 мм"
+],
+[
+"Колёсная база",
+"3071 мм"
+],
+[
+"Клиренс",
+"205 мм"
+],
+[
+"Масса",
+"2850 кг"
+],
+[
+"Багажник",
+"722 (со сложенным 3-м рядом сидений 1784 л., со сложенными 2-м и 3-м рядами сидений 3089 л.) л"
+],
+[
+"Мест",
+"7"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"285/45 R22"
+]
+]
+]
+],
+"name": "6.2 AT Premium Luxury Platinum"
 },
 "286267": {
 "groups": [
@@ -346716,6 +348816,115 @@
 ],
 "name": "1.6 GDI AT 2WD Premium"
 },
+"468042": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"300 л.с. (221 кВт) при 6400 об/мин"
+],
+[
+"Крутящий момент",
+"358 Н·м при 5000 об/мин"
+],
+[
+"Модель двигателя",
+"G6DT"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,6 л/100 км"
+],
+[
+"Город",
+"11,5 л/100 км"
+],
+[
+"Трасса",
+"7,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5035 × 1880 × 1460 мм"
+],
+[
+"Колёсная база",
+"2895 мм"
+],
+[
+"Клиренс",
+"162 мм"
+],
+[
+"Масса",
+"1620 кг"
+],
+[
+"Топливный бак",
+"60 л"
+],
+[
+"Багажник",
+"480 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/55 R18"
+]
+]
+]
+],
+"name": "3.5 AT 2WD Exclusive"
+},
 "468217": {
 "groups": [
 [
@@ -348707,6 +350916,115 @@
 ]
 ],
 "name": "2.0 LPI AT 2WD Premium"
+},
+"482549": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"146 л.с. (107 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"191 Н·м при 4200 об/мин"
+],
+[
+"Модель двигателя",
+"L4NB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,6 л/100 км"
+],
+[
+"Город",
+"12,2 л/100 км"
+],
+[
+"Трасса",
+"8,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4910 × 1860 × 1445 мм"
+],
+[
+"Колёсная база",
+"2840 мм"
+],
+[
+"Клиренс",
+"155 мм"
+],
+[
+"Масса",
+"1430 кг"
+],
+[
+"Топливный бак",
+"64 л"
+],
+[
+"Багажник",
+"360 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/45 R18"
+]
+]
+]
+],
+"name": "2.0 LPI AT 2WD Inspiration"
 },
 "482567": {
 "groups": [
@@ -357547,6 +359865,111 @@
 ],
 "name": "1.6 T-GDI Hybrid AT 2WD Prestige 5 seats"
 },
+"506667": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"281 л.с. (207 кВт) при 5800 об/мин"
+],
+[
+"Крутящий момент",
+"422 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4KP"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,9 л/100 км"
+],
+[
+"Город",
+"11,1 л/100 км"
+],
+[
+"Трасса",
+"8,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4815 × 1900 × 1700 мм"
+],
+[
+"Колёсная база",
+"2815 мм"
+],
+[
+"Масса",
+"1775 кг"
+],
+[
+"Топливный бак",
+"67 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"255/45 R20"
+]
+]
+]
+],
+"name": "2.5T DCT 2WD Signature 5 seats"
+},
 "507094": {
 "groups": [
 [
@@ -362664,6 +365087,115 @@
 ],
 "name": "2.0 LPG CVT 2WD Rent Car SE"
 },
+"513024": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"156 л.с. (115 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"260 Н·м при 3000 об/мин"
+],
+[
+"Модель двигателя",
+"H5Ht"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,3 л/100 км"
+],
+[
+"Город",
+"8,2 л/100 км"
+],
+[
+"Трасса",
+"6,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4855 × 1870 × 1460 мм"
+],
+[
+"Колёсная база",
+"2810 мм"
+],
+[
+"Клиренс",
+"145 мм"
+],
+[
+"Масса",
+"1420 кг"
+],
+[
+"Топливный бак",
+"51 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205/65 R16"
+]
+]
+]
+],
+"name": "1.3 TCe DCT 2WD SE"
+},
 "513026": {
 "groups": [
 [
@@ -367109,6 +369641,111 @@
 ]
 ],
 "name": "1.0 AT 2WD Prestige VAN Special 1 seat"
+},
+"519030": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"76 л.с. (56 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"95 Н·м при 3750 об/мин"
+],
+[
+"Модель двигателя",
+"G3LD"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,7 л/100 км"
+],
+[
+"Город",
+"8,2 л/100 км"
+],
+[
+"Трасса",
+"7,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"3595 × 1595 × 1700 мм"
+],
+[
+"Колёсная база",
+"2520 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1030 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Мест",
+"2"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"165/60 R14"
+]
+]
+]
+],
+"name": "1.0 AT 2WD Prestige VAN 2 seats"
 },
 "519031": {
 "groups": [
@@ -374822,6 +377459,124 @@
 ],
 "name": "100.4 kWh xDrive45 M Sport"
 },
+"541205": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8,4 с"
+],
+[
+"Максимальная скорость",
+"215 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"184 л.с. (135 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"300 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"B48B20"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4708 × 1891 × 1676 мм"
+],
+[
+"Колёсная база",
+"2864 мм"
+],
+[
+"Клиренс",
+"203 мм"
+],
+[
+"Масса",
+"1875 кг"
+],
+[
+"Топливный бак",
+"65 л"
+],
+[
+"Багажник",
+"550 (1600) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/60 R18"
+]
+]
+]
+],
+"name": "xDrive 20i AT"
+},
 "541258": {
 "groups": [
 [
@@ -375541,6 +378296,136 @@
 ],
 "name": "106 kWh 55 quattro e-tron Premium"
 },
+"541861": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,1 с"
+],
+[
+"Максимальная скорость",
+"238 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"192 л.с. (141 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"280 Н·м при 4200 об/мин"
+],
+[
+"Модель двигателя",
+"B48A20U1"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,4 л/100 км"
+],
+[
+"Город",
+"6,9 л/100 км"
+],
+[
+"Трасса",
+"4,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4526 × 1800 × 1420 мм"
+],
+[
+"Колёсная база",
+"2670 мм"
+],
+[
+"Клиренс",
+"152 мм"
+],
+[
+"Масса",
+"1505 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"430 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/45 R17"
+],
+[
+"Радиус разворота",
+"5,7 м"
+]
+]
+]
+],
+"name": "220i AT Advantage"
+},
 "541881": {
 "groups": [
 [
@@ -376153,6 +379038,128 @@
 ]
 ],
 "name": "420i M Sport"
+},
+"542073": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,9 с"
+],
+[
+"Максимальная скорость",
+"235 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"184 л.с. (135 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"300 Н·м при 1350 об/мин"
+],
+[
+"Модель двигателя",
+"B48B20M0"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4786 × 1852 × 1383 мм"
+],
+[
+"Колёсная база",
+"2851 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1695 кг"
+],
+[
+"Топливный бак",
+"59 л"
+],
+[
+"Багажник",
+"440 л"
+],
+[
+"Мест",
+"4"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/45 R18"
+],
+[
+"Радиус разворота",
+"6 м"
+]
+]
+]
+],
+"name": "420i M Sport Performance"
 },
 "542084": {
 "groups": [
@@ -376910,6 +379917,124 @@
 ],
 "name": "530e AT M Sport"
 },
+"542724": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,5 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"313 л.с. (230 кВт) при 4400 об/мин"
+],
+[
+"Крутящий момент",
+"630 Н·м при 2500 об/мин"
+],
+[
+"Модель двигателя",
+"N57D30"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Дизельное топливо"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4894 × 1894 × 1369 мм"
+],
+[
+"Колёсная база",
+"2855 мм"
+],
+[
+"Клиренс",
+"124 мм"
+],
+[
+"Масса",
+"1735 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"460 л"
+],
+[
+"Мест",
+"4"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/45 R18"
+],
+[
+"Радиус разворота",
+"5,9 м"
+]
+]
+]
+],
+"name": "640d AT xDrive"
+},
 "542735": {
 "groups": [
 [
@@ -377270,6 +380395,136 @@
 ]
 ],
 "name": "320i AT M Sport"
+},
+"543187": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"4,4 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"374 л.с. (275 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"500 Н·м при 5000 об/мин"
+],
+[
+"Модель двигателя",
+"B58B30TU1"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,0 л/100 км"
+],
+[
+"Город",
+"9 л/100 км"
+],
+[
+"Трасса",
+"5,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4713 × 1827 × 1443 мм"
+],
+[
+"Колёсная база",
+"2851 мм"
+],
+[
+"Клиренс",
+"137 мм"
+],
+[
+"Масса",
+"1800 кг"
+],
+[
+"Топливный бак",
+"59 л"
+],
+[
+"Багажник",
+"480 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/45 R18"
+],
+[
+"Радиус разворота",
+"5,7 м"
+]
+]
+]
+],
+"name": "M340i AT xDrive"
 },
 "543447": {
 "groups": [
@@ -378619,6 +381874,99 @@
 ]
 ],
 "name": "EQA 250 AMG Line"
+},
+"544091": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,1 с"
+],
+[
+"Максимальная скорость",
+"180 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"408 л.с. (300 кВт) при 0 об/мин"
+],
+[
+"Модель двигателя",
+"EM0016, EM0021"
+],
+[
+"Тип двигателя",
+"Электродвигатель"
+],
+[
+"Топливо",
+"Электричество"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4762 × 1884 × 1624 мм"
+],
+[
+"Колёсная база",
+"2873 мм"
+],
+[
+"Клиренс",
+"97 мм"
+],
+[
+"Масса",
+"2495 кг"
+],
+[
+"Багажник",
+"500 (1460) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R19"
+]
+]
+]
+],
+"name": "EQC 400 4MATIC"
 },
 "544198": {
 "groups": [
