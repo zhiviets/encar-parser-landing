@@ -1697,6 +1697,22 @@
 "g_2022_23385"
 ]
 },
+"cadillac/ct6/europe": {
+"day": 739888,
+"gens": []
+},
+"cadillac/ct6/south-korea": {
+"day": 739888,
+"gens": []
+},
+"cadillac/ct6/usa": {
+"day": 739888,
+"gens": [
+"g_2015_9606",
+"g_201601_7985",
+"g_2018_10387"
+]
+},
 "cadillac/escalade/europe": {
 "day": 739888,
 "gens": []
@@ -2181,6 +2197,25 @@
 "g_201612_9397",
 "g_202010_12811",
 "g_2023_20490"
+]
+},
+"ford/f250/europe": {
+"day": 739888,
+"gens": []
+},
+"ford/f250/south-korea": {
+"day": 739888,
+"gens": []
+},
+"ford/f250/usa": {
+"day": 739888,
+"gens": [
+"g_199801_12424",
+"g_200406_12422",
+"g_2006_12423",
+"g_2010_2502",
+"g_201607_15740",
+"g_201904_15739"
 ]
 },
 "ford/fusion/europe": {
@@ -3717,6 +3752,71 @@
 "g_200204_3929",
 "g_2018_10517",
 "g_2024_24593"
+]
+},
+"lincoln/continental/europe": {
+"day": 739888,
+"gens": []
+},
+"lincoln/continental/south-korea": {
+"day": 739888,
+"gens": []
+},
+"lincoln/continental/usa": {
+"day": 739888,
+"gens": [
+"g_1939_10435",
+"g_1939_10436",
+"g_1941_10437",
+"g_1941_10438",
+"g_1946_10439",
+"g_1946_10440",
+"g_1955_10442",
+"g_1956_10443",
+"g_1957_10444",
+"g_1957_10445",
+"g_1957_10446",
+"g_1957_10447",
+"g_1958_10448",
+"g_1958_10450",
+"g_1958_10451",
+"g_1958_10452",
+"g_1958_10453",
+"g_1959_10454",
+"g_1959_10455",
+"g_1959_10456",
+"g_1959_10457",
+"g_1960_10458",
+"g_1960_10459",
+"g_1961_10460",
+"g_1961_10461",
+"g_1963_10466",
+"g_1963_10467",
+"g_1964_10468",
+"g_1964_10469",
+"g_1965_10471",
+"g_1965_10472",
+"g_1965_10473",
+"g_1967_10474",
+"g_1967_10475",
+"g_1969_10479",
+"g_1969_10480",
+"g_1972_10481",
+"g_1972_10482",
+"g_1973_10483",
+"g_1973_10484",
+"g_1974_10485",
+"g_1974_10486",
+"g_197609_10487",
+"g_1976_10488",
+"g_1979_10492",
+"g_1979_10493",
+"g_1981_10497",
+"g_198308_10498",
+"g_198712_10501",
+"g_199412_10508",
+"g_1997_3931",
+"g_2016_10511"
 ]
 },
 "lincoln/corsair/europe": {
@@ -5318,6 +5418,18 @@
 "gens": [
 "g_2022_19805"
 ]
+},
+"rolls-royce/wraith/europe": {
+"day": 739888,
+"gens": []
+},
+"rolls-royce/wraith/south-korea": {
+"day": 739888,
+"gens": []
+},
+"rolls-royce/wraith/usa": {
+"day": 739888,
+"gens": []
 },
 "ssang_yong/actyon/europe": {
 "day": 739887,
@@ -79348,6 +79460,149 @@
 "market": "Южная Корея",
 "to": null
 },
+"cadillac/ct6/g_201601_7985": {
+"from": 201504,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "LGX",
+"fuel": "бензин",
+"hp": 335,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.6,
+"text": "3.6 л, 335 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201712,
+"id": "191231",
+"name": "3.6 AT AWD Luxury",
+"to": 201905
+},
+{
+"from": 201712,
+"id": "191235",
+"name": "3.6 AT AWD Platinum",
+"to": 201905
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/ct6/g_201601_7985",
+"market": "Россия",
+"to": 201906
+},
+"cadillac/ct6/g_2018_10387": {
+"from": 201804,
+"groups": [
+{
+"body": [],
+"drive": "rwd",
+"engine": "LSY",
+"fuel": "бензин",
+"gen_key": "cadillac/ct6/g_2018_10387",
+"hp": 237,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 237 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201809,
+"id": "241780",
+"name": "2.0 AT Luxury",
+"to": 201904
+},
+{
+"from": 201809,
+"id": "241781",
+"name": "2.0 AT Premium Luxury",
+"to": 201904
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "LGW",
+"fuel": "бензин",
+"hp": 404,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 404 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201809,
+"id": "241785",
+"name": "3.0 AT AWD Sport",
+"to": 202002
+},
+{
+"from": 201809,
+"id": "241784",
+"name": "3.0 AT AWD Platinum",
+"to": 202002
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "LGX",
+"fuel": "бензин",
+"hp": 335,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.6,
+"text": "3.6 л, 335 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201809,
+"id": "241782",
+"name": "3.6 AT AWD Luxury",
+"to": 202002
+},
+{
+"from": 201809,
+"id": "241783",
+"name": "3.6 AT AWD Premium Luxury",
+"to": 202002
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "LTA",
+"fuel": "бензин",
+"hp": 550,
+"hp_total": null,
+"hybrid": null,
+"liters": 4.2,
+"text": "4.2 л, 550 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201901,
+"id": "551465",
+"name": "4.2 AT AWD CT6-V",
+"to": 202002
+}
+]
+}
+],
+"ids": true,
+"key": "cadillac/ct6/g_2018_10387",
+"market": "США",
+"to": 202002
+},
 "cadillac/escalade/g_2013_5774": {
 "from": 201310,
 "groups": [
@@ -95575,6 +95830,1394 @@
 }
 ],
 "key": "ford/f150/g_2023_20490",
+"market": "США",
+"to": null
+},
+"ford/f250/g_2010_2502": {
+"from": 201002,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "Ford Hurricane V8",
+"fuel": "бензин",
+"hp": 385,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 385 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201003,
+"id": "433304",
+"name": "6.2 AT 4x4 XL Regular Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433305",
+"name": "6.2 AT 4x4 XLT Regular Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433311",
+"name": "6.2 AT 4x4 XL SuperCab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433320",
+"name": "6.2 AT 4x4 XL SuperCab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433331",
+"name": "6.2 AT 4x4 XL Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433346",
+"name": "6.2 AT 4x4 XL Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433312",
+"name": "6.2 AT 4x4 XLT SuperCab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433321",
+"name": "6.2 AT 4x4 XLT SuperCab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433332",
+"name": "6.2 AT 4x4 XLT Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433347",
+"name": "6.2 AT 4x4 XLT Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433313",
+"name": "6.2 AT 4x4 Lariat SuperCab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433322",
+"name": "6.2 AT 4x4 Lariat SuperCab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433333",
+"name": "6.2 AT 4x4 Lariat Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433348",
+"name": "6.2 AT 4x4 Lariat Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433334",
+"name": "6.2 AT 4x4 King Ranch Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433349",
+"name": "6.2 AT 4x4 King Ranch Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433335",
+"name": "6.2 AT 4x4 Platinum Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433350",
+"name": "6.2 AT 4x4 Platinum Crew Cab Long Box SRW",
+"to": 201603
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Ford Hurricane V8",
+"fuel": "бензин",
+"hp": 385,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 385 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201003,
+"id": "433226",
+"name": "6.2 AT XL Regular Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433227",
+"name": "6.2 AT XLT Regular Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433235",
+"name": "6.2 AT XL SuperCab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433239",
+"name": "6.2 AT XL SuperCab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433242",
+"name": "6.2 AT XL Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433248",
+"name": "6.2 AT XL Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433236",
+"name": "6.2 AT XLT SuperCab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433240",
+"name": "6.2 AT XLT SuperCab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433243",
+"name": "6.2 AT XLT Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433249",
+"name": "6.2 AT XLT Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433237",
+"name": "6.2 AT Lariat SuperCab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433241",
+"name": "6.2 AT Lariat SuperCab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433244",
+"name": "6.2 AT Lariat Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433250",
+"name": "6.2 AT Lariat Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433245",
+"name": "6.2 AT King Ranch Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433251",
+"name": "6.2 AT King Ranch Crew Cab Short Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433246",
+"name": "6.2 AT Platinum Crew Cab Long Box SRW",
+"to": 201603
+},
+{
+"from": 201003,
+"id": "433252",
+"name": "6.2 AT Platinum Crew Cab Short Box SRW",
+"to": 201603
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "Ford Power Stroke 409",
+"fuel": "дизель",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.7,
+"text": "6.7 л, 400 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201003,
+"id": "433306",
+"name": "6.7TD AT 4x4 XL Regular Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433307",
+"name": "6.7TD AT 4x4 XLT Regular Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433314",
+"name": "6.7TD AT 4x4 XL SuperCab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433323",
+"name": "6.7TD AT 4x4 XL SuperCab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433336",
+"name": "6.7TD AT 4x4 XL Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433351",
+"name": "6.7TD AT 4x4 XL Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433315",
+"name": "6.7TD AT 4x4 XLT SuperCab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433324",
+"name": "6.7TD AT 4x4 XLT SuperCab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433337",
+"name": "6.7TD AT 4x4 XLT Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433352",
+"name": "6.7TD AT 4x4 XLT Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433316",
+"name": "6.7TD AT 4x4 Lariat SuperCab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433325",
+"name": "6.7TD AT 4x4 Lariat SuperCab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433338",
+"name": "6.7TD AT 4x4 Lariat Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433353",
+"name": "6.7TD AT 4x4 Lariat Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433339",
+"name": "6.7TD AT 4x4 King Ranch Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433355",
+"name": "6.7TD AT 4x4 King Ranch Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433340",
+"name": "6.7TD AT 4x4 Platinum Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433354",
+"name": "6.7TD AT 4x4 Platinum Crew Cab Long Box SRW",
+"to": 201403
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Ford Power Stroke 409",
+"fuel": "дизель",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.7,
+"text": "6.7 л, 400 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201003,
+"id": "433264",
+"name": "6.7TD AT XL Regular Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433265",
+"name": "6.7TD AT XLT Regular Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433266",
+"name": "6.7TD AT XL SuperCab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433269",
+"name": "6.7TD AT XL SuperCab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433272",
+"name": "6.7TD AT XL Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433277",
+"name": "6.7TD AT XL Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433267",
+"name": "6.7TD AT XLT SuperCab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433270",
+"name": "6.7TD AT XLT SuperCab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433273",
+"name": "6.7TD AT XLT Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433278",
+"name": "6.7TD AT XLT Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433268",
+"name": "6.7TD AT Lariat SuperCab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433271",
+"name": "6.7TD AT Lariat SuperCab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433274",
+"name": "6.7TD AT Lariat Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433279",
+"name": "6.7TD AT Lariat Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433275",
+"name": "6.7TD AT King Ranch Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433280",
+"name": "6.7TD AT King Ranch Crew Cab Short Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433276",
+"name": "6.7TD AT Platinum Crew Cab Long Box SRW",
+"to": 201403
+},
+{
+"from": 201003,
+"id": "433281",
+"name": "6.7TD AT Platinum Crew Cab Short Box SRW",
+"to": 201403
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "Ford Power Stroke 409",
+"fuel": "дизель",
+"hp": 440,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.7,
+"text": "6.7 л, 440 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201403,
+"id": "433306",
+"name": "6.7TD AT 4x4 XL Regular Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433307",
+"name": "6.7TD AT 4x4 XLT Regular Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433314",
+"name": "6.7TD AT 4x4 XL SuperCab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433323",
+"name": "6.7TD AT 4x4 XL SuperCab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433336",
+"name": "6.7TD AT 4x4 XL Crew Cab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433351",
+"name": "6.7TD AT 4x4 XL Crew Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433315",
+"name": "6.7TD AT 4x4 XLT SuperCab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433324",
+"name": "6.7TD AT 4x4 XLT SuperCab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433337",
+"name": "6.7TD AT 4x4 XLT Crew Cab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433352",
+"name": "6.7TD AT 4x4 XLT Crew Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433316",
+"name": "6.7TD AT 4x4 Lariat SuperCab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433325",
+"name": "6.7TD AT 4x4 Lariat SuperCab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433338",
+"name": "6.7TD AT 4x4 Lariat Crew Cab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433353",
+"name": "6.7TD AT 4x4 Lariat Crew Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433339",
+"name": "6.7TD AT 4x4 King Ranch Crew Cab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433355",
+"name": "6.7TD AT 4x4 King Ranch Crew Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433340",
+"name": "6.7TD AT 4x4 Platinum Crew Cab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433354",
+"name": "6.7TD AT 4x4 Platinum Crew Cab Long Box SRW",
+"to": 201606
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Ford Power Stroke 409",
+"fuel": "дизель",
+"hp": 440,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.7,
+"text": "6.7 л, 440 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201403,
+"id": "433264",
+"name": "6.7TD AT XL Regular Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433265",
+"name": "6.7TD AT XLT Regular Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433266",
+"name": "6.7TD AT XL SuperCab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433269",
+"name": "6.7TD AT XL SuperCab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433272",
+"name": "6.7TD AT XL Crew Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433267",
+"name": "6.7TD AT XLT SuperCab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433270",
+"name": "6.7TD AT XLT SuperCab Short Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433273",
+"name": "6.7TD AT XLT Crew Cab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433268",
+"name": "6.7TD AT Lariat SuperCab Long Box SRW",
+"to": 201606
+},
+{
+"from": 201403,
+"id": "433271",
+"name": "6.7TD AT Lariat SuperCab Short Box SRW",
+"to": 201606
+}
+]
+}
+],
+"ids": true,
+"key": "ford/f250/g_2010_2502",
+"market": "США",
+"to": 201606
+},
+"ford/f250/g_201904_15739": {
+"from": 201902,
+"groups": [
+{
+"body": [],
+"drive": "4wd",
+"engine": "Ford Hurricane V8",
+"fuel": "бензин",
+"gen_key": "ford/f250/g_201904_15739",
+"hp": 385,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 385 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "433614",
+"name": "6.2 AT 4x4 XL Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433616",
+"name": "6.2 AT 4x4 XLT Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433621",
+"name": "6.2 AT 4x4 XL SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433631",
+"name": "6.2 AT 4x4 XL SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433658",
+"name": "6.2 AT 4x4 XL Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433667",
+"name": "6.2 AT 4x4 XL Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433623",
+"name": "6.2 AT 4x4 XLT SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433633",
+"name": "6.2 AT 4x4 XLT SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433660",
+"name": "6.2 AT 4x4 XLT Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433669",
+"name": "6.2 AT 4x4 XLT Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433625",
+"name": "6.2 AT 4x4 Lariat SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433635",
+"name": "6.2 AT 4x4 Lariat SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433662",
+"name": "6.2 AT 4x4 Lariat Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433671",
+"name": "6.2 AT 4x4 Lariat Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433677",
+"name": "6.2 AT 4x4 King Ranch Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433679",
+"name": "6.2 AT 4x4 King Ranch Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433683",
+"name": "6.2 AT 4x4 Platinum Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433685",
+"name": "6.2 AT 4x4 Platinum Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433702",
+"name": "6.2 AT 4x4 Limited Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433704",
+"name": "6.2 AT 4x4 Limited Crew Cab Short Box SRW",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Ford Hurricane V8",
+"fuel": "бензин",
+"gen_key": "ford/f250/g_201904_15739",
+"hp": 385,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.2,
+"text": "6.2 л, 385 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "433608",
+"name": "6.2 AT XL Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433610",
+"name": "6.2 AT XLT Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433506",
+"name": "6.2 AT XL Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433508",
+"name": "6.2 AT XL Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433590",
+"name": "6.2 AT XL SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433599",
+"name": "6.2 AT XL SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433512",
+"name": "6.2 AT XLT Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433513",
+"name": "6.2 AT XLT Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433592",
+"name": "6.2 AT XLT SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433601",
+"name": "6.2 AT XLT SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433518",
+"name": "6.2 AT Lariat Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433519",
+"name": "6.2 AT Lariat Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433594",
+"name": "6.2 AT Lariat SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433603",
+"name": "6.2 AT Lariat SuperCab Long Box SRW",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "Ford Power Stroke 409",
+"fuel": "дизель",
+"hp": 475,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.7,
+"text": "6.7 л, 475 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "433618",
+"name": "6.7TD AT 4x4 XL Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433619",
+"name": "6.7TD AT 4x4 XLT Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433628",
+"name": "6.7TD AT 4x4 XL SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433637",
+"name": "6.7TD AT 4x4 XL SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433664",
+"name": "6.7TD AT 4x4 XL Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433673",
+"name": "6.7TD AT 4x4 XL Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433629",
+"name": "6.7TD AT 4x4 XLT SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433638",
+"name": "6.7TD AT 4x4 XLT SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433665",
+"name": "6.7TD AT 4x4 XLT Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433674",
+"name": "6.7TD AT 4x4 XLT Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433630",
+"name": "6.7TD AT 4x4 Lariat SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433639",
+"name": "6.7TD AT 4x4 Lariat SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433666",
+"name": "6.7TD AT 4x4 Lariat Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433675",
+"name": "6.7TD AT 4x4 Lariat Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433681",
+"name": "6.7TD AT 4x4 King Ranch Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433682",
+"name": "6.7TD AT 4x4 King Ranch Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433687",
+"name": "6.7TD AT 4x4 Platinum Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433688",
+"name": "6.7TD AT 4x4 Platinum Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433706",
+"name": "6.7TD AT 4x4 Limited Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433707",
+"name": "6.7TD AT 4x4 Limited Crew Cab Long Box SRW",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Ford Power Stroke 409",
+"fuel": "дизель",
+"hp": 475,
+"hp_total": null,
+"hybrid": null,
+"liters": 6.7,
+"text": "6.7 л, 475 л.с., дизель, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "433612",
+"name": "6.7TD AT XL Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433613",
+"name": "6.7TD AT XLT Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433507",
+"name": "6.7TD AT XL Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433509",
+"name": "6.7TD AT XL Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433596",
+"name": "6.7TD AT XL SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433605",
+"name": "6.7TD AT XL SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433516",
+"name": "6.7TD AT XLT Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433517",
+"name": "6.7TD AT XLT Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433597",
+"name": "6.7TD AT XLT SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433606",
+"name": "6.7TD AT XLT SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433522",
+"name": "6.7TD AT Lariat Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433523",
+"name": "6.7TD AT Lariat Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433598",
+"name": "6.7TD AT Lariat SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433607",
+"name": "6.7TD AT Lariat SuperCab Long Box SRW",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "4wd",
+"engine": "Ford Godzilla V8",
+"fuel": "бензин",
+"hp": 430,
+"hp_total": null,
+"hybrid": null,
+"liters": 7.3,
+"text": "7.3 л, 430 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "433615",
+"name": "7.3 AT 4x4 XL Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433617",
+"name": "7.3 AT 4x4 XLT Regular Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433622",
+"name": "7.3 AT 4x4 XL SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433632",
+"name": "7.3 AT 4x4 XL SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433659",
+"name": "7.3 AT 4x4 XL Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433668",
+"name": "7.3 AT 4x4 XL Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433624",
+"name": "7.3 AT 4x4 XLT SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433634",
+"name": "7.3 AT 4x4 XLT SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433661",
+"name": "7.3 AT 4x4 XLT Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433670",
+"name": "7.3 AT 4x4 XLT Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433626",
+"name": "7.3 AT 4x4 Lariat SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433636",
+"name": "7.3 AT 4x4 Lariat SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433663",
+"name": "7.3 AT 4x4 Lariat Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433672",
+"name": "7.3 AT 4x4 Lariat Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433678",
+"name": "7.3 AT 4x4 King Ranch Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433680",
+"name": "7.3 AT 4x4 King Ranch Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433684",
+"name": "7.3 AT 4x4 Platinum Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433686",
+"name": "7.3 AT 4x4 Platinum Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433703",
+"name": "7.3 AT 4x4 Limited Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433705",
+"name": "7.3 AT 4x4 Limited Crew Cab Short Box SRW",
+"to": null
+}
+]
+},
+{
+"body": [],
+"drive": "rwd",
+"engine": "Ford Godzilla V8",
+"fuel": "бензин",
+"hp": 430,
+"hp_total": null,
+"hybrid": null,
+"liters": 7.3,
+"text": "7.3 л, 430 л.с., бензин, АКПП, задний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201904,
+"id": "433510",
+"name": "7.3 AT XL Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433511",
+"name": "7.3 AT XL Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433591",
+"name": "7.3 AT XL SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433600",
+"name": "7.3 AT XL SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433514",
+"name": "7.3 AT XLT Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433515",
+"name": "7.3 AT XLT Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433593",
+"name": "7.3 AT XLT SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433602",
+"name": "7.3 AT XLT SuperCab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433520",
+"name": "7.3 AT Lariat Crew Cab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433521",
+"name": "7.3 AT Lariat Crew Cab Long Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433595",
+"name": "7.3 AT Lariat SuperCab Short Box SRW",
+"to": null
+},
+{
+"from": 201904,
+"id": "433604",
+"name": "7.3 AT Lariat SuperCab Long Box SRW",
+"to": null
+}
+]
+}
+],
+"ids": true,
+"key": "ford/f250/g_201904_15739",
 "market": "США",
 "to": null
 },
@@ -122893,6 +124536,7 @@
 ]
 }
 ],
+"key": "hyundai/grandeur/g_2009_6598",
 "market": "Южная Корея",
 "to": 201111
 },
@@ -123479,6 +125123,7 @@
 "drive": "fwd",
 "engine": "L6DB",
 "fuel": "газ",
+"gen_key": "hyundai/grandeur/g_201911_14294",
 "hp": 235,
 "hp_total": null,
 "hybrid": null,
@@ -143673,6 +145318,7 @@
 ]
 }
 ],
+"key": "jeep/cherokee/g_200707_17042",
 "market": "Европа",
 "to": 201210
 },
@@ -151674,6 +153320,7 @@
 ]
 }
 ],
+"key": "kia/k7/g_2009_16587",
 "market": "Южная Корея",
 "to": 201211
 },
@@ -151759,6 +153406,7 @@
 ]
 }
 ],
+"key": "kia/k7/g_201211_2821",
 "market": "Южная Корея",
 "to": 201601
 },
@@ -152007,6 +153655,7 @@
 ]
 }
 ],
+"key": "kia/k7/g_201601_16588",
 "market": "Южная Корея",
 "to": 201906
 },
@@ -152029,11 +153678,13 @@
 "trims": [
 {
 "from": 201906,
+"id": "444053",
 "name": "2.2 R E-VGT AT 2WD Prestige",
 "to": 202009
 },
 {
 "from": 201906,
+"id": "444054",
 "name": "2.2 R E-VGT AT 2WD Nobless",
 "to": 202009
 }
@@ -152055,16 +153706,19 @@
 "trims": [
 {
 "from": 201906,
+"id": "444055",
 "name": "2.4 HEV AT 2WD Prestige",
 "to": 202104
 },
 {
 "from": 201906,
+"id": "444079",
 "name": "2.4 HEV AT 2WD Nobless",
 "to": 202104
 },
 {
 "from": 201906,
+"id": "444080",
 "name": "2.4 HEV AT 2WD Signature",
 "to": 202104
 }
@@ -152086,21 +153740,25 @@
 "trims": [
 {
 "from": 201906,
+"id": "443984",
 "name": "2.5 GDI+MPI AT 2WD Prestige",
 "to": 202009
 },
 {
 "from": 201906,
+"id": "444005",
 "name": "2.5 GDI+MPI AT 2WD Prestige (Navi)",
 "to": 202104
 },
 {
 "from": 201906,
+"id": "444006",
 "name": "2.5 GDI+MPI AT 2WD Nobless",
 "to": 202104
 },
 {
 "from": 201912,
+"id": "444036",
 "name": "2.5 GDI+MPI AT 2WD X Edition",
 "to": 202104
 }
@@ -152122,11 +153780,13 @@
 "trims": [
 {
 "from": 201906,
+"id": "444081",
 "name": "3.0 LPG AT 2WD Prestige",
 "to": 201911
 },
 {
 "from": 201906,
+"id": "444088",
 "name": "3.0 LPG AT 2WD Nobless",
 "to": 201911
 }
@@ -152148,17 +153808,21 @@
 "trims": [
 {
 "from": 201906,
+"id": "444040",
 "name": "3.0 GDI AT 2WD Nobless",
 "to": 202104
 },
 {
 "from": 201906,
+"id": "444052",
 "name": "3.0 GDI AT 2WD Signature",
 "to": 202104
 }
 ]
 }
 ],
+"ids": true,
+"key": "kia/k7/g_201906_16589",
 "market": "Южная Корея",
 "to": 202104
 },
@@ -168226,6 +169890,7 @@
 "drive": "4wd",
 "engine": "AJ20D6",
 "fuel": "дизель",
+"gen_key": "land_rover/defender/g_2019_17140",
 "hp": 200,
 "hp_total": null,
 "hybrid": null,
@@ -168258,6 +169923,7 @@
 "drive": "4wd",
 "engine": "AJ20D6",
 "fuel": "дизель",
+"gen_key": "land_rover/defender/g_2019_17140",
 "hp": 249,
 "hp_total": null,
 "hybrid": null,
@@ -168302,6 +169968,7 @@
 "drive": "4wd",
 "engine": "AJ20D6",
 "fuel": "дизель",
+"gen_key": "land_rover/defender/g_2019_17140",
 "hp": 300,
 "hp_total": null,
 "hybrid": null,
@@ -168677,6 +170344,7 @@
 "drive": "4wd",
 "engine": "AJ20D6",
 "fuel": "дизель",
+"gen_key": "land_rover/defender/g_2019_17141",
 "hp": 200,
 "hp_total": null,
 "hybrid": null,
@@ -168706,6 +170374,7 @@
 "drive": "4wd",
 "engine": "AJ20D6",
 "fuel": "дизель",
+"gen_key": "land_rover/defender/g_2019_17141",
 "hp": 249,
 "hp_total": null,
 "hybrid": null,
@@ -168745,6 +170414,7 @@
 "drive": "4wd",
 "engine": "AJ20D6",
 "fuel": "дизель",
+"gen_key": "land_rover/defender/g_2019_17141",
 "hp": 300,
 "hp_total": null,
 "hybrid": null,
@@ -179000,6 +180670,244 @@
 "key": "lincoln/aviator/g_2024_24593",
 "market": "США",
 "to": null
+},
+"lincoln/continental/g_2016_10511": {
+"from": 201609,
+"groups": [
+{
+"body": [
+"IX"
+],
+"drive": "fwd",
+"engine": "EcoBoost 2.7L",
+"fuel": "бензин",
+"hp": 335,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.7,
+"text": "2.7 л, 335 л.с., бензин, АКПП, передний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201609,
+"id": "267143",
+"name": "2.7 AT Select",
+"to": 201908
+},
+{
+"from": 201609,
+"id": "267144",
+"name": "2.7 AT Reserve",
+"to": 201908
+},
+{
+"from": 201909,
+"id": "267144",
+"name": "2.7 AT Reserve",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "267167",
+"name": "2.7 AT Black Label",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"IX"
+],
+"drive": "4wd",
+"engine": "EcoBoost 2.7L",
+"fuel": "бензин",
+"hp": 335,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.7,
+"text": "2.7 л, 335 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201609,
+"id": "267149",
+"name": "2.7 AT AWD Select",
+"to": 201908
+},
+{
+"from": 201609,
+"id": "267150",
+"name": "2.7 AT AWD Reserve",
+"to": 201908
+},
+{
+"from": 201909,
+"id": "267150",
+"name": "2.7 AT AWD Reserve",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "267168",
+"name": "2.7 AT AWD Black Label",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"IX"
+],
+"drive": "fwd",
+"engine": "EcoBoost 3.0L",
+"fuel": "бензин",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 400 л.с., бензин, АКПП, передний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201909,
+"id": "267165",
+"name": "3.0 AT Reserve",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "267169",
+"name": "3.0 AT Black Label",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"IX"
+],
+"drive": "4wd",
+"engine": "EcoBoost 3.0L",
+"fuel": "бензин",
+"gen_key": "lincoln/continental/g_2016_10511",
+"hp": 400,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.0,
+"text": "3.0 л, 400 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201609,
+"id": "267131",
+"name": "3.0 AT AWD Reserve",
+"to": 201908
+},
+{
+"from": 201909,
+"id": "267131",
+"name": "3.0 AT AWD Reserve",
+"to": 202010
+},
+{
+"from": 201909,
+"id": "267170",
+"name": "3.0 AT AWD Black Label",
+"to": 202010
+},
+{
+"from": 201809,
+"id": "267172",
+"name": "3.0 AT AWD 80th Anniversary Coach Door Edition",
+"to": 201908
+}
+]
+},
+{
+"body": [
+"IX"
+],
+"drive": "fwd",
+"engine": "Duratec 37",
+"fuel": "бензин",
+"hp": 305,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.7,
+"text": "3.7 л, 305 л.с., бензин, АКПП, передний привод",
+"trans": "auto",
+"trims": [
+{
+"from": 201609,
+"id": "267129",
+"name": "3.7 AT Premiere",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "267130",
+"name": "3.7 AT Select",
+"to": 201908
+},
+{
+"from": 201809,
+"id": "267154",
+"name": "3.7 AT Standart",
+"to": 201908
+},
+{
+"from": 201909,
+"id": "267154",
+"name": "3.7 AT Standart",
+"to": 202010
+}
+]
+},
+{
+"body": [
+"IX"
+],
+"drive": "4wd",
+"engine": "Duratec 37",
+"fuel": "бензин",
+"hp": 305,
+"hp_total": null,
+"hybrid": null,
+"liters": 3.7,
+"text": "3.7 л, 305 л.с., бензин, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201609,
+"id": "267151",
+"name": "3.7 AT AWD Premiere",
+"to": 201808
+},
+{
+"from": 201609,
+"id": "267152",
+"name": "3.7 AT AWD Select",
+"to": 201908
+},
+{
+"from": 201809,
+"id": "267155",
+"name": "3.7 AT AWD Standart",
+"to": 201908
+},
+{
+"from": 201909,
+"id": "267155",
+"name": "3.7 AT AWD Standart",
+"to": 202010
+}
+]
+}
+],
+"ids": true,
+"key": "lincoln/continental/g_2016_10511",
+"market": "США",
+"to": 202010
 },
 "lincoln/corsair/g_201909_13039": {
 "from": 201908,
@@ -206651,6 +208559,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/eqe/g_202109_13971",
 "market": "Европа",
 "to": null
 },
@@ -206681,6 +208590,7 @@
 "drive": "4wd",
 "engine": null,
 "fuel": "electric",
+"gen_key": "mercedes-benz/eqe/g_2021_23680",
 "hp": 292,
 "hp_total": null,
 "hybrid": null,
@@ -206734,6 +208644,7 @@
 ]
 }
 ],
+"key": "mercedes-benz/eqe/g_2021_23680",
 "market": "Южная Корея",
 "to": 202405
 },
@@ -210972,6 +212883,7 @@
 "trims": [
 {
 "from": 201606,
+"id": "242623",
 "name": "GLC 350 e 4MATIC",
 "to": null
 }
@@ -210993,6 +212905,7 @@
 "trims": [
 {
 "from": 201510,
+"id": "242622",
 "name": "GLC 300 4MATIC",
 "to": null
 }
@@ -211014,6 +212927,7 @@
 "trims": [
 {
 "from": 201510,
+"id": "242628",
 "name": "GLC 300",
 "to": null
 }
@@ -211035,6 +212949,7 @@
 "trims": [
 {
 "from": 201606,
+"id": "242624",
 "name": "AMG GLC 43 4MATIC",
 "to": null
 }
@@ -211056,12 +212971,14 @@
 "trims": [
 {
 "from": 201704,
+"id": "242625",
 "name": "AMG GLC 63 4MATIC+",
 "to": null
 }
 ]
 }
 ],
+"ids": true,
 "key": "mercedes-benz/glc-class/g_2014_9646",
 "market": "США",
 "to": 201903
@@ -326373,6 +328290,7 @@
 "41731602": 739885,
 "41731818": 739884,
 "41739937": 739884,
+"41746551": 739888,
 "41750870": 739885,
 "41751489": 739885,
 "41754197": 739885,
@@ -326388,6 +328306,7 @@
 "41793109": 739888,
 "41801034": 739885,
 "41804677": 739886,
+"41808500": 739888,
 "41811062": 739884,
 "41811100": 739885,
 "41817449": 739884,
@@ -326635,6 +328554,7 @@
 "42370606": 739885,
 "42370931": 739885,
 "42371321": 739887,
+"42371484": 739888,
 "42377053": 739885,
 "42379000": 739887,
 "42382147": 739885,
@@ -326680,6 +328600,7 @@
 "42445696": 739885,
 "42447323": 739886,
 "42447433": 739887,
+"42447617": 739888,
 "42448951": 739888,
 "42450230": 739885,
 "42450322": 739885,
@@ -326693,6 +328614,7 @@
 "42453758": 739885,
 "42454252": 739888,
 "42454339": 739884,
+"42454870": 739888,
 "42455237": 739888,
 "42457708": 739884,
 "42458171": 739884,
@@ -326738,6 +328660,7 @@
 "42497367": 739885,
 "42498088": 739887,
 "42498965": 739884,
+"42499123": 739888,
 "42502230": 739884,
 "42503046": 739885,
 "42504270": 739885,
@@ -326832,6 +328755,7 @@
 "42573292": 739885,
 "42573906": 739884,
 "42574064": 739884,
+"42574142": 739888,
 "42575941": 739888,
 "42576971": 739884,
 "42578033": 739886,
@@ -326898,11 +328822,13 @@
 "42620708": 739884,
 "42621034": 739884,
 "42621090": 739887,
+"42621872": 739888,
 "42623509": 739886,
 "42624118": 739884,
 "42624121": 739884,
 "42624451": 739886,
 "42625319": 739884,
+"42625863": 739888,
 "42627289": 739886,
 "42627290": 739886,
 "42627572": 739885,
@@ -326990,6 +328916,7 @@
 "42676501": 739885,
 "42676835": 739884,
 "42678384": 739885,
+"42680701": 739888,
 "42680868": 739884,
 "42681236": 739884,
 "42681434": 739885,
@@ -327003,6 +328930,7 @@
 "42686753": 739887,
 "42686861": 739884,
 "42687464": 739884,
+"42687590": 739888,
 "42688091": 739887,
 "42689618": 739885,
 "42689641": 739884,
@@ -327016,6 +328944,7 @@
 "42693833": 739885,
 "42695374": 739885,
 "42696078": 739887,
+"42696733": 739888,
 "42696799": 739885,
 "42696888": 739884,
 "42696921": 739885,
@@ -327252,6 +329181,8 @@
 "42786086": 739884,
 "42787506": 739884,
 "42787604": 739885,
+"42789976": 739888,
+"42790247": 739888,
 "42791092": 739885,
 "42791199": 739885,
 "42791579": 739885,
@@ -327279,7 +329210,9 @@
 "42802601": 739887,
 "42803015": 739887,
 "42803941": 739887,
-"42806217": 739888
+"42804909": 739888,
+"42806217": 739888,
+"42806656": 739888
 },
 "trims": {
 "150986": {
@@ -330161,6 +332094,115 @@
 ],
 "name": "95 kWh 55 quattro e-tron"
 },
+"241780": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,1 с"
+],
+[
+"Максимальная скорость",
+"230 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"237 л.с. (174 кВт) при 5000 об/мин"
+],
+[
+"Крутящий момент",
+"350 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"LSY"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5184 × 1880 × 1473 мм"
+],
+[
+"Колёсная база",
+"3109 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1695 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"433 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/50 R18"
+],
+[
+"Радиус разворота",
+"6,1 м"
+]
+]
+]
+],
+"name": "2.0 AT Luxury"
+},
 "241883": {
 "groups": [
 [
@@ -330403,6 +332445,136 @@
 ]
 ],
 "name": "1.6 TDI DSG Trendline 3dr."
+},
+"242622": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"6,7 с"
+],
+[
+"Максимальная скорость",
+"210 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"241 л.с. (177 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"370 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"M 274 DE 20 AL"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"9,8 л/100 км"
+],
+[
+"Город",
+"11,2 л/100 км"
+],
+[
+"Трасса",
+"8,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4656 × 1890 × 1639 мм"
+],
+[
+"Колёсная база",
+"2873 мм"
+],
+[
+"Клиренс",
+"180 мм"
+],
+[
+"Масса",
+"1815 кг"
+],
+[
+"Топливный бак",
+"66 л"
+],
+[
+"Багажник",
+"550 (1600) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/60 R18"
+],
+[
+"Радиус разворота",
+"5,9 м"
+]
+]
+]
+],
+"name": "GLC 300 4MATIC"
 },
 "245085": {
 "groups": [
@@ -330785,6 +332957,132 @@
 ]
 ],
 "name": "1.5 BlueHDi AT"
+},
+"267131": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,8 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"400 л.с. (294 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"542 Н·м при 2750 об/мин"
+],
+[
+"Модель двигателя",
+"EcoBoost 3.0L"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Бензин АИ-93"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"12,4 л/100 км"
+],
+[
+"Город",
+"14,7 л/100 км"
+],
+[
+"Трасса",
+"9,8 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5116 × 1913 × 1486 мм"
+],
+[
+"Колёсная база",
+"2995 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"2065 кг"
+],
+[
+"Топливный бак",
+"68 л"
+],
+[
+"Багажник",
+"473 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"255/45 R19"
+],
+[
+"Радиус разворота",
+"6,35 м"
+]
+]
+]
+],
+"name": "3.0 AT AWD Reserve"
 },
 "267324": {
 "groups": [
@@ -336214,6 +338512,94 @@
 ],
 "name": "1.6 MPi CVT 2WD Flux"
 },
+"433614": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"385 л.с. (283 кВт) при 5750 об/мин"
+],
+[
+"Крутящий момент",
+"549 Н·м при 3800 об/мин"
+],
+[
+"Модель двигателя",
+"Ford Hurricane V8"
+],
+[
+"Тип двигателя",
+"V-образный, 8-цилиндровый"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5888 × 2032 × 2065 мм"
+],
+[
+"Колёсная база",
+"3596 мм"
+],
+[
+"Клиренс",
+"216 мм"
+],
+[
+"Масса",
+"2805 кг"
+],
+[
+"Топливный бак",
+"181 л"
+],
+[
+"Багажник",
+"2223 л"
+],
+[
+"Мест",
+"3"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Зависимая, рессорная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/75 R17"
+]
+]
+]
+],
+"name": "6.2 AT 4x4 XL Regular Cab Long Box SRW"
+},
 "434282": {
 "groups": [
 [
@@ -340197,6 +342583,115 @@
 ],
 "name": "2.2 CRDi 4WD DCT Calligraphy 5 seats"
 },
+"443984": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"198 л.с. (146 кВт) при 6100 об/мин"
+],
+[
+"Крутящий момент",
+"248 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4KN"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,4 л/100 км"
+],
+[
+"Город",
+"9,7 л/100 км"
+],
+[
+"Трасса",
+"6,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4995 × 1870 × 1470 мм"
+],
+[
+"Колёсная база",
+"2855 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"1565 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"453 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/55 R17"
+]
+]
+]
+],
+"name": "2.5 GDI+MPI AT 2WD Prestige"
+},
 "444144": {
 "groups": [
 [
@@ -343159,6 +345654,128 @@
 ]
 ],
 "name": "1.6 VGT DCT Prestige Special"
+},
+"452023": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8 с"
+],
+[
+"Максимальная скорость",
+"188 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"249 л.с. (183 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"570 Н·м при 2250 об/мин"
+],
+[
+"Модель двигателя",
+"AJ20D6"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4323 × 2008 × 1974 мм"
+],
+[
+"Колёсная база",
+"2587 мм"
+],
+[
+"Клиренс",
+"225 мм"
+],
+[
+"Масса",
+"2305 кг"
+],
+[
+"Топливный бак",
+"89 л"
+],
+[
+"Багажник",
+"397 (1563) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"255/60 R20"
+],
+[
+"Радиус разворота",
+"5,65 м"
+]
+]
+]
+],
+"name": "3.0 TD AT AWD D250 SE"
 },
 "452035": {
 "groups": [
@@ -349394,6 +352011,115 @@
 ]
 ],
 "name": "2.5 AT 2WD Exclusive"
+},
+"468394": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"235 л.с. (173 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"280 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"L6DB"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"13,3 л/100 км"
+],
+[
+"Город",
+"15,6 л/100 км"
+],
+[
+"Трасса",
+"10,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4990 × 1875 × 1470 мм"
+],
+[
+"Колёсная база",
+"2885 мм"
+],
+[
+"Клиренс",
+"151 мм"
+],
+[
+"Масса",
+"1565 кг"
+],
+[
+"Топливный бак",
+"80 л"
+],
+[
+"Багажник",
+"360 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"225/55 R17"
+]
+]
+]
+],
+"name": "3.0 LPG AT 2WD Premium"
 },
 "469347": {
 "groups": [
@@ -356867,6 +359593,115 @@
 ],
 "name": "1.6 LPG AT 2WD Inspiration"
 },
+"494553": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"105 л.с. (77 кВт) при 5700 об/мин"
+],
+[
+"Крутящий момент",
+"147 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"G4LE"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"4,7 л/100 км"
+],
+[
+"Город",
+"4,8 л/100 км"
+],
+[
+"Трасса",
+"4,6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4710 × 1825 × 1420 мм"
+],
+[
+"Колёсная база",
+"2720 мм"
+],
+[
+"Клиренс",
+"150 мм"
+],
+[
+"Масса",
+"1355 кг"
+],
+[
+"Топливный бак",
+"42 л"
+],
+[
+"Багажник",
+"474 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"205//55 R16"
+]
+]
+]
+],
+"name": "G-Hybrid 1.6 DCT Smart"
+},
 "494554": {
 "groups": [
 [
@@ -359969,6 +362804,107 @@
 ]
 ],
 "name": "2.5T DCT 2WD Signature 5 seats"
+},
+"507093": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"146 л.с. (107 кВт) при 6000 об/мин"
+],
+[
+"Крутящий момент",
+"191 Н·м при 4200 об/мин"
+],
+[
+"Модель двигателя",
+"L4NB"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Углеводородный газ"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"10,8 л/100 км"
+],
+[
+"Город",
+"12,2 л/100 км"
+],
+[
+"Трасса",
+"9,4 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4660 × 1865 × 1660 мм"
+],
+[
+"Колёсная база",
+"2755 мм"
+],
+[
+"Масса",
+"1535 кг"
+],
+[
+"Топливный бак",
+"64 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/65 R17"
+]
+]
+]
+],
+"name": "2.0 LPG AT 2WD Trendy"
 },
 "507094": {
 "groups": [
@@ -382056,6 +384992,115 @@
 ]
 ],
 "name": "EQS 350"
+},
+"544214": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"86 л.с. (63 кВт) при 5600 об/мин"
+],
+[
+"Крутящий момент",
+"136 Н·м при 3600 об/мин"
+],
+[
+"Модель двигателя",
+"H4M"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-92"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,7 л/100 км"
+],
+[
+"Город",
+"5,7 л/100 км"
+],
+[
+"Трасса",
+"5,8 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4570 × 1820 × 1570 мм"
+],
+[
+"Колёсная база",
+"2720 мм"
+],
+[
+"Клиренс",
+"186 мм"
+],
+[
+"Масса",
+"1440 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Багажник",
+"487 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"215/60 R17"
+]
+]
+]
+],
+"name": "MHEV 1.6 GTe AT 2WD Techno"
 },
 "544215": {
 "groups": [
