@@ -68,6 +68,14 @@ MODEL_ALIASES = {
     ("mini", "cooper convertible"): "mini/cabrio",
     ("mini", "coupe"): "mini/coupe-model",
     ("mini", "mini"): "mini/hatch",
+    # goo-net пишет иначе, чем drom.ru
+    ("honda", "stepwagon"): "honda/stepwgn",
+    ("honda", "stepwagon spada"): "honda/stepwgn",
+    ("honda", "honda e"): "honda/e",
+    ("toyota", "86"): "toyota/gt_86",
+    ("toyota", "grmn yaris"): "toyota/gr_yaris",
+    ("toyota", "avevsis wagon"): "toyota/avensis",
+    ("toyota", "avevsis"): "toyota/avensis",
     # goo-net: фургон и универсал NV200 — «NV200VANETTE VAN/WAGON», на drom.ru — «NV200»
     ("nissan", "nv200vanette"): "nissan/nv200",
     ("nissan", "nv200vanette van"): "nissan/nv200",
@@ -78,7 +86,7 @@ MODEL_ALIASES = {
 _MODEL_TAILS = {"hybrid", "custom", "phv", "phev", "plugin", "epower", "ev", "gr", "sport", "sports", "turbo", "diesel",
                 "wagon", "van", "touring", "cross", "hv",
                 # goo-net пишет кузов в названии модели: «Hijet Truck», «Carry Track», «Hijet Cargo»
-                "truck", "track", "cargo", "bus"}
+                "truck", "track", "cargo", "bus", "cabriolet"}
 
 JAPANESE_MAKES = {"toyota", "lexus", "nissan", "honda", "mazda", "subaru", "mitsubishi", "suzuki", "daihatsu"}
 AWD_WORDS = {"xdrive", "4matic", "quattro", "4motion"}
