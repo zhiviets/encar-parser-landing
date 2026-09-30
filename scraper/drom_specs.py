@@ -219,9 +219,16 @@ TECH_FIELDS = [
     ("Двигатель", "Нагнетатель", "Наддув", ""),
     ("Двигатель", "Используемое топливо", "Топливо", ""),
     ("Двигатель", "Экологический тип двигателя", "Экокласс", ""),
-    ("Электро", "Емкость батареи, кВт*ч", "Ёмкость батареи", "кВт·ч"),
+    # Электромобили и гибриды: 30-минутная мощность — по ней считается утильсбор (пиковая выше)
+    ("Электро", "Электродвигатель: 30-минутная мощность, л.с.", "30-минутная мощность", "л.с."),
+    ("Электро", "Электродвигатель: мощность, кВт", "Мощность электромотора", "кВт"),
+    ("Электро", "Электродвигатель: крутящий момент, Нм", "Крутящий момент электромотора", "Н·м"),
+    ("Электро", "Ёмкость батареи, кВт*ч", "Ёмкость батареи", "кВт·ч"),
+    ("Электро", "Запас хода на электротяге в км", "Запас хода", "км"),
     ("Электро", "Запас хода на электротяге, км", "Запас хода", "км"),
     ("Электро", "Запас хода, км", "Запас хода", "км"),
+    ("Электро", "Максимальная мощность быстрой зарядки, кВт", "Быстрая зарядка", "кВт"),
+    ("Электро", "Максимальная мощность медленной зарядки, кВт", "Медленная зарядка", "кВт"),
     ("Расход топлива", "Расход топлива в смешанном цикле, л/100 км", "Смешанный цикл", "л/100 км"),
     ("Расход топлива", "Расход топлива в городском цикле, л/100 км", "Город", "л/100 км"),
     ("Расход топлива", "Расход топлива за городом, л/100 км", "Трасса", "л/100 км"),
@@ -239,7 +246,13 @@ TECH_FIELDS = [
     ("Ходовая часть", "Передние колеса", "Шины", ""),
     ("Ходовая часть", "Минимальный радиус разворота, м", "Радиус разворота", "м"),
 ]
-_TECH_LABELS = {src: (group, name, unit) for group, src, name, unit in TECH_FIELDS}
+def _label_key(text: str) -> str:
+    """Название строки для сравнения: без регистра, «ё» как «е», без лишних пробелов и двоеточия в конце."""
+    return re.sub(r"\s+", " ", (text or "").lower().replace("ё", "е")).strip().rstrip(":").strip()
+
+
+_TECH_LABELS = {_label_key(src): (group, name, unit) for group, src, name, unit in TECH_FIELDS}
+TRIM_VERSION = 2   # 2 — строки электромобиля (30-минутная мощность и др.); старые записи кэша перечитываются
 
 
 def parse_trim(page_text: str) -> dict | None:
@@ -248,10 +261,11 @@ def parse_trim(page_text: str) -> dict | None:
     name = next((lines[i + 1] for i, ln in enumerate(lines[:-1]) if ln == "Название комплектации"), None)
     got = {}
     for i, ln in enumerate(lines[:-1]):
+        ln = _label_key(ln)
         if ln not in _TECH_LABELS or ln in got:
             continue
         value = lines[i + 1].strip()
-        if not value or value == "—" or value in _TECH_LABELS or len(value) > 120:
+        if not value or value == "—" or _label_key(value) in _TECH_LABELS or len(value) > 120:
             continue
         group, label, unit = _TECH_LABELS[ln]
         m = re.fullmatch(r"([\d.,]+)\s*\(([\d.,]+)\)\s*(?:/\s*([\d\s–-]+))?", value)
@@ -270,13 +284,13 @@ def parse_trim(page_text: str) -> dict | None:
         return None
     groups = []
     for group, src, _, _ in TECH_FIELDS:
-        if src in got:
-            g, label, value = got[src]
+        if _label_key(src) in got:
+            g, label, value = got[_label_key(src)]
             if not groups or groups[-1][0] != g:
                 groups.append([g, []])
             if label not in [r[0] for r in groups[-1][1]]:
                 groups[-1][1].append([label, value])
-    return {"name": name, "groups": groups}
+    return {"name": name, "groups": groups, "v": TRIM_VERSION}
 
 
 # ---------- каталог с кэшем ----------
@@ -629,7 +643,10 @@ class DromCatalog:
             tid = next((t.get("id") for g in fresh["groups"] for t in g["trims"] if t["name"] == trim["name"]), None)
         if not tid:
             return None
-        if tid not in self.cache["trims"]:
+        cached = self.cache["trims"].get(tid)
+        # Старая запись электромобиля/гибрида — без строк электромотора: перечитать страницу
+        stale = cached is not None and cached.get("v", 1) < TRIM_VERSION and "Электр" in json.dumps(cached, ensure_ascii=False)
+        if tid not in self.cache["trims"] or stale:
             got = self._get(f"{BASE}{gkey.rsplit('/', 1)[0]}/{tid}/")
             if got is None:
                 return None
