@@ -157,6 +157,8 @@ def _to_car(r: dict) -> dict | None:
         "year": year,
         "mileage_km": int(float(r["Mileage"])) if r.get("Mileage") is not None else None,
         "price_krw": int(float(price) * 10_000) if price else None,
+        # Для шкалы цены: похожие — та же модель (с поколением), версия мотора (Badge) и год
+        "similar": (r.get("Manufacturer"), r.get("Model"), r.get("Badge"), year),
         "image": image,
         "link": f"https://fem.encar.com/cars/detail/{vid}",
     }
@@ -333,6 +335,32 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
     return picked
 
 
+MIN_SIMILAR = 4
+
+
+def price_stats(prices: list) -> dict:
+    """{n, lo, mid, hi}: от 10 цен — 10-й и 90-й процентили, иначе самая низкая и самая высокая."""
+    p = sorted(prices)
+    at = lambda q: p[round((len(p) - 1) * q)]
+    wide = len(p) >= 10
+    return {"n": len(p), "lo": at(0.1) if wide else p[0], "mid": at(0.5), "hi": at(0.9) if wide else p[-1]}
+
+
+def attach_price_stats(cars: list):
+    """Шкала цены на сайте: цены похожих объявлений encar (модель, версия мотора, год) → car["price_stats"]."""
+    by_key = {}
+    for c in cars:
+        if c.get("price_krw") and c.get("similar"):
+            by_key.setdefault(c["similar"], []).append(c["price_krw"])
+    done = 0
+    for c in cars:
+        prices = by_key.get(c.get("similar")) or []
+        if len(prices) >= MIN_SIMILAR:
+            c["price_stats"] = price_stats(prices)
+            done += 1
+    print(f"Статистика цен: у {done} из {len(cars)} машин {MIN_SIMILAR}+ похожих объявлений")
+
+
 def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of, save_debug,
                        total: int | None = None, on_take=None, touched_out: list | None = None) -> tuple[list[dict], list[dict]]:
     """(новые машины, машины с сайта, встреченные в поиске).
@@ -383,6 +411,7 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
         if n % 50 == 0:
             print(f"  просмотрено моделей {n}/{len(groups_list)}, с новыми машинами {len(groups)}, "
                   f"машин с сайта встречено {len(touched)}")
+    attach_price_stats(touched + [c for cars in groups.values() for c in cars])
     share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
     total = sum(selection.QUOTAS.values()) if total is None else total
     if not total:

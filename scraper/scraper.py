@@ -1075,6 +1075,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
                 "price_value": c.get("price_krw"),
                 "mileage_km": c.get("mileage_km"),
                 "source_url": c.get("link"),
+                **({"price_stats": c["price_stats"]} if c.get("price_stats") else {}),
             })
             continue
         d = c.get("detail") or {}
@@ -1098,6 +1099,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             "spec": d.get("spec"),
             "options": d.get("options"),
             **({"tech": d["tech"]} if d.get("tech") else {}),
+            **({"price_stats": c["price_stats"]} if c.get("price_stats") else {}),
             "source_url": c.get("link"),
         })
     full_count = sum(1 for x in listings if "make" in x)
