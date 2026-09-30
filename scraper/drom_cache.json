@@ -4963,6 +4963,51 @@
 "g_202511_23251"
 ]
 },
+"nissan/x-trail/europe": {
+"day": 739889,
+"gens": [
+"g_200010_920",
+"g_2000_21013",
+"g_200306_8524",
+"g_2003_21014",
+"g_200708_3971",
+"g_201007_1007",
+"g_201312_2893",
+"g_2013_20934",
+"g_201704_7565",
+"g_2017_20935",
+"g_202107_14654",
+"g_2026_24261"
+]
+},
+"nissan/x-trail/japan": {
+"day": 739889,
+"gens": [
+"g_200010_920",
+"g_2000_374",
+"g_200306_8524",
+"g_2003_4575",
+"g_200708_3971",
+"g_2007_3970",
+"g_201007_1007",
+"g_2010_1042",
+"g_201312_2893",
+"g_2013_2102",
+"g_201704_7565",
+"g_2017_7654",
+"g_202107_14654",
+"g_2022_15849",
+"g_2025_23266"
+]
+},
+"nissan/x-trail/south-korea": {
+"day": 739889,
+"gens": []
+},
+"nissan/x-trail/usa": {
+"day": 739889,
+"gens": []
+},
 "peugeot/2008/europe": {
 "day": 739884,
 "gens": [
@@ -36846,6 +36891,7 @@
 "drive": "4wd",
 "engine": "DDVC",
 "fuel": "дизель",
+"gen_key": "audi/a8/g_2021_23551",
 "hp": 286,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -52203,6 +52249,7 @@
 "drive": "rwd",
 "engine": "B46B20",
 "fuel": "бензин",
+"gen_key": "bmw/3-series/g_2022_23607",
 "hp": 184,
 "hp_total": null,
 "hybrid": null,
@@ -66637,6 +66684,7 @@
 "drive": "4wd",
 "engine": "B58B30M0",
 "fuel": "бензин",
+"gen_key": "bmw/7-series/g_2019_23636",
 "hp": 333,
 "hp_total": null,
 "hybrid": null,
@@ -92278,16 +92326,19 @@
 "trims": [
 {
 "from": 201505,
+"id": "249462",
 "name": "2.3 AT FWD Explorer",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249463",
 "name": "2.3 AT FWD XLT",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249464",
 "name": "2.3 AT FWD Limited",
 "to": 201709
 }
@@ -92309,16 +92360,19 @@
 "trims": [
 {
 "from": 201505,
+"id": "249465",
 "name": "2.3 AT AWD Explorer",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249466",
 "name": "2.3 AT AWD XLT",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249467",
 "name": "2.3 AT AWD Limited",
 "to": 201709
 }
@@ -92340,16 +92394,19 @@
 "trims": [
 {
 "from": 201505,
+"id": "249454",
 "name": "3.5 AT FWD Explorer",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249455",
 "name": "3.5 AT FWD XLT",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249456",
 "name": "3.5 AT FWD Limited",
 "to": 201709
 }
@@ -92371,16 +92428,19 @@
 "trims": [
 {
 "from": 201505,
+"id": "249459",
 "name": "3.5 AT AWD Explorer",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249460",
 "name": "3.5 AT AWD XLT",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249461",
 "name": "3.5 AT AWD Limited",
 "to": 201709
 }
@@ -92402,17 +92462,20 @@
 "trims": [
 {
 "from": 201505,
+"id": "249457",
 "name": "3.5 AT AWD Sport",
 "to": 201709
 },
 {
 "from": 201505,
+"id": "249458",
 "name": "3.5 AT AWD Platinum",
 "to": 201709
 }
 ]
 }
 ],
+"ids": true,
 "key": "ford/explorer/g_2014_9863",
 "market": "США",
 "to": 201709
@@ -104264,6 +104327,7 @@
 "drive": "4wd",
 "engine": "G6DS",
 "fuel": "бензин",
+"gen_key": "genesis/g80/g_2023_24543",
 "hp": 380,
 "hp_total": null,
 "hybrid": null,
@@ -129538,6 +129602,7 @@
 "drive": "fwd",
 "engine": "D4HB",
 "fuel": "дизель",
+"gen_key": "hyundai/palisade/g_2018_9387",
 "hp": 202,
 "hp_total": null,
 "hybrid": null,
@@ -129860,6 +129925,7 @@
 "drive": "fwd",
 "engine": "D4HB",
 "fuel": "дизель",
+"gen_key": "hyundai/palisade/g_2022_15568",
 "hp": 202,
 "hp_total": null,
 "hybrid": null,
@@ -163623,6 +163689,7 @@
 "drive": "fwd",
 "engine": "G4FT",
 "fuel": "бензин",
+"gen_key": "kia/sorento/g_2023_19626",
 "hp": 180,
 "hp_total": null,
 "hybrid": "параллельный гибрид",
@@ -189083,6 +189150,7 @@
 "drive": "4wd",
 "engine": "M 139 DE 20 AL",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/a-class/g_2018_23707",
 "hp": 388,
 "hp_total": null,
 "hybrid": null,
@@ -189158,6 +189226,7 @@
 "drive": "4wd",
 "engine": "M 260 DE 20 AL",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/a-class/g_2018_23708",
 "hp": 224,
 "hp_total": null,
 "hybrid": null,
@@ -189182,6 +189251,7 @@
 "drive": "4wd",
 "engine": "M 260 DE 20 AL",
 "fuel": "бензин",
+"gen_key": "mercedes-benz/a-class/g_2018_23708",
 "hp": 306,
 "hp_total": null,
 "hybrid": null,
@@ -209667,6 +209737,7 @@
 "drive": "4wd",
 "engine": null,
 "fuel": "electric",
+"gen_key": "mercedes-benz/eqe/g_2021_23680",
 "hp": 292,
 "hp_total": null,
 "hybrid": null,
@@ -215321,11 +215392,13 @@
 "trims": [
 {
 "from": 202210,
+"id": "545506",
 "name": "GLC 220 d AT 4MATIC Avantgarde",
 "to": null
 },
 {
 "from": 202210,
+"id": "545507",
 "name": "GLC 220 d AT 4MATIC AMG Line",
 "to": null
 }
@@ -215345,11 +215418,13 @@
 "trims": [
 {
 "from": 202210,
+"id": "545504",
 "name": "GLC 300 AT 4MATIC Avantgarde",
 "to": null
 },
 {
 "from": 202210,
+"id": "545505",
 "name": "GLC 300 AT 4MATIC AMG Line",
 "to": null
 }
@@ -215369,12 +215444,14 @@
 "trims": [
 {
 "from": 202308,
+"id": "545508",
 "name": "AMG GLC 43 MCT 4MATIC",
 "to": null
 }
 ]
 }
 ],
+"ids": true,
 "key": "mercedes-benz/glc-class/g_2022_23835",
 "market": "Южная Корея",
 "to": null
@@ -217127,6 +217204,7 @@
 "drive": "4wd",
 "engine": "OM 654 M DE 20 G SCR",
 "fuel": "дизель",
+"gen_key": "mercedes-benz/gle-class/g_2023_23850",
 "hp": 269,
 "hp_total": null,
 "hybrid": "мягкий гибрид",
@@ -243740,6 +243818,4217 @@
 ],
 "market": "Япония",
 "to": 202001
+},
+"nissan/x-trail/g_200708_3971": {
+"from": 200708,
+"groups": [
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 141,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 141 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200708,
+"id": "91045",
+"name": "2.0 MT SE",
+"to": 201103
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 141,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 141 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 200708,
+"id": "91044",
+"name": "2.0 CVT SE",
+"to": 201103
+},
+{
+"from": 200708,
+"id": "91043",
+"name": "2.0 CVT LE",
+"to": 201103
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200708,
+"id": "91028",
+"name": "2.0D MT SE",
+"to": 201103
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 200708,
+"id": "91032",
+"name": "2.0D AT SE",
+"to": 201103
+},
+{
+"from": 200708,
+"id": "91041",
+"name": "2.0D AT LE",
+"to": 201103
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 169,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 169 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200708,
+"id": "91027",
+"name": "2.5 MT SE",
+"to": 201103
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 169,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 169 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 200708,
+"id": "91026",
+"name": "2.5 CVT SE",
+"to": 201103
+},
+{
+"from": 200708,
+"id": "91016",
+"name": "2.5 CVT SiV",
+"to": 201103
+},
+{
+"from": 200708,
+"id": "91017",
+"name": "2.5 CVT LE",
+"to": 201103
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_200708_3971",
+"market": "Россия",
+"to": 201102
+},
+"nissan/x-trail/g_2007_3970": {
+"from": 200708,
+"groups": [
+{
+"body": [
+"DBA-NT31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 137,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 137 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200912,
+"id": "90978",
+"name": "2.0 20Xtt 4WD",
+"to": 201006
+},
+{
+"from": 200811,
+"id": "90992",
+"name": "2.0 20X 4WD",
+"to": 200911
+},
+{
+"from": 200708,
+"id": "90992",
+"name": "2.0 20X 4WD",
+"to": 200810
+}
+]
+},
+{
+"body": [
+"DBA-T31"
+],
+"drive": "fwd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 137,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 137 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 200912,
+"id": "90975",
+"name": "2.0 20S",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90980",
+"name": "2.0 Axis",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90977",
+"name": "2.0 20Xtt",
+"to": 201006
+},
+{
+"from": 200811,
+"id": "90975",
+"name": "2.0 20S",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90991",
+"name": "2.0 20X",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90980",
+"name": "2.0 Axis",
+"to": 200911
+},
+{
+"from": 200708,
+"id": "90975",
+"name": "2.0 20S",
+"to": 200810
+},
+{
+"from": 200708,
+"id": "90991",
+"name": "2.0 20X",
+"to": 200810
+},
+{
+"from": 200708,
+"id": "90980",
+"name": "2.0 Axis",
+"to": 200810
+}
+]
+},
+{
+"body": [
+"DBA-NT31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 137,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 137 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 200912,
+"id": "90976",
+"name": "2.0 20S 4WD",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90983",
+"name": "2.0 driving gear 4WD",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90978",
+"name": "2.0 20Xtt 4WD",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90981",
+"name": "2.0 Axis 4WD",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90982",
+"name": "2.0 Axis performance spec 4WD",
+"to": 201006
+},
+{
+"from": 200811,
+"id": "90976",
+"name": "2.0 20S 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90992",
+"name": "2.0 20X 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90981",
+"name": "2.0 Axis 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90990",
+"name": "2.0 20St 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90983",
+"name": "2.0 driving gear 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90994",
+"name": "2.0 20Xt 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90982",
+"name": "2.0 Axis performance spec 4WD",
+"to": 200911
+},
+{
+"from": 200708,
+"id": "90976",
+"name": "2.0 20S 4WD",
+"to": 200810
+},
+{
+"from": 200708,
+"id": "90992",
+"name": "2.0 20X 4WD",
+"to": 200810
+},
+{
+"from": 200708,
+"id": "90981",
+"name": "2.0 Axis 4WD",
+"to": 200810
+}
+]
+},
+{
+"body": [
+"LDA-DNT31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 173,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 173 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 200912,
+"id": "90974",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201006
+},
+{
+"from": 200811,
+"id": "90974",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 200911
+},
+{
+"from": 200809,
+"id": "90974",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 200810
+}
+]
+},
+{
+"body": [
+"CBA-TNT31"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 170 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 200912,
+"id": "90984",
+"name": "2.5 25Xtt 4WD",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90985",
+"name": "2.5 Axis 4WD",
+"to": 201006
+},
+{
+"from": 200912,
+"id": "90986",
+"name": "2.5 Axis performance spec 4WD",
+"to": 201006
+},
+{
+"from": 200811,
+"id": "90999",
+"name": "2.5 25St 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "91000",
+"name": "2.5 25Xt 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90985",
+"name": "2.5 Axis 4WD",
+"to": 200911
+},
+{
+"from": 200811,
+"id": "90986",
+"name": "2.5 Axis performance spec 4WD",
+"to": 200911
+},
+{
+"from": 200708,
+"id": "91011",
+"name": "2.5 25S 4WD",
+"to": 200810
+},
+{
+"from": 200708,
+"id": "91012",
+"name": "2.5 25X 4WD",
+"to": 200810
+},
+{
+"from": 200708,
+"id": "90985",
+"name": "2.5 Axis 4WD",
+"to": 200810
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_2007_3970",
+"market": "Япония",
+"to": 201006
+},
+"nissan/x-trail/g_201007_1007": {
+"from": 201007,
+"groups": [
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 141,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 141 л.с., бензин, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201012,
+"id": "66967",
+"name": "2.0 MT XE, -----",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66968",
+"name": "2.0 MT SE, --B--",
+"to": 201212
+},
+{
+"from": 201212,
+"id": "71624",
+"name": "2.0 MT XE",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71625",
+"name": "2.0 MT SE Mid",
+"to": 201501
+},
+{
+"from": 201401,
+"id": "74734",
+"name": "2.0 MT SE Base",
+"to": 201501
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 141,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 141 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201012,
+"id": "66966",
+"name": "2.0 CVT XE, -----",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66964",
+"name": "2.0 CVT SE, --B--",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66965",
+"name": "2.0 CVT SE, --F--",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66963",
+"name": "2.0 CVT LE, -----",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66962",
+"name": "2.0 CVT LE, ---C-",
+"to": 201212
+},
+{
+"from": 201212,
+"id": "71630",
+"name": "2.0 CVT XE",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71631",
+"name": "2.0 CVT SE Mid",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71633",
+"name": "2.0 CVT LE Base",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71634",
+"name": "2.0 CVT LE High",
+"to": 201501
+},
+{
+"from": 201401,
+"id": "74735",
+"name": "2.0 CVT SE Base",
+"to": 201501
+},
+{
+"from": 201401,
+"id": "71632",
+"name": "2.0 CVT SE High",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71643",
+"name": "2.0 CVT LE Platinum",
+"to": 201408
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201012,
+"id": "66961",
+"name": "2.0D MT SE, -----",
+"to": 201212
+},
+{
+"from": 201212,
+"id": "71626",
+"name": "2.0D MT SE Base",
+"to": 201501
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 150 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201012,
+"id": "66960",
+"name": "2.0D AT SE, -----",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66959",
+"name": "2.0D AT SE, -BC-A",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66958",
+"name": "2.0D AT LE, ---E-",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66957",
+"name": "2.0D AT LE, --D--",
+"to": 201212
+},
+{
+"from": 201212,
+"id": "71627",
+"name": "2.0D AT SE Mid",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71629",
+"name": "2.0D AT LE High",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71628",
+"name": "2.0D AT LE",
+"to": 201312
+}
+]
+},
+{
+"body": [
+"T31"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 169,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 169 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201012,
+"id": "66954",
+"name": "2.5, CVT, SE, --DD-",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66955",
+"name": "2.5, CVT, SE, -----",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66952",
+"name": "2.5, CVT, SE, --D--",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66953",
+"name": "2.5, CVT, SE, ---D-",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66950",
+"name": "2.5, CVT, LE, ---E-",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "63775",
+"name": "2.5, CVT, LE, ---D-",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "66949",
+"name": "2.5, CVT, LE, -----",
+"to": 201212
+},
+{
+"from": 201012,
+"id": "67493",
+"name": "2.5, CVT, LE, --DE-",
+"to": 201212
+},
+{
+"from": 201212,
+"id": "71635",
+"name": "2.5 CVT SE Base",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71637",
+"name": "2.5 CVT SE High",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71640",
+"name": "2.5 CVT LE Base",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71642",
+"name": "2.5 CVT LE High",
+"to": 201501
+},
+{
+"from": 201211,
+"id": "71636",
+"name": "2.5 CVT SE Mid",
+"to": 201501
+},
+{
+"from": 201212,
+"id": "71638",
+"name": "2.5 CVT SE",
+"to": 201312
+},
+{
+"from": 201212,
+"id": "71639",
+"name": "2.5 CVT LE",
+"to": 201312
+},
+{
+"from": 201212,
+"id": "71639",
+"name": "2.5 CVT LE",
+"to": 201312
+},
+{
+"from": 201212,
+"id": "71644",
+"name": "2.5 CVT LE Platinum",
+"to": 201408
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_201007_1007",
+"market": "Россия",
+"to": 201501
+},
+"nissan/x-trail/g_2010_1042": {
+"from": 201007,
+"groups": [
+{
+"body": [
+"DBA-T31"
+],
+"drive": "fwd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 137,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 137 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201007,
+"id": "60691",
+"name": "2.0 20X",
+"to": 201206
+},
+{
+"from": 201106,
+"id": "63467",
+"name": "2.0 20Xt",
+"to": 201206
+},
+{
+"from": 201207,
+"id": "68828",
+"name": "2.0 20Xtt",
+"to": 201311
+}
+]
+},
+{
+"body": [
+"DBA-NT31"
+],
+"drive": "4wd",
+"engine": "MR20DE",
+"fuel": "бензин",
+"hp": 137,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 137 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201007,
+"id": "60690",
+"name": "2.0 20S 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60692",
+"name": "2.0 20X 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60693",
+"name": "2.0 20X x-tremer X 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60694",
+"name": "2.0 20X x-tremer X plus NAVI HDD 4WD",
+"to": 201206
+},
+{
+"from": 201106,
+"id": "63466",
+"name": "2.0 20Xt 4WD",
+"to": 201206
+},
+{
+"from": 201106,
+"id": "63465",
+"name": "2.0 20Xt x-tremer X 4WD",
+"to": 201206
+},
+{
+"from": 201207,
+"id": "60690",
+"name": "2.0 20S 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "68832",
+"name": "2.0 20Stt 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "60692",
+"name": "2.0 20X 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "60693",
+"name": "2.0 20X x-tremer X 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "68827",
+"name": "2.0 20Xtt 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "68829",
+"name": "2.0 20X x-tremer Xtt 4WD",
+"to": 201311
+},
+{
+"from": 201210,
+"id": "70056",
+"name": "2.0 20Xtt Black X-Tremer X 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71374",
+"name": "2.0 20Xtt Black X-tremer X 4WD",
+"to": 201311
+}
+]
+},
+{
+"body": [
+"LDA-DNT31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 173,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 173 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201007,
+"id": "60687",
+"name": "2.0 20GT x-tremer X plus NAVI HDD diesel turbo 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60685",
+"name": "2.0 20GT x-tremer X diesel turbo 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60689",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201206
+},
+{
+"from": 201207,
+"id": "60689",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "60685",
+"name": "2.0 20GT x-tremer X diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201210,
+"id": "70057",
+"name": "2.0 20GT Black X-Tremer X Diesel Turbo 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71369",
+"name": "2.0 20GT S diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71372",
+"name": "2.0 20GT S X-tremer X diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71375",
+"name": "2.0 20GT Black X-tremer X diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201312,
+"id": "71369",
+"name": "2.0 20GT S diesel turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "78590",
+"name": "2.0 20GT S X-Tremer X diesel turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "78584",
+"name": "2.0 20GT X-Tremer X Diesel Turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "70057",
+"name": "2.0 20GT Black X-Tremer X Diesel Turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "60689",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"LDA-DNT31"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 173,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 173 л.с., дизель, АКПП, полный привод (4WD)",
+"trans": "auto",
+"trims": [
+{
+"from": 201007,
+"id": "60687",
+"name": "2.0 20GT x-tremer X plus NAVI HDD diesel turbo 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60685",
+"name": "2.0 20GT x-tremer X diesel turbo 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60689",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201206
+},
+{
+"from": 201207,
+"id": "60689",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "60685",
+"name": "2.0 20GT x-tremer X diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201210,
+"id": "70057",
+"name": "2.0 20GT Black X-Tremer X Diesel Turbo 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71369",
+"name": "2.0 20GT S diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71372",
+"name": "2.0 20GT S X-tremer X diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71375",
+"name": "2.0 20GT Black X-tremer X diesel turbo 4WD",
+"to": 201311
+},
+{
+"from": 201312,
+"id": "71369",
+"name": "2.0 20GT S diesel turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "78590",
+"name": "2.0 20GT S X-Tremer X diesel turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "60689",
+"name": "2.0 20GT diesel turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "78584",
+"name": "2.0 20GT X-Tremer X Diesel Turbo 4WD",
+"to": 201503
+},
+{
+"from": 201312,
+"id": "70057",
+"name": "2.0 20GT Black X-Tremer X Diesel Turbo 4WD",
+"to": 201503
+}
+]
+},
+{
+"body": [
+"CBA-TNT31"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 170,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 170 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201007,
+"id": "60695",
+"name": "2.5 25X 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60696",
+"name": "2.5 25X x-tremer X 4WD",
+"to": 201206
+},
+{
+"from": 201007,
+"id": "60697",
+"name": "2.5 25X x-tremer X plus NAVI HDD 4WD",
+"to": 201206
+},
+{
+"from": 201207,
+"id": "60695",
+"name": "2.5 25X 4WD",
+"to": 201311
+},
+{
+"from": 201207,
+"id": "60696",
+"name": "2.5 25X x-tremer X 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71368",
+"name": "2.5 25Xtt 4WD",
+"to": 201311
+},
+{
+"from": 201301,
+"id": "71371",
+"name": "2.5 25Xtt X-tremer X 4WD",
+"to": 201311
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_2010_1042",
+"market": "Япония",
+"to": 201502
+},
+"nissan/x-trail/g_201312_2893": {
+"from": 201309,
+"groups": [
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201412,
+"id": "79663",
+"name": "1.6 dCi MT 4WD SE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79664",
+"name": "1.6 dCi MT 4WD SE+",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79665",
+"name": "1.6 dCi MT 4WD LE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79666",
+"name": "1.6 dCi MT 4WD LE+",
+"to": 201701
+},
+{
+"from": 201603,
+"id": "96703",
+"name": "1.6 dCi MT 4WD LE Urban",
+"to": 201701
+},
+{
+"from": 201603,
+"id": "96706",
+"name": "1.6 dCi MT 4WD LE Urban+",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "79663",
+"name": "1.6 dCi MT 4WD SE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79664",
+"name": "1.6 dCi MT 4WD SE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178325",
+"name": "1.6 dCi МТ 4WD LE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178313",
+"name": "1.6 dCi MT 4WD SE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "178326",
+"name": "1.6 dCi MT 4WD LE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201806,
+"id": "210714",
+"name": "1.6 dCi MT 4WD SE Яндекс.Авто",
+"to": 201906
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 144 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201412,
+"id": "79651",
+"name": "2.0 MT 2WD XE",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "79651",
+"name": "2.0 MT 2WD XE",
+"to": 201906
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 144 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201412,
+"id": "127854",
+"name": "2.0 CVT 2WD XE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79653",
+"name": "2.0 CVT 2WD SE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79655",
+"name": "2.0 CVT 2WD SE+",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175923",
+"name": "2.0 CVT 2WD SE+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "127854",
+"name": "2.0 CVT 2WD XE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79653",
+"name": "2.0 CVT 2WD SE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79655",
+"name": "2.0 CVT 2WD SE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178320",
+"name": "2.0 CVT 2WD SE Top",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "175923",
+"name": "2.0 CVT 2WD SE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "178319",
+"name": "2.0 CVT 2WD SE Top ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201806,
+"id": "210709",
+"name": "2.0 CVT 2WD SE Яндекс.Авто",
+"to": 201906
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 144 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201412,
+"id": "79652",
+"name": "2.0 CVT 4WD XE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79654",
+"name": "2.0 CVT 4WD SE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79656",
+"name": "2.0 CVT 4WD SE+",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79657",
+"name": "2.0 CVT 4WD LE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79658",
+"name": "2.0 CVT 4WD LE+",
+"to": 201701
+},
+{
+"from": 201603,
+"id": "96702",
+"name": "2.0 CVT 4WD LE Urban",
+"to": 201701
+},
+{
+"from": 201603,
+"id": "96705",
+"name": "2.0 CVT 4WD LE Urban+",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175922",
+"name": "2.0 CVT 4WD SE+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175918",
+"name": "2.0 CVT 4WD LE Urban+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175920",
+"name": "2.0 CVT 4WD LE+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "178298",
+"name": "2.0 CVT 4WD XE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79654",
+"name": "2.0 CVT 4WD SE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79656",
+"name": "2.0 CVT 4WD SE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178318",
+"name": "2.0 CVT 4WD SE Top",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79657",
+"name": "2.0 CVT 4WD LE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79658",
+"name": "2.0 CVT 4WD LE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178332",
+"name": "2.0 CVT 4WD LE Top",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "175922",
+"name": "2.0 CVT 4WD SE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "178317",
+"name": "2.0 CVT 4WD SE Top ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "175920",
+"name": "2.0 CVT 4WD LE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "178331",
+"name": "2.0 CVT 4WD LE Top ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201806,
+"id": "210710",
+"name": "2.0 CVT 4WD SE Яндекс.Авто",
+"to": 201906
+},
+{
+"from": 201806,
+"id": "210711",
+"name": "2.0 CVT 4WD LE Яндекс.Авто",
+"to": 201906
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 171,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 171 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201412,
+"id": "79659",
+"name": "2.5 CVT 4WD SE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79660",
+"name": "2.5 CVT 4WD SE+",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79661",
+"name": "2.5 CVT 4WD LE",
+"to": 201701
+},
+{
+"from": 201412,
+"id": "79662",
+"name": "2.5 CVT 4WD LE+",
+"to": 201701
+},
+{
+"from": 201603,
+"id": "96704",
+"name": "2.5 CVT 4WD LE Urban",
+"to": 201701
+},
+{
+"from": 201603,
+"id": "96707",
+"name": "2.5 CVT 4WD LE Urban+",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175921",
+"name": "2.5 CVT 4WD SE+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175917",
+"name": "2.5 CVT 4WD LE Urban+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "175919",
+"name": "2.5 CVT 4WD LE+ ARCTIC 360",
+"to": 201701
+},
+{
+"from": 201612,
+"id": "79659",
+"name": "2.5 CVT 4WD SE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79660",
+"name": "2.5 CVT 4WD SE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178316",
+"name": "2.5 CVT 4WD SE Top",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79661",
+"name": "2.5 CVT 4WD LE",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "79662",
+"name": "2.5 CVT 4WD LE+",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "178330",
+"name": "2.5 CVT 4WD LE Top",
+"to": 201906
+},
+{
+"from": 201612,
+"id": "175921",
+"name": "2.5 CVT 4WD SE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "178315",
+"name": "2.5 CVT 4WD SE Top ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "175919",
+"name": "2.5 CVT 4WD LE+ ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201612,
+"id": "178329",
+"name": "2.5 CVT 4WD LE Top ARCTIC 360",
+"to": 201705
+},
+{
+"from": 201806,
+"id": "210712",
+"name": "2.5 CVT 4WD SE Яндекс.Авто",
+"to": 201906
+},
+{
+"from": 201806,
+"id": "210713",
+"name": "2.5 CVT 4WD LE Яндекс.Авто",
+"to": 201906
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_201312_2893",
+"market": "Россия",
+"to": 201906
+},
+"nissan/x-trail/g_2013_20934": {
+"from": 201309,
+"groups": [
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201407,
+"id": "508035",
+"name": "1.6 dCi MT 2WD Visia",
+"to": 201708
+},
+{
+"from": 201407,
+"id": "508036",
+"name": "1.6 dCi MT 2WD Acenta",
+"to": 201708
+},
+{
+"from": 201407,
+"id": "508037",
+"name": "1.6 dCi MT 2WD Tekna",
+"to": 201412
+},
+{
+"from": 201501,
+"id": "508070",
+"name": "1.6 dCi MT 2WD 360",
+"to": 201612
+},
+{
+"from": 201501,
+"id": "508037",
+"name": "1.6 dCi MT 2WD Tekna",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508243",
+"name": "1.6 dCi MT 2WD N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508244",
+"name": "1.6 dCi MT 2WD N-Vision",
+"to": 201708
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201407,
+"id": "508405",
+"name": "1.6 dCi MT 4x4i Acenta",
+"to": 201708
+},
+{
+"from": 201407,
+"id": "508408",
+"name": "1.6 dCi MT 4x4i Tekna",
+"to": 201412
+},
+{
+"from": 201501,
+"id": "508427",
+"name": "1.6 dCi MT 4x4i 360",
+"to": 201612
+},
+{
+"from": 201501,
+"id": "508408",
+"name": "1.6 dCi MT 4x4i Tekna",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508459",
+"name": "1.6 dCi MT 4x4i N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508470",
+"name": "1.6 dCi MT 4x4i N-Vision",
+"to": 201708
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201407,
+"id": "508406",
+"name": "1.6 dCi CVT 2WD Acenta",
+"to": 201708
+},
+{
+"from": 201407,
+"id": "508407",
+"name": "1.6 dCi CVT 2WD Tekna",
+"to": 201412
+},
+{
+"from": 201501,
+"id": "508407",
+"name": "1.6 dCi CVT 2WD Tekna",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508464",
+"name": "1.6 dCi CVT 2WD N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508469",
+"name": "1.6 dCi CVT 2WD N-Vision",
+"to": 201708
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "MR16DDT",
+"fuel": "бензин",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 163 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201601,
+"id": "508428",
+"name": "1.6 DIG-T MT 2WD 360",
+"to": 201612
+},
+{
+"from": 201601,
+"id": "508434",
+"name": "1.6 DIG-T MT 2WD Visia",
+"to": 201708
+},
+{
+"from": 201601,
+"id": "508431",
+"name": "1.6 DIG-T MT 2WD Acenta",
+"to": 201708
+},
+{
+"from": 201601,
+"id": "508458",
+"name": "1.6 DIG-T MT 2WD Tekna",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508472",
+"name": "1.6 DIG-T MT 2WD N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508471",
+"name": "1.6 DIG-T MT 2WD N-Vision",
+"to": 201708
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201701,
+"id": "508488",
+"name": "2.0 dCi MT 4x4i Acenta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508478",
+"name": "2.0 dCi MT 4x4i N-Vision",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508475",
+"name": "2.0 dCi MT 4x4i N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508491",
+"name": "2.0 dCi MT 4x4i Tekna",
+"to": 201708
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201701,
+"id": "508481",
+"name": "2.0 dCi CVT 2WD Acenta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508474",
+"name": "2.0 dCi CVT 2WD N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508473",
+"name": "2.0 dCi CVT 2WD N-Vision",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508489",
+"name": "2.0 dCi CVT 2WD Tekna",
+"to": 201708
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201701,
+"id": "508486",
+"name": "2.0 dCi CVT 4x4i Acenta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508477",
+"name": "2.0 dCi CVT 4x4i N-Vision",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508476",
+"name": "2.0 dCi CVT 4x4i N-Connecta",
+"to": 201708
+},
+{
+"from": 201701,
+"id": "508490",
+"name": "2.0 dCi CVT 4x4i Tekna",
+"to": 201708
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_2013_20934",
+"market": "Европа",
+"to": 201712
+},
+"nissan/x-trail/g_2013_2102": {
+"from": 201312,
+"groups": [
+{
+"body": [
+"DBA-T32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 147 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201312,
+"id": "74467",
+"name": "2.0 20X 5-seat",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74469",
+"name": "2.0 20X Emergency Brake Package 5-seat",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74468",
+"name": "2.0 20X 7-seat",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74470",
+"name": "2.0 20X Emergency Brake Package 7-seat",
+"to": 201511
+},
+{
+"from": 201507,
+"id": "85561",
+"name": "2.0 Mode Premier Emergency Brake Package 5-seat",
+"to": 201511
+},
+{
+"from": 201507,
+"id": "85562",
+"name": "2.0 Mode Premier Emergency Brake Package 7-seat",
+"to": 201511
+},
+{
+"from": 201512,
+"id": "90524",
+"name": "2.0 20S Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "74469",
+"name": "2.0 20X Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "85561",
+"name": "2.0 Mode Premier Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "74470",
+"name": "2.0 20X Emergency Brake Package 7-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "85562",
+"name": "2.0 Mode Premier Emergency Brake Package 7-seat",
+"to": 201705
+},
+{
+"from": 201611,
+"id": "176900",
+"name": "2.0 20Xtt Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201611,
+"id": "176901",
+"name": "2.0 20Xtt Emergency Brake Package 7-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176918",
+"name": "2.0 20Xt Emergency Brake Package 5-seat",
+"to": 201610
+},
+{
+"from": 201512,
+"id": "176920",
+"name": "2.0 20Xt Emergency Brake Package 7-seat",
+"to": 201610
+},
+{
+"from": 201608,
+"id": "176924",
+"name": "2.0 Mode Premier AUTECH 30th Anniversary 5-seat",
+"to": 201703
+},
+{
+"from": 201608,
+"id": "176925",
+"name": "2.0 Mode Premier AUTECH 30th Anniversary 7-seat",
+"to": 201703
+}
+]
+},
+{
+"body": [
+"DAA-HT32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": "параллельный гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 147 л.с., параллельный гибрид, 41 л.с., вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201504,
+"id": "81801",
+"name": "2.0 20X Hybrid Emergency Brake Package",
+"to": 201511
+},
+{
+"from": 201507,
+"id": "85565",
+"name": "2.0 Mode Premier Hybrid Emergency Brake Package",
+"to": 201511
+},
+{
+"from": 201512,
+"id": "176896",
+"name": "2.0 20S Hybrid Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176898",
+"name": "2.0 20X Hybrid Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176908",
+"name": "2.0 Mode Premier Hybrid Emergency Brake Package 5-seat",
+"to": 201705
+},
+{
+"from": 201608,
+"id": "176926",
+"name": "2.0 Mode Premier Hybrid AUTECH 30th Anniversary 5-seat",
+"to": 201703
+}
+]
+},
+{
+"body": [
+"DBA-NT32"
+],
+"drive": "4wd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 147 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201312,
+"id": "74465",
+"name": "2.0 20S 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74464",
+"name": "2.0 20X 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74473",
+"name": "2.0 20X X-Tremer X 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74471",
+"name": "2.0 20X Emergency Brake Package 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74475",
+"name": "2.0 20X X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74466",
+"name": "2.0 20X 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74474",
+"name": "2.0 20X X-Tremer X 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74472",
+"name": "2.0 20X Emergency Brake Package 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201312,
+"id": "74476",
+"name": "2.0 20X X-Tremer X Emergency Brake Package 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201412,
+"id": "81795",
+"name": "2.0 20X Black X-Tremer X 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201412,
+"id": "81797",
+"name": "2.0 20X Black X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201412,
+"id": "81796",
+"name": "2.0 20X Black X-Tremer X 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201412,
+"id": "81798",
+"name": "2.0 20X Black X-Tremer X Emergency Brake Package 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201507,
+"id": "85563",
+"name": "2.0 Mode Premier Emergency Brake Package 5-seat 4WD",
+"to": 201511
+},
+{
+"from": 201507,
+"id": "85564",
+"name": "2.0 Mode Premier Emergency Brake Package 7-seat 4WD",
+"to": 201511
+},
+{
+"from": 201512,
+"id": "176814",
+"name": "2.0 20S Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "74471",
+"name": "2.0 20X Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "74475",
+"name": "2.0 20X X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "81797",
+"name": "2.0 20X Black X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "85563",
+"name": "2.0 Mode Premier Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "74472",
+"name": "2.0 20X Emergency Brake Package 7-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "74476",
+"name": "2.0 20X X-Tremer X Emergency Brake Package 7-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "81798",
+"name": "2.0 20X Black X-Tremer X Emergency Brake Package 7-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "85564",
+"name": "2.0 Mode Premier Emergency Brake Package 7-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176916",
+"name": "2.0 20Xt Black X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176917",
+"name": "2.0 20Xt Black X-Tremer X Emergency Brake Package 7-seat 4WD",
+"to": 201705
+},
+{
+"from": 201611,
+"id": "176902",
+"name": "2.0 20Xtt Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201611,
+"id": "176903",
+"name": "2.0 20Xtt Emergency Brake Package 7-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176921",
+"name": "2.0 20Xt Emergency Brake Package 5-seat 4WD",
+"to": 201610
+},
+{
+"from": 201512,
+"id": "176922",
+"name": "2.0 20Xt Emergency Brake Package 7-seat 4WD",
+"to": 201610
+},
+{
+"from": 201608,
+"id": "176928",
+"name": "2.0 Mode Premier AUTECH 30th Anniversary 5-seat 4WD",
+"to": 201703
+},
+{
+"from": 201608,
+"id": "176929",
+"name": "2.0 Mode Premier AUTECH 30th Anniversary 7-seat 4WD",
+"to": 201703
+}
+]
+},
+{
+"body": [
+"DAA-HNT32"
+],
+"drive": "4wd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": "параллельный гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 147 л.с., параллельный гибрид, 41 л.с., вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201504,
+"id": "81802",
+"name": "2.0 20X Hybrid Emergency Brake Package 4WD",
+"to": 201511
+},
+{
+"from": 201504,
+"id": "81799",
+"name": "2.0 20X Hybrid Black X-Tremer X Emergency Brake Package 4WD",
+"to": 201511
+},
+{
+"from": 201504,
+"id": "81800",
+"name": "2.0 20X Hybrid X-Tremer X Emergency Brake Package 4WD",
+"to": 201511
+},
+{
+"from": 201507,
+"id": "85566",
+"name": "2.0 Mode Premier Hybrid Emergency Brake Package 4WD",
+"to": 201511
+},
+{
+"from": 201512,
+"id": "176897",
+"name": "2.0 20S Hybrid Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176915",
+"name": "2.0 20X Hybrid X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176899",
+"name": "2.0 20X Hybrid Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176914",
+"name": "2.0 20X Hybrid Black X-Tremer X Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201512,
+"id": "176909",
+"name": "2.0 Mode Premier Hybrid Emergency Brake Package 5-seat 4WD",
+"to": 201705
+},
+{
+"from": 201608,
+"id": "176930",
+"name": "2.0 Mode Premier Hybrid AUTECH 30th Anniversary 5-seat 4WD",
+"to": 201703
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_2013_2102",
+"market": "Япония",
+"to": 201705
+},
+"nissan/x-trail/g_201704_7565": {
+"from": 201703,
+"groups": [
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201812,
+"id": "201304",
+"name": "1.6 dCi MT 4WD SE",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233125",
+"name": "1.6 dCi MT 4WD SE Яндекс.Авто",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233129",
+"name": "1.6 dCi MT 4WD SE+",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233139",
+"name": "1.6 dCi MT 4WD LE+",
+"to": 202011
+},
+{
+"from": 202009,
+"id": "201304",
+"name": "1.6 dCi MT 4WD SE",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233125",
+"name": "1.6 dCi MT 4WD SE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "302303",
+"name": "1.6 dCi MT 4WD LE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "302302",
+"name": "1.6 dCi MT 4WD LE",
+"to": 202107
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 144 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201812,
+"id": "201302",
+"name": "2.0 MT 2WD XE",
+"to": 202210
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 144 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201812,
+"id": "233105",
+"name": "2.0 CVT 2WD XE",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233122",
+"name": "2.0 CVT 2WD SE Яндекс.Авто",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233112",
+"name": "2.0 CVT 2WD SE",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233126",
+"name": "2.0 CVT 2WD SE+",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233130",
+"name": "2.0 CVT 2WD SE Top",
+"to": 202011
+},
+{
+"from": 202009,
+"id": "233112",
+"name": "2.0 CVT 2WD SE",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233122",
+"name": "2.0 CVT 2WD SE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233130",
+"name": "2.0 CVT 2WD SE Top",
+"to": 202103
+},
+{
+"from": 202105,
+"id": "233112",
+"name": "2.0 CVT 2WD SE",
+"to": 202210
+},
+{
+"from": 202105,
+"id": "233126",
+"name": "2.0 CVT 2WD SE+",
+"to": 202210
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 144,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 144 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201812,
+"id": "233106",
+"name": "2.0 CVT 4WD XE+",
+"to": 202210
+},
+{
+"from": 201812,
+"id": "233113",
+"name": "2.0 CVT 4WD SE",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233123",
+"name": "2.0 CVT 4WD SE Яндекс.Авто",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233127",
+"name": "2.0 CVT 4WD SE+",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233131",
+"name": "2.0 CVT 4WD SE Top",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233135",
+"name": "2.0 CVT 4WD LE Яндекс.Авто",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233137",
+"name": "2.0 CVT 4WD LE+",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233140",
+"name": "2.0 CVT 4WD LE Top",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "234080",
+"name": "2.0 CVT 4WD LE",
+"to": 201909
+},
+{
+"from": 202009,
+"id": "233131",
+"name": "2.0 CVT 4WD SE Top",
+"to": 202210
+},
+{
+"from": 202009,
+"id": "234080",
+"name": "2.0 CVT 4WD LE",
+"to": 202210
+},
+{
+"from": 202009,
+"id": "233113",
+"name": "2.0 CVT 4WD SE",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233123",
+"name": "2.0 CVT 4WD SE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233135",
+"name": "2.0 CVT 4WD LE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233140",
+"name": "2.0 CVT 4WD LE Top",
+"to": 202107
+},
+{
+"from": 202105,
+"id": "233113",
+"name": "2.0 CVT 4WD SE",
+"to": 202210
+},
+{
+"from": 202105,
+"id": "233127",
+"name": "2.0 CVT 4WD SE+",
+"to": 202210
+},
+{
+"from": 202105,
+"id": "233137",
+"name": "2.0 CVT 4WD LE+",
+"to": 202110
+},
+{
+"from": 202105,
+"id": "233140",
+"name": "2.0 CVT 4WD LE Top",
+"to": 202110
+},
+{
+"from": 202110,
+"id": "233137",
+"name": "2.0 CVT 4WD LE+",
+"to": 202210
+},
+{
+"from": 202110,
+"id": "233140",
+"name": "2.0 CVT 4WD LE Top",
+"to": 202210
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "QR25DE",
+"fuel": "бензин",
+"hp": 171,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.5,
+"text": "2.5 л, 171 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201812,
+"id": "201305",
+"name": "2.5 CVT 4WD SE",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233124",
+"name": "2.5 CVT 4WD SE Яндекс.Авто",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233128",
+"name": "2.5 CVT 4WD SE+",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233132",
+"name": "2.5 CVT 4WD SE Top",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233136",
+"name": "2.5 CVT 4WD LE Яндекс.Авто",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233141",
+"name": "2.5 CVT 4WD LE Top",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "233138",
+"name": "2.5 CVT 4WD LE+",
+"to": 202011
+},
+{
+"from": 201812,
+"id": "234081",
+"name": "2.5 CVT 4WD LE",
+"to": 201909
+},
+{
+"from": 202009,
+"id": "233132",
+"name": "2.5 CVT 4WD SE Top",
+"to": 202210
+},
+{
+"from": 202009,
+"id": "234081",
+"name": "2.5 CVT 4WD LE",
+"to": 202210
+},
+{
+"from": 202009,
+"id": "201305",
+"name": "2.5 CVT 4WD SE",
+"to": 202103
+},
+{
+"from": 202009,
+"id": "233124",
+"name": "2.5 CVT 4WD SE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233136",
+"name": "2.5 CVT 4WD LE Яндекс.Авто",
+"to": 202107
+},
+{
+"from": 202009,
+"id": "233141",
+"name": "2.5 CVT 4WD LE Top",
+"to": 202107
+},
+{
+"from": 202105,
+"id": "233128",
+"name": "2.5 CVT 4WD SE+",
+"to": 202210
+},
+{
+"from": 202105,
+"id": "233141",
+"name": "2.5 CVT 4WD LE Top",
+"to": 202110
+},
+{
+"from": 202105,
+"id": "233138",
+"name": "2.5 CVT 4WD LE+",
+"to": 202110
+},
+{
+"from": 202110,
+"id": "233141",
+"name": "2.5 CVT 4WD LE Top",
+"to": 202210
+},
+{
+"from": 202110,
+"id": "233138",
+"name": "2.5 CVT 4WD LE+",
+"to": 202210
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_201704_7565",
+"market": "Россия",
+"to": 202210
+},
+"nissan/x-trail/g_2017_20935": {
+"from": 201709,
+"groups": [
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "HR13DDT",
+"fuel": "бензин",
+"hp": 158,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 158 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202101,
+"id": "509005",
+"name": "1.3 DIG-T SAT 2WD Visia",
+"to": 202109
+},
+{
+"from": 202101,
+"id": "509007",
+"name": "1.3 DIG-T SAT 2WD N-Design",
+"to": 202109
+},
+{
+"from": 202101,
+"id": "509006",
+"name": "1.3 DIG-T SAT 2WD N-Connecta",
+"to": 202109
+},
+{
+"from": 202101,
+"id": "509009",
+"name": "1.3 DIG-T SAT 2WD Tekna",
+"to": 202109
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "HR13DDT",
+"fuel": "бензин",
+"hp": 160,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.3,
+"text": "1.3 л, 160 л.с., бензин, робот, передний привод",
+"trans": "robot",
+"trims": [
+{
+"from": 202001,
+"id": "508541",
+"name": "1.3 DIG-T SAT 2WD Acenta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "508546",
+"name": "1.3 DIG-T SAT 2WD N-Way",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "508559",
+"name": "1.3 DIG-T SAT 2WD N-Tec",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509006",
+"name": "1.3 DIG-T SAT 2WD N-Connecta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509009",
+"name": "1.3 DIG-T SAT 2WD Tekna",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201709,
+"id": "508245",
+"name": "1.6 dCi MT 2WD Visia",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "508246",
+"name": "1.6 dCi MT 2WD Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "508247",
+"name": "1.6 dCi MT 2WD N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "508248",
+"name": "1.6 dCi MT 2WD Tekna",
+"to": 201912
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201709,
+"id": "509474",
+"name": "1.6 dCi MT 4x4i Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509475",
+"name": "1.6 dCi MT 4x4i N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509476",
+"name": "1.6 dCi MT 4x4i Tekna",
+"to": 201912
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "R9M",
+"fuel": "дизель",
+"hp": 130,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 130 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201709,
+"id": "509473",
+"name": "1.6 dCi CVT 2WD Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509472",
+"name": "1.6 dCi CVT 2WD N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509470",
+"name": "1.6 dCi CVT 2WD Tekna",
+"to": 201912
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "MR16DDT",
+"fuel": "бензин",
+"hp": 163,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.6,
+"text": "1.6 л, 163 л.с., бензин, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 201709,
+"id": "509385",
+"name": "1.6 DIG-T MT 2WD Visia",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509480",
+"name": "1.6 DIG-T MT 2WD Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509485",
+"name": "1.6 DIG-T MT 2WD N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509483",
+"name": "1.6 DIG-T MT 2WD Tekna",
+"to": 201912
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 150 л.с., дизель, МКПП, передний привод",
+"trans": "manual",
+"trims": [
+{
+"from": 202001,
+"id": "508532",
+"name": "1.7 dCi MT 2WD Visia",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509047",
+"name": "1.7 dCi MT 2WD Acenta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509047",
+"name": "1.7 dCi MT 2WD Acenta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509048",
+"name": "1.7 dCi MT 2WD N-Way",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509048",
+"name": "1.7 dCi MT 2WD N-Way",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509050",
+"name": "1.7 dCi MT 2WD N-Connecta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509054",
+"name": "1.7 dCi MT 2WD Tekna",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509052",
+"name": "1.7 dCi MT 2WD N-Tec",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 150 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 202001,
+"id": "509375",
+"name": "1.7 dCi MT 4x4i Acenta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509376",
+"name": "1.7 dCi MT 4x4i N-Way",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509377",
+"name": "1.7 dCi MT 4x4i N-Connecta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509378",
+"name": "1.7 dCi MT 4x4i N-Tec",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509379",
+"name": "1.7 dCi MT 4x4i Tekna",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 150 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 202001,
+"id": "509370",
+"name": "1.7 dCi CVT 2WD Acenta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509371",
+"name": "1.7 dCi CVT 2WD N-Way",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509372",
+"name": "1.7 dCi CVT 2WD N-Connecta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509373",
+"name": "1.7 dCi CVT 2WD N-Tec",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509374",
+"name": "1.7 dCi CVT 2WD Tekna",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "R9N",
+"fuel": "дизель",
+"hp": 150,
+"hp_total": null,
+"hybrid": null,
+"liters": 1.7,
+"text": "1.7 л, 150 л.с., дизель, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 202001,
+"id": "509380",
+"name": "1.7 dCi CVT 4x4i Acenta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509381",
+"name": "1.7 dCi CVT 4x4i N-Way",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509382",
+"name": "1.7 dCi CVT 4x4i N-Connecta",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509383",
+"name": "1.7 dCi CVT 4x4i N-Tec",
+"to": 202012
+},
+{
+"from": 202001,
+"id": "509384",
+"name": "1.7 dCi CVT 4x4i Tekna",
+"to": 202012
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, МКПП, полный привод (4WD)",
+"trans": "manual",
+"trims": [
+{
+"from": 201709,
+"id": "509497",
+"name": "2.0 dCi MT 4x4i Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509498",
+"name": "2.0 dCi MT 4x4i N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509499",
+"name": "2.0 dCi MT 4x4i Tekna",
+"to": 201912
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "fwd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201709,
+"id": "509491",
+"name": "2.0 dCi CVT 2WD Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509492",
+"name": "2.0 dCi CVT 2WD N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509493",
+"name": "2.0 dCi CVT 2WD Tekna",
+"to": 201912
+}
+]
+},
+{
+"body": [
+"T32"
+],
+"drive": "4wd",
+"engine": "M9R",
+"fuel": "дизель",
+"hp": 177,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 177 л.с., дизель, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201709,
+"id": "509494",
+"name": "2.0 dCi CVT 4x4i Acenta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509495",
+"name": "2.0 dCi CVT 4x4i N-Connecta",
+"to": 201912
+},
+{
+"from": 201709,
+"id": "509496",
+"name": "2.0 dCi CVT 4x4i Tekna",
+"to": 201912
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_2017_20935",
+"market": "Европа",
+"to": 202112
+},
+"nissan/x-trail/g_2017_7654": {
+"from": 201706,
+"groups": [
+{
+"body": [
+"DBA-T32",
+"5BA-T32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 147 л.с., бензин, вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201706,
+"id": "185333",
+"name": "2.0 20S 5-seat",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185334",
+"name": "2.0 20X 5-seat",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185352",
+"name": "2.0 20X passenger seat slide-up",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185346",
+"name": "2.0 Mode Premier 5-seat",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185335",
+"name": "2.0 20X 7-seat",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185347",
+"name": "2.0 Mode Premier 7-seat",
+"to": 201812
+},
+{
+"from": 201712,
+"id": "192270",
+"name": "2.0 20Xi 5-seat",
+"to": 201812
+},
+{
+"from": 201901,
+"id": "185333",
+"name": "2.0 20S 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185334",
+"name": "2.0 20X 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185352",
+"name": "2.0 20X passenger seat slide-up",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236659",
+"name": "2.0 AUTECH 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "192270",
+"name": "2.0 20Xi 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236670",
+"name": "2.0 20Xi passenger seat slide-up",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236661",
+"name": "2.0 AUTECH i Package 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185335",
+"name": "2.0 20X 7-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236660",
+"name": "2.0 AUTECH 7-seat",
+"to": 201912
+},
+{
+"from": 202001,
+"id": "236670",
+"name": "2.0 20Xi passenger seat slide-up",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "192270",
+"name": "2.0 20Xi 5-seat",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "236661",
+"name": "2.0 AUTECH i Package 5-seat",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271149",
+"name": "2.0 20Xi Leather Edition 5-seat",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271148",
+"name": "2.0 20Xi 7-seat",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271172",
+"name": "2.0 AUTECH i Package 7-seat",
+"to": 202010
+},
+{
+"from": 202011,
+"id": "236670",
+"name": "2.0 20Xi passenger seat slide-up",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "192270",
+"name": "2.0 20Xi 5-seat",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "271149",
+"name": "2.0 20Xi Leather Edition 5-seat",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "236661",
+"name": "2.0 AUTECH i Package 5-seat",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "271148",
+"name": "2.0 20Xi 7-seat",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "271172",
+"name": "2.0 AUTECH i Package 7-seat",
+"to": 202206
+}
+]
+},
+{
+"body": [
+"DAA-HT32",
+"5AA-HT32"
+],
+"drive": "fwd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": "параллельный гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 147 л.с., параллельный гибрид, 41 л.с., вариатор (CVT), передний привод",
+"trans": "cvt",
+"trims": [
+{
+"from": 201706,
+"id": "185339",
+"name": "2.0 20S Hybrid 5-seat",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185340",
+"name": "2.0 20X Hybrid 5-seat",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185354",
+"name": "2.0 20X Hybrid passenger seat slide-up",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185348",
+"name": "2.0 Mode Premier Hybrid 5-seat",
+"to": 201812
+},
+{
+"from": 201712,
+"id": "192273",
+"name": "2.0 20Xi Hybrid 5-seat",
+"to": 201812
+},
+{
+"from": 201901,
+"id": "185339",
+"name": "2.0 20S Hybrid 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185340",
+"name": "2.0 20X Hybrid 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185354",
+"name": "2.0 20X Hybrid passenger seat slide-up",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236662",
+"name": "2.0 AUTECH Hybrid 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "192273",
+"name": "2.0 20Xi Hybrid 5-seat",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236672",
+"name": "2.0 20Xi Hybrid passenger seat slide-up",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236663",
+"name": "2.0 AUTECH Hybrid i Package 5-seat",
+"to": 201912
+},
+{
+"from": 202001,
+"id": "236672",
+"name": "2.0 20Xi Hybrid passenger seat slide-up",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "192273",
+"name": "2.0 20Xi Hybrid 5-seat",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "236663",
+"name": "2.0 AUTECH Hybrid i Package 5-seat",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271158",
+"name": "2.0 20Xi Hybrid Leather Edition 5-seat",
+"to": 202010
+},
+{
+"from": 202011,
+"id": "236672",
+"name": "2.0 20Xi Hybrid passenger seat slide-up",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "192273",
+"name": "2.0 20Xi Hybrid 5-seat",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "236663",
+"name": "2.0 AUTECH Hybrid i Package 5-seat",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "271158",
+"name": "2.0 20Xi Hybrid Leather Edition 5-seat",
+"to": 202206
+}
+]
+},
+{
+"body": [
+"DBA-NT32",
+"5BA-NT32"
+],
+"drive": "4wd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": null,
+"liters": 2.0,
+"text": "2.0 л, 147 л.с., бензин, вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201706,
+"id": "185336",
+"name": "2.0 20S 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185337",
+"name": "2.0 20X 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185356",
+"name": "2.0 20X passenger seat slide-up 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185343",
+"name": "2.0 20X X-Tremer X 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185349",
+"name": "2.0 Mode Premier 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185338",
+"name": "2.0 20X 7-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185344",
+"name": "2.0 20X X-Tremer X 7-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185350",
+"name": "2.0 Mode Premier 7-seat 4WD",
+"to": 201812
+},
+{
+"from": 201712,
+"id": "192271",
+"name": "2.0 20Xi 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201901,
+"id": "185336",
+"name": "2.0 20S 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185337",
+"name": "2.0 20X 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236654",
+"name": "2.0 20X X-tremer X 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185356",
+"name": "2.0 20X passenger seat slide-up 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236664",
+"name": "2.0 AUTECH 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "192271",
+"name": "2.0 20Xi 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236655",
+"name": "2.0 20Xi X-tremer X 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236674",
+"name": "2.0 20Xi passenger seat slide-up 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236666",
+"name": "2.0 AUTECH i Package 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185338",
+"name": "2.0 20X 7-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236656",
+"name": "2.0 20X X-tremer X 7-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236665",
+"name": "2.0 AUTECH 7-seat 4WD",
+"to": 201912
+},
+{
+"from": 202001,
+"id": "185336",
+"name": "2.0 20S 5-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "236674",
+"name": "2.0 20Xi passenger seat slide-up 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "192271",
+"name": "2.0 20Xi 5-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "236655",
+"name": "2.0 20Xi X-tremer X 5-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "236666",
+"name": "2.0 AUTECH i Package 5-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271150",
+"name": "2.0 20Xi Leather Edition 5-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271152",
+"name": "2.0 20Xi 7-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271186",
+"name": "2.0 20Xi X-tremer X 7-seat 4WD",
+"to": 202010
+},
+{
+"from": 202001,
+"id": "271176",
+"name": "2.0 AUTECH i Package 7-seat 4WD",
+"to": 202010
+},
+{
+"from": 202011,
+"id": "305135",
+"name": "2.0 20S V Selection 5-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "236674",
+"name": "2.0 20Xi passenger seat slide-up 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "305132",
+"name": "2.0 20Xi V Selection 5-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "305143",
+"name": "2.0 20Xi V Selection X-tremer X 5-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "305129",
+"name": "2.0 20Xi Leather Edition V Selection 5-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "236666",
+"name": "2.0 AUTECH i Package 5-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "305133",
+"name": "2.0 20Xi V Selection 7-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "305144",
+"name": "2.0 20Xi V Selection X-tremer X 7-seat 4WD",
+"to": 202206
+},
+{
+"from": 202011,
+"id": "271176",
+"name": "2.0 AUTECH i Package 7-seat 4WD",
+"to": 202206
+}
+]
+},
+{
+"body": [
+"DAA-HNT32"
+],
+"drive": "4wd",
+"engine": "MR20DD",
+"fuel": "бензин",
+"hp": 147,
+"hp_total": null,
+"hybrid": "параллельный гибрид",
+"liters": 2.0,
+"text": "2.0 л, бензин, 147 л.с., параллельный гибрид, 41 л.с., вариатор (CVT), полный привод (4WD)",
+"trans": "cvt",
+"trims": [
+{
+"from": 201706,
+"id": "185341",
+"name": "2.0 20S Hybrid 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185342",
+"name": "2.0 20X Hybrid 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185355",
+"name": "2.0 20X Hybrid passenger seat slide-up 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185345",
+"name": "2.0 20X Hybrid X-Tremer X 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201706,
+"id": "185351",
+"name": "2.0 Mode Premier Hybrid 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201712,
+"id": "192274",
+"name": "2.0 20Xi Hybrid 5-seat 4WD",
+"to": 201812
+},
+{
+"from": 201901,
+"id": "185341",
+"name": "2.0 20S Hybrid 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "185342",
+"name": "2.0 20X Hybrid 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236657",
+"name": "2.0 20X Hybrid X-tremer X 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236667",
+"name": "2.0 AUTECH Hybrid 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "192274",
+"name": "2.0 20Xi Hybrid 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236658",
+"name": "2.0 20Xi Hybrid X-tremer X 5-seat 4WD",
+"to": 201912
+},
+{
+"from": 201901,
+"id": "236668",
+"name": "2.0 AUTECH Hybrid i Package 5-seat 4WD",
+"to": 201912
+}
+]
+}
+],
+"ids": true,
+"key": "nissan/x-trail/g_2017_7654",
+"market": "Япония",
+"to": 202206
 },
 "peugeot/2008/g_201304_2124": {
 "from": 201303,
@@ -329261,6 +333550,7 @@
 "39578422": 739885,
 "39676826": 739884,
 "39796388": 739885,
+"39808680": 739889,
 "39901179": 739884,
 "39908028": 739884,
 "39994837": 739884,
@@ -329298,6 +333588,7 @@
 "40974189": 739884,
 "40982417": 739884,
 "40988778": 739884,
+"40994188": 739889,
 "41017233": 739887,
 "41018100": 739885,
 "41023829": 739884,
@@ -329453,7 +333744,7 @@
 "41977858": 739888,
 "41978120": 739888,
 "41979363": 739885,
-"41979994": 739888,
+"41979994": 739889,
 "41988276": 739884,
 "41992072": 739885,
 "41993207": 739884,
@@ -329502,7 +333793,7 @@
 "42105263": 739888,
 "42106046": 739887,
 "42107769": 739886,
-"42111547": 739888,
+"42111547": 739889,
 "42111826": 739888,
 "42112084": 739884,
 "42117892": 739884,
@@ -329538,6 +333829,7 @@
 "42172743": 739885,
 "42175015": 739885,
 "42175019": 739885,
+"42177034": 739889,
 "42177432": 739885,
 "42182268": 739884,
 "42183809": 739885,
@@ -329610,7 +333902,7 @@
 "42300292": 739885,
 "42302123": 739885,
 "42306441": 739884,
-"42310376": 739888,
+"42310376": 739889,
 "42310961": 739885,
 "42312154": 739888,
 "42315481": 739885,
@@ -329774,7 +334066,7 @@
 "42502230": 739884,
 "42503046": 739885,
 "42504270": 739885,
-"42507462": 739888,
+"42507462": 739889,
 "42507596": 739884,
 "42507812": 739887,
 "42508116": 739887,
@@ -329834,6 +334126,7 @@
 "42556410": 739884,
 "42557388": 739884,
 "42557519": 739885,
+"42559756": 739889,
 "42559815": 739885,
 "42559957": 739884,
 "42560772": 739887,
@@ -329862,12 +334155,14 @@
 "42570710": 739884,
 "42571328": 739885,
 "42571382": 739886,
+"42571724": 739889,
 "42572699": 739885,
 "42573233": 739885,
 "42573292": 739885,
 "42573906": 739884,
 "42574064": 739884,
 "42574142": 739888,
+"42575076": 739889,
 "42575941": 739888,
 "42576971": 739884,
 "42578033": 739886,
@@ -329875,6 +334170,7 @@
 "42578672": 739884,
 "42581639": 739884,
 "42583034": 739884,
+"42583035": 739889,
 "42583854": 739884,
 "42584438": 739884,
 "42584591": 739887,
@@ -329948,6 +334244,7 @@
 "42628984": 739885,
 "42628992": 739884,
 "42629097": 739885,
+"42629333": 739889,
 "42631299": 739885,
 "42631594": 739884,
 "42631667": 739885,
@@ -329980,7 +334277,7 @@
 "42649708": 739884,
 "42650412": 739885,
 "42651188": 739886,
-"42651579": 739888,
+"42651579": 739889,
 "42652270": 739886,
 "42652925": 739884,
 "42654641": 739887,
@@ -330056,6 +334353,7 @@
 "42693833": 739885,
 "42695374": 739885,
 "42696078": 739887,
+"42696697": 739889,
 "42696733": 739888,
 "42696799": 739885,
 "42696888": 739884,
@@ -330067,7 +334365,7 @@
 "42699969": 739885,
 "42700131": 739884,
 "42700653": 739884,
-"42701527": 739888,
+"42701527": 739889,
 "42702017": 739885,
 "42702735": 739884,
 "42702936": 739885,
@@ -330077,7 +334375,7 @@
 "42704511": 739884,
 "42704537": 739885,
 "42705996": 739884,
-"42706929": 739888,
+"42706929": 739889,
 "42707199": 739886,
 "42707650": 739884,
 "42708138": 739884,
@@ -330119,7 +334417,7 @@
 "42722754": 739887,
 "42723851": 739888,
 "42724344": 739884,
-"42724402": 739888,
+"42724402": 739889,
 "42724983": 739885,
 "42725801": 739885,
 "42725933": 739884,
@@ -330166,6 +334464,7 @@
 "42743650": 739885,
 "42744001": 739884,
 "42745435": 739884,
+"42745766": 739889,
 "42745811": 739884,
 "42746423": 739886,
 "42747222": 739884,
@@ -330178,7 +334477,7 @@
 "42750463": 739886,
 "42750718": 739886,
 "42750725": 739886,
-"42750826": 739888,
+"42750826": 739889,
 "42751430": 739885,
 "42751513": 739887,
 "42751582": 739884,
@@ -330228,7 +334527,7 @@
 "42765832": 739884,
 "42766266": 739887,
 "42766741": 739884,
-"42767298": 739888,
+"42767298": 739889,
 "42768206": 739887,
 "42768284": 739886,
 "42768471": 739885,
@@ -330296,6 +334595,7 @@
 "42786086": 739884,
 "42787506": 739884,
 "42787604": 739885,
+"42789363": 739889,
 "42789976": 739888,
 "42790247": 739888,
 "42791092": 739885,
@@ -334055,6 +338355,128 @@
 ]
 ],
 "name": "2.0 AT FWD Explorer"
+},
+"249461": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,7 с"
+],
+[
+"Максимальная скорость",
+"217 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"290 л.с. (213 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"345 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"Duratec 35"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-91"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"12,4 л/100 км"
+],
+[
+"Город",
+"14,7 л/100 км"
+],
+[
+"Трасса",
+"10,2 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5036 × 2004 × 1778 мм"
+],
+[
+"Колёсная база",
+"2865 мм"
+],
+[
+"Клиренс",
+"198 мм"
+],
+[
+"Масса",
+"2045 кг"
+],
+[
+"Топливный бак",
+"70 л"
+],
+[
+"Багажник",
+"595 (со сложенным 3-м рядом сидений 1243 л., со сложенными 2-м и 3-м рядами сидений 2313 л.) л"
+],
+[
+"Мест",
+"7"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"255/50 R20"
+],
+[
+"Радиус разворота",
+"5,9 м"
+]
+]
+]
+],
+"name": "3.5 AT AWD Limited"
 },
 "264025": {
 "groups": [
@@ -342083,6 +346505,115 @@
 ]
 ],
 "name": "1.6 D DCT 2WD Trendy"
+},
+"439871": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"136 л.с. (100 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"320 Н·м при 2250 об/мин"
+],
+[
+"Модель двигателя",
+"D4FE"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,9 л/100 км"
+],
+[
+"Город",
+"6,2 л/100 км"
+],
+[
+"Трасса",
+"5,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4375 × 1800 × 1620 мм"
+],
+[
+"Колёсная база",
+"2630 мм"
+],
+[
+"Клиренс",
+"190 мм"
+],
+[
+"Масса",
+"1410 кг"
+],
+[
+"Багажник",
+"433 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"255/55 R17"
+]
+]
+]
+],
+"name": "1.6 D DCT 2WD Prestige"
 },
 "439875": {
 "groups": [
@@ -364033,6 +368564,111 @@
 ],
 "name": "1.6 T-GDI Hybrid AT 2WD Prestige 5 seats"
 },
+"506362": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"180 л.с. (132 кВт) при 5500 об/мин"
+],
+[
+"Крутящий момент",
+"265 Н·м при 4500 об/мин"
+],
+[
+"Модель двигателя",
+"G4FT"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"6,3 л/100 км"
+],
+[
+"Город",
+"6,8 л/100 км"
+],
+[
+"Трасса",
+"6 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4815 × 1900 × 1700 мм"
+],
+[
+"Колёсная база",
+"2815 мм"
+],
+[
+"Масса",
+"1830 кг"
+],
+[
+"Топливный бак",
+"67 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/60 R18"
+]
+]
+]
+],
+"name": "1.6 T-GDI Hybrid AT 2WD Signature 5 seats"
+},
 "506667": {
 "groups": [
 [
@@ -372735,6 +377371,111 @@
 ],
 "name": "1.0 AT 2WD Standard"
 },
+"518539": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"76 л.с. (56 кВт) при 6200 об/мин"
+],
+[
+"Крутящий момент",
+"95 Н·м при 3750 об/мин"
+],
+[
+"Модель двигателя",
+"G3LA"
+],
+[
+"Тип двигателя",
+"Рядный, 3-цилиндровый"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-5"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,7 л/100 км"
+],
+[
+"Город",
+"8,2 л/100 км"
+],
+[
+"Трасса",
+"7,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"3595 × 1595 × 1700 мм"
+],
+[
+"Колёсная база",
+"2520 мм"
+],
+[
+"Клиренс",
+"160 мм"
+],
+[
+"Масса",
+"1030 кг"
+],
+[
+"Топливный бак",
+"38 л"
+],
+[
+"Мест",
+"2"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Полузависимая, торсионная балка"
+],
+[
+"Передние тормоза",
+"Дисковые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"165/60 R14"
+]
+]
+]
+],
+"name": "1.0 AT 2WD Standard VAN"
+},
 "518547": {
 "groups": [
 [
@@ -374956,6 +379697,111 @@
 ]
 ],
 "name": "2.0 LPG AT 2WD X-Line"
+},
+"521202": {
+"groups": [
+[
+"Двигатель",
+[
+[
+"Мощность",
+"170 л.с. (125 кВт) при 5000 об/мин"
+],
+[
+"Крутящий момент",
+"280 Н·м при 1500 об/мин"
+],
+[
+"Модель двигателя",
+"G15DTF"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,8 л/100 км"
+],
+[
+"Город",
+"9,6 л/100 км"
+],
+[
+"Трасса",
+"8 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4450 × 1870 × 1620 мм"
+],
+[
+"Колёсная база",
+"2675 мм"
+],
+[
+"Клиренс",
+"185 мм"
+],
+[
+"Масса",
+"1470 кг"
+],
+[
+"Топливный бак",
+"50 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, амортизационная стойка типа МакФерсон"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"235/55 R18"
+]
+]
+]
+],
+"name": "1.5 e-XGDi AT 2WD C5 Plus"
 },
 "521203": {
 "groups": [
@@ -384430,6 +389276,136 @@
 ],
 "name": "530e AT M Sport"
 },
+"542518": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,9 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"286 л.с. (210 кВт) при 4000 об/мин"
+],
+[
+"Крутящий момент",
+"600 Н·м при 1750 об/мин"
+],
+[
+"Модель двигателя",
+"DDVC"
+],
+[
+"Тип двигателя",
+"V-образный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,7 л/100 км"
+],
+[
+"Город",
+"6,5 л/100 км"
+],
+[
+"Трасса",
+"5,5 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5190 × 1945 × 1473 мм"
+],
+[
+"Колёсная база",
+"2998 мм"
+],
+[
+"Клиренс",
+"140 мм"
+],
+[
+"Масса",
+"2095 кг"
+],
+[
+"Топливный бак",
+"72 л"
+],
+[
+"Багажник",
+"505 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые"
+],
+[
+"Шины",
+"265/40 R20"
+],
+[
+"Радиус разворота",
+"6,25 м"
+]
+]
+]
+],
+"name": "3.0 50 TDI quattro tiptronic Premium"
+},
 "542724": {
 "groups": [
 [
@@ -384909,6 +389885,136 @@
 ],
 "name": "320i AT M Sport"
 },
+"543177": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"7,4 с"
+],
+[
+"Максимальная скорость",
+"235 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"184 л.с. (135 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"300 Н·м при 4000 об/мин"
+],
+[
+"Модель двигателя",
+"B46B20"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,7 л/100 км"
+],
+[
+"Город",
+"7,1 л/100 км"
+],
+[
+"Трасса",
+"4,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4713 × 1827 × 1435 мм"
+],
+[
+"Колёсная база",
+"2851 мм"
+],
+[
+"Клиренс",
+"136 мм"
+],
+[
+"Масса",
+"1590 кг"
+],
+[
+"Топливный бак",
+"59 л"
+],
+[
+"Багажник",
+"480 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"225/45 R18"
+],
+[
+"Радиус разворота",
+"5,7 м"
+]
+]
+]
+],
+"name": "320i AT M Sport"
+},
 "543187": {
 "groups": [
 [
@@ -385168,6 +390274,136 @@
 ]
 ],
 "name": "730d AT xDrive"
+},
+"543454": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"5,1 с"
+],
+[
+"Максимальная скорость",
+"250 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"333 л.с. (245 кВт) при 6500 об/мин"
+],
+[
+"Крутящий момент",
+"450 Н·м при 5200 об/мин"
+],
+[
+"Модель двигателя",
+"B58B30M0"
+],
+[
+"Тип двигателя",
+"Рядный, 6-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Бензин АИ-95"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"8,4 л/100 км"
+],
+[
+"Город",
+"10,6 л/100 км"
+],
+[
+"Трасса",
+"7,1 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"5260 × 1902 × 1479 мм"
+],
+[
+"Колёсная база",
+"3210 мм"
+],
+[
+"Клиренс",
+"135 мм"
+],
+[
+"Масса",
+"2095 кг"
+],
+[
+"Топливный бак",
+"78 л"
+],
+[
+"Багажник",
+"515 л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"245/45 R19"
+],
+[
+"Радиус разворота",
+"6,55 м"
+]
+]
+]
+],
+"name": "740Li AT xDrive"
 },
 "543640": {
 "groups": [
@@ -388798,6 +394034,128 @@
 ],
 "name": "AMG GLC 43 MTC 4MATIC"
 },
+"545506": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"8 с"
+],
+[
+"Максимальная скорость",
+"219 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"197 л.с. (145 кВт) при 3600 об/мин"
+],
+[
+"Крутящий момент",
+"440 Н·м при 2800 об/мин"
+],
+[
+"Модель двигателя",
+"OM 654 M"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Турбина"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"5,9 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4716 × 1890 × 1640 мм"
+],
+[
+"Колёсная база",
+"2888 мм"
+],
+[
+"Клиренс",
+"145 мм"
+],
+[
+"Масса",
+"2000 кг"
+],
+[
+"Топливный бак",
+"62 л"
+],
+[
+"Багажник",
+"620 (1680) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"235/60 R18"
+],
+[
+"Радиус разворота",
+"5,45 м"
+]
+]
+]
+],
+"name": "GLC 220 d AT 4MATIC Avantgarde"
+},
 "545554": {
 "groups": [
 [
@@ -388957,6 +394315,128 @@
 ]
 ],
 "name": "1.8 CVT SL"
+},
+"545688": {
+"groups": [
+[
+"Динамика",
+[
+[
+"Разгон 0–100 км/ч",
+"6,9 с"
+],
+[
+"Максимальная скорость",
+"230 км/ч"
+]
+]
+],
+[
+"Двигатель",
+[
+[
+"Мощность",
+"269 л.с. (198 кВт) при 4200 об/мин"
+],
+[
+"Крутящий момент",
+"550 Н·м при 2200 об/мин"
+],
+[
+"Модель двигателя",
+"OM 654 M DE 20 G SCR"
+],
+[
+"Тип двигателя",
+"Рядный, 4-цилиндровый"
+],
+[
+"Наддув",
+"Двойной турбонаддув"
+],
+[
+"Топливо",
+"Дизельное топливо"
+],
+[
+"Экокласс",
+"Евро-6"
+]
+]
+],
+[
+"Расход топлива",
+[
+[
+"Смешанный цикл",
+"7,7 л/100 км"
+]
+]
+],
+[
+"Размеры и масса",
+[
+[
+"Габариты (Д × Ш × В)",
+"4924 × 2010 × 1797 мм"
+],
+[
+"Колёсная база",
+"2995 мм"
+],
+[
+"Клиренс",
+"205 мм"
+],
+[
+"Масса",
+"2335 кг"
+],
+[
+"Топливный бак",
+"85 л"
+],
+[
+"Багажник",
+"630 (2055) л"
+],
+[
+"Мест",
+"5"
+]
+]
+],
+[
+"Ходовая часть",
+[
+[
+"Передняя подвеска",
+"Независимая, на двойных поперечных рычагах"
+],
+[
+"Задняя подвеска",
+"Независимая, многорычажная"
+],
+[
+"Передние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Задние тормоза",
+"Дисковые вентилируемые"
+],
+[
+"Шины",
+"255/50 R19"
+],
+[
+"Радиус разворота",
+"6 м"
+]
+]
+]
+],
+"name": "GLE 300d 4MATIC"
 },
 "545754": {
 "groups": [
