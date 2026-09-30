@@ -308,7 +308,7 @@ class DromCatalog:
                 self.cache = json.load(f)
         except (OSError, ValueError):
             self.cache = {}
-        for key in ("brands", "models", "gen_lists", "gens", "trims"):
+        for key in ("brands", "models", "gen_lists", "gens", "trims", "auctions"):
             self.cache.setdefault(key, {})
         version = self.cache.get("version", 1)
         if version < 2:
@@ -395,6 +395,32 @@ class DromCatalog:
             if slug:
                 return f"{b}/{slug}"
         return None
+
+    def auction_lots(self, make: str, model: str, year: int, pages: int = 3) -> list[dict] | None:
+        """Проданные лоты японских аукционов модели за год (drom.ru/world/japan/<марка>/<модель>/):
+        [{"year", "grade", "cc", "mileage_km", "score", "body", "price_jpy"}]. Кэш на AUCTION_TTL_DAYS
+        дней; None — модели нет на drom.ru или страницы не открылись (лимит запросов)."""
+        path = self.model_path(make, model)
+        if not path or not year:
+            return None
+        key = f"{path}|{year}"
+        today = date.today().toordinal()
+        entry = self.cache["auctions"].get(key)
+        if entry and today - entry.get("day", 0) <= AUCTION_TTL_DAYS:
+            return entry["lots"]
+        lots, seen = [], set()
+        for n in range(1, pages + 1):
+            page = "" if n == 1 else f"page{n}/"
+            got = self._get(f"https://www.drom.ru/world/japan/{path}/{page}?yearFrom={year}&yearTo={year}")
+            if got is None:
+                return entry["lots"] if entry else None
+            new = [x for x in parse_auction(got[1]) if x["lot"] not in seen]
+            seen.update(x["lot"] for x in new)
+            lots += new
+            if len(new) < 10:
+                break
+        self.cache["auctions"][key] = {"day": today, "lots": [{k: v for k, v in x.items() if k != "lot"} for x in lots]}
+        return self.cache["auctions"][key]["lots"]
 
     def known_missing(self, make: str, model: str) -> bool:
         """Модели точно нет на drom.ru (список моделей марки уже в кэше, а её там нет) —
@@ -612,6 +638,50 @@ class DromCatalog:
         if not data.get("groups"):
             return None
         return {**data, "url": f"{BASE}{gkey.rsplit('/', 1)[0]}/{tid}/"}
+
+
+AUCTION_TTL_DAYS = 7
+_AUC_HEAD = re.compile(r"^(.+),\s*((?:19|20)\d{2})$")
+_AUC_PRICE = re.compile(r"^([\d\s\u00a0\u202f]+)\s*JP¥$")
+
+
+def _num_text(text: str) -> int | None:
+    digits = re.sub(r"\D", "", text or "")
+    return int(digits) if digits else None
+
+
+def parse_auction(page_text: str) -> list[dict]:
+    """Текст страницы статистики аукционов drom.ru → проданные лоты. Лот: «Honda Fit, 2018»,
+    комплектация, «Объем 1 500 см³», «КПП …», «Кузов GP5», «Пробег 131 000 км», «Оценка 3.5»,
+    «732 000 JP¥», …, «Лот 60155»."""
+    lines = [ln.strip() for ln in page_text.split("\n") if ln.strip()]
+    lots, cur = [], None
+    for i, ln in enumerate(lines):
+        head = _AUC_HEAD.match(ln)
+        if head and i + 1 < len(lines) and not lines[i + 1].startswith(("Объем", "Пробег")):
+            cur = {"year": int(head.group(2)), "grade": lines[i + 1]}
+            continue
+        if cur is None:
+            continue
+        label, _, value = ln.partition("\t")
+        if not value:
+            parts = ln.split(None, 1)
+            label, value = (parts[0], parts[1]) if len(parts) == 2 else (ln, "")
+        if label == "Объем":
+            cur["cc"] = _num_text(value)
+        elif label == "Пробег":
+            cur["mileage_km"] = _num_text(value)
+        elif label == "Оценка":
+            cur["score"] = value.strip()
+        elif label == "Кузов":
+            cur["body"] = value.strip()
+        elif _AUC_PRICE.match(ln):
+            cur["price_jpy"] = _num_text(ln)
+        elif ln.startswith("Лот ") and cur.get("price_jpy"):
+            cur["lot"] = ln[4:].strip() + "|" + str(cur.get("price_jpy"))
+            lots.append(cur)
+            cur = None
+    return lots
 
 
 def norm_fuel(text: str | None) -> str | None:
