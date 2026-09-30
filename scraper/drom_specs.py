@@ -484,7 +484,7 @@ class DromCatalog:
 
     def power(self, car: dict) -> dict | None:
         """car: make, model, market (china/south-korea/japan) или markets [по очереди], year, month?, cc, fuel (petrol/diesel/
-        hybrid/electric/phev), drive (fwd/rwd/4wd)?, trans (auto/manual/cvt/robot)?, trim?, body?.
+        hybrid/electric/phev), drive (fwd/rwd/4wd)?, trans (auto/manual/cvt/robot)?, trim?, body?, hp? (мощность из объявления).
         Без cc комплектацию ищем по дате, топливу, приводу и названию — объём тогда берём
         из найденной группы («liters», если он у всех подходящих групп один).
         → {"hp", "hp_total", "liters", "source", "trim"} или None."""
@@ -565,6 +565,13 @@ class DromCatalog:
             named = lambda t: {f"{a}{b.lower()}" for x in t for a, b in re.findall(r"\b(\d{2})\s*(TFSI|TDI|TSI)\b", x["name"], re.I)}
             if any(named(t) for _, t in cands):
                 cands = [(g, t) for g, t in cands if key in named(t)]
+        # Мощность машины известна из объявления (che168: «纯电动 218马力») — только группы с такой же
+        # мощностью (±3%): у Song Plus EV на drom.ru версии 181 л.с. (72 кВт·ч) и 218 л.с. (87 кВт·ч)
+        if car.get("hp") and cands:
+            near = [(g, t) for g, t in cands if abs(g["hp"] - car["hp"]) <= max(4, car["hp"] * 0.03)]
+            if near and len(near) < len(cands):
+                self.stats["by_hp"] = self.stats.get("by_hp", 0) + 1
+                cands = near
         # Кей-кары (до 660 см³): турбо — всегда 64 л.с., атмосферные — меньше. Турбо известно
         # из объявления — оставляем только группы с такой мощностью (Tanto 0.66: 58 и 64 л.с.;
         # Dayz Highway Star Turbo — не 49 л.с. атмосферной версии, даже если турбо на drom.ru нет)
