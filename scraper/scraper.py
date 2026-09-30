@@ -388,6 +388,7 @@ def main():
             print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
             backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left, tried=tried)
             add_drom_power([c for c in touched if c.get("backfill")], drom, power_counts, tried)
+            attach_known_tech(touched, known_all, drom)
             push_to_bn_auto(session, touched, known, state["option_codes"] or {})
         seen = {c["external_id"] for c in touched} | {c["external_id"] for c in (cars or [])}
         push_to_bn_auto(session, verify_known(session, known_all, seen, pacer), known_all)
@@ -677,6 +678,38 @@ def add_drom_power(cars: list[dict], drom, counts: dict, tried: dict | None = No
             counts["none"] += 1
             if tried is not None:
                 tried[c["external_id"]] = today
+
+
+TECH_FIX_LIMIT = int(os.environ.get("ENCAR_TECH_FIX") or "100")
+
+
+def attach_known_tech(cars: list[dict], known: dict, drom, limit: int = TECH_FIX_LIMIT) -> int:
+    """Гибридам и электромобилям с сайта без 30-минутной мощности (у них цена «от») — характеристики
+    комплектации drom.ru с ней: уйдут с отметкой «ещё в продаже». Марка, модель, год, объём, мощность и
+    тип двигателя — как их знает сайт. Не больше limit машин за прогон. → сколько машин получили данные."""
+    import drom_specs
+    tried = got = 0
+    for c in cars:
+        info = known.get(c.get("external_id")) or {}
+        if not info.get("needs30") or c.get("detail") or tried >= limit:
+            continue
+        if not (info.get("make") and info.get("model") and info.get("year")):
+            continue
+        tried += 1
+        kind = info.get("engine_type") or ""
+        digits = lambda v: int(re.sub(r"\D", "", str(v or "")) or 0) or None
+        found = drom.power({
+            "make": info["make"], "model": info["model"], "markets": drom_markets(info["make"]),
+            "year": info["year"], "cc": None if kind == "electric" else digits(info.get("cc")),
+            "fuel": "electric" if kind in ("electric", "sequential_hybrid") else "hybrid",
+            "trim": info.get("text") or "", "hp": digits(info.get("hp")),
+        })
+        tech = drom.tech(found.get("trim")) if found else None
+        if tech and any(r[0] == "30-минутная мощность" for g in tech.get("groups", []) for r in g[1]):
+            c["tech_fix"] = tech
+            got += 1
+    print(f"Характеристики drom.ru с 30-минутной мощностью досланы машинам с сайта: {got} (искали у {tried})")
+    return got
 
 
 def still_ok(car: dict) -> bool:
@@ -1076,6 +1109,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
                 "mileage_km": c.get("mileage_km"),
                 "source_url": c.get("link"),
                 **({"price_stats": c["price_stats"]} if c.get("price_stats") else {}),
+                **({"tech": c["tech_fix"]} if c.get("tech_fix") else {}),
             })
             continue
         d = c.get("detail") or {}
