@@ -221,6 +221,8 @@ TECH_FIELDS = [
     ("Двигатель", "Экологический тип двигателя", "Экокласс", ""),
     # Электромобили и гибриды: 30-минутная мощность — по ней считается утильсбор (пиковая выше)
     ("Электро", "Электродвигатель: 30-минутная мощность, л.с.", "30-минутная мощность", "л.с."),
+    # Гибрид: мощность ДВС + 30-минутная электромотора — по ней утильсбор (Crown SportCross HEV: 269 + 107 = 376)
+    ("Электро", "Гибридная установка: комбинированная мощность, л.с.", "Комбинированная мощность", "л.с."),
     ("Электро", "Электродвигатель: мощность, кВт", "Мощность электромотора", "кВт"),
     ("Электро", "Электродвигатель: крутящий момент, Нм", "Крутящий момент электромотора", "Н·м"),
     ("Электро", "Ёмкость батареи, кВт*ч", "Ёмкость батареи", "кВт·ч"),
@@ -252,7 +254,8 @@ def _label_key(text: str) -> str:
 
 
 _TECH_LABELS = {_label_key(src): (group, name, unit) for group, src, name, unit in TECH_FIELDS}
-TRIM_VERSION = 2   # 2 — строки электромобиля (30-минутная мощность и др.); старые записи кэша перечитываются
+TRIM_VERSION = 3   # 2 — строки электромобиля (30-минутная мощность и др.); 3 — комбинированная мощность гибрида.
+#                   Старые записи кэша электромобилей и гибридов перечитываются
 
 
 def parse_trim(page_text: str) -> dict | None:
@@ -553,7 +556,9 @@ class DromCatalog:
                     # «xDrive» в комплектации drom.ru, а у машины его нет — это другая машина
                     score = len(words & tw) - len((tw & AWD_WORDS) - words)
                     if score > best:
-                        best, ref = score, {"gen": g.get("gen_key"), "name": t["name"], "id": t.get("id")}
+                        best, ref = score, {"gen": g.get("gen_key"), "name": t["name"], "id": t.get("id"),
+                                            # электромобиль или гибрид — у него на странице строки электромотора
+                                            "ev": bool(g.get("hybrid") or g.get("fuel") == "electric")}
             return {"hp": hp, "hp_total": total if total and total > hp else None, "source": "drom", "trim": ref,
                     "liters": liters.pop() if len(liters) == 1 else None}
 
@@ -652,7 +657,8 @@ class DromCatalog:
             return None
         cached = self.cache["trims"].get(tid)
         # Старая запись электромобиля/гибрида — без строк электромотора: перечитать страницу
-        stale = cached is not None and cached.get("v", 1) < TRIM_VERSION and "Электр" in json.dumps(cached, ensure_ascii=False)
+        stale = cached is not None and cached.get("v", 1) < TRIM_VERSION and (
+            trim.get("ev") or "Электр" in json.dumps(cached, ensure_ascii=False))
         if tid not in self.cache["trims"] or stale:
             got = self._get(f"{BASE}{gkey.rsplit('/', 1)[0]}/{tid}/")
             if got is None:
