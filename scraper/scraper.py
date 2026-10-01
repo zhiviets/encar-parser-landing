@@ -303,7 +303,10 @@ def main():
         # Машины с полной информацией заново не собираем; неполные — как новые (обновятся). Машины,
         # у которых только мощность оценена (rough_power), тоже не выбираем заново: им точную мощность
         # с drom.ru ищет дополнение (backfill_known), не больше ENCAR_BACKFILL за прогон
-        known = {k: v for k, v in known_all.items() if v.get("complete", True) or v.get("rough_power")}
+        # …и машины без цены (её обнулял баг обновления шкалы): встретились в поиске — цена придёт отметкой
+        # «ещё в продаже», а не новым выбором с повторной загрузкой
+        known = {k: v for k, v in known_all.items() if v.get("complete", True) or v.get("rough_power")
+                 or (v.get("published") and "price" in v and not v.get("price"))}
         le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
         selection.QUOTAS.update(le160=round(total * le160_share), other=total - round(total * le160_share))
         pacer = Pacer()
@@ -450,18 +453,23 @@ def run_size(known_all: dict) -> int:
 def verify_known(session, known_all: dict, seen: set, pacer) -> list[dict]:
     """Машины с сайта, не встреченные в поиске и не обновлявшиеся неделю: спрашиваем API encar.
     В продаже — отметка «ещё в продаже»; снята — не трогаем, через 30 дней сайт её скроет."""
-    todo = [(k, i) for k, i in known_all.items() if k not in seen and (i.get("seen_days") or 0) >= 7]
-    todo.sort(key=lambda x: -(x[1].get("seen_days") or 0))
+    # Ещё — машины сайта без цены (её обнулял баг обновления шкалы): цену берём из API encar
+    no_price = lambda i: i.get("published") and not i.get("blocked") and "price" in i and not i.get("price")
+    todo = [(k, i) for k, i in known_all.items() if k not in seen and ((i.get("seen_days") or 0) >= 7 or no_price(i))]
+    todo.sort(key=lambda x: (not no_price(x[1]), -(x[1].get("seen_days") or 0)))
+    limit = max(VERIFY_LIMIT, sum(1 for _, i in todo if no_price(i)))
     out = []
-    for key, info in todo[:VERIFY_LIMIT]:
-        if pacer.blocked:
-            break
+    for key, info in todo[:limit]:
+        if pacer.blocked or time.time() - STARTED > (RUN_MINUTES + 30) * 60:
+            break         # не упереться в лимит GitHub — остальные в следующий прогон
         detail = pacer.detail(session, key)
-        status = ((detail or {}).get("advertisement") or {}).get("status")
-        if detail and status in (None, "ADVERTISE"):
-            out.append({"external_id": key, "link": info.get("url") or f"https://fem.encar.com/cars/detail/{key}"})
-    print(f"Проверено по API машин с сайта, не встреченных в поиске: {min(len(todo), VERIFY_LIMIT)} из {len(todo)}, "
-          f"в продаже {len(out)}")
+        ad = (detail or {}).get("advertisement") or {}
+        if detail and ad.get("status") in (None, "ADVERTISE"):
+            man = ad.get("price")
+            out.append({"external_id": key, "link": info.get("url") or f"https://fem.encar.com/cars/detail/{key}",
+                        **({"price_krw": int(man) * 10_000} if isinstance(man, (int, float)) and man > 0 else {})})
+    print(f"Проверено по API машин с сайта, не встреченных в поиске: {min(len(todo), limit)} из {len(todo)}, "
+          f"в продаже {len(out)}, цена восстановлена у {sum(1 for x in out if x.get('price_krw'))}")
     return out
 
 
