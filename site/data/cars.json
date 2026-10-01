@@ -1,442 +1,411 @@
 {
-  "updated_at": 1790801890,
+  "updated_at": 1790816280,
   "cars": [
     {
-      "external_id": "42006521",
-      "power": "gt160",
-      "brand": "포드",
-      "model": "몬데오 4세대",
-      "brand_en": "Ford",
-      "model_guess": null,
-      "title": "포드 몬데오 4세대 2.0 티타늄 디젤",
-      "year": 2017,
-      "mileage_km": 172711,
-      "price_krw": 6500000,
-      "similar": [
-        "포드",
-        "몬데오 4세대",
-        "2.0 티타늄",
-        2017
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4200/42006521_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42006521",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42580154",
-      "power": "gt160",
-      "brand": "BMW",
-      "model": "6시리즈 GT (G32)",
-      "brand_en": "BMW",
-      "model_guess": "G32",
-      "title": "BMW 6시리즈 GT (G32) 630i xDrive 럭셔리 가솔린",
-      "year": 2023,
-      "mileage_km": 74259,
-      "price_krw": 43200000,
-      "similar": [
-        "BMW",
-        "6시리즈 GT (G32)",
-        "630i xDrive 럭셔리",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4258/42580152_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42580154",
-      "price_stats": {
-        "n": 4,
-        "lo": 43200000,
-        "mid": 51990000,
-        "hi": 51990000
-      },
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42663301",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "아슬란",
-      "brand_en": "Hyundai",
-      "model_guess": "G300",
-      "title": "현대 아슬란 G300 모던 가솔린",
-      "year": 2017,
-      "mileage_km": 128800,
-      "price_krw": 9000000,
-      "similar": [
-        "현대",
-        "아슬란",
-        "G300 모던",
-        2017
-      ],
-      "image": "https://ci.encar.com/carpicture06/pic4266/42660762_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42663301",
-      "price_stats": {
-        "n": 5,
-        "lo": 4750000,
-        "mid": 6400000,
-        "hi": 9000000
-      },
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "41727088",
-      "power": "gt160",
-      "brand": "렉서스",
-      "model": "LM 2세대",
-      "brand_en": "Lexus",
-      "model_guess": "LM",
-      "title": "렉서스 LM 2세대 500h 이그제큐티브 가솔린+전기",
-      "year": 2025,
-      "mileage_km": 14060,
-      "price_krw": 175000000,
-      "similar": [
-        "렉서스",
-        "LM 2세대",
-        "500h 이그제큐티브",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture02/pic4172/41727088_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41727088",
-      "price_stats": {
-        "n": 15,
-        "lo": 147700000,
-        "mid": 155000000,
-        "hi": 179700000
-      },
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42729619",
-      "power": "gt160",
-      "brand": "포르쉐",
-      "model": "파나메라 (976)",
-      "brand_en": "Porsche",
-      "model_guess": null,
-      "title": "포르쉐 파나메라 (976) 2.9 AWD 가솔린",
-      "year": 2024,
-      "mileage_km": 11526,
-      "price_krw": 158000000,
-      "similar": [
-        "포르쉐",
-        "파나메라 (976)",
-        "2.9 AWD",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4271/42716896_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42729619",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42286433",
+      "external_id": "42464544",
       "power": "gt160",
       "brand": "아우디",
-      "model": "A6 e-트론",
+      "model": "R8 (4S)",
       "brand_en": "Audi",
-      "model_guess": "A6",
-      "title": "아우디 A6 e-트론 퍼포먼스 어드밴스드 전기",
-      "year": 2025,
-      "mileage_km": 2700,
-      "price_krw": 68000000,
+      "model_guess": "R8",
+      "title": "아우디 R8 (4S) 5.2 V10 스파이더 가솔린",
+      "year": 2021,
+      "mileage_km": 31640,
+      "price_krw": 140920000,
       "similar": [
         "아우디",
-        "A6 e-트론",
-        "퍼포먼스 어드밴스드",
-        2025
+        "R8 (4S)",
+        "5.2 V10 스파이더",
+        2021
       ],
-      "image": "https://ci.encar.com/carpicture08/pic4228/42286433_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42286433",
+      "image": "https://ci.encar.com/carpicture06/pic4246/42464544_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42464544",
+      "bucket": "other"
+    },
+    {
+      "external_id": "42697486",
+      "power": "gt160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 카마로",
+      "brand_en": "Chevrolet",
+      "model_guess": "V8",
+      "title": "쉐보레(GM대우) 더 뉴 카마로 SS 6.2 V8 가솔린",
+      "year": 2019,
+      "mileage_km": 78583,
+      "price_krw": 34800000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 카마로",
+        "SS 6.2 V8",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4269/42694768_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42697486",
       "price_stats": {
-        "n": 5,
-        "lo": 66000000,
-        "mid": 68000000,
-        "hi": 69900000
+        "n": 12,
+        "lo": 32900000,
+        "mid": 34800000,
+        "hi": 42500000
       },
       "bucket": "other"
     },
     {
-      "external_id": "40936113",
+      "external_id": "42805954",
       "power": "gt160",
       "brand": "기아",
-      "model": "모하비 더 마스터",
+      "model": "카니발 4세대",
       "brand_en": "Kia",
       "model_guess": null,
-      "title": "기아 모하비 더 마스터 디젤 3.0 4WD 6인승 마스터즈 그래비티 디젤",
+      "title": "기아 카니발 4세대 가솔린 11인승 시그니처 가솔린",
       "year": 2023,
-      "mileage_km": 38289,
-      "price_krw": 49000000,
+      "mileage_km": 36646,
+      "price_krw": 27600000,
       "similar": [
         "기아",
-        "모하비 더 마스터",
-        "디젤 3.0 4WD 6인승",
+        "카니발 4세대",
+        "가솔린 11인승 시그니처",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture03/pic4093/40932673_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/40936113",
+      "image": "https://ci.encar.com/carpicture10/pic4280/42804575_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42805954",
+      "_resolved": true,
       "bucket": "other"
     },
     {
-      "external_id": "42810700",
-      "power": "le160",
-      "brand": "미니",
-      "model": "쿠퍼 컨버터블",
-      "brand_en": "MINI",
-      "model_guess": null,
-      "title": "미니 쿠퍼 컨버터블 클래식 런치팩 3세대 가솔린",
-      "year": 2022,
-      "mileage_km": 37325,
-      "price_krw": 20000000,
+      "external_id": "42218971",
+      "power": "gt160",
+      "brand": "쉐보레(GM대우)",
+      "model": "임팔라",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 임팔라 2.5 LT 가솔린",
+      "year": 2017,
+      "mileage_km": 153252,
+      "price_krw": 4500000,
       "similar": [
-        "미니",
-        "쿠퍼 컨버터블",
-        "클래식 런치팩",
-        2022
+        "쉐보레(GM대우)",
+        "임팔라",
+        "2.5 LT",
+        2017
       ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42810700_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42810700",
-      "_resolved": true,
-      "bucket": "le160"
+      "image": "https://ci.encar.com/carpicture01/pic4221/42218971_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42218971",
+      "price_stats": {
+        "n": 9,
+        "lo": 3900000,
+        "mid": 5000000,
+        "hi": 8800000
+      },
+      "bucket": "other"
     },
     {
-      "external_id": "42459769",
-      "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 모닝 (JA)",
-      "brand_en": "Kia",
-      "model_guess": "JA",
-      "title": "기아 더 뉴 모닝 (JA) GT Line 가솔린",
-      "year": 2026,
-      "mileage_km": 3218,
-      "price_krw": 18500000,
-      "similar": [
-        "기아",
-        "더 뉴 모닝 (JA)",
-        "GT Line",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture05/pic4245/42459769_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42459769",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42818040",
-      "power": "le160",
+      "external_id": "42722926",
+      "power": "gt160",
       "brand": "현대",
-      "model": "투싼 하이브리드 (NX4)",
+      "model": "그랜저 (GN7)",
       "brand_en": "Hyundai",
-      "model_guess": "NX4",
-      "title": "현대 투싼 하이브리드 (NX4) 인스퍼레이션 2WD 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 81599,
-      "price_krw": 26000000,
+      "model_guess": "GN7",
+      "title": "현대 그랜저 (GN7) 2.5 가솔린 2WD 익스클루시브 가솔린",
+      "year": 2025,
+      "mileage_km": 33959,
+      "price_krw": 32900000,
       "similar": [
         "현대",
-        "투싼 하이브리드 (NX4)",
-        "인스퍼레이션 2WD",
-        2023
+        "그랜저 (GN7)",
+        "2.5 가솔린 2WD",
+        2025
       ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42815962_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42818040",
+      "image": "https://ci.encar.com/carpicture10/pic4270/42707252_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42722926",
+      "bucket": "other"
+    },
+    {
+      "external_id": "42726854",
+      "power": "le160",
+      "brand": "미니",
+      "model": "쿠퍼",
+      "brand_en": "MINI",
+      "model_guess": null,
+      "title": "미니 쿠퍼 클래식 플러스 3세대 가솔린",
+      "year": 2024,
+      "mileage_km": 45491,
+      "price_krw": 23900000,
+      "similar": [
+        "미니",
+        "쿠퍼",
+        "클래식 플러스",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4272/42726854_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42726854",
+      "price_stats": {
+        "n": 7,
+        "lo": 23700000,
+        "mid": 23900000,
+        "hi": 27900000
+      },
       "_resolved": true,
       "bucket": "le160"
     },
     {
-      "external_id": "42555541",
+      "external_id": "42684121",
+      "power": "le160",
+      "brand": "현대",
+      "model": "더 뉴 아반떼 (CN7)",
+      "brand_en": "Hyundai",
+      "model_guess": "CN7",
+      "title": "현대 더 뉴 아반떼 (CN7) 1.6 모던 가솔린",
+      "year": 2026,
+      "mileage_km": 5964,
+      "price_krw": 23400000,
+      "similar": [
+        "현대",
+        "더 뉴 아반떼 (CN7)",
+        "1.6",
+        2026
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4268/42684121_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42684121",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42361324",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 스파크",
+      "brand_en": "Chevrolet",
+      "model_guess": null,
+      "title": "쉐보레(GM대우) 더 뉴 스파크 프리미어 가솔린",
+      "year": 2019,
+      "mileage_km": 57165,
+      "price_krw": 7900000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 스파크",
+        "프리미어",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4236/42361324_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42361324",
+      "price_stats": {
+        "n": 14,
+        "lo": 5600000,
+        "mid": 6800000,
+        "hi": 7990000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42739614",
+      "power": "le160",
+      "brand": "현대",
+      "model": "아반떼 하이브리드 (CN7)",
+      "brand_en": "Hyundai",
+      "model_guess": "CN7",
+      "title": "현대 아반떼 하이브리드 (CN7) 스마트 가솔린+전기",
+      "year": 2023,
+      "mileage_km": 89867,
+      "price_krw": 16850000,
+      "similar": [
+        "현대",
+        "아반떼 하이브리드 (CN7)",
+        "스마트",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4273/42739614_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42739614",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42774765",
+      "power": "le160",
+      "brand": "현대",
+      "model": "쏘나타 (DN8)",
+      "brand_en": "Hyundai",
+      "model_guess": "DN8",
+      "title": "현대 쏘나타 (DN8) 2.0 프리미엄 플러스 가솔린",
+      "year": 2022,
+      "mileage_km": 95652,
+      "price_krw": 16900000,
+      "similar": [
+        "현대",
+        "쏘나타 (DN8)",
+        "2.0",
+        2022
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42774765_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42774765",
+      "price_stats": {
+        "n": 16,
+        "lo": 13990000,
+        "mid": 17990000,
+        "hi": 23500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42809124",
+      "power": "le160",
+      "brand": "현대",
+      "model": "더 뉴 투싼 하이브리드 (NX4)",
+      "brand_en": "Hyundai",
+      "model_guess": "NX4",
+      "title": "현대 더 뉴 투싼 하이브리드 (NX4) HEV 1.6 2WD 인스퍼레이션 가솔린+전기",
+      "year": 2024,
+      "mileage_km": 13521,
+      "price_krw": 33500000,
+      "similar": [
+        "현대",
+        "더 뉴 투싼 하이브리드 (NX4)",
+        "HEV 1.6 2WD",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42809120_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42809124",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42091196",
       "power": "le160",
       "brand": "기아",
       "model": "모닝 어반 (JA)",
       "brand_en": "Kia",
       "model_guess": "JA",
-      "title": "기아 모닝 어반 (JA) 밴 스페셜 가솔린",
+      "title": "기아 모닝 어반 (JA) 시그니처 (세부등급 없음) 가솔린",
       "year": 2023,
-      "mileage_km": 68151,
-      "price_krw": 9500000,
+      "mileage_km": 39542,
+      "price_krw": 15900000,
       "similar": [
         "기아",
         "모닝 어반 (JA)",
-        "밴",
+        "시그니처",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4254/42549171_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42555541",
+      "image": "https://ci.encar.com/carpicture08/pic4208/42087528_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42091196",
       "_resolved": true,
       "bucket": "le160"
     },
     {
-      "external_id": "42734547",
+      "external_id": "42489583",
+      "power": "le160",
+      "brand": "현대",
+      "model": "쏘나타 디 엣지(DN8)",
+      "brand_en": "Hyundai",
+      "model_guess": "DN8",
+      "title": "현대 쏘나타 디 엣지(DN8) 2.0 익스클루시브 가솔린",
+      "year": 2026,
+      "mileage_km": 58,
+      "price_krw": 38700000,
+      "similar": [
+        "현대",
+        "쏘나타 디 엣지(DN8)",
+        "2.0",
+        2026
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4248/42489583_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42489583",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42662745",
       "power": "le160",
       "brand": "기아",
       "model": "스포티지 5세대 하이브리드",
       "brand_en": "Kia",
       "model_guess": null,
-      "title": "기아 스포티지 5세대 하이브리드 시그니처 그래비티 2WD 가솔린+전기",
-      "year": 2022,
-      "mileage_km": 87086,
-      "price_krw": 27800000,
+      "title": "기아 스포티지 5세대 하이브리드 노블레스 2WD 가솔린+전기",
+      "year": 2023,
+      "mileage_km": 66149,
+      "price_krw": 24000000,
       "similar": [
         "기아",
         "스포티지 5세대 하이브리드",
-        "시그니처 그래비티 2WD",
-        2022
+        "노블레스 2WD",
+        2023
       ],
-      "image": "https://ci.encar.com/carpicture03/pic4273/42734543_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42734547",
-      "price_stats": {
-        "n": 4,
-        "lo": 27800000,
-        "mid": 31500000,
-        "hi": 31500000
-      },
+      "image": "https://ci.encar.com/carpicture06/pic4266/42661138_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42662745",
       "_resolved": true,
       "bucket": "le160"
     },
     {
-      "external_id": "42654780",
+      "external_id": "42647404",
       "power": "le160",
       "brand": "기아",
       "model": "K5 3세대",
       "brand_en": "Kia",
       "model_guess": "K5",
-      "title": "기아 K5 3세대 2.0 트렌디 가솔린",
+      "title": "기아 K5 3세대 2.0 노블레스 가솔린",
       "year": 2023,
-      "mileage_km": 89848,
-      "price_krw": 18400000,
+      "mileage_km": 17415,
+      "price_krw": 39990000,
       "similar": [
         "기아",
         "K5 3세대",
         "2.0",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42648066_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42654780",
+      "image": "https://ci.encar.com/carpicture04/pic4264/42647399_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42647404",
       "price_stats": {
-        "n": 16,
+        "n": 14,
         "lo": 15200000,
-        "mid": 18400000,
-        "hi": 29000000
+        "mid": 24500000,
+        "hi": 39990000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42178105",
+      "external_id": "41997775",
       "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 스포티지 5세대",
-      "brand_en": "Kia",
-      "model_guess": "LPG",
-      "title": "기아 더 뉴 스포티지 5세대 LPG 2.0 2WD 프레스티지 LPG(일반인 구입)",
-      "year": 2025,
-      "mileage_km": 18142,
-      "price_krw": 31900000,
+      "brand": "르노코리아(삼성)",
+      "model": "더 뉴 QM6",
+      "brand_en": "Renault",
+      "model_guess": "QM6",
+      "title": "르노코리아(삼성) 더 뉴 QM6 2.0 LPe RE 시그니처 2WD LPG(일반인 구입)",
+      "year": 2022,
+      "mileage_km": 31836,
+      "price_krw": 17990000,
       "similar": [
-        "기아",
-        "더 뉴 스포티지 5세대",
-        "LPG 2.0 2WD",
-        2025
+        "르노코리아(삼성)",
+        "더 뉴 QM6",
+        "2.0 LPe RE 시그니처 2WD",
+        2022
       ],
-      "image": "https://ci.encar.com/carpicture07/pic4217/42178105_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42178105",
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42671534",
-      "power": "le160",
-      "brand": "현대",
-      "model": "코나 하이브리드 (SX2)",
-      "brand_en": "Hyundai",
-      "model_guess": "SX2",
-      "title": "현대 코나 하이브리드 (SX2) 프리미엄 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 68503,
-      "price_krw": 27500000,
-      "similar": [
-        "현대",
-        "코나 하이브리드 (SX2)",
-        "프리미엄",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4267/42670996_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42671534",
+      "image": "https://ci.encar.com/carpicture08/pic4198/41983865_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41997775",
       "price_stats": {
-        "n": 4,
-        "lo": 27500000,
-        "mid": 27990000,
-        "hi": 27990000
-      },
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42814169",
-      "power": "le160",
-      "brand": "기아",
-      "model": "디 올 뉴 니로",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 디 올 뉴 니로 트렌디 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 59049,
-      "price_krw": 21050000,
-      "similar": [
-        "기아",
-        "디 올 뉴 니로",
-        "트렌디",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42814169_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42814169",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42597604",
-      "power": "le160",
-      "brand": "현대",
-      "model": "더 뉴 아반떼 (CN7)",
-      "brand_en": "Hyundai",
-      "model_guess": "CN7",
-      "title": "현대 더 뉴 아반떼 (CN7) 1.6 모던 N Line 가솔린",
-      "year": 2024,
-      "mileage_km": 21924,
-      "price_krw": 21300000,
-      "similar": [
-        "현대",
-        "더 뉴 아반떼 (CN7)",
-        "1.6",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4259/42597603_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42597604",
-      "price_stats": {
-        "n": 11,
-        "lo": 18700000,
-        "mid": 20200000,
-        "hi": 21300000
+        "n": 7,
+        "lo": 16200000,
+        "mid": 17990000,
+        "hi": 19500000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42820405",
+      "external_id": "42204186",
       "power": "le160",
       "brand": "기아",
       "model": "더 뉴 셀토스",
       "brand_en": "Kia",
       "model_guess": null,
-      "title": "기아 더 뉴 셀토스 가솔린 2.0 2WD 프레스티지 가솔린",
+      "title": "기아 더 뉴 셀토스 가솔린 2.0 2WD 시그니처 가솔린",
       "year": 2023,
-      "mileage_km": 82274,
-      "price_krw": 22500000,
+      "mileage_km": 45897,
+      "price_krw": 30500000,
       "similar": [
         "기아",
         "더 뉴 셀토스",
         "가솔린 2.0 2WD",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42813707_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42820405",
+      "image": "https://ci.encar.com/carpicture10/pic4220/42204186_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42204186",
       "price_stats": {
-        "n": 12,
+        "n": 13,
         "lo": 18300000,
         "mid": 28900000,
         "hi": 33800000
@@ -444,277 +413,153 @@
       "bucket": "le160"
     },
     {
-      "external_id": "42648255",
+      "external_id": "42773413",
       "power": "le160",
-      "brand": "기아",
-      "model": "디 올 뉴 니로",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 디 올 뉴 니로 시그니처 가솔린+전기",
-      "year": 2026,
-      "mileage_km": 5587,
-      "price_krw": 32300000,
+      "brand": "현대",
+      "model": "더 뉴 투싼 하이브리드 (NX4)",
+      "brand_en": "Hyundai",
+      "model_guess": "NX4",
+      "title": "현대 더 뉴 투싼 하이브리드 (NX4) HEV 1.6 4WD 인스퍼레이션 가솔린+전기",
+      "year": 2025,
+      "mileage_km": 15222,
+      "price_krw": 38800000,
       "similar": [
-        "기아",
-        "디 올 뉴 니로",
-        "시그니처",
-        2026
+        "현대",
+        "더 뉴 투싼 하이브리드 (NX4)",
+        "HEV 1.6 4WD",
+        2025
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42648255_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42648255",
-      "_resolved": true,
+      "image": "https://ci.encar.com/carpicture07/pic4277/42773413_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42773413",
       "bucket": "le160"
     },
     {
-      "external_id": "42480301",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "더 뉴 QM6",
-      "brand_en": "Renault",
-      "model_guess": "QM6",
-      "title": "르노코리아(삼성) 더 뉴 QM6 2.0 GDe RE 시그니처 2WD 가솔린",
-      "year": 2023,
-      "mileage_km": 52315,
-      "price_krw": 23800000,
-      "similar": [
-        "르노코리아(삼성)",
-        "더 뉴 QM6",
-        "2.0 GDe RE 시그니처 2WD",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4247/42478702_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42480301",
-      "price_stats": {
-        "n": 5,
-        "lo": 19500000,
-        "mid": 20990000,
-        "hi": 23800000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42737700",
-      "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 기아 레이",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 더 뉴 기아 레이 프레스티지 가솔린",
-      "year": 2023,
-      "mileage_km": 39926,
-      "price_krw": 15100000,
-      "similar": [
-        "기아",
-        "더 뉴 기아 레이",
-        "프레스티지",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4273/42737700_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42737700",
-      "price_stats": {
-        "n": 5,
-        "lo": 13500000,
-        "mid": 15100000,
-        "hi": 15200000
-      },
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42669670",
+      "external_id": "42640720",
       "power": "le160",
       "brand": "르노코리아(삼성)",
       "model": "XM3",
       "brand_en": "Renault",
       "model_guess": "XM3",
-      "title": "르노코리아(삼성) XM3 1.6 GTe 인스파이어 가솔린",
-      "year": 2024,
-      "mileage_km": 35302,
-      "price_krw": 17300000,
+      "title": "르노코리아(삼성) XM3 1.6 GTe RE 가솔린",
+      "year": 2022,
+      "mileage_km": 34552,
+      "price_krw": 16300000,
       "similar": [
         "르노코리아(삼성)",
         "XM3",
-        "1.6 GTe 인스파이어",
-        2024
+        "1.6 GTe RE",
+        2022
       ],
-      "image": "https://ci.encar.com/carpicture06/pic4266/42664295_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42669670",
+      "image": "https://ci.encar.com/carpicture04/pic4264/42640720_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42640720",
       "price_stats": {
-        "n": 8,
-        "lo": 17000000,
-        "mid": 18200000,
-        "hi": 19900000
+        "n": 6,
+        "lo": 12700000,
+        "mid": 16300000,
+        "hi": 17500000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42769487",
+      "external_id": "42605191",
       "power": "le160",
-      "brand": "현대",
-      "model": "캐스퍼",
-      "brand_en": "Hyundai",
+      "brand": "기아",
+      "model": "더 뉴 레이",
+      "brand_en": "Kia",
       "model_guess": null,
-      "title": "현대 캐스퍼 터보 인스퍼레이션 가솔린",
+      "title": "기아 더 뉴 레이 시그니처 가솔린",
       "year": 2022,
-      "mileage_km": 44313,
-      "price_krw": 16000000,
+      "mileage_km": 34612,
+      "price_krw": 11200000,
       "similar": [
-        "현대",
-        "캐스퍼",
-        "터보 인스퍼레이션",
+        "기아",
+        "더 뉴 레이",
+        "시그니처",
         2022
       ],
-      "image": "https://ci.encar.com/carpicture06/pic4276/42768089_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42769487",
+      "image": "https://ci.encar.com/carpicture10/pic4260/42605191_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42605191",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42737512",
+      "power": "le160",
+      "brand": "기아",
+      "model": "디 올 뉴 니로",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 디 올 뉴 니로 프레스티지 가솔린+전기",
+      "year": 2024,
+      "mileage_km": 14331,
+      "price_krw": 29500000,
+      "similar": [
+        "기아",
+        "디 올 뉴 니로",
+        "프레스티지",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4273/42737512_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42737512",
       "price_stats": {
-        "n": 4,
-        "lo": 13300000,
-        "mid": 16000000,
-        "hi": 16000000
+        "n": 6,
+        "lo": 21500000,
+        "mid": 21800000,
+        "hi": 29500000
       },
       "_resolved": true,
       "bucket": "le160"
     },
     {
-      "external_id": "42654236",
-      "power": "le160",
-      "brand": "현대",
-      "model": "더 뉴 아반떼 (CN7)",
-      "brand_en": "Hyundai",
-      "model_guess": "CN7",
-      "title": "현대 더 뉴 아반떼 (CN7) 1.6 모던 가솔린",
-      "year": 2025,
-      "mileage_km": 18395,
-      "price_krw": 20100000,
-      "similar": [
-        "현대",
-        "더 뉴 아반떼 (CN7)",
-        "1.6",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture05/pic4265/42654236_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42654236",
-      "bucket": "le160"
-    },
-    {
-      "external_id": "41107634",
+      "external_id": "42027209",
       "power": "le160",
       "brand": "지프",
       "model": "랭글러 (JL)",
       "brand_en": "Jeep",
       "model_guess": "JL",
-      "title": "지프 랭글러 (JL) 2.0 루비콘 파워 탑 4도어 가솔린",
-      "year": 2022,
-      "mileage_km": 54559,
-      "price_krw": 40900000,
+      "title": "지프 랭글러 (JL) 2.0 오버랜드 파워 탑 4도어 가솔린",
+      "year": 2023,
+      "mileage_km": 31756,
+      "price_krw": 48000000,
       "similar": [
         "지프",
         "랭글러 (JL)",
-        "2.0 루비콘 파워 탑 4도어",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4110/41105241_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41107634",
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42546282",
-      "power": "le160",
-      "brand": "현대",
-      "model": "쏘나타 (DN8)",
-      "brand_en": "Hyundai",
-      "model_guess": "DN8",
-      "title": "현대 쏘나타 (DN8) 2.0 프리미엄 플러스 가솔린",
-      "year": 2023,
-      "mileage_km": 34780,
-      "price_krw": 23500000,
-      "similar": [
-        "현대",
-        "쏘나타 (DN8)",
-        "2.0",
+        "2.0 오버랜드 파워 탑 4도어",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4254/42545693_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42546282",
-      "price_stats": {
-        "n": 10,
-        "lo": 17500000,
-        "mid": 21200000,
-        "hi": 23500000
-      },
+      "image": "https://ci.encar.com/carpicture02/pic4202/42027209_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42027209",
       "bucket": "le160"
     },
     {
-      "external_id": "42196479",
+      "external_id": "42603849",
       "power": "le160",
-      "brand": "현대",
-      "model": "베뉴",
-      "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 베뉴 1.6 플럭스 가솔린",
-      "year": 2022,
-      "mileage_km": 34108,
-      "price_krw": 17000000,
-      "similar": [
-        "현대",
-        "베뉴",
-        "1.6 플럭스",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4219/42196479_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42196479",
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42786261",
-      "power": "le160",
-      "brand": "쉐보레(GM대우)",
-      "model": "트레일블레이저",
-      "brand_en": "Chevrolet",
-      "model_guess": null,
-      "title": "쉐보레(GM대우) 트레일블레이저 1.3 터보 2WD 액티브 가솔린",
-      "year": 2022,
-      "mileage_km": 131226,
-      "price_krw": 10800000,
-      "similar": [
-        "쉐보레(GM대우)",
-        "트레일블레이저",
-        "1.3 터보 2WD",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4278/42786261_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42786261",
-      "price_stats": {
-        "n": 13,
-        "lo": 10800000,
-        "mid": 16700000,
-        "hi": 21000000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "41953150",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "더 뉴 QM6",
-      "brand_en": "Renault",
-      "model_guess": "QM6",
-      "title": "르노코리아(삼성) 더 뉴 QM6 2.0 GDe RE 2WD 가솔린",
+      "brand": "기아",
+      "model": "더 뉴 K5 3세대",
+      "brand_en": "Kia",
+      "model_guess": "K5",
+      "title": "기아 더 뉴 K5 3세대 2.0 노블레스 가솔린",
       "year": 2025,
-      "mileage_km": 32711,
-      "price_krw": 24500000,
+      "mileage_km": 26290,
+      "price_krw": 31200000,
       "similar": [
-        "르노코리아(삼성)",
-        "더 뉴 QM6",
-        "2.0 GDe RE 2WD",
+        "기아",
+        "더 뉴 K5 3세대",
+        "2.0",
         2025
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4194/41949948_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41953150",
+      "image": "https://ci.encar.com/carpicture10/pic4260/42602264_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42603849",
+      "price_stats": {
+        "n": 7,
+        "lo": 23000000,
+        "mid": 29700000,
+        "hi": 31200000
+      },
       "bucket": "le160"
     },
     {
-      "external_id": "42559807",
+      "external_id": "42786496",
       "power": "le160",
       "brand": "기아",
       "model": "더 뉴 K3 2세대",
@@ -722,21 +567,21 @@
       "model_guess": "K3",
       "title": "기아 더 뉴 K3 2세대 1.6 프레스티지 가솔린",
       "year": 2022,
-      "mileage_km": 54083,
-      "price_krw": 17300000,
+      "mileage_km": 105852,
+      "price_krw": 12990000,
       "similar": [
         "기아",
         "더 뉴 K3 2세대",
         "1.6",
         2022
       ],
-      "image": "https://ci.encar.com/carpicture05/pic4255/42559807_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42559807",
+      "image": "https://ci.encar.com/carpicture08/pic4278/42786496_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42786496",
       "price_stats": {
-        "n": 17,
-        "lo": 12300000,
+        "n": 15,
+        "lo": 12000000,
         "mid": 14700000,
-        "hi": 17300000
+        "hi": 21800000
       },
       "bucket": "le160"
     },
@@ -762,520 +607,35 @@
       "bucket": "le160"
     },
     {
-      "external_id": "42256214",
-      "power": "le160",
-      "brand": "쉐보레(GM대우)",
-      "model": "트랙스 크로스오버",
-      "brand_en": "Chevrolet",
-      "model_guess": "RS",
-      "title": "쉐보레(GM대우) 트랙스 크로스오버 1.2 RS (세부등급 없음) 가솔린",
-      "year": 2024,
-      "mileage_km": 44076,
-      "price_krw": 23000000,
-      "similar": [
-        "쉐보레(GM대우)",
-        "트랙스 크로스오버",
-        "1.2 RS",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture04/pic4224/42245591_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42256214",
-      "price_stats": {
-        "n": 15,
-        "lo": 20800000,
-        "mid": 23000000,
-        "hi": 23500000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42815962",
-      "power": "le160",
-      "brand": "현대",
-      "model": "투싼 하이브리드 (NX4)",
-      "brand_en": "Hyundai",
-      "model_guess": "NX4",
-      "title": "현대 투싼 하이브리드 (NX4) 인스퍼레이션 2WD 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 81599,
-      "price_krw": 26000000,
-      "similar": [
-        "현대",
-        "투싼 하이브리드 (NX4)",
-        "인스퍼레이션 2WD",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42815962_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42815962",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42799816",
-      "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 기아 레이",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 더 뉴 기아 레이 프레스티지 가솔린",
-      "year": 2026,
-      "mileage_km": 5,
-      "price_krw": 17900000,
-      "similar": [
-        "기아",
-        "더 뉴 기아 레이",
-        "프레스티지",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4279/42799816_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42799816",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42549171",
-      "power": "le160",
-      "brand": "기아",
-      "model": "모닝 어반 (JA)",
-      "brand_en": "Kia",
-      "model_guess": "JA",
-      "title": "기아 모닝 어반 (JA) 밴 스페셜 가솔린",
-      "year": 2023,
-      "mileage_km": 68151,
-      "price_krw": 9500000,
-      "similar": [
-        "기아",
-        "모닝 어반 (JA)",
-        "밴",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture04/pic4254/42549171_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42549171",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42734543",
-      "power": "le160",
-      "brand": "기아",
-      "model": "스포티지 5세대 하이브리드",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 스포티지 5세대 하이브리드 시그니처 그래비티 2WD 가솔린+전기",
-      "year": 2022,
-      "mileage_km": 87086,
-      "price_krw": 27800000,
-      "similar": [
-        "기아",
-        "스포티지 5세대 하이브리드",
-        "시그니처 그래비티 2WD",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4273/42734543_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42734543",
-      "price_stats": {
-        "n": 4,
-        "lo": 27800000,
-        "mid": 31500000,
-        "hi": 31500000
-      },
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42608526",
-      "power": "le160",
-      "brand": "기아",
-      "model": "K5 3세대",
-      "brand_en": "Kia",
-      "model_guess": "K5",
-      "title": "기아 K5 3세대 2.0 트렌디 가솔린",
-      "year": 2023,
-      "mileage_km": 97086,
-      "price_krw": 17900000,
-      "similar": [
-        "기아",
-        "K5 3세대",
-        "2.0",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4260/42608524_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42608526",
-      "price_stats": {
-        "n": 16,
-        "lo": 15200000,
-        "mid": 18400000,
-        "hi": 29000000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42670996",
-      "power": "le160",
-      "brand": "현대",
-      "model": "코나 하이브리드 (SX2)",
-      "brand_en": "Hyundai",
-      "model_guess": "SX2",
-      "title": "현대 코나 하이브리드 (SX2) 프리미엄 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 68503,
-      "price_krw": 27500000,
-      "similar": [
-        "현대",
-        "코나 하이브리드 (SX2)",
-        "프리미엄",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4267/42670996_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42670996",
-      "price_stats": {
-        "n": 4,
-        "lo": 27500000,
-        "mid": 27990000,
-        "hi": 27990000
-      },
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42290106",
-      "power": "le160",
-      "brand": "기아",
-      "model": "디 올 뉴 니로",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 디 올 뉴 니로 시그니처 가솔린+전기",
-      "year": 2022,
-      "mileage_km": 127052,
-      "price_krw": 19500000,
-      "similar": [
-        "기아",
-        "디 올 뉴 니로",
-        "시그니처",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4228/42281877_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42290106",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42792906",
-      "power": "le160",
-      "brand": "현대",
-      "model": "더 뉴 캐스퍼",
-      "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 더 뉴 캐스퍼 터보 디 에센셜 가솔린",
-      "year": 2025,
-      "mileage_km": 22385,
-      "price_krw": 19500000,
-      "similar": [
-        "현대",
-        "더 뉴 캐스퍼",
-        "터보 디 에센셜",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4278/42780932_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42792906",
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42597603",
-      "power": "le160",
-      "brand": "현대",
-      "model": "더 뉴 아반떼 (CN7)",
-      "brand_en": "Hyundai",
-      "model_guess": "CN7",
-      "title": "현대 더 뉴 아반떼 (CN7) 1.6 모던 N Line 가솔린",
-      "year": 2024,
-      "mileage_km": 21924,
-      "price_krw": 21300000,
-      "similar": [
-        "현대",
-        "더 뉴 아반떼 (CN7)",
-        "1.6",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4259/42597603_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42597603",
-      "price_stats": {
-        "n": 11,
-        "lo": 18700000,
-        "mid": 20200000,
-        "hi": 21300000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42813707",
-      "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 셀토스",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 더 뉴 셀토스 가솔린 2.0 2WD 프레스티지 가솔린",
-      "year": 2023,
-      "mileage_km": 82274,
-      "price_krw": 22500000,
-      "similar": [
-        "기아",
-        "더 뉴 셀토스",
-        "가솔린 2.0 2WD",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42813707_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42813707",
-      "price_stats": {
-        "n": 12,
-        "lo": 18300000,
-        "mid": 28900000,
-        "hi": 33800000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42478702",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "더 뉴 QM6",
-      "brand_en": "Renault",
-      "model_guess": "QM6",
-      "title": "르노코리아(삼성) 더 뉴 QM6 2.0 GDe RE 시그니처 2WD 가솔린",
-      "year": 2023,
-      "mileage_km": 52315,
-      "price_krw": 23800000,
-      "similar": [
-        "르노코리아(삼성)",
-        "더 뉴 QM6",
-        "2.0 GDe RE 시그니처 2WD",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4247/42478702_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42478702",
-      "price_stats": {
-        "n": 5,
-        "lo": 19500000,
-        "mid": 20990000,
-        "hi": 23800000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42522366",
-      "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 레이",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 더 뉴 레이 프레스티지 가솔린",
-      "year": 2022,
-      "mileage_km": 37164,
-      "price_krw": 12200000,
-      "similar": [
-        "기아",
-        "더 뉴 레이",
-        "프레스티지",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4250/42506891_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42522366",
-      "price_stats": {
-        "n": 4,
-        "lo": 8800000,
-        "mid": 12200000,
-        "hi": 12200000
-      },
-      "_resolved": true,
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42786705",
-      "power": "le160",
-      "brand": "현대",
-      "model": "베뉴",
-      "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 베뉴 1.6 프리미엄 가솔린",
-      "year": 2026,
-      "mileage_km": 8929,
-      "price_krw": 22500000,
-      "similar": [
-        "현대",
-        "베뉴",
-        "1.6 프리미엄",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4278/42786705_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42786705",
-      "price_stats": {
-        "n": 21,
-        "lo": 20900000,
-        "mid": 22200000,
-        "hi": 23000000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42664295",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "XM3",
-      "brand_en": "Renault",
-      "model_guess": "XM3",
-      "title": "르노코리아(삼성) XM3 1.6 GTe 인스파이어 가솔린",
-      "year": 2024,
-      "mileage_km": 35302,
-      "price_krw": 17300000,
-      "similar": [
-        "르노코리아(삼성)",
-        "XM3",
-        "1.6 GTe 인스파이어",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture06/pic4266/42664295_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42664295",
-      "price_stats": {
-        "n": 8,
-        "lo": 17000000,
-        "mid": 18200000,
-        "hi": 19900000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42768089",
+      "external_id": "42760235",
       "power": "le160",
       "brand": "현대",
       "model": "캐스퍼",
       "brand_en": "Hyundai",
       "model_guess": null,
       "title": "현대 캐스퍼 터보 인스퍼레이션 가솔린",
-      "year": 2022,
-      "mileage_km": 44313,
+      "year": 2023,
+      "mileage_km": 41810,
       "price_krw": 16000000,
       "similar": [
         "현대",
         "캐스퍼",
         "터보 인스퍼레이션",
-        2022
+        2023
       ],
-      "image": "https://ci.encar.com/carpicture06/pic4276/42768089_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42768089",
+      "image": "https://ci.encar.com/carpicture05/pic4275/42754592_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42760235",
       "price_stats": {
-        "n": 4,
-        "lo": 13300000,
-        "mid": 16000000,
-        "hi": 16000000
+        "n": 12,
+        "lo": 14800000,
+        "mid": 16300000,
+        "hi": 16500000
       },
       "_resolved": true,
       "bucket": "le160"
     },
     {
-      "external_id": "41105241",
-      "power": "le160",
-      "brand": "지프",
-      "model": "랭글러 (JL)",
-      "brand_en": "Jeep",
-      "model_guess": "JL",
-      "title": "지프 랭글러 (JL) 2.0 루비콘 파워 탑 4도어 가솔린",
-      "year": 2022,
-      "mileage_km": 54559,
-      "price_krw": 40900000,
-      "similar": [
-        "지프",
-        "랭글러 (JL)",
-        "2.0 루비콘 파워 탑 4도어",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4110/41105241_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41105241",
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42804566",
-      "power": "le160",
-      "brand": "현대",
-      "model": "쏘나타 (DN8)",
-      "brand_en": "Hyundai",
-      "model_guess": "DN8",
-      "title": "현대 쏘나타 (DN8) 2.0 LPG(렌터카용) 프리미엄 LPG(일반인 구입)",
-      "year": 2023,
-      "mileage_km": 46413,
-      "price_krw": 17900000,
-      "similar": [
-        "현대",
-        "쏘나타 (DN8)",
-        "2.0 LPG(렌터카용)",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4280/42804556_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42804566",
-      "price_stats": {
-        "n": 6,
-        "lo": 17200000,
-        "mid": 17200000,
-        "hi": 17900000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42818409",
-      "power": "le160",
-      "brand": "쉐보레(GM대우)",
-      "model": "더 뉴 트레일블레이저",
-      "brand_en": "Chevrolet",
-      "model_guess": null,
-      "title": "쉐보레(GM대우) 더 뉴 트레일블레이저 1.3 터보 2WD 프리미어 가솔린",
-      "year": 2025,
-      "mileage_km": 33783,
-      "price_krw": 22300000,
-      "similar": [
-        "쉐보레(GM대우)",
-        "더 뉴 트레일블레이저",
-        "1.3 터보 2WD",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42814282_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42818409",
-      "price_stats": {
-        "n": 5,
-        "lo": 22300000,
-        "mid": 24800000,
-        "hi": 26500000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42768747",
-      "power": "le160",
-      "brand": "현대",
-      "model": "베뉴",
-      "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 베뉴 1.6 모던 플러스 가솔린",
-      "year": 2022,
-      "mileage_km": 96556,
-      "price_krw": 14900000,
-      "similar": [
-        "현대",
-        "베뉴",
-        "1.6 모던 플러스",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture06/pic4276/42768747_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42768747",
-      "price_stats": {
-        "n": 9,
-        "lo": 13900000,
-        "mid": 16400000,
-        "hi": 19990000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42246461",
+      "external_id": "42597546",
       "power": "le160",
       "brand": "쉐보레(GM대우)",
       "model": "더 뉴 트레일블레이저",
@@ -1283,16 +643,16 @@
       "model_guess": "RS",
       "title": "쉐보레(GM대우) 더 뉴 트레일블레이저 1.3 터보 2WD RS 가솔린",
       "year": 2024,
-      "mileage_km": 31956,
-      "price_krw": 23400000,
+      "mileage_km": 42808,
+      "price_krw": 20900000,
       "similar": [
         "쉐보레(GM대우)",
         "더 뉴 트레일블레이저",
         "1.3 터보 2WD",
         2024
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4224/42246461_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42246461",
+      "image": "https://ci.encar.com/carpicture08/pic4258/42587273_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42597546",
       "price_stats": {
         "n": 13,
         "lo": 20300000,
@@ -1302,34 +662,28 @@
       "bucket": "le160"
     },
     {
-      "external_id": "42707801",
+      "external_id": "41949948",
       "power": "le160",
-      "brand": "기아",
-      "model": "더 뉴 K3 2세대",
-      "brand_en": "Kia",
-      "model_guess": "K3",
-      "title": "기아 더 뉴 K3 2세대 1.6 프레스티지 가솔린",
-      "year": 2023,
-      "mileage_km": 37239,
-      "price_krw": 19300000,
+      "brand": "르노코리아(삼성)",
+      "model": "더 뉴 QM6",
+      "brand_en": "Renault",
+      "model_guess": "QM6",
+      "title": "르노코리아(삼성) 더 뉴 QM6 2.0 GDe RE 2WD 가솔린",
+      "year": 2025,
+      "mileage_km": 32711,
+      "price_krw": 24500000,
       "similar": [
-        "기아",
-        "더 뉴 K3 2세대",
-        "1.6",
-        2023
+        "르노코리아(삼성)",
+        "더 뉴 QM6",
+        "2.0 GDe RE 2WD",
+        2025
       ],
-      "image": "https://ci.encar.com/carpicture10/pic4270/42707801_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42707801",
-      "price_stats": {
-        "n": 10,
-        "lo": 15000000,
-        "mid": 15700000,
-        "hi": 21200000
-      },
+      "image": "https://ci.encar.com/carpicture04/pic4194/41949948_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41949948",
       "bucket": "le160"
     },
     {
-      "external_id": "42245591",
+      "external_id": "42730075",
       "power": "le160",
       "brand": "쉐보레(GM대우)",
       "model": "트랙스 크로스오버",
@@ -1337,53 +691,74 @@
       "model_guess": "RS",
       "title": "쉐보레(GM대우) 트랙스 크로스오버 1.2 RS (세부등급 없음) 가솔린",
       "year": 2024,
-      "mileage_km": 44076,
-      "price_krw": 23000000,
+      "mileage_km": 39943,
+      "price_krw": 21200000,
       "similar": [
         "쉐보레(GM대우)",
         "트랙스 크로스오버",
         "1.2 RS",
         2024
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4224/42245591_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42245591",
+      "image": "https://ci.encar.com/carpicture03/pic4273/42730071_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42730075",
       "price_stats": {
-        "n": 15,
+        "n": 13,
         "lo": 20800000,
-        "mid": 23000000,
+        "mid": 21990000,
         "hi": 23500000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "41042103",
+      "external_id": "42793837",
       "power": "le160",
-      "brand": "쉐보레(GM대우)",
-      "model": "트랙스 크로스오버",
-      "brand_en": "Chevrolet",
-      "model_guess": null,
-      "title": "쉐보레(GM대우) 트랙스 크로스오버 1.2 레드라인 (세부등급 없음) 가솔린",
-      "year": 2025,
-      "mileage_km": 16485,
-      "price_krw": 18990000,
+      "brand": "현대",
+      "model": "더 뉴 아반떼 (CN7)",
+      "brand_en": "Hyundai",
+      "model_guess": "CN7",
+      "title": "현대 더 뉴 아반떼 (CN7) 1.6 LPi (렌터카) 스마트 LPG(일반인 구입)",
+      "year": 2024,
+      "mileage_km": 77645,
+      "price_krw": 15500000,
       "similar": [
-        "쉐보레(GM대우)",
-        "트랙스 크로스오버",
-        "1.2 레드라인",
-        2025
+        "현대",
+        "더 뉴 아반떼 (CN7)",
+        "1.6 LPi (렌터카)",
+        2024
       ],
-      "image": "https://ci.encar.com/carpicture02/pic4102/41025796_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41042103",
+      "image": "https://ci.encar.com/carpicture09/pic4279/42792893_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42793837",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42552253",
+      "power": "le160",
+      "brand": "현대",
+      "model": "쏘나타 (DN8)",
+      "brand_en": "Hyundai",
+      "model_guess": "DN8",
+      "title": "현대 쏘나타 (DN8) 2.0 프리미엄 플러스 가솔린",
+      "year": 2022,
+      "mileage_km": 127374,
+      "price_krw": 13990000,
+      "similar": [
+        "현대",
+        "쏘나타 (DN8)",
+        "2.0",
+        2022
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4255/42552253_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42552253",
       "price_stats": {
-        "n": 4,
-        "lo": 18990000,
-        "mid": 19900000,
-        "hi": 19900000
+        "n": 16,
+        "lo": 13990000,
+        "mid": 17990000,
+        "hi": 23500000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42801975",
+      "external_id": "42809120",
       "power": "le160",
       "brand": "현대",
       "model": "더 뉴 투싼 하이브리드 (NX4)",
@@ -1391,80 +766,439 @@
       "model_guess": "NX4",
       "title": "현대 더 뉴 투싼 하이브리드 (NX4) HEV 1.6 2WD 인스퍼레이션 가솔린+전기",
       "year": 2024,
-      "mileage_km": 34813,
-      "price_krw": 32900000,
+      "mileage_km": 13521,
+      "price_krw": 33500000,
       "similar": [
         "현대",
         "더 뉴 투싼 하이브리드 (NX4)",
         "HEV 1.6 2WD",
         2024
       ],
-      "image": "https://ci.encar.com/carpicture10/pic4280/42800499_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42801975",
-      "price_stats": {
-        "n": 5,
-        "lo": 32900000,
-        "mid": 33500000,
-        "hi": 33900000
-      },
+      "image": "https://ci.encar.com/carpicture10/pic4280/42809120_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42809120",
       "bucket": "le160"
     },
     {
-      "external_id": "42648066",
+      "external_id": "42229368",
+      "power": "le160",
+      "brand": "기아",
+      "model": "셀토스 2세대",
+      "brand_en": "Kia",
+      "model_guess": "HEV",
+      "title": "기아 셀토스 2세대 HEV 1.6 2WD 프레스티지 가솔린",
+      "year": 2026,
+      "mileage_km": 1211,
+      "price_krw": 41500000,
+      "similar": [
+        "기아",
+        "셀토스 2세대",
+        "HEV 1.6 2WD",
+        2026
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4222/42229368_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42229368",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42087528",
+      "power": "le160",
+      "brand": "기아",
+      "model": "모닝 어반 (JA)",
+      "brand_en": "Kia",
+      "model_guess": "JA",
+      "title": "기아 모닝 어반 (JA) 시그니처 (세부등급 없음) 가솔린",
+      "year": 2023,
+      "mileage_km": 39542,
+      "price_krw": 15900000,
+      "similar": [
+        "기아",
+        "모닝 어반 (JA)",
+        "시그니처",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4208/42087528_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42087528",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42661138",
+      "power": "le160",
+      "brand": "기아",
+      "model": "스포티지 5세대 하이브리드",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 스포티지 5세대 하이브리드 노블레스 2WD 가솔린+전기",
+      "year": 2023,
+      "mileage_km": 66149,
+      "price_krw": 24000000,
+      "similar": [
+        "기아",
+        "스포티지 5세대 하이브리드",
+        "노블레스 2WD",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4266/42661138_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42661138",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42647399",
       "power": "le160",
       "brand": "기아",
       "model": "K5 3세대",
       "brand_en": "Kia",
       "model_guess": "K5",
-      "title": "기아 K5 3세대 2.0 트렌디 가솔린",
+      "title": "기아 K5 3세대 2.0 노블레스 가솔린",
       "year": 2023,
-      "mileage_km": 89848,
-      "price_krw": 18400000,
+      "mileage_km": 17415,
+      "price_krw": 39990000,
       "similar": [
         "기아",
         "K5 3세대",
         "2.0",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42648066_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42648066",
+      "image": "https://ci.encar.com/carpicture04/pic4264/42647399_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42647399",
       "price_stats": {
-        "n": 16,
+        "n": 14,
         "lo": 15200000,
-        "mid": 18400000,
-        "hi": 29000000
+        "mid": 24500000,
+        "hi": 39990000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42594194",
+      "external_id": "41983865",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "더 뉴 QM6",
+      "brand_en": "Renault",
+      "model_guess": "QM6",
+      "title": "르노코리아(삼성) 더 뉴 QM6 2.0 LPe RE 시그니처 2WD LPG(일반인 구입)",
+      "year": 2022,
+      "mileage_km": 31836,
+      "price_krw": 17990000,
+      "similar": [
+        "르노코리아(삼성)",
+        "더 뉴 QM6",
+        "2.0 LPe RE 시그니처 2WD",
+        2022
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4198/41983865_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41983865",
+      "price_stats": {
+        "n": 7,
+        "lo": 16200000,
+        "mid": 17990000,
+        "hi": 19500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42629356",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 기아 레이",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 더 뉴 기아 레이 트렌디 가솔린",
+      "year": 2025,
+      "mileage_km": 30842,
+      "price_krw": 16700000,
+      "similar": [
+        "기아",
+        "더 뉴 기아 레이",
+        "트렌디",
+        2025
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4262/42627142_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42629356",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41810636",
       "power": "le160",
       "brand": "기아",
       "model": "더 뉴 셀토스",
       "brand_en": "Kia",
       "model_guess": null,
       "title": "기아 더 뉴 셀토스 가솔린 2.0 2WD 트렌디 가솔린",
-      "year": 2023,
-      "mileage_km": 77506,
-      "price_krw": 18300000,
+      "year": 2024,
+      "mileage_km": 19428,
+      "price_krw": 23900000,
       "similar": [
         "기아",
         "더 뉴 셀토스",
         "가솔린 2.0 2WD",
-        2023
+        2024
       ],
-      "image": "https://ci.encar.com/carpicture09/pic4259/42594194_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42594194",
+      "image": "https://ci.encar.com/carpicture01/pic4181/41810636_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41810636",
       "price_stats": {
-        "n": 12,
-        "lo": 18300000,
-        "mid": 28900000,
-        "hi": 33800000
+        "n": 5,
+        "lo": 19700000,
+        "mid": 23900000,
+        "hi": 31500000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42716815",
+      "external_id": "42720654",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "XM3",
+      "brand_en": "Renault",
+      "model_guess": "XM3",
+      "title": "르노코리아(삼성) XM3 1.3 TCe RE 가솔린",
+      "year": 2023,
+      "mileage_km": 44915,
+      "price_krw": 14990000,
+      "similar": [
+        "르노코리아(삼성)",
+        "XM3",
+        "1.3 TCe RE",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4272/42720654_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42720654",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42820056",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 레이",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 더 뉴 레이 밴 스탠다드 가솔린",
+      "year": 2022,
+      "mileage_km": 63320,
+      "price_krw": 7000000,
+      "similar": [
+        "기아",
+        "더 뉴 레이",
+        "밴",
+        2022
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4281/42815654_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42820056",
+      "price_stats": {
+        "n": 11,
+        "lo": 6400000,
+        "mid": 7000000,
+        "hi": 8190000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42817377",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 K3 2세대",
+      "brand_en": "Kia",
+      "model_guess": "K3",
+      "title": "기아 더 뉴 K3 2세대 1.6 트렌디 가솔린",
+      "year": 2024,
+      "mileage_km": 12345,
+      "price_krw": 99990000,
+      "similar": [
+        "기아",
+        "더 뉴 K3 2세대",
+        "1.6",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4281/42817376_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42817377",
+      "price_stats": {
+        "n": 12,
+        "lo": 17500000,
+        "mid": 21700000,
+        "hi": 99990000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42792080",
+      "power": "le160",
+      "brand": "현대",
+      "model": "베뉴",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 베뉴 1.6 프리미엄 가솔린",
+      "year": 2026,
+      "mileage_km": 14144,
+      "price_krw": 23400000,
+      "similar": [
+        "현대",
+        "베뉴",
+        "1.6 프리미엄",
+        2026
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4278/42789352_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42792080",
+      "price_stats": {
+        "n": 21,
+        "lo": 20900000,
+        "mid": 22200000,
+        "hi": 23000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42754592",
+      "power": "le160",
+      "brand": "현대",
+      "model": "캐스퍼",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 캐스퍼 터보 인스퍼레이션 가솔린",
+      "year": 2023,
+      "mileage_km": 41810,
+      "price_krw": 16000000,
+      "similar": [
+        "현대",
+        "캐스퍼",
+        "터보 인스퍼레이션",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4275/42754592_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42754592",
+      "price_stats": {
+        "n": 12,
+        "lo": 14800000,
+        "mid": 16300000,
+        "hi": 16500000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42587273",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 트레일블레이저",
+      "brand_en": "Chevrolet",
+      "model_guess": "RS",
+      "title": "쉐보레(GM대우) 더 뉴 트레일블레이저 1.3 터보 2WD RS 가솔린",
+      "year": 2024,
+      "mileage_km": 42808,
+      "price_krw": 20900000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 트레일블레이저",
+        "1.3 터보 2WD",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4258/42587273_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42587273",
+      "price_stats": {
+        "n": 13,
+        "lo": 20300000,
+        "mid": 23400000,
+        "hi": 26000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42730071",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "트랙스 크로스오버",
+      "brand_en": "Chevrolet",
+      "model_guess": "RS",
+      "title": "쉐보레(GM대우) 트랙스 크로스오버 1.2 RS (세부등급 없음) 가솔린",
+      "year": 2024,
+      "mileage_km": 39943,
+      "price_krw": 21200000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "트랙스 크로스오버",
+        "1.2 RS",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4273/42730071_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42730071",
+      "price_stats": {
+        "n": 13,
+        "lo": 20800000,
+        "mid": 21990000,
+        "hi": 23500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42279210",
+      "power": "le160",
+      "brand": "기아",
+      "model": "모닝 어반 (JA)",
+      "brand_en": "Kia",
+      "model_guess": "JA",
+      "title": "기아 모닝 어반 (JA) 프레스티지 가솔린",
+      "year": 2022,
+      "mileage_km": 17121,
+      "price_krw": 14500000,
+      "similar": [
+        "기아",
+        "모닝 어반 (JA)",
+        "프레스티지",
+        2022
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4227/42276497_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42279210",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42630833",
+      "power": "le160",
+      "brand": "현대",
+      "model": "더 뉴 캐스퍼",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 더 뉴 캐스퍼 터보 디 에센셜 가솔린",
+      "year": 2026,
+      "mileage_km": 4908,
+      "price_krw": 20600000,
+      "similar": [
+        "현대",
+        "더 뉴 캐스퍼",
+        "터보 디 에센셜",
+        2026
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4263/42630833_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42630833",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42811145",
+      "power": "le160",
+      "brand": "기아",
+      "model": "스포티지 5세대 하이브리드",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 스포티지 5세대 하이브리드 시그니처 그래비티 2WD 가솔린+전기",
+      "year": 2022,
+      "mileage_km": 23121,
+      "price_krw": 31500000,
+      "similar": [
+        "기아",
+        "스포티지 5세대 하이브리드",
+        "시그니처 그래비티 2WD",
+        2022
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42799394_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42811145",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42715967",
       "power": "le160",
       "brand": "르노코리아(삼성)",
       "model": "XM3",
@@ -1481,7 +1215,7 @@
         2023
       ],
       "image": "https://ci.encar.com/carpicture01/pic4271/42715967_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42716815",
+      "link": "https://fem.encar.com/cars/detail/42715967",
       "price_stats": {
         "n": 9,
         "lo": 14900000,
@@ -1491,196 +1225,88 @@
       "bucket": "le160"
     },
     {
-      "external_id": "42695303",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "그랑 콜레오스",
-      "brand_en": "Renault",
-      "model_guess": null,
-      "title": "르노코리아(삼성) 그랑 콜레오스 2.0 아이코닉 4WD 가솔린",
-      "year": 2026,
-      "mileage_km": 12004,
-      "price_krw": 36400000,
-      "similar": [
-        "르노코리아(삼성)",
-        "그랑 콜레오스",
-        "2.0 아이코닉 4WD",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4269/42694409_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42695303",
-      "price_stats": {
-        "n": 4,
-        "lo": 34500000,
-        "mid": 36400000,
-        "hi": 36400000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "41651373",
-      "power": "le160",
-      "brand": "지프",
-      "model": "랭글러 (JL)",
-      "brand_en": "Jeep",
-      "model_guess": "JL",
-      "title": "지프 랭글러 (JL) 2.0 오버랜드 파워 탑 4도어 가솔린",
-      "year": 2022,
-      "mileage_km": 37200,
-      "price_krw": 45700000,
-      "similar": [
-        "지프",
-        "랭글러 (JL)",
-        "2.0 오버랜드 파워 탑 4도어",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture05/pic4165/41651373_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41651373",
-      "price_stats": {
-        "n": 6,
-        "lo": 33990000,
-        "mid": 39990000,
-        "hi": 45700000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42545693",
-      "power": "le160",
-      "brand": "현대",
-      "model": "쏘나타 (DN8)",
-      "brand_en": "Hyundai",
-      "model_guess": "DN8",
-      "title": "현대 쏘나타 (DN8) 2.0 프리미엄 플러스 가솔린",
-      "year": 2023,
-      "mileage_km": 34780,
-      "price_krw": 23500000,
-      "similar": [
-        "현대",
-        "쏘나타 (DN8)",
-        "2.0",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture04/pic4254/42545693_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42545693",
-      "price_stats": {
-        "n": 10,
-        "lo": 17500000,
-        "mid": 21200000,
-        "hi": 23500000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42119058",
+      "external_id": "42817376",
       "power": "le160",
       "brand": "기아",
       "model": "더 뉴 K3 2세대",
       "brand_en": "Kia",
       "model_guess": "K3",
-      "title": "기아 더 뉴 K3 2세대 1.6 노블레스 가솔린",
-      "year": 2022,
-      "mileage_km": 75984,
-      "price_krw": 16800000,
+      "title": "기아 더 뉴 K3 2세대 1.6 트렌디 가솔린",
+      "year": 2024,
+      "mileage_km": 12345,
+      "price_krw": 99990000,
       "similar": [
         "기아",
         "더 뉴 K3 2세대",
         "1.6",
-        2022
+        2024
       ],
-      "image": "https://ci.encar.com/carpicture01/pic4211/42115783_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42119058",
+      "image": "https://ci.encar.com/carpicture01/pic4281/42817376_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42817376",
       "price_stats": {
-        "n": 17,
-        "lo": 12300000,
-        "mid": 14700000,
-        "hi": 17300000
+        "n": 12,
+        "lo": 17500000,
+        "mid": 21700000,
+        "hi": 99990000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42576390",
+      "external_id": "42663578",
       "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "아르카나",
-      "brand_en": "Renault",
-      "model_guess": "GTe",
-      "title": "르노코리아(삼성) 아르카나 1.6 GTe 아이코닉 가솔린",
-      "year": 2025,
-      "mileage_km": 13216,
-      "price_krw": 19500000,
+      "brand": "쉐보레(GM대우)",
+      "model": "트레일블레이저",
+      "brand_en": "Chevrolet",
+      "model_guess": "RS",
+      "title": "쉐보레(GM대우) 트레일블레이저 1.3 터보 4WD RS 가솔린",
+      "year": 2023,
+      "mileage_km": 56704,
+      "price_krw": 27800000,
       "similar": [
-        "르노코리아(삼성)",
-        "아르카나",
-        "1.6 GTe 아이코닉",
+        "쉐보레(GM대우)",
+        "트레일블레이저",
+        "1.3 터보 4WD",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4265/42658655_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42663578",
+      "price_stats": {
+        "n": 19,
+        "lo": 22500000,
+        "mid": 26900000,
+        "hi": 32000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41025796",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "트랙스 크로스오버",
+      "brand_en": "Chevrolet",
+      "model_guess": null,
+      "title": "쉐보레(GM대우) 트랙스 크로스오버 1.2 레드라인 (세부등급 없음) 가솔린",
+      "year": 2025,
+      "mileage_km": 16485,
+      "price_krw": 18990000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "트랙스 크로스오버",
+        "1.2 레드라인",
         2025
       ],
-      "image": "https://ci.encar.com/carpicture07/pic4257/42573889_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42576390",
-      "price_stats": {
-        "n": 16,
-        "lo": 19200000,
-        "mid": 19900000,
-        "hi": 20900000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42694409",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "그랑 콜레오스",
-      "brand_en": "Renault",
-      "model_guess": null,
-      "title": "르노코리아(삼성) 그랑 콜레오스 2.0 아이코닉 4WD 가솔린",
-      "year": 2026,
-      "mileage_km": 12004,
-      "price_krw": 36400000,
-      "similar": [
-        "르노코리아(삼성)",
-        "그랑 콜레오스",
-        "2.0 아이코닉 4WD",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4269/42694409_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42694409",
+      "image": "https://ci.encar.com/carpicture02/pic4102/41025796_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41025796",
       "price_stats": {
         "n": 4,
-        "lo": 34500000,
-        "mid": 36400000,
-        "hi": 36400000
-      },
-      "bucket": "le160"
-    },
-    {
-      "external_id": "42573889",
-      "power": "le160",
-      "brand": "르노코리아(삼성)",
-      "model": "아르카나",
-      "brand_en": "Renault",
-      "model_guess": "GTe",
-      "title": "르노코리아(삼성) 아르카나 1.6 GTe 아이코닉 가솔린",
-      "year": 2025,
-      "mileage_km": 13216,
-      "price_krw": 19500000,
-      "similar": [
-        "르노코리아(삼성)",
-        "아르카나",
-        "1.6 GTe 아이코닉",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4257/42573889_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42573889",
-      "price_stats": {
-        "n": 16,
-        "lo": 19200000,
+        "lo": 18990000,
         "mid": 19900000,
-        "hi": 20900000
+        "hi": 19900000
       },
       "bucket": "le160"
     },
     {
-      "external_id": "42768254",
+      "external_id": "42758085",
       "power": "le160",
       "brand": "르노코리아(삼성)",
       "model": "그랑 콜레오스",
@@ -1688,16 +1314,16 @@
       "model_guess": "E-TECH",
       "title": "르노코리아(삼성) 그랑 콜레오스 1.5 E-TECH 아이코닉 2WD 가솔린+전기",
       "year": 2025,
-      "mileage_km": 20169,
-      "price_krw": 33300000,
+      "mileage_km": 53815,
+      "price_krw": 29700000,
       "similar": [
         "르노코리아(삼성)",
         "그랑 콜레오스",
         "1.5 E-TECH 아이코닉 2WD",
         2025
       ],
-      "image": "https://ci.encar.com/carpicture06/pic4276/42768254_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42768254",
+      "image": "https://ci.encar.com/carpicture05/pic4275/42757778_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42758085",
       "price_stats": {
         "n": 39,
         "lo": 28700000,
@@ -1707,320 +1333,2647 @@
       "bucket": "le160"
     },
     {
-      "external_id": "42580152",
-      "power": "gt160",
-      "brand": "BMW",
-      "model": "6시리즈 GT (G32)",
-      "brand_en": "BMW",
-      "model_guess": "G32",
-      "title": "BMW 6시리즈 GT (G32) 630i xDrive 럭셔리 가솔린",
-      "year": 2023,
-      "mileage_km": 74259,
-      "price_krw": 43200000,
-      "similar": [
-        "BMW",
-        "6시리즈 GT (G32)",
-        "630i xDrive 럭셔리",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4258/42580152_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42580152",
-      "price_stats": {
-        "n": 4,
-        "lo": 43200000,
-        "mid": 51990000,
-        "hi": 51990000
-      },
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42716896",
-      "power": "gt160",
-      "brand": "포르쉐",
-      "model": "파나메라 (976)",
-      "brand_en": "Porsche",
+      "external_id": "42789352",
+      "power": "le160",
+      "brand": "현대",
+      "model": "베뉴",
+      "brand_en": "Hyundai",
       "model_guess": null,
-      "title": "포르쉐 파나메라 (976) 2.9 AWD 가솔린",
-      "year": 2024,
-      "mileage_km": 11526,
-      "price_krw": 158000000,
+      "title": "현대 베뉴 1.6 프리미엄 가솔린",
+      "year": 2026,
+      "mileage_km": 14144,
+      "price_krw": 23400000,
       "similar": [
-        "포르쉐",
-        "파나메라 (976)",
-        "2.9 AWD",
-        2024
+        "현대",
+        "베뉴",
+        "1.6 프리미엄",
+        2026
       ],
-      "image": "https://ci.encar.com/carpicture01/pic4271/42716896_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42716896",
-      "bucket": "other"
-    },
-    {
-      "external_id": "40932673",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "모하비 더 마스터",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 모하비 더 마스터 디젤 3.0 4WD 6인승 마스터즈 그래비티 디젤",
-      "year": 2023,
-      "mileage_km": 38289,
-      "price_krw": 49000000,
-      "similar": [
-        "기아",
-        "모하비 더 마스터",
-        "디젤 3.0 4WD 6인승",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4093/40932673_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/40932673",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42373519",
-      "power": "gt160",
-      "brand": "쉐보레(GM대우)",
-      "model": "볼트 EUV",
-      "brand_en": "Chevrolet",
-      "model_guess": "EUV",
-      "title": "쉐보레(GM대우) 볼트 EUV 레드라인 전기",
-      "year": 2023,
-      "mileage_km": 181424,
-      "price_krw": 18000000,
-      "similar": [
-        "쉐보레(GM대우)",
-        "볼트 EUV",
-        "레드라인",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4237/42373519_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42373519",
+      "image": "https://ci.encar.com/carpicture08/pic4278/42789352_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42789352",
       "price_stats": {
-        "n": 6,
-        "lo": 18000000,
-        "mid": 24000000,
-        "hi": 28800000
+        "n": 21,
+        "lo": 20900000,
+        "mid": 22200000,
+        "hi": 23000000
       },
-      "bucket": "other"
+      "bucket": "le160"
     },
     {
-      "external_id": "42424806",
-      "power": "gt160",
-      "brand": "렉서스",
-      "model": "LM 2세대",
-      "brand_en": "Lexus",
-      "model_guess": "LM",
-      "title": "렉서스 LM 2세대 500h 로얄 가솔린+전기",
+      "external_id": "42757778",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "그랑 콜레오스",
+      "brand_en": "Renault",
+      "model_guess": "E-TECH",
+      "title": "르노코리아(삼성) 그랑 콜레오스 1.5 E-TECH 아이코닉 2WD 가솔린+전기",
       "year": 2025,
-      "mileage_km": 17711,
-      "price_krw": 169500000,
+      "mileage_km": 53815,
+      "price_krw": 29700000,
+      "similar": [
+        "르노코리아(삼성)",
+        "그랑 콜레오스",
+        "1.5 E-TECH 아이코닉 2WD",
+        2025
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4275/42757778_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42757778",
+      "price_stats": {
+        "n": 39,
+        "lo": 28700000,
+        "mid": 31900000,
+        "hi": 34700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42765547",
+      "power": "le160",
+      "brand": "현대",
+      "model": "베뉴",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 베뉴 1.6 프리미엄 가솔린",
+      "year": 2026,
+      "mileage_km": 4550,
+      "price_krw": 21500000,
+      "similar": [
+        "현대",
+        "베뉴",
+        "1.6 프리미엄",
+        2026
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4276/42763262_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42765547",
+      "price_stats": {
+        "n": 21,
+        "lo": 20900000,
+        "mid": 22200000,
+        "hi": 23000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41946182",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "그랑 콜레오스",
+      "brand_en": "Renault",
+      "model_guess": "E-TECH",
+      "title": "르노코리아(삼성) 그랑 콜레오스 1.5 E-TECH 아이코닉 2WD 가솔린+전기",
+      "year": 2025,
+      "mileage_km": 6200,
+      "price_krw": 24260000,
+      "similar": [
+        "르노코리아(삼성)",
+        "그랑 콜레오스",
+        "1.5 E-TECH 아이코닉 2WD",
+        2025
+      ],
+      "image": "https://ci.encar.com/carpicture04/pic4194/41946182_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41946182",
+      "price_stats": {
+        "n": 39,
+        "lo": 28700000,
+        "mid": 31900000,
+        "hi": 34700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42750807",
+      "power": "le160",
+      "brand": "렉서스",
+      "model": "뉴 IS300",
+      "brand_en": "Lexus",
+      "model_guess": "IS300",
+      "title": "렉서스 뉴 IS300 슈프림 가솔린",
+      "year": 2018,
+      "mileage_km": 92426,
+      "price_krw": 20900000,
       "similar": [
         "렉서스",
-        "LM 2세대",
-        "500h 로얄",
-        2025
+        "뉴 IS300",
+        "슈프림",
+        2018
       ],
-      "image": "https://ci.encar.com/carpicture02/pic4242/42423850_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42424806",
-      "price_stats": {
-        "n": 10,
-        "lo": 157000000,
-        "mid": 165000000,
-        "hi": 185000000
-      },
+      "image": "https://ci.encar.com/carpicture05/pic4275/42750807_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42750807",
       "_resolved": true,
-      "bucket": "other"
+      "bucket": "le160"
     },
     {
-      "external_id": "42508903",
+      "external_id": "42804575",
       "power": "gt160",
-      "brand": "KG모빌리티(쌍용)",
-      "model": "더 뉴 렉스턴 스포츠",
-      "brand_en": "KGM",
+      "brand": "기아",
+      "model": "카니발 4세대",
+      "brand_en": "Kia",
       "model_guess": null,
-      "title": "KG모빌리티(쌍용) 더 뉴 렉스턴 스포츠 디젤 2.2 4WD 프레스티지 디젤",
-      "year": 2022,
-      "mileage_km": 21412,
-      "price_krw": 21900000,
-      "similar": [
-        "KG모빌리티(쌍용)",
-        "더 뉴 렉스턴 스포츠",
-        "디젤 2.2 4WD",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4250/42508903_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42508903",
-      "price_stats": {
-        "n": 4,
-        "lo": 19800000,
-        "mid": 20300000,
-        "hi": 21900000
-      },
-      "bucket": "other"
-    },
-    {
-      "external_id": "42731729",
-      "power": "gt160",
-      "brand": "랜드로버",
-      "model": "디스커버리 5",
-      "brand_en": "Land Rover",
-      "model_guess": "D300",
-      "title": "랜드로버 디스커버리 5 D300 HSE 디젤",
-      "year": 2022,
-      "mileage_km": 115248,
-      "price_krw": 39900000,
-      "similar": [
-        "랜드로버",
-        "디스커버리 5",
-        "D300 HSE",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4273/42731729_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42731729",
-      "price_stats": {
-        "n": 5,
-        "lo": 39900000,
-        "mid": 44200000,
-        "hi": 51500000
-      },
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42731616",
-      "power": "gt160",
-      "brand": "BMW",
-      "model": "iX3",
-      "brand_en": "BMW",
-      "model_guess": "iX3",
-      "title": "BMW iX3 M 스포츠 전기",
-      "year": 2024,
-      "mileage_km": 28756,
-      "price_krw": 56500000,
-      "similar": [
-        "BMW",
-        "iX3",
-        "M 스포츠",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture02/pic4272/42728861_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42731616",
-      "price_stats": {
-        "n": 28,
-        "lo": 47800000,
-        "mid": 54500000,
-        "hi": 57980000
-      },
-      "bucket": "other"
-    },
-    {
-      "external_id": "42339926",
-      "power": "gt160",
-      "brand": "아우디",
-      "model": "A6 e-트론",
-      "brand_en": "Audi",
-      "model_guess": "A6",
-      "title": "아우디 A6 e-트론 퍼포먼스 S Line 전기",
-      "year": 2025,
-      "mileage_km": 23966,
-      "price_krw": 73500000,
-      "similar": [
-        "아우디",
-        "A6 e-트론",
-        "퍼포먼스 S Line",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4233/42335091_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42339926",
-      "price_stats": {
-        "n": 13,
-        "lo": 69500000,
-        "mid": 72000000,
-        "hi": 77000000
-      },
-      "bucket": "other"
-    },
-    {
-      "external_id": "42792960",
-      "power": "gt160",
-      "brand": "폭스바겐",
-      "model": "투아렉 3세대",
-      "brand_en": "Volkswagen",
-      "model_guess": "R-Line",
-      "title": "폭스바겐 투아렉 3세대 3.0 TDI R-Line 디젤",
-      "year": 2024,
-      "mileage_km": 54120,
-      "price_krw": 68900000,
-      "similar": [
-        "폭스바겐",
-        "투아렉 3세대",
-        "3.0 TDI R-Line",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4279/42791002_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42792960",
-      "price_stats": {
-        "n": 4,
-        "lo": 68900000,
-        "mid": 73900000,
-        "hi": 73900000
-      },
-      "bucket": "other"
-    },
-    {
-      "external_id": "42020115",
-      "power": "gt160",
-      "brand": "랜드로버",
-      "model": "레인지로버 5세대",
-      "brand_en": "Land Rover",
-      "model_guess": "P530",
-      "title": "랜드로버 레인지로버 5세대 P530 AB LWB 가솔린",
-      "year": 2024,
-      "mileage_km": 38075,
-      "price_krw": 179000000,
-      "similar": [
-        "랜드로버",
-        "레인지로버 5세대",
-        "P530 AB LWB",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture02/pic4202/42020115_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42020115",
-      "price_stats": {
-        "n": 10,
-        "lo": 173000000,
-        "mid": 179000000,
-        "hi": 195000000
-      },
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42438957",
-      "power": "gt160",
-      "brand": "벤츠",
-      "model": "EQE SUV X294",
-      "brand_en": "Mercedes-Benz",
-      "model_guess": "X294",
-      "title": "벤츠 EQE SUV X294 EQE500 4MATIC 전기",
+      "title": "기아 카니발 4세대 가솔린 11인승 시그니처 가솔린",
       "year": 2023,
-      "mileage_km": 104999,
-      "price_krw": 61990000,
+      "mileage_km": 36646,
+      "price_krw": 27600000,
       "similar": [
-        "벤츠",
-        "EQE SUV X294",
-        "EQE500 4MATIC",
+        "기아",
+        "카니발 4세대",
+        "가솔린 11인승 시그니처",
         2023
       ],
-      "image": "https://ci.encar.com/carpicture03/pic4243/42432744_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42438957",
+      "image": "https://ci.encar.com/carpicture10/pic4280/42804575_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42804575",
+      "_resolved": true,
+      "bucket": "other"
+    },
+    {
+      "external_id": "40617381",
+      "power": "le160",
+      "brand": "폭스바겐",
+      "model": "제타 7세대",
+      "brand_en": "Volkswagen",
+      "model_guess": "TSI",
+      "title": "폭스바겐 제타 7세대 1.4 TSI 프레스티지 가솔린",
+      "year": 2021,
+      "mileage_km": 40162,
+      "price_krw": 13500000,
+      "similar": [
+        "폭스바겐",
+        "제타 7세대",
+        "1.4 TSI 프레스티지",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4061/40617381_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/40617381",
       "price_stats": {
-        "n": 13,
-        "lo": 61990000,
-        "mid": 71000000,
-        "hi": 76500000
+        "n": 36,
+        "lo": 18500000,
+        "mid": 22800000,
+        "hi": 27500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42763647",
+      "power": "gt160",
+      "brand": "현대",
+      "model": "그랜저 하이브리드 (GN7)",
+      "brand_en": "Hyundai",
+      "model_guess": "GN7",
+      "title": "현대 그랜저 하이브리드 (GN7) 익스클루시브 가솔린+전기",
+      "year": 2023,
+      "mileage_km": 70742,
+      "price_krw": 34900000,
+      "similar": [
+        "현대",
+        "그랜저 하이브리드 (GN7)",
+        "익스클루시브",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4276/42763645_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42763647",
+      "price_stats": {
+        "n": 7,
+        "lo": 18160000,
+        "mid": 35600000,
+        "hi": 36700000
+      },
+      "_resolved": true,
+      "bucket": "other"
+    },
+    {
+      "external_id": "42539257",
+      "power": "gt160",
+      "brand": "아우디",
+      "model": "RS7 (4K)",
+      "brand_en": "Audi",
+      "model_guess": "RS7",
+      "title": "아우디 RS7 (4K) 4.0 TFSI 콰트로 퍼포먼스 가솔린",
+      "year": 2025,
+      "mileage_km": 19840,
+      "price_krw": 139990000,
+      "similar": [
+        "아우디",
+        "RS7 (4K)",
+        "4.0 TFSI 콰트로 퍼포먼스",
+        2025
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4253/42539257_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42539257",
+      "price_stats": {
+        "n": 5,
+        "lo": 139990000,
+        "mid": 145000000,
+        "hi": 154000000
       },
       "bucket": "other"
+    },
+    {
+      "external_id": "42565272",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "뉴QM3",
+      "brand_en": "Renault",
+      "model_guess": "QM3",
+      "title": "르노코리아(삼성) 뉴QM3 RE (세부등급 없음) 디젤",
+      "year": 2018,
+      "mileage_km": 53820,
+      "price_krw": 8200000,
+      "similar": [
+        "르노코리아(삼성)",
+        "뉴QM3",
+        "RE",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4256/42565272_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42565272",
+      "price_stats": {
+        "n": 12,
+        "lo": 4990000,
+        "mid": 7200000,
+        "hi": 8700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42493240",
+      "power": "gt160",
+      "brand": "아우디",
+      "model": "RS7 (4K)",
+      "brand_en": "Audi",
+      "model_guess": "RS7",
+      "title": "아우디 RS7 (4K) 4.0 TFSI 콰트로 가솔린",
+      "year": 2023,
+      "mileage_km": 14812,
+      "price_krw": 123130000,
+      "similar": [
+        "아우디",
+        "RS7 (4K)",
+        "4.0 TFSI 콰트로",
+        2023
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4249/42493240_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42493240",
+      "bucket": "other"
+    },
+    {
+      "external_id": "42307172",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM5 노바",
+      "brand_en": "Renault",
+      "model_guess": "SM5",
+      "title": "르노코리아(삼성) SM5 노바 LPLi 택시렌터카 고급형 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 140000,
+      "price_krw": 4100000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM5 노바",
+        "LPLi 택시렌터카 고급형",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4230/42307172_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42307172",
+      "price_stats": {
+        "n": 6,
+        "lo": 3500000,
+        "mid": 3700000,
+        "hi": 5900000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42486969",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 스파크",
+      "brand_en": "Chevrolet",
+      "model_guess": null,
+      "title": "쉐보레(GM대우) 더 뉴 스파크 프리미어 가솔린",
+      "year": 2019,
+      "mileage_km": 31942,
+      "price_krw": 7900000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 스파크",
+        "프리미어",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4248/42486969_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42486969",
+      "price_stats": {
+        "n": 14,
+        "lo": 5600000,
+        "mid": 6800000,
+        "hi": 7990000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42525529",
+      "power": "le160",
+      "brand": "렉서스",
+      "model": "뉴 IS300",
+      "brand_en": "Lexus",
+      "model_guess": "IS300",
+      "title": "렉서스 뉴 IS300 F-Sport 가솔린",
+      "year": 2018,
+      "mileage_km": 68777,
+      "price_krw": 26900000,
+      "similar": [
+        "렉서스",
+        "뉴 IS300",
+        "F-Sport",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4252/42525122_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42525529",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42466584",
+      "power": "le160",
+      "brand": "폭스바겐",
+      "model": "제타 7세대",
+      "brand_en": "Volkswagen",
+      "model_guess": "TSI",
+      "title": "폭스바겐 제타 7세대 1.4 TSI 프레스티지 가솔린",
+      "year": 2021,
+      "mileage_km": 13288,
+      "price_krw": 28990000,
+      "similar": [
+        "폭스바겐",
+        "제타 7세대",
+        "1.4 TSI 프레스티지",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4246/42463524_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42466584",
+      "price_stats": {
+        "n": 36,
+        "lo": 18500000,
+        "mid": 22800000,
+        "hi": 27500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42774299",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "뉴QM3",
+      "brand_en": "Renault",
+      "model_guess": "QM3",
+      "title": "르노코리아(삼성) 뉴QM3 RE (세부등급 없음) 디젤",
+      "year": 2018,
+      "mileage_km": 116543,
+      "price_krw": 7000000,
+      "similar": [
+        "르노코리아(삼성)",
+        "뉴QM3",
+        "RE",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42773633_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42774299",
+      "price_stats": {
+        "n": 12,
+        "lo": 4990000,
+        "mid": 7200000,
+        "hi": 8700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42386463",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM5 노바",
+      "brand_en": "Renault",
+      "model_guess": "SM5",
+      "title": "르노코리아(삼성) SM5 노바 클래식 가솔린",
+      "year": 2018,
+      "mileage_km": 89263,
+      "price_krw": 5500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM5 노바",
+        "클래식",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4238/42381729_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42386463",
+      "price_stats": {
+        "n": 6,
+        "lo": 5500000,
+        "mid": 6300000,
+        "hi": 6700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42368689",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM6",
+      "brand_en": "Renault",
+      "model_guess": "SM6",
+      "title": "르노코리아(삼성) SM6 1.5 dCi LE 디젤",
+      "year": 2017,
+      "mileage_km": 81329,
+      "price_krw": 8500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM6",
+        "1.5 dCi LE",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4235/42359429_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42368689",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42121578",
+      "power": "le160",
+      "brand": "기아",
+      "model": "스토닉",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 스토닉 디젤 1.6 프레스티지 디젤",
+      "year": 2018,
+      "mileage_km": 127561,
+      "price_krw": 7300000,
+      "similar": [
+        "기아",
+        "스토닉",
+        "디젤 1.6",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4212/42121578_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42121578",
+      "price_stats": {
+        "n": 52,
+        "lo": 6900000,
+        "mid": 8000000,
+        "hi": 9800000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41486390",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 말리부",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 더 뉴 말리부 1.6 디젤 LT 프리미엄 디젤",
+      "year": 2020,
+      "mileage_km": 138071,
+      "price_krw": 8600000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 말리부",
+        "1.6 디젤 LT",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4148/41484837_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41486390",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42789341",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "그랜드 C4 스페이스투어러",
+      "brand_en": "Citroen",
+      "model_guess": "C4",
+      "title": "시트로엥/DS 그랜드 C4 스페이스투어러 1.5 BlueHDi 샤인팩 디젤",
+      "year": 2021,
+      "mileage_km": 77239,
+      "price_krw": 15500000,
+      "similar": [
+        "시트로엥/DS",
+        "그랜드 C4 스페이스투어러",
+        "1.5 BlueHDi 샤인팩",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4278/42789341_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42789341",
+      "price_stats": {
+        "n": 5,
+        "lo": 15500000,
+        "mid": 16500000,
+        "hi": 18600000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42586354",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "클리오",
+      "brand_en": "Renault",
+      "model_guess": null,
+      "title": "르노코리아(삼성) 클리오 아이코닉 디젤",
+      "year": 2019,
+      "mileage_km": 42000,
+      "price_krw": 8400000,
+      "similar": [
+        "르노코리아(삼성)",
+        "클리오",
+        "아이코닉",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4258/42586354_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42586354",
+      "price_stats": {
+        "n": 4,
+        "lo": 5890000,
+        "mid": 6900000,
+        "hi": 8400000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42287812",
+      "power": "le160",
+      "brand": "혼다",
+      "model": "CR-V 5세대",
+      "brand_en": "Honda",
+      "model_guess": "CR-V",
+      "title": "혼다 CR-V 5세대 1.5 EX-L 2WD 가솔린",
+      "year": 2021,
+      "mileage_km": 19096,
+      "price_krw": 26300000,
+      "similar": [
+        "혼다",
+        "CR-V 5세대",
+        "1.5 EX-L 2WD",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4228/42287812_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42287812",
+      "price_stats": {
+        "n": 9,
+        "lo": 22500000,
+        "mid": 23900000,
+        "hi": 26300000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42797677",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "올란도",
+      "brand_en": "Chevrolet",
+      "model_guess": "LPG",
+      "title": "쉐보레(GM대우) 올란도 LPG LT 세이프티팩 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 129405,
+      "price_krw": 5300000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "올란도",
+        "LPG LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4278/42786280_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42797677",
+      "price_stats": {
+        "n": 9,
+        "lo": 4100000,
+        "mid": 5400000,
+        "hi": 5700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41572695",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM3 네오",
+      "brand_en": "Renault",
+      "model_guess": "SM3",
+      "title": "르노코리아(삼성) SM3 네오 LE 가솔린",
+      "year": 2018,
+      "mileage_km": 89103,
+      "price_krw": 6500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM3 네오",
+        "LE",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4157/41572695_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41572695",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42811475",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "올 뉴 크루즈",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 올 뉴 크루즈 1.4 터보 LT 디럭스 가솔린",
+      "year": 2017,
+      "mileage_km": 112130,
+      "price_krw": 5500000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "올 뉴 크루즈",
+        "1.4 터보 LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42806801_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42811475",
+      "price_stats": {
+        "n": 11,
+        "lo": 4900000,
+        "mid": 5500000,
+        "hi": 6500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42663250",
+      "power": "le160",
+      "brand": "현대",
+      "model": "아이오닉 하이브리드",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 아이오닉 하이브리드 N (세부등급 없음) 가솔린+전기",
+      "year": 2019,
+      "mileage_km": 127836,
+      "price_krw": 11900000,
+      "similar": [
+        "현대",
+        "아이오닉 하이브리드",
+        "N",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4266/42661913_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42663250",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42805939",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C3 에어크로스",
+      "brand_en": "Citroen",
+      "model_guess": "C3",
+      "title": "시트로엥/DS C3 에어크로스 1.5 BlueHDi 샤인팩 디젤",
+      "year": 2021,
+      "mileage_km": 73341,
+      "price_krw": 10500000,
+      "similar": [
+        "시트로엥/DS",
+        "C3 에어크로스",
+        "1.5 BlueHDi 샤인팩",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42804503_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42805939",
+      "price_stats": {
+        "n": 4,
+        "lo": 10200000,
+        "mid": 10500000,
+        "hi": 11700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42680070",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C4 칵투스",
+      "brand_en": "Citroen",
+      "model_guess": "C4",
+      "title": "시트로엥/DS C4 칵투스 1.5 BlueHDi 샤인 디젤",
+      "year": 2019,
+      "mileage_km": 81027,
+      "price_krw": 6900000,
+      "similar": [
+        "시트로엥/DS",
+        "C4 칵투스",
+        "1.5 BlueHDi 샤인",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4268/42680070_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42680070",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42811462",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "캡처",
+      "brand_en": "Renault",
+      "model_guess": "TCe",
+      "title": "르노코리아(삼성) 캡처 1.3 TCe 에디션 파리 가솔린",
+      "year": 2020,
+      "mileage_km": 23102,
+      "price_krw": 14900000,
+      "similar": [
+        "르노코리아(삼성)",
+        "캡처",
+        "1.3 TCe 에디션 파리",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42796423_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42811462",
+      "price_stats": {
+        "n": 24,
+        "lo": 10900000,
+        "mid": 13500000,
+        "hi": 14700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42774301",
+      "power": "le160",
+      "brand": "현대",
+      "model": "i30 (PD)",
+      "brand_en": "Hyundai",
+      "model_guess": "i30",
+      "title": "현대 i30 (PD) 1.4 터보 스타일 가솔린",
+      "year": 2018,
+      "mileage_km": 111678,
+      "price_krw": 7990000,
+      "similar": [
+        "현대",
+        "i30 (PD)",
+        "1.4 터보",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42772108_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42774301",
+      "price_stats": {
+        "n": 8,
+        "lo": 7200000,
+        "mid": 7990000,
+        "hi": 9000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42629566",
+      "power": "le160",
+      "brand": "지프",
+      "model": "레니게이드",
+      "brand_en": "Jeep",
+      "model_guess": null,
+      "title": "지프 레니게이드 1.6 디젤 리미티드 디젤",
+      "year": 2020,
+      "mileage_km": 36608,
+      "price_krw": 15500000,
+      "similar": [
+        "지프",
+        "레니게이드",
+        "1.6 디젤 리미티드",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4262/42629566_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42629566",
+      "price_stats": {
+        "n": 5,
+        "lo": 9900000,
+        "mid": 14990000,
+        "hi": 15500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42097080",
+      "power": "le160",
+      "brand": "현대",
+      "model": "코나 하이브리드",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 코나 하이브리드 프리미엄 스페셜 가솔린+전기",
+      "year": 2020,
+      "mileage_km": 146137,
+      "price_krw": 13990000,
+      "similar": [
+        "현대",
+        "코나 하이브리드",
+        "프리미엄 스페셜",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4208/42087406_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42097080",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "40964893",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "그랜드 C4 피카소",
+      "brand_en": "Citroen",
+      "model_guess": "C4",
+      "title": "시트로엥/DS 그랜드 C4 피카소 1.6 B-HDI 필 디젤",
+      "year": 2017,
+      "mileage_km": 123271,
+      "price_krw": 7990000,
+      "similar": [
+        "시트로엥/DS",
+        "그랜드 C4 피카소",
+        "1.6 B-HDI 필",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4096/40964893_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/40964893",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42547543",
+      "power": "le160",
+      "brand": "현대",
+      "model": "벨로스터 (JS)",
+      "brand_en": "Hyundai",
+      "model_guess": "JS",
+      "title": "현대 벨로스터 (JS) 2.0 N 가솔린",
+      "year": 2019,
+      "mileage_km": 83395,
+      "price_krw": 9500000,
+      "similar": [
+        "현대",
+        "벨로스터 (JS)",
+        "2.0 N",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture04/pic4254/42546799_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42547543",
+      "price_stats": {
+        "n": 34,
+        "lo": 11200000,
+        "mid": 13900000,
+        "hi": 19990000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42563807",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM7 노바",
+      "brand_en": "Renault",
+      "model_guess": "SM7",
+      "title": "르노코리아(삼성) SM7 노바 LPLI 2.0 LPe LPG(일반인 구입)",
+      "year": 2019,
+      "mileage_km": 91126,
+      "price_krw": 7900000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM7 노바",
+        "LPLI 2.0 LPe",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4256/42563807_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42563807",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42436213",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 프라이드",
+      "brand_en": "Kia",
+      "model_guess": "DR",
+      "title": "기아 더 뉴 프라이드 4DR 1.4 MPI 스마트 가솔린",
+      "year": 2017,
+      "mileage_km": 40561,
+      "price_krw": 7200000,
+      "similar": [
+        "기아",
+        "더 뉴 프라이드",
+        "4DR 1.4 MPI",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4243/42436213_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42436213",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42520652",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "뉴 다마스",
+      "brand_en": "Chevrolet",
+      "model_guess": "LPG",
+      "title": "쉐보레(GM대우) 뉴 다마스 5인승 코치 리빅 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 60088,
+      "price_krw": 5990000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "뉴 다마스",
+        "5인승 코치",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4252/42520652_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42520652",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "39182825",
+      "power": "le160",
+      "brand": "현대",
+      "model": "엑센트(신형)",
+      "brand_en": "Hyundai",
+      "model_guess": "VVT",
+      "title": "현대 엑센트(신형) 1.4 VVT 밸류 플러스 가솔린",
+      "year": 2018,
+      "mileage_km": 23454,
+      "price_krw": 7400000,
+      "similar": [
+        "현대",
+        "엑센트(신형)",
+        "1.4 VVT 밸류 플러스",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic3918/39182825_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/39182825",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42519220",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "5008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 5008 2세대 1.5 BlueHDi GT Line 디젤",
+      "year": 2020,
+      "mileage_km": 63746,
+      "price_krw": 15800000,
+      "similar": [
+        "푸조",
+        "5008 2세대",
+        "1.5 BlueHDi GT Line",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4251/42519220_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42519220",
+      "price_stats": {
+        "n": 5,
+        "lo": 11300000,
+        "mid": 12990000,
+        "hi": 15800000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42076798",
+      "power": "le160",
+      "brand": "혼다",
+      "model": "시빅",
+      "brand_en": "Honda",
+      "model_guess": null,
+      "title": "혼다 시빅 2.0 10세대 가솔린",
+      "year": 2017,
+      "mileage_km": 87112,
+      "price_krw": 11500000,
+      "similar": [
+        "혼다",
+        "시빅",
+        "2.0",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4207/42076798_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42076798",
+      "price_stats": {
+        "n": 8,
+        "lo": 10900000,
+        "mid": 11800000,
+        "hi": 13500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42472768",
+      "power": "le160",
+      "brand": "기아",
+      "model": "니로",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 니로 프레스티지 가솔린+전기",
+      "year": 2017,
+      "mileage_km": 192110,
+      "price_krw": 7900000,
+      "similar": [
+        "기아",
+        "니로",
+        "프레스티지",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4247/42472768_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42472768",
+      "price_stats": {
+        "n": 8,
+        "lo": 7200000,
+        "mid": 10500000,
+        "hi": 10900000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42614803",
+      "power": "le160",
+      "brand": "지프",
+      "model": "랭글러 (JL)",
+      "brand_en": "Jeep",
+      "model_guess": "JL",
+      "title": "지프 랭글러 (JL) 2.0 오버랜드 파워 탑 4도어 가솔린",
+      "year": 2020,
+      "mileage_km": 61435,
+      "price_krw": 34500000,
+      "similar": [
+        "지프",
+        "랭글러 (JL)",
+        "2.0 오버랜드 파워 탑 4도어",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4261/42613889_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42614803",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42820186",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 카렌스",
+      "brand_en": "Kia",
+      "model_guess": "LPI",
+      "title": "기아 더 뉴 카렌스 2.0 LPI 프레스티지 LPG(일반인 구입)",
+      "year": 2018,
+      "mileage_km": 158528,
+      "price_krw": 7990000,
+      "similar": [
+        "기아",
+        "더 뉴 카렌스",
+        "2.0 LPI 프레스티지",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4282/42820186_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42820186",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42798016",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "508",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 508 1.6 BlueHDi 알뤼르 1세대 디젤",
+      "year": 2017,
+      "mileage_km": 70216,
+      "price_krw": 6900000,
+      "similar": [
+        "푸조",
+        "508",
+        "1.6 BlueHDi 알뤼르",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42798016_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42798016",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42799012",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 아베오 세단",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 더 뉴 아베오 세단 1.4 터보 LT 가솔린",
+      "year": 2017,
+      "mileage_km": 147524,
+      "price_krw": 3850000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 아베오 세단",
+        "1.4 터보 LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42799012_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42799012",
+      "price_stats": {
+        "n": 4,
+        "lo": 3500000,
+        "mid": 3800000,
+        "hi": 3850000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42799803",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "308 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 308 2세대 1.6 BlueHDi 알뤼르 디젤",
+      "year": 2017,
+      "mileage_km": 67163,
+      "price_krw": 8000000,
+      "similar": [
+        "푸조",
+        "308 2세대",
+        "1.6 BlueHDi 알뤼르",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42799803_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42799803",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42478748",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "2008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 2008 2세대 1.5 BlueHDi GT Line 디젤",
+      "year": 2021,
+      "mileage_km": 40428,
+      "price_krw": 18900000,
+      "similar": [
+        "푸조",
+        "2008 2세대",
+        "1.5 BlueHDi GT Line",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4247/42472758_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42478748",
+      "price_stats": {
+        "n": 12,
+        "lo": 15200000,
+        "mid": 16600000,
+        "hi": 19900000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41627340",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "3008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 3008 2세대 1.5 BlueHDi GT Line 디젤",
+      "year": 2021,
+      "mileage_km": 85927,
+      "price_krw": 14800000,
+      "similar": [
+        "푸조",
+        "3008 2세대",
+        "1.5 BlueHDi GT Line",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4162/41627340_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41627340",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42442020",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 스파크",
+      "brand_en": "Chevrolet",
+      "model_guess": null,
+      "title": "쉐보레(GM대우) 더 뉴 스파크 프리미어 가솔린",
+      "year": 2020,
+      "mileage_km": 38198,
+      "price_krw": 8900000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 스파크",
+        "프리미어",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture04/pic4244/42442020_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42442020",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42759531",
+      "power": "le160",
+      "brand": "렉서스",
+      "model": "뉴 IS200t",
+      "brand_en": "Lexus",
+      "model_guess": "IS200t",
+      "title": "렉서스 뉴 IS200t 슈프림 가솔린",
+      "year": 2017,
+      "mileage_km": 66486,
+      "price_krw": 20000000,
+      "similar": [
+        "렉서스",
+        "뉴 IS200t",
+        "슈프림",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4275/42750406_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42759531",
+      "price_stats": {
+        "n": 4,
+        "lo": 19990000,
+        "mid": 20000000,
+        "hi": 20500000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42463524",
+      "power": "le160",
+      "brand": "폭스바겐",
+      "model": "제타 7세대",
+      "brand_en": "Volkswagen",
+      "model_guess": "TSI",
+      "title": "폭스바겐 제타 7세대 1.4 TSI 프레스티지 가솔린",
+      "year": 2021,
+      "mileage_km": 13288,
+      "price_krw": 28990000,
+      "similar": [
+        "폭스바겐",
+        "제타 7세대",
+        "1.4 TSI 프레스티지",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4246/42463524_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42463524",
+      "price_stats": {
+        "n": 36,
+        "lo": 18500000,
+        "mid": 22800000,
+        "hi": 27500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42773633",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "뉴QM3",
+      "brand_en": "Renault",
+      "model_guess": "QM3",
+      "title": "르노코리아(삼성) 뉴QM3 RE (세부등급 없음) 디젤",
+      "year": 2018,
+      "mileage_km": 116543,
+      "price_krw": 7000000,
+      "similar": [
+        "르노코리아(삼성)",
+        "뉴QM3",
+        "RE",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42773633_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42773633",
+      "price_stats": {
+        "n": 12,
+        "lo": 4990000,
+        "mid": 7200000,
+        "hi": 8700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42381729",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM5 노바",
+      "brand_en": "Renault",
+      "model_guess": "SM5",
+      "title": "르노코리아(삼성) SM5 노바 클래식 가솔린",
+      "year": 2018,
+      "mileage_km": 89263,
+      "price_krw": 5500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM5 노바",
+        "클래식",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4238/42381729_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42381729",
+      "price_stats": {
+        "n": 6,
+        "lo": 5500000,
+        "mid": 6300000,
+        "hi": 6700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42359429",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM6",
+      "brand_en": "Renault",
+      "model_guess": "SM6",
+      "title": "르노코리아(삼성) SM6 1.5 dCi LE 디젤",
+      "year": 2017,
+      "mileage_km": 81329,
+      "price_krw": 8500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM6",
+        "1.5 dCi LE",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4235/42359429_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42359429",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42594726",
+      "power": "le160",
+      "brand": "기아",
+      "model": "스토닉",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 스토닉 디젤 1.6 프레스티지 디젤",
+      "year": 2018,
+      "mileage_km": 115150,
+      "price_krw": 8500000,
+      "similar": [
+        "기아",
+        "스토닉",
+        "디젤 1.6",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4258/42583334_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42594726",
+      "price_stats": {
+        "n": 52,
+        "lo": 6900000,
+        "mid": 8000000,
+        "hi": 9800000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41484837",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 말리부",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 더 뉴 말리부 1.6 디젤 LT 프리미엄 디젤",
+      "year": 2020,
+      "mileage_km": 138071,
+      "price_krw": 8600000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 말리부",
+        "1.6 디젤 LT",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4148/41484837_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41484837",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42738806",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "클리오",
+      "brand_en": "Renault",
+      "model_guess": null,
+      "title": "르노코리아(삼성) 클리오 아이코닉 디젤",
+      "year": 2019,
+      "mileage_km": 108762,
+      "price_krw": 5890000,
+      "similar": [
+        "르노코리아(삼성)",
+        "클리오",
+        "아이코닉",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4273/42738806_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42738806",
+      "price_stats": {
+        "n": 4,
+        "lo": 5890000,
+        "mid": 6900000,
+        "hi": 8400000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42124409",
+      "power": "le160",
+      "brand": "혼다",
+      "model": "CR-V 5세대",
+      "brand_en": "Honda",
+      "model_guess": "CR-V",
+      "title": "혼다 CR-V 5세대 1.5 EX-L 2WD 가솔린",
+      "year": 2019,
+      "mileage_km": 168661,
+      "price_krw": 16500000,
+      "similar": [
+        "혼다",
+        "CR-V 5세대",
+        "1.5 EX-L 2WD",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture02/pic4212/42124409_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42124409",
+      "price_stats": {
+        "n": 9,
+        "lo": 16500000,
+        "mid": 18990000,
+        "hi": 19300000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42786280",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "올란도",
+      "brand_en": "Chevrolet",
+      "model_guess": "LPG",
+      "title": "쉐보레(GM대우) 올란도 LPG LT 세이프티팩 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 129405,
+      "price_krw": 5300000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "올란도",
+        "LPG LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4278/42786280_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42786280",
+      "price_stats": {
+        "n": 9,
+        "lo": 4100000,
+        "mid": 5400000,
+        "hi": 5700000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42315033",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM3 네오",
+      "brand_en": "Renault",
+      "model_guess": "SM3",
+      "title": "르노코리아(삼성) SM3 네오 SE 가솔린",
+      "year": 2019,
+      "mileage_km": 80407,
+      "price_krw": 4700000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM3 네오",
+        "SE",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4231/42315033_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42315033",
+      "price_stats": {
+        "n": 4,
+        "lo": 4700000,
+        "mid": 7900000,
+        "hi": 7900000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42806801",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "올 뉴 크루즈",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 올 뉴 크루즈 1.4 터보 LT 디럭스 가솔린",
+      "year": 2017,
+      "mileage_km": 112130,
+      "price_krw": 5500000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "올 뉴 크루즈",
+        "1.4 터보 LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42806801_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42806801",
+      "price_stats": {
+        "n": 11,
+        "lo": 4900000,
+        "mid": 5500000,
+        "hi": 6500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42661913",
+      "power": "le160",
+      "brand": "현대",
+      "model": "아이오닉 하이브리드",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 아이오닉 하이브리드 N (세부등급 없음) 가솔린+전기",
+      "year": 2019,
+      "mileage_km": 127836,
+      "price_krw": 11900000,
+      "similar": [
+        "현대",
+        "아이오닉 하이브리드",
+        "N",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4266/42661913_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42661913",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42804503",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C3 에어크로스",
+      "brand_en": "Citroen",
+      "model_guess": "C3",
+      "title": "시트로엥/DS C3 에어크로스 1.5 BlueHDi 샤인팩 디젤",
+      "year": 2021,
+      "mileage_km": 73341,
+      "price_krw": 10500000,
+      "similar": [
+        "시트로엥/DS",
+        "C3 에어크로스",
+        "1.5 BlueHDi 샤인팩",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42804503_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42804503",
+      "price_stats": {
+        "n": 4,
+        "lo": 10200000,
+        "mid": 10500000,
+        "hi": 11700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42708713",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C4 칵투스",
+      "brand_en": "Citroen",
+      "model_guess": "C4",
+      "title": "시트로엥/DS C4 칵투스 1.6 BlueHDi 샤인 디젤",
+      "year": 2017,
+      "mileage_km": 90967,
+      "price_krw": 5290000,
+      "similar": [
+        "시트로엥/DS",
+        "C4 칵투스",
+        "1.6 BlueHDi 샤인",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4270/42708713_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42708713",
+      "price_stats": {
+        "n": 7,
+        "lo": 4500000,
+        "mid": 5490000,
+        "hi": 8690000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42796423",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "캡처",
+      "brand_en": "Renault",
+      "model_guess": "TCe",
+      "title": "르노코리아(삼성) 캡처 1.3 TCe 에디션 파리 가솔린",
+      "year": 2020,
+      "mileage_km": 23102,
+      "price_krw": 14900000,
+      "similar": [
+        "르노코리아(삼성)",
+        "캡처",
+        "1.3 TCe 에디션 파리",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42796423_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42796423",
+      "price_stats": {
+        "n": 24,
+        "lo": 10900000,
+        "mid": 13500000,
+        "hi": 14700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42772108",
+      "power": "le160",
+      "brand": "현대",
+      "model": "i30 (PD)",
+      "brand_en": "Hyundai",
+      "model_guess": "i30",
+      "title": "현대 i30 (PD) 1.4 터보 스타일 가솔린",
+      "year": 2018,
+      "mileage_km": 111678,
+      "price_krw": 7990000,
+      "similar": [
+        "현대",
+        "i30 (PD)",
+        "1.4 터보",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42772108_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42772108",
+      "price_stats": {
+        "n": 8,
+        "lo": 7200000,
+        "mid": 7990000,
+        "hi": 9000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42282291",
+      "power": "le160",
+      "brand": "지프",
+      "model": "레니게이드",
+      "brand_en": "Jeep",
+      "model_guess": null,
+      "title": "지프 레니게이드 1.6 디젤 리미티드 디젤",
+      "year": 2020,
+      "mileage_km": 75791,
+      "price_krw": 14990000,
+      "similar": [
+        "지프",
+        "레니게이드",
+        "1.6 디젤 리미티드",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4227/42273348_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42282291",
+      "price_stats": {
+        "n": 5,
+        "lo": 9900000,
+        "mid": 14990000,
+        "hi": 15500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42087406",
+      "power": "le160",
+      "brand": "현대",
+      "model": "코나 하이브리드",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 코나 하이브리드 프리미엄 스페셜 가솔린+전기",
+      "year": 2020,
+      "mileage_km": 146137,
+      "price_krw": 13990000,
+      "similar": [
+        "현대",
+        "코나 하이브리드",
+        "프리미엄 스페셜",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4208/42087406_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42087406",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "39989219",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C4 피카소",
+      "brand_en": "Citroen",
+      "model_guess": "C4",
+      "title": "시트로엥/DS C4 피카소 1.6 B-HDI 필 디젤",
+      "year": 2017,
+      "mileage_km": 43053,
+      "price_krw": 10900000,
+      "similar": [
+        "시트로엥/DS",
+        "C4 피카소",
+        "1.6 B-HDI 필",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic3998/39987589_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/39989219",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42546799",
+      "power": "le160",
+      "brand": "현대",
+      "model": "벨로스터 (JS)",
+      "brand_en": "Hyundai",
+      "model_guess": "JS",
+      "title": "현대 벨로스터 (JS) 2.0 N 가솔린",
+      "year": 2019,
+      "mileage_km": 83395,
+      "price_krw": 9500000,
+      "similar": [
+        "현대",
+        "벨로스터 (JS)",
+        "2.0 N",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture04/pic4254/42546799_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42546799",
+      "price_stats": {
+        "n": 34,
+        "lo": 11200000,
+        "mid": 13900000,
+        "hi": 19990000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42818084",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM7 노바",
+      "brand_en": "Renault",
+      "model_guess": "SM7",
+      "title": "르노코리아(삼성) SM7 노바 LPLI 2.0 LPe 장애인용 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 151904,
+      "price_krw": 4500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM7 노바",
+        "LPLI 2.0 LPe 장애인용",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4281/42817091_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42818084",
+      "price_stats": {
+        "n": 8,
+        "lo": 3990000,
+        "mid": 5000000,
+        "hi": 6700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42476979",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "뉴 다마스",
+      "brand_en": "Chevrolet",
+      "model_guess": "DLX",
+      "title": "쉐보레(GM대우) 뉴 다마스 2인승 판넬밴 DLX LPG(일반인 구입)",
+      "year": 2018,
+      "mileage_km": 114787,
+      "price_krw": 5800000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "뉴 다마스",
+        "2인승 판넬밴",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4247/42476979_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42476979",
+      "price_stats": {
+        "n": 6,
+        "lo": 5800000,
+        "mid": 5900000,
+        "hi": 7400000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42783443",
+      "power": "le160",
+      "brand": "현대",
+      "model": "엑센트(신형)",
+      "brand_en": "Hyundai",
+      "model_guess": "VVT",
+      "title": "현대 엑센트(신형) 1.4 VVT 프리미엄 가솔린",
+      "year": 2019,
+      "mileage_km": 61578,
+      "price_krw": 9800000,
+      "similar": [
+        "현대",
+        "엑센트(신형)",
+        "1.4 VVT 프리미엄",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42778588_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42783443",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42455262",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "5008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 5008 2세대 1.6 BlueHDi GT Line 디젤",
+      "year": 2019,
+      "mileage_km": 103928,
+      "price_krw": 11900000,
+      "similar": [
+        "푸조",
+        "5008 2세대",
+        "1.6 BlueHDi GT Line",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4245/42453410_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42455262",
+      "price_stats": {
+        "n": 11,
+        "lo": 11800000,
+        "mid": 12890000,
+        "hi": 17200000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42803178",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 니로",
+      "brand_en": "Kia",
+      "model_guess": "HEV",
+      "title": "기아 더 뉴 니로 1.6 HEV 프레스티지 가솔린+전기",
+      "year": 2020,
+      "mileage_km": 115099,
+      "price_krw": 17490000,
+      "similar": [
+        "기아",
+        "더 뉴 니로",
+        "1.6 HEV",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42791264_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42803178",
+      "price_stats": {
+        "n": 7,
+        "lo": 16500000,
+        "mid": 17500000,
+        "hi": 17900000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42613889",
+      "power": "le160",
+      "brand": "지프",
+      "model": "랭글러 (JL)",
+      "brand_en": "Jeep",
+      "model_guess": "JL",
+      "title": "지프 랭글러 (JL) 2.0 오버랜드 파워 탑 4도어 가솔린",
+      "year": 2020,
+      "mileage_km": 61435,
+      "price_krw": 34500000,
+      "similar": [
+        "지프",
+        "랭글러 (JL)",
+        "2.0 오버랜드 파워 탑 4도어",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4261/42613889_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42613889",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42800717",
+      "power": "le160",
+      "brand": "기아",
+      "model": "더 뉴 카렌스",
+      "brand_en": "Kia",
+      "model_guess": "LPI",
+      "title": "기아 더 뉴 카렌스 2.0 LPI 프레스티지 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 159885,
+      "price_krw": 9300000,
+      "similar": [
+        "기아",
+        "더 뉴 카렌스",
+        "2.0 LPI 프레스티지",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42800717_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42800717",
+      "price_stats": {
+        "n": 4,
+        "lo": 5500000,
+        "mid": 9300000,
+        "hi": 9900000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42810058",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "508 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 508 2세대 1.5 BlueHDi GT 디젤",
+      "year": 2021,
+      "mileage_km": 91300,
+      "price_krw": 16500000,
+      "similar": [
+        "푸조",
+        "508 2세대",
+        "1.5 BlueHDi GT",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4281/42810058_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42810058",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42802809",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 아베오 세단",
+      "brand_en": "Chevrolet",
+      "model_guess": "LS",
+      "title": "쉐보레(GM대우) 더 뉴 아베오 세단 1.4 터보 LS 가솔린",
+      "year": 2017,
+      "mileage_km": 65883,
+      "price_krw": 4200000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 아베오 세단",
+        "1.4 터보 LS",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42802809_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42802809",
+      "price_stats": {
+        "n": 4,
+        "lo": 4200000,
+        "mid": 4800000,
+        "hi": 4900000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42472758",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "2008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 2008 2세대 1.5 BlueHDi GT Line 디젤",
+      "year": 2021,
+      "mileage_km": 40428,
+      "price_krw": 18900000,
+      "similar": [
+        "푸조",
+        "2008 2세대",
+        "1.5 BlueHDi GT Line",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4247/42472758_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42472758",
+      "price_stats": {
+        "n": 12,
+        "lo": 15200000,
+        "mid": 16600000,
+        "hi": 19900000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42517353",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "3008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 3008 2세대 1.5 BlueHDi GT Line 디젤",
+      "year": 2019,
+      "mileage_km": 65274,
+      "price_krw": 16300000,
+      "similar": [
+        "푸조",
+        "3008 2세대",
+        "1.5 BlueHDi GT Line",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4251/42517353_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42517353",
+      "price_stats": {
+        "n": 11,
+        "lo": 12900000,
+        "mid": 15200000,
+        "hi": 16500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42761422",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM6",
+      "brand_en": "Renault",
+      "model_guess": "SM6",
+      "title": "르노코리아(삼성) SM6 2.0 LPe SE (장애인용) LPG(일반인 구입)",
+      "year": 2019,
+      "mileage_km": 39693,
+      "price_krw": 10500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM6",
+        "2.0 LPe SE (장애인용)",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4276/42761422_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42761422",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42583334",
+      "power": "le160",
+      "brand": "기아",
+      "model": "스토닉",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 스토닉 디젤 1.6 프레스티지 디젤",
+      "year": 2018,
+      "mileage_km": 115150,
+      "price_krw": 8500000,
+      "similar": [
+        "기아",
+        "스토닉",
+        "디젤 1.6",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4258/42583334_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42583334",
+      "price_stats": {
+        "n": 52,
+        "lo": 6900000,
+        "mid": 8000000,
+        "hi": 9800000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42280978",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 말리부",
+      "brand_en": "Chevrolet",
+      "model_guess": null,
+      "title": "쉐보레(GM대우) 더 뉴 말리부 1.3 터보 퍼펙트 블랙 프라임 세이프티 가솔린",
+      "year": 2019,
+      "mileage_km": 180918,
+      "price_krw": 7990000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 말리부",
+        "1.3 터보 퍼펙트 블랙",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4228/42280978_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42280978",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42781401",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "클리오",
+      "brand_en": "Renault",
+      "model_guess": null,
+      "title": "르노코리아(삼성) 클리오 인텐스 디젤",
+      "year": 2018,
+      "mileage_km": 80360,
+      "price_krw": 7900000,
+      "similar": [
+        "르노코리아(삼성)",
+        "클리오",
+        "인텐스",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4278/42781401_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42781401",
+      "price_stats": {
+        "n": 40,
+        "lo": 5690000,
+        "mid": 7450000,
+        "hi": 8800000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "41548290",
+      "power": "le160",
+      "brand": "혼다",
+      "model": "CR-V 5세대",
+      "brand_en": "Honda",
+      "model_guess": "CR-V",
+      "title": "혼다 CR-V 5세대 1.5 투어링 4WD 가솔린",
+      "year": 2017,
+      "mileage_km": 76624,
+      "price_krw": 20500000,
+      "similar": [
+        "혼다",
+        "CR-V 5세대",
+        "1.5 투어링 4WD",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture04/pic4154/41546794_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41548290",
+      "price_stats": {
+        "n": 15,
+        "lo": 17500000,
+        "mid": 20500000,
+        "hi": 21600000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42109253",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "올란도",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 올란도 1.6 디젤 LT 컨비니언스 디젤",
+      "year": 2017,
+      "mileage_km": 107087,
+      "price_krw": 4500000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "올란도",
+        "1.6 디젤 LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4210/42109253_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42109253",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42705870",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM3 네오",
+      "brand_en": "Renault",
+      "model_guess": "SM3",
+      "title": "르노코리아(삼성) SM3 네오 SE 가솔린",
+      "year": 2018,
+      "mileage_km": 42418,
+      "price_krw": 6900000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM3 네오",
+        "SE",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4268/42689943_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42705870",
+      "price_stats": {
+        "n": 7,
+        "lo": 3800000,
+        "mid": 6400000,
+        "hi": 6900000
+      },
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42801699",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "올 뉴 크루즈",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 올 뉴 크루즈 1.4 터보 LT 디럭스 가솔린",
+      "year": 2017,
+      "mileage_km": 93217,
+      "price_krw": 4900000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "올 뉴 크루즈",
+        "1.4 터보 LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4280/42801699_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42801699",
+      "price_stats": {
+        "n": 11,
+        "lo": 4900000,
+        "mid": 5500000,
+        "hi": 6500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42757272",
+      "power": "le160",
+      "brand": "현대",
+      "model": "아이오닉 하이브리드",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 아이오닉 하이브리드 N (세부등급 없음) 가솔린+전기",
+      "year": 2017,
+      "mileage_km": 62442,
+      "price_krw": 12500000,
+      "similar": [
+        "현대",
+        "아이오닉 하이브리드",
+        "N",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4275/42757272_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42757272",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "40459708",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C3 에어크로스",
+      "brand_en": "Citroen",
+      "model_guess": "C3",
+      "title": "시트로엥/DS C3 에어크로스 1.5 BlueHDi 샤인팩 디젤",
+      "year": 2021,
+      "mileage_km": 74220,
+      "price_krw": 11700000,
+      "similar": [
+        "시트로엥/DS",
+        "C3 에어크로스",
+        "1.5 BlueHDi 샤인팩",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4045/40459708_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/40459708",
+      "price_stats": {
+        "n": 4,
+        "lo": 10200000,
+        "mid": 10500000,
+        "hi": 11700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42505989",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "캡처",
+      "brand_en": "Renault",
+      "model_guess": "TCe",
+      "title": "르노코리아(삼성) 캡처 1.3 TCe 에디션 파리 가솔린",
+      "year": 2021,
+      "mileage_km": 64325,
+      "price_krw": 14700000,
+      "similar": [
+        "르노코리아(삼성)",
+        "캡처",
+        "1.3 TCe 에디션 파리",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture10/pic4250/42505989_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42505989",
+      "price_stats": {
+        "n": 7,
+        "lo": 11990000,
+        "mid": 13700000,
+        "hi": 14700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42749179",
+      "power": "le160",
+      "brand": "현대",
+      "model": "i30 (PD)",
+      "brand_en": "Hyundai",
+      "model_guess": "i30",
+      "title": "현대 i30 (PD) 1.4 터보 스타일 가솔린",
+      "year": 2018,
+      "mileage_km": 118771,
+      "price_krw": 7900000,
+      "similar": [
+        "현대",
+        "i30 (PD)",
+        "1.4 터보",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture03/pic4273/42734830_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42749179",
+      "price_stats": {
+        "n": 8,
+        "lo": 7200000,
+        "mid": 7990000,
+        "hi": 9000000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42273348",
+      "power": "le160",
+      "brand": "지프",
+      "model": "레니게이드",
+      "brand_en": "Jeep",
+      "model_guess": null,
+      "title": "지프 레니게이드 1.6 디젤 리미티드 디젤",
+      "year": 2020,
+      "mileage_km": 75791,
+      "price_krw": 14990000,
+      "similar": [
+        "지프",
+        "레니게이드",
+        "1.6 디젤 리미티드",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4227/42273348_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42273348",
+      "price_stats": {
+        "n": 5,
+        "lo": 9900000,
+        "mid": 14990000,
+        "hi": 15500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42270154",
+      "power": "le160",
+      "brand": "현대",
+      "model": "코나",
+      "brand_en": "Hyundai",
+      "model_guess": null,
+      "title": "현대 코나 디젤 1.6 2WD 스마트 디젤",
+      "year": 2020,
+      "mileage_km": 203349,
+      "price_krw": 6990000,
+      "similar": [
+        "현대",
+        "코나",
+        "디젤 1.6 2WD",
+        2020
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4227/42270154_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42270154",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "39987589",
+      "power": "le160",
+      "brand": "시트로엥/DS",
+      "model": "C4 피카소",
+      "brand_en": "Citroen",
+      "model_guess": "C4",
+      "title": "시트로엥/DS C4 피카소 1.6 B-HDI 필 디젤",
+      "year": 2017,
+      "mileage_km": 43053,
+      "price_krw": 10900000,
+      "similar": [
+        "시트로엥/DS",
+        "C4 피카소",
+        "1.6 B-HDI 필",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic3998/39987589_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/39987589",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42581219",
+      "power": "le160",
+      "brand": "현대",
+      "model": "벨로스터 (JS)",
+      "brand_en": "Hyundai",
+      "model_guess": "JS",
+      "title": "현대 벨로스터 (JS) 2.0 N 가솔린",
+      "year": 2019,
+      "mileage_km": 38310,
+      "price_krw": 13900000,
+      "similar": [
+        "현대",
+        "벨로스터 (JS)",
+        "2.0 N",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4257/42578541_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42581219",
+      "price_stats": {
+        "n": 34,
+        "lo": 11200000,
+        "mid": 13900000,
+        "hi": 19990000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42817091",
+      "power": "le160",
+      "brand": "르노코리아(삼성)",
+      "model": "SM7 노바",
+      "brand_en": "Renault",
+      "model_guess": "SM7",
+      "title": "르노코리아(삼성) SM7 노바 LPLI 2.0 LPe 장애인용 LPG(일반인 구입)",
+      "year": 2017,
+      "mileage_km": 151904,
+      "price_krw": 4500000,
+      "similar": [
+        "르노코리아(삼성)",
+        "SM7 노바",
+        "LPLI 2.0 LPe 장애인용",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4281/42817091_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42817091",
+      "price_stats": {
+        "n": 8,
+        "lo": 3990000,
+        "mid": 5000000,
+        "hi": 6700000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42496309",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "뉴 다마스",
+      "brand_en": "Chevrolet",
+      "model_guess": "LPG",
+      "title": "쉐보레(GM대우) 뉴 다마스 5인승 코치 리빅 LPG(일반인 구입)",
+      "year": 2018,
+      "mileage_km": 59942,
+      "price_krw": 4690000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "뉴 다마스",
+        "5인승 코치",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture08/pic4248/42481363_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42496309",
+      "_resolved": true,
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42807534",
+      "power": "le160",
+      "brand": "현대",
+      "model": "엑센트(신형)",
+      "brand_en": "Hyundai",
+      "model_guess": "VVT",
+      "title": "현대 엑센트(신형) 1.4 VVT 스마트스페셜 가솔린",
+      "year": 2019,
+      "mileage_km": 84939,
+      "price_krw": 7500000,
+      "similar": [
+        "현대",
+        "엑센트(신형)",
+        "1.4 VVT 스마트스페셜",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4279/42799744_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42807534",
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42664383",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "5008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 5008 2세대 1.6 BlueHDi 알뤼르 디젤",
+      "year": 2019,
+      "mileage_km": 147418,
+      "price_krw": 10500000,
+      "similar": [
+        "푸조",
+        "5008 2세대",
+        "1.6 BlueHDi 알뤼르",
+        2019
+      ],
+      "image": "https://ci.encar.com/carpicture06/pic4266/42664383_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42664383",
+      "price_stats": {
+        "n": 5,
+        "lo": 10500000,
+        "mid": 13800000,
+        "hi": 14300000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42018569",
+      "power": "le160",
+      "brand": "쉐보레(GM대우)",
+      "model": "더 뉴 아베오 세단",
+      "brand_en": "Chevrolet",
+      "model_guess": "LT",
+      "title": "쉐보레(GM대우) 더 뉴 아베오 세단 1.4 터보 LT 가솔린",
+      "year": 2017,
+      "mileage_km": 99559,
+      "price_krw": 3500000,
+      "similar": [
+        "쉐보레(GM대우)",
+        "더 뉴 아베오 세단",
+        "1.4 터보 LT",
+        2017
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4201/42018569_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42018569",
+      "price_stats": {
+        "n": 4,
+        "lo": 3500000,
+        "mid": 3800000,
+        "hi": 3850000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42622594",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "2008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 2008 2세대 1.5 BlueHDi 알뤼르 디젤",
+      "year": 2021,
+      "mileage_km": 38277,
+      "price_krw": 16500000,
+      "similar": [
+        "푸조",
+        "2008 2세대",
+        "1.5 BlueHDi 알뤼르",
+        2021
+      ],
+      "image": "https://ci.encar.com/carpicture01/pic4261/42615427_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42622594",
+      "price_stats": {
+        "n": 5,
+        "lo": 16450000,
+        "mid": 16500000,
+        "hi": 16500000
+      },
+      "bucket": "le160"
+    },
+    {
+      "external_id": "42703080",
+      "power": "le160",
+      "brand": "푸조",
+      "model": "3008 2세대",
+      "brand_en": "Peugeot",
+      "model_guess": "BlueHDi",
+      "title": "푸조 3008 2세대 1.6 BlueHDi 알뤼르 디젤",
+      "year": 2018,
+      "mileage_km": 95252,
+      "price_krw": 12700000,
+      "similar": [
+        "푸조",
+        "3008 2세대",
+        "1.6 BlueHDi 알뤼르",
+        2018
+      ],
+      "image": "https://ci.encar.com/carpicture09/pic4269/42694001_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42703080",
+      "price_stats": {
+        "n": 9,
+        "lo": 11500000,
+        "mid": 11500000,
+        "hi": 14900000
+      },
+      "bucket": "le160"
     }
   ]
 }
