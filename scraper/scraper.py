@@ -266,7 +266,7 @@ def scrape_list(page, url: str) -> list[dict]:
 def main():
     known_all = fetch_known()
     total = run_size(known_all)
-    if not total:
+    if not total and not stats_due(known_all):
         return
     with sync_playwright() as p:
         # Firefox не умеет авторизацию (логин/пароль) в SOCKS5-прокси —
@@ -384,6 +384,9 @@ def main():
         # Машины с сайта, встреченные в поиске: отметка «ещё в продаже» (старым — VIN и привод),
         # затем давно не встречавшиеся — проверка по API. После новых: при заполнении важнее новые.
         backfill_left = int(os.environ.get("ENCAR_BACKFILL") or "250")
+        # Шкала цены машинам сайта, не встреченным в поиске: нет её или старше ENCAR_STATS_DAYS дней
+        seen_now = {c["external_id"] for c in touched} | {c["external_id"] for c in (cars or [])}
+        push_to_bn_auto(session, coverage.stale_stats(known_all, seen_now), known_all)
         if touched:
             print(f"=== Машины с сайта, встреченные в поиске: {len(touched)} ===")
             backfill_left -= backfill_known(session, touched, known, pacer, limit=backfill_left, tried=tried)
@@ -406,6 +409,18 @@ def main():
         landing = [{k: v for k, v in c.items() if k != "detail"} for c in kept]
         json.dump({"updated_at": int(time.time()), "cars": landing}, f, ensure_ascii=False, indent=2)
     print(f"Saved {len(kept)} cars -> {OUT_PATH}")
+
+
+def stats_due(known_all: dict) -> bool:
+    """Нужен ли прогон ради шкалы цены (новых машин не надо): у ENCAR_STATS_MIN+ машин сайта шкалы нет
+    или она старше ENCAR_STATS_DAYS дней — обход моделей соберёт свежие цены похожих объявлений."""
+    pub = [i for i in known_all.values() if i.get("published")]
+    stale = sum(1 for i in pub if not i.get("has_gauge") or i.get("stats_days") is None
+                or i["stats_days"] >= coverage.STATS_DAYS)
+    need = stale >= int(os.environ.get("ENCAR_STATS_MIN") or "300")
+    print(f"Шкала цены: без неё или старше {coverage.STATS_DAYS} дн. — {stale} из {len(pub)} машин"
+          + (" — обход ради шкалы" if need else ""))
+    return need
 
 
 def run_size(known_all: dict) -> int:
@@ -962,6 +977,8 @@ def fetch_known() -> dict:
         resp.raise_for_status()
         data = resp.json()
         items = {str(i["id"]): i for i in data.get("items") or []}
+        # Лимиты разнообразия каталога [на модель-год, на модель] — с сайта
+        coverage.MIX["limits"] = data.get("mix")
         for vid in data.get("ids") or []:
             items.setdefault(str(vid), {})
         good = sum(1 for i in items.values() if i.get("complete", True))
@@ -1109,6 +1126,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
                 "mileage_km": c.get("mileage_km"),
                 "source_url": c.get("link"),
                 **({"price_stats": c["price_stats"]} if c.get("price_stats") else {}),
+                **({"stats_key": c["stats_key"]} if c.get("stats_key") else {}),
                 **({"tech": c["tech_fix"]} if c.get("tech_fix") else {}),
             })
             continue
@@ -1134,6 +1152,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             "options": d.get("options"),
             **({"tech": d["tech"]} if d.get("tech") else {}),
             **({"price_stats": c["price_stats"]} if c.get("price_stats") else {}),
+            **({"stats_key": c["stats_key"]} if c.get("stats_key") else {}),
             "source_url": c.get("link"),
         })
     full_count = sum(1 for x in listings if "make" in x)

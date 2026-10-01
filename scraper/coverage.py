@@ -168,8 +168,16 @@ COMMERCIAL = re.compile(r"포터|봉고|마이티|카운티|쏠라티|트럭|버
                         r"에어로|유니버스|그랜버드|porter|bongo|truck|bus", re.I)
 
 
+# Разнообразие каталога: сколько объявлений модели на encar (массовость) — сначала самые массовые;
+# имя модели на сайте ↔ модель encar (по машинам сайта, встреченным в поиске); лимиты — с сайта (/known)
+POPULARITY = {}
+GROUP_NAME = {}      # (марка, модель encar) → (марка, модель на сайте)
+NAME_GROUP = {}      # (марка, модель на сайте) → (марка, модель encar)
+MIX = {"limits": None}
+
+
 def model_groups(session, save_debug) -> list[tuple[str, str, str, bool]]:
-    """(CarType, марка, модель, фильтр по году понят) — все модели с MIN_YEAR года."""
+    """(CarType, марка, модель, фильтр по году понят) — все модели с MIN_YEAR года, самые массовые первыми."""
     out = []
     for cartype in ("Y", "N"):   # Y — корейские марки, N — импорт
         with_year = True
@@ -191,7 +199,9 @@ def model_groups(session, save_debug) -> list[tuple[str, str, str, bool]]:
             # Грузовики и автобусы не берём — только легковые, минивэны, пикапы
             groups = [(g, n) for g, n in _unique(_facets(data.get("iNav"), "ModelGroup")) if not COMMERCIAL.search(g)]
             out += [(cartype, maker, g, with_year) for g, _ in groups]
+            POPULARITY.update({(maker, g): n for g, n in groups})
             print(f"  {maker}: моделей {len(groups)}")
+    out.sort(key=lambda x: -POPULARITY.get((x[1], x[2]), 0))
     return out
 
 
@@ -216,8 +226,36 @@ def _resolver(session, known: dict, pacer, parse_encar_detail, power_of):
 KINDS = ("le160", "gt160")
 
 
+class MixGuard:
+    """Лимиты разнообразия: не больше MIX["limits"] = [на модель-год, на модель] машин — вместе с теми,
+    что уже на сайте (have_names — {(марка, модель на сайте, год): машин})."""
+
+    def __init__(self, have_names: dict):
+        self.limits = MIX["limits"] or [10 ** 6, 10 ** 6]
+        self.year, self.model = {}, {}
+        for (make, model, year), n in have_names.items():
+            self.year[(make, model, year)] = self.year.get((make, model, year), 0) + n
+            self.model[(make, model)] = self.model.get((make, model), 0) + n
+
+    def _name(self, key):
+        return GROUP_NAME.get(key) or key
+
+    def allows(self, car, key) -> bool:
+        name = self._name(key)
+        return (self.year.get((*name, car.get("year")), 0) < self.limits[0]
+                and self.model.get(name, 0) < self.limits[1])
+
+    def site_year(self, car, key) -> int:
+        return self.year.get((*self._name(key), car.get("year")), 0)
+
+    def take(self, car, key):
+        name = self._name(key)
+        self.year[(*name, car.get("year"))] = self.year.get((*name, car.get("year")), 0) + 1
+        self.model[name] = self.model.get(name, 0) + 1
+
+
 def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None = None, on_take=None,
-         have: dict | None = None) -> list[dict]:
+         have: dict | None = None, have_names: dict | None = None) -> list[dict]:
     """По машине на модель, затем добор по кругу по моделям. Доли — share до 160 л.с. и доли лет
     selection.YEAR_BANDS — для каталога целиком (have — состав сайта, см. selection.run_wants);
     клетки «класс × годы» набираются вперемешку, чтобы и оборванный по времени прогон держал доли.
@@ -229,10 +267,12 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
     отбора: отбор уточняет мощность по API в темпе человека и идёт долго). Через
     RUN_MINUTES от старта мощность больше не уточняется — отбор заканчивается."""
     on_site = on_site or {}
-    order = sorted(groups, key=lambda k: (on_site.get(k, 0), random.random()))
+    # Сначала моделей, которых на сайте меньше, и среди них — самые массовые на encar
+    order = sorted(groups, key=lambda k: (on_site.get(k, 0), -POPULARITY.get(k, 0), random.random()))
     groups = {k: groups[k] for k in order}
     picked, used, count, per_group, taken = [], set(), {}, {}, {}
     resolved = {"n": 0}
+    mix = MixGuard(have_names or {})
     rank = {name: i for i, (name, *_) in enumerate(selection.YEAR_BANDS)}
     want = selection.run_wants(total, have or {}, share, KINDS)
     print("Нужно за прогон: " + ", ".join(f"{'до 160' if k == 'le160' else 'мощнее'} {b} — {v}"
@@ -260,6 +300,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
         return sum(v for (k, _), v in want.items() if k == kind)
 
     def take(car, key):
+        mix.take(car, key)
         taken[(key, car["power"])] = taken.get((key, car["power"]), 0) + 1
         car["bucket"] = "le160" if car["power"] == "le160" else "other"
         picked.append(car)
@@ -270,15 +311,25 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
             on_take(car)
 
     for key, cars in groups.items():
-        # Порядок внутри модели: сначала 2022–2024, потом 2025–2026, потом старше
-        cars.sort(key=lambda c: rank.get(selection.year_band(c["year"]), 9))
+        # Порядок внутри модели: сначала годы, которых на сайте нет (или меньше), среди них — самые
+        # массовые на encar (больше объявлений этого года), потом по долям лет
+        per_year = {}
+        for c in cars:
+            per_year[c["year"]] = per_year.get(c["year"], 0) + 1
+        cars.sort(key=lambda c: (mix.site_year(c, key), -per_year.get(c["year"], 0), rank.get(selection.year_band(c["year"]), 9)))
+        # …и годы по очереди: по машине каждого года, потом по второй — больше разных лет модели
+        nth, seq = {}, []
+        for c in cars:
+            nth[c["year"]] = nth.get(c["year"], 0) + 1
+            seq.append((nth[c["year"]], len(seq), c))
+        cars[:] = [c for *_, c in sorted(seq, key=lambda x: (x[0], x[1]))]
     for key, cars in groups.items():
         # По машине — только моделям, которых на сайте ещё нет, и в пределах долей: класс и годы —
         # из клетки, набранной меньше всего; сначала машины с известной мощностью (без запроса к API)
         if on_site.get(key) or len(picked) >= total:
             continue
         for kind in sorted(KINDS, key=lambda k: total_of(k) / max(kind_want(k), 1)):
-            fits = sorted((c for c in cars if fill_ratio(kind, c) < 1), key=lambda c: fill_ratio(kind, c))
+            fits = sorted((c for c in cars if fill_ratio(kind, c) < 1 and mix.allows(c, key)), key=lambda c: fill_ratio(kind, c))
             best = (next((c for c in fits if c.get("power") == kind), None)
                     or next((c for c in fits if c.get("power") is None and power(c, key) == kind), None))
             if best:
@@ -299,7 +350,7 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
                 while i < len(cars):
                     c = cars[i]
                     i += 1
-                    if id(c) in used or (band and selection.year_band(c["year"]) != band):
+                    if id(c) in used or (band and selection.year_band(c["year"]) != band) or not mix.allows(c, key):
                         continue
                     if power(c, key) == kind:
                         pos[key] = i
@@ -346,19 +397,72 @@ def price_stats(prices: list) -> dict:
     return {"n": len(p), "lo": at(0.1) if wide else p[0], "mid": at(0.5), "hi": at(0.9) if wide else p[-1]}
 
 
+PRICES = {}   # группа похожих → цены объявлений encar (собираются при обходе моделей)
+
+
+def similar_prices(group, year, badge=None) -> list:
+    """Цены похожих объявлений: та же модель, версия мотора и год; мало (меньше MIN_SIMILAR) — шире:
+    любая версия мотора, соседние годы (±1, потом ±2). group — (марка, модель encar)."""
+    if not (group and year):
+        return []
+    levels = ([[("b", *group, badge, year)]] if badge else []) + [
+        [("y", *group, year)],
+        [("y", *group, year + d) for d in (-1, 0, 1)],
+        [("y", *group, year + d) for d in range(-2, 3)],
+    ]
+    for keys in levels:
+        prices = [p for k in keys for p in PRICES.get(k, [])]
+        if len(prices) >= MIN_SIMILAR:
+            return prices
+    return []
+
+
+def stats_key(group, year) -> str | None:
+    return f"{group[0]}|{group[1]}|{year}" if group and year else None
+
+
 def attach_price_stats(cars: list):
-    """Шкала цены на сайте: цены похожих объявлений encar (модель, версия мотора, год) → car["price_stats"]."""
-    by_key = {}
+    """Шкала цены на сайте: цены похожих объявлений encar → car["price_stats"] (и stats_key — группа)."""
     for c in cars:
-        if c.get("price_krw") and c.get("similar"):
-            by_key.setdefault(c["similar"], []).append(c["price_krw"])
+        if c.get("price_krw") and c.get("_group") and c.get("year"):
+            g, badge = c["_group"], (c.get("similar") or (None,) * 3)[2]
+            PRICES.setdefault(("b", *g, badge, c["year"]), []).append(c["price_krw"])
+            PRICES.setdefault(("y", *g, c["year"]), []).append(c["price_krw"])
     done = 0
     for c in cars:
-        prices = by_key.get(c.get("similar")) or []
-        if len(prices) >= MIN_SIMILAR:
+        prices = similar_prices(c.get("_group"), c.get("year"), (c.get("similar") or (None,) * 3)[2])
+        if prices:
             c["price_stats"] = price_stats(prices)
+            c["stats_key"] = stats_key(c["_group"], c["year"])
             done += 1
     print(f"Статистика цен: у {done} из {len(cars)} машин {MIN_SIMILAR}+ похожих объявлений")
+
+
+STATS_DAYS = int(os.environ.get("ENCAR_STATS_DAYS") or "10")
+
+
+def stale_stats(known_all: dict, seen: set) -> list[dict]:
+    """Машины сайта, не встреченные в этом обходе, у которых шкалы нет или она старше STATS_DAYS дней, —
+    свежая статистика по ценам, собранным при обходе (модель на сайте → модель encar)."""
+    out, lack = [], 0
+    for vid, i in known_all.items():
+        if vid in seen or not i.get("published") or not i.get("url"):
+            continue
+        if i.get("has_gauge") and (i.get("stats_days") or 0) < STATS_DAYS and i.get("stats_days") is not None:
+            continue
+        group = NAME_GROUP.get((i.get("make"), i.get("model")))
+        try:
+            year = int(i.get("year") or 0)
+        except ValueError:
+            year = 0
+        prices = similar_prices(group, year)
+        if not prices:
+            lack += 1
+            continue
+        out.append({"external_id": vid, "link": i["url"], "price_stats": price_stats(prices),
+                    "stats_key": stats_key(group, year)})
+    print(f"Шкала цены машинам сайта, не встреченным в обходе: обновлена у {len(out)}, нет похожих у {lack}")
+    return out
 
 
 def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of, save_debug,
@@ -396,9 +500,14 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
                 if not car or car["external_id"] in seen or not selection.eligible(car["brand_en"], car["year"]):
                     continue
                 seen.add(car["external_id"])
+                car["_group"] = (maker, group)
                 if car["external_id"] in known:
                     touched.append(car)
                     on += 1
+                    info = known.get(car["external_id"]) or {}
+                    if info.get("make") and info.get("model"):
+                        GROUP_NAME[(maker, group)] = (info["make"], info["model"])
+                        NAME_GROUP[(info["make"], info["model"])] = (maker, group)
                 else:
                     cars.append(car)
             if len(results) < min(PAGE, PER_MODEL - offset):
@@ -423,5 +532,10 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
                                             for name, *_ in selection.YEAR_BANDS)
           + f"; до 160 л.с. {sum(v for (k, _), v in have.items() if k == 'le160')}, "
             f"мощнее {sum(v for (k, _), v in have.items() if k == 'gt160')}")
+    have_names = {}
+    for i in known.values():
+        if i.get("published") and i.get("complete", True) and i.get("make"):
+            k = (i["make"], i.get("model"), int(i["year"]) if str(i.get("year") or "").isdigit() else None)
+            have_names[k] = have_names.get(k, 0) + 1
     return pick(groups, total, share, _resolver(session, known, pacer, parse_encar_detail, power_of), on_site,
-                on_take, have), touched
+                on_take, have, have_names), touched
