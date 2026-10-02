@@ -414,10 +414,11 @@ def main():
         here = Path(__file__).resolve().parent
         if now is not None and now > GAUGE_FIRST_MAX and was - now >= 20:
             open(here / "continue_fill", "w").close()
-        elif now is not None and now > GAUGE_FIRST_MAX:
-            # Цены машинам сайта больше не находятся — дальше добор каталога до 5500 новыми машинами со шкалой
-            # (оставшимся без шкалы цену ищут и прогоны добора, и прогоны по расписанию)
-            print("Шкала больше не находится — следующий прогон добирает каталог новыми машинами со шкалой")
+        elif now is not None:
+            # Цены машинам сайта больше не находятся — машины без шкалы удаляем, дальше добор каталога до 5500
+            # новыми машинами со шкалой
+            print("Шкала больше не находится — машины без неё удаляем, следующий прогон добирает каталог")
+            prune_no_price()
             open(here / "continue_fill", "w").close()
             open(here / "fill_next", "w").close()
 
@@ -434,6 +435,19 @@ def main():
 # перестали находиться — добираем каталог новыми машинами, каждая со шкалой цены)
 GAUGE_FIRST = (os.environ.get("ENCAR_GAUGE_FIRST") or "1") == "1" and os.environ.get("ENCAR_FILL") != "1"
 GAUGE_FIRST_MAX = int(os.environ.get("ENCAR_GAUGE_FIRST_MAX") or "50")
+
+
+def prune_no_price() -> None:
+    """Удалить с сайта машины без шкалы цены — когда поиск цен им закончен и больше не находит."""
+    if not BN_AUTO_URL or not BN_AUTO_IMPORT_TOKEN:
+        return
+    import requests
+    try:
+        resp = requests.post(f"{BN_AUTO_URL}/api/live-listings/prune-no-price", json={"source": "encar"},
+                             headers={"Authorization": f"Bearer {BN_AUTO_IMPORT_TOKEN}"}, timeout=120)
+        print(f"Удаление машин без шкалы цены: {resp.status_code} {resp.text[:200]}")
+    except Exception as error:
+        print(f"Удаление машин без шкалы цены не удалось: {error}")
 
 
 def lacking_gauge(known_all: dict) -> int:
