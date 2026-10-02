@@ -405,6 +405,15 @@ def main():
           f"технические характеристики у {power_counts.get('tech', 0)} "
           f"(совпадения: {drom.stats}, страниц drom.ru {drom.requests})")
 
+    # Ищем цены машинам сайта (новых не добавляем) — следующий прогон сразу, пока машин без шкалы заметно
+    # меньше; перестало уменьшаться — ждём расписания
+    if not total and GAUGE_FIRST:
+        after = fetch_known()
+        was, now = lacking_gauge(known_all), lacking_gauge(after) if after else None
+        print(f"Без шкалы цены: было {was}, стало {now}")
+        if now is not None and now > GAUGE_FIRST_MAX and was - now >= 20:
+            open(Path(__file__).resolve().parent / "continue_fill", "w").close()
+
     if not kept:
         return
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -414,13 +423,22 @@ def main():
     print(f"Saved {len(kept)} cars -> {OUT_PATH}")
 
 
+GAUGE_FIRST = (os.environ.get("ENCAR_GAUGE_FIRST") or "1") == "1"
+GAUGE_FIRST_MAX = int(os.environ.get("ENCAR_GAUGE_FIRST_MAX") or "50")
+
+
+def lacking_gauge(known_all: dict) -> int:
+    """Машины сайта без шкалы цены (нет похожих или нет цены — её обнулял баг обновления шкалы)."""
+    return sum(1 for i in known_all.values() if i.get("published") and not i.get("blocked") and not i.get("has_gauge"))
+
+
 def stats_due(known_all: dict) -> bool:
     """Нужен ли прогон ради шкалы цены (новых машин не надо): у ENCAR_STATS_MIN+ машин сайта шкалы нет
     или она старше ENCAR_STATS_DAYS дней — обход моделей соберёт свежие цены похожих объявлений."""
     pub = [i for i in known_all.values() if i.get("published")]
     stale = sum(1 for i in pub if not i.get("has_gauge") or i.get("stats_days") is None
                 or i["stats_days"] >= coverage.STATS_DAYS)
-    need = stale >= int(os.environ.get("ENCAR_STATS_MIN") or "300")
+    need = stale >= int(os.environ.get("ENCAR_STATS_MIN") or "300") or (GAUGE_FIRST and lacking_gauge(known_all) > GAUGE_FIRST_MAX)
     print(f"Шкала цены: без неё или старше {coverage.STATS_DAYS} дн. — {stale} из {len(pub)} машин"
           + (" — обход ради шкалы" if need else ""))
     return need
@@ -435,6 +453,11 @@ def run_size(known_all: dict) -> int:
     if manual:
         return manual
     good = sum(1 for i in known_all.values() if i.get("complete") and i.get("published"))
+    # Сначала цена продаж (шкала) у каждой машины сайта: пока без неё GAUGE_FIRST_MAX+ машин — новых не
+    # добавляем, прогон ищет им цены (обход моделей, API encar)
+    if GAUGE_FIRST and lacking_gauge(known_all) > GAUGE_FIRST_MAX:
+        print(f"Без шкалы цены {lacking_gauge(known_all)} машин сайта — новых не добавляем, ищем им цены")
+        return 0
     if good < FILL_TARGET:
         n = min(FILL_PER_RUN, FILL_TARGET - good)
         print(f"Заполнение каталога: на сайте {good} из {FILL_TARGET} — добавим {n}")
