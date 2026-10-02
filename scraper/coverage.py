@@ -5,7 +5,7 @@
 которых сайт строит фильтры «제조사 → 모델». По каждой модели запрашиваем
 ENCAR_PER_MODEL свежих объявлений (одним запросом) и выбираем:
   1) по машине на модель — до 160 л.с., если такая есть;
-  2) добор до ENCAR_TOTAL так, чтобы машин до 160 л.с. было не меньше 75%,
+  2) добор до ENCAR_TOTAL так, чтобы машин до 160 л.с. было не меньше ENCAR_SHARE_160 (50%),
      а по годам — 60% 2022–2024, 15% 2025–2026, 15% 2017–2021, 10% 2010–2016.
 Если моделей мощнее 160 л.с. слишком много, «до 160» добираются сверх
 ENCAR_TOTAL — доля важнее общего числа.
@@ -521,7 +521,7 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
             print(f"  просмотрено моделей {n}/{len(groups_list)}, с новыми машинами {len(groups)}, "
                   f"машин с сайта встречено {len(touched)}")
     attach_price_stats(touched + [c for cars in groups.values() for c in cars])
-    share = float(os.environ.get("ENCAR_SHARE_160") or "0.75")
+    share = float(os.environ.get("ENCAR_SHARE_160") or "0.5")
     total = sum(selection.QUOTAS.values()) if total is None else total
     if not total:
         return [], touched
