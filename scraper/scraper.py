@@ -307,7 +307,7 @@ def main():
         # «ещё в продаже», а не новым выбором с повторной загрузкой
         known = {k: v for k, v in known_all.items() if v.get("complete", True) or v.get("rough_power")
                  or (v.get("published") and "price" in v and not v.get("price"))}
-        le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.5")
+        le160_share = float(os.environ.get("ENCAR_SHARE_160") or "0.35")
         selection.QUOTAS.update(le160=round(total * le160_share), other=total - round(total * le160_share))
         pacer = Pacer()
 
@@ -591,7 +591,7 @@ def power_of(model, text, cc) -> str | None:
 
 
 def collect_cars(page, session, known: dict, pacer: Pacer):
-    """Набрать квоты по списку поиска: ENCAR_SHARE_160 (50%) до 160 л.с., остальное — любой мощности.
+    """Набрать квоты по списку поиска: ENCAR_SHARE_160 (35%) до 160 л.с., остальное — любой мощности.
 
     Мощность машины, которая может оказаться «до 160», проверяем по API
     encar, как только она встретилась в списке (эти данные потом идут в
