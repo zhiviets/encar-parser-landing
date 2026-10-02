@@ -12,6 +12,9 @@ on:
       total:
         description: "Сколько новых машин добавить (0 — само: заполнение до 5500, потом 2 раза в неделю)"
         default: "0"
+      fill:
+        description: "1 — добор каталога новыми машинами (со шкалой цены), не ждать шкалы у всех машин сайта"
+        default: "0"
 
 # Один прогон за раз: запуск по расписанию ждёт, пока закончится предыдущий
 # (два параллельных прогона — двойная нагрузка на сайт-источник и риск блокировки)
@@ -65,6 +68,7 @@ jobs:
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
           # 0 — само: до заполнения каталога по 1000 за прогон без остановки, потом 2 раза в неделю
           ENCAR_TOTAL: ${{ inputs.total || '0' }}
+          ENCAR_FILL: ${{ inputs.fill || '0' }}
         run: |
           python scraper.py
 
@@ -108,4 +112,9 @@ jobs:
             echo "Прогон упал через $((elapsed / 60)) мин — следующий не запускаем, ждём расписания"
             exit 0
           fi
-          gh workflow run scrape.yml --ref main -R ${{ github.repository }}
+          # fill_next — следующий прогон добирает каталог новыми машинами со шкалой
+          if [ -f scraper/fill_next ]; then
+            gh workflow run scrape.yml --ref main -R ${{ github.repository }} -f fill=1
+          else
+            gh workflow run scrape.yml --ref main -R ${{ github.repository }}
+          fi

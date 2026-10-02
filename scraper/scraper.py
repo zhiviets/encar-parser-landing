@@ -411,8 +411,15 @@ def main():
         after = fetch_known()
         was, now = lacking_gauge(known_all), lacking_gauge(after) if after else None
         print(f"Без шкалы цены: было {was}, стало {now}")
+        here = Path(__file__).resolve().parent
         if now is not None and now > GAUGE_FIRST_MAX and was - now >= 20:
-            open(Path(__file__).resolve().parent / "continue_fill", "w").close()
+            open(here / "continue_fill", "w").close()
+        elif now is not None and now > GAUGE_FIRST_MAX:
+            # Цены машинам сайта больше не находятся — дальше добор каталога до 5500 новыми машинами со шкалой
+            # (оставшимся без шкалы цену ищут и прогоны добора, и прогоны по расписанию)
+            print("Шкала больше не находится — следующий прогон добирает каталог новыми машинами со шкалой")
+            open(here / "continue_fill", "w").close()
+            open(here / "fill_next", "w").close()
 
     if not kept:
         return
@@ -423,7 +430,9 @@ def main():
     print(f"Saved {len(kept)} cars -> {OUT_PATH}")
 
 
-GAUGE_FIRST = (os.environ.get("ENCAR_GAUGE_FIRST") or "1") == "1"
+# Сначала шкала цены всем машинам сайта, потом новые; ENCAR_FILL=1 — прогон добора (цены машинам сайта
+# перестали находиться — добираем каталог новыми машинами, каждая со шкалой цены)
+GAUGE_FIRST = (os.environ.get("ENCAR_GAUGE_FIRST") or "1") == "1" and os.environ.get("ENCAR_FILL") != "1"
 GAUGE_FIRST_MAX = int(os.environ.get("ENCAR_GAUGE_FIRST_MAX") or "50")
 
 
@@ -452,7 +461,8 @@ def run_size(known_all: dict) -> int:
     manual = int(os.environ.get("ENCAR_TOTAL") or "0")
     if manual:
         return manual
-    good = sum(1 for i in known_all.values() if i.get("complete") and i.get("published"))
+    # До 5500 считаем машины со шкалой цены: без неё машина каталог не заполняет
+    good = sum(1 for i in known_all.values() if i.get("complete") and i.get("published") and i.get("has_gauge"))
     # Сначала цена продаж (шкала) у каждой машины сайта: пока без неё GAUGE_FIRST_MAX+ машин — новых не
     # добавляем, прогон ищет им цены (обход моделей, API encar)
     if GAUGE_FIRST and lacking_gauge(known_all) > GAUGE_FIRST_MAX:
@@ -463,6 +473,8 @@ def run_size(known_all: dict) -> int:
         print(f"Заполнение каталога: на сайте {good} из {FILL_TARGET} — добавим {n}")
         # Каталог ещё не заполнен — workflow сразу запустит следующий прогон (без остановки)
         open(Path(__file__).resolve().parent / "continue_fill", "w").close()
+        if os.environ.get("ENCAR_FILL") == "1":
+            open(Path(__file__).resolve().parent / "fill_next", "w").close()   # цепочка добора дальше
         return n
     now = time.gmtime()
     if now.tm_wday in UPDATE_DAYS and now.tm_hour < 8:

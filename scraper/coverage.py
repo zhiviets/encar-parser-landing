@@ -521,6 +521,11 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
             print(f"  просмотрено моделей {n}/{len(groups_list)}, с новыми машинами {len(groups)}, "
                   f"машин с сайта встречено {len(touched)}")
     attach_price_stats(touched + [c for cars in groups.values() for c in cars])
+    # Новые машины — только со шкалой цены продаж (4+ похожих объявлений encar): без неё на сайт не берём
+    before = sum(map(len, groups.values()))
+    groups = {k: [c for c in cars if c.get("price_stats")] for k, cars in groups.items()}
+    groups = {k: cars for k, cars in groups.items() if cars}
+    print(f"Новые машины со шкалой цены: {sum(map(len, groups.values()))} из {before}")
     share = float(os.environ.get("ENCAR_SHARE_160") or "0.35")
     total = sum(selection.QUOTAS.values()) if total is None else total
     if not total:
