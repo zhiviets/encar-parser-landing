@@ -405,9 +405,23 @@ def main():
           f"технические характеристики у {power_counts.get('tech', 0)} "
           f"(совпадения: {drom.stats}, страниц drom.ru {drom.requests})")
 
+    # Обход encar удался: поиск ответил и машины сайта в нём встретились. Не удался (прокси не пустил — 407,
+    # encar не отдал страницы) — машины без шкалы НЕ удаляем (цены не «не нашлись», их не искали) и следующий
+    # прогон сразу не запускаем: холостые прогоны каждые 3 минуты ничего не дают — ждём расписания
+    pub = sum(1 for i in known_all.values() if i.get("published"))
+    scan_ok = cars is not None and len(touched) >= max(50, pub // 10)
+    print(f"Обход encar: {'удался' if scan_ok else 'НЕ удался'} — машин сайта встречено {len(touched)} из {pub}, "
+          f"новых отобрано {len(cars or [])}")
+    if not scan_ok:
+        here = Path(__file__).resolve().parent
+        for name in ("continue_fill", "fill_next"):
+            (here / name).unlink(missing_ok=True)
+        print("Обход encar не удался (прокси или encar не отвечает) — машины без шкалы не удаляем, "
+              "следующий прогон — по расписанию")
+
     # Ищем цены машинам сайта (новых не добавляем) — следующий прогон сразу, пока машин без шкалы заметно
     # меньше; перестало уменьшаться — ждём расписания
-    if not total and GAUGE_FIRST:
+    if not total and GAUGE_FIRST and scan_ok:
         after = fetch_known()
         was, now = lacking_gauge(known_all), lacking_gauge(after) if after else None
         print(f"Без шкалы цены: было {was}, стало {now}")
