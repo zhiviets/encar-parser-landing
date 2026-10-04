@@ -66,6 +66,11 @@ jobs:
           PROXY_SERVER: ${{ secrets.PROXY_SERVER }}
           PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
           PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
+          # Запасной прокси (необязательно): основной не пускает (407 — истёк срок) — берём его,
+          # нет и его — encar напрямую с IP GitHub (у каждого прогона свой IP)
+          PROXY2_SERVER: ${{ secrets.PROXY2_SERVER }}
+          PROXY2_USERNAME: ${{ secrets.PROXY2_USERNAME }}
+          PROXY2_PASSWORD: ${{ secrets.PROXY2_PASSWORD }}
           # 0 — само: до заполнения каталога по 1000 за прогон без остановки, потом 2 раза в неделю
           ENCAR_TOTAL: ${{ inputs.total || '0' }}
           ENCAR_FILL: ${{ inputs.fill || '0' }}

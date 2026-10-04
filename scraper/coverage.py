@@ -88,8 +88,8 @@ def _search(session, q: str, count: int = 0, inav: bool = False, offset: int = 0
 
 
 # Каждые SEARCH_BREAK_EVERY запросов к поиску — перерыв SEARCH_BREAK_MIN минут
-SEARCH_BREAK_EVERY = 100
-SEARCH_BREAK_MIN = float(os.environ.get("ENCAR_SEARCH_BREAK") or "3")
+SEARCH_BREAK_EVERY = 120
+SEARCH_BREAK_MIN = float(os.environ.get("ENCAR_SEARCH_BREAK") or "1.5")
 _searches = {"n": 0}
 
 
@@ -98,7 +98,7 @@ def _pause():
     if _searches["n"] % SEARCH_BREAK_EVERY == 0:
         print(f"  запросов к поиску {_searches['n']} — перерыв {SEARCH_BREAK_MIN:g} мин")
         time.sleep(SEARCH_BREAK_MIN * 60)
-    time.sleep(random.uniform(1.0, 2.5))
+    time.sleep(random.uniform(0.8, 2.0))
 
 
 def _facets(node, name: str, out: list | None = None) -> list[tuple[str, int]]:

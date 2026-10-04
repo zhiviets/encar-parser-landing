@@ -41,9 +41,9 @@ def list_url(action: str, page_no: int) -> str:
 MAX_PAGES = int(os.environ.get("ENCAR_MAX_PAGES") or "80")
 # Порция машин между паузами и длина паузы в минутах
 BATCH = int(os.environ.get("ENCAR_BATCH") or "100")
-BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "1.5")
+BATCH_PAUSE = float(os.environ.get("ENCAR_BATCH_PAUSE") or "0.75")
 # Заполнение каталога: пока машин с полной информацией на сайте меньше FILL_TARGET — каждый
-# прогон добавляет до FILL_PER_RUN новых порциями по BATCH с паузой BATCH_PAUSE (1–2 мин) и в
+# прогон добавляет до FILL_PER_RUN новых порциями по BATCH с паузой BATCH_PAUSE (около минуты) и в
 # конце запускает следующий. Потом — обновление два раза в неделю (UPDATE_DAYS, 0 — понедельник,
 # первый прогон дня): до UPDATE_NEW новых порциями по UPDATE_BATCH с паузой UPDATE_PAUSE минут.
 # ENCAR_TOTAL > 0 (ручной запуск) — ровно столько новых.
@@ -268,6 +268,14 @@ def main():
     total = run_size(known_all)
     if not total and not stats_due(known_all):
         return
+    if not pick_route():
+        # Ни один путь не работает — обход не начинаем: машины не трогаем, следующий прогон — по расписанию
+        here = Path(__file__).resolve().parent
+        for name in ("continue_fill", "fill_next"):
+            (here / name).unlink(missing_ok=True)
+        print("Обход encar не удался: ни прокси, ни прямой путь не работают — машины не трогаем, "
+              "следующий прогон — по расписанию")
+        return
     with sync_playwright() as p:
         # Firefox не умеет авторизацию (логин/пароль) в SOCKS5-прокси —
         # Playwright падает с "Browser does not support socks5 proxy
@@ -352,6 +360,7 @@ def main():
                 print(f"Пауза {pause:.1f} мин, чтобы не нагружать encar")
                 time.sleep(pause * 60)
                 pacer.blocked = False   # после паузы даём encar ещё шанс
+                pacer.strikes = 0
 
         def on_take(car):
             if time.time() - STARTED > RUN_MINUTES * 60:
@@ -546,44 +555,58 @@ def complete_listing(x: dict) -> bool:
 
 
 class Pacer:
-    """Темп запросов к API encar и предохранитель от блокировки.
+    """Темп запросов к API encar — подстраивается сам: быстро, пока encar отвечает, и медленнее после
+    первых признаков блокировки.
 
-    Случайная пауза после каждого запроса и длинный перерыв каждые ~25.
-    На 403/429/капчу — пауза 90–150 с и одна повторная попытка, потом
-    blocked=True и запросы к API больше не идут: лучше отправить в bn-auto
-    то, что собрано, чем спалить IP прокси.
+    Обычный темп: 1–2,5 с между запросами и перерыв 30–60 с каждые 40–70 (раньше 2–5 с и 1–2,5 мин каждые
+    25–40 — в 2,5 раза медленнее). На 403/429/капчу — пауза 2–4 мин, темп в 2 раза медленнее, и снова;
+    после ENCAR_MAX_BLOCKS блоков подряд (по умолчанию 3) — blocked=True и запросы к API больше не идут:
+    лучше отправить в bn-auto собранное, чем спалить IP. Каждые 150 запросов без блока темп снова быстрее.
     """
 
     def __init__(self):
         self.count = 0
-        self.next_break = random.randint(25, 40)
+        self.next_break = random.randint(40, 70)
         self.blocked = False
         self.saved = 0
+        self.slow = 1.0          # множитель пауз: 1 — обычный темп, 2, 4… — после блоков
+        self.strikes = 0         # блоков подряд
+        self.clean = 0           # запросов без блока с последнего замедления
+        self.max_strikes = int(os.environ.get("ENCAR_MAX_BLOCKS") or "3")
 
     def _tick(self):
         self.count += 1
+        self.clean += 1
+        if self.slow > 1 and self.clean >= 150:
+            self.slow = max(1.0, self.slow / 2)
+            self.clean = 0
+            print(f"  encar отвечает ровно — темп быстрее (паузы ×{self.slow:g})")
         if self.count >= self.next_break:
-            # Темп человека: перерыв 1–2,5 мин каждые 25–40 объявлений, между ними 2–5 с
-            human_pause(60, 150)
-            self.next_break = self.count + random.randint(25, 40)
+            human_pause(30 * self.slow, 60 * self.slow)
+            self.next_break = self.count + random.randint(40, 70)
         else:
-            human_pause(2.0, 5.0)
+            human_pause(1.0 * self.slow, 2.5 * self.slow)
 
     def detail(self, session, vehicle_id: str):
         if self.blocked:
             return None
         try:
-            try:
-                data = fetch_encar_detail(session, vehicle_id)
-            except Blocked as reason:
-                print(f"encar притормозил нас ({reason}) — пауза 90–150 с и одна попытка")
-                human_pause(90, 150)
+            while True:
                 try:
                     data = fetch_encar_detail(session, vehicle_id)
-                except Blocked as again:
-                    print(f"Снова блок ({again}) — останавливаем запросы к encar, отправляем собранное")
-                    self.blocked = True
-                    return None
+                    self.strikes = 0
+                    break
+                except Blocked as reason:
+                    self.strikes += 1
+                    if self.strikes >= self.max_strikes:
+                        print(f"encar снова не пускает ({reason}) — {self.strikes} раза подряд, останавливаем "
+                              f"запросы к encar, отправляем собранное")
+                        self.blocked = True
+                        return None
+                    self.slow = min(self.slow * 2, 8)
+                    self.clean = 0
+                    print(f"encar притормозил нас ({reason}) — пауза 2–4 мин, дальше медленнее (паузы ×{self.slow:g})")
+                    human_pause(120, 240)
         finally:
             self._tick()
         if data and self.saved < 3:
@@ -807,6 +830,55 @@ def still_ok(car: dict) -> bool:
     if not power_of(d.get("model"), f"{d.get('power_text') or ''} {car['title']}", d.get("displacement")):
         return False
     return selection.eligible(d.get("make") or car.get("brand_en"), d.get("year") or car.get("year"))
+
+
+def _route_candidates() -> list[tuple[str, str | None, str | None, str | None]]:
+    """Пути к encar по порядку: основной прокси, запасной (PROXY2_*), напрямую."""
+    out = []
+    for prefix, name in (("PROXY", "основной прокси"), ("PROXY2", "запасной прокси")):
+        server = os.environ.get(f"{prefix}_SERVER") or None
+        if server:
+            out.append((name, server, os.environ.get(f"{prefix}_USERNAME") or None,
+                        os.environ.get(f"{prefix}_PASSWORD") or None))
+    if os.environ.get("ENCAR_DIRECT", "1") == "1":
+        out.append(("напрямую (IP GitHub)", None, None, None))
+    return out
+
+
+def _probe_route(session) -> str:
+    """Один запрос к поиску encar: 'ok', 'proxy' (прокси не пускает — 407, срок или пароль),
+    'blocked' (encar ответил 403/429/капчей) или 'down' (нет ответа)."""
+    import requests
+    url = f"{coverage.SEARCH_API}?count=true&q=(And.Hidden.N._.CarType.Y.)&sr=%7CModifiedDate%7C0%7C1"
+    try:
+        resp = session.get(url, headers=coverage.HEADERS, timeout=25)
+    except requests.exceptions.ProxyError:
+        return "proxy"
+    except Exception:
+        return "down"
+    if resp.status_code == 407:
+        return "proxy"
+    if resp.status_code in (403, 429):
+        return "blocked"
+    if resp.status_code == 200 and resp.text.lstrip().startswith("{"):
+        return "ok"
+    return "blocked" if resp.status_code == 200 else "down"
+
+
+def pick_route() -> bool:
+    """Перед обходом проверяем пути к encar и берём первый рабочий: прокси перестал пускать (407 — истёк срок
+    или сменился пароль) — запасной, нет и его — напрямую. Раньше прогон с мёртвым прокси шёл впустую."""
+    global PROXY_SERVER, PROXY_USERNAME, PROXY_PASSWORD
+    reasons = {"proxy": "прокси не пускает (407: срок или пароль)", "blocked": "encar не пускает (403/капча)",
+               "down": "нет ответа"}
+    for name, server, user, password in _route_candidates():
+        PROXY_SERVER, PROXY_USERNAME, PROXY_PASSWORD = server, user, password
+        state = _probe_route(http_session())
+        if state == "ok":
+            print(f"Путь к encar: {name}")
+            return True
+        print(f"Путь к encar «{name}» не подходит: {reasons[state]}")
+    return False
 
 
 def http_session():
