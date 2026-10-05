@@ -1,102 +1,132 @@
 {
-  "updated_at": 1791224842,
+  "updated_at": 1791235432,
   "cars": [
     {
-      "external_id": "41546118",
+      "external_id": "42392173",
       "power": "gt160",
-      "brand": "폭스바겐",
-      "model": "파사트 GT(B8)",
-      "brand_en": "Volkswagen",
-      "model_guess": "B8",
-      "title": "폭스바겐 파사트 GT(B8) 2.0 TDI 프레스티지 디젤",
-      "year": 2021,
-      "mileage_km": 33379,
-      "price_krw": 23500000,
+      "brand": "BMW",
+      "model": "X3M (G01)",
+      "brand_en": "BMW",
+      "model_guess": "X3M",
+      "title": "BMW X3M (G01) 3.0 가솔린",
+      "year": 2020,
+      "mileage_km": 85995,
+      "price_krw": 43000000,
       "similar": [
-        "폭스바겐",
-        "파사트 GT(B8)",
-        "2.0 TDI 프레스티지",
-        2021
+        "BMW",
+        "X3M (G01)",
+        "3.0",
+        2020
       ],
-      "image": "https://ci.encar.com/carpicture03/pic4153/41532828_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41546118",
+      "image": "https://ci.encar.com/carpicture09/pic4239/42391420_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42392173",
       "_group": [
-        "폭스바겐",
-        "파사트"
+        "BMW",
+        "X3M"
       ],
       "price_stats": {
-        "n": 16,
-        "lo": 21300000,
-        "mid": 23500000,
-        "hi": 25200000
+        "n": 9,
+        "lo": 34900000,
+        "mid": 46900000,
+        "hi": 51000000
       },
-      "stats_key": "폭스바겐|파사트|2021",
+      "stats_key": "BMW|X3M|2020",
       "bucket": "other"
     },
     {
-      "external_id": "42776959",
+      "external_id": "42649899",
       "power": "gt160",
-      "brand": "벤츠",
-      "model": "E-클래스 W213",
-      "brand_en": "Mercedes-Benz",
-      "model_guess": "W213",
-      "title": "벤츠 E-클래스 W213 E350 4MATIC AMG Line 가솔린",
-      "year": 2022,
-      "mileage_km": 56981,
-      "price_krw": 37700000,
+      "brand": "BMW",
+      "model": "X3M (G01)",
+      "brand_en": "BMW",
+      "model_guess": "X3M",
+      "title": "BMW X3M (G01) 3.0 컴페티션 가솔린",
+      "year": 2021,
+      "mileage_km": 57929,
+      "price_krw": 45900000,
       "similar": [
-        "벤츠",
-        "E-클래스 W213",
-        "E350 4MATIC AMG Line",
-        2022
+        "BMW",
+        "X3M (G01)",
+        "3.0 컴페티션",
+        2021
       ],
-      "image": "https://ci.encar.com/carpicture07/pic4277/42776923_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42776959",
+      "image": "https://ci.encar.com/carpicture04/pic4264/42649899_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42649899",
       "_group": [
-        "벤츠",
-        "E-클래스"
+        "BMW",
+        "X3M"
+      ],
+      "price_stats": {
+        "n": 6,
+        "lo": 45000000,
+        "mid": 60900000,
+        "hi": 64500000
+      },
+      "stats_key": "BMW|X3M|2021",
+      "bucket": "other"
+    },
+    {
+      "external_id": "42783244",
+      "power": "gt160",
+      "brand": "기아",
+      "model": "모하비 더 마스터",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 모하비 더 마스터 디젤 3.0 4WD 6인승 마스터즈 그래비티 디젤",
+      "year": 2024,
+      "mileage_km": 94020,
+      "price_krw": 35500000,
+      "similar": [
+        "기아",
+        "모하비 더 마스터",
+        "디젤 3.0 4WD 6인승",
+        2024
+      ],
+      "image": "https://ci.encar.com/carpicture07/pic4277/42778950_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42783244",
+      "_group": [
+        "기아",
+        "모하비"
       ],
       "price_stats": {
         "n": 4,
-        "lo": 34800000,
-        "mid": 37700000,
-        "hi": 37700000
+        "lo": 35500000,
+        "mid": 43900000,
+        "hi": 43900000
       },
-      "stats_key": "벤츠|E-클래스|2022",
-      "_resolved": true,
+      "stats_key": "기아|모하비|2024",
       "bucket": "other"
     },
     {
-      "external_id": "41804857",
+      "external_id": "42672636",
       "power": "gt160",
       "brand": "현대",
-      "model": "그랜저 HG",
+      "model": "그랜저 (GN7)",
       "brand_en": "Hyundai",
-      "model_guess": "HG220",
-      "title": "현대 그랜저 HG HG220 디젤 프리미엄 디젤",
-      "year": 2016,
-      "mileage_km": 113254,
-      "price_krw": 6800000,
+      "model_guess": "GN7",
+      "title": "현대 그랜저 (GN7) 2.5 가솔린 2WD 프리미엄 가솔린",
+      "year": 2025,
+      "mileage_km": 92735,
+      "price_krw": 24500000,
       "similar": [
         "현대",
-        "그랜저 HG",
-        "HG220 디젤 프리미엄",
-        2016
+        "그랜저 (GN7)",
+        "2.5 가솔린 2WD",
+        2025
       ],
-      "image": "https://ci.encar.com/carpicture10/pic4180/41804857_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41804857",
+      "image": "https://ci.encar.com/carpicture07/pic4267/42670026_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42672636",
       "_group": [
         "현대",
         "그랜저"
       ],
       "price_stats": {
-        "n": 9,
-        "lo": 4630000,
-        "mid": 8300000,
-        "hi": 14900000
+        "n": 4,
+        "lo": 24500000,
+        "mid": 37500000,
+        "hi": 41800000
       },
-      "stats_key": "현대|그랜저|2016",
-      "_resolved": true,
+      "stats_key": "현대|그랜저|2025",
       "bucket": "other"
     }
   ]
