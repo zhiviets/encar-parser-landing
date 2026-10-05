@@ -1,132 +1,100 @@
 {
-  "updated_at": 1791235432,
+  "updated_at": 1791243875,
   "cars": [
     {
-      "external_id": "42392173",
+      "external_id": "42469123",
       "power": "gt160",
-      "brand": "BMW",
-      "model": "X3M (G01)",
-      "brand_en": "BMW",
-      "model_guess": "X3M",
-      "title": "BMW X3M (G01) 3.0 가솔린",
-      "year": 2020,
-      "mileage_km": 85995,
-      "price_krw": 43000000,
+      "brand": "벤틀리",
+      "model": "뮬산",
+      "brand_en": "Bentley",
+      "model_guess": null,
+      "title": "벤틀리 뮬산 6.8 가솔린",
+      "year": 2018,
+      "mileage_km": 42800,
+      "price_krw": 148000000,
       "similar": [
-        "BMW",
-        "X3M (G01)",
-        "3.0",
-        2020
+        "벤틀리",
+        "뮬산",
+        "6.8",
+        2018
       ],
-      "image": "https://ci.encar.com/carpicture09/pic4239/42391420_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42392173",
+      "image": "https://ci.encar.com/carpicture06/pic4246/42469123_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42469123",
       "_group": [
-        "BMW",
-        "X3M"
+        "벤틀리",
+        "뮬산"
       ],
       "price_stats": {
-        "n": 9,
-        "lo": 34900000,
-        "mid": 46900000,
-        "hi": 51000000
+        "n": 5,
+        "lo": 110000000,
+        "mid": 148000000,
+        "hi": 149900000
       },
-      "stats_key": "BMW|X3M|2020",
+      "stats_key": "벤틀리|뮬산|2018",
       "bucket": "other"
     },
     {
-      "external_id": "42649899",
+      "external_id": "42734291",
       "power": "gt160",
-      "brand": "BMW",
-      "model": "X3M (G01)",
-      "brand_en": "BMW",
-      "model_guess": "X3M",
-      "title": "BMW X3M (G01) 3.0 컴페티션 가솔린",
-      "year": 2021,
-      "mileage_km": 57929,
-      "price_krw": 45900000,
+      "brand": "기아",
+      "model": "더 뉴 쏘렌토 4세대",
+      "brand_en": "Kia",
+      "model_guess": null,
+      "title": "기아 더 뉴 쏘렌토 4세대 가솔린 2.5T 4WD 그래비티 가솔린",
+      "year": 2024,
+      "mileage_km": 36478,
+      "price_krw": 35000000,
       "similar": [
-        "BMW",
-        "X3M (G01)",
-        "3.0 컴페티션",
-        2021
+        "기아",
+        "더 뉴 쏘렌토 4세대",
+        "가솔린 2.5T 4WD",
+        2024
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42649899_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42649899",
+      "image": "https://ci.encar.com/carpicture03/pic4273/42734291_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42734291",
       "_group": [
-        "BMW",
-        "X3M"
+        "기아",
+        "쏘렌토"
+      ],
+      "price_stats": {
+        "n": 5,
+        "lo": 31700000,
+        "mid": 34500000,
+        "hi": 35000000
+      },
+      "stats_key": "기아|쏘렌토|2024",
+      "bucket": "other"
+    },
+    {
+      "external_id": "41357197",
+      "power": "gt160",
+      "brand": "기아",
+      "model": "쏘렌토 R",
+      "brand_en": "Kia",
+      "model_guess": "TLX",
+      "title": "기아 쏘렌토 R 디젤 2.0 2WD TLX 최고급형 디젤",
+      "year": 2011,
+      "mileage_km": 168701,
+      "price_krw": 4900000,
+      "similar": [
+        "기아",
+        "쏘렌토 R",
+        "디젤 2.0 2WD TLX",
+        2011
+      ],
+      "image": "https://ci.encar.com/carpicture05/pic4135/41357197_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41357197",
+      "_group": [
+        "기아",
+        "쏘렌토"
       ],
       "price_stats": {
         "n": 6,
-        "lo": 45000000,
-        "mid": 60900000,
-        "hi": 64500000
+        "lo": 4300000,
+        "mid": 4500000,
+        "hi": 4900000
       },
-      "stats_key": "BMW|X3M|2021",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42783244",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "모하비 더 마스터",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 모하비 더 마스터 디젤 3.0 4WD 6인승 마스터즈 그래비티 디젤",
-      "year": 2024,
-      "mileage_km": 94020,
-      "price_krw": 35500000,
-      "similar": [
-        "기아",
-        "모하비 더 마스터",
-        "디젤 3.0 4WD 6인승",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4277/42778950_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42783244",
-      "_group": [
-        "기아",
-        "모하비"
-      ],
-      "price_stats": {
-        "n": 4,
-        "lo": 35500000,
-        "mid": 43900000,
-        "hi": 43900000
-      },
-      "stats_key": "기아|모하비|2024",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42672636",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "그랜저 (GN7)",
-      "brand_en": "Hyundai",
-      "model_guess": "GN7",
-      "title": "현대 그랜저 (GN7) 2.5 가솔린 2WD 프리미엄 가솔린",
-      "year": 2025,
-      "mileage_km": 92735,
-      "price_krw": 24500000,
-      "similar": [
-        "현대",
-        "그랜저 (GN7)",
-        "2.5 가솔린 2WD",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4267/42670026_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42672636",
-      "_group": [
-        "현대",
-        "그랜저"
-      ],
-      "price_stats": {
-        "n": 4,
-        "lo": 24500000,
-        "mid": 37500000,
-        "hi": 41800000
-      },
-      "stats_key": "현대|그랜저|2025",
+      "stats_key": "기아|쏘렌토|2011",
       "bucket": "other"
     }
   ]
