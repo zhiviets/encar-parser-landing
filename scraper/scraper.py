@@ -15,11 +15,14 @@ import encar_ru
 import coverage
 import selection
 
-# Фото храним в базе bn-auto (диск ограничен): WebP до 960 px и до 150 КБ —
-# карточка ~70–120 КБ вместо ~300–800 КБ JPEG.
-MAX_PHOTO_BYTES = 150 * 1024
-PHOTO_MAX_WIDTH = 960
-PHOTO_QUALITY = 72
+# Фото — в хранилище bn-auto: WebP до 1200 px, качество 78, до 200 КБ (обычно 100–140 КБ) — чётко и не тяжело
+MAX_PHOTO_BYTES = 200 * 1024
+PHOTO_MAX_WIDTH = 1200
+PHOTO_QUALITY = 78
+# Галерея: сколько фото кроме главного (кузов, салон, опции); машинам, уже стоящим на сайте без галереи, —
+# досылаем за прогон не больше GALLERY_BACKFILL (только CDN фото encar, без запросов к API)
+GALLERY_MAX = 12
+GALLERY_BACKFILL = int(os.environ.get("ENCAR_GALLERY_BACKFILL") or "300")
 
 
 
@@ -1090,6 +1093,11 @@ def parse_encar_detail(detail: dict, vehicle_id: str) -> dict:
     photos.sort(key=lambda ph: (not str(ph["path"]).endswith("_001.jpg"), ph.get("type") != "OUTER",
                                 str(ph.get("code") or "")))
     out["photo_paths"] = [ph["path"] for ph in photos]
+    # Галерея: кузов, салон, крупные планы опций — по порядку номеров (документы осмотра — нет)
+    kinds = {"OUTER": 0, "INNER": 1, "OPTION": 2}
+    gallery = sorted((ph for ph in photos if ph.get("type") in kinds),
+                     key=lambda ph: (kinds[ph["type"]], str(ph.get("code") or ""), ph["path"]))
+    out["gallery_paths"] = [ph["path"] for ph in gallery]
     if photos:
         out["photo"] = ENCAR_PHOTO_BASE + photos[0]["path"]
     return out
@@ -1224,7 +1232,7 @@ def _compress_to_data_url(image_bytes: bytes) -> str | None:
             max_width = int(max_width * 0.85)
 
 
-def fetch_photo_data_url(session, image_url: str | None) -> str | None:
+def fetch_photo_data_url(session, image_url: str | None, quiet: bool = False) -> str | None:
     """Скачать фото и вернуть его как сжатый data-URL.
 
     Прямая ссылка на CDN encar не отдаёт картинку при запросе с чужого
@@ -1244,8 +1252,43 @@ def fetch_photo_data_url(session, image_url: str | None) -> str | None:
         resp.raise_for_status()
         return _compress_to_data_url(resp.content)
     except Exception as error:
-        print(f"Не удалось скачать фото {image_url}: {error}")
+        if not quiet:
+            print(f"Не удалось скачать фото {image_url}: {error}")
         return None
+
+
+def fetch_photos(session, urls: list[str]) -> list[str]:
+    """Несколько фото → data-URL по порядку (по 4 одновременно; не скачавшиеся пропускаем)."""
+    from concurrent.futures import ThreadPoolExecutor
+    if not urls:
+        return []
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        return [x for x in pool.map(lambda u: fetch_photo_data_url(session, u, quiet=True), urls) if x]
+
+
+def gallery_for(d: dict, main_url: str | None) -> list[str]:
+    """Галерея новой машины: адреса фото из объявления (кроме главного)."""
+    urls = [ENCAR_PHOTO_BASE + p for p in d.get("gallery_paths") or []]
+    return [u for u in urls if u != main_url][:GALLERY_MAX]
+
+
+def guess_gallery(session, image: str | None) -> list[str]:
+    """Галерея машины, уже стоящей на сайте: фото encar лежат по номерам рядом с главным (…_001.jpg, _002.jpg…;
+    кузов, потом салон) — берём по порядку, пока не кончатся. Только CDN фото, без API encar."""
+    m = re.match(r"(.+_)(\d{3})\.jpg", image or "")
+    if not m:
+        return []
+    out, misses = [], 0
+    for n in range(2, 30):
+        if len(out) >= GALLERY_MAX or misses >= 3:
+            break
+        data = fetch_photo_data_url(session, f"{m.group(1)}{n:03d}.jpg", quiet=True)
+        if data:
+            out.append(data)
+            misses = 0
+        else:
+            misses += 1
+    return out
 
 
 def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict | None = None):
@@ -1257,10 +1300,16 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
     import requests
 
     listings = []
+    backfilled = 0
     for c in cars:
         if not c.get("external_id"):
             continue
         if c["external_id"] in known and not c.get("backfill"):
+            # На сайте без галереи — досылаем фото (по номерам рядом с главным)
+            photos = []
+            if known[c["external_id"]].get("gallery_n") == 0 and backfilled < GALLERY_BACKFILL and c.get("image"):
+                photos = guess_gallery(session, c["image"])
+                backfilled += 1 if photos else 0
             # Уже есть с фото и характеристиками — обновляем только цену,
             # пробег и отметку «ещё в продаже», сайт лишний раз не трогаем.
             listings.append({
@@ -1271,6 +1320,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
                 **({"price_stats": c["price_stats"]} if c.get("price_stats") else {}),
                 **({"stats_key": c["stats_key"]} if c.get("stats_key") else {}),
                 **({"tech": c["tech_fix"]} if c.get("tech_fix") else {}),
+                **({"photos": photos} if photos else {}),
             })
             continue
         d = c.get("detail") or {}
@@ -1279,8 +1329,12 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             # Названия опций по-корейски — bn-auto сопоставит их с русским списком
             opts["names"] = [option_codes[code] for code in opts["standard"] if code in option_codes]
         photo = None
+        photos = []
         if not c.get("blocked"):
-            photo = fetch_photo_data_url(session, main_photo_url(c, d)) or fetch_photo_data_url(session, c.get("image"))
+            main_url = main_photo_url(c, d)
+            photo = fetch_photo_data_url(session, main_url) or fetch_photo_data_url(session, c.get("image"))
+            if photo:
+                photos = fetch_photos(session, gallery_for(d, main_url))
             human_pause(0.6, 1.8)
         listings.append({
             "external_id": c["external_id"],
@@ -1291,6 +1345,7 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             "mileage_km": d.get("mileage_km") or c.get("mileage_km"),
             "price_value": c.get("price_krw"),
             "photo_url": photo,
+            **({"photos": photos} if photos else {}),
             "spec": d.get("spec"),
             "options": d.get("options"),
             **({"tech": d["tech"]} if d.get("tech") else {}),
@@ -1305,12 +1360,12 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
     if not listings:
         return
 
-    # С фото внутри пачка из сотни машин весит десятки МБ — такие шлём по 10.
-    # Уже известные машины (только цена и пробег) — по 200 за раз.
-    light = [x for x in listings if "make" not in x]
-    full = [x for x in listings if "make" in x]
+    # С фото внутри пачка тяжёлая (с галереей ~2 МБ на машину) — такие шлём по 5.
+    # Уже известные машины (только цена и пробег) — по 200 за раз, с досланной галереей — по 5.
+    light = [x for x in listings if "make" not in x and "photos" not in x]
+    heavy = [x for x in listings if "make" in x or "photos" in x]
     batches = [light[i:i + 200] for i in range(0, len(light), 200)]
-    batches += [full[i:i + 10] for i in range(0, len(full), 10)]
+    batches += [heavy[i:i + 5] for i in range(0, len(heavy), 5)]
     start = 0
     for batch in batches:
         resp = requests.post(
@@ -1328,6 +1383,8 @@ def push_to_bn_auto(session, cars: list[dict], known: dict, option_codes: dict |
             resp.raise_for_status()
         print(f"Пуш в bn-auto [{start + 1}–{start + len(batch)}]: {data.get('stats')}, пропущено {data.get('skipped', 0)}")
         start += len(batch)
+    if backfilled:
+        print(f"Галерея дослана машинам сайта: {backfilled}")
 
 
 if __name__ == "__main__":
