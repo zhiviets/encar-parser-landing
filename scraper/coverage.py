@@ -18,6 +18,7 @@ import time
 from urllib.parse import quote
 
 import selection
+import wanted as wanted_mod
 from brand_map import extract_brand_model
 
 SEARCH_API = "https://api.encar.com/search/car/list/general"
@@ -33,6 +34,8 @@ PAGE = 50
 RESOLVE_PER_MODEL = 6
 # Через столько минут после старта отбор больше не уточняет мощность (лимит GitHub — 6 ч)
 RUN_MINUTES = float(os.environ.get("ENCAR_RUN_MINUTES") or "300")
+# Доля прогона под модели из справочника сайта, которых на сайте мало (wanted.py)
+WANTED_SHARE = float(os.environ.get("ENCAR_WANTED_SHARE") or "0.5")
 STARTED = time.time()
 HEADERS = {
     "Referer": "https://www.encar.com/",
@@ -255,7 +258,7 @@ class MixGuard:
 
 
 def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None = None, on_take=None,
-         have: dict | None = None, have_names: dict | None = None) -> list[dict]:
+         have: dict | None = None, have_names: dict | None = None, wanted=None) -> list[dict]:
     """По машине на модель, затем добор по кругу по моделям. Доли — share до 160 л.с. и доли лет
     selection.YEAR_BANDS — для каталога целиком (have — состав сайта, см. selection.run_wants);
     клетки «класс × годы» набираются вперемешку, чтобы и оборванный по времени прогон держал доли.
@@ -323,13 +326,33 @@ def pick(groups: dict, total: int, share: float, resolve, on_site: dict | None =
             nth[c["year"]] = nth.get(c["year"], 0) + 1
             seq.append((nth[c["year"]], len(seq), c))
         cars[:] = [c for *_, c in sorted(seq, key=lambda x: (x[0], x[1]))]
+    # Модели из справочника сайта, которых на сайте меньше 3 машин (wanted.py), — в первую очередь, до нужного
+    # числа (не больше WANTED_SHARE прогона); мощность — как обычно (по названию или по API)
+    from_ref = 0
+    if wanted:
+        cap = max(1, int(total * WANTED_SHARE))
+        for key, cars in groups.items():
+            if from_ref >= cap or len(picked) >= total:
+                break
+            make, model = GROUP_NAME.get(key) or (cars[0].get("brand_en"), cars[0].get("model_guess"))
+            for c in cars:
+                if wanted.need(make, model) <= 0 or from_ref >= cap or len(picked) >= total:
+                    break
+                if id(c) in used or not mix.allows(c, key):
+                    continue
+                if power(c, key) in KINDS:
+                    take(c, key)
+                    wanted.took(make, model)
+                    from_ref += 1
+        print(f"Из справочника сайта (моделей мало на сайте): {from_ref}")
     for key, cars in groups.items():
         # По машине — только моделям, которых на сайте ещё нет, и в пределах долей: класс и годы —
         # из клетки, набранной меньше всего; сначала машины с известной мощностью (без запроса к API)
         if on_site.get(key) or len(picked) >= total:
             continue
         for kind in sorted(KINDS, key=lambda k: total_of(k) / max(kind_want(k), 1)):
-            fits = sorted((c for c in cars if fill_ratio(kind, c) < 1 and mix.allows(c, key)), key=lambda c: fill_ratio(kind, c))
+            fits = sorted((c for c in cars if id(c) not in used and fill_ratio(kind, c) < 1 and mix.allows(c, key)),
+                          key=lambda c: fill_ratio(kind, c))
             best = (next((c for c in fits if c.get("power") == kind), None)
                     or next((c for c in fits if c.get("power") is None and power(c, key) == kind), None))
             if best:
@@ -542,5 +565,6 @@ def collect_all_models(session, known: dict, pacer, parse_encar_detail, power_of
         if i.get("published") and i.get("complete", True) and i.get("make"):
             k = (i["make"], i.get("model"), int(i["year"]) if str(i.get("year") or "").isdigit() else None)
             have_names[k] = have_names.get(k, 0) + 1
+    wanted = wanted_mod.load(os.environ.get("BN_AUTO_URL", ""), os.environ.get("BN_AUTO_IMPORT_TOKEN", ""), "encar")
     return pick(groups, total, share, _resolver(session, known, pacer, parse_encar_detail, power_of), on_site,
-                on_take, have, have_names), touched
+                on_take, have, have_names, wanted=wanted), touched
