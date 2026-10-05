@@ -1,878 +1,101 @@
 {
-  "updated_at": 1791215464,
+  "updated_at": 1791224842,
   "cars": [
     {
-      "external_id": "42601945",
+      "external_id": "41546118",
       "power": "gt160",
-      "brand": "현대",
-      "model": "더 뉴 그랜저 IG",
-      "brand_en": "Hyundai",
-      "model_guess": "IG",
-      "title": "현대 더 뉴 그랜저 IG 2.5 프리미엄 초이스 가솔린",
-      "year": 2020,
-      "mileage_km": 157882,
-      "price_krw": 13900000,
-      "similar": [
-        "현대",
-        "더 뉴 그랜저 IG",
-        "2.5",
-        2020
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4260/42601945_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42601945",
-      "_group": [
-        "현대",
-        "그랜저"
-      ],
-      "price_stats": {
-        "n": 5,
-        "lo": 13900000,
-        "mid": 16900000,
-        "hi": 20800000
-      },
-      "stats_key": "현대|그랜저|2020",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42582009",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "카니발 4세대",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 카니발 4세대 디젤 7인승 노블레스 디젤",
-      "year": 2023,
-      "mileage_km": 113480,
-      "price_krw": 23190000,
-      "similar": [
-        "기아",
-        "카니발 4세대",
-        "디젤 7인승 노블레스",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4257/42578156_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42582009",
-      "_group": [
-        "기아",
-        "카니발"
-      ],
-      "price_stats": {
-        "n": 24,
-        "lo": 17990000,
-        "mid": 23300000,
-        "hi": 32400000
-      },
-      "stats_key": "기아|카니발|2023",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42183680",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "올 뉴 쏘렌토",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 올 뉴 쏘렌토 디젤 2.0 2WD 프레스티지 디젤",
-      "year": 2016,
-      "mileage_km": 167532,
-      "price_krw": 9900000,
-      "similar": [
-        "기아",
-        "올 뉴 쏘렌토",
-        "디젤 2.0 2WD",
-        2016
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4218/42183036_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42183680",
-      "_group": [
-        "기아",
-        "쏘렌토"
-      ],
-      "price_stats": {
-        "n": 5,
-        "lo": 9500000,
-        "mid": 9900000,
-        "hi": 12300000
-      },
-      "stats_key": "기아|쏘렌토|2016",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42732088",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "싼타페 (MX5)",
-      "brand_en": "Hyundai",
-      "model_guess": "MX5",
-      "title": "현대 싼타페 (MX5) HEV 1.6 2WD 프레스티지 가솔린+전기",
-      "year": 2026,
-      "mileage_km": 1251,
-      "price_krw": 40490000,
-      "similar": [
-        "현대",
-        "싼타페 (MX5)",
-        "HEV 1.6 2WD",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture02/pic4272/42728876_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42732088",
-      "_group": [
-        "현대",
-        "싼타페"
-      ],
-      "price_stats": {
-        "n": 6,
-        "lo": 34900000,
-        "mid": 36700000,
-        "hi": 44800000
-      },
-      "stats_key": "현대|싼타페|2026",
-      "bucket": "other"
-    },
-    {
-      "external_id": "41094735",
-      "power": "gt160",
-      "brand": "벤츠",
-      "model": "E-클래스 W213",
-      "brand_en": "Mercedes-Benz",
-      "model_guess": "W213",
-      "title": "벤츠 E-클래스 W213 E250 아방가르드 가솔린",
-      "year": 2023,
-      "mileage_km": 20390,
-      "price_krw": 36900000,
-      "similar": [
-        "벤츠",
-        "E-클래스 W213",
-        "E250 아방가르드",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4108/41089339_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41094735",
-      "_group": [
-        "벤츠",
-        "E-클래스"
-      ],
-      "price_stats": {
-        "n": 19,
-        "lo": 39900000,
-        "mid": 44500000,
-        "hi": 55900000
-      },
-      "stats_key": "벤츠|E-클래스|2023",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42755816",
-      "power": "gt160",
-      "brand": "제네시스",
-      "model": "G80 (RG3)",
-      "brand_en": "Genesis",
-      "model_guess": "G80",
-      "title": "제네시스 G80 (RG3) 가솔린 2.5 터보 AWD (세부등급 없음) 가솔린",
+      "brand": "폭스바겐",
+      "model": "파사트 GT(B8)",
+      "brand_en": "Volkswagen",
+      "model_guess": "B8",
+      "title": "폭스바겐 파사트 GT(B8) 2.0 TDI 프레스티지 디젤",
       "year": 2021,
-      "mileage_km": 57676,
-      "price_krw": 35900000,
+      "mileage_km": 33379,
+      "price_krw": 23500000,
       "similar": [
-        "제네시스",
-        "G80 (RG3)",
-        "가솔린 2.5 터보 AWD",
+        "폭스바겐",
+        "파사트 GT(B8)",
+        "2.0 TDI 프레스티지",
         2021
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4274/42745416_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42755816",
+      "image": "https://ci.encar.com/carpicture03/pic4153/41532828_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41546118",
       "_group": [
-        "제네시스",
-        "G80"
-      ],
-      "price_stats": {
-        "n": 14,
-        "lo": 24500000,
-        "mid": 27900000,
-        "hi": 36600000
-      },
-      "stats_key": "제네시스|G80|2021",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42512592",
-      "power": "gt160",
-      "brand": "BMW",
-      "model": "5시리즈 (F10)",
-      "brand_en": "BMW",
-      "model_guess": "F10",
-      "title": "BMW 5시리즈 (F10) 520d M 에어로 다이나믹 디젤",
-      "year": 2016,
-      "mileage_km": 179298,
-      "price_krw": 12500000,
-      "similar": [
-        "BMW",
-        "5시리즈 (F10)",
-        "520d M 에어로 다이나믹",
-        2016
-      ],
-      "image": "https://ci.encar.com/carpicture10/pic4250/42507362_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42512592",
-      "_group": [
-        "BMW",
-        "5시리즈"
-      ],
-      "price_stats": {
-        "n": 5,
-        "lo": 10900000,
-        "mid": 12500000,
-        "hi": 14900000
-      },
-      "stats_key": "BMW|5시리즈|2016",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "41937542",
-      "power": "gt160",
-      "brand": "KG모빌리티(쌍용)",
-      "model": "더 뉴 렉스턴 스포츠 칸",
-      "brand_en": "KGM",
-      "model_guess": null,
-      "title": "KG모빌리티(쌍용) 더 뉴 렉스턴 스포츠 칸 디젤 2.2 4WD 쿨멘 프레스티지 디젤",
-      "year": 2024,
-      "mileage_km": 47572,
-      "price_krw": 28300000,
-      "similar": [
-        "KG모빌리티(쌍용)",
-        "더 뉴 렉스턴 스포츠 칸",
-        "디젤 2.2 4WD",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4193/41937541_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41937542",
-      "_group": [
-        "KG모빌리티(쌍용)",
-        "렉스턴"
-      ],
-      "price_stats": {
-        "n": 11,
-        "lo": 24700000,
-        "mid": 28300000,
-        "hi": 31900000
-      },
-      "stats_key": "KG모빌리티(쌍용)|렉스턴|2024",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42689923",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "더 뉴 그랜드 스타렉스",
-      "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 더 뉴 그랜드 스타렉스 밴 5인승 스마트 디젤",
-      "year": 2019,
-      "mileage_km": 176841,
-      "price_krw": 9990000,
-      "similar": [
-        "현대",
-        "더 뉴 그랜드 스타렉스",
-        "밴 5인승",
-        2019
-      ],
-      "image": "https://ci.encar.com/carpicture08/pic4268/42689910_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42689923",
-      "_group": [
-        "현대",
-        "스타렉스"
-      ],
-      "price_stats": {
-        "n": 8,
-        "lo": 6890000,
-        "mid": 13500000,
-        "hi": 20000000
-      },
-      "stats_key": "현대|스타렉스|2019",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42540249",
-      "power": "gt160",
-      "brand": "제네시스",
-      "model": "G90 (RS4)",
-      "brand_en": "Genesis",
-      "model_guess": "G90",
-      "title": "제네시스 G90 (RS4) 가솔린 3.5 터보 AWD 블랙 가솔린",
-      "year": 2025,
-      "mileage_km": 93500,
-      "price_krw": 50220000,
-      "similar": [
-        "제네시스",
-        "G90 (RS4)",
-        "가솔린 3.5 터보 AWD",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture04/pic4254/42540249_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42540249",
-      "_group": [
-        "제네시스",
-        "G90"
-      ],
-      "price_stats": {
-        "n": 4,
-        "lo": 50220000,
-        "mid": 67900000,
-        "hi": 85520000
-      },
-      "stats_key": "제네시스|G90|2025",
-      "bucket": "other"
-    },
-    {
-      "external_id": "41836713",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "그랜저 하이브리드 (GN7)",
-      "brand_en": "Hyundai",
-      "model_guess": "GN7",
-      "title": "현대 그랜저 하이브리드 (GN7) 프리미엄 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 120893,
-      "price_krw": 26000000,
-      "similar": [
-        "현대",
-        "그랜저 하이브리드 (GN7)",
-        "프리미엄",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4183/41833811_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41836713",
-      "_group": [
-        "현대",
-        "그랜저"
-      ],
-      "price_stats": {
-        "n": 14,
-        "lo": 19600000,
-        "mid": 26000000,
-        "hi": 37990000
-      },
-      "stats_key": "현대|그랜저|2023",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42717162",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "올 뉴 카니발",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 올 뉴 카니발 9인승 프레스티지 디젤",
-      "year": 2016,
-      "mileage_km": 115671,
-      "price_krw": 9700000,
-      "similar": [
-        "기아",
-        "올 뉴 카니발",
-        "9인승 프레스티지",
-        2016
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4271/42717162_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42717162",
-      "_group": [
-        "기아",
-        "카니발"
-      ],
-      "price_stats": {
-        "n": 4,
-        "lo": 9500000,
-        "mid": 11500000,
-        "hi": 12500000
-      },
-      "stats_key": "기아|카니발|2016",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42675847",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "쏘렌토 4세대",
-      "brand_en": "Kia",
-      "model_guess": "HEV",
-      "title": "기아 쏘렌토 4세대 HEV 1.6 2WD 노블레스 가솔린+전기",
-      "year": 2023,
-      "mileage_km": 108572,
-      "price_krw": 27300000,
-      "similar": [
-        "기아",
-        "쏘렌토 4세대",
-        "HEV 1.6 2WD",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4267/42673115_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42675847",
-      "_group": [
-        "기아",
-        "쏘렌토"
-      ],
-      "price_stats": {
-        "n": 9,
-        "lo": 26900000,
-        "mid": 28600000,
-        "hi": 35500000
-      },
-      "stats_key": "기아|쏘렌토|2023",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42738425",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "싼타페 TM",
-      "brand_en": "Hyundai",
-      "model_guess": "TM",
-      "title": "현대 싼타페 TM 디젤 2.0 2WD 익스클루시브 디젤",
-      "year": 2019,
-      "mileage_km": 171451,
-      "price_krw": 13500000,
-      "similar": [
-        "현대",
-        "싼타페 TM",
-        "디젤 2.0 2WD",
-        2019
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4273/42736685_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42738425",
-      "_group": [
-        "현대",
-        "싼타페"
+        "폭스바겐",
+        "파사트"
       ],
       "price_stats": {
         "n": 16,
-        "lo": 13500000,
-        "mid": 15900000,
-        "hi": 19800000
+        "lo": 21300000,
+        "mid": 23500000,
+        "hi": 25200000
       },
-      "stats_key": "현대|싼타페|2019",
+      "stats_key": "폭스바겐|파사트|2021",
       "bucket": "other"
     },
     {
-      "external_id": "42784051",
+      "external_id": "42776959",
       "power": "gt160",
       "brand": "벤츠",
       "model": "E-클래스 W213",
       "brand_en": "Mercedes-Benz",
       "model_guess": "W213",
-      "title": "벤츠 E-클래스 W213 E250 익스클루시브 가솔린",
+      "title": "벤츠 E-클래스 W213 E350 4MATIC AMG Line 가솔린",
       "year": 2022,
-      "mileage_km": 71919,
-      "price_krw": 36800000,
+      "mileage_km": 56981,
+      "price_krw": 37700000,
       "similar": [
         "벤츠",
         "E-클래스 W213",
-        "E250 익스클루시브",
+        "E350 4MATIC AMG Line",
         2022
       ],
-      "image": "https://ci.encar.com/carpicture07/pic4277/42779858_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42784051",
+      "image": "https://ci.encar.com/carpicture07/pic4277/42776923_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42776959",
       "_group": [
         "벤츠",
         "E-클래스"
       ],
       "price_stats": {
         "n": 4,
-        "lo": 36800000,
-        "mid": 37300000,
-        "hi": 37300000
+        "lo": 34800000,
+        "mid": 37700000,
+        "hi": 37700000
       },
       "stats_key": "벤츠|E-클래스|2022",
       "_resolved": true,
       "bucket": "other"
     },
     {
-      "external_id": "42810964",
-      "power": "gt160",
-      "brand": "제네시스",
-      "model": "G80 (RG3)",
-      "brand_en": "Genesis",
-      "model_guess": "G80",
-      "title": "제네시스 G80 (RG3) 가솔린 2.5 터보 2WD (세부등급 없음) 가솔린",
-      "year": 2025,
-      "mileage_km": 38000,
-      "price_krw": 38600000,
-      "similar": [
-        "제네시스",
-        "G80 (RG3)",
-        "가솔린 2.5 터보 2WD",
-        2025
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4281/42810964_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42810964",
-      "_group": [
-        "제네시스",
-        "G80"
-      ],
-      "price_stats": {
-        "n": 5,
-        "lo": 38600000,
-        "mid": 50500000,
-        "hi": 55800000
-      },
-      "stats_key": "제네시스|G80|2025",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42646153",
-      "power": "gt160",
-      "brand": "BMW",
-      "model": "5시리즈 (F10)",
-      "brand_en": "BMW",
-      "model_guess": "F10",
-      "title": "BMW 5시리즈 (F10) 528i xDrive 럭셔리 가솔린",
-      "year": 2015,
-      "mileage_km": 188232,
-      "price_krw": 7490000,
-      "similar": [
-        "BMW",
-        "5시리즈 (F10)",
-        "528i xDrive 럭셔리",
-        2015
-      ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42646153_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42646153",
-      "_group": [
-        "BMW",
-        "5시리즈"
-      ],
-      "price_stats": {
-        "n": 6,
-        "lo": 7000000,
-        "mid": 7900000,
-        "hi": 15300000
-      },
-      "stats_key": "BMW|5시리즈|2015",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "41870825",
-      "power": "gt160",
-      "brand": "KG모빌리티(쌍용)",
-      "model": "렉스턴 스포츠",
-      "brand_en": "KGM",
-      "model_guess": null,
-      "title": "KG모빌리티(쌍용) 렉스턴 스포츠 디젤 2.2 4WD 다이내믹 에디션 디젤",
-      "year": 2021,
-      "mileage_km": 117027,
-      "price_krw": 14300000,
-      "similar": [
-        "KG모빌리티(쌍용)",
-        "렉스턴 스포츠",
-        "디젤 2.2 4WD",
-        2021
-      ],
-      "image": "https://ci.encar.com/carpicture07/pic4187/41870825_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41870825",
-      "_group": [
-        "KG모빌리티(쌍용)",
-        "렉스턴"
-      ],
-      "price_stats": {
-        "n": 22,
-        "lo": 14000000,
-        "mid": 18200000,
-        "hi": 21750000
-      },
-      "stats_key": "KG모빌리티(쌍용)|렉스턴|2021",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42523779",
-      "power": "gt160",
-      "brand": "제네시스",
-      "model": "G90 (RS4)",
-      "brand_en": "Genesis",
-      "model_guess": "G90",
-      "title": "제네시스 G90 (RS4) 가솔린 3.5 터보 AWD (세부등급 없음) 가솔린",
-      "year": 2022,
-      "mileage_km": 140000,
-      "price_krw": 42900000,
-      "similar": [
-        "제네시스",
-        "G90 (RS4)",
-        "가솔린 3.5 터보 AWD",
-        2022
-      ],
-      "image": "https://ci.encar.com/carpicture02/pic4252/42523779_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42523779",
-      "_group": [
-        "제네시스",
-        "G90"
-      ],
-      "price_stats": {
-        "n": 17,
-        "lo": 41500000,
-        "mid": 53300000,
-        "hi": 68900000
-      },
-      "stats_key": "제네시스|G90|2022",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42654309",
+      "external_id": "41804857",
       "power": "gt160",
       "brand": "현대",
-      "model": "그랜드 스타렉스",
+      "model": "그랜저 HG",
       "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 그랜드 스타렉스 5인승 밴 모던 디젤",
+      "model_guess": "HG220",
+      "title": "현대 그랜저 HG HG220 디젤 프리미엄 디젤",
       "year": 2016,
-      "mileage_km": 112439,
-      "price_krw": 7500000,
+      "mileage_km": 113254,
+      "price_krw": 6800000,
       "similar": [
         "현대",
-        "그랜드 스타렉스",
-        "5인승 밴",
+        "그랜저 HG",
+        "HG220 디젤 프리미엄",
         2016
       ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42645967_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42654309",
+      "image": "https://ci.encar.com/carpicture10/pic4180/41804857_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/41804857",
       "_group": [
         "현대",
-        "스타렉스"
-      ],
-      "price_stats": {
-        "n": 7,
-        "lo": 5300000,
-        "mid": 7500000,
-        "hi": 8300000
-      },
-      "stats_key": "현대|스타렉스|2016",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42659545",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "더 뉴 팰리세이드",
-      "brand_en": "Hyundai",
-      "model_guess": null,
-      "title": "현대 더 뉴 팰리세이드 디젤 2.2 2WD 르블랑 디젤",
-      "year": 2024,
-      "mileage_km": 74346,
-      "price_krw": 34500000,
-      "similar": [
-        "현대",
-        "더 뉴 팰리세이드",
-        "디젤 2.2 2WD",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture04/pic4264/42647408_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42659545",
-      "_group": [
-        "현대",
-        "팰리세이드"
+        "그랜저"
       ],
       "price_stats": {
         "n": 9,
-        "lo": 29900000,
-        "mid": 34500000,
-        "hi": 48500000
+        "lo": 4630000,
+        "mid": 8300000,
+        "hi": 14900000
       },
-      "stats_key": "현대|팰리세이드|2024",
-      "bucket": "other"
-    },
-    {
-      "external_id": "41457731",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "더 뉴 모하비",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 더 뉴 모하비 디젤 3.0 2WD 노블레스 디젤",
-      "year": 2018,
-      "mileage_km": 134424,
-      "price_krw": 10500000,
-      "similar": [
-        "기아",
-        "더 뉴 모하비",
-        "디젤 3.0 2WD",
-        2018
-      ],
-      "image": "https://ci.encar.com/carpicture05/pic4145/41450335_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41457731",
-      "_group": [
-        "기아",
-        "모하비"
-      ],
-      "price_stats": {
-        "n": 11,
-        "lo": 10500000,
-        "mid": 12800000,
-        "hi": 14990000
-      },
-      "stats_key": "기아|모하비|2018",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42470394",
-      "power": "gt160",
-      "brand": "현대",
-      "model": "팰리세이드 (LX3)",
-      "brand_en": "Hyundai",
-      "model_guess": "LX3",
-      "title": "현대 팰리세이드 (LX3) 가솔린 2.5T 2WD 7인승 캘리그래피 가솔린",
-      "year": 2026,
-      "mileage_km": 4965,
-      "price_krw": 54300000,
-      "similar": [
-        "현대",
-        "팰리세이드 (LX3)",
-        "가솔린 2.5T 2WD 7인승",
-        2026
-      ],
-      "image": "https://ci.encar.com/carpicture05/pic4245/42459760_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42470394",
-      "_group": [
-        "현대",
-        "팰리세이드"
-      ],
-      "price_stats": {
-        "n": 12,
-        "lo": 44500000,
-        "mid": 54300000,
-        "hi": 56300000
-      },
-      "stats_key": "현대|팰리세이드|2026",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42620526",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "모하비 더 마스터",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 모하비 더 마스터 디젤 3.0 4WD 7인승 마스터즈 디젤",
-      "year": 2024,
-      "mileage_km": 107724,
-      "price_krw": 33300000,
-      "similar": [
-        "기아",
-        "모하비 더 마스터",
-        "디젤 3.0 4WD 7인승",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture01/pic4261/42619816_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42620526",
-      "_group": [
-        "기아",
-        "모하비"
-      ],
-      "price_stats": {
-        "n": 4,
-        "lo": 33000000,
-        "mid": 33300000,
-        "hi": 34300000
-      },
-      "stats_key": "기아|모하비|2024",
-      "bucket": "other"
-    },
-    {
-      "external_id": "41997868",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "올 뉴 K7",
-      "brand_en": "Kia",
-      "model_guess": "K7",
-      "title": "기아 올 뉴 K7 2.4 GDI 프레스티지 가솔린",
-      "year": 2016,
-      "mileage_km": 106041,
-      "price_krw": 10200000,
-      "similar": [
-        "기아",
-        "올 뉴 K7",
-        "2.4 GDI 프레스티지",
-        2016
-      ],
-      "image": "https://ci.encar.com/carpicture09/pic4199/41997162_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41997868",
-      "_group": [
-        "기아",
-        "K7"
-      ],
-      "price_stats": {
-        "n": 8,
-        "lo": 6890000,
-        "mid": 10200000,
-        "hi": 10600000
-      },
-      "stats_key": "기아|K7|2016",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42566369",
-      "power": "gt160",
-      "brand": "벤츠",
-      "model": "S-클래스 W222",
-      "brand_en": "Mercedes-Benz",
-      "model_guess": "W222",
-      "title": "벤츠 S-클래스 W222 S63 AMG 4MATIC+ 가솔린",
-      "year": 2018,
-      "mileage_km": 115077,
-      "price_krw": 50000000,
-      "similar": [
-        "벤츠",
-        "S-클래스 W222",
-        "S63 AMG 4MATIC+",
-        2018
-      ],
-      "image": "https://ci.encar.com/carpicture06/pic4256/42560593_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42566369",
-      "_group": [
-        "벤츠",
-        "S-클래스"
-      ],
-      "price_stats": {
-        "n": 14,
-        "lo": 29900000,
-        "mid": 43900000,
-        "hi": 50000000
-      },
-      "stats_key": "벤츠|S-클래스|2018",
-      "_resolved": true,
-      "bucket": "other"
-    },
-    {
-      "external_id": "42838761",
-      "power": "gt160",
-      "brand": "벤츠",
-      "model": "S-클래스 W223",
-      "brand_en": "Mercedes-Benz",
-      "model_guess": "W223",
-      "title": "벤츠 S-클래스 W223 S400 d 4MATIC 디젤",
-      "year": 2023,
-      "mileage_km": 25401,
-      "price_krw": 95900000,
-      "similar": [
-        "벤츠",
-        "S-클래스 W223",
-        "S400 d 4MATIC",
-        2023
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4283/42838761_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42838761",
-      "_group": [
-        "벤츠",
-        "S-클래스"
-      ],
-      "price_stats": {
-        "n": 7,
-        "lo": 72900000,
-        "mid": 94900000,
-        "hi": 95900000
-      },
-      "stats_key": "벤츠|S-클래스|2023",
+      "stats_key": "현대|그랜저|2016",
       "_resolved": true,
       "bucket": "other"
     }
