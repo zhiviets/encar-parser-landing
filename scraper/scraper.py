@@ -1214,7 +1214,7 @@ def _compress_to_data_url(image_bytes: bytes) -> str | None:
     except Exception:
         return None
 
-    # WebP: при том же качестве на ~40 % легче JPEG. 960 px по ширине хватает
+    # WebP: при том же качестве на ~40 % легче JPEG. 1200 px по ширине хватает
     # для страницы объявления; тяжёлые снимки сжимаем сильнее, затем уменьшаем.
     quality, max_width = PHOTO_QUALITY, PHOTO_MAX_WIDTH
     while True:
