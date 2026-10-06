@@ -1,100 +1,36 @@
 {
-  "updated_at": 1791243875,
+  "updated_at": 1791251769,
   "cars": [
     {
-      "external_id": "42469123",
+      "external_id": "42276687",
       "power": "gt160",
-      "brand": "벤틀리",
-      "model": "뮬산",
-      "brand_en": "Bentley",
-      "model_guess": null,
-      "title": "벤틀리 뮬산 6.8 가솔린",
-      "year": 2018,
-      "mileage_km": 42800,
-      "price_krw": 148000000,
+      "brand": "폭스바겐",
+      "model": "파사트 GT(B8)",
+      "brand_en": "Volkswagen",
+      "model_guess": "B8",
+      "title": "폭스바겐 파사트 GT(B8) 2.0 TDI 프레스티지 디젤",
+      "year": 2021,
+      "mileage_km": 53925,
+      "price_krw": 22200000,
       "similar": [
-        "벤틀리",
-        "뮬산",
-        "6.8",
-        2018
+        "폭스바겐",
+        "파사트 GT(B8)",
+        "2.0 TDI 프레스티지",
+        2021
       ],
-      "image": "https://ci.encar.com/carpicture06/pic4246/42469123_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42469123",
+      "image": "https://ci.encar.com/carpicture07/pic4227/42276687_001.jpg",
+      "link": "https://fem.encar.com/cars/detail/42276687",
       "_group": [
-        "벤틀리",
-        "뮬산"
+        "폭스바겐",
+        "파사트"
       ],
       "price_stats": {
-        "n": 5,
-        "lo": 110000000,
-        "mid": 148000000,
-        "hi": 149900000
+        "n": 17,
+        "lo": 21300000,
+        "mid": 23200000,
+        "hi": 24990000
       },
-      "stats_key": "벤틀리|뮬산|2018",
-      "bucket": "other"
-    },
-    {
-      "external_id": "42734291",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "더 뉴 쏘렌토 4세대",
-      "brand_en": "Kia",
-      "model_guess": null,
-      "title": "기아 더 뉴 쏘렌토 4세대 가솔린 2.5T 4WD 그래비티 가솔린",
-      "year": 2024,
-      "mileage_km": 36478,
-      "price_krw": 35000000,
-      "similar": [
-        "기아",
-        "더 뉴 쏘렌토 4세대",
-        "가솔린 2.5T 4WD",
-        2024
-      ],
-      "image": "https://ci.encar.com/carpicture03/pic4273/42734291_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/42734291",
-      "_group": [
-        "기아",
-        "쏘렌토"
-      ],
-      "price_stats": {
-        "n": 5,
-        "lo": 31700000,
-        "mid": 34500000,
-        "hi": 35000000
-      },
-      "stats_key": "기아|쏘렌토|2024",
-      "bucket": "other"
-    },
-    {
-      "external_id": "41357197",
-      "power": "gt160",
-      "brand": "기아",
-      "model": "쏘렌토 R",
-      "brand_en": "Kia",
-      "model_guess": "TLX",
-      "title": "기아 쏘렌토 R 디젤 2.0 2WD TLX 최고급형 디젤",
-      "year": 2011,
-      "mileage_km": 168701,
-      "price_krw": 4900000,
-      "similar": [
-        "기아",
-        "쏘렌토 R",
-        "디젤 2.0 2WD TLX",
-        2011
-      ],
-      "image": "https://ci.encar.com/carpicture05/pic4135/41357197_001.jpg",
-      "link": "https://fem.encar.com/cars/detail/41357197",
-      "_group": [
-        "기아",
-        "쏘렌토"
-      ],
-      "price_stats": {
-        "n": 6,
-        "lo": 4300000,
-        "mid": 4500000,
-        "hi": 4900000
-      },
-      "stats_key": "기아|쏘렌토|2011",
+      "stats_key": "폭스바겐|파사트|2021",
       "bucket": "other"
     }
   ]
