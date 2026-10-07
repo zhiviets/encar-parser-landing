@@ -11,10 +11,12 @@ ENCAR_PER_MODEL свежих объявлений (одним запросом) 
 ENCAR_TOTAL — доля важнее общего числа.
 """
 
+import json
 import re
 import os
 import random
 import time
+from pathlib import Path
 from urllib.parse import quote
 
 import selection
@@ -208,12 +210,34 @@ def model_groups(session, save_debug) -> list[tuple[str, str, str, bool]]:
     return out
 
 
+# Класс мощности машин, чьи данные уже запрашивали у encar: id → класс (None — мощность не нашлась). Данные машины
+# не меняются, поэтому повторно их не запрашиваем (раньше каждый прогон заново). Файл коммитится вместе с drom_cache.json
+POWER_CACHE = Path(__file__).resolve().parent / "power_cache.json"
+
+
+def _load_power_cache() -> dict:
+    try:
+        return json.loads(POWER_CACHE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_power_cache(cache: dict) -> None:
+    POWER_CACHE.write_text(json.dumps(cache, ensure_ascii=False, sort_keys=True), encoding="utf-8")
+
+
 def _resolver(session, known: dict, pacer, parse_encar_detail, power_of):
+    cache = _load_power_cache()
+    print(f"Кэш класса мощности encar: {len(cache)} машин (повторно не запрашиваем)")
+
     def resolve(car: dict):
         """Мощность машины без объёма в названии — по данным encar (или сайта, если машина там уже есть)."""
         info = known.get(car["external_id"])
         if info:
             return power_of(info.get("model"), f"{info.get('text') or ''} {car['title']}", info.get("cc"))
+        key = str(car["external_id"])
+        if key in cache:
+            return cache[key]
         if pacer.blocked:
             return None
         detail = pacer.detail(session, car["external_id"])
@@ -221,7 +245,10 @@ def _resolver(session, known: dict, pacer, parse_encar_detail, power_of):
             return None
         d = parse_encar_detail(detail, car["external_id"])
         car["detail"] = d
-        return power_of(d.get("model"), f"{d.get('power_text') or ''} {car['title']}", d.get("displacement"))
+        cls = power_of(d.get("model"), f"{d.get('power_text') or ''} {car['title']}", d.get("displacement"))
+        cache[key] = cls
+        _save_power_cache(cache)
+        return cls
 
     return resolve
 
